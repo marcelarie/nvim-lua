@@ -9,5 +9,5 @@ vim.cmd('let g:netrw_liststyle = 3')
 
 vim.cmd("let g:netrw_localrmdir='rm -r'")
 
-vim.api.nvim_set_keymap('n', '<Leader>e', ':Lexplore<cr>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<Leader>e', ':Lexplore<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>ee', ':Ex<cr>', { noremap = true, silent = true })
