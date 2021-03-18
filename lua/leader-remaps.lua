@@ -28,3 +28,6 @@ vim.api.nvim_set_keymap('n', '<Leader>j', ':wincmd j<cr>', { noremap = true, sil
 vim.api.nvim_set_keymap('n', '<Leader>k', ':wincmd k<cr>', { noremap = true, silent = true })
 
 
+-- ; for :
+vim.api.nvim_set_keymap('n', ';', ':', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', ':', ';', { noremap = true, silent = true })

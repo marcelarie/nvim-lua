@@ -17,6 +17,8 @@ vim.cmd('nnoremap <leader>gr <cmd>lua vim.lsp.buf.references()<CR>')
 vim.cmd('nnoremap <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>')
 vim.cmd('nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>')
 vim.cmd('nnoremap <silent>K <cmd>lua vim.lsp.buf.hover()<CR>')
+vim.cmd('nnoremap <silent>: <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
+vim.cmd([[nnoremap <silent>" <cmd>lua vim.lsp.diagnostic.goto_next()<CR>]])
 
 -- nnoremap <leader>vd :lua vim.lsp.buf.definition()<CR>
 -- nnoremap <leader>vi :lua vim.lsp.buf.implementation()<CR>
@@ -29,8 +31,3 @@ vim.cmd('nnoremap <silent>K <cmd>lua vim.lsp.buf.hover()<CR>')
 -- nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
 -- nnoremap <leader>vll :lua vim.lsp.diagnostic.set_loclist()<CR>
 
--- vim.cmd('nnoremap <silent> ca :Lspsaga code_action<CR>')
--- vim.cmd('nnoremap <silent> <C-p> :Lspsaga diagnostic_jump_prev<CR>')
--- vim.cmd('nnoremap <silent> <C-n> :Lspsaga diagnostic_jump_next<CR>')
--- " Avoid showing message extra message when using completion
---
