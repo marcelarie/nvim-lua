@@ -1,0 +1,27 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "markdown",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "graphql",
+        "html",
+        "yaml",
+        "json",
+        "python",
+        "sh"
+    ],
+    "tsserver.formatOnType": true,
+    "coc.preferences.formatOnType": true,
+    // python config
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    // Coc-Explorer
+    "explorer.width": 30,
+    "explorer.toggle": true,
+    "explorer.previewAction.onHover": false,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.focus": true
+}

@@ -1,2 +1,0 @@
-require'lspconfig'.intelephense.setup{}
-
