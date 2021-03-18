@@ -89,6 +89,9 @@ use 'ryanoasis/vim-devicons'
 -- Startup time
 use 'tweekmonster/startuptime.vim'
 
+-- Nerdtree
+use 'preservim/nerdtree'
+
 -- LSPsaga
 -- use 'glepnir/lspsaga.nvim'
 
