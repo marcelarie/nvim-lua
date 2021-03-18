@@ -26,6 +26,7 @@ require('lsp.json')
 require('lsp.html')
 require('lsp.css')
 require('lsp.php')
+require('lsp.vimls')
 require('formatting')
 
 require('vimg')
