@@ -39,7 +39,7 @@ vim.wo.wrap = false -- Display long lines as just one line
 vim.wo.relativenumber = true -- Relative numbers
 vim.wo.nu = true -- Show line number
 vim.wo.foldnestmax = 1
--- vim.wo.cursorline=true                          --Enable highlighting of the current line
+vim.wo.cursorline = true -- Enable highlighting of the current line
 vim.wo.signcolumn = "yes"
 
 -- highlight on yank

@@ -22,3 +22,5 @@ vim.cmd('nnoremap <silent>K <cmd>lua vim.lsp.buf.hover()<CR>')
 vim.cmd('nnoremap <silent>: <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
 vim.cmd([[nnoremap <silent>" <cmd>lua vim.lsp.diagnostic.goto_next()<CR>]])
 
+-- enable diagnostics color
+vim.cmd([[ autocmd ColorScheme * :lua require('vim.lsp.diagnostic')._define_default_signs_and_highlights() ]])

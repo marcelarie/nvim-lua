@@ -87,18 +87,17 @@ return require('packer').startup(function()
 
     -- Nerdtree
     use 'preservim/nerdtree'
-
-    -- LSPsaga
-    -- use 'glepnir/lspsaga.nvim'
-
     -- nvim tree
     -- use 'kyazdani42/nvim-tree.lua'
-    -- LSPInstall
-    -- use 'anott03/nvim-lspinstall'
+
+    -- React TESTING
+    -- use 'MaxMEllon/vim-jsx-pretty'
+    -- use 'neoclide/vim-jsx-improve'
 
     -- UltiSnips and vim snips
     use 'honza/vim-snippets'
     use 'SirVer/ultisnips'
     use 'thomasfaingnaert/vim-lsp-snippets'
+    use 'mlaursen/vim-react-snippets'
     -- use 'thomasfaingnaert/vim-lsp-ultisnips'
 end)
