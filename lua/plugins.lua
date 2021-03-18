@@ -34,7 +34,7 @@ use 'nvim-telescope/telescope-fzy-native.nvim'
 use 'neovim/nvim-lsp'
 use 'neovim/nvim-lspconfig'
 use 'nvim-lua/completion-nvim'
-use 'mattn/vim-lsp-settings'
+-- use 'mattn/vim-lsp-settings'
 use 'tjdevries/nlua.nvim'
 use 'tjdevries/lsp_extensions.nvim'
 
