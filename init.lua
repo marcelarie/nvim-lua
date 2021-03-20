@@ -43,4 +43,3 @@ require('autopairs')
 -- require('nvim-tree')
 -- require('lightline')
 -- require('galaxyline')
-
