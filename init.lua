@@ -10,7 +10,7 @@ require('leader-remaps')
 -- /// TREE EXPLORERS ///.
 require('undo-tree')
 require('netrw')
-require('nerd-tree')
+require('tree-keybindings')
 
 -- /// NAVIGATION ///.
 require('telescope')
@@ -40,6 +40,5 @@ require('autopairs')
 -- vim.cmd('source ~/.config/nvim/vimscript/lualine.vim')
 -- vim.cmd([[augroup highlight_yank autocmd!  autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40}) augroup END]]);
 -- require('lspsaga')
--- require('nvim-tree')
 -- require('lightline')
 -- require('galaxyline')

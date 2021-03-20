@@ -86,9 +86,9 @@ return require('packer').startup(function()
     use 'tweekmonster/startuptime.vim'
 
     -- Nerdtree
-    use 'preservim/nerdtree'
+    -- use 'preservim/nerdtree'
     -- nvim tree
-    -- use 'kyazdani42/nvim-tree.lua'
+    use 'kyazdani42/nvim-tree.lua'
 
     -- React TESTING
     -- use 'MaxMEllon/vim-jsx-pretty'
