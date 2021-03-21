@@ -1,6 +1,2 @@
-local ll = require('lightline')
-
-ll.setup{}
-
-
-vim.cmd('lightline.vim')
+vim.cmd(
+    'let g:lightline = { "colorscheme": "gruvbox8", "active": { "left": [ [ "mode", "paste" ], [ "gitbranch", "readonly", "filename", "modified" ]] } }')

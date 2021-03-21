@@ -7,10 +7,11 @@ require('aliases')
 -- /// REMAPS ///.
 require('leader-remaps')
 
--- /// TREE EXPLORERS ///.
+-- /// TREE & EXPLORERS ///.
 require('undo-tree')
 require('netrw')
 require('tree-keybindings')
+require('lightline')
 
 -- /// NAVIGATION ///.
 require('telescope')
