@@ -1,5 +1,7 @@
 # nvim config
 
 # TODO
-1. Find and config Better file tree
-2. Find LSP complition to show less
+2. Why this message? 
+```bash
+LSP[sumneko_lua][Info] Too large file: language-servers/.... The currently set size limit is: 100 KB, and the file size is: 222.1
+```
