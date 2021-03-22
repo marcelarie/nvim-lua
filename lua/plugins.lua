@@ -11,7 +11,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function()
-
     -- Packer can manage itself as an optional plugin
     use {'wbthomason/packer.nvim', opt = true}
 
@@ -74,7 +73,6 @@ return require('packer').startup(function()
 
     -- lua line
     -- use 'hoob3rt/lualine.nvim'
-
     -- galaxyline
     -- use 'glepnir/galaxyline.nvim'
 
@@ -87,13 +85,14 @@ return require('packer').startup(function()
 
     -- Nerdtree
     -- use 'preservim/nerdtree'
-    
+
     -- nvim tree
     use 'kyazdani42/nvim-tree.lua'
 
     -- React TESTING
     -- use 'MaxMEllon/vim-jsx-pretty'
     -- use 'neoclide/vim-jsx-improve'
+
     use 'junegunn/vim-emoji'
 
     -- UltiSnips and vim snips

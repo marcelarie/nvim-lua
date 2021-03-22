@@ -24,13 +24,12 @@ vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 
-vim.o.hidden = true -- Opening a new file when the current buffer has unsaved changes 
--- cause files to be hidden instead of closed.  
+vim.o.hidden = true -- Opening a new file when the current buffer has unsaved changes cause files to be hidden instead of closed.
 
 vim.o.smartcase = true -- Case sensitive search.
 vim.o.scrolloff = 8 -- 8 lines on top/bottom of cursor when scrolling.
 vim.o.timeoutlen = 500 -- Vim will wait for 500 ms after keystroke for the mappings.
-vim.o.updatetime = 300 -- Vim waits 300 ms after you stop before it triggers the plugin.   
+vim.o.updatetime = 300 -- Vim waits 300 ms after you stop before it triggers the plugin.
 
 -- Buffer local options
 

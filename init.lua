@@ -24,6 +24,7 @@ require('lsp')
 require('lsp.tsserver')
 require('lsp.lua')
 require('lsp.lua-formatter')
+require('lsp.rust')
 require('lsp.json')
 require('lsp.html')
 require('lsp.css')
@@ -38,9 +39,5 @@ require('colorizer')
 require('nerd-commenter')
 require('autopairs')
 
--- /// TODO ///.
--- vim.cmd('source ~/.config/nvim/vimscript/lualine.vim')
--- vim.cmd([[augroup highlight_yank autocmd!  autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40}) augroup END]]);
--- require('lspsaga')
--- require('lightline')
--- require('galaxyline')
+-- /// TODO: ///.
+-- try lualine -> vim.cmd('source ~/.config/nvim/vimscript/lualine.vim')
