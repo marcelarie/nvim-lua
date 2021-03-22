@@ -87,12 +87,14 @@ return require('packer').startup(function()
 
     -- Nerdtree
     use 'preservim/nerdtree'
+    use 'PhilRunninger/nerdtree-visual-selection'
     -- nvim tree
     -- use 'kyazdani42/nvim-tree.lua'
 
     -- React TESTING
     -- use 'MaxMEllon/vim-jsx-pretty'
     -- use 'neoclide/vim-jsx-improve'
+    use 'junegunn/vim-emoji'
 
     -- UltiSnips and vim snips
     use 'honza/vim-snippets'

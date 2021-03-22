@@ -3,13 +3,13 @@ require('colorscheme')
 require('plugins')
 require('settings')
 require('aliases')
-
 -- /// REMAPS ///.
 require('leader-remaps')
 
 -- /// TREE EXPLORERS ///.
 require('undo-tree')
 require('netrw')
+-- require('nvim-tree')
 require('nerd-tree')
 
 -- /// NAVIGATION ///.
