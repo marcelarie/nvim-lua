@@ -3,15 +3,16 @@ require('colorscheme')
 require('plugins')
 require('settings')
 require('aliases')
-
 -- /// REMAPS ///.
 require('leader-remaps')
 
 -- /// TREE & EXPLORERS ///.
 require('undo-tree')
 require('netrw')
-require('tree-keybindings')
 require('lightline')
+-- require('nvim-tree')
+require('tree-keybindings')
+-- require('nerd-tree')
 
 -- /// NAVIGATION ///.
 require('telescope')
