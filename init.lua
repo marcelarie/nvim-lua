@@ -10,13 +10,16 @@ require('leader-remaps')
 require('undo-tree')
 require('netrw')
 require('lightline')
--- require('nvim-tree')
 require('tree-keybindings')
 -- require('nerd-tree')
+-- require('nvim-tree')
 
 -- /// NAVIGATION ///.
 require('telescope')
 require('telescope-keybindings')
+require('dashboard')
+require('quick-scope')
+require('rnvimr')
 
 -- /// LS & SYNTAX ///.
 require('treesitter')
@@ -37,7 +40,10 @@ require('web-devicons')
 require('cheatsh')
 require('colorizer')
 require('nerd-commenter')
-require('autopairs')
+-- require('autopairs') -- (?)
+require('lua-autopairs') -- (?)
+require('ts-autotags')
+require('fugitive')
 
 -- /// TODO: ///.
 -- try lualine -> vim.cmd('source ~/.config/nvim/vimscript/lualine.vim')

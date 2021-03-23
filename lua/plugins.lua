@@ -24,9 +24,10 @@ return require('packer').startup(function()
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
+    use 'nvim-telescope/telescope-media-files.nvim'
     use 'nvim-telescope/telescope-fzy-native.nvim'
 
-    -- LSP 
+    -- LSP
     use 'neovim/nvim-lsp'
     use 'neovim/nvim-lspconfig'
     use 'nvim-lua/completion-nvim'
@@ -34,9 +35,15 @@ return require('packer').startup(function()
     use 'tjdevries/nlua.nvim'
     use 'tjdevries/lsp_extensions.nvim'
 
+    -- Git
+    use 'tpope/vim-fugitive'
+
     -- TreeSitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'nvim-treesitter/playground'
+
+    -- Polyglot (?)
+    -- use 'sheerun/vim-polyglot'
 
     -- System Copy
     use 'christoomey/vim-system-copy'
@@ -48,7 +55,11 @@ return require('packer').startup(function()
     use 'norcalli/nvim-colorizer.lua'
 
     -- AutoPairs
-    use 'jiangmiao/auto-pairs'
+    -- use 'jiangmiao/auto-pairs'
+    -- light lua auto pairs
+    use 'windwp/nvim-autopairs'
+    -- Autotags
+    use 'windwp/nvim-ts-autotag'
 
     -- Vim Surround
     use 'tpope/vim-surround'
@@ -101,4 +112,19 @@ return require('packer').startup(function()
     use 'thomasfaingnaert/vim-lsp-snippets'
     use 'mlaursen/vim-react-snippets'
     -- use 'thomasfaingnaert/vim-lsp-ultisnips'
+
+    -- Change root folder to the one opened with vim
+    use 'airblade/vim-rooter'
+
+    -- welcome dashboard on start
+    use 'glepnir/dashboard-nvim'
+
+    -- An always-on highlight for a unique character in every word on a line to help you use f, F and family
+    use 'unblevable/quick-scope'
+
+    -- Ranger inside vim
+    use 'kevinhwang91/rnvimr'
+
+    -- Maybe later
+    -- use 'gennaro-tedesco/nvim-peekup''
 end)

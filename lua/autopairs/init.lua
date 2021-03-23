@@ -1,7 +1,5 @@
-vim.cmd([["Auto Pairs:"
-     let g:AutoPairsFlyMode = 0
-     let g:AutoPairsMultilineClose = 0
-     au FileType html let b:AutoPairs = AutoPairsDefine({'<!--' : '-->'})
-     au FileType css  let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})
-     au FileType javascript let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})
-]])
+vim.cmd("let g:AutoPairsFlyMode = 0")
+vim.cmd("let g:AutoPairsMultilineClose = 0")
+vim.cmd("au FileType html let b:AutoPairs = AutoPairsDefine({'<!--' : '-->'})")
+vim.cmd("au FileType css  let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})")
+vim.cmd("au FileType javascript let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})")
