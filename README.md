@@ -13,3 +13,4 @@ LSP[sumneko_lua][Info] Too large file: language-servers/.... The currently set s
 7. Learn about -> https://github.com/mattn/vim-gist
 8. See if I need this -> https://github.com/xabikos/vscode-javascript
 9. Search about -> https://github.com/hrsh7th/nvim-compe
+10. Better auto-import for ts-server

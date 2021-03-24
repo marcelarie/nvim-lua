@@ -30,6 +30,7 @@ vim.o.smartcase = true -- Case sensitive search.
 vim.o.scrolloff = 8 -- 8 lines on top/bottom of cursor when scrolling.
 vim.o.timeoutlen = 500 -- Vim will wait for 500 ms after keystroke for the mappings.
 vim.o.updatetime = 300 -- Vim waits 300 ms after you stop before it triggers the plugin.
+-- set colorcolumn=80
 
 -- Buffer local options
 
@@ -40,6 +41,7 @@ vim.wo.nu = true -- Show line number
 vim.wo.foldnestmax = 1
 vim.wo.cursorline = true -- Enable highlighting of the current line
 vim.wo.signcolumn = "yes"
+vim.wo.colorcolumn = "80"
 
 -- highlight on yank
 vim.cmd [[
