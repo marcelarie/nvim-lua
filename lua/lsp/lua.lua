@@ -13,9 +13,8 @@ else
     print("Unsupported system for sumneko")
 end
 
-local on_attach = require'completion'.on_attach
 require'lspconfig'.sumneko_lua.setup {
-    on_attach=on_attach,
+    on_attach = On_attach,
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
     settings = {
         Lua = {

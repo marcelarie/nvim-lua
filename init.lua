@@ -3,6 +3,7 @@ require('colorscheme')
 require('plugins')
 require('settings')
 require('aliases')
+require('globals')
 
 -- /// REMAPS ///.
 require('leader-remaps')
