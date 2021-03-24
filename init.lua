@@ -1,8 +1,9 @@
--- /// BASE ///
+-- /// BASE ///.
 require('colorscheme')
 require('plugins')
 require('settings')
 require('aliases')
+
 -- /// REMAPS ///.
 require('leader-remaps')
 
@@ -22,6 +23,7 @@ require('quick-scope')
 require('rnvimr')
 
 -- /// LS & SYNTAX ///.
+require('complition-setup')
 require('treesitter')
 require('lsp')
 require('lsp.tsserver')

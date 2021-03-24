@@ -31,6 +31,7 @@ return require('packer').startup(function()
     use 'neovim/nvim-lsp'
     use 'neovim/nvim-lspconfig'
     use 'nvim-lua/completion-nvim'
+    use 'steelsojka/completion-buffers'
     -- use 'mattn/vim-lsp-settings'
     use 'tjdevries/nlua.nvim'
     use 'tjdevries/lsp_extensions.nvim'
