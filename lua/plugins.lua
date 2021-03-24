@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 vim.cmd [[packadd packer.nvim]]
 
 local execute = vim.api.nvim_command
@@ -6,7 +7,8 @@ local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/opt/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
-    execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+    execute('!git clone https://github.com/wbthomason/packer.nvim '
+                .. install_path)
     execute 'packadd packer.nvim'
 end
 
@@ -35,6 +37,9 @@ return require('packer').startup(function()
     -- use 'mattn/vim-lsp-settings'
     use 'tjdevries/nlua.nvim'
     use 'tjdevries/lsp_extensions.nvim'
+
+    -- LSP Saga
+    use 'glepnir/lspsaga.nvim'
 
     -- Git
     use 'tpope/vim-fugitive'
@@ -112,6 +117,7 @@ return require('packer').startup(function()
     use 'SirVer/ultisnips'
     use 'thomasfaingnaert/vim-lsp-snippets'
     use 'mlaursen/vim-react-snippets'
+    use 'dsznajder/vscode-es7-javascript-react-snippets'
     -- use 'thomasfaingnaert/vim-lsp-ultisnips'
 
     -- Change root folder to the one opened with vim

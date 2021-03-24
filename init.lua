@@ -37,6 +37,7 @@ require('lsp.css')
 require('lsp.php')
 require('lsp.vimls')
 require('formatting')
+require('lsp-saga')
 
 require('vimg')
 require('web-devicons')
