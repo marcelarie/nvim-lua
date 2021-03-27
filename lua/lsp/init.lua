@@ -1,12 +1,13 @@
 require('lspconfig')
-vim.cmd("let g:completion_enable_snippet = 'UltiSnips'")
+-- vim.cmd("let g:completion_enable_snippet = 'UltiSnips'")
 
 -- Use <Tab> and <S-Tab> to navigate through popup menu
 vim.cmd([[inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"]])
 vim.cmd([[inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"]])
 
 -- Set completeopt to have a better completion experience
-vim.cmd('set completeopt=menuone,noinsert,noselect')
+-- vim.cmd('set completeopt=menuone,noinsert,noselect')
+vim.o.completeopt = "menuone,noinsert,noselect"
 --  Avoid showing message extra message when using completion
 vim.cmd("set shortmess+=c")
 vim.cmd(
@@ -28,11 +29,11 @@ vim.cmd(
     [[ autocmd ColorScheme * :lua require('vim.lsp.diagnostic')._define_default_signs_and_highlights() ]])
 
 -- change diagntostic signs
-vim.cmd(
-    'sign define LspDiagnosticsSignError text=|> texthl=LspDiagnosticsSignError linehl= numhl=')
-vim.cmd(
-    'sign define LspDiagnosticsSignWarning text= texthl=LspDiagnosticsSignWarning linehl= numhl=')
-vim.cmd(
-    'sign define LspDiagnosticsSignInformation text= texthl=LspDiagnosticsSignInformation linehl= numhl=')
-vim.cmd(
-    'sign define LspDiagnosticsSignHint text= texthl=LspDiagnosticsSignHint linehl= numhl=')
+-- vim.cmd(
+-- 'sign define LspDiagnosticsSignError text=|> texthl=LspDiagnosticsSignError linehl= numhl=')
+-- vim.cmd(
+-- 'sign define LspDiagnosticsSignWarning text= texthl=LspDiagnosticsSignWarning linehl= numhl=')
+-- vim.cmd(
+-- 'sign define LspDiagnosticsSignInformation text= texthl=LspDiagnosticsSignInformation linehl= numhl=')
+-- vim.cmd(
+-- 'sign define LspDiagnosticsSignHint text= texthl=LspDiagnosticsSignHint linehl= numhl=')

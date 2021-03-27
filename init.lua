@@ -24,7 +24,8 @@ require('quick-scope')
 require('rnvimr')
 
 -- /// LS & SYNTAX ///.
-require('complition-setup')
+-- require('complition-setup')
+require('compe-setup')
 require('treesitter')
 require('lsp')
 require('lsp.tsserver')
