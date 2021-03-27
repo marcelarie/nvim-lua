@@ -7,6 +7,7 @@ require('globals')
 
 -- /// REMAPS ///.
 require('leader-remaps')
+require('remaps')
 
 -- /// TREE & EXPLORERS ///.
 require('undo-tree')
