@@ -12,10 +12,10 @@ require('remaps')
 -- /// TREE & EXPLORERS ///.
 require('undo-tree')
 require('netrw')
-require('lightline')
+require('lualine-config')
 require('tree-keybindings')
--- require('nerd-tree')
 -- require('nvim-tree')
+-- require('lightline')
 
 -- /// NAVIGATION ///.
 require('telescope')

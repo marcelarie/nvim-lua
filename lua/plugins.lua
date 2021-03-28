@@ -88,10 +88,10 @@ return require('packer').startup(function()
     use 'alvan/vim-closetag'
 
     -- light line
-    use 'itchyny/lightline.vim'
+    -- use 'itchyny/lightline.vim'
 
     -- lua line
-    -- use 'hoob3rt/lualine.nvim'
+    use 'hoob3rt/lualine.nvim'
     -- galaxyline
     -- use 'glepnir/galaxyline.nvim'
 
