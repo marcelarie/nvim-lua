@@ -22,7 +22,7 @@ require('telescope')
 require('telescope-keybindings')
 require('dashboard')
 require('quick-scope')
-require('rnvimr')
+-- require('rnvimr')
 
 -- /// LS & SYNTAX ///.
 -- require('complition-setup')

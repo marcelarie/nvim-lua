@@ -49,6 +49,8 @@ return require('packer').startup(function()
     -- TreeSitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'nvim-treesitter/playground'
+    -- use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
 
     -- Polyglot (?)
     -- use 'sheerun/vim-polyglot'
