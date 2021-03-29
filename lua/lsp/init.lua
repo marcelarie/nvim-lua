@@ -10,7 +10,7 @@ vim.cmd('set completeopt=menuone,noinsert,noselect')
 --  Avoid showing message extra message when using completion
 vim.cmd("set shortmess+=c")
 vim.cmd(
-    "let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']")
+    "let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']")
 
 vim.cmd('nnoremap <leader>gd <cmd>lua vim.lsp.buf.definition()<CR>')
 vim.cmd('nnoremap <leader>gD <cmd>lua vim.lsp.buf.declaration()<CR>')

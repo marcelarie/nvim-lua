@@ -41,8 +41,14 @@ vim.api.nvim_set_keymap('n', '<Leader>j', ':wincmd j<cr>',
 -- change top window
 vim.api.nvim_set_keymap('n', '<Leader>k', ':wincmd k<cr>',
                         {noremap = true, silent = true})
+-- switch windows vertically
+vim.api.nvim_set_keymap('n', '<Leader>L', ':wincmd L<cr>',
+                        {noremap = true, silent = true})
+-- switch windows horizontally
+vim.api.nvim_set_keymap('n', '<Leader>J', ':wincmd J<cr>',
+                        {noremap = true, silent = true})
 
--- Packer 
+-- Packer
 vim.api.nvim_set_keymap('n', '<Leader>pi', ':PackerInstall<cr>',
                         {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Leader>pu', ':PackerUpdate<cr>',
