@@ -1,57 +1,58 @@
 -- /// BASE ///.
-require('colorscheme')
-require('plugins')
-require('settings')
-require('aliases')
-require('globals')
+require('colorscheme') -- ./lua/colorscheme.lua
+require('plugins') -- ./lua/plugins.lua
+require('settings') -- ./lua/settings.lua
+require('aliases') -- ./lua/aliases.lua
+require('globals') -- ./lua/globals.lua
 
 -- /// REMAPS ///.
-require('leader-remaps')
-require('remaps')
+require('leader-remaps') -- ./lua/leader-remaps.lua
+require('remaps') -- ./lua/remaps.lua
 
 -- /// TREE & EXPLORERS ///.
-require('undo-tree')
-require('netrw')
-require('lualine-config')
-require('tree-keybindings')
--- require('nvim-tree')
+require('undo-tree') -- ./lua/undo-tree/init.lua
+require('netrw') -- ./lua/netrw
+require('lualine-config') -- ./lua/lualine-config
+require('tree-keybindings') -- ./lua/tree-keybindings/init.lua
+-- require('nvim-tree') --./lua/tree-keybindings/init.lua
 -- require('lightline')
 
 -- /// NAVIGATION ///.
-require('telescope')
-require('telescope-keybindings')
-require('dashboard')
-require('quick-scope')
--- require('rnvimr')
+require('telescope') -- ./lua/nv-telescope/init.lua
+require('telescope-keybindings') -- ./lua/telescope-keybindings.lua
+require('dashboard') -- ./lua/dashboard/init.lua
+require('quick-scope') -- ./lua/quick-scope/init.lua
+-- require('rnvimr') --./lua/rnvimr/init.lua
 
 -- /// LS & SYNTAX ///.
--- require('complition-setup')
-require('compe-setup')
-require('treesitter')
-require('lsp')
-require('lsp.lua')
-require('lsp.rust')
-require('lsp.bash')
-require('lsp.json')
-require('lsp.html')
-require('lsp.css')
-require('lsp.php')
-require('lsp.vimls')
-require('lsp.tsserver')
-require('lsp-saga')
-require('formatting')
-require('lsp.formatter')
+-- require('complition-setup') --./lua/complition-setup/init.lua
+require('compe-setup') -- ./lua/compe-setup/init.lua
+require('treesitter') -- ./lua/treesitter/init.lua
+require('lsp') -- ./lua/lsp/
+require('lsp.lua') -- ./lua/lsp/lua.lua
+require('lsp.rust') -- ./lua/lsp/rust.lua
+require('lsp.bash') -- ./lua/lsp/bash.lua
+require('lsp.json') -- ./lua/lsp/json.lua
+require('lsp.html') -- ./lua/lsp/html.lua
+require('lsp.css') -- ./lua/lsp/css.lua
+require('lsp.php') -- ./lua/lsp/php.lua
+require('lsp.vimls') -- ./lua/lsp/vimls.lua
+require('lsp.tsserver') -- ./lua/lsp/tsserver.lua
+require('lsp-saga') -- ./lua/lsp-saga/init.lua
+require('formatting') -- ./lua/formatting.lua
+require('lsp.formatter') -- ./lua/lsp/formatter.lua
 
-require('vimg')
-require('web-devicons')
-require('cheatsh')
-require('colorizer-setup')
--- require('nerd-commenter')
-require('nvim-commenter')
--- require('autopairs') -- (?)
-require('lua-autopairs') -- (?)
-require('ts-autotags')
-require('fugitive')
+-- /// OTHERS ///.
+require('vimg') -- ./lua/vimg/init.lua
+require('web-devicons') -- ./lua/web-devicons/init.lua
+require('cheatsh') -- ./lua/cheatsh/init.lua
+require('colorizer-setup') -- ./lua/colorizer-setup/init.lua
+-- require('nerd-commenter') --./lua/nerd-commenter/init.lua
+require('nvim-commenter') -- ./lua/nvim-commenter/init.lua
+-- require('autopairs') -- (?) --./lua/autopairs/init.lua
+require('lua-autopairs') -- (?) --./lua/lua-autopairs/init.lua
+require('ts-autotags') -- ./lua/ts-autotags/init.lua
+require('fugitive') -- ./lua/fugitive/init.lua
 
 -- /// TODO: ///.
--- try lualine -> vim.cmd('source ~/.config/nvim/vimscript/lualine.vim')
+-- 
