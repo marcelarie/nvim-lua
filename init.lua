@@ -7,14 +7,15 @@ require('globals')
 
 -- /// REMAPS ///.
 require('leader-remaps')
+require('remaps')
 
 -- /// TREE & EXPLORERS ///.
 require('undo-tree')
 require('netrw')
-require('lightline')
+require('lualine-config')
 require('tree-keybindings')
--- require('nerd-tree')
 -- require('nvim-tree')
+-- require('lightline')
 
 -- /// NAVIGATION ///.
 require('telescope')
@@ -24,7 +25,8 @@ require('quick-scope')
 require('rnvimr')
 
 -- /// LS & SYNTAX ///.
-require('complition-setup')
+-- require('complition-setup')
+require('compe-setup')
 require('treesitter')
 require('lsp')
 require('lsp.lua')

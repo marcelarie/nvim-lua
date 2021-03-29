@@ -31,9 +31,11 @@ return require('packer').startup(function()
 
     -- LSP
     use 'neovim/nvim-lsp'
+    use 'onsails/lspkind-nvim'
     use 'neovim/nvim-lspconfig'
-    use 'nvim-lua/completion-nvim'
-    use 'steelsojka/completion-buffers'
+    -- use 'nvim-lua/completion-nvim'
+    -- use 'steelsojka/completion-buffers'
+    use 'hrsh7th/nvim-compe'
     -- use 'mattn/vim-lsp-settings'
     use 'tjdevries/nlua.nvim'
     use 'tjdevries/lsp_extensions.nvim'
@@ -86,10 +88,10 @@ return require('packer').startup(function()
     use 'alvan/vim-closetag'
 
     -- light line
-    use 'itchyny/lightline.vim'
+    -- use 'itchyny/lightline.vim'
 
     -- lua line
-    -- use 'hoob3rt/lualine.nvim'
+    use 'hoob3rt/lualine.nvim'
     -- galaxyline
     -- use 'glepnir/galaxyline.nvim'
 
@@ -118,6 +120,9 @@ return require('packer').startup(function()
     use 'thomasfaingnaert/vim-lsp-snippets'
     use 'mlaursen/vim-react-snippets'
     use 'dsznajder/vscode-es7-javascript-react-snippets'
+    use 'hrsh7th/vim-vsnip'
+    use 'hrsh7th/vim-vsnip-integ'
+    use 'ChristianChiarulli/html-snippets'
     -- use 'thomasfaingnaert/vim-lsp-ultisnips'
 
     -- Change root folder to the one opened with vim

@@ -1,18 +1,3 @@
--- Still on research (?)
-vim.cmd('set spelllang=en,es')
-vim.cmd('set undofile')
-vim.cmd('set undodir=~/.vim/undodir')
-vim.cmd('set backup')
-vim.cmd('set backupdir=~/.vim/backup')
-vim.cmd('set writebackup')
-vim.cmd('set backupcopy=yes')
-vim.cmd('set noshowcmd')
-vim.cmd('set nohlsearch')
-vim.cmd('set incsearch')
-vim.cmd('set nocompatible')
-vim.cmd('set noerrorbells')
-vim.cmd('set noswapfile')
-
 -- Global options
 vim.o.splitbelow = true -- Horizontal splits will automatically be below
 vim.o.splitright = true -- Vertical splits will automatically be to the right
@@ -30,7 +15,6 @@ vim.o.smartcase = true -- Case sensitive search.
 vim.o.scrolloff = 8 -- 8 lines on top/bottom of cursor when scrolling.
 vim.o.timeoutlen = 500 -- Vim will wait for 500 ms after keystroke for the mappings.
 vim.o.updatetime = 300 -- Vim waits 300 ms after you stop before it triggers the plugin.
--- set colorcolumn=80
 
 -- Buffer local options
 
@@ -47,6 +31,23 @@ vim.wo.colorcolumn = "80"
 vim.cmd [[
 au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncSearch', timeout = 300 })
 ]]
+
+vim.api.nvim_set_option('undofile', true)
+-- vim.api.nvim_set_option('undodir', "~/.vim/undodir")
+vim.cmd('set undodir=~/.vim/undodir')
+vim.api.nvim_set_option('backup', true)
+vim.cmd('set backupdir=~/.vim/backup')
+-- vim.api.nvim_set_option('backupdir', "~/.vim/backup")
+vim.api.nvim_set_option('writebackup', true)
+vim.api.nvim_set_option('backupcopy', 'yes')
+
+vim.api.nvim_set_option('spelllang', 'en,es')
+vim.api.nvim_set_option('showcmd', false)
+vim.api.nvim_set_option('hlsearch', false)
+vim.api.nvim_set_option('incsearch', true)
+vim.api.nvim_set_option('compatible', false)
+vim.api.nvim_set_option('errorbells', false)
+vim.api.nvim_set_option('swapfile', false)
 
 vim.cmd([[let g:UltiSnipsExpandTrigger = "<Nop>"]])
 vim.cmd([[let g:UltiSnipsListSnippets = "<Nop>"]])
