@@ -16,5 +16,3 @@ LSP[sumneko_lua][Info] Too large file: language-servers/.... The currently set s
 10. Better auto-import for ts-server
 11. Read this aboyt prettier -> https://jose-elias-alvarez.medium.com/configuring-neovims-lsp-client-for-typescript-development-5789d58ea9c
 
-
-

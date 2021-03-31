@@ -128,10 +128,14 @@ return require('packer').startup(function()
     use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/vim-vsnip-integ'
     use 'ChristianChiarulli/html-snippets'
+    use 'rafamadriz/friendly-snippets'
     -- use 'thomasfaingnaert/vim-lsp-ultisnips'
 
     -- Change root folder to the one opened with vim
     use 'airblade/vim-rooter'
+
+    -- markdown preview
+    use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}
 
     -- welcome dashboard on start
     use 'glepnir/dashboard-nvim'

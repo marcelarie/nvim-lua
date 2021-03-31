@@ -53,6 +53,7 @@ require('nvim-commenter') -- ./lua/nvim-commenter/init.lua
 require('lua-autopairs') -- (?) --./lua/lua-autopairs/init.lua
 require('ts-autotags') -- ./lua/ts-autotags/init.lua
 require('fugitive') -- ./lua/fugitive/init.lua
+require('markdown-preview')
 
 -- /// TODO: ///.
--- 
+--
