@@ -15,7 +15,7 @@ vim.cmd(
 
 vim.cmd('nnoremap <leader>gd <cmd>lua vim.lsp.buf.definition()<CR>')
 vim.cmd('nnoremap <leader>gD <cmd>lua vim.lsp.buf.declaration()<CR>')
-vim.cmd('nnoremap <leader>gr <cmd>lua vim.lsp.buf.references()<CR>')
+-- vim.cmd('nnoremap <leader>gr <cmd>lua vim.lsp.buf.references()<CR>')
 vim.cmd('nnoremap <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>')
 -- Now with LSPSaga
 -- vim.cmd('nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>')

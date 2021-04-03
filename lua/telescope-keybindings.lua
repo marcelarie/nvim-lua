@@ -3,14 +3,31 @@ vim.api.nvim_set_keymap('n', '<Leader>f',
                         {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap('n', '<Leader>rg',
-                        [[<Cmd> lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<cr>]],
+                        [[<Cmd> lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ") })<cr>]],
+                        {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', '<Leader>rw',
+                        [[<Cmd> lua require('telescope.builtin').grep_string({ search = vim.fn.expand("<cword>") })<cr>]],
                         {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap('n', '<Leader>r',
                         [[<Cmd> lua require('telescope.builtin').live_grep()<cr>]],
                         {noremap = true, silent = true})
+
 vim.api.nvim_set_keymap('n', '<Leader>rh',
                         [[<Cmd> lua require('telescope.builtin').help_tags()<cr>]],
+                        {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', '<Leader>kh',
+                        [[<Cmd> lua require('telescope.builtin').keymaps()<cr>]],
+                        {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', '<Leader>em',
+                        [[<Cmd> lua require('telescope.builtin').symbols()<cr>]],
+                        {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', '<Leader>gr',
+                        [[<Cmd> lua require('telescope.builtin').lsp_references()<cr>]],
                         {noremap = true, silent = true})
 
 -- Add these when I learn how to use theme similar to Fugitive
