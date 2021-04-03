@@ -28,6 +28,7 @@ return require('packer').startup(function()
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-media-files.nvim'
     use 'nvim-telescope/telescope-fzy-native.nvim'
+    use 'nvim-telescope/telescope-symbols.nvim'
 
     -- LSP
     use 'neovim/nvim-lsp'
@@ -45,6 +46,7 @@ return require('packer').startup(function()
 
     -- Git
     use 'tpope/vim-fugitive'
+    use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
 
     -- TreeSitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
