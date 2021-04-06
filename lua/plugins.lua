@@ -46,7 +46,7 @@ return require('packer').startup(function()
 
     -- Git
     use 'tpope/vim-fugitive'
-    use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
+    -- use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
 
     -- TreeSitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
@@ -132,6 +132,10 @@ return require('packer').startup(function()
     use 'ChristianChiarulli/html-snippets'
     use 'rafamadriz/friendly-snippets'
     -- use 'thomasfaingnaert/vim-lsp-ultisnips'
+
+    -- JS
+    -- use 'styled-components/vim-styled-components'
+    -- use 'pangloss/vim-javascript'
 
     -- Change root folder to the one opened with vim
     use 'airblade/vim-rooter'
