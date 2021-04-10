@@ -40,6 +40,7 @@ return require('packer').startup(function()
     -- use 'mattn/vim-lsp-settings'
     use 'tjdevries/nlua.nvim'
     use 'tjdevries/lsp_extensions.nvim'
+    use 'kosayoda/nvim-lightbulb'
 
     -- LSP Saga
     use 'glepnir/lspsaga.nvim'
