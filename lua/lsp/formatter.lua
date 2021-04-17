@@ -1,6 +1,6 @@
 -- JavaScript/React/TypeScript (G)
 local prettier = {
-    formatCommand = "./node_modules/.bin/prettier --stdin-filepath ${INPUT}",
+    formatCommand = "./node_modules/.bin/prettier --write --stdin-filepath ${INPUT}",
     formatStdin = true
 }
 
@@ -27,29 +27,26 @@ local markdownPandocFormat = {
 -- SH
 local shfmt = {formatCommand = 'shfmt -ci -s -bn', formatStdin = true}
 
+local lua = {
+    formatCommand = "lua-format -i --no-keep-simple-function-one-line",
+    formatStdin = true
+}
+
 require"lspconfig".efm.setup {
     init_options = {documentFormatting = true},
-    -- "javascriptreact", "javascript","html", "css", "json", "yaml",
     filetypes = {
-        "lua", "python", "sh", "markdown", "javascriptreact", "javascript" --[[
-        "typescript", "typescriptreact", "html", "css", "json", "yaml" ]]
+        "lua", "python", "sh", "markdown", "javascriptreact", "javascript",
+        "typescript", "typescriptreact" -- "html", "css", "json", "yaml"
     },
     settings = {
         rootMarkers = {".git/"},
         languages = {
-            lua = {
-                {
-                    formatCommand = "lua-format -i --no-keep-simple-function-one-line",
-                    formatStdin = true
-                }
-            },
-            javascriptreact = {eslint, prettier},
-            javascript = {eslint, prettier},
+            lua = lua,
+                javascript = {eslint},
+                typescript = {eslint},
+                typescriptreact = {eslint},
+            javascriptreact = {eslint},
             sh = {shfmt},
-            -- html = {prettier_global},
-            -- css = {prettier_global},
-            -- json = {prettier_global},
-            -- yaml = {prettier_global},
             -- markdown = {markdownPandocFormat, markdownlint},
             markdown = {markdownPandocFormat}
         }

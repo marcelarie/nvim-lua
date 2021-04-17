@@ -51,6 +51,9 @@ return require('packer').startup(function()
     -- worktrees
     use 'ThePrimeagen/git-worktree.nvim'
 
+    -- Formater
+    use 'sbdchd/neoformat'
+
     -- TreeSitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'nvim-treesitter/playground'
