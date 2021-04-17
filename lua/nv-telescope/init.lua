@@ -26,4 +26,6 @@ ts.setup {
 
 ts.load_extension('fzy_native')
 ts.load_extension('media_files')
+ts.load_extension('git_worktree')
+
 require'colorizer'.setup()

@@ -48,6 +48,8 @@ return require('packer').startup(function()
     -- Git
     use 'tpope/vim-fugitive'
     -- use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
+    -- worktrees
+    use 'ThePrimeagen/git-worktree.nvim'
 
     -- TreeSitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
@@ -152,6 +154,9 @@ return require('packer').startup(function()
 
     -- Ranger inside vim
     use 'kevinhwang91/rnvimr'
+
+    -- Smooth scrolling
+    use 'karb94/neoscroll.nvim'
 
     -- Maybe later
     -- use 'gennaro-tedesco/nvim-peekup''

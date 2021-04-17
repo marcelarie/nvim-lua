@@ -20,7 +20,7 @@ local eslint = {
 
 -- Markdown
 local markdownPandocFormat = {
-    formatCommand = 'pandoc -f markdown -t gfm -sp --tab-stop=2',
+    formatCommand = 'pandoc -f markdown -t gfm -sp --tab-stop=4',
     formatStdin = true
 }
 
@@ -30,7 +30,10 @@ local shfmt = {formatCommand = 'shfmt -ci -s -bn', formatStdin = true}
 require"lspconfig".efm.setup {
     init_options = {documentFormatting = true},
     -- "javascriptreact", "javascript","html", "css", "json", "yaml",
-    filetypes = {"lua", "python", "sh", "markdown"},
+    filetypes = {
+        "lua", "python", "sh", "markdown", "javascriptreact", "javascript" --[[
+        "typescript", "typescriptreact", "html", "css", "json", "yaml" ]]
+    },
     settings = {
         rootMarkers = {".git/"},
         languages = {
@@ -40,8 +43,8 @@ require"lspconfig".efm.setup {
                     formatStdin = true
                 }
             },
-            -- javascriptreact = {prettier_global},
-            -- javascript = {prettier_global},
+            javascriptreact = {eslint, prettier},
+            javascript = {eslint, prettier},
             sh = {shfmt},
             -- html = {prettier_global},
             -- css = {prettier_global},
