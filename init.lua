@@ -56,6 +56,8 @@ require('fugitive') -- ./lua/fugitive/init.lua
 require('markdown-preview')
 require('neo-scroll') -- ./lua/neo-scroll/init.lua
 require('g-worktree') -- ./lua/g-worktree/init.lua
+require('fterm') -- ./lua/fterm/init.lua
+-- require('shade-windows') -- ./lua/shade-windows/init.lua
 -- require('git-sings')
 
 -- /// TODO: ///.

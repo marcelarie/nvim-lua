@@ -10,6 +10,5 @@ vim.api.nvim_set_keymap('n', '<Up>', ':resize +5<cr>',
 vim.api.nvim_set_keymap('n', '<Down>', ':resize -5<cr>',
                         {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap('n', '<Leader>so',
-                        ':luafile ~/.config/nvim/init.lua<cr>',
+vim.api.nvim_set_keymap('n', '<Leader>so', ':luafile %<cr>',
                         {noremap = true, silent = false})

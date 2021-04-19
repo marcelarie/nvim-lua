@@ -34,7 +34,7 @@ vim.api.nvim_set_keymap('n', '<Leader>sh',
 --                         "<cmd>lua require('lspsaga.provider').preview_definition()<CR>",
 --                         {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap('n', '<Leader>x',
-                        "<cmd>lua require('lspsaga.floaterm').open_float_terminal()<CR>",
-                        {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n', '<Leader>x',
+--                         "<cmd>lua require('lspsaga.floaterm').open_float_terminal()<CR>",
+--                         {noremap = true, silent = true})
 

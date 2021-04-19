@@ -161,6 +161,12 @@ return require('packer').startup(function()
     -- Smooth scrolling
     use 'karb94/neoscroll.nvim'
 
+    -- Dimm inactive windows
+    use 'sunjon/shade.nvim'
+
+    -- Terminal
+    use 'numToStr/FTerm.nvim'
+
     -- Maybe later
     -- use 'gennaro-tedesco/nvim-peekup''
 end)
