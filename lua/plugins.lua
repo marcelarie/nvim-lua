@@ -20,7 +20,8 @@ return require('packer').startup(function()
     use 'lifepillar/vim-gruvbox8'
     use 'phanviet/vim-monokai-pro'
     use 'mhartington/oceanic-next'
-    use 'morhetz/gruvbox'
+    -- use 'morhetz/gruvbox'
+    use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
 
     -- Telescope
     use 'nvim-lua/popup.nvim'
@@ -41,13 +42,14 @@ return require('packer').startup(function()
     use 'tjdevries/nlua.nvim'
     use 'tjdevries/lsp_extensions.nvim'
     use 'kosayoda/nvim-lightbulb'
+    use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
     -- LSP Saga
     use 'glepnir/lspsaga.nvim'
 
     -- Git
     use 'tpope/vim-fugitive'
-    -- use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
+    use 'lewis6991/gitsigns.nvim'
     -- worktrees
     use 'ThePrimeagen/git-worktree.nvim'
 
@@ -118,7 +120,7 @@ return require('packer').startup(function()
     -- Nerdtree
     -- use 'preservim/nerdtree'
 
-    -- nvim tree
+    -- Nvim tree
     use 'kyazdani42/nvim-tree.lua'
 
     -- React TESTING
@@ -137,6 +139,7 @@ return require('packer').startup(function()
     use 'hrsh7th/vim-vsnip-integ'
     use 'ChristianChiarulli/html-snippets'
     use 'rafamadriz/friendly-snippets'
+    use 'folke/lsp-trouble.nvim'
     -- use 'thomasfaingnaert/vim-lsp-ultisnips'
 
     -- JS

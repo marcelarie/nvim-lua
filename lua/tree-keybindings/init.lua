@@ -7,3 +7,4 @@ vim.api.nvim_set_keymap('n', '<Leader>ma', ':set ma<cr>',
 -- vim.cmd('let g:nvim_tree_auto_open = 1')
 -- vim.cmd('let g:nvim_tree_quit_on_open = 1')
 vim.cmd('let g:nvim_tree_hijack_netrw = 0')
+vim.cmd('let g:nvim_tree_width = 35')

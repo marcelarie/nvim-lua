@@ -6,8 +6,9 @@ require('aliases') -- ./lua/aliases.lua
 require('globals') -- ./lua/globals.lua
 
 -- /// REMAPS ///.
-require('leader-remaps') -- ./lua/leader-remaps.lua
-require('remaps') -- ./lua/remaps.lua
+require('leader-remaps') -- ./lua/leader-remaps.lua require('remaps') -- ./lua/remaps.lua
+require('remaps') -- ./lua/leader-remaps.lua require('remaps') -- ./lua/remaps.lua
+-- require('ts-utils-remaps') -- ./lua/ts-utils-remaps.lua
 
 -- /// TREE & EXPLORERS ///.
 require('undo-tree') -- ./lua/undo-tree/init.lua
@@ -41,6 +42,7 @@ require('lsp.tsserver') -- ./lua/lsp/tsserver.lua
 require('lsp-saga') -- ./lua/lsp-saga/init.lua
 require('formatting') -- ./lua/formatting.lua
 require('lsp.formatter') -- ./lua/lsp/formatter.lua
+require('lsp-trouble') -- ./lua/lsp-trouble/init.lua
 
 -- /// OTHERS ///.
 require('vimg') -- ./lua/vimg/init.lua
@@ -58,7 +60,7 @@ require('neo-scroll') -- ./lua/neo-scroll/init.lua
 require('g-worktree') -- ./lua/g-worktree/init.lua
 require('fterm') -- ./lua/fterm/init.lua
 -- require('shade-windows') -- ./lua/shade-windows/init.lua
--- require('git-sings') -- ./lua/git-sings/init.lua
+require('git-sings') -- ./lua/git-sings/init.lua
 
 -- /// TODO: ///.
 --

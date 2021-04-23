@@ -35,7 +35,7 @@ au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncS
 vim.api.nvim_set_option('undofile', true)
 -- vim.api.nvim_set_option('undodir', "~/.vim/undodir")
 vim.cmd('set undodir=~/.vim/undodir')
-vim.api.nvim_set_option('backup', true)
+vim.api.nvim_set_option('backup', false)
 vim.cmd('set backupdir=~/.vim/backup')
 -- vim.api.nvim_set_option('backupdir', "~/.vim/backup")
 vim.api.nvim_set_option('writebackup', true)
