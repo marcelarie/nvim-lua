@@ -30,8 +30,14 @@ vim.api.nvim_set_keymap('n', '<Leader>gr',
                         [[<Cmd> lua require('telescope.builtin').lsp_references()<cr>]],
                         {noremap = true, silent = true})
 
--- Add these when I learn how to use theme similar to Fugitive
--- vim.api.nvim_set_keymap('n', '<Leader>g', [[<Cmd> lua require('telescope.builtin').git_status()<cr>]], {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>se',
+                        [[:lua require('telescope._extensions.session-lens.main').search_session()<cr>]],
+                        {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', '<Leader>gs',
+                        [[<Cmd> lua require('telescope.builtin').git_status()<cr>]],
+                        {noremap = true, silent = true})
+
 vim.api.nvim_set_keymap('n', '<Leader>gb',
                         [[<Cmd> lua require('telescope.builtin').git_branches()<cr>]],
                         {noremap = true, silent = true})

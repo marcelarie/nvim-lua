@@ -52,4 +52,5 @@ ts.setup {
 }
 
 ts.load_extension('fzy_native')
+ts.load_extension('session-lens')
 require'colorizer'.setup()

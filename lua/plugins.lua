@@ -21,7 +21,8 @@ return require('packer').startup(function()
     use 'phanviet/vim-monokai-pro'
     use 'mhartington/oceanic-next'
     -- use 'morhetz/gruvbox'
-    use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+    use "npxbr/gruvbox.nvim"
+    use 'rktjmp/lush.nvim'
 
     -- Telescope
     use 'nvim-lua/popup.nvim'
@@ -43,6 +44,7 @@ return require('packer').startup(function()
     use 'tjdevries/lsp_extensions.nvim'
     use 'kosayoda/nvim-lightbulb'
     use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+    use 'simrat39/symbols-outline.nvim'
 
     -- LSP Saga
     use 'glepnir/lspsaga.nvim'
@@ -169,6 +171,23 @@ return require('packer').startup(function()
 
     -- Terminal
     use 'numToStr/FTerm.nvim'
+
+    -- http calls inside vim
+    use 'nicwest/vim-http'
+
+    -- spellsitter
+    use 'lewis6991/spellsitter.nvim'
+
+    -- autosession
+    use 'rmagatti/auto-session'
+    use 'rmagatti/session-lens' -- < with tree sitter
+
+    -- DONT WORK :(
+    
+    -- note taker
+    -- use 'oberblastmeister/neuron.nvim'
+    -- octo nvim
+    -- use 'pwntester/octo.nvim'
 
     -- Maybe later
     -- use 'gennaro-tedesco/nvim-peekup''

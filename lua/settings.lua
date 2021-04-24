@@ -36,8 +36,7 @@ vim.api.nvim_set_option('undofile', true)
 -- vim.api.nvim_set_option('undodir', "~/.vim/undodir")
 vim.cmd('set undodir=~/.vim/undodir')
 vim.api.nvim_set_option('backup', false)
-vim.cmd('set backupdir=~/.vim/backup')
--- vim.api.nvim_set_option('backupdir', "~/.vim/backup")
+vim.cmd('set backupdir=~/.vim/backup') -- vim.api.nvim_set_option('backupdir', "~/.vim/backup")
 vim.api.nvim_set_option('writebackup', true)
 vim.api.nvim_set_option('backupcopy', 'yes')
 
@@ -51,3 +50,4 @@ vim.api.nvim_set_option('swapfile', false)
 
 vim.cmd([[let g:UltiSnipsExpandTrigger = "<Nop>"]])
 vim.cmd([[let g:UltiSnipsListSnippets = "<Nop>"]])
+
