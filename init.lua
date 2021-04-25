@@ -15,8 +15,6 @@ require('undo-tree') -- ./lua/undo-tree/init.lua
 require('netrw') -- ./lua/netrw
 require('lualine-config') -- ./lua/lualine-config
 require('tree-keybindings') -- ./lua/tree-keybindings/init.lua
--- require('nvim-tree') --./lua/tree-keybindings/init.lua
--- require('lightline')
 
 -- /// NAVIGATION ///.
 require('telescope') -- ./lua/nv-telescope/init.lua

@@ -1,5 +1,5 @@
 -------------------- TREE-SITTER ---------------------------
--- :TSInstall c bash html json css javascript php lua python regex rust typescript query 
+-- :TSInstall c bash html json css javascript php lua python regex rust typescript query
 local ts = require 'nvim-treesitter.configs'
 -- ts.setup {ensure_installed = 'maintained', highlight = {enable = true}}
 
