@@ -36,8 +36,6 @@ return require('packer').startup(function()
     use 'neovim/nvim-lsp'
     use 'onsails/lspkind-nvim'
     use 'neovim/nvim-lspconfig'
-    -- use 'nvim-lua/completion-nvim'
-    -- use 'steelsojka/completion-buffers'
     use 'hrsh7th/nvim-compe'
     -- use 'mattn/vim-lsp-settings'
     use 'tjdevries/nlua.nvim'
@@ -45,6 +43,8 @@ return require('packer').startup(function()
     use 'kosayoda/nvim-lightbulb'
     use 'jose-elias-alvarez/nvim-lsp-ts-utils'
     use 'simrat39/symbols-outline.nvim'
+    -- use 'nvim-lua/completion-nvim'
+    -- use 'steelsojka/completion-buffers'
 
     -- LSP Saga
     use 'glepnir/lspsaga.nvim'
@@ -52,6 +52,7 @@ return require('packer').startup(function()
     -- Git
     use 'tpope/vim-fugitive'
     use 'lewis6991/gitsigns.nvim'
+
     -- worktrees
     use 'ThePrimeagen/git-worktree.nvim'
 
@@ -84,10 +85,9 @@ return require('packer').startup(function()
     use 'windwp/nvim-ts-autotag'
 
     -- Vim Surround
-    use 'tpope/vim-surround'
-
-    -- NERD Commenter
-    -- use 'scrooloose/nerdcommenter'
+    -- use 'tpope/vim-surround'
+    -- Nvim Surround
+    use 'blackCauldron7/surround.nvim'
 
     -- NVIM Commenter
     use "terrortylor/nvim-comment"
@@ -104,9 +104,6 @@ return require('packer').startup(function()
     -- vim closetag
     use 'alvan/vim-closetag'
 
-    -- light line
-    -- use 'itchyny/lightline.vim'
-
     -- lua line
     use 'hoob3rt/lualine.nvim'
     -- galaxyline
@@ -118,9 +115,6 @@ return require('packer').startup(function()
 
     -- Startup time
     use 'tweekmonster/startuptime.vim'
-
-    -- Nerdtree
-    -- use 'preservim/nerdtree'
 
     -- Nvim tree
     use 'kyazdani42/nvim-tree.lua'
@@ -182,8 +176,6 @@ return require('packer').startup(function()
     use 'rmagatti/auto-session'
     use 'rmagatti/session-lens' -- < with tree sitter
 
-    -- DONT WORK :(
-    
     -- note taker
     -- use 'oberblastmeister/neuron.nvim'
     -- octo nvim
