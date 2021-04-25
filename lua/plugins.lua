@@ -85,9 +85,9 @@ return require('packer').startup(function()
     use 'windwp/nvim-ts-autotag'
 
     -- Vim Surround
-    -- use 'tpope/vim-surround'
+    use 'tpope/vim-surround'
     -- Nvim Surround
-    use 'blackCauldron7/surround.nvim'
+    -- use 'blackCauldron7/surround.nvim'
 
     -- NVIM Commenter
     use "terrortylor/nvim-comment"

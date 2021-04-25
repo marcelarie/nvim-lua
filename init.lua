@@ -23,7 +23,7 @@ require('telescope') -- ./lua/nv-telescope/init.lua
 require('telescope-keybindings') -- ./lua/telescope-keybindings.lua
 require('dashboard') -- ./lua/dashboard/init.lua
 require('quick-scope') -- ./lua/quick-scope/init.lua
--- require('rnvimr') --./lua/rnvimr/init.lua
+-- require('surround-lua') -- ./lua/surround-lua/init.lua
 
 -- /// LS & SYNTAX ///.
 -- require('complition-setup') --./lua/complition-setup/init.lua
