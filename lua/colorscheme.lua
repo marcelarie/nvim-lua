@@ -1,4 +1,4 @@
-vim.cmd('colorscheme gruvbox8')
+vim.cmd('colorscheme gruvbox')
 vim.o.termguicolors = true
 vim.o.background = 'dark'
 -- vim.cmd("let g:gruvbox_contrast_dark = 'hard'")

@@ -23,6 +23,7 @@ return require('packer').startup(function()
     -- use 'morhetz/gruvbox'
     use "npxbr/gruvbox.nvim"
     use 'rktjmp/lush.nvim'
+    use 'savq/melange'
 
     -- Telescope
     use 'nvim-lua/popup.nvim'
