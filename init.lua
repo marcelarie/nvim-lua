@@ -60,6 +60,7 @@ require('aliases') -- ./lua/aliases.lua
  require('git-sings') -- ./lua/git-sings/init.lua
  require('spell-sitter') -- ./lua/spell-sitter/init.lua
  require('autosession') -- ./lua/autosession/init.lua
+ require('lir') -- ./lua/lir/init.lua
  -- require('neuron') -- ./lua/neuron/init.lua
  -- require('shade-windows') -- ./lua/shade-windows/init.lua
  -- require('autopairs') -- (?) --./lua/autopairs/init.lua

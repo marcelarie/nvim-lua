@@ -47,10 +47,17 @@ ts.setup {
         fzy_native = {
             override_generic_sorter = false,
             override_file_sorter = true
-        }
+        },
+            bookmarks = {
+      -- Available: 'brave', 'google_chrome', 'safari', 'firefox', 'firefox_dev'
+      selected_browser = 'brave',
+      url_open_command = 'open',
+      firefox_profile_name = nil,
+    },
     }
 }
 
 ts.load_extension('fzy_native')
 ts.load_extension('session-lens')
+ts.load_extension('bookmarks')
 require'colorizer'.setup()

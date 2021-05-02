@@ -32,6 +32,7 @@ return require('packer').startup(function()
     use 'nvim-telescope/telescope-media-files.nvim'
     use 'nvim-telescope/telescope-fzy-native.nvim'
     use 'nvim-telescope/telescope-symbols.nvim'
+    use 'dhruvmanila/telescope-bookmarks.nvim'
 
     -- LSP
     use 'neovim/nvim-lsp'
@@ -176,6 +177,9 @@ return require('packer').startup(function()
     -- autosession
     use 'rmagatti/auto-session'
     use 'rmagatti/session-lens' -- < with tree sitter
+
+    -- file explorer lir
+    use 'tamago324/lir.nvim'
 
     -- note taker
     -- use 'oberblastmeister/neuron.nvim'

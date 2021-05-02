@@ -34,6 +34,10 @@ vim.api.nvim_set_keymap('n', '<Leader>se',
                         [[:lua require('telescope._extensions.session-lens.main').search_session()<cr>]],
                         {noremap = true, silent = true})
 
+vim.api.nvim_set_keymap('n', '<Leader>b',
+                        [[:lua require('telescope').extensions.bookmarks.bookmarks(opts)<cr> ]],
+                        {noremap = true, silent = true})
+
 vim.api.nvim_set_keymap('n', '<Leader>gs',
                         [[<Cmd> lua require('telescope.builtin').git_status()<cr>]],
                         {noremap = true, silent = true})
