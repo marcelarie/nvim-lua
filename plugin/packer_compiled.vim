@@ -135,6 +135,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim"
   },
+  melange = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/melange"
+  },
   neoformat = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/neoformat"
@@ -142,10 +146,6 @@ _G.packer_plugins = {
   ["neoscroll.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/neoscroll.nvim"
-  },
-  ["neuron.nvim"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/neuron.nvim"
   },
   ["nlua.nvim"] = {
     loaded = true,
@@ -210,10 +210,6 @@ _G.packer_plugins = {
   ["oceanic-next"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/oceanic-next"
-  },
-  ["octo.nvim"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/octo.nvim"
   },
   ["packer.nvim"] = {
     loaded = false,
