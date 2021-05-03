@@ -38,6 +38,7 @@ vim.cmd('set undofile')
 vim.cmd('set undodir=~/.vim/undodir')
 vim.cmd('set undolevels=1000')
 vim.cmd('set undoreload=10000')
+vim.cmd('set noswapfile')
 
 vim.api.nvim_set_option('spelllang', 'en,es')
 vim.api.nvim_set_option('showcmd', false)

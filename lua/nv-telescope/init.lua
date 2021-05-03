@@ -48,16 +48,25 @@ ts.setup {
             override_generic_sorter = false,
             override_file_sorter = true
         },
-            bookmarks = {
-      -- Available: 'brave', 'google_chrome', 'safari', 'firefox', 'firefox_dev'
-      selected_browser = 'brave',
-      url_open_command = 'open',
-      firefox_profile_name = nil,
-    },
+        bookmarks = {
+            -- Available: 'brave', 'google_chrome', 'safari', 'firefox', 'firefox_dev'
+            selected_browser = 'brave',
+            url_open_command = 'open',
+            firefox_profile_name = nil
+        },
+        media_files = {
+            -- filetypes whitelist
+            -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+            filetypes = {"png", "webp", "jpg", "jpeg"},
+            find_cmd = "rg" -- find command (defaults to `fd`)
+        }
     }
 }
 
 ts.load_extension('fzy_native')
 ts.load_extension('session-lens')
 ts.load_extension('bookmarks')
+ts.load_extension('media_files')
+ts.load_extension('node_modules')
+ts.load_extension('gh')
 require'colorizer'.setup()

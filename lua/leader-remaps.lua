@@ -50,12 +50,12 @@ vim.api.nvim_set_keymap('n', '<Leader>J', ':wincmd J<cr>',
 
 -- Packer
 vim.api.nvim_set_keymap('n', '<Leader>pi', ':PackerInstall<cr>',
-                        {noremap = true, silent = true})
+                        {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<Leader>pu', ':PackerUpdate<cr>',
-                        {noremap = true, silent = true})
+                        {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<Leader>pc', ':PackerClean<cr>',
-                        {noremap = true, silent = true})
+                        {noremap = true, silent = false})
 
 -- ; for :
-vim.api.nvim_set_keymap('n', ';', ':', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', ':', ';', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', ';', ':', {noremap = true, silent = false})
+vim.api.nvim_set_keymap('n', ':', ';', {noremap = true, silent = false})

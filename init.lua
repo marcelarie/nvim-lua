@@ -5,12 +5,12 @@ require('settings') -- ./lua/settings.lua
 require('aliases') -- ./lua/aliases.lua
 -- require('globals') -- ./lua/globals.lua
 
- 
+
  -- /// REMAPS ///.
  require('leader-remaps') -- ./lua/remaps.lua
  require('remaps') -- ./lua/remaps.lua
  -- require('ts-utils-remaps') -- ./lua/ts-utils-remaps.lua
- 
+
  -- /// TREE & EXPLORERS ///.
  require('undo-tree') -- ./lua/undo-tree/init.lua
  require('netrw') -- ./lua/netrw

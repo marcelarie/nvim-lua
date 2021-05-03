@@ -9,7 +9,6 @@ vim.api.nvim_set_keymap('n', '<Leader>rg',
 vim.api.nvim_set_keymap('n', '<Leader>rw',
                         [[<Cmd> lua require('telescope.builtin').grep_string({ search = vim.fn.expand("<cword>") })<cr>]],
                         {noremap = true, silent = true})
-
 vim.api.nvim_set_keymap('n', '<Leader>r',
                         [[<Cmd> lua require('telescope.builtin').live_grep()<cr>]],
                         {noremap = true, silent = true})
@@ -45,3 +44,10 @@ vim.api.nvim_set_keymap('n', '<Leader>gs',
 vim.api.nvim_set_keymap('n', '<Leader>gb',
                         [[<Cmd> lua require('telescope.builtin').git_branches()<cr>]],
                         {noremap = true, silent = true})
+
+-- git cli 
+-- "Using lua function
+-- lua require('telescope').extensions.gh.issues()<cr>
+-- lua require('telescope').extensions.gh.pull_request()<cr>
+-- lua require('telescope').extensions.gh.gist()<cr>
+-- lua require('telescope').extensions.gh.run()<cr>
