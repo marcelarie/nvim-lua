@@ -24,6 +24,8 @@ return require('packer').startup(function()
     use "npxbr/gruvbox.nvim"
     use 'rktjmp/lush.nvim'
     use 'savq/melange'
+    use 'ishan9299/modus-theme-vim'
+    use 'ishan9299/nvim-solarized-lua'
 
     -- Telescope
     use 'nvim-lua/popup.nvim'
@@ -183,10 +185,19 @@ return require('packer').startup(function()
     -- file explorer lir
     use 'tamago324/lir.nvim'
 
+    -- color picker
+    use 'KabbAmine/vCoolor.vim'
+    -- hex rgba toggle
+    use 'jakerobers/vim-hexrgba'
+    -- color converter
+    use 'amadeus/vim-convert-color-to'
+    -- numbers
+    use 'nacro90/numb.nvim'
+
     -- note taker
-    -- use 'oberblastmeister/neuron.nvim'
+    use {'oberblastmeister/neuron.nvim', branch = 'unstable'}
     -- octo nvim
-    -- use 'pwntester/octo.nvim'
+    use 'pwntester/octo.nvim'
 
     -- Maybe later
     -- use 'gennaro-tedesco/nvim-peekup''

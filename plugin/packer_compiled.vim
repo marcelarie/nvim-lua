@@ -107,6 +107,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/html-snippets"
   },
+  ["lir.nvim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/lir.nvim"
+  },
   ["lsp-trouble.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/lsp-trouble.nvim"
@@ -256,13 +260,25 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim"
   },
+  ["telescope-bookmarks.nvim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/telescope-bookmarks.nvim"
+  },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
   },
+  ["telescope-github.nvim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/telescope-github.nvim"
+  },
   ["telescope-media-files.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim"
+  },
+  ["telescope-node-modules.nvim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/telescope-node-modules.nvim"
   },
   ["telescope-symbols.nvim"] = {
     loaded = true,

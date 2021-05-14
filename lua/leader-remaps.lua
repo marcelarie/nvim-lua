@@ -30,17 +30,17 @@ vim.api.nvim_set_keymap('n', '<Leader>gf', ':vertical wincmd f<cr>',
                         {noremap = true, silent = true})
 
 -- change left window
-vim.api.nvim_set_keymap('n', '<Leader>h', ':wincmd h<cr>',
-                        {noremap = true, silent = true})
--- change right window
-vim.api.nvim_set_keymap('n', '<Leader>l', ':wincmd l<cr>',
-                        {noremap = true, silent = true})
--- change bottom window
-vim.api.nvim_set_keymap('n', '<Leader>j', ':wincmd j<cr>',
-                        {noremap = true, silent = true})
--- change top window
-vim.api.nvim_set_keymap('n', '<Leader>k', ':wincmd k<cr>',
-                        {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n', '<Leader>h', ':wincmd h<cr>',
+--                         {noremap = true, silent = true})
+-- -- change right window
+-- vim.api.nvim_set_keymap('n', '<Leader>l', ':wincmd l<cr>',
+--                         {noremap = true, silent = true})
+-- -- change bottom window
+-- vim.api.nvim_set_keymap('n', '<Leader>j', ':wincmd j<cr>',
+--                         {noremap = true, silent = true})
+-- -- change top window
+-- vim.api.nvim_set_keymap('n', '<Leader>k', ':wincmd k<cr>',
+--                         {noremap = true, silent = true})
 -- switch windows vertically
 vim.api.nvim_set_keymap('n', '<Leader>L', ':wincmd L<cr>',
                         {noremap = true, silent = true})

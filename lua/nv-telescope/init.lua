@@ -27,7 +27,9 @@ ts.setup {
             horizontal = {mirror = false},
             vertical = {mirror = false}
         },
-        file_ignore_patterns = {},
+        file_ignore_patterns = {
+            'node_modules/.*', '%package.json', '%package-lock.json'
+        },
         generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
         shorten_path = true,
         winblend = 0,
