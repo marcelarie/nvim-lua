@@ -2,7 +2,8 @@
 require('colorscheme') -- ./lua/colorscheme.lua
 require('plugins') -- ./lua/plugins.lua
 require('settings') -- ./lua/settings.lua
-require('aliases') -- ./lua/aliases.lua require('globals') -- ./lua/globals.lua
+require('aliases') -- ./lua/aliases.lua
+require('globals') -- ./lua/globals.lua
 
 -- /// REMAPS ///.
 require('leader-remaps') -- ./lua/remaps.lua
