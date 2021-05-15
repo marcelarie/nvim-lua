@@ -4,6 +4,8 @@ require('plugins') -- ./lua/plugins.lua
 require('settings') -- ./lua/settings.lua
 require('aliases') -- ./lua/aliases.lua
 require('globals') -- ./lua/globals.lua
+-- require('utils') -- ./lua/utils/init.lua
+require('autocommands') -- ./lua/autocommands.lua
 
 -- /// REMAPS ///.
 require('leader-remaps') -- ./lua/remaps.lua
