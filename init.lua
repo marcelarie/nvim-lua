@@ -43,6 +43,7 @@ require('lsp-saga') -- ./lua/lsp-saga/init.lua
 require('formatting') -- ./lua/formatting.lua
 require('lsp.formatter') -- ./lua/lsp/formatter.lua
 require('lsp-trouble') -- ./lua/lsp-trouble/init.lua
+require('lsp-trouble-keybindings') -- ./lua/lsp-trouble-keybindings.lua
 require('symbols-outline') -- ./lua/symbols/init.lua
 
 -- /// OTHERS ///.
@@ -53,7 +54,9 @@ require('colorizer-setup') -- ./lua/colorizer-setup/init.lua
 require('nvim-commenter') -- ./lua/nvim-commenter/init.lua
 require('lua-autopairs') -- (?) --./lua/lua-autopairs/init.lua
 require('ts-autotags') -- ./lua/ts-autotags/init.lua
-require('fugitive') -- ./lua/fugitive/init.lua
+require('git-related') -- ./lua/git-related/init.lua
+-- require('neo-git') -- ./lua/neo-git/init.lua
+-- require('diff-view') -- ./lua/diff-view/init.lua
 require('markdown-preview')
 require('neo-scroll') -- ./lua/neo-scroll/init.lua
 require('g-worktree') -- ./lua/g-worktree/init.lua

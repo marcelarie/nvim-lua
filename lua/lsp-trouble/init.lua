@@ -1,7 +1,7 @@
 local trouble = require 'trouble'
 
 trouble.setup {
-    height = 10, -- height of the trouble list
+    height = 15, -- height of the trouble list
     icons = true, -- use dev-icons for filenames
     mode = "workspace", -- "workspace" or "document"
     fold_open = "", -- icon used for open folds
@@ -33,4 +33,3 @@ trouble.setup {
     use_lsp_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
 }
 
--- vim.api.nvim_set_keymap('n', '<Leader>di', ':LspTroubleToggle<cr>', {silent = 'true', nnoremap = 'true'})

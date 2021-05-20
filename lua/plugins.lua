@@ -58,6 +58,8 @@ return require('packer').startup(function()
     -- Git
     use 'tpope/vim-fugitive'
     use 'lewis6991/gitsigns.nvim'
+    -- use 'TimUntersberger/neogit'
+    -- use 'sindrets/diffview.nvim'
 
     -- worktrees
     use 'ThePrimeagen/git-worktree.nvim'
@@ -147,6 +149,7 @@ return require('packer').startup(function()
     -- JS
     -- use 'styled-components/vim-styled-components'
     -- use 'pangloss/vim-javascript'
+    -- use 'styled-components/vscode-styled-components'
 
     -- Change root folder to the one opened with vim
     use 'airblade/vim-rooter'
