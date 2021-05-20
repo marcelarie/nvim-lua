@@ -64,7 +64,7 @@ require('fterm') -- ./lua/fterm/init.lua
 require('git-sings') -- ./lua/git-sings/init.lua
 require('spell-sitter') -- ./lua/spell-sitter/init.lua
 require('autosession') -- ./lua/autosession/init.lua
-require('lir') -- ./lua/lir/init.lua
+-- require('lir') -- ./lua/lir/init.lua
 require('numb-nvim') -- ./lua/numb-nvim/init.lua
 require('octo') -- ./lua/octo/init.lua
 -- require('neuron-nvim') -- ./lua/neuron-nvim/init.lua

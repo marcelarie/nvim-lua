@@ -186,7 +186,7 @@ return require('packer').startup(function()
     use 'rmagatti/session-lens' -- < with tree sitter
 
     -- file explorer lir
-    use 'tamago324/lir.nvim'
+    -- use 'tamago324/lir.nvim'
 
     -- color picker
     use 'KabbAmine/vCoolor.vim'
