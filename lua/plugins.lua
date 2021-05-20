@@ -167,7 +167,7 @@ return require('packer').startup(function()
     use 'kevinhwang91/rnvimr'
 
     -- Smooth scrolling
-    use 'karb94/neoscroll.nvim'
+    -- use 'karb94/neoscroll.nvim'
 
     -- Dimm inactive windows
     use 'sunjon/shade.nvim'

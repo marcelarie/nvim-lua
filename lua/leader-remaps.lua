@@ -30,8 +30,8 @@ vim.api.nvim_set_keymap('n', '<Leader>s', ':split<cr>',
 vim.api.nvim_set_keymap('n', '<Leader>ss', ':vsplit<cr>',
                         {noremap = true, silent = true})
 -- open file path under cursor vertical split
-vim.api.nvim_set_keymap('n', '<Leader>gf', ':vertical wincmd f<cr>',
-                        {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n', '<Leader>gf', ':vertical wincmd f<cr>',
+--                         {noremap = true, silent = true})
 
 -- change left window
 -- vim.api.nvim_set_keymap('n', '<Leader>h', ':wincmd h<cr>',

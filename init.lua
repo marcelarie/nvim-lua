@@ -27,7 +27,7 @@ require('quick-scope') -- ./lua/quick-scope/init.lua
 
 -- /// LS & SYNTAX ///.
 -- require('complition-setup') --./lua/complition-setup/init.lua
-require('compe-setup') -- ./lua/compe-setup/init.lua
+-- require('compe-setup') -- ./lua/compe-setup/init.lua
 require('treesitter') -- ./lua/treesitter/init.lua
 require('lsp') -- ./lua/lsp/
 require('lsp.lua') -- ./lua/lsp/lua.lua
@@ -53,12 +53,12 @@ require('cheatsh') -- ./lua/cheatsh/init.lua
 require('colorizer-setup') -- ./lua/colorizer-setup/init.lua
 require('nvim-commenter') -- ./lua/nvim-commenter/init.lua
 require('lua-autopairs') -- (?) --./lua/lua-autopairs/init.lua
-require('ts-autotags') -- ./lua/ts-autotags/init.lua
+-- require('ts-autotags') -- ./lua/ts-autotags/init.lua
 require('git-related') -- ./lua/git-related/init.lua
 -- require('neo-git') -- ./lua/neo-git/init.lua
 -- require('diff-view') -- ./lua/diff-view/init.lua
-require('markdown-preview')
-require('neo-scroll') -- ./lua/neo-scroll/init.lua
+require('markdown-preview') -- ./lua/markdown-preview/init.lua
+-- require('neo-scroll') -- ./lua/neo-scroll/init.lua
 require('g-worktree') -- ./lua/g-worktree/init.lua
 require('fterm') -- ./lua/fterm/init.lua
 require('git-sings') -- ./lua/git-sings/init.lua
