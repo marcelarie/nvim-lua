@@ -27,7 +27,7 @@ require('quick-scope') -- ./lua/quick-scope/init.lua
 
 -- /// LS & SYNTAX ///.
 -- require('complition-setup') --./lua/complition-setup/init.lua
--- require('compe-setup') -- ./lua/compe-setup/init.lua
+require('compe-setup') -- ./lua/compe-setup/init.lua
 require('treesitter') -- ./lua/treesitter/init.lua
 require('lsp') -- ./lua/lsp/
 require('lsp.lua') -- ./lua/lsp/lua.lua
@@ -39,6 +39,7 @@ require('lsp.css') -- ./lua/lsp/css.lua
 require('lsp.php') -- ./lua/lsp/php.lua
 require('lsp.vimls') -- ./lua/lsp/vimls.lua
 require('lsp.tsserver') -- ./lua/lsp/tsserver.lua
+require('lsp.latex') -- ./lua/lsp/latex.lua
 require('lsp-saga') -- ./lua/lsp-saga/init.lua
 require('formatting') -- ./lua/formatting.lua
 require('lsp.formatter') -- ./lua/lsp/formatter.lua
@@ -67,6 +68,7 @@ require('autosession') -- ./lua/autosession/init.lua
 -- require('lir') -- ./lua/lir/init.lua
 require('numb-nvim') -- ./lua/numb-nvim/init.lua
 require('octo') -- ./lua/octo/init.lua
+require('vimtex') -- ./lua/vimtex/init.lua
 -- require('neuron-nvim') -- ./lua/neuron-nvim/init.lua
 -- require('shade-windows') -- ./lua/shade-windows/init.lua
 -- require('autopairs') -- (?) --./lua/autopairs/init.lua

@@ -202,6 +202,11 @@ return require('packer').startup(function()
     -- octo nvim
     use 'pwntester/octo.nvim'
 
+    -- Latex
+    use 'lervag/vimtex'
+
+
+
     -- Maybe later
     -- use 'gennaro-tedesco/nvim-peekup''
 end)
