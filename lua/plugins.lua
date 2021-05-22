@@ -113,9 +113,10 @@ return require('packer').startup(function()
     use 'alvan/vim-closetag'
 
     -- lua line
-    use 'hoob3rt/lualine.nvim'
+    -- use 'hoob3rt/lualine.nvim'
     -- galaxyline
     -- use 'glepnir/galaxyline.nvim'
+    use 'famiu/feline.nvim'
 
     -- nvim web devicons
     use 'kyazdani42/nvim-web-devicons'
@@ -205,7 +206,11 @@ return require('packer').startup(function()
     -- Latex
     use 'lervag/vimtex'
 
+    -- registers
+    use "tversteeg/registers.nvim"
 
+    -- restart/reload nvim
+    use 'famiu/nvim-reload'
 
     -- Maybe later
     -- use 'gennaro-tedesco/nvim-peekup''

@@ -17,3 +17,4 @@ vim.cmd([[autocmd BufWritePost *.sass silent! Neoformat]]);
 vim.cmd([[autocmd BufWritePost *.yaml silent! Neoformat]]);
 vim.cmd([[autocmd BufWritePost *.md silent! Neoformat]]);
 vim.cmd([[autocmd BufWritePost *.rs silent! Neoformat]]);
+vim.cmd([[autocmd BufWritePost *.tex silent! Neoformat]]);

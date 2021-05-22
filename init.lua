@@ -15,7 +15,8 @@ require('remaps') -- ./lua/remaps.lua
 -- /// TREE & EXPLORERS ///.
 require('undo-tree') -- ./lua/undo-tree/init.lua
 require('netrw') -- ./lua/netrw
-require('lualine-config') -- ./lua/lualine-config
+-- require('lualine-config') -- ./lua/lualine-config
+require('feline-status') -- ./lua/feline-status/init.lua
 require('tree-keybindings') -- ./lua/tree-keybindings/init.lua
 
 -- /// NAVIGATION ///.
