@@ -1,3 +1,4 @@
+-- sudo pacman -S texlab
 require'lspconfig'.texlab.setup {
     cmd = {"texlab"},
     filetypes = {"tex", "bib"},

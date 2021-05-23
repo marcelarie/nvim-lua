@@ -9,4 +9,5 @@ local opts = {noremap = true, silent = true}
 
 -- Closer to the metal
 map('n', '<Leader>x', '<CMD>lua require("FTerm").toggle()<CR>', opts)
+map('t', '<Leader>x', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
 

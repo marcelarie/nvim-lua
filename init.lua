@@ -41,6 +41,7 @@ require('lsp.php') -- ./lua/lsp/php.lua
 require('lsp.vimls') -- ./lua/lsp/vimls.lua
 require('lsp.tsserver') -- ./lua/lsp/tsserver.lua
 require('lsp.latex') -- ./lua/lsp/latex.lua
+-- require('lsp.deno') -- ./lua/lsp/deno.lua <- not now
 require('lsp-saga') -- ./lua/lsp-saga/init.lua
 require('formatting') -- ./lua/formatting.lua
 require('lsp.formatter') -- ./lua/lsp/formatter.lua
