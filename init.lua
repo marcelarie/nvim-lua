@@ -64,6 +64,7 @@ require('markdown-preview') -- ./lua/markdown-preview/init.lua
 -- require('neo-scroll') -- ./lua/neo-scroll/init.lua
 require('g-worktree') -- ./lua/g-worktree/init.lua
 require('fterm') -- ./lua/fterm/init.lua
+-- require('toggleterm') -- ./lua/toggleterm/init.lua
 require('git-sings') -- ./lua/git-sings/init.lua
 require('spell-sitter') -- ./lua/spell-sitter/init.lua
 require('autosession') -- ./lua/autosession/init.lua

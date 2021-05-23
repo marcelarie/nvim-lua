@@ -175,6 +175,7 @@ return require('packer').startup(function()
 
     -- Terminal
     use 'numToStr/FTerm.nvim'
+    -- use "akinsho/nvim-toggleterm.lua"
 
     -- http calls inside vim
     use 'nicwest/vim-http'
