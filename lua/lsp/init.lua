@@ -21,9 +21,18 @@ vim.cmd('nnoremap <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>')
 -- Till LSPSaga works
 -- vim.cmd('nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>')
 -- vim.cmd('nnoremap <leader>a <cmd>lua vim.lsp.buf.code_action()<CR>')
-vim.cmd('nnoremap <silent>K <cmd>lua vim.lsp.buf.hover()<CR>')
--- vim.cmd('nnoremap <silent>: <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
--- vim.cmd([[nnoremap <silent>" <cmd>lua vim.lsp.diagnostic.goto_next()<CR>]])
+
+vim.api.nvim_set_keymap('n', 'K', "<cmd>lua vim.lsp.buf.hover()<cr>",
+                        {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', '<Leader>z',
+                        "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>",
+                        {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '[', "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+                        {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', ']', "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>",
+                        {noremap = true, silent = true})
 
 -- enable diagnostics color
 vim.cmd(

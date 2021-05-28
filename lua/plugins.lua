@@ -22,6 +22,7 @@ return require('packer').startup(function()
     use 'mhartington/oceanic-next'
     -- use 'morhetz/gruvbox'
     use "npxbr/gruvbox.nvim"
+    use "eddyekofo94/gruvbox-flat.nvim"
     use 'rktjmp/lush.nvim'
     use 'savq/melange'
     use 'ishan9299/modus-theme-vim'
