@@ -1,6 +1,7 @@
 local saga = require 'lspsaga'
 
-saga.init_lsp_saga()
+saga.init_lsp_saga {rename_prompt_prefix = '➤'}
+
 -- // KEYBINDINGS //.
 vim.api.nvim_set_keymap('n', '<Leader>rn',
                         "<cmd>lua require('lspsaga.rename').rename()<CR>",

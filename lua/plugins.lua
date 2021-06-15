@@ -82,6 +82,8 @@ return require('packer').startup(function()
 
     -- Cheat Sheet
     use 'dbeniamine/cheat.sh-vim'
+    use 'tami5/sql.nvim' -- ↴
+    use 'nvim-telescope/telescope-cheat.nvim'
 
     -- Colorizer
     use 'norcalli/nvim-colorizer.lua'
@@ -154,7 +156,7 @@ return require('packer').startup(function()
     -- use 'styled-components/vscode-styled-components'
 
     -- Change root folder to the one opened with vim
-    use 'airblade/vim-rooter'
+    -- use 'airblade/vim-rooter'
 
     -- markdown preview
     use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}
@@ -182,7 +184,7 @@ return require('packer').startup(function()
     use 'nicwest/vim-http'
 
     -- spellsitter
-    use 'lewis6991/spellsitter.nvim'
+    -- use 'lewis6991/spellsitter.nvim'
 
     -- autosession
     use 'rmagatti/auto-session'
@@ -213,6 +215,12 @@ return require('packer').startup(function()
 
     -- restart/reload nvim
     use 'famiu/nvim-reload'
+
+    -- true zen
+    use "Pocco81/TrueZen.nvim"
+
+    -- ascii graphs
+    use 'jbyuki/venn.nvim'
 
     -- Maybe later
     -- use 'gennaro-tedesco/nvim-peekup''

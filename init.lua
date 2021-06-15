@@ -20,7 +20,7 @@ require('feline-status') -- ./lua/feline-status/init.lua
 require('tree-keybindings') -- ./lua/tree-keybindings/init.lua
 
 -- /// NAVIGATION ///.
-require('telescope') -- ./lua/nv-telescope/init.lua
+require('nv-telescope') -- ./lua/nv-telescope/init.lua
 require('telescope-keybindings') -- ./lua/telescope-keybindings.lua
 require('dashboard') -- ./lua/dashboard/init.lua
 require('quick-scope') -- ./lua/quick-scope/init.lua
@@ -66,12 +66,13 @@ require('g-worktree') -- ./lua/g-worktree/init.lua
 require('fterm') -- ./lua/fterm/init.lua
 -- require('toggleterm') -- ./lua/toggleterm/init.lua
 require('git-sings') -- ./lua/git-sings/init.lua
-require('spell-sitter') -- ./lua/spell-sitter/init.lua
+-- require('spell-sitter') -- ./lua/spell-sitter/init.lua
 require('autosession') -- ./lua/autosession/init.lua
 -- require('lir') -- ./lua/lir/init.lua
 require('numb-nvim') -- ./lua/numb-nvim/init.lua
 require('octo') -- ./lua/octo/init.lua
 require('vimtex') -- ./lua/vimtex/init.lua
+require('t-zen') -- ./lua/t-zen/init.lua
 -- require('neuron-nvim') -- ./lua/neuron-nvim/init.lua
 -- require('shade-windows') -- ./lua/shade-windows/init.lua
 -- require('autopairs') -- (?) --./lua/autopairs/init.lua

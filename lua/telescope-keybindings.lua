@@ -45,6 +45,10 @@ vim.api.nvim_set_keymap('n', '<Leader>gb',
                         [[<Cmd> lua require('telescope.builtin').git_branches()<cr>]],
                         {noremap = true, silent = true})
 
+vim.api.nvim_set_keymap('n', '<Leader>ch',
+                        [[<Cmd> Telescope cheat fcope cheat fd <cr>]],
+                        {noremap = true, silent = true})
+
 -- git cli 
 -- "Using lua function
 -- lua require('telescope').extensions.gh.issues()<cr>
