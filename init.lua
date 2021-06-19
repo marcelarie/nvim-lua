@@ -41,6 +41,11 @@ require('lsp.php') -- ./lua/lsp/php.lua
 require('lsp.vimls') -- ./lua/lsp/vimls.lua
 require('lsp.tsserver') -- ./lua/lsp/tsserver.lua
 require('lsp.latex') -- ./lua/lsp/latex.lua
+require('lsp.docker') -- ./lua/lsp/docker.lua
+require('lsp.sql') -- ./lua/lsp/sql.lua
+require('lsp.stylelint') -- ./lua/lsp/stylelint.lua
+require('lsp.yaml') -- ./lua/lsp/yaml.lua
+require('lsp.znote') -- ./lua/lsp/znote.lua
 -- require('lsp.deno') -- ./lua/lsp/deno.lua <- not now
 require('lsp-saga') -- ./lua/lsp-saga/init.lua
 require('formatting') -- ./lua/formatting.lua
@@ -63,7 +68,8 @@ require('git-related') -- ./lua/git-related/init.lua
 require('markdown-preview') -- ./lua/markdown-preview/init.lua
 -- require('neo-scroll') -- ./lua/neo-scroll/init.lua
 require('g-worktree') -- ./lua/g-worktree/init.lua
-require('fterm') -- ./lua/fterm/init.lua
+-- require('fterm') -- ./lua/fterm/init.lua
+require('prime-harpoon') -- ./lua/prime-harpoon/init.lua
 -- require('toggleterm') -- ./lua/toggleterm/init.lua
 require('git-sings') -- ./lua/git-sings/init.lua
 -- require('spell-sitter') -- ./lua/spell-sitter/init.lua
@@ -73,6 +79,7 @@ require('numb-nvim') -- ./lua/numb-nvim/init.lua
 require('octo') -- ./lua/octo/init.lua
 require('vimtex') -- ./lua/vimtex/init.lua
 require('t-zen') -- ./lua/t-zen/init.lua
+require('todo-finder') -- ./lua/todo-finder/init.lua
 -- require('neuron-nvim') -- ./lua/neuron-nvim/init.lua
 -- require('shade-windows') -- ./lua/shade-windows/init.lua
 -- require('autopairs') -- (?) --./lua/autopairs/init.lua

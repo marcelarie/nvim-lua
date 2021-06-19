@@ -38,6 +38,8 @@ return require('packer').startup(function()
     use 'nvim-telescope/telescope-node-modules.nvim'
     use 'dhruvmanila/telescope-bookmarks.nvim'
     use 'nvim-telescope/telescope-github.nvim'
+    use 'tami5/sql.nvim' -- ↴
+    use 'marcelarie/telescope-cheat.nvim'
 
     -- LSP
     use 'neovim/nvim-lsp'
@@ -82,8 +84,6 @@ return require('packer').startup(function()
 
     -- Cheat Sheet
     use 'dbeniamine/cheat.sh-vim'
-    use 'tami5/sql.nvim' -- ↴
-    use 'nvim-telescope/telescope-cheat.nvim'
 
     -- Colorizer
     use 'norcalli/nvim-colorizer.lua'
@@ -156,7 +156,7 @@ return require('packer').startup(function()
     -- use 'styled-components/vscode-styled-components'
 
     -- Change root folder to the one opened with vim
-    -- use 'airblade/vim-rooter'
+    use 'airblade/vim-rooter'
 
     -- markdown preview
     use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}
@@ -177,7 +177,7 @@ return require('packer').startup(function()
     use 'sunjon/shade.nvim'
 
     -- Terminal
-    use 'numToStr/FTerm.nvim'
+    -- use 'numToStr/FTerm.nvim'
     -- use "akinsho/nvim-toggleterm.lua"
 
     -- http calls inside vim
@@ -221,6 +221,15 @@ return require('packer').startup(function()
 
     -- ascii graphs
     use 'jbyuki/venn.nvim'
+
+    -- http rest
+    use 'NTBBloodbath/rest.nvim'
+
+    -- harpoon
+    use 'ThePrimeagen/harpoon'
+
+    -- TODO finder
+    use 'folke/todo-comments.nvim'
 
     -- Maybe later
     -- use 'gennaro-tedesco/nvim-peekup''

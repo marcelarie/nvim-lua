@@ -72,4 +72,13 @@ ts.load_extension('media_files')
 ts.load_extension('node_modules')
 ts.load_extension('cheat')
 ts.load_extension('gh')
+
+local M = {}
+M.search_dotfiles = function()
+    require("telescope.builtin").find_files(
+        {prompt_title = "< VimRC >", cwd = "$HOME/"})
+end
+
 require'colorizer'.setup()
+
+return M

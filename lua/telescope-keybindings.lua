@@ -45,9 +45,17 @@ vim.api.nvim_set_keymap('n', '<Leader>gb',
                         [[<Cmd> lua require('telescope.builtin').git_branches()<cr>]],
                         {noremap = true, silent = true})
 
+-- vim.api.nvim_set_keymap('n', '<Leader>ch',
+--                         [[<Cmd> Telescope cheat fcope cheat fd theme=get_dropdown <cr>]],
+--                         {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', '<Leader>do',
+                        [[<Cmd> lua require("telescope.builtin").find_files( {prompt_title = "< VimRC >", cwd = "$HOME/"})
+<cr>]], {noremap = true, silent = true})
+
 vim.api.nvim_set_keymap('n', '<Leader>ch',
-                        [[<Cmd> Telescope cheat fcope cheat fd <cr>]],
-                        {noremap = true, silent = true})
+                        [[<Cmd> lua require("telescope.builtin").find_files( {prompt_title = "< Cheats >", cwd = "$HOME/.config/cheat/cheatsheets/personal"})
+<cr>]], {noremap = true, silent = true})
 
 -- git cli 
 -- "Using lua function

@@ -1,0 +1,3 @@
+require'lspconfig'.yamlls.setup {
+}
+
