@@ -12,8 +12,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute 'packadd packer.nvim'
 end
 
-return require('packer').startup(function()
-    -- Packer can manage itself as an optional plugin
+return require('packer').startup(function() -- Packer can manage itself as an optional plugin
     use {'wbthomason/packer.nvim', opt = true}
 
     -- Colorschemes
@@ -38,6 +37,10 @@ return require('packer').startup(function()
     use 'nvim-telescope/telescope-node-modules.nvim'
     use 'dhruvmanila/telescope-bookmarks.nvim'
     use 'nvim-telescope/telescope-github.nvim'
+    use {
+  "nvim-telescope/telescope-arecibo.nvim",
+  rocks = {"openssl", "lua-http-parser"}
+}
     use 'tami5/sql.nvim' -- ↴
     use 'marcelarie/telescope-cheat.nvim'
 
@@ -75,6 +78,10 @@ return require('packer').startup(function()
     use 'nvim-treesitter/playground'
     -- use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
     use 'JoosepAlviste/nvim-ts-context-commentstring'
+    use 'nvim-treesitter/nvim-treesitter-textobjects'
+
+    -- print on cursor
+    use 'bryall/contextprint.nvim'
 
     -- Polyglot (?)
     -- use 'sheerun/vim-polyglot'
@@ -101,13 +108,17 @@ return require('packer').startup(function()
     -- use 'blackCauldron7/surround.nvim'
 
     -- NVIM Commenter
-    use "terrortylor/nvim-comment"
+    -- use "terrortylor/nvim-comment"
+    use 'winston0410/commented.nvim'
 
     -- Undo Tree
     use 'mbbill/undotree'
 
     -- lua development
     use 'rafcamlet/nvim-luapad'
+
+    -- perl development
+    -- use 'vim-perl/vim-perl'
 
     -- vimG
     use 'szw/vim-g'
@@ -156,7 +167,7 @@ return require('packer').startup(function()
     -- use 'styled-components/vscode-styled-components'
 
     -- Change root folder to the one opened with vim
-    use 'airblade/vim-rooter'
+    -- use 'airblade/vim-rooter'
 
     -- markdown preview
     use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}
@@ -217,7 +228,7 @@ return require('packer').startup(function()
     use 'famiu/nvim-reload'
 
     -- true zen
-    use "Pocco81/TrueZen.nvim"
+    -- use "Pocco81/TrueZen.nvim"
 
     -- ascii graphs
     use 'jbyuki/venn.nvim'
@@ -230,6 +241,12 @@ return require('packer').startup(function()
 
     -- TODO finder
     use 'folke/todo-comments.nvim'
+
+    -- buffer menu
+    use 'matbme/JABS.nvim'
+
+    -- rust tools
+    use 'simrat39/rust-tools.nvim'
 
     -- Maybe later
     -- use 'gennaro-tedesco/nvim-peekup''

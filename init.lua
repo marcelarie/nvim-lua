@@ -27,9 +27,9 @@ require('quick-scope') -- ./lua/quick-scope/init.lua
 -- require('surround-lua') -- ./lua/surround-lua/init.lua
 
 -- /// LS & SYNTAX ///.
--- require('complition-setup') --./lua/complition-setup/init.lua
 require('compe-setup') -- ./lua/compe-setup/init.lua
 require('treesitter') -- ./lua/treesitter/init.lua
+require('context-print') -- ./lua/context-print/init.lua
 require('lsp') -- ./lua/lsp/
 require('lsp.lua') -- ./lua/lsp/lua.lua
 require('lsp.rust') -- ./lua/lsp/rust.lua
@@ -46,8 +46,9 @@ require('lsp.sql') -- ./lua/lsp/sql.lua
 require('lsp.stylelint') -- ./lua/lsp/stylelint.lua
 require('lsp.yaml') -- ./lua/lsp/yaml.lua
 require('lsp.znote') -- ./lua/lsp/znote.lua
--- require('lsp.deno') -- ./lua/lsp/deno.lua <- not now
+-- require('lsp.perl') -- ./lua/lsp/perl.lua
 require('lsp-saga') -- ./lua/lsp-saga/init.lua
+-- require('lsp.deno') -- ./lua/lsp/deno.lua <- not now
 require('formatting') -- ./lua/formatting.lua
 require('lsp.formatter') -- ./lua/lsp/formatter.lua
 require('lsp-trouble') -- ./lua/lsp-trouble/init.lua
@@ -59,27 +60,30 @@ require('vimg') -- ./lua/vimg/init.lua
 require('web-devicons') -- ./lua/web-devicons/init.lua
 require('cheatsh') -- ./lua/cheatsh/init.lua
 require('colorizer-setup') -- ./lua/colorizer-setup/init.lua
-require('nvim-commenter') -- ./lua/nvim-commenter/init.lua
+-- require('nvim-commenter') -- ./lua/nvim-commenter/init.lua
+require('nvim-commented') -- ./lua/nvim-commented/init.lua
 require('lua-autopairs') -- (?) --./lua/lua-autopairs/init.lua
--- require('ts-autotags') -- ./lua/ts-autotags/init.lua
 require('git-related') -- ./lua/git-related/init.lua
--- require('neo-git') -- ./lua/neo-git/init.lua
--- require('diff-view') -- ./lua/diff-view/init.lua
 require('markdown-preview') -- ./lua/markdown-preview/init.lua
--- require('neo-scroll') -- ./lua/neo-scroll/init.lua
 require('g-worktree') -- ./lua/g-worktree/init.lua
--- require('fterm') -- ./lua/fterm/init.lua
 require('prime-harpoon') -- ./lua/prime-harpoon/init.lua
--- require('toggleterm') -- ./lua/toggleterm/init.lua
 require('git-sings') -- ./lua/git-sings/init.lua
--- require('spell-sitter') -- ./lua/spell-sitter/init.lua
 require('autosession') -- ./lua/autosession/init.lua
--- require('lir') -- ./lua/lir/init.lua
 require('numb-nvim') -- ./lua/numb-nvim/init.lua
 require('octo') -- ./lua/octo/init.lua
 require('vimtex') -- ./lua/vimtex/init.lua
-require('t-zen') -- ./lua/t-zen/init.lua
+-- require('t-zen') -- ./lua/t-zen/init.lua
 require('todo-finder') -- ./lua/todo-finder/init.lua
+require('rs-tools') -- ./lua/rs-tools/init.lua
+-- require('complition-setup') --./lua/complition-setup/init.lua
+-- require('neo-git') -- ./lua/neo-git/init.lua
+-- require('diff-view') -- ./lua/diff-view/init.lua
+-- require('ts-autotags') -- ./lua/ts-autotags/init.lua
+-- require('neo-scroll') -- ./lua/neo-scroll/init.lua
+-- require('fterm') -- ./lua/fterm/init.lua
+-- require('toggleterm') -- ./lua/toggleterm/init.lua
+-- require('lir') -- ./lua/lir/init.lua
+-- require('spell-sitter') -- ./lua/spell-sitter/init.lua
 -- require('neuron-nvim') -- ./lua/neuron-nvim/init.lua
 -- require('shade-windows') -- ./lua/shade-windows/init.lua
 -- require('autopairs') -- (?) --./lua/autopairs/init.lua

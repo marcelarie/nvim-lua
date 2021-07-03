@@ -16,27 +16,26 @@ ts.setup {
             'rg', '--color=never', '--no-heading', '--with-filename',
             '--line-number', '--column', '--smart-case'
         },
-        prompt_position = "bottom",
         selection_caret = "> ",
         entry_prefix = "  ",
         initial_mode = "insert",
         selection_strategy = "reset",
         sorting_strategy = "descending",
         layout_strategy = "horizontal",
-        layout_defaults = {
-            horizontal = {mirror = false},
-            vertical = {mirror = false}
-        },
+        -- layout_config = {
+        -- horizontal = {mirror = false},
+        -- vertical = {mirror = false},
+        -- width = 0.75,
+        -- preview_cutoff = 120,
+        -- height = 1,
+        -- prompt_position = "bottom",
+        -- },
         file_ignore_patterns = {
             'node_modules/.*', '%package.json', '%package-lock.json'
         },
         generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
         shorten_path = true,
         winblend = 0,
-        width = 0.75,
-        preview_cutoff = 120,
-        results_height = 1,
-        results_width = 0.8,
         border = {},
         borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
         use_less = true,
@@ -56,6 +55,12 @@ ts.setup {
             url_open_command = 'open',
             firefox_profile_name = nil
         },
+        arecibo = {
+            ["selected_engine"] = 'google',
+            ["url_open_command"] = 'xdg-open',
+            ["show_http_headers"] = false,
+            ["show_domain_icons"] = true
+        },
         media_files = {
             -- filetypes whitelist
             -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
@@ -72,6 +77,7 @@ ts.load_extension('media_files')
 ts.load_extension('node_modules')
 ts.load_extension('cheat')
 ts.load_extension('gh')
+ts.load_extension("arecibo")
 
 local M = {}
 M.search_dotfiles = function()

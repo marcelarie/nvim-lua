@@ -1,0 +1,2 @@
+require('commented').setup()
+
