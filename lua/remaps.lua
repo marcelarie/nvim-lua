@@ -12,3 +12,7 @@ vim.api.nvim_set_keymap('n', '<Down>', ':resize -5<cr>',
 
 vim.api.nvim_set_keymap('n', '<Leader>o', ':luafile %<cr>',
                         {noremap = true, silent = false})
+
+vim.api.nvim_set_keymap('v', '<C-r>',
+                        ':hy:%Subvert/<C-r>h//gc<left><left><left>',
+                        {noremap = true, silent = false})

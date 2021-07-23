@@ -11,7 +11,7 @@ vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.cmdheight = 2 -- More space for displaying messages
--- vim.o.mouse = "a" -- Mouse support --
+vim.o.mouse = "a" -- Mouse support --
 vim.o.updatetime = 300 -- Faster completion
 
 vim.o.hidden = true -- Opening a new file when the current buffer has unsaved changes cause files to be hidden instead of closed.
@@ -71,4 +71,3 @@ vim.cmd(
     [[imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])
 vim.cmd(
     [[smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])
-

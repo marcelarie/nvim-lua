@@ -12,242 +12,254 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute 'packadd packer.nvim'
 end
 
-return require('packer').startup(function() -- Packer can manage itself as an optional plugin
-    use {'wbthomason/packer.nvim', opt = true}
+return require('packer').startup(
+           function() -- Packer can manage itself as an optional plugin
+        use {'wbthomason/packer.nvim', opt = true}
 
-    -- Colorschemes
-    use 'lifepillar/vim-gruvbox8'
-    use 'phanviet/vim-monokai-pro'
-    use 'mhartington/oceanic-next'
-    -- use 'morhetz/gruvbox'
-    use "npxbr/gruvbox.nvim"
-    use "eddyekofo94/gruvbox-flat.nvim"
-    use 'rktjmp/lush.nvim'
-    use 'savq/melange'
-    use 'ishan9299/modus-theme-vim'
-    use 'ishan9299/nvim-solarized-lua'
+        -- Colorschemes
+        use 'lifepillar/vim-gruvbox8'
+        use 'phanviet/vim-monokai-pro'
+        use 'mhartington/oceanic-next'
+        use 'fenetikm/falcon'
+        -- use 'morhetz/gruvbox'
+        use "npxbr/gruvbox.nvim"
+        use "eddyekofo94/gruvbox-flat.nvim"
+        use 'rktjmp/lush.nvim'
+        use 'savq/melange'
+        use 'ishan9299/modus-theme-vim'
+        use 'ishan9299/nvim-solarized-lua'
 
-    -- Telescope
-    use 'nvim-lua/popup.nvim'
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-telescope/telescope.nvim'
-    use 'nvim-telescope/telescope-media-files.nvim'
-    use 'nvim-telescope/telescope-fzy-native.nvim'
-    use 'nvim-telescope/telescope-symbols.nvim'
-    use 'nvim-telescope/telescope-node-modules.nvim'
-    use 'dhruvmanila/telescope-bookmarks.nvim'
-    use 'nvim-telescope/telescope-github.nvim'
-    use {
-  "nvim-telescope/telescope-arecibo.nvim",
-  rocks = {"openssl", "lua-http-parser"}
-}
-    use 'tami5/sql.nvim' -- ↴
-    use 'marcelarie/telescope-cheat.nvim'
+        -- Telescope
+        use 'nvim-lua/popup.nvim'
+        use 'nvim-lua/plenary.nvim'
+        use 'nvim-telescope/telescope.nvim'
+        use 'nvim-telescope/telescope-media-files.nvim'
+        use 'nvim-telescope/telescope-fzy-native.nvim'
+        use 'nvim-telescope/telescope-symbols.nvim'
+        use 'nvim-telescope/telescope-node-modules.nvim'
+        use 'dhruvmanila/telescope-bookmarks.nvim'
+        use 'nvim-telescope/telescope-github.nvim'
+        use {
+            "nvim-telescope/telescope-arecibo.nvim",
+            rocks = {"openssl", "lua-http-parser"}
+        }
+        use 'tami5/sql.nvim' -- ↴
+        use 'marcelarie/telescope-cheat.nvim'
 
-    -- LSP
-    use 'neovim/nvim-lsp'
-    use 'onsails/lspkind-nvim'
-    use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/nvim-compe'
-    -- use 'mattn/vim-lsp-settings'
-    use 'tjdevries/nlua.nvim'
-    use 'tjdevries/lsp_extensions.nvim'
-    use 'kosayoda/nvim-lightbulb'
-    use 'jose-elias-alvarez/nvim-lsp-ts-utils'
-    use 'simrat39/symbols-outline.nvim'
-    -- use 'nvim-lua/completion-nvim'
-    -- use 'steelsojka/completion-buffers'
+        -- LSP
+        use 'neovim/nvim-lsp'
+        use 'onsails/lspkind-nvim'
+        use 'neovim/nvim-lspconfig'
+        use 'hrsh7th/nvim-compe'
+        use 'tjdevries/nlua.nvim'
+        use 'tjdevries/lsp_extensions.nvim'
+        use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+        use 'simrat39/symbols-outline.nvim'
+        -- use 'kosayoda/nvim-lightbulb'
+        -- use 'mattn/vim-lsp-settings'
+        -- use 'nvim-lua/completion-nvim'
+        -- use 'steelsojka/completion-buffers'
+        --
+        use "ray-x/lsp_signature.nvim"
 
-    -- LSP Saga
-    use 'glepnir/lspsaga.nvim'
+        -- LSP Saga
+        use 'glepnir/lspsaga.nvim'
 
-    -- Git
-    use 'tpope/vim-fugitive'
-    use 'lewis6991/gitsigns.nvim'
-    -- use 'TimUntersberger/neogit'
-    -- use 'sindrets/diffview.nvim'
+        -- Git
+        use 'tpope/vim-fugitive'
+        use 'lewis6991/gitsigns.nvim'
+        use 'f-person/git-blame.nvim'
+        use 'tpope/vim-abolish'
+        -- use 'TimUntersberger/neogit'
+        -- use 'sindrets/diffview.nvim'
 
-    -- worktrees
-    use 'ThePrimeagen/git-worktree.nvim'
+        -- worktrees
+        use 'ThePrimeagen/git-worktree.nvim'
 
-    -- Formater
-    use 'sbdchd/neoformat'
+        -- Formater
+        use 'sbdchd/neoformat'
 
-    -- TreeSitter
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-    use 'nvim-treesitter/playground'
-    -- use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
-    use 'JoosepAlviste/nvim-ts-context-commentstring'
-    use 'nvim-treesitter/nvim-treesitter-textobjects'
+        -- TreeSitter
+        use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+        use 'nvim-treesitter/playground'
+        -- use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
+        use 'JoosepAlviste/nvim-ts-context-commentstring'
+        use 'nvim-treesitter/nvim-treesitter-textobjects'
 
-    -- print on cursor
-    use 'bryall/contextprint.nvim'
+        -- print on cursor
+        use 'bryall/contextprint.nvim'
 
-    -- Polyglot (?)
-    -- use 'sheerun/vim-polyglot'
+        -- Polyglot (?)
+        -- use 'sheerun/vim-polyglot'
 
-    -- System Copy
-    use 'christoomey/vim-system-copy'
+        -- System Copy
+        use 'christoomey/vim-system-copy'
 
-    -- Cheat Sheet
-    use 'dbeniamine/cheat.sh-vim'
+        -- Cheat Sheet
+        use 'dbeniamine/cheat.sh-vim'
 
-    -- Colorizer
-    use 'norcalli/nvim-colorizer.lua'
+        -- Colorizer
+        use 'norcalli/nvim-colorizer.lua'
 
-    -- AutoPairs
-    -- use 'jiangmiao/auto-pairs'
-    -- light lua auto pairs
-    use 'windwp/nvim-autopairs'
-    -- Autotags
-    use 'windwp/nvim-ts-autotag'
+        -- AutoPairs
+        -- use 'jiangmiao/auto-pairs'
+        -- light lua auto pairs
+        use 'windwp/nvim-autopairs'
 
-    -- Vim Surround
-    use 'tpope/vim-surround'
-    -- Nvim Surround
-    -- use 'blackCauldron7/surround.nvim'
+        -- Autotags
+        use 'windwp/nvim-ts-autotag'
 
-    -- NVIM Commenter
-    -- use "terrortylor/nvim-comment"
-    use 'winston0410/commented.nvim'
+        -- Vim Surround
+        use 'tpope/vim-surround'
 
-    -- Undo Tree
-    use 'mbbill/undotree'
+        -- Nvim Surround
+        -- use 'blackCauldron7/surround.nvim'
 
-    -- lua development
-    use 'rafcamlet/nvim-luapad'
+        -- NVIM Commenter
+        -- use "terrortylor/nvim-comment"
+        use 'winston0410/commented.nvim'
 
-    -- perl development
-    -- use 'vim-perl/vim-perl'
+        -- Undo Tree
+        use 'mbbill/undotree'
 
-    -- vimG
-    use 'szw/vim-g'
+        -- lua development
+        use 'rafcamlet/nvim-luapad'
 
-    -- vim closetag
-    use 'alvan/vim-closetag'
+        -- perl development
+        -- use 'vim-perl/vim-perl'
 
-    -- lua line
-    -- use 'hoob3rt/lualine.nvim'
-    -- galaxyline
-    -- use 'glepnir/galaxyline.nvim'
-    use 'famiu/feline.nvim'
+        -- vimG
+        use 'szw/vim-g'
 
-    -- nvim web devicons
-    use 'kyazdani42/nvim-web-devicons'
-    use 'ryanoasis/vim-devicons'
+        -- vim closetag
+        use 'alvan/vim-closetag'
 
-    -- Startup time
-    use 'tweekmonster/startuptime.vim'
+        -- lua line
+        -- use 'hoob3rt/lualine.nvim'
+        -- galaxyline
+        -- use 'glepnir/galaxyline.nvim'
+        use 'famiu/feline.nvim'
 
-    -- Nvim tree
-    use 'kyazdani42/nvim-tree.lua'
+        -- nvim web devicons
+        use 'kyazdani42/nvim-web-devicons'
+        use 'ryanoasis/vim-devicons'
 
-    -- React TESTING
-    -- use 'MaxMEllon/vim-jsx-pretty'
-    -- use 'neoclide/vim-jsx-improve'
+        -- Startup time
+        use 'tweekmonster/startuptime.vim'
 
-    use 'junegunn/vim-emoji'
+        -- Nvim tree
+        use 'kyazdani42/nvim-tree.lua'
 
-    -- UltiSnips and vim snips
-    use 'honza/vim-snippets'
-    use 'SirVer/ultisnips'
-    use 'thomasfaingnaert/vim-lsp-snippets'
-    use 'mlaursen/vim-react-snippets'
-    use 'dsznajder/vscode-es7-javascript-react-snippets'
-    use 'hrsh7th/vim-vsnip'
-    use 'hrsh7th/vim-vsnip-integ'
-    use 'ChristianChiarulli/html-snippets'
-    use 'rafamadriz/friendly-snippets'
-    use 'folke/lsp-trouble.nvim'
-    -- use 'thomasfaingnaert/vim-lsp-ultisnips'
+        -- React TESTING
+        -- use 'MaxMEllon/vim-jsx-pretty'
+        -- use 'neoclide/vim-jsx-improve'
 
-    -- JS
-    -- use 'styled-components/vim-styled-components'
-    -- use 'pangloss/vim-javascript'
-    -- use 'styled-components/vscode-styled-components'
+        use 'junegunn/vim-emoji'
 
-    -- Change root folder to the one opened with vim
-    -- use 'airblade/vim-rooter'
+        -- UltiSnips and vim snips
+        use 'honza/vim-snippets'
+        use 'SirVer/ultisnips'
+        use 'thomasfaingnaert/vim-lsp-snippets'
+        use 'mlaursen/vim-react-snippets'
+        use 'dsznajder/vscode-es7-javascript-react-snippets'
+        use 'hrsh7th/vim-vsnip'
+        use 'hrsh7th/vim-vsnip-integ'
+        use 'ChristianChiarulli/html-snippets'
+        use 'rafamadriz/friendly-snippets'
+        use 'folke/lsp-trouble.nvim'
+        -- use 'thomasfaingnaert/vim-lsp-ultisnips'
 
-    -- markdown preview
-    use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}
+        -- JS
+        -- use 'styled-components/vim-styled-components'
+        -- use 'pangloss/vim-javascript'
+        -- use 'styled-components/vscode-styled-components'
 
-    -- welcome dashboard on start
-    use 'glepnir/dashboard-nvim'
+        -- Change root folder to the one opened with vim
+        -- use 'airblade/vim-rooter'
 
-    -- An always-on highlight for a unique character in every word on a line to help you use f, F and family
-    use 'unblevable/quick-scope'
+        -- markdown preview
+        use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}
 
-    -- Ranger inside vim
-    use 'kevinhwang91/rnvimr'
+        -- welcome dashboard on start
+        -- use 'glepnir/dashboard-nvim'
 
-    -- Smooth scrolling
-    -- use 'karb94/neoscroll.nvim'
+        -- An always-on highlight for a unique character in every word on a line to help you use f, F and family
+        use 'unblevable/quick-scope'
 
-    -- Dimm inactive windows
-    use 'sunjon/shade.nvim'
+        -- Ranger inside vim
+        use 'kevinhwang91/rnvimr'
 
-    -- Terminal
-    -- use 'numToStr/FTerm.nvim'
-    -- use "akinsho/nvim-toggleterm.lua"
+        -- Smooth scrolling
+        -- use 'karb94/neoscroll.nvim'
 
-    -- http calls inside vim
-    use 'nicwest/vim-http'
+        -- Dimm inactive windows
+        use 'sunjon/shade.nvim'
 
-    -- spellsitter
-    -- use 'lewis6991/spellsitter.nvim'
+        -- Terminal
+        -- use 'numToStr/FTerm.nvim'
+        -- use "akinsho/nvim-toggleterm.lua"
 
-    -- autosession
-    use 'rmagatti/auto-session'
-    use 'rmagatti/session-lens' -- < with tree sitter
+        -- http calls inside vim
+        use 'nicwest/vim-http'
 
-    -- file explorer lir
-    -- use 'tamago324/lir.nvim'
+        -- spellsitter
+        -- use 'lewis6991/spellsitter.nvim'
 
-    -- color picker
-    use 'KabbAmine/vCoolor.vim'
-    -- hex rgba toggle
-    use 'jakerobers/vim-hexrgba'
-    -- color converter
-    use 'amadeus/vim-convert-color-to'
-    -- numbers
-    use 'nacro90/numb.nvim'
+        -- autosession
+        use 'rmagatti/auto-session'
+        use 'rmagatti/session-lens' -- < with tree sitter
 
-    -- note taker
-    use {'oberblastmeister/neuron.nvim', branch = 'unstable'}
-    -- octo nvim
-    use 'pwntester/octo.nvim'
+        -- file explorer lir
+        -- use 'tamago324/lir.nvim'
 
-    -- Latex
-    use 'lervag/vimtex'
+        -- color picker
+        use 'KabbAmine/vCoolor.vim'
+        -- hex rgba toggle
+        use 'jakerobers/vim-hexrgba'
+        -- color converter
+        use 'amadeus/vim-convert-color-to'
+        -- numbers
+        use 'nacro90/numb.nvim'
 
-    -- registers
-    use "tversteeg/registers.nvim"
+        -- note taker
+        use {'oberblastmeister/neuron.nvim', branch = 'unstable'}
+        -- octo nvim
+        use 'pwntester/octo.nvim'
 
-    -- restart/reload nvim
-    use 'famiu/nvim-reload'
+        -- Latex
+        use 'lervag/vimtex'
 
-    -- true zen
-    -- use "Pocco81/TrueZen.nvim"
+        -- registers
+        use "tversteeg/registers.nvim"
 
-    -- ascii graphs
-    use 'jbyuki/venn.nvim'
+        -- restart/reload nvim
+        use 'famiu/nvim-reload'
 
-    -- http rest
-    use 'NTBBloodbath/rest.nvim'
+        -- true zen
+        -- use "Pocco81/TrueZen.nvim"
 
-    -- harpoon
-    use 'ThePrimeagen/harpoon'
+        -- ascii graphs
+        use 'jbyuki/venn.nvim'
 
-    -- TODO finder
-    use 'folke/todo-comments.nvim'
+        -- http rest
+        use 'NTBBloodbath/rest.nvim'
 
-    -- buffer menu
-    use 'matbme/JABS.nvim'
+        -- harpoon
+        use 'ThePrimeagen/harpoon'
 
-    -- rust tools
-    use 'simrat39/rust-tools.nvim'
+        -- TODO finder
+        use 'folke/todo-comments.nvim'
 
-    -- Maybe later
-    -- use 'gennaro-tedesco/nvim-peekup''
-end)
+        -- whitespace
+        -- use 'bronson/vim-trailing-whitespace'
+        use 'cappyzawa/trim.nvim'
+
+        -- buffer menu
+        use 'matbme/JABS.nvim'
+
+        -- rust tools
+        use 'simrat39/rust-tools.nvim'
+
+        -- Maybe later
+        -- use 'gennaro-tedesco/nvim-peekup''
+    end)
