@@ -70,6 +70,7 @@ return require('packer').startup(
         use 'lewis6991/gitsigns.nvim'
         use 'f-person/git-blame.nvim'
         use 'tpope/vim-abolish'
+        -- use 'rhysd/committia.vim'
         -- use 'TimUntersberger/neogit'
         -- use 'sindrets/diffview.nvim'
 
@@ -91,6 +92,11 @@ return require('packer').startup(
 
         -- Polyglot (?)
         -- use 'sheerun/vim-polyglot'
+
+        -- Perl
+        -- use 'vim-perl/vim-perl'
+        use 'c9s/perlomni.vim'
+        -- use 'BrandonRoehl/auto-omni'
 
         -- System Copy
         use 'christoomey/vim-system-copy'

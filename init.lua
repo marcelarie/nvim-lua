@@ -45,7 +45,8 @@ require('lsp.docker') -- ./lua/lsp/docker.lua
 require('lsp.sql') -- ./lua/lsp/sql.lua
 require('lsp.yaml') -- ./lua/lsp/yaml.lua
 require('lsp.znote') -- ./lua/lsp/znote.lua
-require('lsp.perl') -- ./lua/lsp/perl.lua
+require('lsp.perlpls') -- ./lua/lsp/perlpls.lua
+-- require('lsp.perl') -- ./lua/lsp/perl.lua
 require('lsp-saga') -- ./lua/lsp-saga/init.lua
 require('lsp-sign') -- ./lua/lsp-sign/init.lua
 -- require('lsp.deno') -- ./lua/lsp/deno.lua <- not now
@@ -76,6 +77,7 @@ require('vimtex') -- ./lua/vimtex/init.lua
 require('todo-finder') -- ./lua/todo-finder/init.lua
 require('rs-tools') -- ./lua/rs-tools/init.lua
 require('trim-lua') -- ./lua/trim-lua/init.lua
+require('perl-omni') -- ./lua/perl-omni/init.lua
 -- require('t-zen') -- ./lua/t-zen/init.lua
 -- require('nvim-commenter') -- ./lua/nvim-commenter/init.lua
 -- require('complition-setup') --./lua/complition-setup/init.lua
