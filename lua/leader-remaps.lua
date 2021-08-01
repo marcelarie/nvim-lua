@@ -29,6 +29,10 @@ vim.api.nvim_set_keymap('n', '<Leader>s', ':split<cr>',
 -- vertical split
 vim.api.nvim_set_keymap('n', '<Leader>ss', ':vsplit<cr>',
                         {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', '<Leader>o', ':luafile %<cr>',
+                        {noremap = true, silent = false})
+
 -- open file path under cursor vertical split
 -- vim.api.nvim_set_keymap('n', '<Leader>gf', ':vertical wincmd f<cr>',
 --                         {noremap = true, silent = true})
@@ -45,6 +49,7 @@ vim.api.nvim_set_keymap('n', '<Leader>ss', ':vsplit<cr>',
 -- -- change top window
 -- vim.api.nvim_set_keymap('n', '<Leader>k', ':wincmd k<cr>',
 --                         {noremap = true, silent = true})
+
 -- switch windows vertically
 vim.api.nvim_set_keymap('n', '<Leader>L', ':wincmd L<cr>',
                         {noremap = true, silent = true})
