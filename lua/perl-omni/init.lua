@@ -29,4 +29,4 @@ endif
 
 return s:ofc_results[1:-1]
 endfunction
-]]);
+]])

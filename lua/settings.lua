@@ -33,28 +33,28 @@ vim.wo.signcolumn = "yes"
 vim.wo.colorcolumn = "80"
 
 -- highlight on yank
-vim.cmd [[
+vim.cmd([[
 au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncSearch', timeout = 300 })
-]]
+]])
 
-vim.api.nvim_set_option('undofile', true)
-vim.api.nvim_set_option('undodir', "~/.vim/undodir")
-vim.cmd('set undofile')
-vim.cmd('set undodir=~/.vim/undodir')
-vim.cmd('set undolevels=1000')
-vim.cmd('set undoreload=10000')
-vim.cmd('set noswapfile')
-vim.cmd('syntax on') -- syntax highlighting
+vim.api.nvim_set_option("undofile", true)
+vim.api.nvim_set_option("undodir", "~/.vim/undodir")
+vim.cmd("set undofile")
+vim.cmd("set undodir=~/.vim/undodir")
+vim.cmd("set undolevels=1000")
+vim.cmd("set undoreload=10000")
+vim.cmd("set noswapfile")
+vim.cmd("syntax on") -- syntax highlighting
 -- vim.cmd('set path+=**')
 
 -- vim.api.nvim_set_option('spelllang', 'en')
-vim.api.nvim_set_option('showcmd', false)
-vim.api.nvim_set_option('hlsearch', false)
-vim.api.nvim_set_option('incsearch', true)
-vim.api.nvim_set_option('compatible', false)
-vim.api.nvim_set_option('errorbells', false)
-vim.api.nvim_set_option('swapfile', false)
-vim.api.nvim_set_option('backup', false)
+vim.api.nvim_set_option("showcmd", false)
+vim.api.nvim_set_option("hlsearch", false)
+vim.api.nvim_set_option("incsearch", true)
+vim.api.nvim_set_option("compatible", false)
+vim.api.nvim_set_option("errorbells", false)
+vim.api.nvim_set_option("swapfile", false)
+vim.api.nvim_set_option("backup", false)
 -- vim.cmd('set backupdir=~/.vim/backup') -- vim.api.nvim_set_option('backupdir', "~/.vim/backup")
 -- vim.api.nvim_set_option('writebackup', true)
 -- vim.api.nvim_set_option('backupcopy', 'yes')
@@ -62,12 +62,8 @@ vim.api.nvim_set_option('backup', false)
 vim.cmd([[let g:UltiSnipsExpandTrigger = "<Nop>"]])
 vim.cmd([[let g:UltiSnipsListSnippets = "<Nop>"]])
 
-vim.cmd(
-    [[imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']])
-vim.cmd(
-    [[smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']])
+vim.cmd([[imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']])
+vim.cmd([[smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']])
 
-vim.cmd(
-    [[imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])
-vim.cmd(
-    [[smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])
+vim.cmd([[imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])
+vim.cmd([[smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])

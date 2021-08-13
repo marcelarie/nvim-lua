@@ -14,4 +14,3 @@ vim.api.nvim_command([[
 -- vim.api.nvim_command([[
 --     autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 -- ]])
-

@@ -1,6 +1,5 @@
 -- VIMG-GOOGLE:
-vim.api.nvim_set_keymap('n', '<Leader>go', ':Google<cr>',
-                        {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>go", ":Google<cr>", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<Leader>gf', ':Gf<cr>', { noremap = true, silent = true })
 
 -- vim.cmd([[

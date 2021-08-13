@@ -1,2 +1,1 @@
-require'lspconfig'.sqls.setup {}
-
+require("lspconfig").sqls.setup({})
