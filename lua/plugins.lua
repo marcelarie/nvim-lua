@@ -16,6 +16,7 @@ end
 return require("packer").startup(
 	function() -- Packer can manage itself as an optional plugin
 		use({ "wbthomason/packer.nvim", opt = true })
+		use({ "lewis6991/impatient.nvim", rocks = "mpack" })
 
 		-- Colorschemes
 		use("lifepillar/vim-gruvbox8")
@@ -37,7 +38,7 @@ return require("packer").startup(
 		use("nvim-telescope/telescope-media-files.nvim")
 		use("nvim-telescope/telescope-fzy-native.nvim")
 		use("nvim-telescope/telescope-symbols.nvim")
-		use("nvim-telescope/telescope-node-modules.nvim")
+		-- use("nvim-telescope/telescope-node-modules.nvim")
 		use("dhruvmanila/telescope-bookmarks.nvim")
 		use("nvim-telescope/telescope-github.nvim")
 		use({
@@ -51,8 +52,16 @@ return require("packer").startup(
 		use("neovim/nvim-lsp")
 		use("onsails/lspkind-nvim")
 		use("neovim/nvim-lspconfig")
-		use("hrsh7th/nvim-compe")
-		use("tamago324/compe-zsh")
+		--  use("hrsh7th/nvim-compe")
+		use({ "hrsh7th/nvim-cmp", requires = { "hrsh7th/cmp-buffer" } })
+		use("hrsh7th/cmp-nvim-lsp")
+		use("saadparwaiz1/cmp_luasnip")
+		use("hrsh7th/cmp-path")
+		use("hrsh7th/cmp-vsnip")
+		use("hrsh7th/cmp-emoji")
+		use("hrsh7th/cmp-calc")
+		use("hrsh7th/cmp-latex-symbols")
+		--  use("tamago324/compe-zsh")
 		use("tjdevries/nlua.nvim")
 		use("tjdevries/lsp_extensions.nvim")
 		use("jose-elias-alvarez/nvim-lsp-ts-utils")
@@ -165,6 +174,7 @@ return require("packer").startup(
 		use("junegunn/vim-emoji")
 
 		-- UltiSnips and vim snips
+		use("L3MON4D3/LuaSnip")
 		use("honza/vim-snippets")
 		use("SirVer/ultisnips")
 		use("thomasfaingnaert/vim-lsp-snippets")
@@ -270,6 +280,9 @@ return require("packer").startup(
 
 		-- refactring
 		use("ThePrimeagen/refactoring.nvim")
+
+		-- syntax highlight on kitty conf
+		use("fladson/vim-kitty")
 
 		-- range - highlight
 		-- use("winston0410/range-highlight.nvim")

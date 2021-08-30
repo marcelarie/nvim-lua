@@ -1,4 +1,5 @@
 -- /// BASE ///.
+--r:equire("impatient") -- ./lua/impatient/init.lua
 require("colorscheme") -- ./lua/colorscheme.lua
 require("plugins") -- ./lua/plugins.lua
 require("settings") -- ./lua/settings.lua
@@ -27,7 +28,8 @@ require("quick-scope") -- ./lua/quick-scope/init.lua
 -- require('surround-lua') -- ./lua/surround-lua/init.lua
 
 -- /// LS & SYNTAX ///.
-require("compe-setup") -- ./lua/compe-setup/init.lua
+-- require("compe-setup") -- ./lua/compe-setup/init.lua
+require("cmp-setup") -- ./lua/cmp-setup/init.lua
 require("treesitter") -- ./lua/treesitter/init.lua
 require("context-print") -- ./lua/context-print/init.lua
 require("lsp") -- ./lua/lsp/
@@ -49,7 +51,7 @@ require("lsp.perlpls") -- ./lua/lsp/perlpls.lua
 require("lsp.c") -- ./lua/lsp/c.lua
 require("lsp.clangd") -- ./lua/lsp/clangd.lua
 -- require('lsp.perl') -- ./lua/lsp/perl.lua
--- require("lsp-saga") -- ./lua/lsp-saga/init.lua
+require("lsp-saga") -- ./lua/lsp-saga/init.lua
 require("lsp-kind") -- ./lua/lsp-kind/init.lua
 -- require('lsp-sign') -- ./lua/lsp-sign/init.lua
 -- require('lsp.deno') -- ./lua/lsp/deno.lua <- not now
