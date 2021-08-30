@@ -44,6 +44,7 @@ vim.cmd("set undodir=~/.vim/undodir")
 vim.cmd("set undolevels=1000")
 vim.cmd("set undoreload=10000")
 vim.cmd("set noswapfile")
+vim.cmd("set nohlsearch")
 vim.cmd("syntax on") -- syntax highlighting
 -- vim.cmd('set path+=**')
 
@@ -62,8 +63,16 @@ vim.api.nvim_set_option("backup", false)
 vim.cmd([[let g:UltiSnipsExpandTrigger = "<Nop>"]])
 vim.cmd([[let g:UltiSnipsListSnippets = "<Nop>"]])
 
-vim.cmd([[imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']])
-vim.cmd([[smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']])
+vim.cmd(
+	[[imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']]
+)
+vim.cmd(
+	[[smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']]
+)
 
-vim.cmd([[imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])
-vim.cmd([[smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])
+vim.cmd(
+	[[imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']]
+)
+vim.cmd(
+	[[smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']]
+)

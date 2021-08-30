@@ -83,7 +83,7 @@ return require("packer").startup(
 		use("tpope/vim-abolish")
 		-- use 'rhysd/committia.vim'
 		-- use 'TimUntersberger/neogit'
-		-- use 'sindrets/diffview.nvim'
+		use("sindrets/diffview.nvim")
 
 		-- worktrees
 		use("ThePrimeagen/git-worktree.nvim")

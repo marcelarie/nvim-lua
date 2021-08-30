@@ -8,6 +8,9 @@ vim.api.nvim_command([[
 -- Perl
 vim.api.nvim_command([[
     autocmd FileType perl filetype indent on
+    autocmd FileType perl filetype indent on
+    autocmd FileType perl set autoindent|set smartindent
+    autocmd FileType perl let perl_extended_vars = 1
 ]])
 
 -- LSP

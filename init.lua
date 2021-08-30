@@ -1,5 +1,5 @@
 -- /// BASE ///.
---r:equire("impatient") -- ./lua/impatient/init.lua
+require("impatient") -- ./lua/impatient/init.lua
 require("colorscheme") -- ./lua/colorscheme.lua
 require("plugins") -- ./lua/plugins.lua
 require("settings") -- ./lua/settings.lua
@@ -23,7 +23,7 @@ require("vim-keybindings") -- ./lua/vim-keybindings/init.lua
 -- /// NAVIGATION ///.
 require("nv-telescope") -- ./lua/nv-telescope/init.lua
 require("telescope-keybindings") -- ./lua/telescope-keybindings.lua
-require("dashboard") -- ./lua/dashboard/init.lua
+--  require("dashboard") -- ./lua/dashboard/init.lua
 require("quick-scope") -- ./lua/quick-scope/init.lua
 -- require('surround-lua') -- ./lua/surround-lua/init.lua
 
@@ -89,7 +89,7 @@ require("refactor") -- ./lua/refactor/init.lua
 -- require('nvim-commenter') -- ./lua/nvim-commenter/init.lua
 -- require('complition-setup') --./lua/complition-setup/init.lua
 -- require('neo-git') -- ./lua/neo-git/init.lua
--- require('diff-view') -- ./lua/diff-view/init.lua
+require("diff-view") -- ./lua/diff-view/init.lua
 -- require('ts-autotags') -- ./lua/ts-autotags/init.lua
 -- require('neo-scroll') -- ./lua/neo-scroll/init.lua
 -- require('fterm') -- ./lua/fterm/init.lua
