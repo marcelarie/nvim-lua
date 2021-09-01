@@ -45,8 +45,8 @@ return require("packer").startup(
 			"nvim-telescope/telescope-arecibo.nvim",
 			rocks = { "openssl", "lua-http-parser" },
 		})
-		use("tami5/sql.nvim") -- ↴
-		use("marcelarie/telescope-cheat.nvim")
+		--  use("tami5/sql.nvim") -- ↴
+		--  use("marcelarie/telescope-cheat.nvim")
 
 		-- LSP
 		use("neovim/nvim-lsp")

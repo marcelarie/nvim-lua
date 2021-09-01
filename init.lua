@@ -53,7 +53,7 @@ require("lsp.clangd") -- ./lua/lsp/clangd.lua
 -- require('lsp.perl') -- ./lua/lsp/perl.lua
 require("lsp-saga") -- ./lua/lsp-saga/init.lua
 require("lsp-kind") -- ./lua/lsp-kind/init.lua
--- require('lsp-sign') -- ./lua/lsp-sign/init.lua
+--  require("lsp-sign") -- ./lua/lsp-sign/init.lua
 -- require('lsp.deno') -- ./lua/lsp/deno.lua <- not now
 -- require('lsp.stylelint') -- ./lua/lsp/stylelint.lua
 require("formatting") -- ./lua/formatting.lua

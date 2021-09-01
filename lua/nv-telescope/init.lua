@@ -80,7 +80,7 @@ ts.load_extension("session-lens")
 ts.load_extension("bookmarks")
 ts.load_extension("media_files")
 -- ts.load_extension("node_modules")
-ts.load_extension("cheat")
+--  ts.load_extension("cheat")
 ts.load_extension("gh")
 ts.load_extension("arecibo")
 
