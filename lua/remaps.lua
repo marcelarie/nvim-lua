@@ -31,7 +31,7 @@ vim.api.nvim_set_keymap("n", "vv", "V", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "V", "v$", { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
 	"n",
-	"<Leader>c",
+	"<Leader>Y",
 	'"+y$l',
 	{ noremap = true, silent = true }
 )
@@ -67,3 +67,11 @@ vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "^v", "^v<Esc>", { noremap = true, silent = true })
+
+-- quick cd to buffer file
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>cd",
+	":cd %:p:h<cr>:pwd<cr>",
+	{ noremap = true, silent = true }
+)
