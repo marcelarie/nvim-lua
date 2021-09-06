@@ -64,5 +64,6 @@ cmp.setup({
 		{ name = "vsnip" },
 		{ name = "path" },
 		{ name = "latex_symbols" },
+		--  { name = "treesitter" },
 	},
 })

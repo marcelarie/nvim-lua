@@ -61,6 +61,7 @@ return require("packer").startup(
 		use("hrsh7th/cmp-emoji")
 		use("hrsh7th/cmp-calc")
 		use("hrsh7th/cmp-latex-symbols")
+		use("ray-x/cmp-treesitter")
 		--  use("tamago324/compe-zsh")
 		use("tjdevries/nlua.nvim")
 		use("tjdevries/lsp_extensions.nvim")
