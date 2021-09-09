@@ -1,5 +1,4 @@
 require("octo").setup({
-	date_format = "%Y %b %d %I:%M %p %Z", -- date format
 	default_remote = { "upstream", "origin" }, -- order to try remotes
 	reaction_viewer_hint_icon = "", -- marker for user reactions
 	user_icon = " ", -- user icon
@@ -19,9 +18,11 @@ require("octo").setup({
 			reopen_issue = "<space>io", -- reopen issue
 			list_issues = "<space>il", -- list open issues on same repo
 			reload = "<C-r>", -- reload issue
-			open_in_browser = "<C-o>", -- open issue in browser
+			open_in_browser = "<C-b>", -- open issue in browser
+			copy_url = "<C-y>", -- copy url to system clipboard
 			add_assignee = "<space>aa", -- add assignee
 			remove_assignee = "<space>ad", -- remove assignee
+			create_label = "<space>lc", -- create label
 			add_label = "<space>la", -- add label
 			remove_label = "<space>ld", -- remove label
 			goto_issue = "<space>gi", -- navigate to a local repo issue
@@ -50,9 +51,11 @@ require("octo").setup({
 			reopen_issue = "<space>io", -- reopen PR
 			list_issues = "<space>il", -- list open issues on same repo
 			reload = "<C-r>", -- reload PR
-			open_in_browser = "<C-o>", -- open PR in browser
+			open_in_browser = "<C-b>", -- open PR in browser
+			copy_url = "<C-y>", -- copy url to system clipboard
 			add_assignee = "<space>aa", -- add assignee
 			remove_assignee = "<space>ad", -- remove assignee
+			create_label = "<space>lc", -- create label
 			add_label = "<space>la", -- add label
 			remove_label = "<space>ld", -- remove label
 			goto_issue = "<space>gi", -- navigate to a local repo issue
@@ -88,6 +91,12 @@ require("octo").setup({
 			react_laugh = "<space>rl", -- add/remove 😄 reaction
 			react_confused = "<space>rc", -- add/remove 😕 reaction
 		},
+		submit_win = {
+			approve_review = "<C-a>", -- approve review
+			comment_review = "<C-m>", -- comment review
+			request_changes = "<C-r>", -- request changes review
+			close_review_tab = "<C-c>", -- close review tab
+		},
 		review_diff = {
 			add_review_comment = "<space>ca", -- add a new review comment
 			add_review_suggestion = "<space>sa", -- add a new review suggestion
@@ -98,12 +107,7 @@ require("octo").setup({
 			select_next_entry = "]q", -- move to previous changed file
 			select_prev_entry = "[q", -- move to next changed file
 			close_review_tab = "<C-c>", -- close review tab
-		},
-		submit_win = {
-			approve_review = "<C-a>", -- approve review
-			comment_review = "<C-m>", -- comment review
-			request_changes = "<C-r>", -- request changes review
-			close_review_tab = "<C-c>", -- close review tab
+			toggle_viewed = "<leader><space>", -- toggle viewer viewed state
 		},
 		file_panel = {
 			next_entry = "j", -- move to next changed file
@@ -115,6 +119,7 @@ require("octo").setup({
 			select_next_entry = "]q", -- move to previous changed file
 			select_prev_entry = "[q", -- move to next changed file
 			close_review_tab = "<C-c>", -- close review tab
+			toggle_viewed = "<leader><space>", -- toggle viewer viewed state
 		},
 	},
 })

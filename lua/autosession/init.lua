@@ -1,11 +1,11 @@
 local options = {
-	-- -- Sets the log level of the plugin (debug, info, error)
-	-- logLevel = vim.g.auto_session_log_level or AutoSession.conf.logLevel or
-	--     'info',
-	-- Root dir where sessions will be stored
+	log_level = "info",
+	auto_session_enable_last_session = false,
 	auto_session_root_dir = vim.fn.stdpath("data") .. "/sessions/",
-	-- Enables/disables auto save/restore
 	auto_session_enabled = true,
+	auto_save_enabled = nil,
+	auto_restore_enabled = nil,
+	auto_session_suppress_dirs = nil,
 }
 
 require("auto-session").setup(options)

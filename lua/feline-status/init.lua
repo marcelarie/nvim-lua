@@ -6,9 +6,8 @@ local properties = {
 }
 
 local components = {
-	left = { active = {}, inactive = {} },
-	mid = { active = {}, inactive = {} },
-	right = { active = {}, inactive = {} },
+	active = {},
+	inactive = {},
 }
 
 local colors = {
@@ -92,7 +91,7 @@ properties.force_inactive.buftypes = { "terminal" }
 -- LEFT
 
 -- vi-mode
-components.left.active[1] = {
+components.active[1] = {
 	provider = " vi ",
 	hl = function()
 		local val = {}
@@ -106,7 +105,7 @@ components.left.active[1] = {
 	right_sep = " ",
 }
 -- vi-symbol
-components.left.active[2] = {
+components.active[2] = {
 	provider = function()
 		return vi_mode_text[vi_mode_utils.get_vim_mode()]
 	end,
@@ -120,7 +119,7 @@ components.left.active[2] = {
 	right_sep = " ",
 }
 -- filename
-components.left.active[4] = {
+components.active[4] = {
 	provider = function()
 		return vim.fn.expand("%:F")
 	end,
@@ -128,20 +127,20 @@ components.left.active[4] = {
 	right_sep = " ",
 }
 -- gitBranch
-components.left.active[3] = {
+components.active[3] = {
 	provider = "git_branch",
 	hl = { fg = "yellow", bg = "bg", style = "bold" },
 	right_sep = " ",
 }
 -- diffAdd
-components.left.active[5] = {
+components.active[5] = {
 	provider = "git_diff_added",
 	hl = { fg = "green", bg = "bg", style = "bold" },
 }
 -- diffModfified
-components.left.active[6] = { provider = "git_diff_changed" }
+components.active[6] = { provider = "git_diff_changed" }
 -- diffRemove
-components.left.active[7] = {
+components.active[7] = {
 	provider = "git_diff_removed",
 	hl = { fg = "red", bg = "bg", style = "bold" },
 }
@@ -149,13 +148,13 @@ components.left.active[7] = {
 -- MID
 
 -- LspName
-components.mid.active[1] = {
+components.active[1] = {
 	provider = "lsp_client_names",
 	hl = { fg = "yellow", bg = "bg", style = "bold" },
 	right_sep = " ",
 }
 -- diagnosticErrors
-components.mid.active[2] = {
+components.active[2] = {
 	provider = "diagnostic_errors",
 	enabled = function()
 		return lsp.diagnostics_exist("Error")
@@ -163,7 +162,7 @@ components.mid.active[2] = {
 	hl = { fg = "red", style = "bold" },
 }
 -- diagnosticWarn
-components.mid.active[3] = {
+components.active[3] = {
 	provider = "diagnostic_warnings",
 	enabled = function()
 		return lsp.diagnostics_exist("Warning")
@@ -171,7 +170,7 @@ components.mid.active[3] = {
 	hl = { fg = "yellow", style = "bold" },
 }
 -- diagnosticHint
-components.mid.active[4] = {
+components.active[4] = {
 	provider = "diagnostic_hints",
 	enabled = function()
 		return lsp.diagnostics_exist("Hint")
@@ -179,7 +178,7 @@ components.mid.active[4] = {
 	hl = { fg = "cyan", style = "bold" },
 }
 -- diagnosticInfo
-components.mid.active[5] = {
+components.active[5] = {
 	provider = "diagnostic_info",
 	enabled = function()
 		return lsp.diagnostics_exist("Information")
@@ -190,7 +189,7 @@ components.mid.active[5] = {
 -- RIGHT
 
 -- fileIcon
-components.right.active[1] = {
+components.active[1] = {
 	provider = function()
 		local filename = vim.fn.expand("%:t")
 		local extension = vim.fn.expand("%:e")
@@ -217,7 +216,7 @@ components.right.active[1] = {
 	right_sep = " ",
 }
 -- fileType
-components.right.active[2] = {
+components.active[2] = {
 	provider = "file_type",
 	hl = function()
 		local val = {}
@@ -236,7 +235,7 @@ components.right.active[2] = {
 	right_sep = " ",
 }
 -- fileSize
-components.right.active[3] = {
+components.active[3] = {
 	provider = "file_size",
 	enabled = function()
 		return vim.fn.getfsize(vim.fn.expand("%:t")) > 0
@@ -245,7 +244,7 @@ components.right.active[3] = {
 	right_sep = " ",
 }
 -- fileFormat
-components.right.active[4] = {
+components.active[4] = {
 	provider = function()
 		return "" .. vim.bo.fileformat:upper() .. ""
 	end,
@@ -253,7 +252,7 @@ components.right.active[4] = {
 	right_sep = " ",
 }
 -- fileEncode
-components.right.active[5] = {
+components.active[5] = {
 	provider = "file_encoding",
 	hl = { fg = "bg4", bg = "bg", style = "bold" },
 	right_sep = " ",
@@ -265,19 +264,19 @@ components.right.active[5] = {
 --     right_sep = ' '
 -- }
 -- lineInfo
-components.right.active[7] = {
+components.active[7] = {
 	provider = "position",
 	hl = { fg = "white", bg = "bg", style = "bold" },
 	right_sep = " ",
 }
 -- linePercent
-components.right.active[8] = {
+components.active[8] = {
 	provider = "line_percentage",
 	hl = { fg = "white", bg = "bg", style = "bold" },
 	right_sep = " ",
 }
 -- scrollBar
-components.right.active[9] = {
+components.active[9] = {
 	provider = "scroll_bar",
 	hl = { fg = "yellow", bg = "bg" },
 }
@@ -285,7 +284,7 @@ components.right.active[9] = {
 -- INACTIVE
 
 -- fileType
-components.left.inactive[1] = {
+components.inactive[1] = {
 	provider = "file_type",
 	hl = { fg = "black", bg = "cyan", style = "bold" },
 	left_sep = { str = " ", hl = { fg = "NONE", bg = "cyan" } },
@@ -297,6 +296,6 @@ require("feline").setup({
 	default_bg = colors.bg,
 	default_fg = colors.fg,
 	vi_mode_colors = vi_mode_colors,
-	components = components,
+	--  components = components,
 	properties = properties,
 })

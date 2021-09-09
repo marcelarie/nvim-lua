@@ -7,7 +7,7 @@ require("diffview").setup({
 		position = "left", -- One of 'left', 'right', 'top', 'bottom'
 		width = 35, -- Only applies when position is 'left' or 'right'
 		height = 10, -- Only applies when position is 'top' or 'bottom'
-		use_icons = true,        -- Requires nvim-web-devicons
+		--  use_icons = true,        -- Requires nvim-web-devicons
 	},
 	key_bindings = {
 		disable_defaults = false, -- Disable the default key bindings
