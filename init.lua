@@ -71,6 +71,7 @@ require("plugins.vimtex") -- ./lua/plugins/vimtex/init.lua
 require("plugins.todo-finder") -- ./lua/plugins/todo-finder/init.lua
 require("plugins.trim-lua") -- ./lua/plugins/trim-lua/init.lua
 require("plugins.refactor") -- ./lua/plugins/refactor/init.lua
+require("plugins.focus") -- ./lua/plugins/focus/init.lua
 
 -- /// Rust ///
 require("plugins.crates") -- ./lua/plugins/crates/init.lua

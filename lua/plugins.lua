@@ -151,6 +151,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("ThePrimeagen/harpoon")
 	use("ThePrimeagen/refactoring.nvim")
 	use("fladson/vim-kitty") -- syntax highlight on kitty conf
+	use("beauwilliams/focus.nvim") -- handle splits resize
 
 	--  use("marcelarie/telescope-cheat.nvim")
 	-- /// MYBE LATER ///
