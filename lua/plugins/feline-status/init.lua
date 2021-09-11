@@ -1,13 +1,22 @@
+--  require('feline').setup {
+--  colors = {
+--  fg = '#D0D0D0',
+--  bg = '#1F1F23'
+--  }
+--  }
+
 local lsp = require("feline.providers.lsp")
 local vi_mode_utils = require("feline.providers.vi_mode")
 
-local properties = {
-	force_inactive = { filetypes = {}, buftypes = {}, bufnames = {} },
+local force_inactive = {
+	filetypes = {},
+	buftypes = {},
+	bufnames = {},
 }
 
 local components = {
-	active = {},
-	inactive = {},
+	active = { {}, {}, {} },
+	inactive = { {}, {}, {} },
 }
 
 local colors = {
@@ -24,14 +33,12 @@ local colors = {
 	fg = "#a89984",
 	skyblue = "#7daea3",
 	red = "#ea6962",
-	bg3 = "#665c54",
-	bg4 = "#7c6f64",
 }
 
 local vi_mode_colors = {
-	NORMAL = colors.fg,
-	OP = colors.fg,
-	INSERT = colors.green,
+	NORMAL = "green",
+	OP = "green",
+	INSERT = "skyblue",
 	VISUAL = "skyblue",
 	BLOCK = "skyblue",
 	REPLACE = "violet",
@@ -46,20 +53,20 @@ local vi_mode_colors = {
 }
 
 local vi_mode_text = {
-	NORMAL = "N",
-	OP = "OP",
-	INSERT = "I",
-	VISUAL = "V",
-	BLOCK = "B",
-	REPLACE = "R",
-	["V-REPLACE"] = "V-R",
-	ENTER = "E",
-	MORE = "M",
-	SELECT = "S",
-	COMMAND = "C",
-	SHELL = "shell",
-	TERM = "term",
-	NONE = "⟡",
+	NORMAL = "n",
+	OP = "o",
+	INSERT = "i",
+	VISUAL = "v",
+	BLOCK = "b",
+	REPLACE = "r",
+	["V-REPLACE"] = "vr",
+	ENTER = "e",
+	MORE = "m",
+	SELECT = "s",
+	COMMAND = "c",
+	SHELL = "sh",
+	TERM = "t",
+	NONE = "_",
 }
 
 local buffer_not_empty = function()
@@ -77,7 +84,7 @@ local checkwidth = function()
 	return false
 end
 
-properties.force_inactive.filetypes = {
+force_inactive.filetypes = {
 	"NvimTree",
 	"dbui",
 	"packer",
@@ -86,12 +93,14 @@ properties.force_inactive.filetypes = {
 	"fugitiveblame",
 }
 
-properties.force_inactive.buftypes = { "terminal" }
+force_inactive.buftypes = {
+	"terminal",
+}
 
 -- LEFT
 
 -- vi-mode
-components.active[1] = {
+components.active[1][1] = {
 	provider = " vi ",
 	hl = function()
 		local val = {}
@@ -105,7 +114,7 @@ components.active[1] = {
 	right_sep = " ",
 }
 -- vi-symbol
-components.active[2] = {
+components.active[1][2] = {
 	provider = function()
 		return vi_mode_text[vi_mode_utils.get_vim_mode()]
 	end,
@@ -116,80 +125,120 @@ components.active[2] = {
 		val.style = "bold"
 		return val
 	end,
-	right_sep = " ",
+	right_sep = "  ",
+	left_sep = " ",
 }
 -- filename
-components.active[4] = {
+components.active[2][1] = {
 	provider = function()
 		return vim.fn.expand("%:F")
 	end,
-	hl = { fg = "bg4", bg = "bg", style = "bold" },
-	right_sep = " ",
+	hl = {
+		fg = "white",
+		bg = "bg",
+		style = "bold",
+	},
+	--  left_sep = "          ",
 }
 -- gitBranch
-components.active[3] = {
+components.active[1][3] = {
 	provider = "git_branch",
-	hl = { fg = "yellow", bg = "bg", style = "bold" },
-	right_sep = " ",
+	hl = {
+		fg = "yellow",
+		bg = "bg",
+		style = "bold",
+	},
 }
 -- diffAdd
-components.active[5] = {
+components.active[1][4] = {
 	provider = "git_diff_added",
-	hl = { fg = "green", bg = "bg", style = "bold" },
+	hl = {
+		fg = "green",
+		bg = "bg",
+		style = "bold",
+	},
 }
 -- diffModfified
-components.active[6] = { provider = "git_diff_changed" }
+components.active[1][5] = {
+	provider = "git_diff_changed",
+	hl = {
+		fg = "orange",
+		bg = "bg",
+		style = "bold",
+	},
+}
 -- diffRemove
-components.active[7] = {
+components.active[1][6] = {
 	provider = "git_diff_removed",
-	hl = { fg = "red", bg = "bg", style = "bold" },
+	hl = {
+		fg = "red",
+		bg = "bg",
+		style = "bold",
+	},
 }
 
 -- MID
 
--- LspName
-components.active[1] = {
-	provider = "lsp_client_names",
-	hl = { fg = "yellow", bg = "bg", style = "bold" },
-	right_sep = " ",
-}
 -- diagnosticErrors
-components.active[2] = {
+components.active[2][2] = {
 	provider = "diagnostic_errors",
 	enabled = function()
 		return lsp.diagnostics_exist("Error")
 	end,
-	hl = { fg = "red", style = "bold" },
+	hl = {
+		fg = "red",
+		style = "bold",
+	},
 }
 -- diagnosticWarn
-components.active[3] = {
+components.active[2][3] = {
 	provider = "diagnostic_warnings",
 	enabled = function()
 		return lsp.diagnostics_exist("Warning")
 	end,
-	hl = { fg = "yellow", style = "bold" },
+	hl = {
+		fg = "yellow",
+		style = "bold",
+	},
 }
 -- diagnosticHint
-components.active[4] = {
+components.active[2][4] = {
 	provider = "diagnostic_hints",
 	enabled = function()
 		return lsp.diagnostics_exist("Hint")
 	end,
-	hl = { fg = "cyan", style = "bold" },
+	hl = {
+		fg = "cyan",
+		style = "bold",
+	},
 }
 -- diagnosticInfo
-components.active[5] = {
+components.active[2][5] = {
 	provider = "diagnostic_info",
 	enabled = function()
 		return lsp.diagnostics_exist("Information")
 	end,
-	hl = { fg = "skyblue", style = "bold" },
+	hl = {
+		fg = "skyblue",
+		style = "bold",
+	},
 }
 
 -- RIGHT
+--
+-- LspName
+components.active[3][1] = {
+	provider = "lsp_client_names",
+	hl = {
+		fg = "yellow",
+		bg = "bg",
+		style = "bold",
+	},
+	right_sep = " ",
+}
 
 -- fileIcon
-components.active[1] = {
+components.active[3][2] = {
 	provider = function()
 		local filename = vim.fn.expand("%:t")
 		local extension = vim.fn.expand("%:e")
@@ -216,7 +265,7 @@ components.active[1] = {
 	right_sep = " ",
 }
 -- fileType
-components.active[2] = {
+components.active[3][3] = {
 	provider = "file_type",
 	hl = function()
 		local val = {}
@@ -235,67 +284,105 @@ components.active[2] = {
 	right_sep = " ",
 }
 -- fileSize
-components.active[3] = {
+components.active[3][4] = {
 	provider = "file_size",
 	enabled = function()
 		return vim.fn.getfsize(vim.fn.expand("%:t")) > 0
 	end,
-	hl = { fg = "bg3", bg = "bg", style = "bold" },
+	hl = {
+		fg = "skyblue",
+		bg = "bg",
+		style = "bold",
+	},
 	right_sep = " ",
 }
 -- fileFormat
-components.active[4] = {
+components.active[3][5] = {
 	provider = function()
 		return "" .. vim.bo.fileformat:upper() .. ""
 	end,
-	hl = { fg = "bg4", bg = "bg", style = "bold" },
+	hl = {
+		fg = "white",
+		bg = "bg",
+		style = "bold",
+	},
 	right_sep = " ",
 }
 -- fileEncode
-components.active[5] = {
+components.active[3][6] = {
 	provider = "file_encoding",
-	hl = { fg = "bg4", bg = "bg", style = "bold" },
+	hl = {
+		fg = "white",
+		bg = "bg",
+		style = "bold",
+	},
 	right_sep = " ",
 }
--- -- rubyVersion
--- components.right.active[6] = {
---     provider = function() return ' ' .. vim.fn['rvm#string']() end,
---     hl = {fg = 'red', bg = 'bg', style = 'bold'},
---     right_sep = ' '
--- }
+
 -- lineInfo
-components.active[7] = {
+components.active[3][8] = {
 	provider = "position",
-	hl = { fg = "white", bg = "bg", style = "bold" },
+	hl = {
+		fg = "white",
+		bg = "bg",
+		style = "bold",
+	},
 	right_sep = " ",
 }
 -- linePercent
-components.active[8] = {
+components.active[3][9] = {
 	provider = "line_percentage",
-	hl = { fg = "white", bg = "bg", style = "bold" },
+	hl = {
+		fg = "white",
+		bg = "bg",
+		style = "bold",
+	},
 	right_sep = " ",
 }
 -- scrollBar
-components.active[9] = {
+components.active[3][10] = {
 	provider = "scroll_bar",
-	hl = { fg = "yellow", bg = "bg" },
+	hl = {
+		fg = "yellow",
+		bg = "bg",
+	},
 }
 
 -- INACTIVE
 
 -- fileType
-components.inactive[1] = {
+components.inactive[1][1] = {
 	provider = "file_type",
-	hl = { fg = "black", bg = "cyan", style = "bold" },
-	left_sep = { str = " ", hl = { fg = "NONE", bg = "cyan" } },
-	right_sep = { { str = " ", hl = { fg = "NONE", bg = "cyan" } }, " " },
+	hl = {
+		fg = "black",
+		bg = "cyan",
+		style = "bold",
+	},
+	left_sep = {
+		str = " ",
+		hl = {
+			fg = "NONE",
+			bg = "cyan",
+		},
+	},
+	right_sep = {
+		{
+			str = " ",
+			hl = {
+				fg = "NONE",
+				bg = "cyan",
+			},
+		},
+		" ",
+	},
 }
 
 require("feline").setup({
 	colors = colors,
-	default_bg = colors.bg,
-	default_fg = colors.fg,
+	bg = bg,
+	fg = fg,
+	force_inactive = force_inactive,
 	vi_mode_colors = vi_mode_colors,
-	--  components = components,
+	components = components,
 	properties = properties,
 })
