@@ -10,12 +10,12 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true }
 )
 
-vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>a",
-	"<cmd>lua require('lspsaga.codeaction').code_action()<CR>",
-	{ noremap = true, silent = true }
-)
+--  vim.api.nvim_set_keymap(
+--  "n",
+--  "<Leader>a",
+--  "<cmd>lua require('lspsaga.codeaction').code_action()<CR>",
+--  { noremap = true, silent = true }
+--  )
 
 -- vim.api.nvim_set_keymap('n', '[',
 -- "<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<cr>",

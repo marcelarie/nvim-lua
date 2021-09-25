@@ -14,7 +14,8 @@ require("remaps") -- ./lua/remaps.lua
 -- /// TREE & EXPLORERS ///.
 require("plugins.undo-tree") -- ./lua/plugins/undo-tree/init.lua
 require("plugins.netrw") -- ./lua/plugins/netrw/init.lua
-require("plugins.feline-status") -- ./lua/plugins/feline-status/init.lua
+--  require("plugins.feline-status") -- ./lua/plugins/feline-status/init.lua
+require("plugins.lualine-status") -- ./lua/plugins/lualine-status/init.lua
 require("plugins.tree-keybindings") -- ./lua/plugins/tree-keybindings/init.lua
 require("vim-keybindings") -- ./lua/vim-keybindings/init.lua
 
@@ -22,10 +23,13 @@ require("vim-keybindings") -- ./lua/vim-keybindings/init.lua
 require("nv-telescope") -- ./lua/nv-telescope/init.lua
 require("telescope-keybindings") -- ./lua/telescope-keybindings.lua
 require("plugins.quick-scope") -- ./lua/plugins/quick-scope/init.lua
+--
+-- /// SNIPPETS ///
+require("plugins.luasnip") -- ./lua/plugins/luasnip/init.lua
 
 -- /// LS & SYNTAX ///.
 require("plugins.cmp-setup") -- ./lua/plugins/cmp-setup/init.lua
-require("plugins.treesitter") -- ./lua/treesitter/init.lua
+require("plugins.treesitter") -- ./lua/plugins/treesitter/init.lua
 require("plugins.context-print") -- ./lua/plugins/context-print/init.lua
 require("lsp") -- ./lua/lsp/
 require("lsp.lua") -- ./lua/lsp/lua.lua
@@ -48,7 +52,8 @@ require("lsp.clangd") -- ./lua/lsp/clangd.lua
 -- require('lsp.perl') -- ./lua/lsp/perl.lua
 -- require('lsp.stylelint') -- ./lua/lsp/stylelint.lua
 -- require('lsp.deno') -- ./lua/lsp/deno.lua <- not now
-require("lsp-saga") -- ./lua/lsp-saga/init.lua
+--  require("lsp-saga") -- ./lua/lsp-saga/init.lua
+require("plugins.lsp-uti") -- ./lua/plugins/lsp-uti/init.lua
 require("lsp-kind") -- ./lua/lsp-kind/init.lua
 -- require("lsp-sign") -- ./lua/lsp-sign/init.lua
 
@@ -62,7 +67,7 @@ require("plugins.nvim-commented") -- ./lua/plugins/nvim-commented/init.lua
 -- /// OTHERS ///.
 require("plugins.web-devicons") -- ./lua/plugins/web-devicons/init.lua
 require("plugins.colorizer-setup") -- ./lua/plugins/colorizer-setup/init.lua
--- require("lua-autopairs") -- (?) --./lua/lua-autopairs/init.lua
+require("plugins.autopairs") -- (?) --./lua/plugins/autopairs/init.lua
 require("plugins.markdown-preview") -- ./lua/plugins/markdown-preview/init.lua
 require("plugins.prime-harpoon") -- ./lua/plugins/prime-harpoon/init.lua
 require("plugins.autosession") -- ./lua/plugins/autosession/init.lua
@@ -72,10 +77,12 @@ require("plugins.todo-finder") -- ./lua/plugins/todo-finder/init.lua
 require("plugins.trim-lua") -- ./lua/plugins/trim-lua/init.lua
 require("plugins.refactor") -- ./lua/plugins/refactor/init.lua
 require("plugins.focus") -- ./lua/plugins/focus/init.lua
+require("plugins.neoclip") -- ./lua/plugins/neoclip/init.lua
+require("plugins.bubbly") -- ./lua/plugins/bubbly/init.lua
 
 -- /// Rust ///
 require("plugins.crates") -- ./lua/plugins/crates/init.lua
-require("plugins.rs-tools") -- ./lua/rs-tools/init.lua
+--  require("plugins.rs-tools") -- ./lua/rs-tools/init.lua
 
 -- /// Git ///
 require("octo") -- ./lua/octo/init.lua

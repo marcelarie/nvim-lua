@@ -12,9 +12,6 @@ cmp.setup({
 	snippet = {
 		expand = function(args)
 			require("luasnip").lsp_expand(args.body)
-			require("vsnip").expand_snippet(args.body)
-
-			vim.fn["UltiSnips#Anon"](args.body)
 		end,
 	},
 	formatting = {
@@ -22,14 +19,14 @@ cmp.setup({
 			-- fancy icons and a name of kind
 			vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
 
-			--  -- set a name for each source
-			--  vim_item.menu = ({
-			--  buffer = "ᴮᵘᶠᶠᵉʳ",
-			--  nvim_lsp = "[LSP]",
-			--  luasnip = "[LuaSnip]",
-			--  nvim_lua = "[Lua]",
-			--  latex_symbols = "[Latex]",
-			--  })[entry.source.name]
+			-- set a name for each source
+			vim_item.menu = ({
+				buffer = "[buf]",
+				nvim_lsp = "[lsp]",
+				luasnip = "[luasnip]",
+				nvim_lua = "[lua]",
+				latex_symbols = "[latex]",
+			})[entry.source.name]
 			return vim_item
 		end,
 	},
@@ -45,40 +42,43 @@ cmp.setup({
 			select = true,
 		}),
 		["<Tab>"] = function(fallback)
-			local check_back_space = function()
-				local col = vim.fn.col(".") - 1
-				return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
-			end
 			if vim.fn.pumvisible() == 1 then
 				vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-n>", true, true, true), "n")
-			elseif check_back_space() then
-				vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, true, true), "n")
-			elseif vim.fn["vsnip#available"]() == 1 then
-				vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>(vsnip-expand-or-jump)", true, true, true), "")
+			elseif luasnip.expand_or_jumpable() then
+				vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+			else
+				fallback()
+			end
+		end,
+		["<S-Tab>"] = function(fallback)
+			if vim.fn.pumvisible() == 1 then
+				vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-p>", true, true, true), "n")
+			elseif luasnip.jumpable(-1) then
+				vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
 			else
 				fallback()
 			end
 		end,
 	},
-	documentation = {
-		border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
-	},
+	--  documentation = {
+	--  border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
+	--  },
 	sources = {
+		{ name = "luasnip" },
 		{ name = "nvim_lsp" },
 		{ name = "buffer" },
 		{ name = "path" },
+		{ name = "treesitter" },
+		{ name = "spell" },
+		{ name = "nvim_lua" },
 		{ name = "calc" },
 		{ name = "emoji" },
 		{ name = "latex_symbols" },
-		{ name = "treesitter" },
-		{ name = "nvim_lua" },
-		{ name = "spell" },
 		{ name = "crates" },
 		--  { name = "nuspell" },
 		{ name = "tags" },
 		--  snippets
-		{ name = "vsnip" },
-		{ name = "luasnip" },
-		{ name = "ultisnips" },
+		--  { name = "vsnip" },
+		--  { name = "ultisnips" },
 	},
 })

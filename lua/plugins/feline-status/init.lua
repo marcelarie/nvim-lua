@@ -99,7 +99,7 @@ force_inactive.buftypes = {
 
 -- LEFT
 
--- vi-mode
+--  vi-mode
 components.active[1][1] = {
 	provider = " vi ",
 	hl = function()
@@ -114,22 +114,22 @@ components.active[1][1] = {
 	right_sep = " ",
 }
 -- vi-symbol
-components.active[1][2] = {
-	provider = function()
-		return vi_mode_text[vi_mode_utils.get_vim_mode()]
-	end,
-	hl = function()
-		local val = {}
-		val.fg = vi_mode_utils.get_mode_color()
-		val.bg = "bg"
-		val.style = "bold"
-		return val
-	end,
-	right_sep = "  ",
-	left_sep = " ",
-}
+--  components.active[1][1] = {
+--  provider = function()
+--  return vi_mode_text[vi_mode_utils.get_vim_mode()]
+--  end,
+--  hl = function()
+--  local val = {}
+--  val.fg = vi_mode_utils.get_mode_color()
+--  val.bg = "bg"
+--  val.style = "bold"
+--  return val
+--  end,
+--  right_sep = "  ",
+--  left_sep = " ",
+--  }
 -- filename
-components.active[2][1] = {
+components.active[1][2] = {
 	provider = function()
 		return vim.fn.expand("%:F")
 	end,
@@ -141,7 +141,7 @@ components.active[2][1] = {
 	--  left_sep = "          ",
 }
 -- gitBranch
-components.active[1][3] = {
+components.active[2][1] = {
 	provider = "git_branch",
 	hl = {
 		fg = "yellow",
@@ -150,7 +150,7 @@ components.active[1][3] = {
 	},
 }
 -- diffAdd
-components.active[1][4] = {
+components.active[2][2] = {
 	provider = "git_diff_added",
 	hl = {
 		fg = "green",
@@ -159,7 +159,7 @@ components.active[1][4] = {
 	},
 }
 -- diffModfified
-components.active[1][5] = {
+components.active[2][3] = {
 	provider = "git_diff_changed",
 	hl = {
 		fg = "orange",
@@ -168,7 +168,7 @@ components.active[1][5] = {
 	},
 }
 -- diffRemove
-components.active[1][6] = {
+components.active[2][4] = {
 	provider = "git_diff_removed",
 	hl = {
 		fg = "red",
@@ -180,8 +180,7 @@ components.active[1][6] = {
 -- MID
 
 -- diagnosticErrors
-components.active[2][2] = {
-	provider = "diagnostic_errors",
+components.active[1][3] = {
 	enabled = function()
 		return lsp.diagnostics_exist("Error")
 	end,
@@ -191,7 +190,7 @@ components.active[2][2] = {
 	},
 }
 -- diagnosticWarn
-components.active[2][3] = {
+components.active[1][4] = {
 	provider = "diagnostic_warnings",
 	enabled = function()
 		return lsp.diagnostics_exist("Warning")
@@ -202,7 +201,7 @@ components.active[2][3] = {
 	},
 }
 -- diagnosticHint
-components.active[2][4] = {
+components.active[1][5] = {
 	provider = "diagnostic_hints",
 	enabled = function()
 		return lsp.diagnostics_exist("Hint")
@@ -213,7 +212,7 @@ components.active[2][4] = {
 	},
 }
 -- diagnosticInfo
-components.active[2][5] = {
+components.active[1][6] = {
 	provider = "diagnostic_info",
 	enabled = function()
 		return lsp.diagnostics_exist("Information")

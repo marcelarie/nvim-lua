@@ -60,19 +60,11 @@ vim.api.nvim_set_option("backup", false)
 -- vim.api.nvim_set_option('writebackup', true)
 -- vim.api.nvim_set_option('backupcopy', 'yes')
 
-vim.cmd([[let g:UltiSnipsExpandTrigger = "<Nop>"]])
-vim.cmd([[let g:UltiSnipsListSnippets = "<Nop>"]])
+--  vim.cmd([[let g:UltiSnipsExpandTrigger = "<Nop>"]])
+--  vim.cmd([[let g:UltiSnipsListSnippets = "<Nop>"]])
 
-vim.cmd(
-	[[imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']]
-)
-vim.cmd(
-	[[smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']]
-)
+--  vim.cmd([[imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']])
+--  vim.cmd([[smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']])
 
-vim.cmd(
-	[[imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']]
-)
-vim.cmd(
-	[[smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']]
-)
+--  vim.cmd([[imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])
+--  vim.cmd([[smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])

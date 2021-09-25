@@ -33,19 +33,19 @@ vim.api.nvim_set_keymap("n", "[", "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
 
 vim.api.nvim_set_keymap("n", "]", "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", { noremap = true, silent = true })
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-	-- Enable underline, use default values
-	underline = true,
-	-- Enable virtual text, override spacing to 4
-	virtual_text = { spacing = 12 },
-	-- Disable a feature
-	update_in_insert = true,
-	-- -- Use a function to dynamically turn signs off
-	-- -- and on, using buffer local variables
-	-- signs = function(bufnr, client_id)
-	-- return vim.bo[bufnr].show_signs == true
-	-- end,
-})
+--  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+--  -- Enable underline, use default values
+--  underline = true,
+--  -- Enable virtual text, override spacing to 4
+--  virtual_text = { spacing = 12 },
+--  -- Disable a feature
+--  update_in_insert = true,
+--  -- -- Use a function to dynamically turn signs off
+--  -- -- and on, using buffer local variables
+--  -- signs = function(bufnr, client_id)
+--  -- return vim.bo[bufnr].show_signs == true
+--  -- end,
+--  })
 
 -- enable diagnostics color
 vim.cmd([[ autocmd ColorScheme * :lua require('vim.lsp.diagnostic')._define_default_signs_and_highlights() ]])

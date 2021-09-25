@@ -60,6 +60,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("f3fora/cmp-spell")
 	use("quangnguyen30192/cmp-nvim-ultisnips")
 	use("quangnguyen30192/cmp-nvim-tags")
+	use("mfussenegger/nvim-dap")
 	--  use("f3fora/cmp-nuspell")
 
 	use("tjdevries/nlua.nvim")
@@ -69,7 +70,10 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("ray-x/lsp_signature.nvim")
 
 	-- LSP Saga
-	use("glepnir/lspsaga.nvim")
+	--  use("glepnir/lspsaga.nvim")
+	-- LSP Utils
+	use("RishabhRD/popfix")
+	use("RishabhRD/nvim-lsputils")
 
 	-- Git
 	use("tpope/vim-fugitive")
@@ -96,7 +100,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	-- Perl
 
 	-- Nvim line
-	use("famiu/feline.nvim")
+	-- use("famiu/feline.nvim")
+	use("hoob3rt/lualine.nvim")
 
 	-- Startup time
 	use("tweekmonster/startuptime.vim")
@@ -152,6 +157,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("ThePrimeagen/refactoring.nvim")
 	use("fladson/vim-kitty") -- syntax highlight on kitty conf
 	use("beauwilliams/focus.nvim") -- handle splits resize
+	use("AckslD/nvim-neoclip.lua") -- clipboard manager with telescope
+	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
 
 	--  use("marcelarie/telescope-cheat.nvim")
 	-- /// MYBE LATER ///
