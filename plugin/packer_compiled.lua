@@ -69,10 +69,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["JABS.nvim"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/JABS.nvim"
-  },
   LuaSnip = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/LuaSnip"
@@ -80,10 +76,6 @@ _G.packer_plugins = {
   ["auto-session"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/auto-session"
-  },
-  ["cheat.sh-vim"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cheat.sh-vim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -105,9 +97,29 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
   },
+  ["cmp-nvim-lua"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua"
+  },
+  ["cmp-nvim-tags"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-nvim-tags"
+  },
+  ["cmp-nvim-ultisnips"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-nvim-ultisnips"
+  },
   ["cmp-path"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-path"
+  },
+  ["cmp-spell"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-spell"
+  },
+  ["cmp-treesitter"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-treesitter"
   },
   ["cmp-vsnip"] = {
     loaded = true,
@@ -125,6 +137,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/contextprint.nvim"
   },
+  ["crates.nvim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/crates.nvim"
+  },
   ["diffview.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/diffview.nvim"
@@ -133,9 +149,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/falcon"
   },
-  ["feline.nvim"] = {
+  ["focus.nvim"] = {
     loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/feline.nvim"
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/focus.nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -189,9 +205,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
   },
-  ["lspsaga.nvim"] = {
+  ["lualine.nvim"] = {
     loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
   ["lush.nvim"] = {
     loaded = true,
@@ -237,6 +253,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-dap"
+  },
   ["nvim-lsp"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-lsp"
@@ -249,13 +269,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
+  ["nvim-lsputils"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-lsputils"
+  },
   ["nvim-luapad"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-luapad"
   },
-  ["nvim-reload"] = {
+  ["nvim-neoclip.lua"] = {
     loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-reload"
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-neoclip.lua"
   },
   ["nvim-solarized-lua"] = {
     loaded = true,
@@ -298,10 +322,6 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/opt/packer.nvim"
   },
-  ["perlomni.vim"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/perlomni.vim"
-  },
   playground = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/playground"
@@ -309,6 +329,10 @@ _G.packer_plugins = {
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  popfix = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/popfix"
   },
   ["popup.nvim"] = {
     loaded = true,
@@ -326,14 +350,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/registers.nvim"
   },
-  ["rest.nvim"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/rest.nvim"
-  },
-  rnvimr = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/rnvimr"
-  },
   ["rust-tools.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/rust-tools.nvim"
@@ -341,10 +357,6 @@ _G.packer_plugins = {
   ["session-lens"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/session-lens"
-  },
-  ["shade.nvim"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/shade.nvim"
   },
   ["startuptime.vim"] = {
     loaded = true,
@@ -374,6 +386,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim"
   },
+  ["telescope-packer.nvim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/telescope-packer.nvim"
+  },
   ["telescope-symbols.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/telescope-symbols.nvim"
@@ -402,10 +418,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vCoolor.vim"
   },
-  ["venn.nvim"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/venn.nvim"
-  },
   ["vim-abolish"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-abolish"
@@ -422,17 +434,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-devicons"
   },
-  ["vim-emoji"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-emoji"
-  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-fugitive"
-  },
-  ["vim-g"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-g"
   },
   ["vim-gruvbox8"] = {
     loaded = true,
@@ -441,10 +445,6 @@ _G.packer_plugins = {
   ["vim-hexrgba"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-hexrgba"
-  },
-  ["vim-http"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-http"
   },
   ["vim-kitty"] = {
     loaded = true,

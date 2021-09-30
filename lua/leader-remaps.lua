@@ -47,7 +47,7 @@ vim.api.nvim_set_keymap("n", "<Leader>J", ":wincmd J<cr>", { noremap = true, sil
 
 -- Packer
 vim.api.nvim_set_keymap("n", "<Leader>pi", ":luafile %<cr>:PackerInstall<cr>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<Leader>pu", ":luafile %<cr>:PackerUpdate<cr>", { noremap = true, silent = false })
+vim.api.nvim_set_keymap("n", "<Leader>pu", ":PackerUpdate<cr>", { noremap = true, silent = false })
 vim.api.nvim_set_keymap("n", "<Leader>pc", ":luafile %<cr>:PackerClean<cr>", { noremap = true, silent = false })
 
 -- ; for :

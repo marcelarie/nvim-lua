@@ -26,6 +26,8 @@ cmp.setup({
 				luasnip = "[luasnip]",
 				nvim_lua = "[lua]",
 				latex_symbols = "[latex]",
+				look = "[look]",
+				spell = "[spell]",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -75,8 +77,9 @@ cmp.setup({
 		{ name = "emoji" },
 		{ name = "latex_symbols" },
 		{ name = "crates" },
-		--  { name = "nuspell" },
 		{ name = "tags" },
+		{ name = "look", keyword_length = 2, max_item_count = 5 },
+		--  { name = "nuspell" },
 		--  snippets
 		--  { name = "vsnip" },
 		--  { name = "ultisnips" },

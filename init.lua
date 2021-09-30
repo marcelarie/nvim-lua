@@ -16,7 +16,7 @@ require("plugins.undo-tree") -- ./lua/plugins/undo-tree/init.lua
 require("plugins.netrw") -- ./lua/plugins/netrw/init.lua
 --  require("plugins.feline-status") -- ./lua/plugins/feline-status/init.lua
 require("plugins.lualine-status") -- ./lua/plugins/lualine-status/init.lua
-require("plugins.tree-keybindings") -- ./lua/plugins/tree-keybindings/init.lua
+require("plugins.nvim-tree") -- ./lua/plugins/nvim-tree/init.lua
 require("vim-keybindings") -- ./lua/vim-keybindings/init.lua
 
 -- /// NAVIGATION ///.
@@ -47,9 +47,9 @@ require("lsp.sql") -- ./lua/lsp/sql.lua
 require("lsp.yaml") -- ./lua/lsp/yaml.lua
 require("lsp.znote") -- ./lua/lsp/znote.lua
 require("lsp.perlpls") -- ./lua/lsp/perlpls.lua
+require("lsp.perl") -- ./lua/lsp/perl.lua
 require("lsp.c") -- ./lua/lsp/c.lua
 require("lsp.clangd") -- ./lua/lsp/clangd.lua
--- require('lsp.perl') -- ./lua/lsp/perl.lua
 -- require('lsp.stylelint') -- ./lua/lsp/stylelint.lua
 -- require('lsp.deno') -- ./lua/lsp/deno.lua <- not now
 --  require("lsp-saga") -- ./lua/lsp-saga/init.lua

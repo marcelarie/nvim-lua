@@ -39,3 +39,6 @@ require("diffview").setup({
 		},
 	},
 })
+
+vim.api.nvim_set_keymap("n", "<Leader>dv", ":DiffviewOpen<cr>", { noremap = true, silent = false })
+vim.api.nvim_set_keymap("n", "<Leader>dc", ":DiffviewClose<cr>", { noremap = true, silent = false })

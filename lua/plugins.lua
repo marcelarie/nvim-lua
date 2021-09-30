@@ -41,6 +41,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 		"nvim-telescope/telescope-arecibo.nvim",
 		rocks = { "openssl", "lua-http-parser" },
 	})
+	use("nvim-telescope/telescope-packer.nvim")
 	-- use("nvim-telescope/telescope-node-modules.nvim")
 
 	-- LSP
@@ -61,6 +62,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("quangnguyen30192/cmp-nvim-ultisnips")
 	use("quangnguyen30192/cmp-nvim-tags")
 	use("mfussenegger/nvim-dap")
+	use("octaltree/cmp-look")
+	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
 	--  use("f3fora/cmp-nuspell")
 
 	use("tjdevries/nlua.nvim")

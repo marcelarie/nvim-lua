@@ -83,6 +83,7 @@ ts.load_extension("media_files")
 --  ts.load_extension("cheat")
 ts.load_extension("gh")
 ts.load_extension("arecibo")
+ts.load_extension("packer")
 
 -- local M = {}
 -- M.search_dotfiles = function()
