@@ -76,7 +76,7 @@ ts.setup({
 })
 
 ts.load_extension("fzy_native")
-ts.load_extension("session-lens")
+-- ts.load_extension("session-lens")
 ts.load_extension("bookmarks")
 ts.load_extension("media_files")
 -- ts.load_extension("node_modules")

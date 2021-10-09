@@ -47,7 +47,7 @@ require("lsp.sql") -- ./lua/lsp/sql.lua
 require("lsp.yaml") -- ./lua/lsp/yaml.lua
 require("lsp.znote") -- ./lua/lsp/znote.lua
 require("lsp.perlpls") -- ./lua/lsp/perlpls.lua
-require("lsp.perl") -- ./lua/lsp/perl.lua
+--  require("lsp.perl") -- ./lua/lsp/perl.lua
 require("lsp.c") -- ./lua/lsp/c.lua
 require("lsp.clangd") -- ./lua/lsp/clangd.lua
 -- require('lsp.stylelint') -- ./lua/lsp/stylelint.lua
@@ -70,7 +70,7 @@ require("plugins.colorizer-setup") -- ./lua/plugins/colorizer-setup/init.lua
 require("plugins.autopairs") -- (?) --./lua/plugins/autopairs/init.lua
 require("plugins.markdown-preview") -- ./lua/plugins/markdown-preview/init.lua
 require("plugins.prime-harpoon") -- ./lua/plugins/prime-harpoon/init.lua
-require("plugins.autosession") -- ./lua/plugins/autosession/init.lua
+--  require("plugins.autosession") -- ./lua/plugins/autosession/init.lua
 require("plugins.numb-nvim") -- ./lua/plugins/numb-nvim/init.lua
 require("plugins.vimtex") -- ./lua/plugins/vimtex/init.lua
 require("plugins.todo-finder") -- ./lua/plugins/todo-finder/init.lua
@@ -79,6 +79,8 @@ require("plugins.refactor") -- ./lua/plugins/refactor/init.lua
 require("plugins.focus") -- ./lua/plugins/focus/init.lua
 require("plugins.neoclip") -- ./lua/plugins/neoclip/init.lua
 require("plugins.bubbly") -- ./lua/plugins/bubbly/init.lua
+require("plugins.color-buddy") -- ./lua/plugins/color-buddy/init.lua
+require("plugins.neorg") -- ./lua/plugins/neorg/init.lua
 
 -- /// Rust ///
 require("plugins.crates") -- ./lua/plugins/crates/init.lua

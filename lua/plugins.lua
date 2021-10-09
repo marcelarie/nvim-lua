@@ -16,10 +16,18 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use({ "lewis6991/impatient.nvim", rocks = "mpack" })
 
 	-- Colorschemes
+	use("tjdevries/colorbuddy.nvim")
 	use("lifepillar/vim-gruvbox8")
 	use("phanviet/vim-monokai-pro")
 	use("mhartington/oceanic-next")
 	use("fenetikm/falcon")
+	use({
+		"jhchabran/monarized",
+		config = function()
+			vim.g.monarized_lualine = true
+			vim.g.monarized_kitty_colors = true
+		end,
+	})
 	-- use 'morhetz/gruvbox'
 	use("npxbr/gruvbox.nvim")
 	use("eddyekofo94/gruvbox-flat.nvim")
@@ -148,8 +156,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("cappyzawa/trim.nvim")
 	use("unblevable/quick-scope") -- An always-on highlight for a unique character in every word on a line to help you use f, F and family
 	use("tversteeg/registers.nvim")
-	use("rmagatti/auto-session")
-	use("rmagatti/session-lens") -- < with tree sitter
+	--  use("rmagatti/auto-session")
+	-- use("rmagatti/session-lens") -- < with tree sitter
 	use("KabbAmine/vCoolor.vim") -- color picker
 	use("jakerobers/vim-hexrgba") -- hex rgba toggle
 	use("amadeus/vim-convert-color-to") -- color converter
@@ -161,6 +169,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("fladson/vim-kitty") -- syntax highlight on kitty conf
 	use("beauwilliams/focus.nvim") -- handle splits resize
 	use("AckslD/nvim-neoclip.lua") -- clipboard manager with telescope
+	use("nvim-neorg/neorg")
 	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
 
 	--  use("marcelarie/telescope-cheat.nvim")
@@ -169,7 +178,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	--  use("f3fora/lua-nuspell")
 	--
 	-- Change root folder to the one opened with vim
-	-- use 'airblade/vim-rooter'
+	use("airblade/vim-rooter")
 	--
 	-- spellsitter
 	-- use 'lewis6991/spellsitter.nvim'
