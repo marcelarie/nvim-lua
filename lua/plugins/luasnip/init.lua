@@ -76,8 +76,8 @@ luasnip.snippets = {
 	perl = {
 		s("st", { t("$self->_stash($"), i(1, "value"), t(");") }),
 		s("cl", { t("$self->clear_str($"), i(1, "str"), t(");") }),
-		s("->map", { t("->map( sub ("), i(1, "$el"), t({ ") { ", "" }), i(2), t("});") }),
-		s("->each", { t("->each( sub ("), i(1, "$el"), t({ ", $i) { ", "" }), i(2), t("});") }),
+		s("->map", { t("->map( sub ($"), i(1, "el"), t({ ") { ", "" }), i(2), t("});") }),
+		s("->each", { t("->each( sub ($"), i(1, "el"), t({ ", $i) { ", "" }), i(2), t("});") }),
 		s("sub", { t("sub "), i(1, "routine"), t({ " {", "}" }) }),
 	},
 }

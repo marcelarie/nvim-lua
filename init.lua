@@ -81,6 +81,7 @@ require("plugins.neoclip") -- ./lua/plugins/neoclip/init.lua
 require("plugins.bubbly") -- ./lua/plugins/bubbly/init.lua
 require("plugins.color-buddy") -- ./lua/plugins/color-buddy/init.lua
 require("plugins.neorg") -- ./lua/plugins/neorg/init.lua
+require("plugins.distant") -- ./lua/plugins/distant/init.lua
 
 -- /// Rust ///
 require("plugins.crates") -- ./lua/plugins/crates/init.lua

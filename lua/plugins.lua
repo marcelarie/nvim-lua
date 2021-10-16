@@ -71,6 +71,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("quangnguyen30192/cmp-nvim-tags")
 	use("mfussenegger/nvim-dap")
 	use("octaltree/cmp-look")
+	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
 	--  use("f3fora/cmp-nuspell")
 
@@ -170,6 +171,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("beauwilliams/focus.nvim") -- handle splits resize
 	use("AckslD/nvim-neoclip.lua") -- clipboard manager with telescope
 	use("nvim-neorg/neorg")
+	use("chipsenkbeil/distant.nvim")
+	use("tridactyl/vim-tridactyl")
 	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
 
 	--  use("marcelarie/telescope-cheat.nvim")

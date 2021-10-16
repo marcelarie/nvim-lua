@@ -73,10 +73,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/LuaSnip"
   },
-  ["auto-session"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/auto-session"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-buffer"
@@ -92,6 +88,10 @@ _G.packer_plugins = {
   ["cmp-latex-symbols"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-latex-symbols"
+  },
+  ["cmp-look"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-look"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -117,6 +117,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-spell"
   },
+  ["cmp-tabnine"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-tabnine"
+  },
   ["cmp-treesitter"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-treesitter"
@@ -128,6 +132,10 @@ _G.packer_plugins = {
   cmp_luasnip = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp_luasnip"
+  },
+  ["colorbuddy.nvim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim"
   },
   ["commented.nvim"] = {
     loaded = true,
@@ -144,6 +152,10 @@ _G.packer_plugins = {
   ["diffview.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/diffview.nvim"
+  },
+  ["distant.nvim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/distant.nvim"
   },
   falcon = {
     loaded = true,
@@ -225,9 +237,18 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/modus-theme-vim"
   },
+  monarized = {
+    config = { "\27LJ\2\nZ\0\0\2\0\4\0\t6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0+\1\2\0=\1\3\0K\0\1\0\27monarized_kitty_colors\22monarized_lualine\6g\bvim\0" },
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/monarized"
+  },
   neoformat = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/neoformat"
+  },
+  neorg = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/neorg"
   },
   ["neuron.nvim"] = {
     loaded = true,
@@ -354,10 +375,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/rust-tools.nvim"
   },
-  ["session-lens"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/session-lens"
-  },
   ["startuptime.vim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/startuptime.vim"
@@ -462,6 +479,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-react-snippets"
   },
+  ["vim-rooter"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-rooter"
+  },
   ["vim-snippets"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-snippets"
@@ -473,6 +494,10 @@ _G.packer_plugins = {
   ["vim-system-copy"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-system-copy"
+  },
+  ["vim-tridactyl"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-tridactyl"
   },
   ["vim-vsnip"] = {
     loaded = true,
@@ -493,6 +518,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: monarized
+time([[Config for monarized]], true)
+try_loadstring("\27LJ\2\nZ\0\0\2\0\4\0\t6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0+\1\2\0=\1\3\0K\0\1\0\27monarized_kitty_colors\22monarized_lualine\6g\bvim\0", "config", "monarized")
+time([[Config for monarized]], false)
 if should_profile then save_profiles() end
 
 end)

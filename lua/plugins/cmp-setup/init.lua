@@ -13,6 +13,15 @@ end
 
 local luasnip = require("luasnip")
 local cmp = require("cmp")
+local tabnine = require("cmp_tabnine.config")
+
+tabnine:setup({
+	max_lines = 1000,
+	max_num_results = 20,
+	sort = true,
+	run_on_every_keystroke = true,
+	snippet_placeholder = "..",
+})
 
 cmp.register_source("buf_lines", {
 	complete = function(self, request, callback)
@@ -27,7 +36,7 @@ cmp.register_source("buf_lines", {
 		local items = {}
 		for i = 1, #lines do
 			local line = vim.trim(lines[i])
-			if #line > 0 then
+			if #line > 0 and line ~= opt_context_lines then
 				items[#items + 1] = { label = line }
 			end
 		end
@@ -58,6 +67,7 @@ cmp.setup({
 				spell = "[spell]",
 				neorg = "[neorg]",
 				latex_symbols = "[latex]",
+				cmp_tabnine = "",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -106,7 +116,15 @@ cmp.setup({
 	sources = {
 		{ name = "luasnip" },
 		{ name = "nvim_lsp" },
-		{ name = "buffer" },
+		{ name = "cmp_tabnine" },
+		{
+			name = "buffer",
+			opts = {
+				get_bufnrs = function()
+					return vim.api.nvim_list_bufs()
+				end,
+			},
+		},
 		{ name = "path" },
 		{ name = "treesitter" },
 		{ name = "buf_lines", max_item_count = 4 },
