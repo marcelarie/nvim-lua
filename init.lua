@@ -1,3 +1,5 @@
+--/// Firenvim ///
+
 -- /// BASE ///.
 require("impatient") -- ./lua/impatient/init.lua
 require("colorscheme") -- ./lua/colorscheme.lua
@@ -63,6 +65,7 @@ require("lsp-trouble") -- ./lua/lsp-trouble/init.lua
 require("lsp-trouble-keybindings") -- ./lua/lsp-trouble-keybindings.lua
 require("symbols-outline") -- ./lua/symbols/init.lua
 require("plugins.nvim-commented") -- ./lua/plugins/nvim-commented/init.lua
+require("plugins.goto-preview") -- ./lua/plugins/goto-preview/init.lua
 
 -- /// OTHERS ///.
 require("plugins.web-devicons") -- ./lua/plugins/web-devicons/init.lua
@@ -74,7 +77,6 @@ require("plugins.prime-harpoon") -- ./lua/plugins/prime-harpoon/init.lua
 require("plugins.numb-nvim") -- ./lua/plugins/numb-nvim/init.lua
 require("plugins.vimtex") -- ./lua/plugins/vimtex/init.lua
 require("plugins.todo-finder") -- ./lua/plugins/todo-finder/init.lua
-require("plugins.trim-lua") -- ./lua/plugins/trim-lua/init.lua
 require("plugins.refactor") -- ./lua/plugins/refactor/init.lua
 require("plugins.focus") -- ./lua/plugins/focus/init.lua
 require("plugins.neoclip") -- ./lua/plugins/neoclip/init.lua
@@ -94,5 +96,12 @@ require("git-blame") -- ./lua/git-blame/init.lua
 require("git-sings") -- ./lua/git-sings/init.lua
 require("g-worktree") -- ./lua/g-worktree/init.lua
 require("diff-view") -- ./lua/diff-view/init.lua
-
 -- /// TODO: ///.
+
+if not vim.g.started_by_firenvim then
+	require("plugins.trim-lua") -- ./lua/plugins/trim-lua/init.lua
+else
+	vim.cmd("set guifont=monospace:h8")
+	vim.cmd("set lines=100")
+	vim.cmd("set lines=100")
+end

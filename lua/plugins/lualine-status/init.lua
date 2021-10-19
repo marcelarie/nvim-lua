@@ -16,10 +16,11 @@ require("lualine").setup({
 	options = {
 		icons_enabled = true,
 		--  theme = "gruvbox",
-		theme = vim.g.colors_name == "gruvbox-flat" and "gruvbox" or require("monarized.lualine"),
+		--  theme = require("monarized.lualine"),
+		--  theme = vim.g.colors_name == "gruvbox-flat" and "gruvbox" or require("monarized.lualine"),
 		component_separators = { ".", "." },
 		--  section_separators = { "", "" },
-		section_separators = { "", "" }, -- separators between sections
+		section_separators = { "", "" },
 		disabled_filetypes = {},
 	},
 	sections = {
@@ -33,7 +34,7 @@ require("lualine").setup({
 			},
 		},
 		lualine_b = { "branch" },
-		lualine_c = { { "filename", path = 1, file_status = true, icons_enabled = true } },
+		lualine_d = { { "filename", path = 1, file_status = true, icons_enabled = true } },
 		lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_y = { "progress" },
 		lualine_z = { "location" },

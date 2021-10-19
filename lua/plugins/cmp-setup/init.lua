@@ -13,15 +13,15 @@ end
 
 local luasnip = require("luasnip")
 local cmp = require("cmp")
-local tabnine = require("cmp_tabnine.config")
+-- local tabnine = require("cmp_tabnine.config")
 
-tabnine:setup({
-	max_lines = 1000,
-	max_num_results = 20,
-	sort = true,
-	run_on_every_keystroke = true,
-	snippet_placeholder = "..",
-})
+-- tabnine:setup({
+-- 	max_lines = 1000,
+-- 	max_num_results = 20,
+-- 	sort = true,
+-- 	run_on_every_keystroke = true,
+-- 	snippet_placeholder = "..",
+-- })
 
 cmp.register_source("buf_lines", {
 	complete = function(self, request, callback)
@@ -114,9 +114,9 @@ cmp.setup({
 	--  border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
 	--  },
 	sources = {
-		{ name = "luasnip" },
 		{ name = "nvim_lsp" },
-		{ name = "cmp_tabnine" },
+		--  { name = "cmp_tabnine" }, -- wait for better RAM managment
+		{ name = "luasnip" },
 		{
 			name = "buffer",
 			opts = {
@@ -125,18 +125,18 @@ cmp.setup({
 				end,
 			},
 		},
-		{ name = "path" },
-		{ name = "treesitter" },
 		{ name = "buf_lines", max_item_count = 4 },
-		{ name = "spell" },
+		{ name = "treesitter" },
+		{ name = "path" },
 		{ name = "nvim_lua" },
 		{ name = "calc" },
+		{ name = "look", keyword_length = 2, max_item_count = 3 },
 		{ name = "emoji" },
 		{ name = "latex_symbols" },
 		{ name = "crates" },
 		{ name = "tags" },
 		{ name = "neorg" },
-		{ name = "look", keyword_length = 2, max_item_count = 5 },
+		--  { name = "spell" },
 		--  { name = "nuspell" },
 		--  snippets
 		--  { name = "vsnip" },

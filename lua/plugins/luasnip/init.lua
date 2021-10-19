@@ -11,7 +11,7 @@ local d = luasnip.dynamic_node
 local events = require("luasnip.util.events")
 
 -- Make sure to not pass an invalid command, as io.popen() may write over nvim-text.
-local function bash(_, command)
+local function bash(_, _, command)
 	local file = io.popen(command, "r")
 	local res = {}
 	for line in file:lines() do
@@ -27,8 +27,9 @@ luasnip.config.set_config({
 
 luasnip.snippets = {
 	all = {
-		s("date", f(bash, {}, "date")),
+		s("date_today", f(bash, {}, "date")),
 		s("pwd", f(bash, {}, "pwd")),
+		s("ls", f(bash, {}, "exa")),
 	},
 	gitcommit = {
 		s({ trig = "feat", name = "feat", dscr = "A new feature ✨" }, t("feat: ")),

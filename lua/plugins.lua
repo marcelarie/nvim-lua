@@ -35,6 +35,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("savq/melange")
 	use("ishan9299/modus-theme-vim")
 	use("ishan9299/nvim-solarized-lua")
+	use("RRethy/nvim-base16")
 
 	-- Telescope
 	use("nvim-lua/popup.nvim")
@@ -71,7 +72,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("quangnguyen30192/cmp-nvim-tags")
 	use("mfussenegger/nvim-dap")
 	use("octaltree/cmp-look")
-	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
+	--  use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
+	use("rmagatti/goto-preview")
 	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
 	--  use("f3fora/cmp-nuspell")
 
@@ -173,6 +175,13 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("nvim-neorg/neorg")
 	use("chipsenkbeil/distant.nvim")
 	use("tridactyl/vim-tridactyl")
+	use({
+		"glacambre/firenvim",
+		run = function()
+			vim.fn["firenvim#install"](0)
+		end,
+	})
+	use("airblade/vim-rooter")
 	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
 
 	--  use("marcelarie/telescope-cheat.nvim")
@@ -181,7 +190,6 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	--  use("f3fora/lua-nuspell")
 	--
 	-- Change root folder to the one opened with vim
-	use("airblade/vim-rooter")
 	--
 	-- spellsitter
 	-- use 'lewis6991/spellsitter.nvim'
