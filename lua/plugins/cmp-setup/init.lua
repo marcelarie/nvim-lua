@@ -6,6 +6,7 @@
 --  mapping = { ... },
 --  sources = { ... },
 --  }
+
 local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
@@ -13,8 +14,8 @@ end
 
 local luasnip = require("luasnip")
 local cmp = require("cmp")
--- local tabnine = require("cmp_tabnine.config")
 
+-- local tabnine = require("cmp_tabnine.config")
 -- tabnine:setup({
 -- 	max_lines = 1000,
 -- 	max_num_results = 20,
@@ -22,6 +23,15 @@ local cmp = require("cmp")
 -- 	run_on_every_keystroke = true,
 -- 	snippet_placeholder = "..",
 -- })
+--
+--
+--
+
+-- vim.o.completeopt = "menu,menuone,noselect"
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+
+vim.cmd("set shortmess+=c")
+vim.cmd("let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']")
 
 cmp.register_source("buf_lines", {
 	complete = function(self, request, callback)
@@ -58,11 +68,11 @@ cmp.setup({
 			-- set a name for each source
 			vim_item.menu = ({
 				buffer = "[buf]",
-				buf_lines = "[buffer_lines]",
+				buf_lines = "[buf-lines]",
 				nvim_lsp = "[lsp]",
-				luasnip = "[luasnip]",
+				luasnip = "[snip]",
 				nvim_lua = "[lua]",
-				treesitter = "[treesitter]",
+				treesitter = "[ts]",
 				look = "[look]",
 				spell = "[spell]",
 				neorg = "[neorg]",
@@ -73,73 +83,109 @@ cmp.setup({
 		end,
 	},
 	mapping = {
-		["<C-p>"] = cmp.mapping.select_prev_item(),
-		["<C-n>"] = cmp.mapping.select_next_item(),
-		["<C-d>"] = cmp.mapping.scroll_docs(-4),
-		["<C-f>"] = cmp.mapping.scroll_docs(4),
-		["<C-Space>"] = cmp.mapping.complete(),
-		["<C-e>"] = cmp.mapping.close(),
-		["<CR>"] = cmp.mapping.confirm({
-			behavior = cmp.ConfirmBehavior.Replace,
-			select = true,
+		["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+		["<C-e>"] = cmp.mapping({
+			i = cmp.mapping.abort(),
+			c = cmp.mapping.close(),
 		}),
-		["<Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_next_item()
-			elseif luasnip.expand_or_jumpable() then
-				luasnip.expand_or_jump()
-			elseif has_words_before() then
-				cmp.complete()
-			else
-				fallback()
-			end
-		end, {
-			"i",
-			"s",
-		}),
-		["<S-Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_prev_item()
-			elseif luasnip.jumpable(-1) then
-				luasnip.jump(-1)
-			else
-				fallback()
-			end
-		end, {
-			"i",
-			"s",
-		}),
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
 	},
+	--       local line = vim.trim(lines[i])
+	-- ["<Tab>"] = cmp.mapping(function(fallback)
+	-- 	if cmp.visible() then
+	-- 		cmp.select_next_item()
+	-- 	elseif luasnip.expand_or_jumpable() then
+	-- 		luasnip.expand_or_jump()
+	-- 	elseif has_words_before() then
+	-- 		cmp.complete()
+	-- 	else
+	-- 		fallback()
+	-- 	end
+	-- end, {
+	-- 	"i",
+	-- 	"s",
+	-- }),
+	-- ["<S-Tab>"] = cmp.mapping(function(fallback)
+	-- 	if cmp.visible() then
+	-- 		cmp.select_prev_item()
+	-- 	elseif luasnip.jumpable(-1) then
+	-- 		luasnip.jump(-1)
+	-- 	else
+	-- 		fallback()
+	-- 	end
+	-- end, {
+	-- 	"i",
+	-- 	"s",
+	-- }),
 	--  documentation = {
 	--  border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
 	--  },
+	experimental = {
+		native_menu = false,
+		ghost_text = true,
+	},
 	sources = {
+		{ name = "gh_issues" },
+		-- { name = "zsh" },
 		{ name = "nvim_lsp" },
-		--  { name = "cmp_tabnine" }, -- wait for better RAM managment
 		{ name = "luasnip" },
 		{
 			name = "buffer",
+			keyword_length = 5,
 			opts = {
 				get_bufnrs = function()
 					return vim.api.nvim_list_bufs()
 				end,
 			},
 		},
-		{ name = "buf_lines", max_item_count = 4 },
-		{ name = "treesitter" },
-		{ name = "path" },
+		{ name = "buf_lines", max_item_count = 3 },
 		{ name = "nvim_lua" },
-		{ name = "calc" },
-		{ name = "look", keyword_length = 2, max_item_count = 3 },
+		-- { name = "treesitter" },
+		{ name = "path" },
+		-- { name = "look", keyword_length = 2, max_item_count = 2 },
 		{ name = "emoji" },
-		{ name = "latex_symbols" },
+		{ name = "calc" },
 		{ name = "crates" },
 		{ name = "tags" },
 		{ name = "neorg" },
+		{
+			{ name = "look", max_item_count = 3 },
+		},
+		-- { name = "latex_symbols" },
+		--  { name = "cmp_tabnine" }, -- wait for better RAM managment
+		--  { name = "cmdline" },
 		--  { name = "spell" },
 		--  { name = "nuspell" },
-		--  snippets
+		--  old snippets
 		--  { name = "vsnip" },
 		--  { name = "ultisnips" },
 	},
 })
+
+-- Setup buffer configuration (nvim-lua source only enables in Lua filetype).
+-- autocmd FileType lua lua require'cmp'.setup.buffer {
+-- \   sources = {
+-- \     { name = 'nvim_lua' },
+-- \     { name = 'buffer' },
+-- \   },
+-- \ }
+
+-- Use buffer source for `/`.
+-- cmp.setup.cmdline("/", {
+-- 	sources = {
+-- 		{ name = "buffer" },
+-- 	},
+-- })
+--
+-- Use cmdline & path source for ':'.
+-- cmp.setup.cmdline(":", {
+-- 	sources = cmp.sources({
+-- 		{ name = "path" },
+-- 	}, {
+-- 		{ name = "cmdline" },
+-- 	}),
+-- })

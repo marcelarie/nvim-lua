@@ -69,6 +69,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/Comment.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/LuaSnip"
@@ -80,6 +84,10 @@ _G.packer_plugins = {
   ["cmp-calc"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-calc"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-cmdline"
   },
   ["cmp-emoji"] = {
     loaded = true,
@@ -117,10 +125,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-spell"
   },
-  ["cmp-tabnine"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-tabnine"
-  },
   ["cmp-treesitter"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-treesitter"
@@ -136,10 +140,6 @@ _G.packer_plugins = {
   ["colorbuddy.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim"
-  },
-  ["commented.nvim"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/commented.nvim"
   },
   ["contextprint.nvim"] = {
     loaded = true,
@@ -161,6 +161,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/falcon"
   },
+  firenvim = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/firenvim"
+  },
   ["focus.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/focus.nvim"
@@ -180,6 +184,10 @@ _G.packer_plugins = {
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+  },
+  ["goto-preview"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/goto-preview"
   },
   ["gruvbox-flat.nvim"] = {
     loaded = true,
@@ -265,6 +273,10 @@ _G.packer_plugins = {
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+  },
+  ["nvim-base16"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-base16"
   },
   ["nvim-cmp"] = {
     loaded = true,

@@ -1,5 +1,3 @@
---/// Firenvim ///
-
 -- /// BASE ///.
 require("impatient") -- ./lua/impatient/init.lua
 require("colorscheme") -- ./lua/colorscheme.lua
@@ -65,7 +63,6 @@ require("lsp-trouble") -- ./lua/lsp-trouble/init.lua
 require("lsp-trouble-keybindings") -- ./lua/lsp-trouble-keybindings.lua
 require("symbols-outline") -- ./lua/symbols/init.lua
 require("plugins.nvim-commented") -- ./lua/plugins/nvim-commented/init.lua
-require("plugins.goto-preview") -- ./lua/plugins/goto-preview/init.lua
 
 -- /// OTHERS ///.
 require("plugins.web-devicons") -- ./lua/plugins/web-devicons/init.lua
@@ -84,6 +81,7 @@ require("plugins.bubbly") -- ./lua/plugins/bubbly/init.lua
 require("plugins.color-buddy") -- ./lua/plugins/color-buddy/init.lua
 require("plugins.neorg") -- ./lua/plugins/neorg/init.lua
 require("plugins.distant") -- ./lua/plugins/distant/init.lua
+require("plugins.persistence") -- ./lua/plugins/persistence/init.lua
 
 -- /// Rust ///
 require("plugins.crates") -- ./lua/plugins/crates/init.lua
@@ -96,8 +94,8 @@ require("git-blame") -- ./lua/git-blame/init.lua
 require("git-sings") -- ./lua/git-sings/init.lua
 require("g-worktree") -- ./lua/g-worktree/init.lua
 require("diff-view") -- ./lua/diff-view/init.lua
--- /// TODO: ///.
 
+--/// Firenvim ///
 if not vim.g.started_by_firenvim then
 	require("plugins.trim-lua") -- ./lua/plugins/trim-lua/init.lua
 else
@@ -105,3 +103,5 @@ else
 	vim.cmd("set lines=100")
 	vim.cmd("set lines=100")
 end
+
+-- /// TODO: ///.

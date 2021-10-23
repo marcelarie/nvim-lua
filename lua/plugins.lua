@@ -65,6 +65,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("hrsh7th/cmp-emoji")
 	use("hrsh7th/cmp-calc")
 	use("hrsh7th/cmp-latex-symbols")
+	use("hrsh7th/cmp-cmdline")
 	use("ray-x/cmp-treesitter")
 	use("hrsh7th/cmp-nvim-lua")
 	use("f3fora/cmp-spell")
@@ -73,7 +74,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("mfussenegger/nvim-dap")
 	use("octaltree/cmp-look")
 	--  use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
-	use("rmagatti/goto-preview")
+	use("jubnzv/virtual-types.nvim")
 	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
 	--  use("f3fora/cmp-nuspell")
 
@@ -148,7 +149,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("windwp/nvim-autopairs") -- AutoPairs
 	use("windwp/nvim-ts-autotag") -- Autotags
 	use("tpope/vim-surround") -- Vim Surround
-	use("winston0410/commented.nvim") -- NVIM Commenter
+	--  use("winston0410/commented.nvim") -- NVIM Commenter
+	use("numToStr/Comment.nvim")
 	use("mbbill/undotree")
 	use("rafcamlet/nvim-luapad")
 	use("alvan/vim-closetag")
@@ -161,6 +163,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("tversteeg/registers.nvim")
 	--  use("rmagatti/auto-session")
 	-- use("rmagatti/session-lens") -- < with tree sitter
+	use("folke/persistence.nvim")
 	use("KabbAmine/vCoolor.vim") -- color picker
 	use("jakerobers/vim-hexrgba") -- hex rgba toggle
 	use("amadeus/vim-convert-color-to") -- color converter
