@@ -2,8 +2,7 @@
 require("impatient") -- ./lua/impatient/init.lua
 require("colorscheme") -- ./lua/colorscheme.lua
 require("plugins") -- ./lua/plugins.lua
-require("settings") -- ./lua/settings.lua
-require("aliases") -- ./lua/aliases.lua
+require("settings") -- ./lua/settings.luaSequire("aliases") -- ./lua/aliases.lua
 require("globals") -- ./lua/globals.lua
 require("autocommands") -- ./lua/autocommands.lua
 
@@ -28,6 +27,7 @@ require("plugins.quick-scope") -- ./lua/plugins/quick-scope/init.lua
 require("plugins.luasnip") -- ./lua/plugins/luasnip/init.lua
 
 -- /// LS & SYNTAX ///.
+require("plugins.cmp-setup.sources.cmp-git") -- ./lua/plugins/cmp-setup/sources/cmp-git.lua
 require("plugins.cmp-setup") -- ./lua/plugins/cmp-setup/init.lua
 require("plugins.treesitter") -- ./lua/plugins/treesitter/init.lua
 require("plugins.context-print") -- ./lua/plugins/context-print/init.lua
@@ -47,7 +47,7 @@ require("lsp.sql") -- ./lua/lsp/sql.lua
 require("lsp.yaml") -- ./lua/lsp/yaml.lua
 require("lsp.znote") -- ./lua/lsp/znote.lua
 require("lsp.perlpls") -- ./lua/lsp/perlpls.lua
---  require("lsp.perl") -- ./lua/lsp/perl.lua
+require("lsp.perl") -- ./lua/lsp/perl.lua
 require("lsp.c") -- ./lua/lsp/c.lua
 require("lsp.clangd") -- ./lua/lsp/clangd.lua
 -- require('lsp.stylelint') -- ./lua/lsp/stylelint.lua
@@ -56,6 +56,7 @@ require("lsp.clangd") -- ./lua/lsp/clangd.lua
 require("plugins.lsp-uti") -- ./lua/plugins/lsp-uti/init.lua
 require("lsp-kind") -- ./lua/lsp-kind/init.lua
 -- require("lsp-sign") -- ./lua/lsp-sign/init.lua
+require("plugins.lightbulb") -- ./lua/plugins/lightbulb/init.lua
 
 require("formatting") -- ./lua/formatting.lua
 require("lsp.formatter") -- ./lua/lsp/formatter.lua
@@ -82,6 +83,7 @@ require("plugins.color-buddy") -- ./lua/plugins/color-buddy/init.lua
 require("plugins.neorg") -- ./lua/plugins/neorg/init.lua
 require("plugins.distant") -- ./lua/plugins/distant/init.lua
 require("plugins.persistence") -- ./lua/plugins/persistence/init.lua
+require("plugins.alpha") -- ./lua/plugins/alpha/init.lua
 
 -- /// Rust ///
 require("plugins.crates") -- ./lua/plugins/crates/init.lua

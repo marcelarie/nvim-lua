@@ -81,6 +81,9 @@ luasnip.snippets = {
 		s("->each", { t("->each( sub ($"), i(1, "el"), t({ ", $i) { ", "" }), i(2), t("});") }),
 		s("sub", { t("sub "), i(1, "routine"), t({ " {", "}" }) }),
 	},
+	norg = {
+		s({ name = "- [ ]", trig = "- [ ]" }, { t("- [ ] "), i(1, "todo") }),
+	},
 }
 
 vim.cmd([[

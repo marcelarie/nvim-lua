@@ -10,21 +10,16 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
-edit ~/.config/nvim/lua/plugins/luasnip/init.lua
+edit lua/plugins/lightbulb/init.lua
 argglobal
-balt ~/.config/nvim/lua/plugins/cmp-setup/init.lua
-let s:l = 60 - ((8 * winheight(0) + 33) / 67)
+let s:l = 37 - ((36 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 60
-normal! 0
+keepjumps 37
+normal! 017|
 tabnext 1
-badd +40 lua/plugins/cmp-setup/sources/cmp-fish.lua
-badd +31 ~/.config/nvim/init.lua
-badd +31 ~/.config/nvim/lua/plugins/cmp-setup/init.lua
-badd +86 ~/.config/nvim/lua/plugins/luasnip/init.lua
-badd +69 ~/.config/nvim/lua/plugins/cmp-setup/sources/cmp-gh_issues.lua
+badd +27 lua/plugins/lightbulb/init.lua
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -35,6 +30,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

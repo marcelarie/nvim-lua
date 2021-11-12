@@ -69,10 +69,12 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("ray-x/cmp-treesitter")
 	use("hrsh7th/cmp-nvim-lua")
 	use("f3fora/cmp-spell")
+	use("petertriho/cmp-git")
 	use("quangnguyen30192/cmp-nvim-ultisnips")
 	use("quangnguyen30192/cmp-nvim-tags")
 	use("mfussenegger/nvim-dap")
 	use("octaltree/cmp-look")
+	use("lukas-reineke/cmp-rg")
 	--  use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 	use("jubnzv/virtual-types.nvim")
 	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
@@ -185,6 +187,14 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 		end,
 	})
 	use("airblade/vim-rooter")
+	use("arkav/lualine-lsp-progress")
+	use("goolord/alpha-nvim")
+	use({
+		"weilbith/nvim-code-action-menu",
+		cmd = "CodeActionMenu",
+	})
+	use("kosayoda/nvim-lightbulb")
+	--	use("nathom/filetype.nvim")
 	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
 
 	--  use("marcelarie/telescope-cheat.nvim")

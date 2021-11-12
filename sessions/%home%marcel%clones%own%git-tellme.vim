@@ -11,58 +11,20 @@ set shortmess=aoO
 argglobal
 %argdel
 edit src/main.rs
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe 'vert 1resize ' . ((&columns * 135 + 136) / 272)
-exe 'vert 2resize ' . ((&columns * 136 + 136) / 272)
 argglobal
-balt src/main.rs
-let s:l = 17 - ((16 * winheight(0) + 33) / 67)
+let s:l = 7 - ((6 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 17
+keepjumps 7
 normal! 0
-wincmd w
-argglobal
-if bufexists("src/main.rs") | buffer src/main.rs | else | edit src/main.rs | endif
-if &buftype ==# 'terminal'
-  silent file src/main.rs
-endif
-balt src/main.rs
-let s:l = 68 - ((64 * winheight(0) + 33) / 67)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 68
-normal! 0
-wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 135 + 136) / 272)
-exe 'vert 2resize ' . ((&columns * 136 + 136) / 272)
 tabnext 1
-badd +27 src/main.rs
+badd +6 src/main.rs
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20 shortmess=filnxtToOFc
-let &winminheight = s:save_winminheight
-let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)

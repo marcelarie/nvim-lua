@@ -20,7 +20,7 @@ neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, key
 			{ "<C-Space>", "core.norg.qol.todo_items.todo.task_cycle" },
 		},
 	}, {
-		silent = true,
+		silent = false,
 		noremap = true,
 	})
 end)

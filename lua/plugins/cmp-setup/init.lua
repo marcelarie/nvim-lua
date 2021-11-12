@@ -77,7 +77,11 @@ cmp.setup({
 				spell = "[spell]",
 				neorg = "[neorg]",
 				latex_symbols = "[latex]",
+				calc = "[calc]",
+				crates = "🦀",
+				cmp_git = "[git]",
 				cmp_tabnine = "",
+				rg = "[rg]",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -121,21 +125,22 @@ cmp.setup({
 	-- 	"i",
 	-- 	"s",
 	-- }),
-	--  documentation = {
-	--  border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
-	--  },
 	experimental = {
 		native_menu = false,
 		ghost_text = true,
 	},
 	sources = {
-		{ name = "gh_issues" },
 		-- { name = "zsh" },
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
+		{ name = "gh_issues" },
+		{ name = "path" },
+		{ name = "emoji" },
+		{ name = "calc" },
+		{ name = "rg", max_item_count = 4 },
 		{
 			name = "buffer",
-			keyword_length = 5,
+			max_item_count = 5,
 			opts = {
 				get_bufnrs = function()
 					return vim.api.nvim_list_bufs()
@@ -145,13 +150,11 @@ cmp.setup({
 		{ name = "buf_lines", max_item_count = 3 },
 		{ name = "nvim_lua" },
 		-- { name = "treesitter" },
-		{ name = "path" },
-		-- { name = "look", keyword_length = 2, max_item_count = 2 },
-		{ name = "emoji" },
-		{ name = "calc" },
+		{ name = "look", keyword_length = 2, max_item_count = 2 },
 		{ name = "crates" },
 		{ name = "tags" },
 		{ name = "neorg" },
+		{ name = "cmp_git" },
 		{
 			{ name = "look", max_item_count = 3 },
 		},
@@ -166,6 +169,22 @@ cmp.setup({
 	},
 })
 
+-- Use buffer source for `/`.
+cmp.setup.cmdline("/", {
+	sources = {
+		{ name = "buffer" },
+	},
+})
+
+-- Use cmdline & path source for ':'.
+cmp.setup.cmdline(":", {
+	sources = cmp.config.sources({
+		{ name = "path" },
+	}, {
+		{ name = "cmdline" },
+	}),
+})
+
 -- Setup buffer configuration (nvim-lua source only enables in Lua filetype).
 -- autocmd FileType lua lua require'cmp'.setup.buffer {
 -- \   sources = {
@@ -173,19 +192,3 @@ cmp.setup({
 -- \     { name = 'buffer' },
 -- \   },
 -- \ }
-
--- Use buffer source for `/`.
--- cmp.setup.cmdline("/", {
--- 	sources = {
--- 		{ name = "buffer" },
--- 	},
--- })
---
--- Use cmdline & path source for ':'.
--- cmp.setup.cmdline(":", {
--- 	sources = cmp.sources({
--- 		{ name = "path" },
--- 	}, {
--- 		{ name = "cmdline" },
--- 	}),
--- })

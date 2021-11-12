@@ -3,27 +3,24 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/clones/work/supers
+cd ~/clones/own/blog/public
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 argglobal
 %argdel
-$argadd .git/COMMIT_EDITMSG
-edit dist/Supers-Crawler/lib/Supers/France/Autourdebebe.pm
+$argadd .git
+edit .git
 argglobal
-balt dist/Supers-Crawler/lib/Supers/France/Auchan.pm
-let s:l = 52 - ((49 * winheight(0) + 33) / 67)
+let s:l = 1 - ((0 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 52
-normal! 09|
+keepjumps 1
+normal! 0
 tabnext 1
-badd +9 .git/COMMIT_EDITMSG
-badd +65 dist/Supers-Crawler/lib/Supers/France/Auchan.pm
-badd +52 dist/Supers-Crawler/lib/Supers/France/Autourdebebe.pm
+badd +0 .git
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

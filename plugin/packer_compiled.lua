@@ -93,6 +93,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-emoji"
   },
+  ["cmp-git"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-git"
+  },
   ["cmp-latex-symbols"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-latex-symbols"
@@ -120,6 +124,10 @@ _G.packer_plugins = {
   ["cmp-path"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-path"
+  },
+  ["cmp-rg"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-rg"
   },
   ["cmp-spell"] = {
     loaded = true,
@@ -184,10 +192,6 @@ _G.packer_plugins = {
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
-  },
-  ["goto-preview"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/goto-preview"
   },
   ["gruvbox-flat.nvim"] = {
     loaded = true,
@@ -354,6 +358,10 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+  },
+  ["persistence.nvim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/persistence.nvim"
   },
   playground = {
     loaded = true,
@@ -522,6 +530,10 @@ _G.packer_plugins = {
   vimtex = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vimtex"
+  },
+  ["virtual-types.nvim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/virtual-types.nvim"
   },
   ["vscode-es7-javascript-react-snippets"] = {
     loaded = true,

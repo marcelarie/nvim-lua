@@ -10,17 +10,7 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
-edit .config/polybar/pwidgets/main.ini
-argglobal
-balt .config/polybar/pwidgets/main.ini
-let s:l = 1 - ((0 * winheight(0) + 33) / 67)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
 tabnext 1
-badd +0 .config/polybar/pwidgets/main.ini
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
