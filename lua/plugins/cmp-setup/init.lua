@@ -33,26 +33,26 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.cmd("set shortmess+=c")
 vim.cmd("let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']")
 
-cmp.register_source("buf_lines", {
-	complete = function(self, request, callback)
-		local start_line, end_line = 0, -1
-		local opt_context_lines = request.option.context_lines
-		if opt_context_lines then
-			local cursor_line = request.context.cursor.line
-			start_line = math.max(0, cursor_line - opt_context_lines)
-			end_line = math.max(0, cursor_line + opt_context_lines)
-		end
-		local lines = vim.api.nvim_buf_get_lines(request.context.bufnr, start_line, end_line, false)
-		local items = {}
-		for i = 1, #lines do
-			local line = vim.trim(lines[i])
-			if #line > 0 and line ~= opt_context_lines then
-				items[#items + 1] = { label = line }
-			end
-		end
-		callback({ items = items })
-	end,
-})
+-- cmp.register_source("buf_lines", {
+-- 	complete = function(self, request, callback)
+-- 		local start_line, end_line = 0, -1
+-- 		local opt_context_lines = request.option.context_lines
+-- 		if opt_context_lines then
+-- 			local cursor_line = request.context.cursor.line
+-- 			start_line = math.max(0, cursor_line - opt_context_lines)
+-- 			end_line = math.max(0, cursor_line + opt_context_lines)
+-- 		end
+-- 		local lines = vim.api.nvim_buf_get_lines(request.context.bufnr, start_line, end_line, false)
+-- 		local items = {}
+-- 		for i = 1, #lines do
+-- 			local line = vim.trim(lines[i])
+-- 			if #line > 0 and line ~= opt_context_lines then
+-- 				items[#items + 1] = { label = line }
+-- 			end
+-- 		end
+-- 		callback({ items = items })
+-- 	end,
+-- })
 
 cmp.setup({
 	snippet = {
@@ -67,10 +67,10 @@ cmp.setup({
 
 			-- set a name for each source
 			vim_item.menu = ({
-				buffer = "[buf]",
-				buf_lines = "[buf-lines]",
 				nvim_lsp = "[lsp]",
 				luasnip = "[snip]",
+				buffer = "[buf]",
+				-- buf_lines = "[buf-lines]",
 				nvim_lua = "[lua]",
 				treesitter = "[ts]",
 				look = "[look]",
@@ -130,7 +130,6 @@ cmp.setup({
 		ghost_text = true,
 	},
 	sources = {
-		-- { name = "zsh" },
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "gh_issues" },
@@ -158,6 +157,7 @@ cmp.setup({
 		{
 			{ name = "look", max_item_count = 3 },
 		},
+		-- { name = "zsh" },
 		-- { name = "latex_symbols" },
 		--  { name = "cmp_tabnine" }, -- wait for better RAM managment
 		--  { name = "cmdline" },

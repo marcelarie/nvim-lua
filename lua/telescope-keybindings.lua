@@ -81,6 +81,13 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true }
 )
 
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader>tb",
+	[[<Cmd> lua require('telescope.builtin').buffers()<cr>]],
+	{ noremap = true, silent = true }
+)
+
 -- vim.api.nvim_set_keymap('n', '<Leader>ch',
 --                         [[<Cmd> Telescope cheat fcope cheat fd theme=get_dropdown <cr>]],
 --                         {noremap = true, silent = true})

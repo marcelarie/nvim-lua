@@ -166,6 +166,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	--  use("rmagatti/auto-session")
 	-- use("rmagatti/session-lens") -- < with tree sitter
 	use("folke/persistence.nvim")
+	-- use("Shatur/neovim-session-manager")
 	use("KabbAmine/vCoolor.vim") -- color picker
 	use("jakerobers/vim-hexrgba") -- hex rgba toggle
 	use("amadeus/vim-convert-color-to") -- color converter
@@ -173,7 +174,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use({ "oberblastmeister/neuron.nvim", branch = "unstable" }) -- note taker
 	use("folke/todo-comments.nvim") -- TODO finder
 	use("ThePrimeagen/harpoon")
-	use("ThePrimeagen/refactoring.nvim")
+	-- use("ThePrimeagen/refactoring.nvim")
 	use("fladson/vim-kitty") -- syntax highlight on kitty conf
 	use("beauwilliams/focus.nvim") -- handle splits resize
 	use("AckslD/nvim-neoclip.lua") -- clipboard manager with telescope

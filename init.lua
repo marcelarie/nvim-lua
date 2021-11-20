@@ -45,9 +45,8 @@ require("lsp.latex") -- ./lua/lsp/latex.lua
 require("lsp.docker") -- ./lua/lsp/docker.lua
 require("lsp.sql") -- ./lua/lsp/sql.lua
 require("lsp.yaml") -- ./lua/lsp/yaml.lua
-require("lsp.znote") -- ./lua/lsp/znote.lua
 require("lsp.perlpls") -- ./lua/lsp/perlpls.lua
-require("lsp.perl") -- ./lua/lsp/perl.lua
+-- require("lsp.perl") -- ./lua/lsp/perl.lua
 require("lsp.c") -- ./lua/lsp/c.lua
 require("lsp.clangd") -- ./lua/lsp/clangd.lua
 -- require('lsp.stylelint') -- ./lua/lsp/stylelint.lua
@@ -59,7 +58,6 @@ require("lsp-kind") -- ./lua/lsp-kind/init.lua
 require("plugins.lightbulb") -- ./lua/plugins/lightbulb/init.lua
 
 require("formatting") -- ./lua/formatting.lua
-require("lsp.formatter") -- ./lua/lsp/formatter.lua
 require("lsp-trouble") -- ./lua/lsp-trouble/init.lua
 require("lsp-trouble-keybindings") -- ./lua/lsp-trouble-keybindings.lua
 require("symbols-outline") -- ./lua/symbols/init.lua
@@ -71,11 +69,12 @@ require("plugins.colorizer-setup") -- ./lua/plugins/colorizer-setup/init.lua
 require("plugins.autopairs") -- (?) --./lua/plugins/autopairs/init.lua
 require("plugins.markdown-preview") -- ./lua/plugins/markdown-preview/init.lua
 require("plugins.prime-harpoon") -- ./lua/plugins/prime-harpoon/init.lua
---  require("plugins.autosession") -- ./lua/plugins/autosession/init.lua
+-- require("plugins.autosession") -- ./lua/plugins/autosession/init.lua
+-- require("plugins.session-manager") -- ./lua/plugins/session-manager/init.lua
 require("plugins.numb-nvim") -- ./lua/plugins/numb-nvim/init.lua
 require("plugins.vimtex") -- ./lua/plugins/vimtex/init.lua
 require("plugins.todo-finder") -- ./lua/plugins/todo-finder/init.lua
-require("plugins.refactor") -- ./lua/plugins/refactor/init.lua
+-- require("plugins.refactor") -- ./lua/plugins/refactor/init.lua
 require("plugins.focus") -- ./lua/plugins/focus/init.lua
 require("plugins.neoclip") -- ./lua/plugins/neoclip/init.lua
 require("plugins.bubbly") -- ./lua/plugins/bubbly/init.lua
@@ -100,10 +99,45 @@ require("diff-view") -- ./lua/diff-view/init.lua
 --/// Firenvim ///
 if not vim.g.started_by_firenvim then
 	require("plugins.trim-lua") -- ./lua/plugins/trim-lua/init.lua
+	require("lsp.znote") -- ./lua/lsp/znote.lua
+	require("lsp.formatter") -- ./lua/lsp/formatter.lua
 else
+	vim.cmd("autocmd BufWritePre * :set lines=120")
 	vim.cmd("set guifont=monospace:h8")
-	vim.cmd("set lines=100")
-	vim.cmd("set lines=100")
+	vim.cmd("set showtabline=1")
+	vim.cmd("set shortmess+=F")
+	vim.cmd("set colorcolumn=0")
+	vim.cmd("set textwidth=200")
+	vim.cmd("set noruler")
+	vim.cmd("let g:ale_enabled = 0")
+	vim.cmd("set cmdheight=1")
+	vim.cmd("set laststatus=0")
+	vim.cmd("set showmode")
+	vim.cmd("set nocursorline")
+	vim.cmd("set nonumber")
+	vim.cmd([[
+        function! s:IsFirenvimActive(event) abort
+          if !exists('*nvim_get_chan_info')
+            return 0
+          endif
+          let l:ui = nvim_get_chan_info(a:event.chan)
+          return has_key(l:ui, 'client') && has_key(l:ui.client, 'name') &&
+              \ l:ui.client.name =~? 'Firenvim'
+        endfunction
+
+        function! SetLinesForFirefox()
+            set lines=28 columns=110 laststatus=0
+        endfunction
+
+        function! OnUIEnter(event) abort
+          if s:IsFirenvimActive(a:event)
+            call SetLinesForFirefox()
+            nnoremap <silent> <Leader>f :call SetLinesForFirefox()<CR>
+          endif
+        endfunction
+
+        autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
+    ]])
 end
 
 -- /// TODO: ///.
