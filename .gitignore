@@ -2,4 +2,4 @@ node_modules
 language-servers/
 $HOME
 HOME
-sessions/*
+sessions
