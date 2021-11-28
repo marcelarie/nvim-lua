@@ -7,14 +7,15 @@ require("lspconfig").perlls.setup({
 		"-e",
 		"Perl::LanguageServer::run",
 		"--",
+		-- "--debug",
 		"--port 13603",
 		"--nostdio 0",
-		"--version 2.2.0",
+		"--version 2.3.0",
 	},
-	--  cmd = { "perl", "-MPerl::LanguageServer", "-e", "Perl::LanguageServer::run", "--", "--port 13603", "--nostdio 0", "--version 2.1.0" }
 	-- capabilities = capabilities,
 	filetypes = { "perl" },
 	root_dir = vim.loop.cwd,
+	single_file_mode = true,
 	settings = {
 		perl = {
 			fileFilter = { ".pm", ".pl" },

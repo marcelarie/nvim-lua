@@ -43,6 +43,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("nvim-telescope/telescope-fzy-native.nvim")
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use("nvim-telescope/telescope-symbols.nvim")
 	use("dhruvmanila/telescope-bookmarks.nvim")
 	use("nvim-telescope/telescope-github.nvim")
@@ -195,6 +196,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 		cmd = "CodeActionMenu",
 	})
 	use("kosayoda/nvim-lightbulb")
+	use("folke/which-key.nvim")
 	--	use("nathom/filetype.nvim")
 	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
 

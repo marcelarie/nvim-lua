@@ -22,6 +22,12 @@ vim.api.nvim_set_keymap("n", "<Leader>s", ":split<cr>", { noremap = true, silent
 vim.api.nvim_set_keymap("n", "<Leader>ss", ":vsplit<cr>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<Leader>o", ":luafile %<cr>", { noremap = true, silent = false })
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader>so",
+	":luafile $HOME/.config/nvim/init.lua<cr>",
+	{ noremap = true, silent = false }
+)
 
 -- open file path under cursor vertical split
 -- vim.api.nvim_set_keymap('n', '<Leader>gf', ':vertical wincmd f<cr>',
@@ -41,9 +47,9 @@ vim.api.nvim_set_keymap("n", "<Leader>o", ":luafile %<cr>", { noremap = true, si
 --                         {noremap = true, silent = true})
 
 -- switch windows vertically
-vim.api.nvim_set_keymap("n", "<Leader>L", ":wincmd L<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>l", ":wincmd L<cr>", { noremap = true, silent = true })
 -- switch windows horizontally
-vim.api.nvim_set_keymap("n", "<Leader>J", ":wincmd J<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>j", ":wincmd J<cr>", { noremap = true, silent = true })
 
 -- Packer
 vim.api.nvim_set_keymap("n", "<Leader>pi", ":luafile %<cr>:PackerInstall<cr>", { noremap = true, silent = false })

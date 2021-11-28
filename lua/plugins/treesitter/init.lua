@@ -15,9 +15,10 @@ parser_configs.norg = {
 
 ts.setup({
 	ensure_installed = "maintained",
+	ignore_install = { "perl" }, -- List of parsers to ignore installing
 	highlight = {
 		enable = true,
-		disable = { "perl" },
+		-- disable = { "perl" },
 		custom_captures = {
 			-- Highlight the @foo.bar capture group with the "Identifier" highlight group
 			["foo.bar"] = "Identifier",

@@ -132,31 +132,32 @@ cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
-		{ name = "gh_issues" },
 		{ name = "path" },
 		{ name = "emoji" },
 		{ name = "calc" },
-		{ name = "rg", max_item_count = 4 },
 		{
 			name = "buffer",
 			max_item_count = 5,
-			opts = {
+			options = {
 				get_bufnrs = function()
 					return vim.api.nvim_list_bufs()
 				end,
 			},
 		},
-		{ name = "buf_lines", max_item_count = 3 },
-		{ name = "nvim_lua" },
 		-- { name = "treesitter" },
 		{ name = "look", keyword_length = 2, max_item_count = 2 },
+		{ name = "nvim_lua" },
 		{ name = "crates" },
 		{ name = "tags" },
 		{ name = "neorg" },
 		{ name = "cmp_git" },
 		{
 			{ name = "look", max_item_count = 3 },
+			{ name = "rg", max_item_count = 4 },
+			{ name = "buf_lines", max_item_count = 3 },
 		},
+		-- { name = "gh_issues" },
+		-- { name = "pack_cmp" },
 		-- { name = "zsh" },
 		-- { name = "latex_symbols" },
 		--  { name = "cmp_tabnine" }, -- wait for better RAM managment
