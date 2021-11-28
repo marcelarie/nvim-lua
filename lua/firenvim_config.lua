@@ -11,6 +11,7 @@ vim.cmd("set laststatus=0")
 vim.cmd("set showmode")
 vim.cmd("set nocursorline")
 vim.cmd("set nonumber")
+vim.api.nvim_set_keymap("n", "<Leader>q", ":wq<cr>", { noremap = true, silent = true })
 vim.cmd([[
         let g:firenvim_config = {
             \ 'globalSettings': {

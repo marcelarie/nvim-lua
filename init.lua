@@ -83,12 +83,6 @@ require("plugins.bubbly") -- ./lua/plugins/bubbly/init.lua
 require("plugins.color-buddy") -- ./lua/plugins/color-buddy/init.lua
 require("plugins.neorg") -- ./lua/plugins/neorg/init.lua
 -- require("plugins.distant") -- ./lua/plugins/distant/init.lua
-require("plugins.persistence") -- ./lua/plugins/persistence/init.lua
-require("plugins.alpha") -- ./lua/plugins/alpha/init.lua
---
--- /// Rust ///
-require("plugins.crates") -- ./lua/plugins/crates/init.lua
---  require("plugins.rs-tools") -- ./lua/rs-tools/init.lua
 
 -- /// Git ///
 require("octo") -- ./lua/octo/init.lua
@@ -100,11 +94,15 @@ require("diff-view") -- ./lua/diff-view/init.lua
 
 --/// Firenvim ///
 if not vim.g.started_by_firenvim then
+	-- /// Rust ///
+	require("plugins.crates") -- ./lua/plugins/crates/init.lua
+	--  require("plugins.rs-tools") -- ./lua/rs-tools/init.lua
+
+	require("plugins.persistence") -- ./lua/plugins/persistence/init.lua
+	require("plugins.alpha") -- ./lua/plugins/alpha/init.lua
 	require("plugins.trim-lua") -- ./lua/plugins/trim-lua/init.lua
 	require("lsp.znote") -- ./lua/lsp/znote.lua
 	require("lsp.formatter") -- ./lua/lsp/formatter.lua
 else
 	require("firenvim_config")
 end
-
--- /// TODO: ///.
