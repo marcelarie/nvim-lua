@@ -14,18 +14,18 @@ vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "N", "Nzzzv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "J", "mzJ`z", { noremap = true, silent = true })
 
---  vim.api.nvim_set_keymap(
---  "n",
---  "<expr> k",
---  [[ (v:count > 5 ? "m'" . v:count : "") . 'k' ]],
---  { noremap = true, silent = true }
---  )
---  vim.api.nvim_set_keymap(
---  "n",
---  "<expr> j",
---  [[ (v:count > 5 ? "m'" . v:count : "") . 'j' ]],
---  { noremap = true, silent = true }
---  )
+vim.api.nvim_set_keymap(
+	"n",
+	"<expr> k",
+	[[ (v:count > 5 ? "m'" . v:count : "") . 'k' ]],
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<expr> j",
+	[[ (v:count > 5 ? "m'" . v:count : "") . 'j' ]],
+	{ noremap = true, silent = true }
+)
 
 -- vim.api.nvim_set_keymap('v', '<C-r>',
 -- ':hy:%Subvert/<C-r>h//gc<left><left><left>',

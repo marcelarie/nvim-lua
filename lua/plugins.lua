@@ -140,7 +140,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("rafamadriz/friendly-snippets")
 
 	-- Latex
-	use("lervag/vimtex")
+	-- use("lervag/vimtex")
 
 	-- Rust
 	use("simrat39/rust-tools.nvim")
@@ -197,6 +197,9 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	})
 	use("kosayoda/nvim-lightbulb")
 	use("folke/which-key.nvim")
+	use({ "ray-x/guihua.lua", run = "cd lua/fzy && make" }) -- lua GUI lib
+	use("ray-x/sad.nvim")
+
 	--	use("nathom/filetype.nvim")
 	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
 
