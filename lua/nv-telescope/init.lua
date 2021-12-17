@@ -1,4 +1,5 @@
 local actions = require("telescope.actions")
+local builtin = require("telescope.builtin")
 local ts = require("telescope")
 
 ts.setup({
@@ -6,8 +7,9 @@ ts.setup({
 	file_previewer = require("telescope.previewers").vim_buffer_cat.new,
 	grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 	qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-	mappings = { i = { ["<C-x>"] = false, ["<C-q>"] = actions.send_to_qflist } },
 	generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+
+	mappings = { i = { ["<C-x>"] = false, ["<C-q>"] = actions.send_to_qflist } },
 
 	vimgrep_arguments = {
 		"rg",
@@ -46,14 +48,19 @@ ts.setup({
 	path_display = true,
 	winblend = 0,
 	border = {},
+	defaults = {
+		preview = {
+			treesitter = false,
+		},
+	},
 	borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 	use_less = true,
 	set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil
 	extensions = {
-		fzy_native = {
-			override_generic_sorter = false,
-			override_file_sorter = true,
-		},
+		-- fzy_native = {
+		-- 	override_generic_sorter = false,
+		-- 	override_file_sorter = true,
+		-- },
 		fzf = {
 			fuzzy = true, -- false will only do exact matching
 			override_generic_sorter = true, -- override the generic sorter
@@ -63,8 +70,14 @@ ts.setup({
 		},
 		bookmarks = {
 			-- Available: 'brave', 'google_chrome', 'safari', 'firefox', 'firefox_dev'
-			selected_browser = "brave",
-			url_open_command = "open",
+			selected_browser = "firefox",
+
+			-- Either provide a shell command to open the URL
+			url_open_command = "xdg-open",
+
+			-- Or provide the plugin name which is already installed
+			-- Available: 'vim_external', 'open_browser'
+			url_open_plugin = nil,
 			firefox_profile_name = nil,
 		},
 		arecibo = {
@@ -92,6 +105,7 @@ ts.load_extension("media_files")
 ts.load_extension("gh")
 ts.load_extension("arecibo")
 ts.load_extension("packer")
+ts.load_extension("zoxide")
 
 -- local M = {}
 -- M.search_dotfiles = function()

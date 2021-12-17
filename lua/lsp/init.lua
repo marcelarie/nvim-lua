@@ -19,12 +19,10 @@ vim.cmd("nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>")
 
 vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>z",
-	"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>",
-	{ noremap = true, silent = true }
-)
+vim.api.nvim_set_keymap("n", "<Leader>z", "<cmd>lua vim.diagnostic.open_float()<cr>", {
+	noremap = true,
+	silent = true,
+})
 vim.api.nvim_set_keymap("n", "[", "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "]", "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", { noremap = true, silent = true })

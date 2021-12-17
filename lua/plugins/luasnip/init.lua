@@ -39,16 +39,12 @@ luasnip.snippets = {
 			trig = "style",
 			name = "style",
 			dscr = "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)  🔷",
-		}, t(
-			"style: "
-		)),
+		}, t("style: ")),
 		s({
 			trig = "refactor",
 			name = "refactor",
 			dscr = "A code change that neither fixes a bug nor adds a feature 📦",
-		}, t(
-			"refactor: "
-		)),
+		}, t("refactor: ")),
 		s({ trig = "perf", name = "perf", dscr = "A code change that improves performance 🚀" }, t("perf: ")),
 		s(
 			{ trig = "test", name = "test", dscr = "Adding missing tests or correcting existing tests 🆘" },
@@ -63,26 +59,26 @@ luasnip.snippets = {
 			trig = "build",
 			name = "build",
 			dscr = "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm) 🛠️",
-		}, t(
-			"build: "
-		)),
+		}, t("build: ")),
 		s({
 			trig = "ci",
 			name = "ci",
 			dscr = "Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) ⚙️",
-		}, t(
-			"ci: "
-		)),
+		}, t("ci: ")),
 	},
 	perl = {
 		s("st", { t("$self->_stash($"), i(1, "value"), t(");") }),
 		s("cl", { t("$self->clear_str($"), i(1, "str"), t(");") }),
 		s("->map", { t("->map( sub ($"), i(1, "el"), t({ ") { ", "" }), i(2), t("});") }),
 		s("->each", { t("->each( sub ($"), i(1, "el"), t({ ", $i) { ", "" }), i(2), t("});") }),
+		s("->grep", { t("->grep(qr/"), i(1, "regex"), t("/i)->first;") }),
 		s("sub", { t("sub "), i(1, "routine"), t({ " {", "}" }) }),
 	},
 	norg = {
 		s({ name = "- [ ]", trig = "- [ ]" }, { t("- [ ] "), i(1, "todo") }),
+	},
+	javascript = {
+		s("log", { t("console.log($"), i(1, "var"), t(")") }),
 	},
 }
 

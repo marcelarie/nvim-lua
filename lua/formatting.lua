@@ -26,3 +26,6 @@ vim.cmd([[autocmd BufWritePre *.tex silent! Neoformat]])
 -- Perl
 -- vim.cmd([[autocmd BufWritePre *.pl silent! ]])
 -- vim.cmd([[autocmd BufWritePre *.pm silent! ]])
+--
+--'
+vim.api.nvim_set_keymap("v", "ff", ":'<,'>Neoformat<cr>", { noremap = true, silent = true })

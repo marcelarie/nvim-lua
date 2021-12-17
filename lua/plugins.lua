@@ -52,7 +52,12 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 		rocks = { "openssl", "lua-http-parser" },
 	})
 	use("nvim-telescope/telescope-packer.nvim")
+	use("jvgrootveld/telescope-zoxide")
 	-- use("nvim-telescope/telescope-node-modules.nvim")
+
+	-- Fuzzy
+	use({ "octaltree/linearf", merged = 0 })
+	use("octaltree/linearf-my-flavors")
 
 	-- LSP
 	use("neovim/nvim-lsp")
@@ -76,7 +81,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("mfussenegger/nvim-dap")
 	use("octaltree/cmp-look")
 	use("lukas-reineke/cmp-rg")
-	--  use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
+	use({ "tzachar/cmp-tabnine", run = "./install.sh" })
 	use("jubnzv/virtual-types.nvim")
 	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
 	--  use("f3fora/cmp-nuspell")
@@ -140,7 +145,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("rafamadriz/friendly-snippets")
 
 	-- Latex
-	-- use("lervag/vimtex")
+	use("lervag/vimtex")
 
 	-- Rust
 	use("simrat39/rust-tools.nvim")
@@ -199,6 +204,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("folke/which-key.nvim")
 	use({ "ray-x/guihua.lua", run = "cd lua/fzy && make" }) -- lua GUI lib
 	use("ray-x/sad.nvim")
+	use({ "ellisonleao/glow.nvim" })
 
 	--	use("nathom/filetype.nvim")
 	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp

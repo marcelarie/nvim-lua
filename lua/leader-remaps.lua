@@ -25,7 +25,7 @@ vim.api.nvim_set_keymap("n", "<Leader>o", ":luafile %<cr>", { noremap = true, si
 vim.api.nvim_set_keymap(
 	"n",
 	"<Leader>so",
-	":luafile $HOME/.config/nvim/init.lua<cr>",
+	":luafile /home/marcel/.config/nvim/init.lua<cr>",
 	{ noremap = true, silent = false }
 )
 

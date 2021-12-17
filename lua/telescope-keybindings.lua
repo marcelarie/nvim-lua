@@ -42,7 +42,7 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
 	"n",
 	"<Leader>em",
-	[[<Cmd> lua require('telescope.builtin').symbols()<cr>]],
+	[[<Cmd> lua require('telescope.builtin').symbols{  }<cr>]],
 	{ noremap = true, silent = true }
 )
 
@@ -105,6 +105,13 @@ vim.api.nvim_set_keymap(
 	"<Leader>ch",
 	[[<Cmd> lua require("telescope.builtin").find_files( {prompt_title = "< Cheats >", cwd = "$HOME/.config/cheat/cheatsheets/personal"})
 <cr>]],
+	{ noremap = true, silent = true }
+)
+
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>zo",
+	":lua require'telescope'.extensions.zoxide.list{}<CR>",
 	{ noremap = true, silent = true }
 )
 

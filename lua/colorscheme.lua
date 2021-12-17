@@ -5,7 +5,7 @@ vim.g.gruvbox_flat_style = "dark"
 --  vim.o.background = "light"
 
 -- BASE 16
---  require("base16-colorscheme").setup({
+--  use("base16-colorscheme").setup({
 --  base00 = "#f6f7f6",
 --  base01 = "#2c313c",
 --  base02 = "#f6f7f6",

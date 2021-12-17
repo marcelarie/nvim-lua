@@ -15,17 +15,14 @@ end
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 
--- local tabnine = require("cmp_tabnine.config")
--- tabnine:setup({
--- 	max_lines = 1000,
--- 	max_num_results = 20,
--- 	sort = true,
--- 	run_on_every_keystroke = true,
--- 	snippet_placeholder = "..",
--- })
---
---
---
+local tabnine = require("cmp_tabnine.config")
+tabnine:setup({
+	max_lines = 1000,
+	max_num_results = 20,
+	sort = true,
+	run_on_every_keystroke = true,
+	snippet_placeholder = "..",
+})
 
 -- vim.o.completeopt = "menu,menuone,noselect"
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
@@ -66,11 +63,10 @@ cmp.setup({
 			vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
 
 			-- set a name for each source
-			vim_item.menu = ({
+			local menu = ({
 				nvim_lsp = "[lsp]",
 				luasnip = "[snip]",
 				buffer = "[buf]",
-				-- buf_lines = "[buf-lines]",
 				nvim_lua = "[lua]",
 				treesitter = "[ts]",
 				look = "[look]",
@@ -82,7 +78,14 @@ cmp.setup({
 				cmp_git = "[git]",
 				cmp_tabnine = "",
 				rg = "[rg]",
+				-- buf_lines = "[buf-lines]",
 			})[entry.source.name]
+
+			if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+				menu = entry.completion_item.data.detail .. " " .. menu
+			end
+
+			vim_item.menu = menu
 			return vim_item
 		end,
 	},
@@ -125,16 +128,12 @@ cmp.setup({
 	-- 	"i",
 	-- 	"s",
 	-- }),
-	experimental = {
-		native_menu = false,
-		ghost_text = true,
-	},
+	experimental = { ghost_text = true },
 	sources = {
-		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
+		{ name = "cmp_tabnine" },
+		{ name = "nvim_lsp" },
 		{ name = "path" },
-		{ name = "emoji" },
-		{ name = "calc" },
 		{
 			name = "buffer",
 			max_item_count = 5,
@@ -144,23 +143,24 @@ cmp.setup({
 				end,
 			},
 		},
+		-- { name = "emoji" },
+		-- { name = "rg", max_item_count = 4 },
+		-- { name = "look", keyword_length = 2, max_item_count = 2 },
+		-- { name = "crates" },
+		-- { name = "tags" },
+		-- {
+		-- 	{ name = "look", max_item_count = 3 },
+		-- 	{ name = "buf_lines", max_item_count = 3 },
+		-- },
+		-- { name = "calc" },
 		-- { name = "treesitter" },
-		{ name = "look", keyword_length = 2, max_item_count = 2 },
-		{ name = "nvim_lua" },
-		{ name = "crates" },
-		{ name = "tags" },
-		{ name = "neorg" },
-		{ name = "cmp_git" },
-		{
-			{ name = "look", max_item_count = 3 },
-			{ name = "rg", max_item_count = 4 },
-			{ name = "buf_lines", max_item_count = 3 },
-		},
+		-- { name = "nvim_lua" },
+		-- { name = "neorg" },
+		-- { name = "cmp_git" },
 		-- { name = "gh_issues" },
 		-- { name = "pack_cmp" },
 		-- { name = "zsh" },
 		-- { name = "latex_symbols" },
-		--  { name = "cmp_tabnine" }, -- wait for better RAM managment
 		--  { name = "cmdline" },
 		--  { name = "spell" },
 		--  { name = "nuspell" },
@@ -185,11 +185,3 @@ cmp.setup.cmdline(":", {
 		{ name = "cmdline" },
 	}),
 })
-
--- Setup buffer configuration (nvim-lua source only enables in Lua filetype).
--- autocmd FileType lua lua require'cmp'.setup.buffer {
--- \   sources = {
--- \     { name = 'nvim_lua' },
--- \     { name = 'buffer' },
--- \   },
--- \ }
