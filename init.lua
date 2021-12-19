@@ -1,13 +1,13 @@
 -- /// BASE ///.
-require("impatient") -- ./lua/impatient/init.lua
+-- require("impatient") -- ./lua/impatient/init.lua
 require("colorscheme") -- ./lua/colorscheme.lua
 require("plugins") -- ./lua/plugins.lua
-require("settings") -- ./lua/settings.lua
+-- require("settings") -- ./lua/settings.lua
 require("aliases") -- ./lua/aliases.lua
 require("globals") -- ./lua/globals.lua
 require("autocommands") -- ./lua/autocommands.lua
 
--- -- /// REMAPS ///.
+-- /// REMAPS ///.
 require("leader-remaps") -- ./lua/remaps.lua
 require("remaps") -- ./lua/remaps.lua
 

@@ -130,10 +130,10 @@ cmp.setup({
 	-- }),
 	experimental = { ghost_text = true },
 	sources = {
+		{ name = "path" },
 		{ name = "luasnip" },
 		{ name = "cmp_tabnine" },
 		{ name = "nvim_lsp" },
-		{ name = "path" },
 		{
 			name = "buffer",
 			max_item_count = 5,

@@ -45,3 +45,11 @@ vim.api.nvim_set_keymap("n", "^v", "^v<Esc>", { noremap = true, silent = true })
 
 -- quick cd to buffer file
 vim.api.nvim_set_keymap("n", "<leader>cd", ":cd %:p:h<cr>:pwd<cr>", { noremap = true, silent = true })
+
+-- complextras
+vim.api.nvim_set_keymap(
+	"i",
+	"<c-x>",
+	":lua require('complextras').complete_line_from_cwd()",
+	{ noremap = true, silent = true }
+)

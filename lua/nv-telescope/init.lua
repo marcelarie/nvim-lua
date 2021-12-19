@@ -50,7 +50,7 @@ ts.setup({
 	border = {},
 	defaults = {
 		preview = {
-			treesitter = false,
+			treesitter = { "lua", "rust", "bash", "toml", "json" },
 		},
 	},
 	borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
