@@ -17,7 +17,7 @@ require("lualine").setup({
 		icons_enabled = true,
 		--  theme = "gruvbox",
 		--  theme = require("monarized.lualine"),
-		theme = vim.g.colors_name == "gruvbox-flat" and "gruvbox" or require("monarized.lualine"),
+		theme = "gruvbox",
 		component_separators = { ".", "." },
 		--  section_separators = { "", "" },
 		section_separators = { "", "" },
