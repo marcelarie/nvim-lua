@@ -86,6 +86,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
 	--  use("f3fora/cmp-nuspell")
 
+	use("tjdevries/complextras.nvim")
 	use("tjdevries/nlua.nvim")
 	use("tjdevries/lsp_extensions.nvim")
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
@@ -172,6 +173,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	--  use("rmagatti/auto-session")
 	-- use("rmagatti/session-lens") -- < with tree sitter
 	use("folke/persistence.nvim")
+	-- use("~/clones/forks/persistence.nvim")
+
 	-- use("Shatur/neovim-session-manager")
 	use("KabbAmine/vCoolor.vim") -- color picker
 	use("jakerobers/vim-hexrgba") -- hex rgba toggle
@@ -205,20 +208,19 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use({ "ray-x/guihua.lua", run = "cd lua/fzy && make" }) -- lua GUI lib
 	use("ray-x/sad.nvim")
 	use({ "ellisonleao/glow.nvim" })
+	use("nathom/filetype.nvim")
+	use("datwaft/bubbly.nvim") -- try other bubble for lsp
 
-	--	use("nathom/filetype.nvim")
-	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
-
-	--  use("marcelarie/telescope-cheat.nvim")
+	-- use("marcelarie/telescope-cheat.nvim")
 	-- /// MYBE LATER ///
 	-- spell
-	--  use("f3fora/lua-nuspell")
-	--
+	-- use("f3fora/lua-nuspell")
+
 	-- Change root folder to the one opened with vim
-	--
+
 	-- spellsitter
-	-- use 'lewis6991/spellsitter.nvim'
+	-- use("lewis6991/spellsitter.nvim")
 
 	-- Maybe later
-	-- use 'gennaro-tedesco/nvim-peekup''
+	-- use("gennaro-tedesco/nvim-peekup")
 end)
