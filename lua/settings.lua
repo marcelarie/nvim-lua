@@ -45,7 +45,7 @@ vim.cmd("set undolevels=1000")
 vim.cmd("set undoreload=10000")
 vim.cmd("set noswapfile")
 vim.cmd("set nohlsearch")
-vim.cmd("syntax on") -- syntax highlighting
+-- vim.api.nvim_set_option("syntax on")
 -- vim.cmd('set path+=**')
 
 -- vim.api.nvim_set_option('spelllang', 'en')
