@@ -33,9 +33,9 @@ vim.wo.signcolumn = "yes"
 vim.wo.colorcolumn = "80"
 
 -- highlight on yank
--- vim.cmd([[
--- au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncSearch', timeout = 300 })
--- ]])
+vim.cmd([[
+au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncSearch', timeout = 300 })
+]])
 
 vim.api.nvim_set_option("undofile", true)
 vim.api.nvim_set_option("undodir", "~/.vim/undodir")

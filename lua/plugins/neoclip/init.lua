@@ -1,5 +1,7 @@
 require("neoclip").setup({
 	history = 1000,
+	enable_persistant_history = false,
+	db_path = vim.fn.stdpath("data") .. "/databases/neoclip.sqlite3",
 	filter = nil,
 	preview = true,
 	default_register = '"',
@@ -8,15 +10,25 @@ require("neoclip").setup({
 		set_reg = false,
 	},
 	keys = {
-		i = {
-			select = "<cr>",
-			paste = "<c-p>",
-			paste_behind = "<c-k>",
+		telescope = {
+			i = {
+				select = "<cr>",
+				paste = "<c-p>",
+				paste_behind = "<c-k>",
+				custom = {},
+			},
+			n = {
+				select = "<cr>",
+				paste = "p",
+				paste_behind = "P",
+				custom = {},
+			},
 		},
-		n = {
-			select = "<cr>",
-			paste = "p",
-			paste_behind = "P",
+		fzf = {
+			select = "default",
+			paste = "ctrl-p",
+			paste_behind = "ctrl-k",
+			custom = {},
 		},
 	},
 })

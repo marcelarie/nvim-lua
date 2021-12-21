@@ -40,7 +40,10 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	-- Telescope
 	use("nvim-lua/popup.nvim")
 	use("nvim-lua/plenary.nvim")
-	use("nvim-telescope/telescope.nvim")
+
+	-- use("nvim-telescope/telescope.nvim")
+	use("~/clones/forks/telescope.nvim")
+
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("nvim-telescope/telescope-fzy-native.nvim")
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
@@ -76,6 +79,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("hrsh7th/cmp-nvim-lua")
 	use("f3fora/cmp-spell")
 	use("petertriho/cmp-git")
+	use({ "~/clones/own/cmp-package", run = "luarocks install lua-cjson" })
+	-- use({ "~/clones/own/cmp-package" })
 	use("quangnguyen30192/cmp-nvim-ultisnips")
 	use("quangnguyen30192/cmp-nvim-tags")
 	use("mfussenegger/nvim-dap")
@@ -172,8 +177,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("tversteeg/registers.nvim")
 	--  use("rmagatti/auto-session")
 	-- use("rmagatti/session-lens") -- < with tree sitter
-	use("folke/persistence.nvim")
-	-- use("~/clones/forks/persistence.nvim")
+	-- use("folke/persistence.nvim")
+	use("~/clones/forks/persistence.nvim")
 
 	-- use("Shatur/neovim-session-manager")
 	use("KabbAmine/vCoolor.vim") -- color picker
@@ -209,6 +214,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("ray-x/sad.nvim")
 	use({ "ellisonleao/glow.nvim" })
 	use("nathom/filetype.nvim")
+	use("Pocco81/TrueZen.nvim")
 
 	-- use("marcelarie/telescope-cheat.nvim")
 	-- /// MYBE LATER ///

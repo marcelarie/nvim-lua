@@ -78,6 +78,7 @@ cmp.setup({
 				cmp_git = "[git]",
 				cmp_tabnine = "",
 				rg = "[rg]",
+				package = "[pack]",
 				-- buf_lines = "[buf-lines]",
 			})[entry.source.name]
 
@@ -130,6 +131,7 @@ cmp.setup({
 	-- }),
 	experimental = { ghost_text = true },
 	sources = {
+		{ name = "package" },
 		{ name = "path" },
 		{ name = "luasnip" },
 		{ name = "cmp_tabnine" },
@@ -143,16 +145,9 @@ cmp.setup({
 				end,
 			},
 		},
-		-- { name = "emoji" },
 		-- { name = "rg", max_item_count = 4 },
-		-- { name = "look", keyword_length = 2, max_item_count = 2 },
 		-- { name = "crates" },
 		-- { name = "tags" },
-		-- {
-		-- 	{ name = "look", max_item_count = 3 },
-		-- 	{ name = "buf_lines", max_item_count = 3 },
-		-- },
-		-- { name = "calc" },
 		-- { name = "treesitter" },
 		-- { name = "nvim_lua" },
 		-- { name = "neorg" },
@@ -161,14 +156,40 @@ cmp.setup({
 		-- { name = "pack_cmp" },
 		-- { name = "zsh" },
 		-- { name = "latex_symbols" },
-		--  { name = "cmdline" },
-		--  { name = "spell" },
-		--  { name = "nuspell" },
+		-- { name = "cmdline" },
+		-- { name = "spell" },
+		-- { name = "nuspell" },
+
 		--  old snippets
-		--  { name = "vsnip" },
-		--  { name = "ultisnips" },
+		--   { name = "vsnip" },
+		--   { name = "ultisnips" },
 	},
 })
+
+vim.api.nvim_exec(
+	[[
+  autocmd FileType markdown,text,tex,gitcommit lua require('cmp').setup.buffer {
+  \   sources = {
+  \       { name = 'package' },
+  \       { name = 'path' },
+  \       { name = 'luasnip' },
+  \       { name = 'cmp_tabnine' },
+  \       { name = 'nvim_lsp' },
+  \  	  { name = 'calc' },
+  \       {
+  \           name = 'look',
+  \           keyword_length = 2,
+  \           max_item_count = 5,
+  \           option = {
+  \               convert_case = true,
+  \               loud = true,
+  \           },
+  \          },
+  \     },
+  \ }
+]],
+	false
+)
 
 -- Use buffer source for `/`.
 cmp.setup.cmdline("/", {

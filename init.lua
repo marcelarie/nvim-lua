@@ -29,7 +29,6 @@ require("plugins.linearf") -- ./lua/plugins/linearf/init.lua
 require("plugins.luasnip") -- ./lua/plugins/luasnip/init.lua
 
 -- /// LS & SYNTAX ///.
-require("plugins.cmp-setup.sources.cmp-git") -- ./lua/plugins/cmp-setup/sources/cmp-git.lua
 require("plugins.cmp-setup") -- ./lua/plugins/cmp-setup/init.lua
 -- require("plugins.pack-cmp") -- ./lua/plugins/pack-cmp.nvim/init.lua
 require("plugins.treesitter") -- ./lua/plugins/treesitter/init.lua
@@ -102,7 +101,7 @@ if not vim.g.started_by_firenvim then
 	--  require("plugins.rs-tools") -- ./lua/rs-tools/init.lua
 
 	require("plugins.persistence") -- ./lua/plugins/persistence/init.lua
-	require("plugins.alpha") -- ./lua/plugins/alpha/init.lua
+	require("plugins.alpha-menu") -- ./lua/plugins/alpha-menu/init.lua
 	require("plugins.trim-lua") -- ./lua/plugins/trim-lua/init.lua
 	require("lsp.znote") -- ./lua/lsp/znote.lua
 	require("lsp.formatter") -- ./lua/lsp/formatter.lua
