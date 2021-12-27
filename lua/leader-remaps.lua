@@ -17,9 +17,10 @@ vim.api.nvim_set_keymap("n", "<Leader>Q", ":q!<cr>", { noremap = true, silent = 
 vim.api.nvim_set_keymap("n", "<Leader>e", ":e<cr>", { noremap = true, silent = true })
 
 -- horizontal split
-vim.api.nvim_set_keymap("n", "<Leader>s", ":split<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>sj", ":split<cr>", { noremap = true, silent = true })
+
 -- vertical split
-vim.api.nvim_set_keymap("n", "<Leader>ss", ":vsplit<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>sl", ":vsplit<cr>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<Leader>o", ":luafile %<cr>", { noremap = true, silent = false })
 vim.api.nvim_set_keymap(

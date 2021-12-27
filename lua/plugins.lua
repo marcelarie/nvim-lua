@@ -215,6 +215,12 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use({ "ellisonleao/glow.nvim" })
 	use("nathom/filetype.nvim")
 	use("Pocco81/TrueZen.nvim")
+	use({
+		"luukvbaal/stabilize.nvim",
+		config = function()
+			require("stabilize").setup()
+		end,
+	})
 
 	-- use("marcelarie/telescope-cheat.nvim")
 	-- /// MYBE LATER ///

@@ -139,7 +139,7 @@ cmp.setup({
 		{
 			name = "buffer",
 			max_item_count = 5,
-			options = {
+			option = {
 				get_bufnrs = function()
 					return vim.api.nvim_list_bufs()
 				end,
@@ -191,18 +191,25 @@ vim.api.nvim_exec(
 	false
 )
 
+-- Use cmdline & path source for ':'.
+-- cmp.setup.cmdline(":", {
+-- 	sources = cmp.config.sources({
+-- 		{ name = "path" },
+-- 	}, {
+-- 		{ name = "cmdline" },
+-- 	}),
+-- })
+
 -- Use buffer source for `/`.
-cmp.setup.cmdline("/", {
+require("cmp").setup.cmdline("/", {
 	sources = {
 		{ name = "buffer" },
 	},
 })
 
 -- Use cmdline & path source for ':'.
-cmp.setup.cmdline(":", {
-	sources = cmp.config.sources({
-		{ name = "path" },
-	}, {
+require("cmp").setup.cmdline(":", {
+	sources = {
 		{ name = "cmdline" },
-	}),
+	},
 })

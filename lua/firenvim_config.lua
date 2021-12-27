@@ -1,4 +1,3 @@
-vim.cmd("autocmd BufWritePre * :set lines=120")
 vim.cmd("set guifont=monospace:h8")
 vim.cmd("set showtabline=1")
 vim.cmd("set shortmess+=F")
