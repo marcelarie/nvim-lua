@@ -47,6 +47,7 @@ vim.cmd("set noswapfile")
 vim.cmd("set nohlsearch")
 -- vim.api.nvim_set_option("syntax on")
 -- vim.cmd('set path+=**')
+vim.cmd("set list listchars=tab:⤑\\ ,trail:∙,eol:↲")
 
 -- vim.api.nvim_set_option('spelllang', 'en')
 vim.api.nvim_set_option("showcmd", false)
