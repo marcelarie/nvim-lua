@@ -147,7 +147,7 @@ _G.packer_plugins = {
   ["cmp-package"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-package",
-    url = "/home/marcel/clones/own/cmp-package"
+    url = "https://github.com//home/marcel/clones/own/cmp-package"
   },
   ["cmp-path"] = {
     loaded = true,
@@ -502,7 +502,7 @@ _G.packer_plugins = {
   ["persistence.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/persistence.nvim",
-    url = "/home/marcel/clones/forks/persistence.nvim"
+    url = "https://github.com//home/marcel/clones/forks/persistence.nvim"
   },
   playground = {
     loaded = true,
@@ -608,7 +608,7 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/telescope.nvim",
-    url = "/home/marcel/clones/forks/telescope.nvim"
+    url = "https://github.com//home/marcel/clones/forks/telescope.nvim"
   },
   ["todo-comments.nvim"] = {
     loaded = true,

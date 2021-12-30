@@ -79,7 +79,6 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("hrsh7th/cmp-nvim-lua")
 	use("f3fora/cmp-spell")
 	use("petertriho/cmp-git")
-	use({ "~/clones/own/cmp-package", run = "luarocks install lua-cjson" })
 	-- use({ "~/clones/own/cmp-package" })
 	use("quangnguyen30192/cmp-nvim-ultisnips")
 	use("quangnguyen30192/cmp-nvim-tags")
