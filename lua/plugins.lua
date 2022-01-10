@@ -1,6 +1,8 @@
 ---@diagnostic disable: undefined-global, lowercase-global
+
 local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
+
 if fn.empty(fn.glob(install_path)) > 0 then
 	packer_bootstrap = fn.system({
 		"git",
@@ -10,8 +12,10 @@ if fn.empty(fn.glob(install_path)) > 0 then
 		"https://github.com/wbthomason/packer.nvim",
 		install_path,
 	})
-	vim.cmd("packadd packer.nvim")
 end
+
+vim.cmd("packadd packer.nvim")
+vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
 
 return require("packer").startup(function() -- Packer can manage itself as an optional plugin
 	use({ "wbthomason/packer.nvim", opt = true })
@@ -42,6 +46,10 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	-- Telescope
 	use("nvim-lua/popup.nvim")
 	use("nvim-lua/plenary.nvim")
+
+	-- skim
+	use({ "lotabout/skim", dir = "~/.skim", run = "./install" })
+	use("lotabout/skim.vim")
 
 	-- use("nvim-telescope/telescope.nvim")
 	use("~/clones/forks/telescope.nvim")
@@ -222,6 +230,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 			require("stabilize").setup()
 		end,
 	})
+	use({ "tami5/sqlite.lua", module = "sqlite" })
     use('cljoly/telescope-repo.nvim')
     use('lambdalisue/suda.vim')
 
