@@ -231,6 +231,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 		end,
 	})
 	use({ "tami5/sqlite.lua", module = "sqlite" })
+    use('cljoly/telescope-repo.nvim')
+    use('lambdalisue/suda.vim')
 
 	-- use("marcelarie/telescope-cheat.nvim")
 	-- /// MYBE LATER ///

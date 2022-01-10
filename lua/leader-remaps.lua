@@ -8,7 +8,7 @@ vim.api.nvim_set_keymap("n", "<Leader>w", ":w<cr>", { noremap = true, silent = t
 vim.api.nvim_set_keymap("n", "<Leader>w!", ":w!<cr>", { noremap = true, silent = true })
 
 -- leader W to save ON SUDO
-vim.api.nvim_set_keymap("c", "w!!", "w !sudo tee > /dev/null %", { noremap = false, silent = false })
+vim.api.nvim_set_keymap("c", "w!!", "SudaWrite<cr>", { noremap = false, silent = false })
 -- leader q to quit
 vim.api.nvim_set_keymap("n", "<Leader>q", ":q<cr>", { noremap = true, silent = true })
 -- leader Q to quit!
