@@ -169,11 +169,6 @@ _G.packer_plugins = {
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-treesitter",
     url = "https://github.com/ray-x/cmp-treesitter"
   },
-  ["cmp-vsnip"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
-    url = "https://github.com/hrsh7th/cmp-vsnip"
-  },
   cmp_luasnip = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
@@ -550,10 +545,10 @@ _G.packer_plugins = {
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/startuptime.vim",
     url = "https://github.com/tweekmonster/startuptime.vim"
   },
-  ["symbols-outline.nvim"] = {
+  ["suda.vim"] = {
     loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
-    url = "https://github.com/simrat39/symbols-outline.nvim"
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/suda.vim",
+    url = "https://github.com/lambdalisue/suda.vim"
   },
   ["telescope-arecibo.nvim"] = {
     loaded = true,
@@ -589,6 +584,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/telescope-packer.nvim",
     url = "https://github.com/nvim-telescope/telescope-packer.nvim"
+  },
+  ["telescope-repo.nvim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/telescope-repo.nvim",
+    url = "https://github.com/cljoly/telescope-repo.nvim"
   },
   ["telescope-symbols.nvim"] = {
     loaded = true,
@@ -709,11 +709,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-tridactyl",
     url = "https://github.com/tridactyl/vim-tridactyl"
-  },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-vsnip",
-    url = "https://github.com/hrsh7th/vim-vsnip"
   },
   ["vim-vsnip-integ"] = {
     loaded = true,
