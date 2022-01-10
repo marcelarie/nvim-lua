@@ -107,6 +107,7 @@ ts.load_extension("gh")
 ts.load_extension("arecibo")
 ts.load_extension("packer")
 ts.load_extension("zoxide")
+ts.load_extension("repo")
 
 -- local M = {}
 -- M.search_dotfiles = function()
