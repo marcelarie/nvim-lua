@@ -1,14 +1,16 @@
----@diagnostic disable: undefined-global
-vim.cmd([[packadd packer.nvim]])
-
-local execute = vim.api.nvim_command
+---@diagnostic disable: undefined-global, lowercase-global
 local fn = vim.fn
-
-local install_path = fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
-
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-	execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
-	execute("packadd packer.nvim")
+	packer_bootstrap = fn.system({
+		"git",
+		"clone",
+		"--depth",
+		"1",
+		"https://github.com/wbthomason/packer.nvim",
+		install_path,
+	})
+	vim.cmd("packadd packer.nvim")
 end
 
 return require("packer").startup(function() -- Packer can manage itself as an optional plugin
@@ -94,7 +96,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("tjdevries/nlua.nvim")
 	use("tjdevries/lsp_extensions.nvim")
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
-	use("simrat39/symbols-outline.nvim")
+	-- use("simrat39/symbols-outline.nvim")
 	use("ray-x/lsp_signature.nvim")
 
 	-- LSP Saga
@@ -235,4 +237,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 
 	-- Maybe later
 	-- use("gennaro-tedesco/nvim-peekup")
+	if packer_bootstrap then
+		require("packer").sync()
+	end
 end)

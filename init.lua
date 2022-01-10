@@ -1,11 +1,11 @@
 -- /// BASE ///.
--- require("impatient") -- ./lua/impatient/init.lua
 require("colorscheme") -- ./lua/colorscheme.lua
 require("plugins") -- ./lua/plugins.lua
 require("settings") -- ./lua/settings.lua
 require("aliases") -- ./lua/aliases.lua
 require("globals") -- ./lua/globals.lua
 require("autocommands") -- ./lua/autocommands.lua
+-- require("impatient") -- ./lua/impatient/init.lua
 
 -- /// REMAPS ///.
 require("leader-remaps") -- ./lua/remaps.lua
@@ -14,10 +14,10 @@ require("remaps") -- ./lua/remaps.lua
 -- /// TREE & EXPLORERS ///.
 require("plugins.undo-tree") -- ./lua/plugins/undo-tree/init.lua
 require("plugins.netrw") -- ./lua/plugins/netrw/init.lua
---  require("plugins.feline-status") -- ./lua/plugins/feline-status/init.lua
 require("plugins.lualine-status") -- ./lua/plugins/lualine-status/init.lua
 require("plugins.nvim-tree") -- ./lua/plugins/nvim-tree/init.lua
 require("vim-keybindings") -- ./lua/vim-keybindings/init.lua
+--  require("plugins.feline-status") -- ./lua/plugins/feline-status/init.lua
 --
 -- /// NAVIGATION ///.
 require("nv-telescope") -- ./lua/nv-telescope/init.lua
@@ -51,21 +51,22 @@ require("lsp.perlpls") -- ./lua/lsp/perlpls.lua
 require("lsp.perl") -- ./lua/lsp/perl.lua
 require("lsp.c") -- ./lua/lsp/c.lua
 require("lsp.clangd") -- ./lua/lsp/clangd.lua
+require("plugins.lsp-uti") -- ./lua/plugins/lsp-uti/init.lua
+require("lsp-kind") -- ./lua/lsp-kind/init.lua
 -- require('lsp.stylelint') -- ./lua/lsp/stylelint.lua
 -- require('lsp.deno') -- ./lua/lsp/deno.lua <- not now
 --  require("lsp-saga") -- ./lua/lsp-saga/init.lua
-require("plugins.lsp-uti") -- ./lua/plugins/lsp-uti/init.lua
-require("lsp-kind") -- ./lua/lsp-kind/init.lua
 -- require("lsp-sign") -- ./lua/lsp-sign/init.lua
+
 if not vim.g.started_by_firenvim then
 	require("plugins.lightbulb") -- ./lua/plugins/lightbulb/init.lua
 
 	require("formatting") -- ./lua/formatting.lua
 	require("lsp-trouble") -- ./lua/lsp-trouble/init.lua
 	require("lsp-trouble-keybindings") -- ./lua/lsp-trouble-keybindings.lua
-	require("symbols-outline") -- ./lua/symbols/init.lua
+	-- require("symbols-outline") -- ./lua/symbols/init.lua
 	require("plugins.nvim-commented") -- ./lua/plugins/nvim-commented/init.lua
-	require("plugins.whichkey") -- ./lua/plugins/whichkey/init.lua
+	-- require("plugins.whichkey") -- ./lua/plugins/whichkey/init.lua
 
 	-- /// OTHERS ///.
 	require("plugins.web-devicons") -- ./lua/plugins/web-devicons/init.lua
