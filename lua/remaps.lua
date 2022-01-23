@@ -6,6 +6,11 @@ vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true, silent = true })
 --  vim.api.nvim_set_keymap("n", "vv", "V", { noremap = true, silent = true })
 --  vim.api.nvim_set_keymap("n", "V", "v$", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "<Leader>Y", '"+y$l', { noremap = true, silent = true })
+
+-- christoomey/vim-system-copy
+vim.api.nvim_set_keymap("n", "cpp", "Vcp", { noremap = false, silent = true })
+vim.api.nvim_set_keymap("n", "cP", "cp$", { noremap = false, silent = true })
+
 vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "N", "Nzzzv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "J", "mzJ`z", { noremap = true, silent = true })
