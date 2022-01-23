@@ -78,7 +78,10 @@ luasnip.snippets = {
 		s({ name = "- [ ]", trig = "- [ ]" }, { t("- [ ] "), i(1, "todo") }),
 	},
 	javascript = {
-		s("log", { t("console.log($"), i(1, "var"), t(")") }),
+		s("log", { t("console.log("), i(1, "var"), t(")") }),
+	},
+	rust = {
+		s("pr", { t('println!("{:?}", '), i(1, "x"), t(" )") }),
 	},
 }
 

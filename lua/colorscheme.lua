@@ -2,7 +2,8 @@ vim.cmd("colorscheme gruvbox-flat")
 --  vim.cmd("colorscheme base16-equilibrium-light")
 vim.o.termguicolors = true
 vim.g.gruvbox_flat_style = "dark"
---  vim.o.background = "light"
+-- vim.g.gruvbox_flat_style = "light"
+-- vim.o.background = "light"
 
 -- BASE 16
 --  use("base16-colorscheme").setup({

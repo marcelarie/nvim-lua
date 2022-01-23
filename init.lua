@@ -1,6 +1,6 @@
 -- /// BASE ///.
-require("colorscheme") -- ./lua/colorscheme.lua
 require("plugins") -- ./lua/plugins.lua
+require("colorscheme") -- ./lua/colorscheme.lua
 require("settings") -- ./lua/settings.lua
 require("aliases") -- ./lua/aliases.lua
 require("globals") -- ./lua/globals.lua
@@ -8,8 +8,8 @@ require("autocommands") -- ./lua/autocommands.lua
 -- require("impatient") -- ./lua/impatient/init.lua
 
 -- /// REMAPS ///.
-require("leader-remaps") -- ./lua/remaps.lua
 require("remaps") -- ./lua/remaps.lua
+require("leader-remaps") -- ./lua/leader-remaps.lua
 
 -- /// TREE & EXPLORERS ///.
 require("plugins.undo-tree") -- ./lua/plugins/undo-tree/init.lua
@@ -18,6 +18,7 @@ require("plugins.lualine-status") -- ./lua/plugins/lualine-status/init.lua
 require("plugins.nvim-tree") -- ./lua/plugins/nvim-tree/init.lua
 require("vim-keybindings") -- ./lua/vim-keybindings/init.lua
 --  require("plugins.feline-status") -- ./lua/plugins/feline-status/init.lua
+-- require("plugins.difbuf") -- ./lua/plugins/difbuf/init.lua
 --
 -- /// NAVIGATION ///.
 require("nv-telescope") -- ./lua/nv-telescope/init.lua
@@ -40,7 +41,7 @@ require("lsp.bash") -- ./lua/lsp/bash.lua
 require("lsp.json") -- ./lua/lsp/json.lua
 require("lsp.html") -- ./lua/lsp/html.lua
 require("lsp.css") -- ./lua/lsp/css.lua
-require("lsp.php") -- ./lua/lsp/php.lua
+require("lsp.php") -- ./lua/lsp/php.
 require("lsp.vimls") -- ./lua/lsp/vimls.lua
 require("lsp.tsserver") -- ./lua/lsp/tsserver.lua
 require("lsp.latex") -- ./lua/lsp/latex.lua
@@ -87,6 +88,8 @@ if not vim.g.started_by_firenvim then
 	require("plugins.neorg") -- ./lua/plugins/neorg/init.lua
 	require("plugins.sad") -- ./lua/plugins/sad/init.lua
 	-- require("plugins.distant") -- ./lua/plugins/distant/init.lua
+	require("plugins.substitute") -- ./lua/plugins/substitute/init.lua
+	require("plugins.better-esc") -- ./lua/better-esc/init.lua
 
 	-- /// Git ///
 	-- require("octo") -- ./lua/octo/init.lua

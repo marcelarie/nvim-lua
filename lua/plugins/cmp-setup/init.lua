@@ -138,7 +138,7 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{
 			name = "buffer",
-			max_item_count = 5,
+			max_item_count = 2,
 			option = {
 				get_bufnrs = function()
 					return vim.api.nvim_list_bufs()

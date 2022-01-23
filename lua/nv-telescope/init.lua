@@ -108,6 +108,7 @@ ts.load_extension("arecibo")
 ts.load_extension("packer")
 ts.load_extension("zoxide")
 ts.load_extension("repo")
+ts.load_extension("git_worktree")
 
 -- local M = {}
 -- M.search_dotfiles = function()

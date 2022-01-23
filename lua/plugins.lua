@@ -36,7 +36,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	})
 	-- use 'morhetz/gruvbox'
 	use("npxbr/gruvbox.nvim")
-	use("eddyekofo94/gruvbox-flat.nvim")
+	-- use("eddyekofo94/gruvbox-flat.nvim") -- <-- original
+	use("guilhermeprokisch/gruvbox-flat.nvim")
 	use("rktjmp/lush.nvim")
 	use("savq/melange")
 	use("ishan9299/modus-theme-vim")
@@ -65,6 +66,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 		rocks = { "openssl", "lua-http-parser" },
 	})
 	use("nvim-telescope/telescope-packer.nvim")
+    use("cljoly/telescope-repo.nvim")
 	use("jvgrootveld/telescope-zoxide")
 	-- use("nvim-telescope/telescope-node-modules.nvim")
 
@@ -127,10 +129,10 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("sbdchd/neoformat")
 
 	-- TreeSitter
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	 use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("nvim-treesitter/playground")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
-	use("nvim-treesitter/nvim-treesitter-textobjects")
+	-- use("nvim-treesitter/nvim-treesitter-textobjects")
 
 	-- print on cursor
 	use("bryall/contextprint.nvim")
@@ -231,8 +233,10 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 		end,
 	})
 	use({ "tami5/sqlite.lua", module = "sqlite" })
-    use('cljoly/telescope-repo.nvim')
-    use('lambdalisue/suda.vim')
+	use("lambdalisue/suda.vim")
+	use("gbprod/substitute.nvim")
+	use("max397574/better-escape.nvim")
+	-- use("elihunter173/dirbuf.nvim")
 
 	-- use("marcelarie/telescope-cheat.nvim")
 	-- /// MYBE LATER ///

@@ -1,4 +1,4 @@
--- Global options
+-- Global options (o)
 vim.o.splitbelow = true -- Horizontal splits will automatically be below
 vim.o.splitright = true -- Vertical splits will automatically be to the right
 -- vim.o.timeoutlen = O.timeoutlen
@@ -21,9 +21,9 @@ vim.o.scrolloff = 8 -- 8 lines on top/bottom of cursor when scrolling.
 vim.o.timeoutlen = 500 -- Vim will wait for 500 ms after keystroke for the mappings.
 vim.o.updatetime = 300 -- Vim waits 300 ms after you stop before it triggers the plugin.
 
--- Buffer local options
+-- Buffer local options (bo?)
 
--- Window-local options
+-- Window-local options (wo)
 vim.wo.wrap = false -- Display long lines as just one line
 vim.wo.relativenumber = true -- Relative numbers
 vim.wo.nu = true -- Show line number
@@ -37,6 +37,8 @@ vim.cmd([[
 au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncSearch', timeout = 300 })
 ]])
 
+-- vim.api.nvim_set_option("syntax on")
+-- vim.cmd('set path+=**')
 vim.api.nvim_set_option("undofile", true)
 vim.api.nvim_set_option("undodir", "~/.vim/undodir")
 vim.cmd("set undofile")
@@ -45,8 +47,6 @@ vim.cmd("set undolevels=1000")
 vim.cmd("set undoreload=10000")
 vim.cmd("set noswapfile")
 vim.cmd("set nohlsearch")
--- vim.api.nvim_set_option("syntax on")
--- vim.cmd('set path+=**')
 vim.cmd("set list listchars=tab:⤑\\ ,trail:∙,eol:↲")
 
 -- vim.api.nvim_set_option('spelllang', 'en')
@@ -61,11 +61,4 @@ vim.api.nvim_set_option("backup", false)
 -- vim.api.nvim_set_option('writebackup', true)
 -- vim.api.nvim_set_option('backupcopy', 'yes')
 
---  vim.cmd([[let g:UltiSnipsExpandTrigger = "<Nop>"]])
---  vim.cmd([[let g:UltiSnipsListSnippets = "<Nop>"]])
 
---  vim.cmd([[imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']])
---  vim.cmd([[smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']])
-
---  vim.cmd([[imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])
---  vim.cmd([[smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])
