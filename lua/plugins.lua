@@ -66,7 +66,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 		rocks = { "openssl", "lua-http-parser" },
 	})
 	use("nvim-telescope/telescope-packer.nvim")
-    use("cljoly/telescope-repo.nvim")
+	use("cljoly/telescope-repo.nvim")
 	use("jvgrootveld/telescope-zoxide")
 	-- use("nvim-telescope/telescope-node-modules.nvim")
 
@@ -129,7 +129,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("sbdchd/neoformat")
 
 	-- TreeSitter
-	 use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("nvim-treesitter/playground")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	-- use("nvim-treesitter/nvim-treesitter-textobjects")
@@ -236,6 +236,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("lambdalisue/suda.vim")
 	use("gbprod/substitute.nvim")
 	use("max397574/better-escape.nvim")
+	-- use({ "j-hui/fidget.nvim" })
 	-- use("elihunter173/dirbuf.nvim")
 
 	-- use("marcelarie/telescope-cheat.nvim")

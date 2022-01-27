@@ -65,8 +65,8 @@ if not vim.g.started_by_firenvim then
 	require("formatting") -- ./lua/formatting.lua
 	require("lsp-trouble") -- ./lua/lsp-trouble/init.lua
 	require("lsp-trouble-keybindings") -- ./lua/lsp-trouble-keybindings.lua
-	-- require("symbols-outline") -- ./lua/symbols/init.lua
 	require("plugins.nvim-commented") -- ./lua/plugins/nvim-commented/init.lua
+	-- require("symbols-outline") -- ./lua/symbols/init.lua
 	-- require("plugins.whichkey") -- ./lua/plugins/whichkey/init.lua
 
 	-- /// OTHERS ///.
@@ -75,21 +75,22 @@ if not vim.g.started_by_firenvim then
 	require("plugins.autopairs") -- (?) --./lua/plugins/autopairs/init.lua
 	require("plugins.markdown-preview") -- ./lua/plugins/markdown-preview/init.lua
 	require("plugins.prime-harpoon") -- ./lua/plugins/prime-harpoon/init.lua
-	-- require("plugins.autosession") -- ./lua/plugins/autosession/init.lua
-	-- require("plugins.session-manager") -- ./lua/plugins/session-manager/init.lua
 	require("plugins.numb-nvim") -- ./lua/plugins/numb-nvim/init.lua
 	require("plugins.vimtex") -- ./lua/plugins/vimtex/init.lua
 	require("plugins.todo-finder") -- ./lua/plugins/todo-finder/init.lua
-	-- require("plugins.refactor") -- ./lua/plugins/refactor/init.lua
 	require("plugins.focus") -- ./lua/plugins/focus/init.lua
 	require("plugins.neoclip") -- ./lua/plugins/neoclip/init.lua
 	require("plugins.bubbly") -- ./lua/plugins/bubbly/init.lua
 	require("plugins.color-buddy") -- ./lua/plugins/color-buddy/init.lua
 	require("plugins.neorg") -- ./lua/plugins/neorg/init.lua
 	require("plugins.sad") -- ./lua/plugins/sad/init.lua
-	-- require("plugins.distant") -- ./lua/plugins/distant/init.lua
 	require("plugins.substitute") -- ./lua/plugins/substitute/init.lua
 	require("plugins.better-esc") -- ./lua/better-esc/init.lua
+	-- require("plugins.distant") -- ./lua/plugins/distant/init.lua
+	-- require("plugins.fidget") -- ./lua/fidget/init.lua
+	-- require("plugins.autosession") -- ./lua/plugins/autosession/init.lua
+	-- require("plugins.session-manager") -- ./lua/plugins/session-manager/init.lua
+	-- require("plugins.refactor") -- ./lua/plugins/refactor/init.lua
 
 	-- /// Git ///
 	-- require("octo") -- ./lua/octo/init.lua
