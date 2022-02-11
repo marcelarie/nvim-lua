@@ -463,6 +463,11 @@ _G.packer_plugins = {
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-treesitter-endwise"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-treesitter-endwise",
+    url = "https://github.com/RRethy/nvim-treesitter-endwise"
+  },
   ["nvim-ts-autotag"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",

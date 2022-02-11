@@ -1,4 +1,4 @@
-vim.cmd("set guifont=monospace:h8")
+vim.cmd("set guifont=monospace:h15")
 vim.cmd("set showtabline=1")
 vim.cmd("set shortmess+=F")
 vim.cmd("set colorcolumn=0")

@@ -67,6 +67,9 @@ ts.setup({
 			["[]"] = "@class.outer",
 		},
 	},
+	endwise = {
+		enable = true,
+	},
 	textobjects = {
 		lsp_interop = {
 			enable = true,
