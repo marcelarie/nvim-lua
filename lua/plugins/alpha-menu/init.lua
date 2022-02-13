@@ -3,10 +3,10 @@ local startify = require("alpha.themes.startify")
 
 startify.section.top_buttons.val = {
 	-- I would like to cd into the directory first
-	startify.button("vi", "vim config", "<cmd>cd ~/.config/nvim/<CR><cmd>e init.lua<CR>"),
+	startify.button("vi", "vim config", "<cmd>cd ~/.config/nvim/<CR><cmd>e nix.init.lua<CR>"),
 
 	-- while also maintaining the format of the normal bookmark file button like this one:
-	startify.file_button("~/.config/nvim/init.lua", "vit"),
+	startify.file_button("~/.config/nvim/nix.init.lua", "vit"),
 }
 
 startify.section.bottom_buttons.val = {

@@ -25,6 +25,7 @@ vim.cmd([[autocmd BufWritePre *.tex silent! Neoformat]])
 
 vim.cmd([[autocmd BufWritePre *.sh silent! Neoformat]])
 vim.cmd([[autocmd BufWritePre *.fish silent! Neoformat]])
+vim.cmd([[autocmd BufWritePre *.nix silent! Neoformat]])
 -- Perl
 -- vim.cmd([[autocmd BufWritePre *.pl silent! ]])
 -- vim.cmd([[autocmd BufWritePre *.pm silent! ]])
