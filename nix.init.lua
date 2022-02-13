@@ -5,7 +5,7 @@ require("settings") -- ./lua/settings.lua
 require("aliases") -- ./lua/aliases.lua
 require("globals") -- ./lua/globals.lua
 require("autocommands") -- ./lua/autocommands.lua
--- require("impatient") -- ./lua/impatient/init.lua
+require("impatient") -- ./lua/impatient/init.lua
 
 -- /// REMAPS ///.
 require("remaps") -- ./lua/remaps.lua
@@ -52,6 +52,7 @@ require("lsp.perlpls") -- ./lua/lsp/perlpls.lua
 require("lsp.perl") -- ./lua/lsp/perl.lua
 require("lsp.c") -- ./lua/lsp/c.lua
 require("lsp.clangd") -- ./lua/lsp/clangd.lua
+require("lsp.nix") -- ./lua/lsp/nix.lua
 require("plugins.lsp-uti") -- ./lua/plugins/lsp-uti/init.lua
 require("lsp-kind") -- ./lua/lsp-kind/init.lua
 -- require('lsp.stylelint') -- ./lua/lsp/stylelint.lua

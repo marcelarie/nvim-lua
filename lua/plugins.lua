@@ -52,8 +52,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use({ "lotabout/skim", dir = "~/.skim", run = "./install" })
 	use("lotabout/skim.vim")
 
-	-- use("nvim-telescope/telescope.nvim")
-	use("~/clones/forks/telescope.nvim")
+	use("nvim-telescope/telescope.nvim")
+	-- use("~/clones/forks/telescope.nvim")
 
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("nvim-telescope/telescope-fzy-native.nvim")
@@ -189,8 +189,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("tversteeg/registers.nvim")
 	--  use("rmagatti/auto-session")
 	-- use("rmagatti/session-lens") -- < with tree sitter
-	-- use("folke/persistence.nvim")
-	use("~/clones/forks/persistence.nvim")
+	use("folke/persistence.nvim")
+	-- use("~/clones/forks/persistence.nvim")
 
 	-- use("Shatur/neovim-session-manager")
 	use("KabbAmine/vCoolor.vim") -- color picker
