@@ -289,6 +289,11 @@ _G.packer_plugins = {
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
   },
+  ["lighthaus.nvim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/lighthaus.nvim",
+    url = "https://github.com/mrjones2014/lighthaus.nvim"
+  },
   linearf = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/linearf",

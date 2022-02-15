@@ -18,6 +18,7 @@ require("lualine").setup({
 		--  theme = "gruvbox",
 		--  theme = require("monarized.lualine"),
 		theme = "gruvbox",
+		-- theme = "lighthaus",
 		component_separators = { ".", "." },
 		--  section_separators = { "", "" },
 		section_separators = { "", "" },

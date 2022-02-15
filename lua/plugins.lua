@@ -24,6 +24,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	-- Colorschemes
 	use("tjdevries/colorbuddy.nvim")
 	use("lifepillar/vim-gruvbox8")
+    use { 'mrjones2014/lighthaus.nvim' }
 	use("phanviet/vim-monokai-pro")
 	use("mhartington/oceanic-next")
 	use("fenetikm/falcon")
