@@ -29,6 +29,7 @@ vim.wo.relativenumber = true -- Relative numbers
 vim.wo.nu = true -- Show line number
 vim.wo.foldnestmax = 1
 vim.wo.cursorline = true -- Enable highlighting of the current line
+vim.o.cursorline = true -- Enable highlighting of the current line
 vim.wo.signcolumn = "yes"
 vim.wo.colorcolumn = "80"
 
@@ -60,5 +61,3 @@ vim.api.nvim_set_option("backup", false)
 -- vim.cmd('set backupdir=~/.vim/backup') -- vim.api.nvim_set_option('backupdir', "~/.vim/backup")
 -- vim.api.nvim_set_option('writebackup', true)
 -- vim.api.nvim_set_option('backupcopy', 'yes')
-
-

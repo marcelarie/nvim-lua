@@ -1,7 +1,7 @@
 -- /// BASE ///.
 require("plugins") -- ./lua/plugins.lua
-require("colorscheme") -- ./lua/colorscheme.lua
 require("settings") -- ./lua/settings.lua
+require("colorscheme") -- ./lua/colorscheme.lua
 require("aliases") -- ./lua/aliases.lua
 require("globals") -- ./lua/globals.lua
 require("autocommands") -- ./lua/autocommands.lua
