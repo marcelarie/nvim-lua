@@ -37,7 +37,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	})
 	-- use 'morhetz/gruvbox'
 	use("npxbr/gruvbox.nvim")
-	use("eddyekofo94/gruvbox-flat.nvim") -- <-- original
+	-- use("eddyekofo94/gruvbox-flat.nvim") -- <-- original
+	use("guilhermeprokisch/gruvbox-flat.nvim")
 	use("rktjmp/lush.nvim")
 	use("savq/melange")
 	use("ishan9299/modus-theme-vim")
@@ -238,7 +239,10 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("gbprod/substitute.nvim")
 	use("max397574/better-escape.nvim")
 	-- use({ "ZhiyuanLck/smart-pairs", event = "InsertEnter" })
-	use({ "ZhiyuanLck/smart-pairs", event = "InsertEnter" })
+	use({
+		"ZhiyuanLck/smart-pairs",
+		event = "InsertEnter",
+	})
 	-- use({ "j-hui/fidget.nvim" })
 	-- use("elihunter173/dirbuf.nvim")
 

@@ -14,6 +14,7 @@ end
 
 local luasnip = require("luasnip")
 local cmp = require("cmp")
+local kind = cmp.lsp.CompletionItemKind
 
 local tabnine = require("cmp_tabnine.config")
 tabnine:setup({
@@ -100,8 +101,14 @@ cmp.setup({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
 		}),
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		-- ["<CR>"] = cmp.mapping.confirm({ select = true }), -- <- default
+		["<CR>"] = cmp.mapping(function(fallback)
+			if not cmp.confirm({ select = true }) then
+				require("pairs.enter").type()
+			end
+		end),
 	},
+
 	--       local line = vim.trim(lines[i])
 	-- ["<Tab>"] = cmp.mapping(function(fallback)
 	-- 	if cmp.visible() then
@@ -165,6 +172,14 @@ cmp.setup({
 		--   { name = "ultisnips" },
 	},
 })
+
+cmp.event:on("confirm_done", function(event)
+	local item = event.entry:get_completion_item()
+	local parensDisabled = item.data and item.data.funcParensDisabled or false
+	if not parensDisabled and (item.kind == kind.Method or item.kind == kind.Function) then
+		require("pairs.bracket").type_left("(")
+	end
+end)
 
 vim.api.nvim_exec(
 	[[

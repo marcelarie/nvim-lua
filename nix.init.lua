@@ -6,7 +6,6 @@ require("aliases") -- ./lua/aliases.lua
 require("globals") -- ./lua/globals.lua
 require("autocommands") -- ./lua/autocommands.lua
 require("impatient") -- ./lua/impatient/init.lua
-
 -- /// REMAPS ///.
 require("remaps") -- ./lua/remaps.lua
 require("leader-remaps") -- ./lua/leader-remaps.lua
@@ -73,7 +72,6 @@ if not vim.g.started_by_firenvim then
 	-- /// OTHERS ///.
 	require("plugins.web-devicons") -- ./lua/plugins/web-devicons/init.lua
 	require("plugins.colorizer-setup") -- ./lua/plugins/colorizer-setup/init.lua
-	require("plugins.autopairs") -- (?) --./lua/plugins/autopairs/init.lua
 	require("plugins.markdown-preview") -- ./lua/plugins/markdown-preview/init.lua
 	require("plugins.prime-harpoon") -- ./lua/plugins/prime-harpoon/init.lua
 	require("plugins.numb-nvim") -- ./lua/plugins/numb-nvim/init.lua
@@ -87,6 +85,8 @@ if not vim.g.started_by_firenvim then
 	require("plugins.sad") -- ./lua/plugins/sad/init.lua
 	require("plugins.substitute") -- ./lua/plugins/substitute/init.lua
 	require("plugins.better-esc") -- ./lua/better-esc/init.lua
+	require("plugins.pairs") -- ./lua/plugins/pairs/init.lua
+	-- require("plugins.autopairs") -- (?) --./lua/plugins/autopairs/init.lua
 	-- require("plugins.distant") -- ./lua/plugins/distant/init.lua
 	-- require("plugins.fidget") -- ./lua/fidget/init.lua
 	-- require("plugins.autosession") -- ./lua/plugins/autosession/init.lua
