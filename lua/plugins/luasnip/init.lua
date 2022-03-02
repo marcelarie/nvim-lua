@@ -83,6 +83,13 @@ luasnip.snippets = {
 	rust = {
 		s("pr", { t('println!("{:?}", '), i(1, "x"), t(" )") }),
 	},
+	markdown = {
+		s({
+			trig = "pi",
+			name = "pi",
+			dscr = "Prettier ignore",
+		}, t("<!-- prettier-ignore -->")),
+	},
 }
 
 vim.cmd([[

@@ -52,8 +52,12 @@ require("lsp.perl") -- ./lua/lsp/perl.lua
 require("lsp.c") -- ./lua/lsp/c.lua
 require("lsp.clangd") -- ./lua/lsp/clangd.lua
 require("lsp.nix") -- ./lua/lsp/nix.lua
+require("lsp.ltex") -- ./lua/lsp/ltex.lua
 require("plugins.lsp-uti") -- ./lua/plugins/lsp-uti/init.lua
 require("lsp-kind") -- ./lua/lsp-kind/init.lua
+require("plugins.neoroot") -- ./lua/plugins/neoroot/init.lua
+-- require("lsp.znote") -- ./lua/lsp/znote.lua
+require("lsp.formatter") -- ./lua/lsp/formatter.lua
 -- require('lsp.stylelint') -- ./lua/lsp/stylelint.lua
 -- require('lsp.deno') -- ./lua/lsp/deno.lua <- not now
 --  require("lsp-saga") -- ./lua/lsp-saga/init.lua
@@ -66,7 +70,7 @@ if not vim.g.started_by_firenvim then
 	require("lsp-trouble") -- ./lua/lsp-trouble/init.lua
 	require("lsp-trouble-keybindings") -- ./lua/lsp-trouble-keybindings.lua
 	require("plugins.nvim-commented") -- ./lua/plugins/nvim-commented/init.lua
-	-- require("symbols-outline") -- ./lua/symbols/init.lua
+	require("symbols-outline") -- ./lua/symbols/init.lua
 	-- require("plugins.whichkey") -- ./lua/plugins/whichkey/init.lua
 
 	-- /// OTHERS ///.
@@ -109,8 +113,6 @@ if not vim.g.started_by_firenvim then
 	require("plugins.persistence") -- ./lua/plugins/persistence/init.lua
 	require("plugins.alpha-menu") -- ./lua/plugins/alpha-menu/init.lua
 	require("plugins.trim-lua") -- ./lua/plugins/trim-lua/init.lua
-	require("lsp.znote") -- ./lua/lsp/znote.lua
-	require("lsp.formatter") -- ./lua/lsp/formatter.lua
 else
 	require("firenvim_config")
 end

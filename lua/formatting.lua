@@ -19,7 +19,7 @@ vim.cmd([[autocmd BufWritePre *.scss silent! Neoformat]])
 vim.cmd([[autocmd BufWritePre *.sass silent! Neoformat]])
 
 vim.cmd([[autocmd BufWritePre *.yaml silent! Neoformat]])
--- vim.cmd([[autocmd BufWritePre *.md silent! Neoformat]])
+vim.cmd([[autocmd BufWritePre *.md silent! Neoformat]])
 vim.cmd([[autocmd BufWritePre *.rs silent! Neoformat]])
 vim.cmd([[autocmd BufWritePre *.tex silent! Neoformat]])
 

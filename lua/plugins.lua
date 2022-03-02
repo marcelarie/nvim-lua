@@ -15,7 +15,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 vim.cmd("packadd packer.nvim")
-vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
+-- vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
 
 return require("packer").startup(function() -- Packer can manage itself as an optional plugin
 	use({ "wbthomason/packer.nvim", opt = true })
@@ -25,6 +25,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("tjdevries/colorbuddy.nvim")
 	use("lifepillar/vim-gruvbox8")
 	use({ "mrjones2014/lighthaus.nvim" })
+	-- use({ "~/clones/forks/lighthaus.nvim" })
 	use("phanviet/vim-monokai-pro")
 	use("mhartington/oceanic-next")
 	use("fenetikm/falcon")
@@ -36,6 +37,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 		end,
 	})
 	-- use 'morhetz/gruvbox'
+	use({ "shaeinst/roshnivim-cs" })
 	use("npxbr/gruvbox.nvim")
 	use("eddyekofo94/gruvbox-flat.nvim") -- <-- original
 	use("rktjmp/lush.nvim")
@@ -91,6 +93,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("hrsh7th/cmp-nvim-lua")
 	use("f3fora/cmp-spell")
 	use("petertriho/cmp-git")
+	use({ "tzachar/cmp-fuzzy-path", requires = { "hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim" } })
 	-- use({ "~/clones/own/cmp-package" })
 	use("quangnguyen30192/cmp-nvim-ultisnips")
 	use("quangnguyen30192/cmp-nvim-tags")
@@ -106,7 +109,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("tjdevries/nlua.nvim")
 	use("tjdevries/lsp_extensions.nvim")
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
-	-- use("simrat39/symbols-outline.nvim")
+	use("simrat39/symbols-outline.nvim")
 	use("ray-x/lsp_signature.nvim")
 
 	-- LSP Saga
@@ -213,7 +216,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 			vim.fn["firenvim#install"](0)
 		end,
 	})
-	use("airblade/vim-rooter")
+	-- use("airblade/vim-rooter")
 	use("arkav/lualine-lsp-progress")
 	use("goolord/alpha-nvim")
 	use({
@@ -239,6 +242,13 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("max397574/better-escape.nvim")
 	-- use({ "ZhiyuanLck/smart-pairs", event = "InsertEnter" })
 	use({ "ZhiyuanLck/smart-pairs", event = "InsertEnter" })
+	use({ "nyngwang/NeoRoot.lua" })
+	use({
+		"jghauser/mkdir.nvim",
+		config = function()
+			require("mkdir")
+		end,
+	})
 	-- use({ "j-hui/fidget.nvim" })
 	-- use("elihunter173/dirbuf.nvim")
 

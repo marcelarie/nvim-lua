@@ -23,12 +23,7 @@ vim.api.nvim_set_keymap("n", "<Leader>sj", ":split<cr>", { noremap = true, silen
 vim.api.nvim_set_keymap("n", "<Leader>sl", ":vsplit<cr>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<Leader>o", ":luafile %<cr>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>so",
-	":luafile $VICONFIG<cr>",
-	{ noremap = true, silent = false }
-)
+vim.api.nvim_set_keymap("n", "<Leader>so", ":luafile $VI_CONFIG<cr>", { noremap = true, silent = false })
 
 -- switch windows vertically
 vim.api.nvim_set_keymap("n", "<Leader>l", ":wincmd L<cr>", { noremap = true, silent = true })
@@ -39,11 +34,16 @@ vim.api.nvim_set_keymap("n", "<Leader>j", ":wincmd J<cr>", { noremap = true, sil
 vim.api.nvim_set_keymap(
 	"n",
 	"<Leader>pi",
-	":luafile $VICONFIG<cr>:PackerInstall<cr>",
+	":luafile $VI_CONFIG<cr>:PackerInstall<cr>",
 	{ noremap = true, silent = false }
 )
 vim.api.nvim_set_keymap("n", "<Leader>pu", ":PackerUpdate<cr>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<Leader>pc", ":luafile $VICONFIG<cr>:PackerClean<cr>", { noremap = true, silent = false })
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader>pc",
+	":luafile $VI_CONFIG<cr>:PackerClean<cr>",
+	{ noremap = true, silent = false }
+)
 
 -- ; for :
 vim.api.nvim_set_keymap("n", ";", ":", { noremap = true, silent = false })

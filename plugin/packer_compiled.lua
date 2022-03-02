@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["NeoRoot.lua"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/NeoRoot.lua",
+    url = "https://github.com/nyngwang/NeoRoot.lua"
+  },
   ["TrueZen.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/TrueZen.nvim",
@@ -113,6 +118,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-emoji",
     url = "https://github.com/hrsh7th/cmp-emoji"
+  },
+  ["cmp-fuzzy-path"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/cmp-fuzzy-path",
+    url = "https://github.com/tzachar/cmp-fuzzy-path"
   },
   ["cmp-git"] = {
     loaded = true,
@@ -239,6 +249,11 @@ _G.packer_plugins = {
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["fuzzy.nvim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/fuzzy.nvim",
+    url = "https://github.com/tzachar/fuzzy.nvim"
+  },
   ["git-blame.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
@@ -348,6 +363,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/melange",
     url = "https://github.com/savq/melange"
+  },
+  ["mkdir.nvim"] = {
+    config = { "\27LJ\2\n%\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\nmkdir\frequire\0" },
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/mkdir.nvim",
+    url = "https://github.com/jghauser/mkdir.nvim"
   },
   ["modus-theme-vim"] = {
     loaded = true,
@@ -534,6 +555,11 @@ _G.packer_plugins = {
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/registers.nvim",
     url = "https://github.com/tversteeg/registers.nvim"
   },
+  ["roshnivim-cs"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/roshnivim-cs",
+    url = "https://github.com/shaeinst/roshnivim-cs"
+  },
   ["rust-tools.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
@@ -588,6 +614,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/suda.vim",
     url = "https://github.com/lambdalisue/suda.vim"
+  },
+  ["symbols-outline.nvim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
+    url = "https://github.com/simrat39/symbols-outline.nvim"
   },
   ["telescope-arecibo.nvim"] = {
     loaded = true,
@@ -724,11 +755,6 @@ _G.packer_plugins = {
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-react-snippets",
     url = "https://github.com/mlaursen/vim-react-snippets"
   },
-  ["vim-rooter"] = {
-    loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-rooter",
-    url = "https://github.com/airblade/vim-rooter"
-  },
   ["vim-snippets"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-snippets",
@@ -810,6 +836,10 @@ if not vim.g.packer_custom_loader_enabled then
   vim.g.packer_custom_loader_enabled = true
 end
 
+-- Config for: mkdir.nvim
+time([[Config for mkdir.nvim]], true)
+try_loadstring("\27LJ\2\n%\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\nmkdir\frequire\0", "config", "mkdir.nvim")
+time([[Config for mkdir.nvim]], false)
 -- Config for: monarized
 time([[Config for monarized]], true)
 try_loadstring("\27LJ\2\nZ\0\0\2\0\4\0\t6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0+\1\2\0=\1\3\0K\0\1\0\27monarized_kitty_colors\22monarized_lualine\6g\bvim\0", "config", "monarized")

@@ -13,5 +13,3 @@ require("lighthaus").setup({
 	-- or empty string '' to disable
 	lsp_underline_style = "undercurl",
 })
-
-vim.cmd("highlight ColorColumn ctermbg=0 guibg=#111111")

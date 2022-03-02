@@ -80,6 +80,7 @@ cmp.setup({
 				cmp_tabnine = "",
 				rg = "[rg]",
 				package = "[pack]",
+				fuzzy_path = "[fpath]",
 				-- buf_lines = "[buf-lines]",
 			})[entry.source.name]
 
@@ -140,6 +141,7 @@ cmp.setup({
 	sources = {
 		{ name = "package" },
 		{ name = "path" },
+		-- { name = "fuzzy_path", options = { fd_timeout_msec = 1500 } },
 		{ name = "luasnip" },
 		{ name = "cmp_tabnine" },
 		{ name = "nvim_lsp" },

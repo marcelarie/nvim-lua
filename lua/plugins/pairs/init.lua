@@ -69,10 +69,10 @@ local default_opts = {
 		enable_mapping = false,
 		enable_cond = true,
 		enable_fallback = fb.enter,
-		indent = {
-			["*"] = 1,
-			python = 2,
-		},
+	},
+	indent = {
+		["*"] = 1,
+		python = 2,
 	},
 	autojump_strategy = {
 		unbalanced = "right", -- all, right, loose_right, none
@@ -83,7 +83,7 @@ local default_opts = {
 		jump_left_out_any = "<m-{>",
 		jump_right_in_any = "<m-}>",
 	},
-	max_search_lines = 100,
+	-- max_search_lines = 100,
 }
 
 require("pairs"):setup(default_opts)

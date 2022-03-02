@@ -13,8 +13,10 @@
 
 require("neoclip").setup({
 	history = 1000,
-	settings = { enable_persistant_history = true },
+	enable_persistent_history = true,
+	continious_sync = true,
 	db_path = vim.fn.stdpath("data") .. "/databases/neoclip.sqlite3",
+	filter = nil,
 	preview = true,
 	default_register = '"',
 	default_register_macros = "q",
@@ -26,16 +28,14 @@ require("neoclip").setup({
 	on_replay = {
 		set_reg = false,
 	},
-	-- filter = function(data)
-	-- 	return all(data.event.regcontents, is_whitespace)
-	-- end,
 	keys = {
 		telescope = {
 			i = {
 				select = "<cr>",
 				paste = "<c-p>",
 				paste_behind = "<c-k>",
-				replay = "<c-q>",
+				replay = "<c-q>", -- replay a macro
+				delete = "<c-d>", -- delete an entry
 				custom = {},
 			},
 			n = {
@@ -43,6 +43,7 @@ require("neoclip").setup({
 				paste = "p",
 				paste_behind = "P",
 				replay = "q",
+				delete = "d",
 				custom = {},
 			},
 		},
@@ -55,9 +56,4 @@ require("neoclip").setup({
 	},
 })
 
-vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>v",
-	":lua require('telescope').extensions.neoclip.default()<cr>",
-	{ noremap = true, silent = false }
-)
+vim.api.nvim_set_keymap("n", "<Leader>v", ":Telescope neoclip<cr>", { noremap = true, silent = false })
