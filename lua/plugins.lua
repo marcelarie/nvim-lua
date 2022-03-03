@@ -249,6 +249,12 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 			require("mkdir")
 		end,
 	})
+	use({
+		"klen/nvim-test",
+		config = function()
+			require("nvim-test").setup()
+		end,
+	})
 	-- use({ "j-hui/fidget.nvim" })
 	-- use("elihunter173/dirbuf.nvim")
 

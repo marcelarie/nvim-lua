@@ -19,17 +19,17 @@ vim.cmd([[autocmd BufWritePre *.scss silent! Neoformat]])
 vim.cmd([[autocmd BufWritePre *.sass silent! Neoformat]])
 
 vim.cmd([[autocmd BufWritePre *.yaml silent! Neoformat]])
-vim.cmd([[autocmd BufWritePre *.md silent! Neoformat]])
+-- vim.cmd([[autocmd BufWritePre *.md silent! Neoformat]])
 vim.cmd([[autocmd BufWritePre *.rs silent! Neoformat]])
 vim.cmd([[autocmd BufWritePre *.tex silent! Neoformat]])
 
 vim.cmd([[autocmd BufWritePre *.sh silent! Neoformat]])
 vim.cmd([[autocmd BufWritePre *.fish silent! Neoformat]])
 vim.cmd([[autocmd BufWritePre *.nix silent! Neoformat]])
+
 -- Perl
 -- vim.cmd([[autocmd BufWritePre *.pl silent! ]])
 -- vim.cmd([[autocmd BufWritePre *.pm silent! ]])
---
---'
+
 vim.api.nvim_set_keymap("v", "ff", ":'<,'>Neoformat<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>nw", ":Neoformat<cr>:w<cr>", { noremap = true, silent = false })
