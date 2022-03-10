@@ -90,6 +90,13 @@ luasnip.snippets = {
 			dscr = "Prettier ignore",
 		}, t("<!-- prettier-ignore -->")),
 	},
+	sh = {
+		s({
+			trig = "bash",
+			name = "bash",
+			dscr = "env bash script",
+		}, t("#!/usr/bin/env bash")),
+	},
 }
 
 vim.cmd([[

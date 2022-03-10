@@ -90,6 +90,7 @@ if not vim.g.started_by_firenvim then
 	require("plugins.substitute") -- ./lua/plugins/substitute/init.lua
 	require("plugins.better-esc") -- ./lua/better-esc/init.lua
 	require("plugins.pairs") -- ./lua/plugins/pairs/init.lua
+	require("plugins.regexplainer") -- ./lua/plugins/regexplainer/init.lua
 	-- require("plugins.autopairs") -- (?) --./lua/plugins/autopairs/init.lua
 	-- require("plugins.distant") -- ./lua/plugins/distant/init.lua
 	-- require("plugins.fidget") -- ./lua/fidget/init.lua
