@@ -3,5 +3,5 @@ language-servers/
 $HOME
 HOME
 sessions
-lang_servers
+# lang_servers
 init.vim
