@@ -59,7 +59,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("nvim-telescope/telescope-fzy-native.nvim")
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+	-- use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use("nvim-telescope/telescope-symbols.nvim")
 	use("dhruvmanila/telescope-bookmarks.nvim")
 	use("nvim-telescope/telescope-github.nvim")
@@ -241,7 +241,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("gbprod/substitute.nvim")
 	use("max397574/better-escape.nvim")
 	-- use({ "ZhiyuanLck/smart-pairs", event = "InsertEnter" })
-	use({ "ZhiyuanLck/smart-pairs", event = "InsertEnter" })
+	-- use({ "ZhiyuanLck/smart-pairs", event = "InsertEnter" })
 	use({ "nyngwang/NeoRoot.lua" })
 	use({
 		"jghauser/mkdir.nvim",

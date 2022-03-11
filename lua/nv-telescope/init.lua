@@ -97,7 +97,7 @@ ts.setup({
 })
 
 -- ts.load_extension("fzy_native")
-ts.load_extension("fzf")
+-- ts.load_extension("fzf") -- TODO: check why this is broken
 -- ts.load_extension("session-lens")
 ts.load_extension("bookmarks")
 ts.load_extension("media_files")
