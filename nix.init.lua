@@ -30,7 +30,6 @@ require("plugins.luasnip") -- ./lua/plugins/luasnip/init.lua
 
 -- /// LS & SYNTAX ///.
 require("plugins.cmp-setup") -- ./lua/plugins/cmp-setup/init.lua
--- require("plugins.pack-cmp") -- ./lua/plugins/pack-cmp.nvim/init.lua
 require("plugins.treesitter") -- ./lua/plugins/treesitter/init.lua
 require("plugins.context-print") -- ./lua/plugins/context-print/init.lua
 require("lsp") -- ./lua/lsp/
@@ -43,6 +42,7 @@ require("lsp.css") -- ./lua/lsp/css.lua
 require("lsp.php") -- ./lua/lsp/php.
 require("lsp.vimls") -- ./lua/lsp/vimls.lua
 require("lsp.tsserver") -- ./lua/lsp/tsserver.lua
+require("lsp.eslint") -- ./lua/lsp/eslint.lua
 require("lsp.latex") -- ./lua/lsp/latex.lua
 require("lsp.docker") -- ./lua/lsp/docker.lua
 require("lsp.sql") -- ./lua/lsp/sql.lua
@@ -53,11 +53,12 @@ require("lsp.c") -- ./lua/lsp/c.lua
 require("lsp.clangd") -- ./lua/lsp/clangd.lua
 require("lsp.nix") -- ./lua/lsp/nix.lua
 require("lsp.ltex") -- ./lua/lsp/ltex.lua
+require("lsp.null") -- ./lua/lsp/null.lua
 require("plugins.lsp-uti") -- ./lua/plugins/lsp-uti/init.lua
 require("lsp-kind") -- ./lua/lsp-kind/init.lua
 -- require("plugins.neoroot") -- ./lua/plugins/neoroot/init.lua
 -- require("lsp.znote") -- ./lua/lsp/znote.lua
-require("lsp.formatter") -- ./lua/lsp/formatter.lua
+-- require("lsp.formatter") -- ./lua/lsp/formatter.lua
 -- require('lsp.stylelint') -- ./lua/lsp/stylelint.lua
 -- require('lsp.deno') -- ./lua/lsp/deno.lua <- not now
 --  require("lsp-saga") -- ./lua/lsp-saga/init.lua

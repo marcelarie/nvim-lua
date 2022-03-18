@@ -48,12 +48,12 @@ ts.setup({
 	path_display = true,
 	winblend = 0,
 	border = {},
-	defaults = {
-		preview = {
-			treesitter = false,
-			languages = { "perl", "javascript" },
-		},
-	},
+	-- defaults = {
+	-- 	preview = {
+	-- 		treesitter = false,
+	-- 		languages = { "perl" },
+	-- 	},
+	-- },
 	borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 	use_less = true,
 	set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil

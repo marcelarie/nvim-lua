@@ -102,6 +102,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("lukas-reineke/cmp-rg")
 	use({ "tzachar/cmp-tabnine", run = "./install.sh" })
 	use("jubnzv/virtual-types.nvim")
+	use({ "jose-elias-alvarez/null-ls.nvim" })
 	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
 	--  use("f3fora/cmp-nuspell")
 

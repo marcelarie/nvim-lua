@@ -23,7 +23,12 @@ vim.api.nvim_set_keymap("n", "<Leader>sj", ":split<cr>", { noremap = true, silen
 vim.api.nvim_set_keymap("n", "<Leader>sl", ":vsplit<cr>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<Leader>o", ":luafile %<cr>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<Leader>so", ":luafile $VI_CONFIG<cr>", { noremap = true, silent = false })
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader>so",
+	":luafile ~/.config/nvim/nix.init.lua<cr>",
+	{ noremap = true, silent = false }
+)
 
 -- switch windows vertically
 vim.api.nvim_set_keymap("n", "<Leader>l", ":wincmd L<cr>", { noremap = true, silent = true })
