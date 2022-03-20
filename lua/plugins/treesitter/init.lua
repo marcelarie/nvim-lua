@@ -15,6 +15,7 @@ parser_configs.norg = {
 
 ts.setup({
 	ensure_installed = "maintained",
+	ignore_install = { "teal" },
 	highlight = {
 		enable = true,
 		-- disable = { "perl" },

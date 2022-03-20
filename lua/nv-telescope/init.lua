@@ -48,12 +48,12 @@ ts.setup({
 	path_display = true,
 	winblend = 0,
 	border = {},
-	defaults = {
-		preview = {
-			treesitter = false,
-			languages = { "perl", "javascript" },
-		},
-	},
+	-- defaults = {
+	-- 	preview = {
+	-- 		treesitter = false,
+	-- 		languages = { "perl" },
+	-- 	},
+	-- },
 	borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 	use_less = true,
 	set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil
@@ -97,7 +97,7 @@ ts.setup({
 })
 
 -- ts.load_extension("fzy_native")
-ts.load_extension("fzf")
+-- ts.load_extension("fzf") -- TODO: check why this is broken
 -- ts.load_extension("session-lens")
 ts.load_extension("bookmarks")
 ts.load_extension("media_files")
