@@ -52,7 +52,7 @@ require("lsp.perl") -- ./lua/lsp/perl.lua
 require("lsp.c") -- ./lua/lsp/c.lua
 require("lsp.clangd") -- ./lua/lsp/clangd.lua
 require("lsp.nix") -- ./lua/lsp/nix.lua
-require("lsp.ltex") -- ./lua/lsp/ltex.lua
+-- require("lsp.ltex") -- ./lua/lsp/ltex.lua
 require("lsp.null") -- ./lua/lsp/null.lua
 require("plugins.lsp-uti") -- ./lua/plugins/lsp-uti/init.lua
 require("lsp-kind") -- ./lua/lsp-kind/init.lua
@@ -118,3 +118,5 @@ if not vim.g.started_by_firenvim then
 else
 	require("firenvim_config")
 end
+
+vim.cmd("set laststatus=3")
