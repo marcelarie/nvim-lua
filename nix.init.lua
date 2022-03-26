@@ -56,7 +56,7 @@ require("lsp.nix") -- ./lua/lsp/nix.lua
 require("lsp.null") -- ./lua/lsp/null.lua
 require("plugins.lsp-uti") -- ./lua/plugins/lsp-uti/init.lua
 require("lsp-kind") -- ./lua/lsp-kind/init.lua
--- require("plugins.neoroot") -- ./lua/plugins/neoroot/init.lua
+require("plugins.neoroot") -- ./lua/plugins/neoroot/init.lua
 -- require("lsp.znote") -- ./lua/lsp/znote.lua
 -- require("lsp.formatter") -- ./lua/lsp/formatter.lua
 -- require('lsp.stylelint') -- ./lua/lsp/stylelint.lua
