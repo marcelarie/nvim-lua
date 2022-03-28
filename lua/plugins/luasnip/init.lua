@@ -27,7 +27,8 @@ luasnip.config.set_config({
 
 luasnip.snippets = {
 	all = {
-		s("date_today", f(bash, {}, "date -u +'%H:%M:%S %Y-%m-%d'")),
+		s("date_time_now", f(bash, {}, "date -u +'%Y-%m-%d %H:%M:%S'")),
+		s("date_now", f(bash, {}, "date -u +'%Y-%m-%d'")),
 		s("pwd", f(bash, {}, "pwd")),
 		s("ls", f(bash, {}, "exa")),
 	},

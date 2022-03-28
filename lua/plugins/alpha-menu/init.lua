@@ -26,3 +26,9 @@ startify.section.header.val = {
 }
 
 alpha.setup(startify.opts)
+
+local NOREF_NOERR_TRUNC = { noremap = true, silent = true, nowait = true }
+
+vim.keymap.set("n", "<Leader>al", function()
+	vim.cmd("Alpha")
+end, NOREF_NOERR_TRUNC)
