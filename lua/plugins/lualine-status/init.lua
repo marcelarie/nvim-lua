@@ -58,3 +58,5 @@ require("lualine").setup({
 	tabline = {},
 	extensions = {},
 })
+
+vim.cmd("set laststatus=3")

@@ -42,6 +42,7 @@ au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncS
 -- vim.cmd('set path+=**')
 vim.api.nvim_set_option("undofile", true)
 vim.api.nvim_set_option("undodir", "~/.vim/undodir")
+vim.cmd("set laststatus=3")
 vim.cmd("set undofile")
 vim.cmd("set undodir=~/.vim/undodir")
 vim.cmd("set undolevels=1000")

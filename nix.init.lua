@@ -13,6 +13,7 @@ require("leader-remaps") -- ./lua/leader-remaps.lua
 -- /// TREE & EXPLORERS ///.
 require("plugins.undo-tree") -- ./lua/plugins/undo-tree/init.lua
 require("plugins.netrw") -- ./lua/plugins/netrw/init.lua
+vim.cmd("set laststatus=3")
 require("plugins.lualine-status") -- ./lua/plugins/lualine-status/init.lua
 require("plugins.nvim-tree") -- ./lua/plugins/nvim-tree/init.lua
 require("vim-keybindings") -- ./lua/vim-keybindings/init.lua

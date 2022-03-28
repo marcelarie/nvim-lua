@@ -13,6 +13,11 @@ vim.api.nvim_command([[
     autocmd FileType perl let perl_extended_vars = 1
 ]])
 
+vim.api.nvim_create_autocmd("BufReadPost", {
+	pattern = "*",
+	callback = function() end,
+})
+
 --  vim.api.nvim_command([[
 --  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 --  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
@@ -22,3 +27,4 @@ vim.api.nvim_command([[
 -- vim.api.nvim_command([[
 --     autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 -- ]])
+--
