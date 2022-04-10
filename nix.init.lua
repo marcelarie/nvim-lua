@@ -13,7 +13,6 @@ require("leader-remaps") -- ./lua/leader-remaps.lua
 -- /// TREE & EXPLORERS ///.
 require("plugins.undo-tree") -- ./lua/plugins/undo-tree/init.lua
 require("plugins.netrw") -- ./lua/plugins/netrw/init.lua
-vim.cmd("set laststatus=3")
 require("plugins.lualine-status") -- ./lua/plugins/lualine-status/init.lua
 require("plugins.nvim-tree") -- ./lua/plugins/nvim-tree/init.lua
 require("vim-keybindings") -- ./lua/vim-keybindings/init.lua
@@ -63,12 +62,12 @@ require("plugins.neoroot") -- ./lua/plugins/neoroot/init.lua
 -- require('lsp.stylelint') -- ./lua/lsp/stylelint.lua
 -- require('lsp.deno') -- ./lua/lsp/deno.lua <- not now
 --  require("lsp-saga") -- ./lua/lsp-saga/init.lua
--- require("lsp-sign") -- ./lua/lsp-sign/init.lua
+require("lsp-sign") -- ./lua/lsp-sign/init.lua
 
 if not vim.g.started_by_firenvim then
 	require("plugins.lightbulb") -- ./lua/plugins/lightbulb/init.lua
 
-	require("formatting") -- ./lua/formatting.lua
+	-- require("formatting") -- ./lua/formatting.lua
 	require("lsp-trouble") -- ./lua/lsp-trouble/init.lua
 	require("lsp-trouble-keybindings") -- ./lua/lsp-trouble-keybindings.lua
 	require("plugins.nvim-commented") -- ./lua/plugins/nvim-commented/init.lua
