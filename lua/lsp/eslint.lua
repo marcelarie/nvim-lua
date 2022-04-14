@@ -1,1 +1,29 @@
-require("lspconfig").eslint.setup({})
+require("lspconfig").eslint.setup({
+	settings = {
+		-- codeAction = {
+		-- 	disableRuleComment = {
+		-- 		enable = true,
+		-- 		location = "separateLine",
+		-- 	},
+		-- 	showDocumentation = {
+		-- 		enable = true,
+		-- 	},
+		-- },
+		-- codeActionOnSave = {
+		-- 	enable = false,
+		-- 	mode = "all",
+		-- },
+		-- format = true,
+		-- nodePath = "",
+		onIgnoredFiles = "on",
+		-- packageManager = "npm",
+		-- quiet = false,
+		-- rulesCustomizations = {},
+		-- run = "onType",
+		-- useESLintClass = false,
+		-- validate = "on",
+		-- workingDirectory = {
+		-- 	mode = "location",
+		-- },
+	},
+})

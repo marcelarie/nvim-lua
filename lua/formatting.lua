@@ -7,7 +7,7 @@
 vim.cmd([[autocmd BufWritePre *.lua silent! Neoformat]])
 
 -- JavaScript
-vim.cmd([[autocmd BufWritePre *.js silent! Neoformat]])
+-- vim.cmd([[autocmd BufWritePre *.js silent! Neoformat]])
 vim.cmd([[autocmd BufWritePre *.jsx silent! Neoformat]])
 vim.cmd([[autocmd BufWritePre *.ts silent! Neoformat]])
 vim.cmd([[autocmd BufWritePre *.tsx silent! Neoformat]])

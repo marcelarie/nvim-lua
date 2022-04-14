@@ -63,10 +63,10 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("nvim-telescope/telescope-symbols.nvim")
 	use("dhruvmanila/telescope-bookmarks.nvim")
 	use("nvim-telescope/telescope-github.nvim")
-	use({
-		"nvim-telescope/telescope-arecibo.nvim",
-		rocks = { "openssl", "lua-http-parser" },
-	})
+	-- use({
+	-- 	"nvim-telescope/telescope-arecibo.nvim",
+	-- 	rocks = { "openssl", "lua-http-parser" },
+	-- })
 	use("nvim-telescope/telescope-packer.nvim")
 	use("cljoly/telescope-repo.nvim")
 	use("jvgrootveld/telescope-zoxide")
@@ -93,8 +93,6 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("hrsh7th/cmp-nvim-lua")
 	use("f3fora/cmp-spell")
 	use("petertriho/cmp-git")
-	use({ "tzachar/cmp-fuzzy-path", requires = { "hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim" } })
-	-- use({ "~/clones/own/cmp-package" })
 	use("quangnguyen30192/cmp-nvim-ultisnips")
 	use("quangnguyen30192/cmp-nvim-tags")
 	use("mfussenegger/nvim-dap")
@@ -103,6 +101,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use({ "tzachar/cmp-tabnine", run = "./install.sh" })
 	use("jubnzv/virtual-types.nvim")
 	use({ "jose-elias-alvarez/null-ls.nvim" })
+	-- use({ "tzachar/cmp-fuzzy-path", requires = { "hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim" } })
+	-- use({ "~/clones/own/cmp-package" })
 	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
 	--  use("f3fora/cmp-nuspell")
 

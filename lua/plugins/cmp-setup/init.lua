@@ -141,33 +141,26 @@ cmp.setup({
 	sources = {
 		{ name = "package" },
 		{ name = "path" },
-		-- { name = "fuzzy_path", options = { fd_timeout_msec = 1500 } },
 		{ name = "luasnip" },
 		{ name = "cmp_tabnine" },
 		{ name = "nvim_lsp" },
 		{
 			name = "buffer",
-			max_item_count = 2,
+			max_item_count = 4,
 			option = {
 				get_bufnrs = function()
 					return vim.api.nvim_list_bufs()
 				end,
 			},
 		},
-		-- { name = "rg", max_item_count = 4 },
-		-- { name = "crates" },
-		-- { name = "tags" },
-		-- { name = "treesitter" },
-		-- { name = "nvim_lua" },
-		-- { name = "neorg" },
-		-- { name = "cmp_git" },
-		-- { name = "gh_issues" },
-		-- { name = "pack_cmp" },
-		-- { name = "zsh" },
-		-- { name = "latex_symbols" },
-		-- { name = "cmdline" },
-		-- { name = "spell" },
-		-- { name = "nuspell" },
+		-- { name = "fuzzy_path", options = { fd_timeout_msec = 1500 } },
+		-- { name = "rg", max_item_count = 4 }, { name = "crates" },
+		-- { name = "tags" }, { name = "treesitter" },
+		-- { name = "nvim_lua" }, { name = "neorg" },
+		-- { name = "cmp_git" }, { name = "gh_issues" },
+		-- { name = "pack_cmp" }, { name = "zsh" },
+		-- { name = "latex_symbols" }, { name = "cmdline" },
+		-- { name = "spell" }, { name = "nuspell" },
 
 		--  old snippets
 		--   { name = "vsnip" },

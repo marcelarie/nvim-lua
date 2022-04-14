@@ -78,9 +78,10 @@ luasnip.snippets = {
 	norg = {
 		s({ name = "- [ ]", trig = "- [ ]" }, { t("- [ ] "), i(1, "todo") }),
 	},
-	javascript = {
-		s("log", { t("console.log("), i(1, "var"), t(")") }),
-	},
+	javascript = { s("log", { t("console.log("), i(1, "var"), t(")") }) },
+	javascriptreact = { s("log", { t("console.log("), i(1, "var"), t(")") }) },
+	typescript = { s("log", { t("console.log("), i(1, "var"), t(")") }) },
+	typescriptreact = { s("log", { t("console.log("), i(1, "var"), t(")") }) },
 	rust = {
 		s("pr", { t('println!("{:?}", '), i(1, "x"), t(" )") }),
 	},
