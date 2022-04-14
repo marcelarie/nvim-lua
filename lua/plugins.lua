@@ -137,7 +137,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("nvim-treesitter/playground")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	-- use("nvim-treesitter/nvim-treesitter-textobjects")
-	use({ "RRethy/nvim-treesitter-endwise" })
+	-- use({ "RRethy/nvim-treesitter-endwise" })
 
 	-- print on cursor
 	use("bryall/contextprint.nvim")
