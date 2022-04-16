@@ -8,7 +8,8 @@ local completion = null_ls.builtins.completion
 null_ls.setup({
 	sources = {
 		formatting.stylua,
-		formatting.prettier,
+		-- formatting.prettier,
+		formatting.prettier_d_slim,
 		-- formatting.nixpkgs_fmt,
 		-- formatting.eslint,
 		-- completion.spell,

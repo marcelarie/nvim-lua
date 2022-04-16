@@ -32,4 +32,4 @@ vim.cmd([[autocmd BufWritePre *.nix silent! Neoformat]])
 -- vim.cmd([[autocmd BufWritePre *.pm silent! ]])
 
 vim.api.nvim_set_keymap("v", "ff", ":'<,'>Neoformat<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>nw", ":Neoformat<cr>:w<cr>", { noremap = true, silent = false })
+vim.api.nvim_set_keymap("n", "<Leader>nw", ":noautocmd w<cr>", { noremap = true, silent = false })
