@@ -6,6 +6,8 @@ vim.g.mapleader = " "
 vim.api.nvim_set_keymap("n", "<Leader>w", ":w<cr>", { noremap = true, silent = true })
 -- leader W to save
 vim.api.nvim_set_keymap("n", "<Leader>W", ":w!<cr>", { noremap = true, silent = true })
+-- leader W with no autocmd
+vim.api.nvim_set_keymap("n", "<Leader>nw", ":noautocmd w<cr>", { noremap = true, silent = true })
 -- leader W to save ON SUDO
 vim.api.nvim_set_keymap("c", "w!!", "SudaWrite<cr>", { noremap = false, silent = false })
 

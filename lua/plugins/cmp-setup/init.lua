@@ -139,8 +139,8 @@ cmp.setup({
 	-- }),
 	experimental = { ghost_text = true },
 	sources = {
-		{ name = "package" },
-		{ name = "path" },
+		-- { name = "package" },
+		-- { name = "path" },
 		{ name = "luasnip" },
 		{ name = "cmp_tabnine" },
 		{ name = "nvim_lsp" },
