@@ -54,7 +54,7 @@ require("lsp.clangd") -- ./lua/lsp/clangd.lua
 require("lsp.nix") -- ./lua/lsp/nix.lua
 require("lsp.zk") -- ./lua/lsp/zk.lua
 -- require("lsp.ltex") -- ./lua/lsp/ltex.lua
--- require("lsp.null") -- ./lua/lsp/null.lua
+require("lsp.null") -- ./lua/lsp/null.lua
 require("plugins.lsp-uti") -- ./lua/plugins/lsp-uti/init.lua
 require("lsp-kind") -- ./lua/lsp-kind/init.lua
 require("plugins.neoroot") -- ./lua/plugins/neoroot/init.lua
@@ -68,7 +68,7 @@ require("lsp-sign") -- ./lua/lsp-sign/init.lua
 if not vim.g.started_by_firenvim then
 	require("plugins.lightbulb") -- ./lua/plugins/lightbulb/init.lua
 
-	-- require("formatting") -- ./lua/formatting.lua
+	require("formatting") -- ./lua/formatting.lua
 	require("lsp-trouble") -- ./lua/lsp-trouble/init.lua
 	require("lsp-trouble-keybindings") -- ./lua/lsp-trouble-keybindings.lua
 	require("plugins.nvim-commented") -- ./lua/plugins/nvim-commented/init.lua

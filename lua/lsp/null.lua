@@ -26,3 +26,6 @@ null_ls.setup({
 		end
 	end,
 })
+
+vim.api.nvim_set_keymap("v", "ff", ":lua vim.lsp.buf.range_formatting()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "ff", ":lua vim.lsp.buf.formatting_sync()<cr>", { noremap = true, silent = true })
