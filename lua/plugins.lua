@@ -259,6 +259,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use({ "bennypowers/nvim-regexplainer", requires = { "MunifTanjim/nui.nvim" } })
 	use({ "farmergreg/vim-lastplace" })
 	use({ "NFrid/due.nvim" })
+	use("mickael-menu/zk-nvim")
 	-- use({ "j-hui/fidget.nvim" })
 	-- use("elihunter173/dirbuf.nvim")
 
