@@ -10,7 +10,7 @@ null_ls.setup({
 		formatting.stylua,
 		-- formatting.prettier,
 		formatting.prettier_d_slim,
-		-- formatting.nixpkgs_fmt,
+		formatting.alejandra,
 		-- formatting.eslint,
 		-- completion.spell,
 		-- require("null-ls").builtins.diagnostics.eslint, -- eslint-ls already setup at ./eslint.lua

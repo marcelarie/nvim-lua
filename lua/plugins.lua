@@ -100,7 +100,8 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("lukas-reineke/cmp-rg")
 	use({ "tzachar/cmp-tabnine", run = "./install.sh" })
 	use("jubnzv/virtual-types.nvim")
-	use({ "jose-elias-alvarez/null-ls.nvim" })
+	use({ "~/clones/forks/null-ls.nvim" })
+	-- use({ "jose-elias-alvarez/null-ls.nvim" })
 	-- use({ "tzachar/cmp-fuzzy-path", requires = { "hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim" } })
 	-- use({ "~/clones/own/cmp-package" })
 	--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
