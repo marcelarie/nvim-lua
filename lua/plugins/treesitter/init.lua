@@ -14,7 +14,6 @@ parser_configs.norg = {
 }
 
 ts.setup({
-	ensure_installed = "maintained",
 	ignore_install = { "teal", "astro" },
 	highlight = {
 		enable = true,

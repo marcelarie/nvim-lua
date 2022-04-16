@@ -10,7 +10,7 @@ On_attach = function(client, bufnr)
 		vim.api.nvim_buf_set_option(bufnr, ...)
 	end
 
-	if client.name == "tsserver" then
+	if client.name == "tsserver" or client.name == "jsonls" then
 		client.resolved_capabilities.document_formatting = false
 		client.resolved_capabilities.document_range_formatting = false
 	end

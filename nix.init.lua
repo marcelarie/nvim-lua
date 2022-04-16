@@ -16,14 +16,14 @@ require("plugins.netrw") -- ./lua/plugins/netrw/init.lua
 require("plugins.lualine-status") -- ./lua/plugins/lualine-status/init.lua
 require("plugins.nvim-tree") -- ./lua/plugins/nvim-tree/init.lua
 require("vim-keybindings") -- ./lua/vim-keybindings/init.lua
---  require("plugins.feline-status") -- ./lua/plugins/feline-status/init.lua
+-- require("plugins.feline-status") -- ./lua/plugins/feline-status/init.lua
 -- require("plugins.difbuf") -- ./lua/plugins/difbuf/init.lua
 --
 -- /// NAVIGATION ///.
 require("nv-telescope") -- ./lua/nv-telescope/init.lua
 require("telescope-keybindings") -- ./lua/telescope-keybindings.lua
 require("plugins.quick-scope") -- ./lua/plugins/quick-scope/init.lua
-require("plugins.linearf") -- ./lua/plugins/linearf/init.lua
+-- require("plugins.linearf") -- ./lua/plugins/linearf/init.lua
 
 -- /// SNIPPETS ///
 require("plugins.luasnip") -- ./lua/plugins/luasnip/init.lua
