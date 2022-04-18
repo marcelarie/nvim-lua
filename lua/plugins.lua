@@ -113,6 +113,21 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 	use("simrat39/symbols-outline.nvim")
 	use("ray-x/lsp_signature.nvim")
+	-- use({ "github/copilot.vim" }) -- needed for the auth
+	use({
+		"zbirenbaum/copilot.lua",
+		event = { "VimEnter" },
+		config = function()
+			vim.defer_fn(function()
+				require("copilot").setup()
+			end, 100)
+		end,
+	})
+	use({
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua", "nvim-cmp" },
+	})
+	use({ "marcelarie/" })
 
 	-- LSP Saga
 	--  use("glepnir/lspsaga.nvim")

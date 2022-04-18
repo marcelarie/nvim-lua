@@ -15,6 +15,7 @@ end
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 local kind = cmp.lsp.CompletionItemKind
+local lspkind = require("lspkind")
 
 local tabnine = require("cmp_tabnine.config")
 tabnine:setup({
@@ -59,38 +60,42 @@ cmp.setup({
 		end,
 	},
 	formatting = {
-		format = function(entry, vim_item)
-			-- fancy icons and a name of kind
-			vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
+		format = lspkind.cmp_format({
+			mode = "symbol", -- show only symbol annotations
+			maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
-			-- set a name for each source
-			local menu = ({
-				nvim_lsp = "[lsp]",
-				luasnip = "[snip]",
-				buffer = "[buf]",
-				nvim_lua = "[lua]",
-				treesitter = "[ts]",
-				look = "[look]",
-				spell = "[spell]",
-				neorg = "[neorg]",
-				latex_symbols = "[latex]",
-				calc = "[calc]",
-				crates = "🦀",
-				cmp_git = "[git]",
-				cmp_tabnine = "",
-				rg = "[rg]",
-				package = "[pack]",
-				fuzzy_path = "[fpath]",
-				-- buf_lines = "[buf-lines]",
-			})[entry.source.name]
+			-- The function below will be called before any actual modifications from lspkind
+			-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+			before = function(entry, vim_item)
+				local menu = ({
+					nvim_lsp = "[lsp]",
+					luasnip = "[snip]",
+					buffer = "[buf]",
+					nvim_lua = "[lua]",
+					treesitter = "[ts]",
+					look = "[look]",
+					spell = "[spell]",
+					neorg = "[neorg]",
+					latex_symbols = "[latex]",
+					calc = "[calc]",
+					crates = "🦀",
+					cmp_git = "[git]",
+					cmp_tabnine = "",
+					copilot = "[cop]",
+					rg = "[rg]",
+					package = "[pack]",
+					fuzzy_path = "[fpath]",
+					-- buf_lines = "[buf-lines]",
+				})[entry.source.name]
 
-			if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
-				menu = entry.completion_item.data.detail .. " " .. menu
-			end
+				if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+					menu = entry.completion_item.data.detail .. " " .. menu
+				end
 
-			vim_item.menu = menu
-			return vim_item
-		end,
+				vim_item.menu = menu
+				return vim_item
+			end,
+		}),
 	},
 	mapping = {
 		["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
@@ -141,8 +146,9 @@ cmp.setup({
 	sources = {
 		-- { name = "package" },
 		{ name = "path" },
+		{ name = "copilot" },
 		{ name = "luasnip" },
-		{ name = "cmp_tabnine" },
+		-- { name = "cmp_tabnine" },
 		{ name = "nvim_lsp" },
 		{
 			name = "buffer",
