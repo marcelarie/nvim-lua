@@ -147,9 +147,9 @@ cmp.setup({
 		-- { name = "package" },
 		{ name = "path" },
 		{ name = "copilot" },
-		{ name = "luasnip" },
 		-- { name = "cmp_tabnine" },
-		{ name = "nvim_lsp" },
+		{ name = "luasnip", max_item_count = 4 },
+		{ name = "nvim_lsp", max_item_count = 5 },
 		{
 			name = "buffer",
 			max_item_count = 4,

@@ -127,7 +127,6 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 		"zbirenbaum/copilot-cmp",
 		after = { "copilot.lua", "nvim-cmp" },
 	})
-	use({ "marcelarie/" })
 
 	-- LSP Saga
 	--  use("glepnir/lspsaga.nvim")
@@ -276,6 +275,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use({ "farmergreg/vim-lastplace" })
 	use({ "NFrid/due.nvim" })
 	use("mickael-menu/zk-nvim")
+	use({ "LudoPinelli/comment-box.nvim" })
 	-- use({ "j-hui/fidget.nvim" })
 	-- use("elihunter173/dirbuf.nvim")
 

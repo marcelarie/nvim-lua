@@ -27,6 +27,7 @@ require("plugins.quick-scope") -- ./lua/plugins/quick-scope/init.lua
 
 -- /// SNIPPETS ///
 require("plugins.luasnip") -- ./lua/plugins/luasnip/init.lua
+require("plugins.comment-box") -- ./lua/plugins/comment-box/init.lua
 
 -- /// LS & SYNTAX ///.
 require("plugins.cmp-setup") -- ./lua/plugins/cmp-setup/init.lua
