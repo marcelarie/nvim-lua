@@ -1,9 +1,8 @@
-# nvim config
+# minimal neovim config
 
 ## Language Servers:
 
 ### Lua:
-
 ```bash
 git clone https://github.com/sumneko/lua-language-server.git
 git submodule update --init --recursive

@@ -6,6 +6,7 @@ require("aliases") -- ./lua/aliases.lua
 require("globals") -- ./lua/globals.lua
 require("autocommands") -- ./lua/autocommands.lua
 require("impatient") -- ./lua/impatient/init.lua
+
 -- /// REMAPS ///.
 require("remaps") -- ./lua/remaps.lua
 require("leader-remaps") -- ./lua/leader-remaps.lua
@@ -26,11 +27,8 @@ require("lsp") -- ./lua/lsp/
 require("lsp.lua") -- ./lua/lsp/lua.lua
 
 -- /// Git ///
--- require("octo") -- ./lua/octo/init.lua
 require("git-related") -- ./lua/git-related/init.lua
 require("git-blame") -- ./lua/git-blame/init.lua
 require("git-sings") -- ./lua/git-sings/init.lua
 require("g-worktree") -- ./lua/g-worktree/init.lua
 require("diff-view") -- ./lua/diff-view/init.lua
-
-require("plugins.persistence") -- ./lua/plugins/persistence/init.lua
