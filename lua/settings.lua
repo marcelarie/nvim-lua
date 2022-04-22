@@ -1,8 +1,6 @@
 -- Global options (o)
 vim.o.splitbelow = true -- Horizontal splits will automatically be below
 vim.o.splitright = true -- Vertical splits will automatically be to the right
--- vim.o.timeoutlen = O.timeoutlen
--- vim.o.guifont = "FiraCode Nerd Font:h30"
 
 vim.o.expandtab = true
 vim.o.smarttab = true
@@ -38,8 +36,6 @@ vim.cmd([[
 au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncSearch', timeout = 300 })
 ]])
 
--- vim.api.nvim_set_option("syntax on")
--- vim.cmd('set path+=**')
 vim.api.nvim_set_option("undofile", true)
 vim.api.nvim_set_option("undodir", "~/.vim/undodir")
 vim.cmd("set laststatus=3")
@@ -59,6 +55,3 @@ vim.api.nvim_set_option("compatible", false)
 vim.api.nvim_set_option("errorbells", false)
 vim.api.nvim_set_option("swapfile", false)
 vim.api.nvim_set_option("backup", false)
--- vim.cmd('set backupdir=~/.vim/backup') -- vim.api.nvim_set_option('backupdir', "~/.vim/backup")
--- vim.api.nvim_set_option('writebackup', true)
--- vim.api.nvim_set_option('backupcopy', 'yes')

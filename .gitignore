@@ -2,6 +2,7 @@ node_modules
 language-servers/
 $HOME
 HOME
+~
 sessions
 # lang_servers
 init.vim

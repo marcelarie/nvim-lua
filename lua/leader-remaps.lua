@@ -58,9 +58,5 @@ vim.api.nvim_set_keymap(
 )
 
 -- ; for :
-vim.api.nvim_set_keymap("n", ";", ":", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", ":", ";", { noremap = true, silent = false })
-
--- open file path under cursor vertical split
--- vim.api.nvim_set_keymap('n', '<Leader>gf', ':vertical wincmd f<cr>',
---                         {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", ";", ":", { noremap = true, silent = false })
+-- vim.api.nvim_set_keymap("n", ":", ";", { noremap = true, silent = false })
