@@ -28,6 +28,7 @@ require("plugins.quick-scope") -- ./lua/plugins/quick-scope/init.lua
 -- /// SNIPPETS ///
 require("plugins.luasnip") -- ./lua/plugins/luasnip/init.lua
 require("plugins.comment-box") -- ./lua/plugins/comment-box/init.lua
+-- require("plugins.snippets") -- ./lua/plugins/snippets/init.lua
 
 -- /// LS & SYNTAX ///.
 require("plugins.cmp-setup") -- ./lua/plugins/cmp-setup/init.lua
@@ -93,7 +94,7 @@ if not vim.g.started_by_firenvim then
 	require("plugins.substitute") -- ./lua/plugins/substitute/init.lua
 	require("plugins.better-esc") -- ./lua/better-esc/init.lua
 	-- require("plugins.pairs") -- ./lua/plugins/pairs/init.lua
-	require("plugins.regexplainer") -- ./lua/plugins/regexplainer/init.lua
+	-- require("plugins.regexplainer") -- ./lua/plugins/regexplainer/init.lua
 	-- require("plugins.autopairs") -- (?) --./lua/plugins/autopairs/init.lua
 	-- require("plugins.distant") -- ./lua/plugins/distant/init.lua
 	-- require("plugins.fidget") -- ./lua/fidget/init.lua
@@ -109,11 +110,12 @@ if not vim.g.started_by_firenvim then
 	require("g-worktree") -- ./lua/g-worktree/init.lua
 	require("diff-view") -- ./lua/diff-view/init.lua
 
-	local function get_git_root()
-		local root = vim.fn.expand("%:p:h")
-		local git_root = vim.fn.fnamemodify(root, ":h")
-		return git_root
-	end
+	-- local function get_git_root()
+	-- 	local root = vim.fn.expand("%:p:h")
+	-- 	local git_root = vim.fn.fnamemodify(root, ":h")
+	-- 	return git_root
+	-- end
+
 	--/// Firenvim ///
 	-- /// Rust ///
 	require("plugins.crates") -- ./lua/plugins/crates/init.lua

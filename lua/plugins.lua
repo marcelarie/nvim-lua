@@ -268,7 +268,7 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use({
 		"klen/nvim-test",
 		config = function()
-			require("nvim-test").setup()
+			require("nvim-test").setup({})
 		end,
 	})
 	use({ "bennypowers/nvim-regexplainer", requires = { "MunifTanjim/nui.nvim" } })

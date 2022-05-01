@@ -10,10 +10,10 @@ On_attach = function(client, bufnr)
 		vim.api.nvim_buf_set_option(bufnr, ...)
 	end
 
-	if client.name == "tsserver" or client.name == "jsonls" or client.name == "html" then
-		client.resolved_capabilities.document_formatting = false
-		client.resolved_capabilities.document_range_formatting = false
-	end
+	-- if client.name == "tsserver" or client.name == "jsonls" or client.name == "html" then
+	-- 	client.resolved_capabilities.document_formatting = false
+	-- 	client.resolved_capabilities.document_range_formatting = false
+	-- end
 
 	-- local ts_utils = require("nvim-lsp-ts-utils")
 	-- ts_utils.setup({})
