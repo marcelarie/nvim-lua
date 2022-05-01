@@ -42,20 +42,27 @@ vim.api.nvim_set_keymap("n", "<Leader>pi", ":PackerInstall<cr>", { noremap = tru
 vim.api.nvim_set_keymap("n", "<Leader>pu", ":PackerUpdate<cr>", { noremap = true, silent = false })
 vim.api.nvim_set_keymap("n", "<Leader>pc", ":PackerClean<cr>", { noremap = true, silent = false })
 
--- lsp
-vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>dd",
-	":lua vim.diagnostic.config({virtual_text = false}); print('LSP virtual text disabled.')<cr>",
-	{ noremap = true, silent = false }
-)
+-- GitBlame
+vim.api.nvim_set_keymap("n", "<Leader>gt", ":GitBlameToggle<cr>", { noremap = true, silent = false })
 
-vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>ed",
-	":lua vim.diagnostic.config({virtual_text = true}); print('LSP virtual text enabled.')<cr>",
-	{ noremap = true, silent = false }
-)
+-- lsp
+vim.keymap.set("n", "<Leader>dd", function()
+	vim.diagnostic.config({
+		virtual_text = false,
+		signs = false,
+		underline = false,
+	})
+	print("LSP virtual text disabled.")
+end, { noremap = true, silent = false })
+
+vim.keymap.set("n", "<Leader>ed", function()
+	vim.diagnostic.config({
+		virtual_text = true,
+		signs = true,
+		underline = true,
+	})
+	print("LSP virtual text enabled.")
+end, { noremap = true, silent = false })
 
 -- ; for :
 vim.api.nvim_set_keymap("n", ";", ":", { noremap = true, silent = false })

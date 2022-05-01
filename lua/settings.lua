@@ -2,7 +2,7 @@
 vim.o.splitbelow = true -- Horizontal splits will automatically be below
 vim.o.splitright = true -- Vertical splits will automatically be to the right
 -- vim.o.timeoutlen = O.timeoutlen
--- vim.o.guifont = "FiraCode Nerd Font:h30"
+vim.o.guifont = "FiraCode Nerd Font:h12"
 
 vim.o.expandtab = true
 vim.o.smarttab = true
@@ -36,6 +36,10 @@ vim.wo.colorcolumn = "80"
 -- highlight on yank
 vim.cmd([[
 au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncSearch', timeout = 300 })
+]])
+
+vim.cmd([[
+    autocmd BufNewFile,BufRead *_aliases,*.env set syntax=sh
 ]])
 
 -- vim.api.nvim_set_option("syntax on")

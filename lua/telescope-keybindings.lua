@@ -10,6 +10,7 @@ map("n", "<Leader>gs", ":Telescope git_status<cr>", opts)
 map("n", "<Leader>gb", ":Telescope git_branches<cr>", opts)
 map("n", "<Leader>tb", ":Telescope buffers<cr>", opts)
 map("n", "<Leader>th", ":Telescope help_tags<cr>", opts)
+map("n", "<Leader>bf", ":Telescope current_buffer_fuzzy_find<cr>", opts)
 map(
 	"n",
 	"<leader>rg",

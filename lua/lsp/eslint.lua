@@ -15,7 +15,7 @@ require("lspconfig").eslint.setup({
 		-- },
 		-- format = true,
 		-- nodePath = "",
-		onIgnoredFiles = "on",
+		-- onIgnoredFiles = "on",
 		-- packageManager = "npm",
 		-- quiet = false,
 		-- rulesCustomizations = {},

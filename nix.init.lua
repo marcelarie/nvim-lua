@@ -109,6 +109,11 @@ if not vim.g.started_by_firenvim then
 	require("g-worktree") -- ./lua/g-worktree/init.lua
 	require("diff-view") -- ./lua/diff-view/init.lua
 
+	local function get_git_root()
+		local root = vim.fn.expand("%:p:h")
+		local git_root = vim.fn.fnamemodify(root, ":h")
+		return git_root
+	end
 	--/// Firenvim ///
 	-- /// Rust ///
 	require("plugins.crates") -- ./lua/plugins/crates/init.lua

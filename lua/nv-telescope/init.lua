@@ -110,6 +110,7 @@ ts.load_extension("zoxide")
 ts.load_extension("repo")
 ts.load_extension("git_worktree")
 ts.load_extension("neoclip")
+ts.load_extension("luasnip")
 -- local M = {}
 -- M.search_dotfiles = function()
 -- require("telescope.builtin").find_files(

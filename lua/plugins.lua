@@ -276,6 +276,10 @@ return require("packer").startup(function() -- Packer can manage itself as an op
 	use({ "NFrid/due.nvim" })
 	use("mickael-menu/zk-nvim")
 	use({ "LudoPinelli/comment-box.nvim" })
+	use({
+		"benfowler/telescope-luasnip.nvim",
+		-- module = "telescope._extensions.luasnip", -- if you wish to lazy-load
+	})
 	-- use({ "j-hui/fidget.nvim" })
 	-- use("elihunter173/dirbuf.nvim")
 

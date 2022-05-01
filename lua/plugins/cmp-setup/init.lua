@@ -186,10 +186,8 @@ vim.api.nvim_exec(
 	[[
   autocmd FileType markdown,text,tex,gitcommit lua require('cmp').setup.buffer {
   \   sources = {
-  \       { name = 'package' },
   \       { name = 'path' },
   \       { name = 'luasnip' },
-  \       { name = 'cmp_tabnine' },
   \       { name = 'nvim_lsp' },
   \  	  { name = 'calc' },
   \       {
