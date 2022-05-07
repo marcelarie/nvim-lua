@@ -34,26 +34,26 @@ vim.wo.signcolumn = "yes"
 vim.wo.colorcolumn = "80"
 
 -- highlight on yank
-vim.cmd([[
+vim.cmd [[
 au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncSearch', timeout = 300 })
-]])
+]]
 
-vim.cmd([[
+vim.cmd [[
     autocmd BufNewFile,BufRead *_aliases,*.env set syntax=sh
-]])
+]]
 
 -- vim.api.nvim_set_option("syntax on")
 -- vim.cmd('set path+=**')
 vim.api.nvim_set_option("undofile", true)
 vim.api.nvim_set_option("undodir", "~/.vim/undodir")
-vim.cmd("set laststatus=3")
-vim.cmd("set undofile")
-vim.cmd("set undodir=~/.vim/undodir")
-vim.cmd("set undolevels=1000")
-vim.cmd("set undoreload=10000")
-vim.cmd("set noswapfile")
-vim.cmd("set nohlsearch")
-vim.cmd("set list listchars=tab:⤑\\ ,trail:∙,eol:↲")
+vim.cmd "set laststatus=3"
+vim.cmd "set undofile"
+vim.cmd "set undodir=~/.vim/undodir"
+vim.cmd "set undolevels=1000"
+vim.cmd "set undoreload=10000"
+vim.cmd "set noswapfile"
+vim.cmd "set nohlsearch"
+vim.cmd "set list listchars=tab:⤑\\ ,trail:∙,eol:↲"
 
 -- vim.api.nvim_set_option('spelllang', 'en')
 vim.api.nvim_set_option("showcmd", false)

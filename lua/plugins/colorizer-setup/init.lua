@@ -8,8 +8,8 @@
 -- 	css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
 -- })
 
-require("colorizer").setup({
+require("colorizer").setup {
 	"*", -- highlight all files
 	"!javascript", -- exclude
 	"!html",
-})
+}

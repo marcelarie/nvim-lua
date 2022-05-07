@@ -1,6 +1,6 @@
-local trouble = require("trouble")
+local trouble = require "trouble"
 
-trouble.setup({
+trouble.setup {
 	height = 15, -- height of the trouble list
 	icons = true, -- use dev-icons for filenames
 	mode = "workspace_diagnostics", -- "workspace" or "document"
@@ -31,4 +31,4 @@ trouble.setup({
 		information = "",
 	},
 	use_lsp_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
-})
+}

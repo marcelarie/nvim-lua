@@ -1,4 +1,4 @@
-require("nvim-lightbulb").update_lightbulb({
+require("nvim-lightbulb").update_lightbulb {
 	sign = {
 		enabled = true,
 		-- Priority of the gutter sign
@@ -38,6 +38,6 @@ require("nvim-lightbulb").update_lightbulb({
 		-- Text to provide when no actions are available
 		text_unavailable = "",
 	},
-})
+}
 
-vim.cmd([[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]

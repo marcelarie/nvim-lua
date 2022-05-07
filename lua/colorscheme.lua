@@ -1,4 +1,4 @@
-require("plugins.lighthaus") -- ./lua/plugins/lighthaus/init.lua
+require "plugins.lighthaus" -- ./lua/plugins/lighthaus/init.lua
 -- vim.cmd("colorscheme lighthaus_dark")
 -- vim.cmd("colorscheme base16-equilibrium-light")
 --

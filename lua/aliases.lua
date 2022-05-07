@@ -2,4 +2,4 @@
 
 -- vim.cmd('iabbrev $ $(')
 
-vim.cmd("cnoreabbrev NF Neoformat")
+vim.cmd "cnoreabbrev NF Neoformat"

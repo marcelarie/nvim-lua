@@ -1,4 +1,4 @@
-require("lspconfig").eslint.setup({
+require("lspconfig").eslint.setup {
 	settings = {
 		-- codeAction = {
 		-- 	disableRuleComment = {
@@ -26,4 +26,4 @@ require("lspconfig").eslint.setup({
 		-- 	mode = "location",
 		-- },
 	},
-})
+}

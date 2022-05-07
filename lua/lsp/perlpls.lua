@@ -1,4 +1,4 @@
-require("lspconfig").perlpls.setup({
+require("lspconfig").perlpls.setup {
 	cmd = { "/home/marcel/perl5/bin/pls" },
 	filetypes = { "perl" },
 	settings = {
@@ -11,4 +11,4 @@ require("lspconfig").perlpls.setup({
 		},
 	},
 	single_file_support = true,
-})
+}

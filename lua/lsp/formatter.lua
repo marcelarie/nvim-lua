@@ -32,7 +32,7 @@ local lua = {
 	formatStdin = true,
 }
 
-require("lspconfig").efm.setup({
+require("lspconfig").efm.setup {
 	init_options = { documentFormatting = true },
 	filetypes = {
 		"lua",
@@ -57,4 +57,4 @@ require("lspconfig").efm.setup({
 			markdown = { markdownPandocFormat },
 		},
 	},
-})
+}

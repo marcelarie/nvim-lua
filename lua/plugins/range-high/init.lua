@@ -1,4 +1,4 @@
-require("range-highlight").setup({
+require("range-highlight").setup {
 	highlight = "Visual",
 	highlight_with_out_range = {
 		d = true,
@@ -33,4 +33,4 @@ require("range-highlight").setup({
 		sor = true,
 		sort = true,
 	},
-})
+}

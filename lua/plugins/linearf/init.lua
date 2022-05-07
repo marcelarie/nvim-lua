@@ -1,5 +1,5 @@
-local linearf = require("linearf")
-local flavors = require("linearf-my-flavors")
+local linearf = require "linearf"
+local flavors = require "linearf-my-flavors"
 
 -- Initialize with a view module
 linearf.init(require("linearf-vanilla").new())
@@ -29,7 +29,7 @@ end
 set(
 	"line",
 	flavors.context_managers["line"],
-	flavors.merge({
+	flavors.merge {
 		flavors.scenarios["line"],
 		flavors.scenarios.quit,
 		flavors.scenarios.no_list_insert,
@@ -40,18 +40,20 @@ set(
 					["<CR>"] = flavors.hide_and(flavors.actions.line.jump),
 				},
 				querier_inoremap = {
-					["<CR>"] = flavors.normal_and(flavors.hide_and(flavors.actions.line.jump)),
+					["<CR>"] = flavors.normal_and(
+						flavors.hide_and(flavors.actions.line.jump)
+					),
 				},
 			},
 			view = { querier_on_start = "insert" },
 		},
-	})
+	}
 )
 local use_rg = false
 set(
 	"file",
 	flavors.context_managers[use_rg and "file_rg" or "file_find"],
-	flavors.merge({
+	flavors.merge {
 		flavors.scenarios[use_rg and "file_rg" or "file_find"],
 		flavors.scenarios.quit,
 		flavors.scenarios.no_list_insert,
@@ -60,21 +62,25 @@ set(
 			linearf = {
 				list_nnoremap = {
 					["<CR>"] = flavors.hide_and(flavors.actions.file.open),
-					["<nowait>s"] = flavors.hide_and(flavors.actions.file.split),
+					["<nowait>s"] = flavors.hide_and(
+						flavors.actions.file.split
+					),
 					["t"] = flavors.hide_and(flavors.actions.file.tabopen),
 					["v"] = flavors.hide_and(flavors.actions.file.vsplit),
 				},
 				querier_inoremap = {
-					["<CR>"] = flavors.normal_and(flavors.hide_and(flavors.actions.file.open)),
+					["<CR>"] = flavors.normal_and(
+						flavors.hide_and(flavors.actions.file.open)
+					),
 				},
 			},
 		},
-	})
+	}
 )
 set(
 	"grep",
 	flavors.context_managers[use_rg and "grep_rg" or "grep_grep"],
-	flavors.merge({
+	flavors.merge {
 		flavors.scenarios[use_rg and "grep_rg" or "grep_grep"],
 		flavors.scenarios.quit,
 		flavors.scenarios.no_list_insert,
@@ -83,7 +89,9 @@ set(
 			linearf = {
 				list_nnoremap = {
 					["<CR>"] = flavors.hide_and(flavors.actions.grep.open),
-					["<nowait>s"] = flavors.hide_and(flavors.actions.grep.split),
+					["<nowait>s"] = flavors.hide_and(
+						flavors.actions.grep.split
+					),
 					["t"] = flavors.hide_and(flavors.actions.grep.tabopen),
 					["v"] = flavors.hide_and(flavors.actions.grep.vsplit),
 				},
@@ -93,10 +101,10 @@ set(
 				},
 			},
 		},
-	})
+	}
 )
 
 -- optional
-linearf.utils.command("nnoremap <silent><space>/ :<c-u>lua linearf.run('line')<CR>")
-linearf.utils.command("nnoremap <silent><space>lf :<c-u>lua linearf.run('file')<CR>")
-linearf.utils.command("nnoremap <silent><space>lg :<c-u>lua linearf.run('grep')<CR>")
+linearf.utils.command "nnoremap <silent><space>/ :<c-u>lua linearf.run('line')<CR>"
+linearf.utils.command "nnoremap <silent><space>lf :<c-u>lua linearf.run('file')<CR>"
+linearf.utils.command "nnoremap <silent><space>lg :<c-u>lua linearf.run('grep')<CR>"

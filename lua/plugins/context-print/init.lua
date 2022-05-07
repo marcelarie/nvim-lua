@@ -1,4 +1,4 @@
-require("contextprint").setup({
+require("contextprint").setup {
 	separator_char = "#",
 	-- <filetype> = {
 	-- separator = "#", // filetype specific
@@ -6,4 +6,4 @@ require("contextprint").setup({
 	-- log = function(contents) to return print statement to insert
 	-- type_defaults = vim.tbl_extend to change name defaults
 	-- }
-})
+}

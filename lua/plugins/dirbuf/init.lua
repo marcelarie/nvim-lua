@@ -1,7 +1,7 @@
-require("dirbuf").setup({
+require("dirbuf").setup {
 	hash_padding = 2,
 	show_hidden = true,
-})
+}
 
 vim.api.nvim_set_keymap(
 	"n",

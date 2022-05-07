@@ -1,4 +1,4 @@
-require("cmp_git").setup({
+require("cmp_git").setup {
 	-- defaults
 	filetypes = { "gitcommit" },
 	github = {
@@ -11,4 +11,4 @@ require("cmp_git").setup({
 			limit = 100,
 		},
 	},
-})
+}

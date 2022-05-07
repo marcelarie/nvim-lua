@@ -1,4 +1,4 @@
-require("zk").setup({
+require("zk").setup {
 	-- can be "telescope", "fzf" or "select" (`vim.ui.select`)
 	-- it's recommended to use "telescope" or "fzf"
 	picker = "telescope",
@@ -18,6 +18,12 @@ require("zk").setup({
 			filetypes = { "markdown" },
 		},
 	},
-})
+}
 
-vim.api.nvim_set_keymap("n", "<Leader>zk", ":Telescope zk notes<cr>", { noremap = true, silent = false })
+-- vim.api.nvim_set_keymap("n", "<Leader>zk", ":Telescope zk notes<cr>", { noremap = true, silent = false })
+
+vim.keymap.set("n", "<Leader>zk", function()
+	vim.cmd [[ cd ~/clones/pers/notes | ZkNotes]]
+	print "Notes opened"
+	vim.cmd "cd -"
+end, { noremap = true, silent = false })

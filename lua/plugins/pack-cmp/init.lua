@@ -1,4 +1,4 @@
-local Job = require("plenary.job")
+local Job = require "plenary.job"
 
 local source = {}
 
@@ -27,30 +27,38 @@ source.complete = function(self, _, callback)
 					local result = job:result()
 					local ok, parsed = pcall(vim.json.decode, result)
 					if not ok then
-						vim.notify("Failed to parse github api result")
+						vim.notify "Failed to parse github api result"
 						return
 					end
 
 					local items = {}
 					for _, item in ipairs(parsed) do
-						item.description = string.gsub(item.description or "", "\r", "")
+						item.description = string.gsub(
+							item.description or "",
+							"\r",
+							""
+						)
 
 						table.insert(items, {
 							label = string.format("#%s", item.number),
 							documentation = {
 								kind = "markdown",
-								value = string.format("# %s\n\n%s", item.name, item.description),
+								value = string.format(
+									"# %s\n\n%s",
+									item.name,
+									item.description
+								),
 							},
 						})
 					end
 
-					callback({ items = items, isIncomplete = false })
+					callback { items = items, isIncomplete = false }
 					self.cache[bufnr] = items
 				end,
 			})
 			:start()
 	else
-		callback({ items = self.cache[bufnr], isIncomplete = false })
+		callback { items = self.cache[bufnr], isIncomplete = false }
 	end
 end
 

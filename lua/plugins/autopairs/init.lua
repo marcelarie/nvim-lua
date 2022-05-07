@@ -1,4 +1,4 @@
-require("nvim-autopairs").setup({})
+require("nvim-autopairs").setup {}
 
 --  local map_bs = true  -- map the <BS> key
 --  local disable_filetype = { "TelescopePrompt" }

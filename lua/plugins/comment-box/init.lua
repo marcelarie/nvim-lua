@@ -1,4 +1,4 @@
-require("comment-box").setup({
+require("comment-box").setup {
 	doc_width = 80, -- width of the document
 	box_width = 60, -- width of the boxes
 	borders = { -- symbols used to draw a box
@@ -21,10 +21,10 @@ require("comment-box").setup({
 	inner_blank_lines = false, -- insert a blank line above and below the text
 	line_blank_line_above = false, -- insert a blank line above the line
 	line_blank_line_below = false, -- insert a blank line below the line
-})
+}
 
 local keymap = vim.keymap.set
-local cb = require("comment-box")
+local cb = require "comment-box"
 
 -- left aligned fixed size box with left aligned text
 keymap({ "n", "v" }, "<Leader>bb", cb.lbox, {})

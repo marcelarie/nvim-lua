@@ -1,6 +1,6 @@
 -- Complition
 -- On_attach = require("lspconfig").on_attach
-local nvim_lsp = require("lspconfig")
+local nvim_lsp = require "lspconfig"
 
 On_attach = function(client, bufnr)
 	local function buf_set_keymap(...)
@@ -54,7 +54,8 @@ capabilities.textDocument.completion.completionItem.preselectSupport = true
 capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
 capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
 capabilities.textDocument.completion.completionItem.deprecatedSupport = true
-capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+capabilities.textDocument.completion.completionItem.commitCharactersSupport =
+	true
 capabilities.textDocument.completion.completionItem.tagSupport = {
 	valueSet = { 1 },
 }
@@ -68,4 +69,4 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
-DATA_PATH = vim.fn.stdpath("data")
+DATA_PATH = vim.fn.stdpath "data"

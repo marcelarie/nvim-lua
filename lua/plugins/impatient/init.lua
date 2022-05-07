@@ -1,1 +1,1 @@
-require("impatient")
+require "impatient"

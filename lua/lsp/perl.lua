@@ -1,6 +1,6 @@
 -- local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- capabilities.textDocument.completion.completionItem.snippetSupport = true
-require("lspconfig").perlls.setup({
+require("lspconfig").perlls.setup {
 	cmd = {
 		"perl",
 		"-MPerl::LanguageServer",
@@ -24,4 +24,4 @@ require("lspconfig").perlls.setup({
 			perlInc = " ",
 		},
 	},
-})
+}

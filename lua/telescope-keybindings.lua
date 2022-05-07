@@ -24,9 +24,19 @@ map(
 	[[<cmd> lua require('telescope.builtin').grep_string({ search = vim.fn.expand("<cword>") })<cr>]],
 	opts
 )
-map("n", "<leader>r", [[<cmd> lua require('telescope.builtin').live_grep()<cr>]], opts)
+map(
+	"n",
+	"<leader>r",
+	[[<cmd> lua require('telescope.builtin').live_grep()<cr>]],
+	opts
+)
 
-map("n", "<leader>rh", [[<cmd> lua require('telescope.builtin').help_tags()<cr>]], opts)
+map(
+	"n",
+	"<leader>rh",
+	[[<cmd> lua require('telescope.builtin').help_tags()<cr>]],
+	opts
+)
 
 map(
 	"n",
@@ -35,4 +45,9 @@ map(
 	opts
 )
 
-map("n", "<leader>zo", ":lua require'telescope'.extensions.zoxide.list{}<cr>", opts)
+map(
+	"n",
+	"<leader>zo",
+	":lua require'telescope'.extensions.zoxide.list{}<cr>",
+	opts
+)

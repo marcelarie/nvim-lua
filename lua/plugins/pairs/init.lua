@@ -1,4 +1,4 @@
-local fb = require("pairs.fallback")
+local fb = require "pairs.fallback"
 
 local default_opts = {
 	pairs = {

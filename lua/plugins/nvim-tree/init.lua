@@ -1,5 +1,5 @@
 -- following options are the default
-require("nvim-tree").setup({
+require("nvim-tree").setup {
 	disable_netrw = true,
 	hijack_netrw = true,
 	open_on_setup = false,
@@ -54,8 +54,13 @@ require("nvim-tree").setup({
 		cmd = "trash",
 		require_confirm = true,
 	},
-})
-vim.api.nvim_set_keymap("n", "<Leader><Tab>", ":NvimTreeToggle<cr> | :normal 0<cr>", { noremap = true, silent = true })
+}
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader><Tab>",
+	":NvimTreeToggle<cr>",
+	{ noremap = true, silent = true }
+)
 -- vim.api.nvim_set_keymap("n", "<Leader>ma", ":set ma<cr>", { noremap = true, silent = true })
 
-vim.cmd("let g:nvim_tree_highlight_opened_files = 1")
+vim.cmd "let g:nvim_tree_highlight_opened_files = 1"

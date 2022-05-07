@@ -3,7 +3,7 @@
 local NOREF_NOERR_TRUNC = { noremap = true, silent = true, nowait = true }
 
 vim.keymap.set("n", "<Leader>nr", function()
-	vim.cmd("NeoRootSwitchMode")
+	vim.cmd "NeoRootSwitchMode"
 end, NOREF_NOERR_TRUNC)
 
 -- vim.keymap.set("n", "<Leader>p", function()
@@ -11,5 +11,5 @@ end, NOREF_NOERR_TRUNC)
 -- end, NOREF_NOERR_TRUNC)
 
 vim.keymap.set("n", "<Leader>pre", function()
-	vim.cmd("NeoRootChange")
+	vim.cmd "NeoRootChange"
 end, NOREF_NOERR_TRUNC)

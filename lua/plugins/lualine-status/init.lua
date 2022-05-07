@@ -12,7 +12,7 @@ local colors = {
 	red = "#ec5f67",
 }
 
-require("lualine").setup({
+require("lualine").setup {
 	options = {
 		icons_enabled = true,
 		--  theme = "gruvbox",
@@ -39,7 +39,16 @@ require("lualine").setup({
 			{ "filename", path = 1, file_status = true, icons_enabled = true },
 			{
 				"lsp_progress",
-				spinner_symbols = { "🌑 ", "🌒 ", "🌓 ", "🌔 ", "🌕 ", "🌖 ", "🌗 ", "🌘 " },
+				spinner_symbols = {
+					"🌑 ",
+					"🌒 ",
+					"🌓 ",
+					"🌔 ",
+					"🌕 ",
+					"🌖 ",
+					"🌗 ",
+					"🌘 ",
+				},
 			},
 		},
 		-- lualine_c = { { "filename", path = 1, file_status = true, icons_enabled = true } },
@@ -57,6 +66,6 @@ require("lualine").setup({
 	},
 	tabline = {},
 	extensions = {},
-})
+}
 
-vim.cmd("set laststatus=3")
+vim.cmd "set laststatus=3"

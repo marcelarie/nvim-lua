@@ -1,31 +1,56 @@
-require("lspconfig")
+require "lspconfig"
 
 -- Use <Tab> and <S-Tab> to navigate through popup menu
-vim.cmd([[inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"]])
-vim.cmd([[inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"]])
+vim.cmd [[inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"]]
+vim.cmd [[inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"]]
 
 --  Avoid showing message extra message when using completion
-vim.cmd("nnoremap <leader>gd <cmd>lua vim.lsp.buf.definition()<CR>")
-vim.cmd("nnoremap <leader>gD <cmd>lua vim.lsp.buf.declaration()<CR>")
-vim.api.nvim_set_keymap("n", "gp", "<cmd>vsplit<cr><cmd>lua vim.lsp.buf.definition()<CR>", {
-	noremap = true,
-})
+vim.cmd "nnoremap <leader>gd <cmd>lua vim.lsp.buf.definition()<CR>"
+vim.cmd "nnoremap <leader>gD <cmd>lua vim.lsp.buf.declaration()<CR>"
+vim.api.nvim_set_keymap(
+	"n",
+	"gp",
+	"<cmd>vsplit<cr><cmd>lua vim.lsp.buf.definition()<CR>",
+	{
+		noremap = true,
+	}
+)
 -- vim.cmd('nnoremap <leader>gr <cmd>lua vim.lsp.buf.references()<CR>')
-vim.cmd("nnoremap <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>")
+vim.cmd "nnoremap <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>"
 
 -- Till LSPSaga works
-vim.cmd("nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>")
+vim.cmd "nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>"
 -- vim.cmd('nnoremap <leader>a <cmd>lua vim.lsp.buf.code_action()<CR>')
 
-vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+	"n",
+	"K",
+	"<cmd>lua vim.lsp.buf.hover()<cr>",
+	{ noremap = true, silent = true }
+)
 
-vim.api.nvim_set_keymap("n", "<Leader>z", "<cmd>lua vim.diagnostic.open_float()<cr>", {
-	noremap = true,
-	silent = true,
-})
-vim.api.nvim_set_keymap("n", "[", "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader>z",
+	"<cmd>lua vim.diagnostic.open_float()<cr>",
+	{
+		noremap = true,
+		silent = true,
+	}
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"[",
+	"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+	{ noremap = true, silent = true }
+)
 
-vim.api.nvim_set_keymap("n", "]", "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+	"n",
+	"]",
+	"<cmd>lua vim.lsp.diagnostic.goto_next()<cr>",
+	{ noremap = true, silent = true }
+)
 
 --  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 --  -- Enable underline, use default values

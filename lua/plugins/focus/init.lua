@@ -1,4 +1,4 @@
-local focus = require("focus")
+local focus = require "focus"
 
 focus.enable = true
 focus.winhighlight = false

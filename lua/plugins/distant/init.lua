@@ -1,6 +1,6 @@
-local actions = require("distant.nav.actions")
+local actions = require "distant.nav.actions"
 
-require("distant").setup({
+require("distant").setup {
 	-- Apply these settings to the specific host
 	["example.com"] = {
 		launch = {
@@ -51,4 +51,4 @@ require("distant").setup({
 			},
 		},
 	},
-})
+}

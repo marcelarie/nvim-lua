@@ -1,4 +1,4 @@
-require("lighthaus").setup({
+require("lighthaus").setup {
 	-- set true to use dark bg by default
 	bg_dark = vim.env.SYS_THEME == "dark" and true or false,
 	-- see colors.lua to see colors table, set overrides here to be merged with defaultsk
@@ -12,4 +12,4 @@ require("lighthaus").setup({
 	-- set to 'underline' to replace undercurl with underline
 	-- or empty string '' to disable
 	lsp_underline_style = "undercurl",
-})
+}

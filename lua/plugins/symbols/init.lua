@@ -1,4 +1,4 @@
-local symbols = require("symbols-outline")
+local symbols = require "symbols-outline"
 local options = {
 	-- whether to highlight the currently hovered symbol
 	-- disable if your cpu usage is higher than you want it
@@ -11,4 +11,4 @@ local options = {
 	show_guides = true,
 }
 
-symbols.setup({ options })
+symbols.setup { options }

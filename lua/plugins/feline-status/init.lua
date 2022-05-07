@@ -5,8 +5,8 @@
 --  }
 --  }
 
-local lsp = require("feline.providers.lsp")
-local vi_mode_utils = require("feline.providers.vi_mode")
+local lsp = require "feline.providers.lsp"
+local vi_mode_utils = require "feline.providers.vi_mode"
 
 local force_inactive = {
 	filetypes = {},
@@ -70,7 +70,7 @@ local vi_mode_text = {
 }
 
 local buffer_not_empty = function()
-	if vim.fn.empty(vim.fn.expand("%:t")) ~= 1 then
+	if vim.fn.empty(vim.fn.expand "%:t") ~= 1 then
 		return true
 	end
 	return false
@@ -131,7 +131,7 @@ components.active[1][1] = {
 -- filename
 components.active[1][2] = {
 	provider = function()
-		return vim.fn.expand("%:F")
+		return vim.fn.expand "%:F"
 	end,
 	hl = {
 		fg = "white",
@@ -182,7 +182,7 @@ components.active[2][4] = {
 -- diagnosticErrors
 components.active[1][3] = {
 	enabled = function()
-		return lsp.diagnostics_exist("Error")
+		return lsp.diagnostics_exist "Error"
 	end,
 	hl = {
 		fg = "red",
@@ -193,7 +193,7 @@ components.active[1][3] = {
 components.active[1][4] = {
 	provider = "diagnostic_warnings",
 	enabled = function()
-		return lsp.diagnostics_exist("Warning")
+		return lsp.diagnostics_exist "Warning"
 	end,
 	hl = {
 		fg = "yellow",
@@ -204,7 +204,7 @@ components.active[1][4] = {
 components.active[1][5] = {
 	provider = "diagnostic_hints",
 	enabled = function()
-		return lsp.diagnostics_exist("Hint")
+		return lsp.diagnostics_exist "Hint"
 	end,
 	hl = {
 		fg = "cyan",
@@ -215,7 +215,7 @@ components.active[1][5] = {
 components.active[1][6] = {
 	provider = "diagnostic_info",
 	enabled = function()
-		return lsp.diagnostics_exist("Information")
+		return lsp.diagnostics_exist "Information"
 	end,
 	hl = {
 		fg = "skyblue",
@@ -239,8 +239,8 @@ components.active[3][1] = {
 -- fileIcon
 components.active[3][2] = {
 	provider = function()
-		local filename = vim.fn.expand("%:t")
-		local extension = vim.fn.expand("%:e")
+		local filename = vim.fn.expand "%:t"
+		local extension = vim.fn.expand "%:e"
 		local icon = require("nvim-web-devicons").get_icon(filename, extension)
 		if icon == nil then
 			icon = ""
@@ -249,9 +249,12 @@ components.active[3][2] = {
 	end,
 	hl = function()
 		local val = {}
-		local filename = vim.fn.expand("%:t")
-		local extension = vim.fn.expand("%:e")
-		local icon, name = require("nvim-web-devicons").get_icon(filename, extension)
+		local filename = vim.fn.expand "%:t"
+		local extension = vim.fn.expand "%:e"
+		local icon, name = require("nvim-web-devicons").get_icon(
+			filename,
+			extension
+		)
 		if icon ~= nil then
 			val.fg = vim.fn.synIDattr(vim.fn.hlID(name), "fg")
 		else
@@ -268,9 +271,12 @@ components.active[3][3] = {
 	provider = "file_type",
 	hl = function()
 		local val = {}
-		local filename = vim.fn.expand("%:t")
-		local extension = vim.fn.expand("%:e")
-		local icon, name = require("nvim-web-devicons").get_icon(filename, extension)
+		local filename = vim.fn.expand "%:t"
+		local extension = vim.fn.expand "%:e"
+		local icon, name = require("nvim-web-devicons").get_icon(
+			filename,
+			extension
+		)
 		if icon ~= nil then
 			val.fg = vim.fn.synIDattr(vim.fn.hlID(name), "fg")
 		else
@@ -286,7 +292,7 @@ components.active[3][3] = {
 components.active[3][4] = {
 	provider = "file_size",
 	enabled = function()
-		return vim.fn.getfsize(vim.fn.expand("%:t")) > 0
+		return vim.fn.getfsize(vim.fn.expand "%:t") > 0
 	end,
 	hl = {
 		fg = "skyblue",
@@ -376,7 +382,7 @@ components.inactive[1][1] = {
 	},
 }
 
-require("feline").setup({
+require("feline").setup {
 	colors = colors,
 	bg = bg,
 	fg = fg,
@@ -384,4 +390,4 @@ require("feline").setup({
 	vi_mode_colors = vi_mode_colors,
 	components = components,
 	properties = properties,
-})
+}

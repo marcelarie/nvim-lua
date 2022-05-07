@@ -1,4 +1,4 @@
-local Job = require("plenary.job")
+local Job = require "plenary.job"
 
 local source = {}
 
@@ -29,9 +29,12 @@ source.complete = function(self, _, callback)
 
 				on_exit = function(job)
 					local result = job:result()
-					local ok, parsed = pcall(vim.json.decode, table.concat(result, ""))
+					local ok, parsed = pcall(
+						vim.json.decode,
+						table.concat(result, "")
+					)
 					if not ok then
-						vim.notify("Failed to parse gh result")
+						vim.notify "Failed to parse gh result"
 						return
 					end
 
@@ -43,18 +46,22 @@ source.complete = function(self, _, callback)
 							label = string.format("#%s", gh_item.number),
 							documentation = {
 								kind = "markdown",
-								value = string.format("# %s\n\n%s", gh_item.title, gh_item.body),
+								value = string.format(
+									"# %s\n\n%s",
+									gh_item.title,
+									gh_item.body
+								),
 							},
 						})
 					end
 
-					callback({ items = items, isIncomplete = false })
+					callback { items = items, isIncomplete = false }
 					self.cache[bufnr] = items
 				end,
 			})
 			:start()
 	else
-		callback({ items = self.cache[bufnr], isIncomplete = false })
+		callback { items = self.cache[bufnr], isIncomplete = false }
 	end
 end
 

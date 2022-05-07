@@ -1,18 +1,23 @@
-vim.cmd("set guifont=monospace:h15")
-vim.cmd("set showtabline=1")
-vim.cmd("set shortmess+=F")
-vim.cmd("set colorcolumn=0")
-vim.cmd("set textwidth=200")
-vim.cmd("set noruler")
-vim.cmd("let g:ale_enabled = 0")
-vim.cmd("set cmdheight=1")
-vim.cmd("set laststatus=0")
-vim.cmd("set showmode")
-vim.cmd("set nocursorline")
-vim.cmd("set nonumber")
-vim.api.nvim_set_keymap("n", "<Leader>q", ":wq<cr>", { noremap = true, silent = true })
+vim.cmd "set guifont=monospace:h15"
+vim.cmd "set showtabline=1"
+vim.cmd "set shortmess+=F"
+vim.cmd "set colorcolumn=0"
+vim.cmd "set textwidth=200"
+vim.cmd "set noruler"
+vim.cmd "let g:ale_enabled = 0"
+vim.cmd "set cmdheight=1"
+vim.cmd "set laststatus=0"
+vim.cmd "set showmode"
+vim.cmd "set nocursorline"
+vim.cmd "set nonumber"
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader>q",
+	":wq<cr>",
+	{ noremap = true, silent = true }
+)
 vim.api.nvim_set_keymap("n", "<C-S-V>", "+p", { noremap = true, silent = true })
-vim.cmd([[
+vim.cmd [[
         let g:firenvim_config = {
             \ 'globalSettings': {
                 \ 'alt': 'all',
@@ -30,8 +35,8 @@ vim.cmd([[
 
         let fc = g:firenvim_config['localSettings']
         let fc['https?://[^/]*notion.so/*'] = { 'takeover': 'never', 'priority': 1 }
-    ]])
-vim.cmd([[
+    ]]
+vim.cmd [[
         function! s:IsFirenvimActive(event) abort
           if !exists('*nvim_get_chan_info')
             return 0
@@ -53,4 +58,4 @@ vim.cmd([[
         endfunction
 
         autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
-    ]])
+    ]]

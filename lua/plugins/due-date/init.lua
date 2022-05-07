@@ -5,7 +5,7 @@ local fulldate_pattern = "(%d%d%d%d)%-" .. date_pattern -- y, m, d
 local fulldatetime_pattern = "(%d%d%d%d)%-" .. datetime_pattern -- y, m, d, h, min
 local fulldatetime12_pattern = fulldatetime_pattern .. " (%a%a)" -- y, m, d, h, min, am/pm
 
-require("due_nvim").setup({
+require("due_nvim").setup {
 	prescript = "due: ", -- prescript to due data
 	prescript_hi = "Comment", -- highlight group of it
 	due_hi = "String", -- highlight group of the data itself
@@ -45,4 +45,4 @@ require("due_nvim").setup({
 	-- until option on specified date. Accepts
 	-- "midnight", for 23:59:59, or noon, for
 	-- 12:00:00
-})
+}

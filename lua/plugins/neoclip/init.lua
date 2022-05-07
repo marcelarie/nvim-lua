@@ -11,7 +11,7 @@
 -- 	return true
 -- end
 
-require("neoclip").setup({
+require("neoclip").setup {
 	-- history = 1000,
 	-- enable_persistent_history = true,
 	-- continious_sync = true,
@@ -54,6 +54,11 @@ require("neoclip").setup({
 	-- 		custom = {},
 	-- 	},
 	-- },
-})
+}
 
-vim.api.nvim_set_keymap("n", "<Leader>v", ":Telescope neoclip<cr>", { noremap = true, silent = false })
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader>v",
+	":Telescope neoclip<cr>",
+	{ noremap = true, silent = false }
+)

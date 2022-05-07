@@ -1,1 +1,1 @@
-require("lspconfig").denols.setup({})
+require("lspconfig").denols.setup {}

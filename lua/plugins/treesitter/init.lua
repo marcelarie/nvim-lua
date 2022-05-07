@@ -1,6 +1,6 @@
 -------------------- TREE-SITTER ---------------------------
 -- :TSInstall c bash html json css javascript php lua python regex rust typescript query
-local ts = require("nvim-treesitter.configs")
+local ts = require "nvim-treesitter.configs"
 -- ts.setup {ensure_installed = 'maintained', highlight = {enable = true}}
 
 local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
@@ -13,7 +13,7 @@ parser_configs.norg = {
 	},
 }
 
-ts.setup({
+ts.setup {
 	ignore_install = { "teal", "astro" },
 	highlight = {
 		enable = true,
@@ -56,7 +56,10 @@ ts.setup({
 	move = {
 		enable = true,
 		set_jumps = true, -- whether to set jumps in the jumplist
-		goto_next_start = { ["]m"] = "@function.outer", ["]]"] = "@class.outer" },
+		goto_next_start = {
+			["]m"] = "@function.outer",
+			["]]"] = "@class.outer",
+		},
 		goto_next_end = { ["]M"] = "@function.outer", ["]["] = "@class.outer" },
 		goto_previous_start = {
 			["[m"] = "@function.outer",
@@ -106,7 +109,7 @@ ts.setup({
 			},
 		},
 	},
-})
+}
 
 -- local parser_config = require'nvim-treesitter.parsers'.get_parser_configs()
 -- parser_config.perl = {

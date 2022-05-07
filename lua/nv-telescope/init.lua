@@ -1,15 +1,17 @@
-local actions = require("telescope.actions")
-local builtin = require("telescope.builtin")
-local ts = require("telescope")
+local actions = require "telescope.actions"
+local builtin = require "telescope.builtin"
+local ts = require "telescope"
 
-ts.setup({
+ts.setup {
 	file_sorter = require("telescope.sorters").get_fzy_sorter,
 	file_previewer = require("telescope.previewers").vim_buffer_cat.new,
 	grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 	qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
 	generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
 
-	mappings = { i = { ["<C-x>"] = false, ["<C-q>"] = actions.send_to_qflist } },
+	mappings = {
+		i = { ["<C-x>"] = false, ["<C-q>"] = actions.send_to_qflist },
+	},
 
 	vimgrep_arguments = {
 		"rg",
@@ -94,23 +96,23 @@ ts.setup({
 			find_cmd = "rg", -- find command (defaults to `fd`)
 		},
 	},
-})
+}
 
 -- ts.load_extension("fzy_native")
 -- ts.load_extension("fzf") -- TODO: check why this is broken
 -- ts.load_extension("session-lens")
-ts.load_extension("bookmarks")
-ts.load_extension("media_files")
+ts.load_extension "bookmarks"
+ts.load_extension "media_files"
 -- ts.load_extension("node_modules")
 --  ts.load_extension("cheat")
-ts.load_extension("gh")
+ts.load_extension "gh"
 -- ts.load_extension("arecibo")
-ts.load_extension("packer")
-ts.load_extension("zoxide")
-ts.load_extension("repo")
-ts.load_extension("git_worktree")
-ts.load_extension("neoclip")
-ts.load_extension("luasnip")
+ts.load_extension "packer"
+ts.load_extension "zoxide"
+ts.load_extension "repo"
+ts.load_extension "git_worktree"
+ts.load_extension "neoclip"
+ts.load_extension "luasnip"
 -- local M = {}
 -- M.search_dotfiles = function()
 -- require("telescope.builtin").find_files(
