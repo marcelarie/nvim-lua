@@ -20,10 +20,15 @@ require("zk").setup {
 	},
 }
 
--- vim.api.nvim_set_keymap("n", "<Leader>zk", ":Telescope zk notes<cr>", { noremap = true, silent = false })
-
+-- TODO: do this with vim.chdir
 vim.keymap.set("n", "<Leader>zk", function()
-	vim.cmd [[ cd ~/clones/pers/notes | ZkNotes]]
+	vim.cmd "cd ~/clones/pers/notes | ZkNotes"
 	print "Notes opened"
 	vim.cmd "cd -"
-end, { noremap = true, silent = false })
+end)
+
+vim.keymap.set("n", "<Leader>zn", function()
+	vim.cmd "cd ~/clones/pers/notes | ZkNew"
+	print "New note generated"
+	vim.cmd "cd -"
+end)
