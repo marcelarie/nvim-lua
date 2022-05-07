@@ -15,7 +15,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 vim.cmd "packadd packer.nvim"
--- vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
 
 return require("packer").startup(
 	function() -- Packer can manage itself as an optional plugin
@@ -26,7 +25,6 @@ return require("packer").startup(
 		use "tjdevries/colorbuddy.nvim"
 		use "lifepillar/vim-gruvbox8"
 		use { "mrjones2014/lighthaus.nvim" }
-		-- use({ "~/clones/forks/lighthaus.nvim" })
 		use "phanviet/vim-monokai-pro"
 		use "mhartington/oceanic-next"
 		use "fenetikm/falcon"
@@ -102,34 +100,26 @@ return require("packer").startup(
 		use { "tzachar/cmp-tabnine", run = "./install.sh" }
 		use "jubnzv/virtual-types.nvim"
 		use { "jose-elias-alvarez/null-ls.nvim" }
-		-- use({ "tzachar/cmp-fuzzy-path", requires = { "hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim" } })
-		-- use({ "~/clones/own/cmp-package" })
-		--  use("datwaft/bubbly.nvim") -- try other bubble for lsp
-		--  use("f3fora/cmp-nuspell")
-
 		use "tjdevries/complextras.nvim"
 		use "tjdevries/nlua.nvim"
 		use "tjdevries/lsp_extensions.nvim"
 		use "jose-elias-alvarez/nvim-lsp-ts-utils"
 		use "simrat39/symbols-outline.nvim"
 		use "ray-x/lsp_signature.nvim"
-		-- use({ "github/copilot.vim" }) -- needed for the auth
+		-- use { "github/copilot.vim" } -- needed for the auth
 		use {
 			"zbirenbaum/copilot.lua",
 			event = { "VimEnter" },
 			config = function()
 				vim.defer_fn(function()
-					require("copilot").setup()
+					require("copilot").setup {
+						-- ft_disable = { "markdown", "terraform" },
+					}
 				end, 100)
 			end,
 		}
-		use {
-			"zbirenbaum/copilot-cmp",
-			after = { "copilot.lua", "nvim-cmp" },
-		}
+		use { "zbirenbaum/copilot-cmp", after = { "copilot.lua", "nvim-cmp" } }
 
-		-- LSP Saga
-		--  use("glepnir/lspsaga.nvim")
 		-- LSP Utils
 		use "RishabhRD/popfix"
 		use "RishabhRD/nvim-lsputils"
@@ -152,8 +142,6 @@ return require("packer").startup(
 		use "nvim-treesitter/playground"
 		use "JoosepAlviste/nvim-ts-context-commentstring"
 		use { "zsugabubus/crazy8.nvim" }
-		-- use("nvim-treesitter/nvim-treesitter-textobjects")
-		-- use({ "RRethy/nvim-treesitter-endwise" })
 
 		-- print on cursor
 		use "bryall/contextprint.nvim"
@@ -192,10 +180,8 @@ return require("packer").startup(
 		-- Others
 		use "christoomey/vim-system-copy" -- System Copy
 		use "norcalli/nvim-colorizer.lua" -- Colorizer
-		-- use("windwp/nvim-autopairs") -- AutoPairs
 		use "windwp/nvim-ts-autotag" -- Autotags
 		use "tpope/vim-surround" -- Vim Surround
-		--  use("winston0410/commented.nvim") -- NVIM Commenter
 		use "numToStr/Comment.nvim"
 		use "mbbill/undotree"
 		use "rafcamlet/nvim-luapad"
@@ -207,12 +193,8 @@ return require("packer").startup(
 		use "cappyzawa/trim.nvim"
 		use "unblevable/quick-scope" -- An always-on highlight for a unique character in every word on a line to help you use f, F and family
 		use "tversteeg/registers.nvim"
-		--  use("rmagatti/auto-session")
 		-- use("rmagatti/session-lens") -- < with tree sitter
 		use "folke/persistence.nvim"
-		-- use("~/clones/forks/persistence.nvim")
-
-		-- use("Shatur/neovim-session-manager")
 		use "KabbAmine/vCoolor.vim" -- color picker
 		use "jakerobers/vim-hexrgba" -- hex rgba toggle
 		use "amadeus/vim-convert-color-to" -- color converter
@@ -220,7 +202,6 @@ return require("packer").startup(
 		use { "oberblastmeister/neuron.nvim", branch = "unstable" } -- note taker
 		use "folke/todo-comments.nvim" -- TODO finder
 		use "ThePrimeagen/harpoon"
-		-- use("ThePrimeagen/refactoring.nvim")
 		use "fladson/vim-kitty" -- syntax highlight on kitty conf
 		use "beauwilliams/focus.nvim" -- handle splits resize
 		use "AckslD/nvim-neoclip.lua" -- clipboard manager with telescope
@@ -233,7 +214,6 @@ return require("packer").startup(
 				vim.fn["firenvim#install"](0)
 			end,
 		}
-		-- use("airblade/vim-rooter")
 		use "arkav/lualine-lsp-progress"
 		use "goolord/alpha-nvim"
 		use {
@@ -257,7 +237,6 @@ return require("packer").startup(
 		use "lambdalisue/suda.vim"
 		use "gbprod/substitute.nvim"
 		use "max397574/better-escape.nvim"
-		-- use({ "ZhiyuanLck/smart-pairs", event = "InsertEnter" })
 		-- use({ "ZhiyuanLck/smart-pairs", event = "InsertEnter" })
 		use { "nyngwang/NeoRoot.lua" }
 		use {
@@ -284,21 +263,6 @@ return require("packer").startup(
 			"benfowler/telescope-luasnip.nvim",
 			-- module = "telescope._extensions.luasnip", -- if you wish to lazy-load
 		}
-		-- use({ "j-hui/fidget.nvim" })
-		-- use("elihunter173/dirbuf.nvim")
-
-		-- use("marcelarie/telescope-cheat.nvim")
-		-- /// MYBE LATER ///
-		-- spell
-		-- use("f3fora/lua-nuspell")
-
-		-- Change root folder to the one opened with vim
-
-		-- spellsitter
-		-- use("lewis6991/spellsitter.nvim")
-
-		-- Maybe later
-		-- use("gennaro-tedesco/nvim-peekup")
 		if packer_bootstrap then
 			require("packer").sync()
 		end

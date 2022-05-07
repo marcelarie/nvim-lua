@@ -38,14 +38,11 @@ luasnip.snippets = {
 			t "feat: "
 		),
 		s({ trig = "fix", name = "fix", dscr = "A bug fix 🐛" }, t "fix: "),
-		s(
-			{
-				trig = "docs",
-				name = "docs",
-				dscr = "Documentation only changes 📚",
-			},
-			t "docs: "
-		),
+		s({
+			trig = "docs",
+			name = "docs",
+			dscr = "Documentation only changes 📚",
+		}, t "docs: "),
 		s({
 			trig = "style",
 			name = "style",
@@ -56,38 +53,26 @@ luasnip.snippets = {
 			name = "refactor",
 			dscr = "A code change that neither fixes a bug nor adds a feature 📦",
 		}, t "refactor: "),
-		s(
-			{
-				trig = "perf",
-				name = "perf",
-				dscr = "A code change that improves performance 🚀",
-			},
-			t "perf: "
-		),
-		s(
-			{
-				trig = "test",
-				name = "test",
-				dscr = "Adding missing tests or correcting existing tests 🆘",
-			},
-			t "test: "
-		),
-		s(
-			{
-				trig = "chore",
-				name = "chore",
-				dscr = "Other changes that don't modify src or test files ♻️",
-			},
-			t "chore: "
-		),
-		s(
-			{
-				trig = "revert",
-				name = "revert",
-				dscr = "Reverts a previous commit  ⏪️",
-			},
-			t "revert: "
-		),
+		s({
+			trig = "perf",
+			name = "perf",
+			dscr = "A code change that improves performance 🚀",
+		}, t "perf: "),
+		s({
+			trig = "test",
+			name = "test",
+			dscr = "Adding missing tests or correcting existing tests 🆘",
+		}, t "test: "),
+		s({
+			trig = "chore",
+			name = "chore",
+			dscr = "Other changes that don't modify src or test files ♻️",
+		}, t "chore: "),
+		s({
+			trig = "revert",
+			name = "revert",
+			dscr = "Reverts a previous commit  ⏪️",
+		}, t "revert: "),
 		s({
 			trig = "build",
 			name = "build",
@@ -106,16 +91,13 @@ luasnip.snippets = {
 			"->map",
 			{ t "->map( sub ($", i(1, "el"), t { ") { ", "" }, i(2), t "});" }
 		),
-		s(
-			"->each",
-			{
-				t "->each( sub ($",
-				i(1, "el"),
-				t { ", $i) { ", "" },
-				i(2),
-				t "});",
-			}
-		),
+		s("->each", {
+			t "->each( sub ($",
+			i(1, "el"),
+			t { ", $i) { ", "" },
+			i(2),
+			t "});",
+		}),
 		s("->grep", { t "->grep(qr/", i(1, "regex"), t "/i)->first;" }),
 		s("sub", { t "sub ", i(1, "routine"), t { " {", "}" } }),
 	},
@@ -155,4 +137,9 @@ vim.cmd [[
   snoremap <silent> <c-j> <cmd>lua require('luasnip').jump(-1)<CR>
 ]]
 
-require("luasnip/loaders/from_vscode").lazy_load()
+-- require("luasnip").filetype_extend("javascript", { "html" })
+-- require("luasnip").filetype_extend("typescript", { "html", "javascript" })
+-- require("luasnip").filetype_extend("javascriptreact", { "html", "javascript" })
+-- require("luasnip").filetype_extend("typescriptreact", { "html", "javascript" })
+
+require("luasnip.loaders.from_vscode").lazy_load()

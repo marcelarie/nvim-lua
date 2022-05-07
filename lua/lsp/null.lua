@@ -22,9 +22,12 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup {
 	sources = {
 		formatting.stylua,
-		formatting.prettier,
-		formatting.prettier_d_slim,
+		-- formatting.prettier,
+		formatting.prettierd,
 		formatting.alejandra,
+		formatting.shfmt,
+		formatting.fish_indent,
+		-- formatting.prettier_d_slim,
 		-- formatting.eslint,
 		-- completion.spell,
 		-- require("null-ls").builtins.diagnostics.eslint, -- eslint-ls already setup at ./eslint.lua

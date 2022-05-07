@@ -114,14 +114,16 @@ cmp.setup {
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
 		},
-		["<CR>"] = cmp.mapping.confirm { select = true }, -- <- default
+		["<CR>"] = cmp.mapping.confirm {
+			select = true,
+			behavior = cmp.ConfirmBehavior.Replace,
+		}, -- <- default
 		-- ["<CR>"] = cmp.mapping(function(fallback)
 		-- 	if not cmp.confirm({ select = true }) then
 		-- 		require("pairs.enter").type()
 		-- 	end
 		-- end),
 	},
-
 	--       local line = vim.trim(lines[i])
 	-- ["<Tab>"] = cmp.mapping(function(fallback)
 	-- 	if cmp.visible() then

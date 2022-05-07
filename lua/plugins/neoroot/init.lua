@@ -2,7 +2,7 @@
 
 local NOREF_NOERR_TRUNC = { noremap = true, silent = true, nowait = true }
 
-vim.keymap.set("n", "<Leader>nr", function()
+vim.keymap.set("n", "<Leader>cd", function()
 	vim.cmd "NeoRootSwitchMode"
 end, NOREF_NOERR_TRUNC)
 
