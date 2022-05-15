@@ -18,14 +18,18 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup {
 	sources = {
 		formatting.stylua,
-		-- formatting.prettier,
-		-- formatting.prettierd,
 		formatting.alejandra,
 		formatting.shfmt,
 		formatting.fish_indent,
-		formatting.rustfmt,
-		-- formatting.prettier_d_slim,
+		-- formatting.rustfmt,
 		formatting.eslint_d,
+		-- {
+		-- 	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html", "json", "jsonc", "yaml", "markdown", "graphql", "handlebars", "svelte" },
+		-- 	only_local = "node_modules/.bin",
+		-- }
+		-- formatting.prettier,
+		-- formatting.prettierd,
+		-- formatting.prettier_d_slim,
 		-- completion.spell,
 	},
 	on_attach = function(client, bufnr)

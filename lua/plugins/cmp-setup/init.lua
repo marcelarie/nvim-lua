@@ -1,12 +1,3 @@
--- nvim-cmp setup
---  cmp.setup { completion = { autocomplete = { ... } },
---  snippet = { ... },
---  preselect = ...,
---  documentation = { ... }, sorting = { priority_weight = 2., comparators = { ... } },
---  mapping = { ... },
---  sources = { ... },
---  }
-
 local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 	return col ~= 0
@@ -21,41 +12,10 @@ local cmp = require "cmp"
 local kind = cmp.lsp.CompletionItemKind
 local lspkind = require "lspkind"
 
-local tabnine = require "cmp_tabnine.config"
-tabnine:setup {
-	max_lines = 1000,
-	max_num_results = 20,
-	sort = true,
-	run_on_every_keystroke = true,
-	snippet_placeholder = "..",
-}
-
--- vim.o.completeopt = "menu,menuone,noselect"
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 vim.cmd "set shortmess+=c"
 vim.cmd "let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']"
-
--- cmp.register_source("buf_lines", {
--- 	complete = function(self, request, callback)
--- 		local start_line, end_line = 0, -1
--- 		local opt_context_lines = request.option.context_lines
--- 		if opt_context_lines then
--- 			local cursor_line = request.context.cursor.line
--- 			start_line = math.max(0, cursor_line - opt_context_lines)
--- 			end_line = math.max(0, cursor_line + opt_context_lines)
--- 		end
--- 		local lines = vim.api.nvim_buf_get_lines(request.context.bufnr, start_line, end_line, false)
--- 		local items = {}
--- 		for i = 1, #lines do
--- 			local line = vim.trim(lines[i])
--- 			if #line > 0 and line ~= opt_context_lines then
--- 				items[#items + 1] = { label = line }
--- 			end
--- 		end
--- 		callback({ items = items })
--- 	end,
--- })
 
 cmp.setup {
 	snippet = {
@@ -124,39 +84,10 @@ cmp.setup {
 		-- 	end
 		-- end),
 	},
-	--       local line = vim.trim(lines[i])
-	-- ["<Tab>"] = cmp.mapping(function(fallback)
-	-- 	if cmp.visible() then
-	-- 		cmp.select_next_item()
-	-- 	elseif luasnip.expand_or_jumpable() then
-	-- 		luasnip.expand_or_jump()
-	-- 	elseif has_words_before() then
-	-- 		cmp.complete()
-	-- 	else
-	-- 		fallback()
-	-- 	end
-	-- end, {
-	-- 	"i",
-	-- 	"s",
-	-- }),
-	-- ["<S-Tab>"] = cmp.mapping(function(fallback)
-	-- 	if cmp.visible() then
-	-- 		cmp.select_prev_item()
-	-- 	elseif luasnip.jumpable(-1) then
-	-- 		luasnip.jump(-1)
-	-- 	else
-	-- 		fallback()
-	-- 	end
-	-- end, {
-	-- 	"i",
-	-- 	"s",
-	-- }),
 	experimental = { ghost_text = true },
 	sources = {
-		-- { name = "package" },
 		{ name = "path" },
 		{ name = "copilot" },
-		-- { name = "cmp_tabnine" },
 		{ name = "luasnip", max_item_count = 4 },
 		{ name = "nvim_lsp", max_item_count = 5 },
 		{
@@ -168,70 +99,18 @@ cmp.setup {
 				end,
 			},
 		},
-		-- { name = "fuzzy_path", options = { fd_timeout_msec = 1500 } },
-		-- { name = "rg", max_item_count = 4 }, { name = "crates" },
-		-- { name = "tags" }, { name = "treesitter" },
-		-- { name = "nvim_lua" }, { name = "neorg" },
-		-- { name = "cmp_git" }, { name = "gh_issues" },
-		-- { name = "pack_cmp" }, { name = "zsh" },
-		-- { name = "latex_symbols" }, { name = "cmdline" },
-		-- { name = "spell" }, { name = "nuspell" },
-
-		--  old snippets
-		--   { name = "vsnip" },
-		--   { name = "ultisnips" },
 	},
 }
 
--- cmp.event:on("confirm_done", function(event)
--- 	local item = event.entry:get_completion_item()
--- 	local parensDisabled = item.data and item.data.funcParensDisabled or false
--- 	if not parensDisabled and (item.kind == kind.Method or item.kind == kind.Function) then
--- 		require("pairs.bracket").type_left("(")
--- 	end
--- end)
-
-vim.api.nvim_exec(
-	[[
-  autocmd FileType markdown,text,tex,gitcommit lua require('cmp').setup.buffer {
-  \   sources = {
-  \       { name = 'path' },
-  \       { name = 'luasnip' },
-  \       { name = 'nvim_lsp' },
-  \  	  { name = 'calc' },
-  \       {
-  \           name = 'look',
-  \           keyword_length = 2,
-  \           max_item_count = 5,
-  \           option = {
-  \               convert_case = true,
-  \               loud = true,
-  \           },
-  \          },
-  \     },
-  \ }
-]],
-	false
-)
-
--- Use cmdline & path source for ':'.
--- cmp.setup.cmdline(":", {
--- 	sources = cmp.config.sources({
--- 		{ name = "path" },
--- 	}, {
--- 		{ name = "cmdline" },
--- 	}),
--- })
-
 -- Use buffer source for `/`.
-require("cmp").setup.cmdline("/", {
+cmp.setup.cmdline("/", {
 	sources = {
 		{ name = "buffer" },
 	},
 })
 
 -- Use cmdline & path source for ':'.
-require("cmp").setup.cmdline(":", {
+cmp.setup.cmdline(":", {
 	sources = {
 		{ name = "cmdline" },
 	},

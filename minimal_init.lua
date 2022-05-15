@@ -33,10 +33,6 @@ local null_ls_config = function()
 		},
 		debug = true,
 		on_attach = function(client, bufnr)
-			print(vim.inspect(bufnr))
-			print(vim.inspect(bufnr))
-			print(vim.inspect(bufnr))
-			print(vim.inspect(bufnr))
 			if client.supports_method "textDocument/formatting" then
 				vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
 				vim.api.nvim_create_autocmd("BufWritePre", {

@@ -97,7 +97,7 @@ return require("packer").startup(
 		use "mfussenegger/nvim-dap"
 		use "octaltree/cmp-look"
 		use "lukas-reineke/cmp-rg"
-		use { "tzachar/cmp-tabnine", run = "./install.sh" }
+		-- use { "tzachar/cmp-tabnine", run = "./install.sh" }
 		use "jubnzv/virtual-types.nvim"
 		use { "jose-elias-alvarez/null-ls.nvim" }
 		use "tjdevries/complextras.nvim"
@@ -116,7 +116,8 @@ return require("packer").startup(
 				end, 100)
 			end,
 		}
-		use { "zbirenbaum/copilot-cmp", after = { "copilot.lua", "nvim-cmp" } }
+
+		use { "zbirenbaum/copilot-cmp", after = { "copilot", "nvim-cmp" } }
 
 		-- LSP Utils
 		use "RishabhRD/popfix"
@@ -133,7 +134,7 @@ return require("packer").startup(
 		-- use 'rhysd/committia.vim'
 
 		-- Formatter
-		use "sbdchd/neoformat"
+		-- use "sbdchd/neoformat"
 
 		-- TreeSitter
 		use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
