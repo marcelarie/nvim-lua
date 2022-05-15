@@ -112,9 +112,7 @@ return require("packer").startup(
 			event = { "VimEnter" },
 			config = function()
 				vim.defer_fn(function()
-					require("copilot").setup {
-						-- ft_disable = { "markdown", "terraform" },
-					}
+					require("copilot").setup {}
 				end, 100)
 			end,
 		}

@@ -1,4 +1,5 @@
 local null_ls = require "null-ls"
+
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
@@ -7,13 +8,8 @@ local completion = null_ls.builtins.completion
 
 local lsp_formatting = function(bufnr)
 	vim.lsp.buf.format {
-		filter = function(clients)
-			-- filter out clients that you don't want to use
-			return vim.tbl_filter(function(client)
-				return client.name ~= "tsserver" or client.name ~= "rnix"
-			end, clients)
-		end,
 		bufnr = bufnr,
+		timeout_ms = 2000,
 	}
 end
 
@@ -23,14 +19,14 @@ null_ls.setup {
 	sources = {
 		formatting.stylua,
 		-- formatting.prettier,
-		formatting.prettierd,
+		-- formatting.prettierd,
 		formatting.alejandra,
 		formatting.shfmt,
 		formatting.fish_indent,
+		formatting.rustfmt,
 		-- formatting.prettier_d_slim,
-		-- formatting.eslint,
+		formatting.eslint_d,
 		-- completion.spell,
-		-- require("null-ls").builtins.diagnostics.eslint, -- eslint-ls already setup at ./eslint.lua
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method "textDocument/formatting" then
@@ -46,15 +42,10 @@ null_ls.setup {
 	end,
 }
 
-vim.api.nvim_set_keymap(
-	"v",
-	"ff",
-	":lua vim.lsp.buf.range_formatting()<cr>",
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"ff",
-	":lua vim.lsp.buf.formatting_sync()<cr>",
-	{ noremap = true, silent = true }
-)
+vim.keymap.set("v", "ff", function()
+	vim.lsp.buf.range_formatting()
+end)
+
+vim.keymap.set("n", "ff", function()
+	vim.lsp.buf.format { timeout_ms = 2000 }
+end)
