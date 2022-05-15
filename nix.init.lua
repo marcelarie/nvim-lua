@@ -14,6 +14,7 @@ require "plugins.netrw"
 require "plugins.lualine-status"
 require "plugins.nvim-tree"
 require "vim-keybindings"
+require "plugins.whichkey"
 
 require "nv-telescope"
 require "telescope-keybindings"
@@ -91,6 +92,7 @@ if not vim.g.started_by_firenvim then
 	require "plugins.persistence"
 	require "plugins.alpha-menu"
 	require "plugins.trim-lua"
+	require "plugins.ts-utils"
 else
 	require "firenvim_config"
 end

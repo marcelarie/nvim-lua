@@ -97,7 +97,7 @@ return require("packer").startup(
 		use "mfussenegger/nvim-dap"
 		use "octaltree/cmp-look"
 		use "lukas-reineke/cmp-rg"
-		use { "tzachar/cmp-tabnine", run = "./install.sh" }
+		-- use { "tzachar/cmp-tabnine", run = "./install.sh" }
 		use "jubnzv/virtual-types.nvim"
 		use { "jose-elias-alvarez/null-ls.nvim" }
 		use "tjdevries/complextras.nvim"
@@ -108,6 +108,7 @@ return require("packer").startup(
 		use "ray-x/lsp_signature.nvim"
 		-- use { "github/copilot.vim" } -- needed for the auth
 		use {
+
 			"zbirenbaum/copilot.lua",
 			event = { "VimEnter" },
 			config = function()
@@ -261,6 +262,7 @@ return require("packer").startup(
 			"benfowler/telescope-luasnip.nvim",
 			-- module = "telescope._extensions.luasnip", -- if you wish to lazy-load
 		}
+
 		if packer_bootstrap then
 			require("packer").sync()
 		end
