@@ -12,6 +12,7 @@ local cmp = require "cmp"
 local kind = cmp.lsp.CompletionItemKind
 local lspkind = require "lspkind"
 
+-- vim.o.completeopt = "menu,menuone,noselect"
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 vim.cmd "set shortmess+=c"

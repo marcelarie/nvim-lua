@@ -5,6 +5,7 @@ local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 local completion = null_ls.builtins.completion
+local code_actions = null_ls.builtins.code_actions
 
 local lsp_formatting = function(bufnr)
 	vim.lsp.buf.format {
@@ -23,14 +24,13 @@ null_ls.setup {
 		formatting.fish_indent,
 		-- formatting.rustfmt,
 		formatting.eslint_d,
-		-- {
-		-- 	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html", "json", "jsonc", "yaml", "markdown", "graphql", "handlebars", "svelte" },
-		-- 	only_local = "node_modules/.bin",
-		-- }
+		-- code_actions.eslint_d,
+		-- diagnostics.eslint_d,
+		-- formatting.eslint,
+		-- completion.spell,
+		-- formatting.prettier_d_slim,
 		-- formatting.prettier,
 		-- formatting.prettierd,
-		-- formatting.prettier_d_slim,
-		-- completion.spell,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method "textDocument/formatting" then

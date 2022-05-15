@@ -14,6 +14,7 @@ require "plugins.netrw"
 require "plugins.lualine-status"
 require "plugins.nvim-tree"
 require "vim-keybindings"
+require "plugins.whichkey"
 
 require "nv-telescope"
 require "telescope-keybindings"
@@ -26,6 +27,7 @@ require "plugins.cmp-setup"
 require "plugins.treesitter"
 require "plugins.context-print"
 require "lsp"
+require "lsp.null"
 require "lsp.lua"
 require "lsp.rust"
 require "lsp.bash"
@@ -47,12 +49,11 @@ require "lsp.clangd"
 require "lsp.nix"
 require "lsp.zk"
 require "lsp.ltex"
-require "lsp.null"
 require "plugins.lsp-uti"
 
 require "plugins.neoroot"
 
-require "lsp-sign"
+-- require "lsp-sign"
 
 if not vim.g.started_by_firenvim then
 	require "plugins.lightbulb"
@@ -66,7 +67,7 @@ if not vim.g.started_by_firenvim then
 	require "plugins.web-devicons"
 	require "plugins.colorizer-setup"
 	require "plugins.markdown-preview"
-	require "plugins.prime-harpoon"
+	-- require "plugins.prime-harpoon"
 	require "plugins.numb-nvim"
 	require "plugins.vimtex"
 	require "plugins.todo-finder"
@@ -91,6 +92,7 @@ if not vim.g.started_by_firenvim then
 	require "plugins.persistence"
 	require "plugins.alpha-menu"
 	require "plugins.trim-lua"
+	require "plugins.ts-utils"
 else
 	require "firenvim_config"
 end

@@ -134,10 +134,10 @@ vim.api.nvim_set_keymap(
 vim.keymap.set("n", "<Leader>dd", function()
 	vim.diagnostic.config {
 		virtual_text = false,
-		signs = false,
+		signs = true,
 		underline = false,
 	}
-	print "LSP virtual text disabled."
+	print "LSP warnings disabled."
 end, { noremap = true, silent = false })
 
 vim.keymap.set("n", "<Leader>ed", function()
@@ -146,12 +146,15 @@ vim.keymap.set("n", "<Leader>ed", function()
 		signs = true,
 		underline = true,
 	}
-	print "LSP virtual text enabled."
+	print "LSP warnings enabled."
 end, { noremap = true, silent = false })
 
 -- ; for :
 vim.api.nvim_set_keymap("n", ";", ":", { noremap = true, silent = false })
 vim.api.nvim_set_keymap("n", ":", ";", { noremap = true, silent = false })
+
+-- alpha
+vim.keymap.set("n", "<Leader>al", ":Alpha<cr>", { silent = true })
 
 -- open file path under cursor vertical split
 -- vim.api.nvim_set_keymap('n', '<Leader>gf', ':vertical wincmd f<cr>',
