@@ -45,6 +45,7 @@ local function load_plugins()
 				"zbirenbaum/copilot-cmp",
 				after = { "copilot.lua", "nvim-cmp" },
 			},
+			{ "williamboman/nvim-lsp-installer" },
 		},
 		config = {
 			package_root = package_root,
@@ -102,3 +103,5 @@ cmp.setup {
 		{ name = "nvim_lsp", max_item_count = 5 },
 	},
 }
+
+require("nvim-lsp-installer").setup {}
