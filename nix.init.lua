@@ -67,7 +67,7 @@ if not vim.g.started_by_firenvim then
 	require "plugins.web-devicons"
 	require "plugins.colorizer-setup"
 	require "plugins.markdown-preview"
-	require "plugins.prime-harpoon"
+	-- require "plugins.prime-harpoon"
 	require "plugins.numb-nvim"
 	require "plugins.vimtex"
 	require "plugins.todo-finder"
