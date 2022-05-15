@@ -1,9 +1,9 @@
 require("eslint").setup {
 	bin = "eslint_d",
 	code_actions = {
-		enable = false,
+		enable = true,
 		apply_on_save = {
-			enable = false,
+			enable = true,
 			types = { "problem" }, -- "directive", "problem", "suggestion", "layout"
 		},
 		disable_rule_comment = {
@@ -14,6 +14,6 @@ require("eslint").setup {
 	diagnostics = {
 		enable = true,
 		-- report_unused_disable_directives = false,
-		run_on = "save", -- or `save`
+		run_on = "type", -- or `save`
 	},
 }

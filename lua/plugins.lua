@@ -75,7 +75,7 @@ return require("packer").startup(
 	-- use { "github/copilot.vim" } -- needed for the auth
 	use {
 		"zbirenbaum/copilot.lua",
-		event = { "VimEnter" },
+		event = "VimEnter",
 		config = function()
 			vim.defer_fn(function()
 				require("copilot").setup {}
