@@ -27,6 +27,7 @@ require "plugins.cmp-setup"
 require "plugins.treesitter"
 require "plugins.context-print"
 require "lsp"
+require "lsp.null"
 require "lsp.lua"
 require "lsp.rust"
 require "lsp.bash"
@@ -48,12 +49,11 @@ require "lsp.clangd"
 require "lsp.nix"
 require "lsp.zk"
 require "lsp.ltex"
-require "lsp.null"
 require "plugins.lsp-uti"
 
 require "plugins.neoroot"
 
-require "lsp-sign"
+-- require "lsp-sign"
 
 if not vim.g.started_by_firenvim then
 	require "plugins.lightbulb"

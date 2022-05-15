@@ -6,21 +6,65 @@ On_attach = function(client, bufnr)
 	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
 	end
+
 	local function buf_set_option(...)
 		vim.api.nvim_buf_set_option(bufnr, ...)
 	end
 
-	-- if client.name == "tsserver" or client.name == "jsonls" or client.name == "html" then
-	-- 	client.resolved_capabilities.document_formatting = false
-	-- 	client.resolved_capabilities.document_range_formatting = false
-	-- end
+	if client.name == "tsserver" then
+		local ts_utils = require "nvim-lsp-ts-utils"
 
-	-- local ts_utils = require("nvim-lsp-ts-utils")
-	-- ts_utils.setup({})
-	-- ts_utils.setup_client(client)
-	-- buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>")
-	-- buf_map(bufnr, "n", "gi", ":TSLspRenameFile<CR>")
-	-- buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
+		-- defaults
+		ts_utils.setup {
+			debug = false,
+			disable_commands = false,
+			enable_import_on_completion = true,
+
+			-- import all
+			import_all_timeout = 5000, -- ms
+			-- lower numbers = higher priority
+			import_all_priorities = {
+				same_file = 1, -- add to existing import statement
+				local_files = 2, -- git files or files with relative path markers
+				buffer_content = 3, -- loaded buffer content
+				buffers = 4, -- loaded buffer names
+			},
+			import_all_scan_buffers = 100,
+			import_all_select_source = false,
+			-- if false will avoid organizing imports
+			always_organize_imports = true,
+
+			-- filter diagnostics
+			filter_out_diagnostics_by_severity = {},
+			filter_out_diagnostics_by_code = {},
+
+			-- inlay hints
+			auto_inlay_hints = false,
+			inlay_hints_highlight = "Comment",
+			inlay_hints_priority = 200, -- priority of the hint extmarks
+			inlay_hints_throttle = 150, -- throttle the inlay hint request
+			inlay_hints_format = { -- format options for individual hint kind
+				Type = {},
+				Parameter = {},
+				Enum = {},
+				-- Example format customization for `Type` kind:
+				-- Type = {
+				--     highlight = "Comment",
+				--     text = function(text)
+				--         return "->" .. text:sub(2)
+				--     end,
+				-- },
+			},
+
+			-- update imports on file move
+			update_imports_on_move = false,
+			require_confirmation_on_move = false,
+			watch_dir = nil,
+		}
+
+		-- required to fix code action ranges and filter diagnostics
+		ts_utils.setup_client(client)
+	end
 
 	-- Enable completion triggered by <c-x><c-o>
 	buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -48,18 +92,18 @@ On_attach = function(client, bufnr)
 	-- buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
-capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.preselectSupport = true
-capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
-capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
-capabilities.textDocument.completion.completionItem.deprecatedSupport = true
-capabilities.textDocument.completion.completionItem.commitCharactersSupport =
+Capabilities = vim.lsp.protocol.make_client_capabilities()
+Capabilities.textDocument.completion.completionItem.snippetSupport = true
+Capabilities.textDocument.completion.completionItem.preselectSupport = true
+Capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+Capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+Capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+Capabilities.textDocument.completion.completionItem.commitCharactersSupport =
 	true
-capabilities.textDocument.completion.completionItem.tagSupport = {
+Capabilities.textDocument.completion.completionItem.tagSupport = {
 	valueSet = { 1 },
 }
-capabilities.textDocument.completion.completionItem.resolveSupport = {
+Capabilities.textDocument.completion.completionItem.resolveSupport = {
 	properties = {
 		"documentation",
 		"detail",
@@ -67,6 +111,6 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 	},
 }
 
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+Capabilities = require("cmp_nvim_lsp").update_capabilities(Capabilities)
 
 DATA_PATH = vim.fn.stdpath "data"

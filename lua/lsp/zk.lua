@@ -22,13 +22,15 @@ require("zk").setup {
 
 -- TODO: do this with vim.chdir
 vim.keymap.set("n", "<Leader>zk", function()
-	vim.cmd "cd ~/clones/pers/notes | ZkNotes"
+	vim.fn.chdir "~/clones/pers/notes/"
+	vim.cmd "ZkNotes"
+	vim.fn.chdir "-"
 	print "Notes opened"
-	vim.cmd "cd -"
 end)
 
 vim.keymap.set("n", "<Leader>zn", function()
-	vim.cmd "cd ~/clones/pers/notes | ZkNew"
-	print "New note generated"
-	vim.cmd "cd -"
+	vim.fn.chdir "~/clones/pers/notes/"
+	vim.cmd "ZkNotes"
+	vim.fn.chdir "-"
+	print "New note created"
 end)

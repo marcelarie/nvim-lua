@@ -1,9 +1,9 @@
-require("lspconfig").eslint.setup {
+require("eslint").setup {
 	bin = "eslint_d",
 	code_actions = {
-		enable = true,
+		enable = false,
 		apply_on_save = {
-			enable = true,
+			enable = false,
 			types = { "problem" }, -- "directive", "problem", "suggestion", "layout"
 		},
 		disable_rule_comment = {
@@ -14,6 +14,6 @@ require("lspconfig").eslint.setup {
 	diagnostics = {
 		enable = true,
 		-- report_unused_disable_directives = false,
-		run_on = "type", -- or `save`
+		run_on = "save", -- or `save`
 	},
 }
