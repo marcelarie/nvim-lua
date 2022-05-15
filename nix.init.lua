@@ -21,11 +21,11 @@ require "telescope-keybindings"
 require "plugins.quick-scope"
 
 require "plugins.luasnip"
-require "plugins.comment-box"
+-- require "plugins.comment-box"
 
 require "plugins.cmp-setup"
 require "plugins.treesitter"
-require "plugins.context-print"
+-- require "plugins.context-print"
 require "lsp"
 require "lsp.null"
 require "lsp.lua"
@@ -67,15 +67,12 @@ if not vim.g.started_by_firenvim then
 	require "plugins.web-devicons"
 	require "plugins.colorizer-setup"
 	require "plugins.markdown-preview"
-	-- require "plugins.prime-harpoon"
 	require "plugins.numb-nvim"
 	require "plugins.vimtex"
 	require "plugins.todo-finder"
-	require "plugins.focus"
 	require "plugins.neoclip"
 	require "plugins.bubbly"
 	require "plugins.color-buddy"
-	require "plugins.neorg"
 	require "plugins.sad"
 	require "plugins.substitute"
 	require "plugins.better-esc"
@@ -83,7 +80,6 @@ if not vim.g.started_by_firenvim then
 	require "git-related"
 	require "git-blame"
 	require "git-sings"
-	require "g-worktree"
 	require "diff-view"
 
 	-- /// Rust ///
@@ -93,6 +89,10 @@ if not vim.g.started_by_firenvim then
 	require "plugins.alpha-menu"
 	require "plugins.trim-lua"
 	require "plugins.ts-utils"
+	-- require "g-worktree"
+	-- require "plugins.focus"
+	-- require "plugins.neorg"
+	-- require "plugins.prime-harpoon"
 else
 	require "firenvim_config"
 end

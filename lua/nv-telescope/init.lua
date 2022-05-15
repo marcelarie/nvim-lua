@@ -110,7 +110,6 @@ ts.load_extension "gh"
 ts.load_extension "packer"
 ts.load_extension "zoxide"
 ts.load_extension "repo"
-ts.load_extension "git_worktree"
 ts.load_extension "neoclip"
 ts.load_extension "luasnip"
 -- local M = {}
