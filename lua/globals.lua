@@ -11,6 +11,27 @@ On_attach = function(client, bufnr)
 		vim.api.nvim_buf_set_option(bufnr, ...)
 	end
 
+	-- SHOW float window on attach
+	-- vim.api.nvim_create_autocmd("CursorHold", {
+	-- 	buffer = bufnr,
+	-- 	callback = function()
+	-- 		local opts = {
+	-- 			focusable = false,
+	-- 			close_events = {
+	-- 				"BufLeave",
+	-- 				"CursorMoved",
+	-- 				"InsertEnter",
+	-- 				"FocusLost",
+	-- 			},
+	-- 			border = "rounded",
+	-- 			source = "always",
+	-- 			prefix = " ",
+	-- 			scope = "cursor",
+	-- 		}
+	-- 		vim.diagnostic.open_float(nil, opts)
+	-- 	end,
+	-- })
+
 	if client.name == "tsserver" then
 		local ts_utils = require "nvim-lsp-ts-utils"
 
@@ -98,8 +119,7 @@ Capabilities.textDocument.completion.completionItem.preselectSupport = true
 Capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
 Capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
 Capabilities.textDocument.completion.completionItem.deprecatedSupport = true
-Capabilities.textDocument.completion.completionItem.commitCharactersSupport =
-	true
+Capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
 Capabilities.textDocument.completion.completionItem.tagSupport = {
 	valueSet = { 1 },
 }
