@@ -22,7 +22,7 @@ null_ls.setup {
 		formatting.alejandra,
 		formatting.shfmt,
 		formatting.fish_indent,
-		formatting.eslint_d,
+		-- formatting.eslint_d,
 		-- formatting.rustfmt,
 		-- code_actions.eslint_d,
 		-- diagnostics.eslint_d,

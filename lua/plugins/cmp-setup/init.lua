@@ -77,12 +77,7 @@ cmp.setup {
 		["<CR>"] = cmp.mapping.confirm {
 			select = true,
 			behavior = cmp.ConfirmBehavior.Replace,
-		}, -- <- default
-		-- ["<CR>"] = cmp.mapping(function(fallback)
-		-- 	if not cmp.confirm({ select = true }) then
-		-- 		require("pairs.enter").type()
-		-- 	end
-		-- end),
+		},
 	},
 	experimental = { ghost_text = true },
 	sources = {
