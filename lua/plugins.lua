@@ -79,7 +79,7 @@ return require("packer").startup(
 		config = function()
 			vim.defer_fn(function()
 				require("copilot").setup {}
-			end, 100)
+			end, 1000)
 		end,
 	}
 	use { "zbirenbaum/copilot-cmp", after = { "copilot.lua", "nvim-cmp" } }

@@ -9,6 +9,12 @@ local code_actions = null_ls.builtins.code_actions
 
 local lsp_formatting = function(bufnr)
 	vim.lsp.buf.format {
+		filter = function(clients)
+			-- filter out clients that you don't want to use
+			return vim.tbl_filter(function(client)
+				return client.name ~= "tsserver"
+			end, clients)
+		end,
 		bufnr = bufnr,
 		timeout_ms = 2000,
 	}
@@ -22,10 +28,10 @@ null_ls.setup {
 		formatting.alejandra,
 		formatting.shfmt,
 		formatting.fish_indent,
-		-- formatting.eslint_d,
+		formatting.eslint_d,
 		-- formatting.rustfmt,
-		-- code_actions.eslint_d,
-		-- diagnostics.eslint_d,
+		code_actions.eslint_d,
+		diagnostics.eslint_d,
 		-- formatting.eslint,
 		-- completion.spell,
 		-- formatting.prettier_d_slim,
