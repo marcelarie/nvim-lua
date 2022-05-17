@@ -46,6 +46,19 @@ map("n", "<leader>rc", function()
 	}
 end, opts)
 
+map("n", "<leader>nf", function()
+	require("telescope.builtin").grep_string {
+		search = vim.fn.input "grep for > ",
+		cwd = "./node_modules",
+	}
+end, opts)
+
+map("n", "<leader>nm", function()
+	require("telescope.builtin").live_grep {
+		cwd = "./node_modules",
+	}
+end, opts)
+
 map("n", "<leader>zo", function()
 	require("telescope").extensions.zoxide.list {}
 end, opts)

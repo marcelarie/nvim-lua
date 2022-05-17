@@ -97,11 +97,14 @@ cmp.setup {
 	},
 }
 
+local tab_mapping_enabled = cmp.mapping.preset.cmdline {}
+
 -- Use buffer source for `/`.
 cmp.setup.cmdline("/", {
 	sources = {
 		{ name = "buffer" },
 	},
+	mapping = tab_mapping_enabled,
 })
 
 -- Use cmdline & path source for ':'.
@@ -109,4 +112,5 @@ cmp.setup.cmdline(":", {
 	sources = {
 		{ name = "cmdline" },
 	},
+	mapping = tab_mapping_enabled,
 })
