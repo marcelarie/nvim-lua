@@ -156,6 +156,10 @@ vim.api.nvim_set_keymap("n", ":", ";", { noremap = true, silent = false })
 -- alpha
 vim.keymap.set("n", "<Leader>al", ":Alpha<cr>", { silent = true })
 
+-- quickfix
+vim.keymap.set("n", "<Leader>cn", ":cn<cr>")
+vim.keymap.set("n", "<Leader>cp", ":cp<cr>")
+
 -- open file path under cursor vertical split
 -- vim.api.nvim_set_keymap('n', '<Leader>gf', ':vertical wincmd f<cr>',
 --                         {noremap = true, silent = true})

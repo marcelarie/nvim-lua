@@ -89,6 +89,7 @@ if not vim.g.started_by_firenvim then
 	require "plugins.alpha-menu"
 	require "plugins.trim-lua"
 	require "plugins.ts-utils"
+	require "plugins.git-conflict"
 	-- require "g-worktree"
 	-- require "plugins.focus"
 	-- require "plugins.neorg"
