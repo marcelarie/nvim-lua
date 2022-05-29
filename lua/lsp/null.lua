@@ -28,10 +28,12 @@ null_ls.setup {
 		formatting.alejandra,
 		formatting.shfmt,
 		formatting.fish_indent,
-		formatting.eslint_d,
-		-- formatting.rustfmt,
+
 		code_actions.eslint_d,
 		diagnostics.eslint_d,
+		formatting.eslint_d,
+
+		-- formatting.rustfmt,
 		-- formatting.eslint,
 		-- completion.spell,
 		-- formatting.prettier_d_slim,
@@ -39,16 +41,16 @@ null_ls.setup {
 		-- formatting.prettierd,
 	},
 	on_attach = function(client, bufnr)
-		if client.supports_method "textDocument/formatting" then
-			vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = augroup,
-				buffer = bufnr,
-				callback = function()
-					lsp_formatting(bufnr)
-				end,
-			})
-		end
+		-- if client.supports_method "textDocument/formatting" then
+		-- 	vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
+		-- 	vim.api.nvim_create_autocmd("BufWritePre", {
+		-- 		group = augroup,
+		-- 		buffer = bufnr,
+		-- 		callback = function()
+		-- 			lsp_formatting(bufnr)
+		-- 		end,
+		-- 	})
+		-- end
 	end,
 }
 

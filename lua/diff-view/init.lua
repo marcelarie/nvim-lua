@@ -3,12 +3,12 @@ local cb = require("diffview.config").diffview_callback
 
 require("diffview").setup {
 	diff_binaries = false, -- Show diffs for binaries
-	file_panel = {
-		position = "left", -- One of 'left', 'right', 'top', 'bottom'
-		width = 35, -- Only applies when position is 'left' or 'right'
-		height = 10, -- Only applies when position is 'top' or 'bottom'
-		--  use_icons = true,        -- Requires nvim-web-devicons
-	},
+	-- file_panel = {
+	-- 	position = "left", -- One of 'left', 'right', 'top', 'bottom'
+	-- 	width = 35, -- Only applies when position is 'left' or 'right'
+	-- 	height = 10, -- Only applies when position is 'top' or 'bottom'
+	-- 	--  use_icons = true,        -- Requires nvim-web-devicons
+	-- },
 	key_bindings = {
 		disable_defaults = false, -- Disable the default key bindings
 		-- The `view` bindings are active in the diff buffers, only when the current

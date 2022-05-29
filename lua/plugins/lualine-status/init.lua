@@ -39,6 +39,19 @@ require("lualine").setup {
 			{ "filename", path = 1, file_status = true, icons_enabled = true },
 			{
 				"lsp_progress",
+				display_components = {
+					"lsp_client_name",
+					"spinner",
+					{ "title", "percentage", "message" },
+				},
+				colors = {
+					-- percentage = colors.fg,
+					-- title = colors.green,
+					-- message = colors.fg,
+					-- spinner = colors.cyan,
+					-- lsp_client_name = colors.blue,
+					-- use = true,
+				},
 				spinner_symbols = {
 					"🌑 ",
 					"🌒 ",
@@ -51,9 +64,15 @@ require("lualine").setup {
 				},
 			},
 		},
-		-- lualine_c = { { "filename", path = 1, file_status = true, icons_enabled = true } },
-		lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_y = { "progress" },
+		-- lualine_d = { },
+		lualine_x = {
+			"encoding",
+			"fileformat",
+			"filetype",
+		},
+		lualine_y = {
+			"progress",
+		},
 		lualine_z = { "location" },
 	},
 	inactive_sections = {
