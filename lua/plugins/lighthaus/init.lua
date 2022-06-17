@@ -1,6 +1,6 @@
 require("lighthaus").setup {
 	-- set true to use dark bg by default
-	bg_dark = vim.env.SYS_THEME == "dark" and true or false,
+	bg_dark = true,
 	-- see colors.lua to see colors table, set overrides here to be merged with defaultsk
 	colors = {
 		-- black = '#0E0E10',

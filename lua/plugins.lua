@@ -1,4 +1,5 @@
 ---@diagnostic disable: undefined-global, lowercase-global
+vim.fn.setenv("MACOSX_DEPLOYMENT_TARGET", "10.15")
 
 local fn = vim.fn
 local install_path = fn.stdpath "data" .. "/site/pack/packer/opt/packer.nvim"
@@ -16,7 +17,20 @@ end
 
 vim.cmd "packadd packer.nvim"
 
-return require("packer").startup(
+local packer = require('packer')
+
+packer.init({
+	--FIXES ISSUE WHERE WONT UPDATE OTHERWISE
+	max_jobs = 4,
+	git = {
+		clone_timeout = 300, -- 5 mins
+	},
+	profile = {
+		enable = true,
+	},
+})
+
+return packer.startup(
 	function() -- Packer can manage itself as an optional plugin
 		use { "wbthomason/packer.nvim", opt = true }
 		use { "lewis6991/impatient.nvim", rocks = "mpack" }
