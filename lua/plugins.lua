@@ -213,6 +213,7 @@ return packer.startup(
 			-- module = "telescope._extensions.luasnip", -- if you wish to lazy-load
 		}
 		use { "akinsho/git-conflict.nvim" }
+		use { "johmsalas/text-case.nvim" }
 
 		-- use { "LudoPinelli/comment-box.nvim" }
 		-- skim
