@@ -48,7 +48,7 @@ null_ls.setup {
 				buffer = bufnr,
 				callback = function()
 					-- lsp_formatting(bufnr)
-					vim.lsp.buf.format({ bufnr = bufnr })
+					vim.lsp.buf.format { bufnr = bufnr }
 				end,
 			})
 		end

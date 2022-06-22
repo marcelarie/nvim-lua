@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd("User", {
     pattern = "GitConflictDetected",
     callback = function()
         vim.notify "Merge conflict detected."
-        vim.cmd "GitConflictListQf"
+        -- vim.cmd "GitConflictListQf"
     end,
 })
 
