@@ -1,5 +1,5 @@
 -- this template is borrowed from nvim-lspconfig
-local on_windows = vim.loop.os_uname().version:match "Windows"
+local on_windows = vim.loop.os_uname().version:match("Windows")
 
 local function join_paths(...)
 	local path_sep = on_windows and "\\" or "/"
@@ -7,11 +7,11 @@ local function join_paths(...)
 	return result
 end
 
-vim.cmd [[set runtimepath=$VIMRUNTIME]]
+vim.cmd([[set runtimepath=$VIMRUNTIME]])
 
 local temp_dir
 if on_windows then
-	temp_dir = vim.loop.os_getenv "TEMP"
+	temp_dir = vim.loop.os_getenv("TEMP")
 else
 	temp_dir = "/tmp"
 end
@@ -24,7 +24,7 @@ local compile_path = join_paths(install_path, "plugin", "packer_compiled.lua")
 
 local function load_plugins()
 	-- only add other plugins if they are necessary to reproduce the issue
-	require("packer").startup {
+	require("packer").startup({
 		{
 			"wbthomason/packer.nvim",
 			{ "neovim/nvim-lspconfig" },
@@ -37,7 +37,7 @@ local function load_plugins()
 				event = "VimEnter",
 				config = function()
 					vim.defer_fn(function()
-						require("copilot").setup {}
+						require("copilot").setup({})
 					end, 100)
 				end,
 			},
@@ -51,16 +51,16 @@ local function load_plugins()
 			package_root = package_root,
 			compile_path = compile_path,
 		},
-	}
+	})
 end
 
 if vim.fn.isdirectory(install_path) == 0 then
-	vim.fn.system {
+	vim.fn.system({
 		"git",
 		"clone",
 		"https://github.com/wbthomason/packer.nvim",
 		install_path,
-	}
+	})
 	load_plugins()
 	require("packer").sync()
 else
@@ -71,37 +71,37 @@ end
 vim.keymap.set("n", "<Space>w", ":w<cr>")
 vim.keymap.set("n", "<Space>q", ":q<cr>")
 
-require "lspconfig"
+require("lspconfig")
 
-local cmp = require "cmp"
+local cmp = require("cmp")
 local kind = cmp.lsp.CompletionItemKind
 
 -- vim.o.completeopt = "menu,menuone,noselect"
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
-vim.cmd "set shortmess+=c"
-vim.cmd "let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']"
+vim.cmd("set shortmess+=c")
+vim.cmd("let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']")
 
-cmp.setup {
+cmp.setup({
 	mapping = {
 		["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
 		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
 		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-		["<C-e>"] = cmp.mapping {
+		["<C-e>"] = cmp.mapping({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
-		},
-		["<CR>"] = cmp.mapping.confirm {
+		}),
+		["<CR>"] = cmp.mapping.confirm({
 			select = true,
 			behavior = cmp.ConfirmBehavior.Replace,
-		},
+		}),
 	},
 	experimental = { ghost_text = true },
 	sources = {
 		{ name = "copilot" },
 		{ name = "nvim_lsp", max_item_count = 5 },
 	},
-}
+})
 
-require("nvim-lsp-installer").setup {}
+require("nvim-lsp-installer").setup({})

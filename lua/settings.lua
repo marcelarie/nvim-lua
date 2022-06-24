@@ -66,23 +66,34 @@ vim.api.nvim_set_option("backup", false)
 -- vim.cmd('set backupdir=~/.vim/backup') -- vim.api.nvim_set_option('backupdir', "~/.vim/backup")
 -- vim.api.nvim_set_option('writebackup', true)
 -- vim.api.nvim_set_option('backupcopy', 'yes')
---
+
 vim.diagnostic.config {
-    -- virtual_text = true,
-    -- signs = true,
-    -- underline = false,
-    update_in_insert = true,
-    -- severity_sort = false,
-    -- virtual_text = {
-    --     -- source = "always", -- Or "if_many"
-    -- },
-    float = {
-        source = "always", -- Or "if_many"
-    },
+	-- virtual_text = true,
+	signs = true,
+	underline = false,
+	update_in_insert = false,
+	severity_sort = false,
+	-- virtual_text = {
+	--     -- source = "always", -- Or "if_many"
+	-- },
+	virtual_text = {
+		prefix = "●", -- Could be '●', '▎', 'x'
+	},
+	float = {
+		source = "always", -- Or "if_many"
+	},
 }
 
--- local signs = { Error = "e ", Warn = "w ", Hint = "h ", Info = "i " }
--- for type, icon in pairs(signs) do
---     local hl = "DiagnosticSign" .. type
---     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
--- end
+-- vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#000]]
+-- vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#f29]]
+--
+-- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	border = "rounded", -- single
+})
+
+local signs = { Error = "e ", Warn = "w ", Hint = "h ", Info = "i " }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end

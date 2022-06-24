@@ -119,7 +119,8 @@ Capabilities.textDocument.completion.completionItem.preselectSupport = true
 Capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
 Capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
 Capabilities.textDocument.completion.completionItem.deprecatedSupport = true
-Capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+Capabilities.textDocument.completion.completionItem.commitCharactersSupport =
+	true
 Capabilities.textDocument.completion.completionItem.tagSupport = {
 	valueSet = { 1 },
 }

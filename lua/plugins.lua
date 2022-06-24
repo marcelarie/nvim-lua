@@ -17,9 +17,9 @@ end
 
 vim.cmd "packadd packer.nvim"
 
-local packer = require('packer')
+local packer = require "packer"
 
-packer.init({
+packer.init {
 	--FIXES ISSUE WHERE WONT UPDATE OTHERWISE
 	max_jobs = 4,
 	git = {
@@ -28,7 +28,7 @@ packer.init({
 	profile = {
 		enable = true,
 	},
-})
+}
 
 return packer.startup(
 	function() -- Packer can manage itself as an optional plugin
@@ -214,14 +214,15 @@ return packer.startup(
 		}
 		use { "akinsho/git-conflict.nvim" }
 		use { "johmsalas/text-case.nvim" }
+		use { "ZhiyuanLck/smart-pairs", event = "InsertEnter" }
 
 		-- use { "LudoPinelli/comment-box.nvim" }
-		-- skim
 		-- use { "lotabout/skim", dir = "~/.skim", run = "./install" }
 		-- use "lotabout/skim.vim"
 		-- Fuzzy
 		-- use { "octaltree/linearf", merged = 0 }
 		-- use "octaltree/linearf-my-flavors"
+
 		-- use "beauwilliams/focus.nvim" -- handle splits resize
 		-- use "jakerobers/vim-hexrgba" -- hex rgba toggle
 		-- use "amadeus/vim-convert-color-to" -- color converter
@@ -232,7 +233,6 @@ return packer.startup(
 		-- 	"weilbith/nvim-code-action-menu",
 		-- 	cmd = "CodeActionMenu",
 		-- }
-		-- use({ "ZhiyuanLck/smart-pairs", event = "InsertEnter" })
 
 		if packer_bootstrap then
 			require("packer").sync()
