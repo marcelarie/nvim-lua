@@ -48,10 +48,10 @@ require("crates").setup {
 			copy_value = { "yy" },
 		},
 	},
-	cmp = {
-		text = {
-			prerelease = "  pre-release ",
-			yanked = "  yanked ",
-		},
-	},
+	-- cmp = {
+	-- 	text = {
+	-- 		prerelease = "  pre-release ",
+	-- 		yanked = "  yanked ",
+	-- 	},
+	-- },
 }

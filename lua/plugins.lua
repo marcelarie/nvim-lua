@@ -158,7 +158,8 @@ return packer.startup(
 		use "rafcamlet/nvim-luapad"
 		use "kyazdani42/nvim-web-devicons"
 		use "folke/lsp-trouble.nvim"
-		use { "iamcco/markdown-preview.nvim", run = "cd app && npm install" }
+		use "vim-denops/denops.vim"
+		use "tani/glance-vim"
 		use "cappyzawa/trim.nvim"
 		use "unblevable/quick-scope" -- An always-on highlight for a unique character in every word on a line to help you use f, F and family
 		use "tversteeg/registers.nvim"
@@ -215,6 +216,7 @@ return packer.startup(
 		use { "akinsho/git-conflict.nvim" }
 		use { "johmsalas/text-case.nvim" }
 		use { "ZhiyuanLck/smart-pairs", event = "InsertEnter" }
+		use "wellle/targets.vim"
 
 		-- use { "LudoPinelli/comment-box.nvim" }
 		-- use { "lotabout/skim", dir = "~/.skim", run = "./install" }

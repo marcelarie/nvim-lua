@@ -2,6 +2,6 @@
 vim.api.nvim_set_keymap(
 	"n",
 	"<Leader>mp",
-	":MarkdownPreviewToggle<cr>",
+	':execute "Glance" | !open http://localhost:8765<cr>',
 	{ noremap = true, silent = false }
 )
