@@ -1,4 +1,5 @@
 -- npm install -g typescript typescript-language-server
+local util = require "lspconfig/util"
 
 require("lspconfig").tsserver.setup {
 	on_attach = On_attach,
@@ -10,5 +11,10 @@ require("lspconfig").tsserver.setup {
 		"typescriptreact",
 		"typescript.tsx",
 	},
+	root_dir = util.root_pattern(
+		"tsconfig.json",
+		"jsconfig.json",
+		"package.json"
+	),
 	settings = { documentFormatting = false },
 }

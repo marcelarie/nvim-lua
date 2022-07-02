@@ -214,7 +214,26 @@ return packer.startup(
 			-- module = "telescope._extensions.luasnip", -- if you wish to lazy-load
 		}
 		use { "akinsho/git-conflict.nvim" }
-		use { "johmsalas/text-case.nvim" }
+		use {
+			"johmsalas/text-case.nvim",
+			branch = "issue-16",
+			config = function()
+				require("textcase").setup {}
+				require("telescope").load_extension "textcase"
+				vim.api.nvim_set_keymap(
+					"n",
+					"ga.",
+					"TextCaseOpenTelescope",
+					{ desc = "Telescope" }
+				)
+				vim.api.nvim_set_keymap(
+					"v",
+					"ga.",
+					"TextCaseOpenTelescope",
+					{ desc = "Telescope" }
+				)
+			end,
+		}
 		use { "ZhiyuanLck/smart-pairs", event = "InsertEnter" }
 		use "wellle/targets.vim"
 

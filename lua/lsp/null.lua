@@ -21,6 +21,19 @@ local lsp_formatting = function(bufnr)
 end
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local eslint_root_files = {
+	".eslintrc.js",
+	".eslintrc",
+	".eslintrc.json",
+}
+
+local eslint_condition = function(utils)
+	return utils.root_has_file(eslint_root_files)
+end
+
+local deno_condition = function(utils)
+	return utils.root_has_file { "deno.json", "deno.jsonc" }
+end
 
 null_ls.setup {
 	sources = {
@@ -29,9 +42,12 @@ null_ls.setup {
 		formatting.shfmt,
 		formatting.fish_indent,
 
-		code_actions.eslint_d,
-		diagnostics.eslint_d,
-		formatting.eslint_d,
+		diagnostics.eslint_d.with { condition = eslint_condition },
+		formatting.eslint_d.with { condition = eslint_condition },
+		code_actions.eslint_d.with { condition = eslint_condition },
+
+		formatting.deno_fmt.with { condition = deno_condition },
+		diagnostics.gitlint,
 
 		-- formatting.rustfmt,
 		-- formatting.eslint,
