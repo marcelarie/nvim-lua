@@ -96,6 +96,11 @@ ts.setup {
 			find_cmd = "rg", -- find command (defaults to `fd`)
 		},
 	},
+	pickers = {
+		colorscheme = {
+			enable_preview = true,
+		},
+	},
 }
 
 -- ts.load_extension("fzy_native")

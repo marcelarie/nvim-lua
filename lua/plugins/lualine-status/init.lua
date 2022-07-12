@@ -41,16 +41,19 @@ require("lualine").setup {
 				"lsp_progress",
 				display_components = {
 					"lsp_client_name",
-					"spinner",
-					{ "title", "percentage", "message" },
+					{
+						"title",
+						"percentage",
+						"lsp_progress_percentage",
+					},
 				},
 				colors = {
-					-- percentage = colors.fg,
+					percentage = colors.blue,
 					-- title = colors.green,
-					-- message = colors.fg,
+					message = colors.fg,
 					-- spinner = colors.cyan,
-					-- lsp_client_name = colors.blue,
-					-- use = true,
+					lsp_client_name = colors.cyan,
+					use = true,
 				},
 				spinner_symbols = {
 					"🌑 ",

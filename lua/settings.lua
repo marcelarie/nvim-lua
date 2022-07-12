@@ -2,7 +2,7 @@
 vim.o.splitbelow = true -- Horizontal splits will automatically be below
 vim.o.splitright = true -- Vertical splits will automatically be to the right
 -- vim.o.timeoutlen = O.timeoutlen
-vim.o.guifont = "FiraCode Nerd Font:h12"
+vim.o.guifont = "FiraCode Nerd Font:h15"
 
 vim.o.expandtab = true
 vim.o.smarttab = true

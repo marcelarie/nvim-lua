@@ -49,6 +49,7 @@ return packer.startup(
 				vim.g.monarized_kitty_colors = true
 			end,
 		}
+		use "EdenEast/nightfox.nvim"
 		-- use 'morhetz/gruvbox'
 		use { "shaeinst/roshnivim-cs" }
 		use "npxbr/gruvbox.nvim"
@@ -78,6 +79,22 @@ return packer.startup(
 		use "neovim/nvim-lsp"
 		use "onsails/lspkind-nvim"
 		use "neovim/nvim-lspconfig"
+
+		-- coq_nvim
+		-- " main one
+		use { "ms-jpq/coq_nvim", branch = "coq" }
+		-- " 9000+ Snippets
+		use { "ms-jpq/coq.artifacts", branch = "artifacts" }
+
+		-- " lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
+		-- " Need to **configure separately**
+
+		use { "ms-jpq/coq.thirdparty", branch = "3p" }
+		-- " - shell repl
+		-- " - nvim lua api
+		-- " - scientific calculator
+		-- " - comment banner
+		-- " - etc
 
 		-- cmp
 		use { "hrsh7th/nvim-cmp", requires = { "hrsh7th/cmp-buffer" } }
@@ -236,6 +253,25 @@ return packer.startup(
 		}
 		use { "ZhiyuanLck/smart-pairs", event = "InsertEnter" }
 		use "wellle/targets.vim"
+		use {
+			"axkirillov/easypick.nvim",
+			requires = "nvim-telescope/telescope.nvim",
+		}
+		use "yamatsum/nvim-cursorline"
+		use "rcarriga/nvim-notify"
+		use "folke/lua-dev.nvim"
+		use {
+			"jbyuki/instant.nvim",
+			config = function()
+				vim.cmd 'let g:instant_username = "USERNAME"'
+			end,
+		}
+		use {
+			"sQVe/sort.nvim",
+			config = function()
+				require("sort").setup {}
+			end,
+		}
 
 		-- use { "LudoPinelli/comment-box.nvim" }
 		-- use { "lotabout/skim", dir = "~/.skim", run = "./install" }

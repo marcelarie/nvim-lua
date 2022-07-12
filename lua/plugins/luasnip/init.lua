@@ -24,13 +24,13 @@ end
 luasnip.config.set_config {
 	history = true,
 	update_events = "TextChanged,TextChangedI",
-	ext_opts = {
-		[require("luasnip.util.types").choiceNode] = {
-			active = {
-				virt_text = { { "🤔", "Yellow" } },
-			},
-		},
-	},
+	-- ext_opts = {
+	-- 	[require("luasnip.util.types").choiceNode] = {
+	-- 		active = {
+	-- 			virt_text = { { "🤔", "Yellow" } },
+	-- 		},
+	-- 	},
+	-- },
 	enable_autosnippets = true,
 }
 
