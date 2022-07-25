@@ -169,7 +169,8 @@ return packer.startup(
 		use "christoomey/vim-system-copy" -- System Copy
 		use "norcalli/nvim-colorizer.lua" -- Colorizer
 		use "windwp/nvim-ts-autotag" -- Autotags
-		use "tpope/vim-surround" -- Vim Surround
+		-- use "tpope/vim-surround" -- Vim Surround
+		use "kylechui/nvim-surround"
 		use "numToStr/Comment.nvim"
 		use "mbbill/undotree"
 		use "rafcamlet/nvim-luapad"
@@ -272,6 +273,8 @@ return packer.startup(
 				require("sort").setup {}
 			end,
 		}
+		use { "https://git.sr.ht/~whynothugo/lsp_lines.nvim" }
+		-- use "ggandor/lightspeed.nvim"
 
 		-- use { "LudoPinelli/comment-box.nvim" }
 		-- use { "lotabout/skim", dir = "~/.skim", run = "./install" }

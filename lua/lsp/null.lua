@@ -41,13 +41,13 @@ null_ls.setup {
 		formatting.eslint_d.with { condition = eslint_condition },
 		code_actions.eslint_d.with { condition = eslint_condition },
 
-		formatting.deno_fmt.with { condition = deno_condition },
+		-- formatting.deno_fmt.with { condition = deno_condition },
 		diagnostics.gitlint,
 		diagnostics.fish,
 		diagnostics.flake8,
 		formatting.black,
 
-		formatting.fixjson,
+		-- formatting.fixjson,
 
 		-- formatting.rustfmt,
 		-- formatting.eslint,

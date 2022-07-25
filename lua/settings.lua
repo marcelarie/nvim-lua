@@ -35,7 +35,7 @@ vim.wo.colorcolumn = "80"
 
 -- highlight on yank
 vim.cmd [[
-au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncSearch', timeout = 300 })
+    au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncSearch', timeout = 300 })
 ]]
 
 vim.cmd [[
@@ -70,12 +70,13 @@ vim.api.nvim_set_option("backup", false)
 vim.diagnostic.config {
 	-- virtual_text = true,
 	signs = true,
-	underline = false,
+	underline = true,
 	update_in_insert = false,
 	severity_sort = false,
 	-- virtual_text = {
-	--     -- source = "always", -- Or "if_many"
+	-- 	source = "if_many", -- Or "if_many"
 	-- },
+	virtual_lines = false,
 	virtual_text = {
 		prefix = "●", -- Could be '●', '▎', 'x'
 	},
@@ -84,13 +85,39 @@ vim.diagnostic.config {
 	},
 }
 
--- vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#000]]
--- vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#f29]]
---
+-- local border = {
+-- 	{ "🭽", "FloatBorder" },
+-- 	{ "▔", "FloatBorder" },
+-- 	{ "🭾", "FloatBorder" },
+-- 	{ "▕", "FloatBorder" },
+-- 	{ "🭿", "FloatBorder" },
+-- 	{ "▁", "FloatBorder" },
+-- 	{ "🭼", "FloatBorder" },
+-- 	{ "▏", "FloatBorder" },
+-- }
+
+local border = {
+	{ "╭", "FloatBorder" },
+	{ "─", "FloatBorder" },
+	{ "╮", "FloatBorder" },
+	{ "│", "FloatBorder" },
+	{ "╯", "FloatBorder" },
+	{ "─", "FloatBorder" },
+	{ "╰", "FloatBorder" },
+	{ "│", "FloatBorder" },
+}
+
+vim.cmd [[autocmd ColorScheme * highlight NormalFloat guibg=#000]]
+vim.cmd [[autocmd ColorScheme * highlight FloatBorder guifg=white guibg=#f29]]
+
 -- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-	border = "rounded", -- single
+	-- border = border, -- single, rounded. double
+	border = "rounded", -- single, rounded. double
 })
+
+-- vim.lsp.handlers["textDocument/signatureHelp"] =
+-- 	vim.lsp.with(vim.lsp.handlers.signature_help, { border = border })
 
 local signs = { Error = "e ", Warn = "w ", Hint = "h ", Info = "i " }
 for type, icon in pairs(signs) do

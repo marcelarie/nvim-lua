@@ -1,10 +1,11 @@
 local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 	return col ~= 0
-		and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]
-		:sub(col, col)
-		:match "%s"
-		== nil
+		and vim.api
+				.nvim_buf_get_lines(0, line - 1, line, true)[1]
+				:sub(col, col)
+				:match "%s"
+			== nil
 end
 
 local luasnip = require "luasnip"
@@ -18,7 +19,48 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.cmd "set shortmess+=c"
 vim.cmd "let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']"
 
+-- local border = {
+--     { "┏", "FloatBorder" },
+--     { "━", "FloatBorder" },
+--     { "┓", "FloatBorder" },
+--     { "┃", "FloatBorder" },
+--     { "┛", "FloatBorder" },
+--     { "━", "FloatBorder" },
+--     { "┗", "FloatBorder" },
+--     { "┃", "FloatBorder" },
+-- }
+
+-- local border = {
+-- 	{ "╔", "FloatBorder" },
+-- 	{ "═", "FloatBorder" },
+-- 	{ "╗", "FloatBorder" },
+-- 	{ "║", "FloatBorder" },
+-- 	{ "╝", "FloatBorder" },
+-- 	{ "═", "FloatBorder" },
+-- 	{ "╚", "FloatBorder" },
+-- 	{ "║", "FloatBorder" },
+-- }
+
+local border = {
+	{ "╭", "CmpBorder" },
+	{ "─", "CmpBorder" },
+	{ "╮", "CmpBorder" },
+	{ "│", "CmpBorder" },
+	{ "╯", "CmpBorder" },
+	{ "─", "CmpBorder" },
+	{ "╰", "CmpBorder" },
+	{ "│", "CmpBorder" },
+}
+
 cmp.setup {
+	window = {
+		documentation = {
+			border = border,
+		},
+		completion = {
+			border = border,
+		},
+	},
 	snippet = {
 		expand = function(args)
 			require("luasnip").lsp_expand(args.body)
@@ -53,7 +95,8 @@ cmp.setup {
 					-- buf_lines = "[buf-lines]",
 				})[entry.source.name]
 
-				if entry.completion_item.data ~= nil
+				if
+					entry.completion_item.data ~= nil
 					and entry.completion_item.data.detail ~= nil
 				then
 					menu = entry.completion_item.data.detail .. " " .. menu
