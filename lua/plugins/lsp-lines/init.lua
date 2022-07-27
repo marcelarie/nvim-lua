@@ -5,8 +5,8 @@ vim.keymap.set("n", "<Leader>dd", function()
 	local virtual_lines_are_enabled = vim.diagnostic.config().virtual_lines
 		== true
 
-	local config = virtual_lines_are_enabled and Disable_lsp_virtual_text
-		or Enable_lsp_virtual_text
+	local config = virtual_lines_are_enabled and Disable_lsp_virtual_text()
+		or Enable_lsp_virtual_text()
 
 	Lsp_diagnostic_toggle_with_message(config)
 end, {

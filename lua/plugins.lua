@@ -42,6 +42,7 @@ return packer.startup(
 		use "phanviet/vim-monokai-pro"
 		use "mhartington/oceanic-next"
 		use "fenetikm/falcon"
+		use "katawful/kat.nvim"
 		use {
 			"jhchabran/monarized",
 			config = function()
@@ -79,6 +80,7 @@ return packer.startup(
 		use "neovim/nvim-lsp"
 		use "onsails/lspkind-nvim"
 		use "neovim/nvim-lspconfig"
+		use "barreiroleo/ltex-extra.nvim"
 
 		-- coq_nvim
 		-- " main one
@@ -103,6 +105,7 @@ return packer.startup(
 		use "hrsh7th/cmp-path"
 		use "hrsh7th/cmp-cmdline"
 		use "hrsh7th/cmp-nvim-lua"
+		use "andersevenrud/cmp-tmux"
 		-- use { "github/copilot.vim" } -- needed for the auth
 		use {
 			"zbirenbaum/copilot.lua",
@@ -274,6 +277,7 @@ return packer.startup(
 			end,
 		}
 		use { "https://git.sr.ht/~whynothugo/lsp_lines.nvim" }
+
 		-- use "ggandor/lightspeed.nvim"
 
 		-- use { "LudoPinelli/comment-box.nvim" }

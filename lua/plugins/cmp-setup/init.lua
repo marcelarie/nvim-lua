@@ -92,6 +92,7 @@ cmp.setup {
 					rg = "[rg]",
 					package = "[pack]",
 					fuzzy_path = "[fpath]",
+					tmux = "[tmux]",
 					-- buf_lines = "[buf-lines]",
 				})[entry.source.name]
 
@@ -130,6 +131,7 @@ cmp.setup {
 		{ name = "copilot" },
 		{ name = "luasnip", max_item_count = 4 },
 		{ name = "nvim_lsp", max_item_count = 5 },
+		{ name = "tmux" },
 		{
 			name = "buffer",
 			max_item_count = 4,
