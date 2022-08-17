@@ -43,7 +43,9 @@ return packer.startup(
 		use "mhartington/oceanic-next"
 		use "fenetikm/falcon"
 		use "katawful/kat.nvim"
+		use { "shaunsingh/oxocarbon.nvim", run = "./install.sh" }
 		use {
+
 			"jhchabran/monarized",
 			config = function()
 				vim.g.monarized_lualine = true
@@ -60,6 +62,7 @@ return packer.startup(
 		use "ishan9299/modus-theme-vim"
 		use "ishan9299/nvim-solarized-lua"
 		use "RRethy/nvim-base16"
+		use "aktersnurra/no-clown-fiesta.nvim"
 
 		-- Telescope
 		use "nvim-lua/popup.nvim"
@@ -164,6 +167,9 @@ return packer.startup(
 		-- Latex
 		use "lervag/vimtex"
 
+		-- DAP
+		use "mfussenegger/nvim-dap"
+
 		-- Rust
 		use "simrat39/rust-tools.nvim"
 		use "saecki/crates.nvim"
@@ -234,7 +240,7 @@ return packer.startup(
 			"benfowler/telescope-luasnip.nvim",
 			-- module = "telescope._extensions.luasnip", -- if you wish to lazy-load
 		}
-		use { "akinsho/git-conflict.nvim" }
+		use { "akinsho/git-conflict.nvim", tag = "v1.0.0" }
 		use {
 			"johmsalas/text-case.nvim",
 			branch = "issue-16",
@@ -292,7 +298,10 @@ return packer.startup(
 		-- use "amadeus/vim-convert-color-to" -- color converter
 		-- use "alvan/vim-closetag"
 		-- use "ryanoasis/vim-devicons"
-		-- use("rmagatti/session-lens") -- < with tree sitter
+		use "rmagatti/auto-session"
+		use "rmagatti/session-lens" -- < with tree sitter
+		use "smjonas/inc-rename.nvim"
+		use "stevearc/dressing.nvim"
 		-- use {
 		-- 	"weilbith/nvim-code-action-menu",
 		-- 	cmd = "CodeActionMenu",

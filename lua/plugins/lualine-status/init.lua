@@ -67,8 +67,9 @@ require("lualine").setup {
 				},
 			},
 		},
-		-- lualine_d = { },
+		lualine_d = {},
 		lualine_x = {
+			{ require("auto-session-library").current_session_name },
 			"encoding",
 			"fileformat",
 			"filetype",

@@ -30,7 +30,7 @@ end)
 
 vim.keymap.set("n", "<Leader>zn", function()
 	vim.fn.chdir "~/clones/pers/notes/"
-	vim.cmd "ZkNotes"
+	vim.cmd "ZkNew"
 	print "New note created"
 	vim.fn.chdir "-"
 end)

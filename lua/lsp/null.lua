@@ -33,7 +33,11 @@ end
 null_ls.setup {
 	sources = {
 		formatting.stylua,
-		formatting.alejandra,
+		formatting.alejandra.with {
+			args = function(params)
+				return {}
+			end,
+		},
 		formatting.shfmt,
 		formatting.fish_indent,
 
@@ -42,7 +46,7 @@ null_ls.setup {
 		code_actions.eslint_d.with { condition = eslint_condition },
 
 		-- formatting.deno_fmt.with { condition = deno_condition },
-		diagnostics.gitlint,
+		-- diagnostics.gitlint,
 		diagnostics.fish,
 		diagnostics.flake8,
 		formatting.black,
@@ -54,7 +58,7 @@ null_ls.setup {
 		-- completion.spell,
 		-- formatting.prettier_d_slim,
 		-- formatting.prettier,
-		-- formatting.prettierd,
+		formatting.prettierd,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method "textDocument/formatting" then

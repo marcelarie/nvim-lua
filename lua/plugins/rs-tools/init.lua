@@ -7,11 +7,6 @@ local opts = {
 		-- default: true
 		autoSetHints = true,
 
-		-- whether to show hover actions inside the hover window
-		-- this overrides the default hover handler
-		-- default: true
-		hover_with_actions = true,
-
 		runnables = {
 			-- whether to use telescope for selection menu or not
 			-- default: true

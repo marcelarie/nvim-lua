@@ -2,6 +2,11 @@ vim.notify = require "notify"
 
 require("notify").setup {
 	render = "minimal",
+	width = 0,
+	timeout = 5,
+	on_open = function(win)
+		vim.api.nvim_win_set_option(win, "wrap", true)
+	end,
 }
 
 -- Utility functions shared between progress reports for LSP and DAP

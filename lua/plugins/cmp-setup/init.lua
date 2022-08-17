@@ -1,13 +1,3 @@
-local has_words_before = function()
-	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-	return col ~= 0
-		and vim.api
-				.nvim_buf_get_lines(0, line - 1, line, true)[1]
-				:sub(col, col)
-				:match "%s"
-			== nil
-end
-
 local luasnip = require "luasnip"
 local cmp = require "cmp"
 local kind = cmp.lsp.CompletionItemKind
@@ -131,7 +121,7 @@ cmp.setup {
 		{ name = "copilot" },
 		{ name = "luasnip", max_item_count = 4 },
 		{ name = "nvim_lsp", max_item_count = 5 },
-		{ name = "tmux" },
+		{ name = "tmux", max_item_count = 4 },
 		{
 			name = "buffer",
 			max_item_count = 4,

@@ -19,7 +19,7 @@ vim.api.nvim_set_keymap(
 vim.cmd "nnoremap <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>"
 
 -- Till LSPSaga works
-vim.cmd "nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>"
+-- vim.cmd "nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>"
 -- vim.cmd('nnoremap <leader>a <cmd>lua vim.lsp.buf.code_action()<CR>')
 
 vim.api.nvim_set_keymap(

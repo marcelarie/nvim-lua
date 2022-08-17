@@ -14,6 +14,16 @@ local nvim_config_path = vim.env.UNAME == "Darwin"
 --
 require("lspconfig").ltex.setup {
 	-- capabilities = your_capabilities,
+	filetypes = {
+		"bib",
+		-- "gitcommit",
+		"markdown",
+		"org",
+		"plaintex",
+		"rst",
+		"rnoweb",
+		"tex",
+	},
 	on_attach = function(client, bufnr)
 		-- your other on_attach functions.
 		require("ltex_extra").setup {
@@ -25,8 +35,6 @@ require("lspconfig").ltex.setup {
 	end,
 	cmd = cmd,
 	settings = {
-		ltex = {
-			-- your settings.
-		},
+		ltex = {},
 	},
 }

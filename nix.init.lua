@@ -58,6 +58,13 @@ require "plugins.lsp-uti"
 require "plugins.neoroot"
 
 -- require "lsp-sign"
+vim.cmd [[
+	if exists("g:neovide")
+	    let g:neovide_cursor_animation_length=0
+	    let g:neovide_cursor_trail_length=0
+	    let g:neovide_cursor_animation_style="blink"
+	endif
+]]
 
 if not vim.g.started_by_firenvim then
 	require "plugins.lightbulb"
@@ -88,6 +95,7 @@ if not vim.g.started_by_firenvim then
 
 	-- /// Rust ///
 	require "plugins.crates"
+	require "plugins.rs-tools"
 
 	require "plugins.persistence"
 	require "plugins.alpha-menu"
@@ -97,6 +105,9 @@ if not vim.g.started_by_firenvim then
 	require "plugins.easy-pick"
 	require "plugins.nvim-cursorline"
 	require "plugins.lsp-lines"
+	require "plugins.autosession"
+	require "plugins.dressing"
+	require "plugins.inc-rename"
 	-- require "plugins.notify"
 	-- require "plugins.pairs"
 	-- require "g-worktree"
