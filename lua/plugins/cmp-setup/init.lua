@@ -118,7 +118,8 @@ cmp.setup {
 	experimental = { ghost_text = true },
 	sources = {
 		{ name = "path" },
-		{ name = "copilot" },
+		-- { name = "copilot" },
+		{ name = "cmp_tabnine" },
 		{ name = "luasnip", max_item_count = 4 },
 		{ name = "nvim_lsp", max_item_count = 5 },
 		{ name = "tmux", max_item_count = 4 },

@@ -1,4 +1,10 @@
 require "plugins"
+
+if vim.env.FIRST_TIME then
+	vim.cmd "PackerSync"
+	return
+end
+
 require "settings"
 require "colorscheme"
 require "aliases"
@@ -105,7 +111,7 @@ if not vim.g.started_by_firenvim then
 	require "plugins.easy-pick"
 	require "plugins.nvim-cursorline"
 	require "plugins.lsp-lines"
-	require "plugins.autosession"
+	-- require "plugins.autosession"
 	require "plugins.dressing"
 	require "plugins.inc-rename"
 	-- require "plugins.notify"

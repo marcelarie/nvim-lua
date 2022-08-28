@@ -111,15 +111,20 @@ return packer.startup(
 		use "andersevenrud/cmp-tmux"
 		-- use { "github/copilot.vim" } -- needed for the auth
 		use {
-			"zbirenbaum/copilot.lua",
-			event = "VimEnter",
-			config = function()
-				vim.defer_fn(function()
-					require("copilot").setup {}
-				end, 1000)
-			end,
+			"tzachar/cmp-tabnine",
+			run = "./install.sh",
+			requires = "hrsh7th/nvim-cmp",
 		}
-		use { "zbirenbaum/copilot-cmp", after = { "copilot.lua", "nvim-cmp" } }
+		-- use {
+		-- 	"zbirenbaum/copilot.lua",
+		-- 	event = "VimEnter",
+		-- 	config = function()
+		-- 		vim.defer_fn(function()
+		-- 			require("copilot").setup {}
+		-- 		end, 1000)
+		-- 	end,
+		-- }
+		-- use { "zbirenbaum/copilot-cmp", after = { "copilot.lua", "nvim-cmp" } }
 
 		use { "jose-elias-alvarez/null-ls.nvim" }
 		use { "MunifTanjim/eslint.nvim" }
@@ -127,6 +132,7 @@ return packer.startup(
 		use "simrat39/symbols-outline.nvim"
 		-- use "ray-x/lsp_signature.nvim"
 		-- use "mfussenegger/nvim-dap"
+		use "jubnzv/virtual-types.nvim"
 
 		-- LSP Utils
 		use "RishabhRD/popfix"
@@ -145,6 +151,14 @@ return packer.startup(
 		use "nvim-treesitter/playground"
 		use "JoosepAlviste/nvim-ts-context-commentstring"
 		use { "zsugabubus/crazy8.nvim" }
+		use {
+			"m-demare/hlargs.nvim",
+			config = function()
+				require("hlargs").setup {
+					hl_priority = 50000,
+				}
+			end,
+		}
 
 		-- Nvim statusline
 		use "hoob3rt/lualine.nvim"
@@ -298,8 +312,16 @@ return packer.startup(
 		-- use "amadeus/vim-convert-color-to" -- color converter
 		-- use "alvan/vim-closetag"
 		-- use "ryanoasis/vim-devicons"
-		use "rmagatti/auto-session"
-		use "rmagatti/session-lens" -- < with tree sitter
+		-- use "rmagatti/auto-session"
+		-- use "rmagatti/session-lens" -- < with tree sitter
+		use {
+			"olimorris/persisted.nvim",
+			-- module = "persisted", -- For lazy loading
+			config = function()
+				require("persisted").setup()
+				require("telescope").load_extension "persisted" -- To load the telescope extension
+			end,
+		}
 		use "smjonas/inc-rename.nvim"
 		use "stevearc/dressing.nvim"
 		-- use {

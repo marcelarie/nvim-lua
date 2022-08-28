@@ -53,12 +53,13 @@ null_ls.setup {
 
 		-- formatting.fixjson,
 
+		formatting.perltidy,
 		-- formatting.rustfmt,
 		-- formatting.eslint,
 		-- completion.spell,
 		-- formatting.prettier_d_slim,
 		-- formatting.prettier,
-		formatting.prettierd,
+		-- formatting.prettierd,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method "textDocument/formatting" then
