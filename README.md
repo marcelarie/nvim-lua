@@ -1,8 +1,8 @@
-# nvim config
+# Nvim config
 
-## Language Servers:
+## Language Servers
 
-### Lua:
+### Lua
 
 ```bash
 git clone https://github.com/sumneko/lua-language-server.git

@@ -4,7 +4,7 @@ local startify = require "alpha.themes.startify"
 startify.section.top_buttons.val = {
 	-- I would like to cd into the directory first
 	startify.button(
-		"vi",
+		"rc",
 		"vim config",
 		"<cmd>cd ~/.config/nvim/<CR><cmd>e nix.init.lua<CR>"
 	),
@@ -41,3 +41,4 @@ local NOREF_NOERR_TRUNC = { noremap = true, silent = true, nowait = true }
 vim.keymap.set("n", "<Leader>al", function()
 	vim.cmd "Alpha"
 end, NOREF_NOERR_TRUNC)
+

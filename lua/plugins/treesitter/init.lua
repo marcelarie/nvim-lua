@@ -111,12 +111,22 @@ ts.setup {
 	},
 }
 
--- local parser_config = require'nvim-treesitter.parsers'.get_parser_configs()
--- parser_config.perl = {
--- install_info = {
--- url = 'https://github.com/ganezdragon/tree-sitter-perl',
--- files = {'src/parser.c'}
--- },
--- filetype = 'perl',
--- used_by = {'pm', 'pl', 't'}
--- }
+require("treesitter-context").setup {
+	enable = true,
+	max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+	trim_scope = "outer", -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+	patterns = {
+		default = {
+			"class",
+			"function",
+			"method",
+			-- 'for', -- These won't appear in the context
+			-- 'while', 'if', 'switch', 'case',
+		},
+		-- Example for a specific filetype.
+		-- If a pattern is missing, *open a PR* so everyone can benefit.
+		--   rust = {
+		--       'impl_item',
+		--   },
+	},
+}

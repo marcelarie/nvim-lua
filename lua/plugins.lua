@@ -150,15 +150,11 @@ return packer.startup(
 		use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 		use "nvim-treesitter/playground"
 		use "JoosepAlviste/nvim-ts-context-commentstring"
+		use "nvim-treesitter/nvim-treesitter-context"
 		use { "zsugabubus/crazy8.nvim" }
-		use {
-			"m-demare/hlargs.nvim",
-			config = function()
-				require("hlargs").setup {
-					hl_priority = 50000,
-				}
-			end,
-		}
+
+		-- This does not work for now 
+		-- use { "m-demare/hlargs.nvim", config = function() require("hlargs").setup { hl_priority = 50000, } end, }
 
 		-- Nvim statusline
 		use "hoob3rt/lualine.nvim"
@@ -314,14 +310,7 @@ return packer.startup(
 		-- use "ryanoasis/vim-devicons"
 		-- use "rmagatti/auto-session"
 		-- use "rmagatti/session-lens" -- < with tree sitter
-		use {
-			"olimorris/persisted.nvim",
-			-- module = "persisted", -- For lazy loading
-			config = function()
-				require("persisted").setup()
-				require("telescope").load_extension "persisted" -- To load the telescope extension
-			end,
-		}
+		use "olimorris/persisted.nvim"
 		use "smjonas/inc-rename.nvim"
 		use "stevearc/dressing.nvim"
 		-- use {

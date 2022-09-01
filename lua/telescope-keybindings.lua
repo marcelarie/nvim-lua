@@ -1,7 +1,14 @@
 local map = vim.keymap.set
 local opts = { silent = true }
 
-map("n", "<Leader>f", ":Telescope find_files<cr>", opts)
+-- map("n", "<Leader>f", ":Telescope find_files<cr>", opts)
+map("n", "<Leader>f", function()
+	require("telescope.builtin").find_files {
+		previewer = false,
+		layout_strategy = "horizontal",
+	}
+end)
+
 map("n", "<leader>do", ":Telescope find_files hidden=true<cr>", opts)
 map("n", "<Leader>k", ":Telescope keymaps<cr>", opts)
 map("n", "<Leader>em", ":Telescope symbols<cr>", opts)

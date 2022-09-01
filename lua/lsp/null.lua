@@ -33,13 +33,12 @@ end
 null_ls.setup {
 	sources = {
 		formatting.stylua,
-		formatting.alejandra.with {
-			args = function(params)
-				return {}
-			end,
-		},
+		-- formatting.alejandra
+		formatting.nixfmt,
 		formatting.shfmt,
 		formatting.fish_indent,
+		-- formatting.markdownlint,
+		formatting.mdformat,
 
 		diagnostics.eslint_d.with { condition = eslint_condition },
 		formatting.eslint_d.with { condition = eslint_condition },
