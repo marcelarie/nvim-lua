@@ -103,6 +103,7 @@ if not vim.g.started_by_firenvim then
 	require "plugins.crates"
 	require "plugins.rs-tools"
 
+	require "plugins.carbon"
 	require "plugins.persistence"
 	require "plugins.alpha-menu"
 	require "plugins.trim-lua"

@@ -162,8 +162,9 @@ return packer.startup(
 		-- Startup time
 		use "tweekmonster/startuptime.vim"
 
-		-- Nvim tree
+		-- File explorers
 		use "kyazdani42/nvim-tree.lua"
+		use "SidOfc/carbon.nvim"
 
 		--  Snippets
 		use "L3MON4D3/LuaSnip"
@@ -278,7 +279,7 @@ return packer.startup(
 			requires = "nvim-telescope/telescope.nvim",
 		}
 		use "yamatsum/nvim-cursorline"
-		use "rcarriga/nvim-notify"
+		-- use "rcarriga/nvim-notify"
 		use "folke/lua-dev.nvim"
 		use {
 			"jbyuki/instant.nvim",
