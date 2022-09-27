@@ -39,6 +39,7 @@ null_ls.setup {
 		formatting.fish_indent,
 		-- formatting.markdownlint,
 		formatting.mdformat,
+		-- formatting.prettierd,
 
 		diagnostics.eslint_d.with { condition = eslint_condition },
 		formatting.eslint_d.with { condition = eslint_condition },

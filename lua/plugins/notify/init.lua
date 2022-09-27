@@ -1,7 +1,7 @@
 vim.notify = require "notify"
 
 require("notify").setup {
-	render = "minimal",
+	-- render = "minimal",
 	width = 0,
 	timeout = 5,
 	on_open = function(win)
@@ -70,7 +70,7 @@ vim.lsp.handlers["$/progress"] = function(_, result, ctx)
 	local client_id = ctx.client_id
 	local lsp_name = vim.lsp.get_client_by_id(client_id).name
 
-	if lsp_name == "null-ls" then
+	if lsp_name == "null-ls" or lsp_name == "ltex" then
 		return
 	end
 
@@ -84,7 +84,7 @@ vim.lsp.handlers["$/progress"] = function(_, result, ctx)
 		notif_data.notification = vim.notify(message, "info", {
 			title = format_title(val.title, lsp_name),
 			icon = spinner_frames[1],
-			timeout = false,
+			timeout = 500,
 			hide_from_history = false,
 		})
 
@@ -103,7 +103,7 @@ vim.lsp.handlers["$/progress"] = function(_, result, ctx)
 			{
 				icon = "",
 				replace = notif_data.notification,
-				timeout = 3000,
+				timeout = 500,
 			}
 		)
 

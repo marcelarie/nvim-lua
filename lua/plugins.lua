@@ -279,7 +279,7 @@ return packer.startup(
 			requires = "nvim-telescope/telescope.nvim",
 		}
 		use "yamatsum/nvim-cursorline"
-		-- use "rcarriga/nvim-notify"
+		use "rcarriga/nvim-notify"
 		use "folke/lua-dev.nvim"
 		use {
 			"jbyuki/instant.nvim",
@@ -314,6 +314,14 @@ return packer.startup(
 		use "olimorris/persisted.nvim"
 		use "smjonas/inc-rename.nvim"
 		use "stevearc/dressing.nvim"
+		use {
+			"AckslD/nvim-FeMaco.lua",
+			config = function()
+				require("femaco").setup()
+			end,
+		}
+		use "rktjmp/highlight-current-n.nvim"
+
 		-- use {
 		-- 	"weilbith/nvim-code-action-menu",
 		-- 	cmd = "CodeActionMenu",
