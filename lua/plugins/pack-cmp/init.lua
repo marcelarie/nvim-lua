@@ -33,11 +33,8 @@ source.complete = function(self, _, callback)
 
 					local items = {}
 					for _, item in ipairs(parsed) do
-						item.description = string.gsub(
-							item.description or "",
-							"\r",
-							""
-						)
+						item.description =
+							string.gsub(item.description or "", "\r", "")
 
 						table.insert(items, {
 							label = string.format("#%s", item.number),

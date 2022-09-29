@@ -67,7 +67,12 @@ return packer.startup(
 		-- Telescope
 		use "nvim-lua/popup.nvim"
 		use "nvim-lua/plenary.nvim"
-		use "nvim-telescope/telescope.nvim"
+		use {
+			"nvim-telescope/telescope.nvim",
+			requires = {
+				{ "nvim-telescope/telescope-github.nvim" },
+			},
+		}
 		use "nvim-telescope/telescope-media-files.nvim"
 		use "nvim-telescope/telescope-fzy-native.nvim"
 		use "nvim-telescope/telescope-symbols.nvim"
@@ -187,7 +192,7 @@ return packer.startup(
 
 		-- Others
 		use "christoomey/vim-system-copy" -- System Copy
-		use "norcalli/nvim-colorizer.lua" -- Colorizer
+		-- use "norcalli/nvim-colorizer.lua" -- Colorizer
 		use "windwp/nvim-ts-autotag" -- Autotags
 		-- use "tpope/vim-surround" -- Vim Surround
 		use "kylechui/nvim-surround"
@@ -217,7 +222,7 @@ return packer.startup(
 		use "arkav/lualine-lsp-progress"
 		use "goolord/alpha-nvim"
 		use "kosayoda/nvim-lightbulb"
-		use "folke/which-key.nvim"
+		-- use "folke/which-key.nvim"
 		use { "ray-x/guihua.lua", run = "cd lua/fzy && make" } -- lua GUI lib
 		use "ray-x/sad.nvim"
 		use { "ellisonleao/glow.nvim" }
@@ -276,10 +281,11 @@ return packer.startup(
 		use "wellle/targets.vim"
 		use {
 			"axkirillov/easypick.nvim",
-			requires = "nvim-telescope/telescope.nvim",
+			-- requires = "nvim-telescope/telescope.nvim",
 		}
-		use "yamatsum/nvim-cursorline"
-		use "rcarriga/nvim-notify"
+		-- use "yamatsum/nvim-cursorline"
+		-- use "rcarriga/nvim-notify"
+		use "vigoux/notifier.nvim"
 		use "folke/lua-dev.nvim"
 		use {
 			"jbyuki/instant.nvim",
@@ -321,6 +327,11 @@ return packer.startup(
 			end,
 		}
 		use "rktjmp/highlight-current-n.nvim"
+		use "nkakouros-original/numbers.nvim"
+		use "brenoprata10/nvim-highlight-colors"
+		use "AckslD/nvim-trevJ.lua"
+
+		-- use "AckslD/messages.nvim",
 
 		-- use {
 		-- 	"weilbith/nvim-code-action-menu",

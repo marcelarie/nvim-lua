@@ -4,25 +4,25 @@ local easypick = require "easypick"
 local base_branch = "develop"
 
 easypick.setup {
-    pickers = {
-        -- add your custom pickers here
-        -- below you can find some examples of what those can look like
-        {
-            name = "tree",
-            command = "tree",
-            previewer = easypick.previewers.default(),
-        },
+	pickers = {
+		-- add your custom pickers here
+		-- below you can find some examples of what those can look like
+		{
+			name = "tree",
+			command = "tree",
+			previewer = easypick.previewers.default(),
+		},
 
-        -- list files inside current folder with default previewer
-        {
-            -- name for your custom picker, that can be invoked using :Easypick <name> (supports tab completion)
-            name = "ls",
-            -- the command to execute, output has to be a list of plain text entries
-            command = "ls",
-            -- specify your custom previwer, or use one of the easypick.previewers
-            previewer = easypick.previewers.default(),
-        },
-    },
+		-- list files inside current folder with default previewer
+		{
+			-- name for your custom picker, that can be invoked using :Easypick <name> (supports tab completion)
+			name = "ls",
+			-- the command to execute, output has to be a list of plain text entries
+			command = "ls",
+			-- specify your custom previwer, or use one of the easypick.previewers
+			previewer = easypick.previewers.default(),
+		},
+	},
 }
 
 -- diff current branch with base_branch and show files that changed with respective diffs in preview

@@ -1,7 +1,7 @@
 -- Global options (o)
 vim.o.splitbelow = true -- Horizontal splits will automatically be below
 vim.o.splitright = true -- Vertical splits will automatically be to the right
--- vim.o.timeoutlen = O.timeoutlen
+-- vim.o.timeoutlen = O
 vim.o.guifont = "FiraCode Nerd Font:h15"
 
 vim.o.expandtab = true
@@ -10,7 +10,7 @@ vim.o.smartindent = true
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
-vim.o.cmdheight = 2 -- More space for displaying messages
+vim.o.cmdheight = 1
 vim.o.mouse = "a" -- Mouse support --
 vim.o.updatetime = 100 -- Faster completion
 

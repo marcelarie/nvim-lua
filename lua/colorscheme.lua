@@ -3,6 +3,8 @@ vim.o.termguicolors = true
 vim.o.background = "dark"
 vim.wo.colorcolumn = "80"
 
+vim.cmd "set t_Co=256"
+
 require "plugins.lighthaus" -- ./lua/plugins/lighthaus/init.lua
 -- require("no-clown-fiesta").setup { type = "bold,italic" }
 

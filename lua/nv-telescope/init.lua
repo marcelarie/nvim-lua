@@ -121,12 +121,12 @@ ts.load_extension "zoxide"
 ts.load_extension "repo"
 ts.load_extension "neoclip"
 ts.load_extension "luasnip"
+ts.load_extension "gh"
+
 -- local M = {}
 -- M.search_dotfiles = function()
 -- require("telescope.builtin").find_files(
 -- {prompt_title = "< VimRC >", cwd = "$HOME/"})
 -- end
-
-require("colorizer").setup()
 
 -- return M

@@ -140,6 +140,19 @@ luasnip.add_snippets("typescriptreact", {
 	s("cl", { t "console.log(", i(1, ""), t ")" }),
 })
 
+-- WIP
+luasnip.add_snippets("lua", {
+	s("key", {
+		t 'vim.keymap.set("',
+		i(1, ""),
+		t '", "<leader>',
+		i(2, ""),
+		t ", function()",
+		i(3, ""),
+		t "end, { silent = true })",
+	}),
+})
+
 vim.cmd [[
   imap <silent><expr> <c-k> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<c-k>'
   inoremap <silent> <c-j> <cmd>lua require('luasnip').jump(-1)<CR>
