@@ -44,6 +44,7 @@ return packer.startup(
 		use "fenetikm/falcon"
 		use "katawful/kat.nvim"
 		use { "shaunsingh/oxocarbon.nvim", run = "./install.sh" }
+		use { "catppuccin/nvim", as = "catppuccin" }
 		use {
 
 			"jhchabran/monarized",

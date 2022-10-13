@@ -1,6 +1,8 @@
 local inc_rename = require "inc_rename"
-inc_rename.setup()
+inc_rename.setup {
+	input_buffer_type = "dressing",
+}
 
 vim.keymap.set("n", "<leader>rn", function()
-	inc_rename.rename { default = vim.fn.expand "<cword>" }
-end)
+  return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true })

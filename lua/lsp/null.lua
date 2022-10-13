@@ -41,6 +41,9 @@ null_ls.setup {
 		formatting.mdformat,
 		formatting.prettierd,
 
+		formatting.rubocop,
+		diagnostics.rubocop,
+
 		diagnostics.eslint_d.with { condition = eslint_condition },
 		formatting.eslint_d.with { condition = eslint_condition },
 		code_actions.eslint_d.with { condition = eslint_condition },

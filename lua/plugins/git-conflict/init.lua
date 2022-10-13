@@ -9,13 +9,13 @@ require("git-conflict").setup {
 	},
 }
 
-vim.api.nvim_create_autocmd("User", {
-	pattern = "GitConflictDetected",
-	callback = function()
-		vim.notify "Merge conflict detected."
-		-- vim.cmd "GitConflictListQf"
-	end,
-})
+-- vim.api.nvim_create_autocmd("User", {
+-- 	pattern = "GitConflictDetected",
+-- 	callback = function()
+-- 		vim.notify "Merge conflict detected."
+-- 		-- vim.cmd "GitConflictListQf"
+-- 	end,
+-- })
 
 -- git conflict quickfix
 vim.keymap.set("n", "<Leader>cq", function() end)

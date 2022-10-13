@@ -70,7 +70,7 @@ vim.api.nvim_set_option("backup", false)
 vim.diagnostic.config {
 	-- virtual_text = true,
 	signs = true,
-	underline = true,
+	underline = false,
 	update_in_insert = false,
 	severity_sort = false,
 	-- virtual_text = {

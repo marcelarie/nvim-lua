@@ -3,5 +3,6 @@ require("numbers").setup {
 		"NvimTree",
 		"NvimTree_1",
 		"alpha",
+		"[NO-NAME]",
 	},
 }
