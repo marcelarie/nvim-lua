@@ -44,16 +44,17 @@ vim.cmd [[
 
 -- vim.api.nvim_set_option("syntax on")
 -- vim.cmd('set path+=**')
-vim.api.nvim_set_option("undofile", true)
-vim.api.nvim_set_option("undodir", "~/.vim/undodir")
 vim.cmd "set laststatus=3"
-vim.cmd "set undofile"
-vim.cmd "set undodir=~/.vim/undodir"
-vim.cmd "set undolevels=1000"
+vim.cmd "set undolevels=10000"
 vim.cmd "set undoreload=10000"
-vim.cmd "set noswapfile"
 vim.cmd "set nohlsearch"
 vim.cmd "set list listchars=tab:⤑\\ ,trail:∙,eol:↲"
+
+-- undo
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+vim.opt.swapfile = false
+vim.opt.backup = false
 
 -- vim.api.nvim_set_option('spelllang', 'en')
 vim.api.nvim_set_option("showcmd", false)
@@ -61,8 +62,6 @@ vim.api.nvim_set_option("hlsearch", false)
 vim.api.nvim_set_option("incsearch", true)
 vim.api.nvim_set_option("compatible", false)
 vim.api.nvim_set_option("errorbells", false)
-vim.api.nvim_set_option("swapfile", false)
-vim.api.nvim_set_option("backup", false)
 -- vim.cmd('set backupdir=~/.vim/backup') -- vim.api.nvim_set_option('backupdir', "~/.vim/backup")
 -- vim.api.nvim_set_option('writebackup', true)
 -- vim.api.nvim_set_option('backupcopy', 'yes')

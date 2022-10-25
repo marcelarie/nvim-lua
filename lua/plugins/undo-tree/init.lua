@@ -1,6 +1,6 @@
 vim.api.nvim_set_keymap(
 	"n",
 	"<Leader>ut",
-	":UndotreeToggle<cr>",
+	":UndotreeShow<cr>",
 	{ noremap = true, silent = true }
 )

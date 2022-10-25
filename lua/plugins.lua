@@ -108,7 +108,20 @@ return packer.startup(
 		-- " - etc
 
 		-- cmp
-		use { "hrsh7th/nvim-cmp", requires = { "hrsh7th/cmp-buffer" } }
+		use {
+			"hrsh7th/nvim-cmp",
+			requires = {
+				"hrsh7th/cmp-buffer",
+				-- {
+				-- 	"KadoBOT/cmp-plugins",
+				-- 	config = function()
+				-- 		require("cmp-plugins").setup {
+				-- 			files = { "plugins.lua", "lua/plugins.lua" },
+				-- 		}
+				-- 	end,
+				-- },
+			},
+		}
 		use "hrsh7th/cmp-nvim-lsp"
 		use "saadparwaiz1/cmp_luasnip"
 		use "hrsh7th/cmp-path"
@@ -327,10 +340,11 @@ return packer.startup(
 				require("femaco").setup()
 			end,
 		}
-		use "rktjmp/highlight-current-n.nvim"
-		use "nkakouros-original/numbers.nvim"
+		-- use "rktjmp/highlight-current-n.nvim"
+		-- use "nkakouros-original/numbers.nvim"
 		use "brenoprata10/nvim-highlight-colors"
 		use "AckslD/nvim-trevJ.lua"
+		use "ggandor/lightspeed.nvim"
 
 		-- use "AckslD/messages.nvim",
 

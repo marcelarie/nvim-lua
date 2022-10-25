@@ -83,6 +83,7 @@ cmp.setup {
 					package = "[pack]",
 					fuzzy_path = "[fpath]",
 					tmux = "[tmux]",
+					plugins = "[plugins]",
 					-- buf_lines = "[buf-lines]",
 				})[entry.source.name]
 
@@ -118,6 +119,7 @@ cmp.setup {
 	experimental = { ghost_text = true },
 	sources = {
 		{ name = "path" },
+		-- { name = "plugins" },
 		-- { name = "copilot" },
 		{ name = "cmp_tabnine" },
 		{ name = "luasnip", max_item_count = 4 },
