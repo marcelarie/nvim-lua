@@ -215,7 +215,7 @@ return packer.startup(
 		use "rafcamlet/nvim-luapad"
 		use "kyazdani42/nvim-web-devicons"
 		use "folke/lsp-trouble.nvim"
-		use "vim-denops/denops.vim"
+		-- use "vim-denops/denops.vim"
 		use "tani/glance-vim"
 		use "cappyzawa/trim.nvim"
 		use "unblevable/quick-scope" -- An always-on highlight for a unique character in every word on a line to help you use f, F and family
