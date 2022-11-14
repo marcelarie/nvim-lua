@@ -47,7 +47,7 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
 	"n",
 	"<Leader>Q",
-	":q!<cr>",
+	":qa!<cr>",
 	{ noremap = true, silent = true }
 )
 -- leader a to autoread current file

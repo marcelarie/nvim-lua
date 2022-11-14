@@ -122,6 +122,7 @@ if not vim.g.started_by_firenvim then
 	-- require "plugins.highlight-curr-n"
 	-- require "plugins.notify"
 	require "plugins.notifier"
+	require "plugins.open"
 	-- require "plugins.numbers"
 	-- require "plugins.pairs"
 	-- require "g-worktree"

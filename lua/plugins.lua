@@ -62,7 +62,7 @@ return packer.startup(
 		use "savq/melange"
 		use "ishan9299/modus-theme-vim"
 		use "ishan9299/nvim-solarized-lua"
-		use "RRethy/nvim-base16"
+		-- use "RRethy/nvim-base16"
 		use "aktersnurra/no-clown-fiesta.nvim"
 
 		-- Telescope
@@ -345,6 +345,7 @@ return packer.startup(
 		use "brenoprata10/nvim-highlight-colors"
 		use "AckslD/nvim-trevJ.lua"
 		use "ggandor/lightspeed.nvim"
+		use "ofirgall/open.nvim"
 
 		-- use "AckslD/messages.nvim",
 

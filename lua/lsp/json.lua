@@ -5,4 +5,5 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 require("lspconfig").jsonls.setup {
 	on_attach = On_attach,
 	capabilities = capabilities,
+	cmd = { "vscode-json-languageserver", "--stdio" }
 }

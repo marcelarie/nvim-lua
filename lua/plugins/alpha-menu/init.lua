@@ -8,6 +8,11 @@ startify.section.top_buttons.val = {
 		"vim config",
 		"<cmd>cd ~/.config/nvim/<CR><cmd>e nix.init.lua<CR>"
 	),
+	startify.button(
+		"se",
+		"reload last session",
+		"<cmd>SessionLoadLast<cr>"
+	),
 
 	-- while also maintaining the format of the normal bookmark file button like this one:
 	startify.file_button("~/.config/nvim/nix.init.lua", "vit"),
