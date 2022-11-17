@@ -15,6 +15,13 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true }
 )
 
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader>ts",
+	":Telescope persisted<cr>",
+	{ noremap = true, silent = true }
+)
+
 -- DEFAULTS
 -- require("persisted").setup({
 --   save_dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"), -- directory where session files are saved

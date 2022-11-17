@@ -112,14 +112,6 @@ return packer.startup(
 			"hrsh7th/nvim-cmp",
 			requires = {
 				"hrsh7th/cmp-buffer",
-				-- {
-				-- 	"KadoBOT/cmp-plugins",
-				-- 	config = function()
-				-- 		require("cmp-plugins").setup {
-				-- 			files = { "plugins.lua", "lua/plugins.lua" },
-				-- 		}
-				-- 	end,
-				-- },
 			},
 		}
 		use "hrsh7th/cmp-nvim-lsp"
@@ -129,22 +121,52 @@ return packer.startup(
 		use "hrsh7th/cmp-nvim-lua"
 		use "andersevenrud/cmp-tmux"
 		-- use { "github/copilot.vim" } -- needed for the auth
-		use {
-			"tzachar/cmp-tabnine",
-			run = "./install.sh",
-			requires = "hrsh7th/nvim-cmp",
-		}
 		-- use {
-		-- 	"zbirenbaum/copilot.lua",
-		-- 	event = "VimEnter",
-		-- 	config = function()
-		-- 		vim.defer_fn(function()
-		-- 			require("copilot").setup {}
-		-- 		end, 1000)
-		-- 	end,
+		-- 	"tzachar/cmp-tabnine",
+		-- 	run = "./install.sh",
+		-- 	requires = "hrsh7th/nvim-cmp",
 		-- }
-		-- use { "zbirenbaum/copilot-cmp", after = { "copilot.lua", "nvim-cmp" } }
-
+		use {
+			"zbirenbaum/copilot.lua",
+			event = "VimEnter",
+			config = function()
+				vim.defer_fn(function()
+					require("copilot").setup {
+						panel = {
+							enabled = true,
+							auto_refresh = false,
+							keymap = {
+								jump_prev = "[[",
+								jump_next = "]]",
+								accept = "<CR>",
+								refresh = "gr",
+								open = "<M-CR>",
+							},
+						},
+						suggestion = {
+							enabled = true,
+							auto_trigger = false,
+							debounce = 75,
+							keymap = {
+								accept = "<M-l>",
+								next = "<M-]>",
+								prev = "<M-[>",
+								dismiss = "<C-]>",
+							},
+						},
+						copilot_node_command = "node", -- Node version must be < 18
+						server_opts_overrides = {},
+					}
+				end, 100)
+			end,
+		}
+		use {
+			"zbirenbaum/copilot-cmp",
+			after = { "copilot.lua", "nvim-cmp" },
+			config = function()
+				require("copilot_cmp").setup()
+			end,
+		}
 		use { "jose-elias-alvarez/null-ls.nvim" }
 		use { "MunifTanjim/eslint.nvim" }
 		use "jose-elias-alvarez/nvim-lsp-ts-utils"
@@ -300,7 +322,8 @@ return packer.startup(
 		-- use "yamatsum/nvim-cursorline"
 		-- use "rcarriga/nvim-notify"
 		use "vigoux/notifier.nvim"
-		use "folke/lua-dev.nvim"
+		-- use "folke/lua-dev.nvim"
+		use "folke/neodev.nvim"
 		use {
 			"jbyuki/instant.nvim",
 			config = function()

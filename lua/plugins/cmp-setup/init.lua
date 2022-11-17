@@ -120,8 +120,8 @@ cmp.setup {
 	sources = {
 		{ name = "path" },
 		-- { name = "plugins" },
-		-- { name = "copilot" },
-		{ name = "cmp_tabnine" },
+		{ name = "copilot" },
+		-- { name = "cmp_tabnine" },
 		{ name = "luasnip", max_item_count = 4 },
 		{ name = "nvim_lsp", max_item_count = 5 },
 		{ name = "tmux", max_item_count = 4 },

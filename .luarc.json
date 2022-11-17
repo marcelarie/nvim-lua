@@ -3,5 +3,8 @@
     "Lua.diagnostics.disable": [
         "unused-local"
     ],
+    "Lua.diagnostics.globals": [
+        "vim"
+    ],
     "Lua.workspace.checkThirdParty": false
 }
