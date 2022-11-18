@@ -55,12 +55,13 @@ require("nvim-tree").setup {
 		require_confirm = true,
 	},
 }
-vim.api.nvim_set_keymap(
-	"n",
-	"<Leader><Tab>",
-	":NvimTreeToggle<cr>",
-	{ noremap = true, silent = true }
-)
+
+-- vim.api.nvim_set_keymap(
+-- 	"n",
+-- 	"<Leader><Tab>",
+-- 	":NvimTreeToggle<cr>",
+-- 	{ noremap = true, silent = true }
+-- )
 -- vim.api.nvim_set_keymap("n", "<Leader>ma", ":set ma<cr>", { noremap = true, silent = true })
 
 vim.cmd "let g:nvim_tree_highlight_opened_files = 1"
