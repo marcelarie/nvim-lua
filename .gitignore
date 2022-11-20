@@ -7,3 +7,4 @@ sessions
 init.vim
 .DS_Store
 result
+init-home-manager.vim
