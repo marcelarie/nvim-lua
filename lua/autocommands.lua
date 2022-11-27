@@ -6,17 +6,17 @@ vim.api.nvim_command [[
      augroup END
 ]]
 -- Perl
-vim.api.nvim_command [[
-    autocmd FileType perl filetype indent on
-    autocmd FileType perl filetype indent on
-    autocmd FileType perl set autoindent|set smartindent
-    autocmd FileType perl let perl_extended_vars = 1
-]]
+-- vim.api.nvim_command [[
+--     autocmd FileType perl filetype indent on
+--     autocmd FileType perl filetype indent on
+--     autocmd FileType perl set autoindent|set smartindent
+--     autocmd FileType perl let perl_extended_vars = 1
+-- ]]
 
-vim.api.nvim_create_autocmd("BufReadPost", {
-	pattern = "*",
-	callback = function() end,
-})
+-- vim.api.nvim_create_autocmd("BufReadPost", {
+-- 	pattern = "*",
+-- 	callback = function() end,
+-- })
 
 --  vim.api.nvim_command([[
 --  let &t_SI = "\<Esc>]50;CursorShape=1\x7"

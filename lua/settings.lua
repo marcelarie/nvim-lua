@@ -106,8 +106,8 @@ local border = {
 	{ "│", "FloatBorder" },
 }
 
-vim.cmd [[autocmd ColorScheme * highlight NormalFloat guibg=#000]]
-vim.cmd [[autocmd ColorScheme * highlight FloatBorder guifg=white guibg=#f29]]
+-- vim.cmd [[autocmd ColorScheme * highlight NormalFloat guibg=#000]]
+-- vim.cmd [[autocmd ColorScheme * highlight FloatBorder guifg=white guibg=#f29]]
 
 -- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {

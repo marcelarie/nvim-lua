@@ -14,10 +14,10 @@ local ts = require "nvim-treesitter.configs"
 -- }
 
 ts.setup {
-	ignore_install = { "teal", "astro", "norg", "phpdoc" },
+	ignore_install = { "teal", "phpdoc" },
 	highlight = {
 		enable = true,
-		disable = { "perl", "lua" },
+		disable = { "perl" },
 		custom_captures = {
 			-- Highlight the @foo.bar capture group with the "Identifier" highlight group
 			["foo.bar"] = "Identifier",

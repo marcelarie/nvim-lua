@@ -21,9 +21,9 @@ local packer = require "packer"
 
 packer.init {
 	--FIXES ISSUE WHERE WONT UPDATE OTHERWISE
-	max_jobs = 4,
+	max_jobs = 64,
 	git = {
-		clone_timeout = 300, -- 5 mins
+		clone_timeout = 500, -- 5 mins
 	},
 	profile = {
 		enable = true,
@@ -188,7 +188,7 @@ return packer.startup(
 		-- use "pwntester/octo.nvim"
 
 		-- TreeSitter
-		use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+		-- use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 		use "nvim-treesitter/playground"
 		use "JoosepAlviste/nvim-ts-context-commentstring"
 		use "nvim-treesitter/nvim-treesitter-context"
@@ -262,7 +262,7 @@ return packer.startup(
 		use { "ray-x/guihua.lua", run = "cd lua/fzy && make" } -- lua GUI lib
 		use "ray-x/sad.nvim"
 		use { "ellisonleao/glow.nvim" }
-		use "nathom/filetype.nvim"
+		-- use "nathom/filetype.nvim"
 		use {
 			"luukvbaal/stabilize.nvim",
 			config = function()
