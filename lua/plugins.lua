@@ -193,6 +193,7 @@ return packer.startup(
 		use "JoosepAlviste/nvim-ts-context-commentstring"
 		use "nvim-treesitter/nvim-treesitter-context"
 		use { "zsugabubus/crazy8.nvim" }
+		use 'eandrju/cellular-automaton.nvim'
 
 		-- This does not work for now 
 		-- use { "m-demare/hlargs.nvim", config = function() require("hlargs").setup { hl_priority = 50000, } end, }

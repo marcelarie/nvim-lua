@@ -17,3 +17,5 @@ require("eslint").setup {
 		run_on = "type", -- or `save`
 	},
 }
+
+-- require("eslint").setup { diagnostics = { enable = false } }

@@ -15,6 +15,14 @@ vim.api.nvim_set_keymap(
 		noremap = true,
 	}
 )
+vim.api.nvim_set_keymap(
+	"n",
+	"gv",
+	"<cmd>split<cr><cmd>lua vim.lsp.buf.definition()<CR>",
+	{
+		noremap = true,
+	}
+)
 -- vim.cmd('nnoremap <leader>gr <cmd>lua vim.lsp.buf.references()<CR>')
 vim.cmd "nnoremap <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>"
 

@@ -33,15 +33,6 @@ vim.o.cursorline = true -- Enable highlighting of the current line
 vim.wo.signcolumn = "yes"
 vim.wo.colorcolumn = "80"
 
--- highlight on yank
-vim.cmd [[
-    au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncSearch', timeout = 300 })
-]]
-
-vim.cmd [[
-    autocmd BufNewFile,BufRead *_aliases,*.env set syntax=sh
-]]
-
 -- vim.api.nvim_set_option("syntax on")
 -- vim.cmd('set path+=**')
 vim.cmd "set laststatus=3"
@@ -51,7 +42,7 @@ vim.cmd "set nohlsearch"
 vim.cmd "set list listchars=tab:⤑\\ ,trail:∙,eol:↲"
 
 -- undo
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -69,7 +60,7 @@ vim.api.nvim_set_option("errorbells", false)
 vim.diagnostic.config {
 	-- virtual_text = true,
 	signs = true,
-	underline = false,
+	underline = true,
 	update_in_insert = false,
 	severity_sort = false,
 	-- virtual_text = {
@@ -105,6 +96,10 @@ local border = {
 	{ "╰", "FloatBorder" },
 	{ "│", "FloatBorder" },
 }
+
+vim.cmd [[
+	autocmd BufEnter * lua vim.diagnostic.hide(nil,0)
+]]
 
 -- vim.cmd [[autocmd ColorScheme * highlight NormalFloat guibg=#000]]
 -- vim.cmd [[autocmd ColorScheme * highlight FloatBorder guifg=white guibg=#f29]]

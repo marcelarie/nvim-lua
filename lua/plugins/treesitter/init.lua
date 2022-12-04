@@ -14,119 +14,44 @@ local ts = require "nvim-treesitter.configs"
 -- }
 
 ts.setup {
-	ignore_install = { "teal", "phpdoc" },
+	-- A list of parser names, or "all"
+	-- ensure_installed = { "c", "lua", "rust" },
+
+	-- Install parsers synchronously (only applied to `ensure_installed`)
+	-- sync_install = false,
+
+	-- Automatically install missing parsers when entering buffer
+	-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+	auto_install = true,
+
+	-- List of parsers to ignore installing (for "all")
+	-- ignore_install = { "javascript" },
+
+	---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
+	-- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+
 	highlight = {
 		enable = true,
-		disable = { "perl" },
-		custom_captures = {
-			-- Highlight the @foo.bar capture group with the "Identifier" highlight group
-			["foo.bar"] = "Identifier",
-		},
-	},
-	autotag = { enable = true },
-	playground = {
-		enable = true,
-		disable = {},
-		updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-		persist_queries = false, -- Whether the query persists across vim sessions
-		keybindings = {
-			toggle_query_editor = "o",
-			toggle_hl_groups = "i",
-			toggle_injected_languages = "t",
-			toggle_anonymous_nodes = "a",
-			toggle_language_display = "I",
-			focus_language = "f",
-			unfocus_language = "F",
-			update = "R",
-			goto_node = "<cr>",
-			show_help = "?",
-		},
-	},
-	incremental_selection = {
-		enable = true,
-		keymaps = {
-			init_selection = "gnn",
-			node_incremental = "grn",
-			scope_incremental = "grc",
-			node_decremental = "grm",
-		},
-	},
-	context_commentstring = { enable = true },
-	indent = { enable = true },
-	move = {
-		enable = true,
-		set_jumps = true, -- whether to set jumps in the jumplist
-		goto_next_start = {
-			["]m"] = "@function.outer",
-			["]]"] = "@class.outer",
-		},
-		goto_next_end = { ["]M"] = "@function.outer", ["]["] = "@class.outer" },
-		goto_previous_start = {
-			["[m"] = "@function.outer",
-			["[["] = "@class.outer",
-		},
-		goto_previous_end = {
-			["[M"] = "@function.outer",
-			["[]"] = "@class.outer",
-		},
-	},
-	endwise = {
-		enable = true,
-	},
-	textobjects = {
-		lsp_interop = {
-			enable = true,
-			peek_definition_code = {
-				["df"] = "@function.outer",
-				["dF"] = "@class.outer",
-			},
-		},
-		swap = {
-			enable = true,
-			swap_next = { ["<leader>n"] = "@parameter.inner" },
-			swap_previous = { ["<leader>N"] = "@parameter.inner" },
-		},
-		select = {
-			enable = true,
-
-			-- Automatically jump forward to textobj, similar to targets.vim
-			lookahead = true,
-
-			keymaps = {
-				-- You can use the capture groups defined in textobjects.scm
-				["af"] = "@function.outer",
-				["if"] = "@function.inner",
-				["ac"] = "@class.outer",
-				["ic"] = "@class.inner",
-
-				-- Or you can define your own textobjects like this
-				["iF"] = {
-					python = "(function_definition) @function",
-					cpp = "(function_definition) @function",
-					c = "(function_definition) @function",
-					java = "(method_declaration) @function",
-				},
-			},
-		},
+		additional_vim_regex_highlighting = true,
 	},
 }
 
 require("treesitter-context").setup {
-	enable = true,
-	max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
-	trim_scope = "outer", -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
-	patterns = {
-		default = {
-			"class",
-			"function",
-			"method",
-			-- 'for', -- These won't appear in the context
-			-- 'while', 'if', 'switch', 'case',
-		},
-		-- Example for a specific filetype.
-		-- If a pattern is missing, *open a PR* so everyone can benefit.
-		--   rust = {
-		--       'impl_item',
-		--   },
-	},
+	-- enable = true,
+	-- max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+	-- trim_scope = "outer", -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+	-- patterns = {
+	-- 	default = {
+	-- 		"class",
+	-- 		"function",
+	-- 		"method",
+	-- 		-- 'for', -- These won't appear in the context
+	-- 		-- 'while', 'if', 'switch', 'case',
+	-- 	},
+	-- 	-- Example for a specific filetype.
+	-- 	-- If a pattern is missing, *open a PR* so everyone can benefit.
+	-- 	--   rust = {
+	-- 	--       'impl_item',
+	-- 	--   },
+	-- },
 }

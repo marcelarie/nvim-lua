@@ -1,30 +1,40 @@
--- Fugitive
-vim.api.nvim_command [[
-     augroup Fugitive
-     autocmd FileType fugitive nnoremap <Leader>c :Git commit<cr>
-     autocmd FileType fugitive nnoremap <Leader>p :Git push<cr>
-     augroup END
-]]
--- Perl
--- vim.api.nvim_command [[
---     autocmd FileType perl filetype indent on
---     autocmd FileType perl filetype indent on
---     autocmd FileType perl set autoindent|set smartindent
---     autocmd FileType perl let perl_extended_vars = 1
--- ]]
+local ag = vim.api.nvim_create_augroup
+local au = vim.api.nvim_create_autocmd
 
--- vim.api.nvim_create_autocmd("BufReadPost", {
--- 	pattern = "*",
--- 	callback = function() end,
--- })
+local yank_group = ag("YankHighlight", { clear = true })
 
---  vim.api.nvim_command([[
---  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
---  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
---  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
---  ]])
--- LSP
--- vim.api.nvim_command([[
---     autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
--- ]])
---
+au("TextYankPost", {
+	command = "silent! lua vim.highlight.on_yank()",
+	group = yank_group,
+})
+
+local disable_node_modules_eslint_group =
+	ag("DisableNodeModulesEslint", { clear = true })
+
+local disable_node_modules_eslint = function(bufnr)
+	-- print "disable_node_modules_eslint"
+	bufnr = bufnr or vim.api.nvim_get_current_buf()
+	bufnr = tonumber(bufnr)
+	vim.diagnostic.hide(nil, bufnr)
+end
+
+au({ "BufNewFile", "BufRead" }, {
+	pattern = { "**/node_modules/**", "node_modules", "/node_modules/*" },
+	callback = disable_node_modules_eslint,
+	group = disable_node_modules_eslint_group,
+})
+
+local sh_filetype_group = ag("YankHighlight", { clear = true })
+au({ "BufNewFile", "BufRead" }, {
+	pattern = {
+		"*.sh",
+		"*.zsh",
+		"*.bash",
+		"*bashrc",
+		"*zshrc",
+		"*_aliases",
+		"*.env",
+	},
+	command = "set filetype=sh",
+	group = sh_filetype_group,
+})

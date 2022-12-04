@@ -9,6 +9,6 @@ vim.keymap.set("n", "<leader>c", ":Carbon<cr>")
 vim.api.nvim_set_keymap(
 	"n",
 	"<Leader><Tab>",
-	":Lcarbon<cr>",
+	":ToggleLcarbon<cr>",
 	{ noremap = true, silent = true }
 )
