@@ -1,22 +1,24 @@
 local ag = vim.api.nvim_create_augroup
 local au = vim.api.nvim_create_autocmd
 
+-- GROUPS:
 local yank_group = ag("YankHighlight", { clear = true })
+local disable_node_modules_eslint_group =
+	ag("DisableNodeModulesEslint", { clear = true })
+local sh_filetype_group = ag("YankHighlight", { clear = true })
 
+-- FUNCTIONS:
+local disable_node_modules_eslint = function(bufnr)
+	vim.wait(100, function()
+		vim.diagnostic.hide(nil, bufnr.id)
+	end, 100)
+end
+
+-- AUTO-COMMANDS:
 au("TextYankPost", {
 	command = "silent! lua vim.highlight.on_yank()",
 	group = yank_group,
 })
-
-local disable_node_modules_eslint_group =
-	ag("DisableNodeModulesEslint", { clear = true })
-
-local disable_node_modules_eslint = function(bufnr)
-	-- print "disable_node_modules_eslint"
-	bufnr = bufnr or vim.api.nvim_get_current_buf()
-	bufnr = tonumber(bufnr)
-	vim.diagnostic.hide(nil, bufnr)
-end
 
 au({ "BufNewFile", "BufRead" }, {
 	pattern = { "**/node_modules/**", "node_modules", "/node_modules/*" },
@@ -24,7 +26,6 @@ au({ "BufNewFile", "BufRead" }, {
 	group = disable_node_modules_eslint_group,
 })
 
-local sh_filetype_group = ag("YankHighlight", { clear = true })
 au({ "BufNewFile", "BufRead" }, {
 	pattern = {
 		"*.sh",
