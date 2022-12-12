@@ -30,6 +30,8 @@ packer.init {
 	},
 }
 
+-- vim.fn.setenv("MACOSX_DEPLOYMENT_TARGET", "12.4")
+
 return packer.startup(
 	function() -- Packer can manage itself as an optional plugin
 		use { "wbthomason/packer.nvim", opt = true }
@@ -54,7 +56,6 @@ return packer.startup(
 			end,
 		}
 		use "EdenEast/nightfox.nvim"
-		-- use 'morhetz/gruvbox'
 		use { "shaeinst/roshnivim-cs" }
 		use "npxbr/gruvbox.nvim"
 		use "eddyekofo94/gruvbox-flat.nvim" -- <-- original
@@ -62,7 +63,6 @@ return packer.startup(
 		use "savq/melange"
 		use "ishan9299/modus-theme-vim"
 		use "ishan9299/nvim-solarized-lua"
-		-- use "RRethy/nvim-base16"
 		use "aktersnurra/no-clown-fiesta.nvim"
 
 		-- Telescope
@@ -82,8 +82,6 @@ return packer.startup(
 		use "nvim-telescope/telescope-packer.nvim"
 		use "cljoly/telescope-repo.nvim"
 		use "jvgrootveld/telescope-zoxide"
-		-- use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-		-- use("nvim-telescope/telescope-node-modules.nvim")
 
 		-- LSP
 		use "neovim/nvim-lsp"
@@ -91,21 +89,14 @@ return packer.startup(
 		use "neovim/nvim-lspconfig"
 		use "barreiroleo/ltex-extra.nvim"
 
-		-- coq_nvim
-		-- " main one
+		-- coq_nvim:
+		-- main one
 		use { "ms-jpq/coq_nvim", branch = "coq" }
-		-- " 9000+ Snippets
+		-- 9000+ Snippets
 		use { "ms-jpq/coq.artifacts", branch = "artifacts" }
-
-		-- " lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
-		-- " Need to **configure separately**
-
+		-- lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
+		-- Need to **configure separately**
 		use { "ms-jpq/coq.thirdparty", branch = "3p" }
-		-- " - shell repl
-		-- " - nvim lua api
-		-- " - scientific calculator
-		-- " - comment banner
-		-- " - etc
 
 		-- cmp
 		use {
@@ -121,11 +112,6 @@ return packer.startup(
 		use "hrsh7th/cmp-nvim-lua"
 		use "andersevenrud/cmp-tmux"
 		-- use { "github/copilot.vim" } -- needed for the auth
-		-- use {
-		-- 	"tzachar/cmp-tabnine",
-		-- 	run = "./install.sh",
-		-- 	requires = "hrsh7th/nvim-cmp",
-		-- }
 		use {
 			"zbirenbaum/copilot.lua",
 			event = "VimEnter",
@@ -171,8 +157,6 @@ return packer.startup(
 		use { "MunifTanjim/eslint.nvim" }
 		use "jose-elias-alvarez/nvim-lsp-ts-utils"
 		use "simrat39/symbols-outline.nvim"
-		-- use "ray-x/lsp_signature.nvim"
-		-- use "mfussenegger/nvim-dap"
 		use "jubnzv/virtual-types.nvim"
 
 		-- LSP Utils
@@ -188,15 +172,12 @@ return packer.startup(
 		-- use "pwntester/octo.nvim"
 
 		-- TreeSitter
-		-- use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+		use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 		use "nvim-treesitter/playground"
 		use "JoosepAlviste/nvim-ts-context-commentstring"
 		use "nvim-treesitter/nvim-treesitter-context"
 		use { "zsugabubus/crazy8.nvim" }
 		use "eandrju/cellular-automaton.nvim"
-
-		-- This does not work for now 
-		-- use { "m-demare/hlargs.nvim", config = function() require("hlargs").setup { hl_priority = 50000, } end, }
 
 		-- Nvim statusline
 		use "hoob3rt/lualine.nvim"
@@ -230,16 +211,13 @@ return packer.startup(
 
 		-- Others
 		use "christoomey/vim-system-copy" -- System Copy
-		-- use "norcalli/nvim-colorizer.lua" -- Colorizer
 		use "windwp/nvim-ts-autotag" -- Autotags
-		-- use "tpope/vim-surround" -- Vim Surround
 		use "kylechui/nvim-surround"
 		use "numToStr/Comment.nvim"
 		use "mbbill/undotree"
 		use "rafcamlet/nvim-luapad"
 		use "kyazdani42/nvim-web-devicons"
 		use "folke/lsp-trouble.nvim"
-		-- use "vim-denops/denops.vim"
 		use "tani/glance-vim"
 		use "cappyzawa/trim.nvim"
 		use "unblevable/quick-scope" -- An always-on highlight for a unique character in every word on a line to help you use f, F and family
@@ -260,11 +238,9 @@ return packer.startup(
 		use "arkav/lualine-lsp-progress"
 		use "goolord/alpha-nvim"
 		use "kosayoda/nvim-lightbulb"
-		-- use "folke/which-key.nvim"
 		use { "ray-x/guihua.lua", run = "cd lua/fzy && make" } -- lua GUI lib
 		use "ray-x/sad.nvim"
 		use { "ellisonleao/glow.nvim" }
-		-- use "nathom/filetype.nvim"
 		use {
 			"luukvbaal/stabilize.nvim",
 			config = function()
@@ -321,10 +297,7 @@ return packer.startup(
 			"axkirillov/easypick.nvim",
 			-- requires = "nvim-telescope/telescope.nvim",
 		}
-		-- use "yamatsum/nvim-cursorline"
-		-- use "rcarriga/nvim-notify"
 		use "vigoux/notifier.nvim"
-		-- use "folke/lua-dev.nvim"
 		use "folke/neodev.nvim"
 		use {
 			"jbyuki/instant.nvim",
@@ -341,21 +314,6 @@ return packer.startup(
 		use { "https://git.sr.ht/~whynothugo/lsp_lines.nvim" }
 
 		-- use "ggandor/lightspeed.nvim"
-
-		-- use { "LudoPinelli/comment-box.nvim" }
-		-- use { "lotabout/skim", dir = "~/.skim", run = "./install" }
-		-- use "lotabout/skim.vim"
-		-- Fuzzy
-		-- use { "octaltree/linearf", merged = 0 }
-		-- use "octaltree/linearf-my-flavors"
-
-		-- use "beauwilliams/focus.nvim" -- handle splits resize
-		-- use "jakerobers/vim-hexrgba" -- hex rgba toggle
-		-- use "amadeus/vim-convert-color-to" -- color converter
-		-- use "alvan/vim-closetag"
-		-- use "ryanoasis/vim-devicons"
-		-- use "rmagatti/auto-session"
-		-- use "rmagatti/session-lens" -- < with tree sitter
 		use "olimorris/persisted.nvim"
 		use "smjonas/inc-rename.nvim"
 		use "stevearc/dressing.nvim"
@@ -365,20 +323,10 @@ return packer.startup(
 				require("femaco").setup()
 			end,
 		}
-		-- use "rktjmp/highlight-current-n.nvim"
-		-- use "nkakouros-original/numbers.nvim"
 		use "brenoprata10/nvim-highlight-colors"
 		use "AckslD/nvim-trevJ.lua"
 		use "ggandor/lightspeed.nvim"
 		use "ofirgall/open.nvim"
-
-		-- use "AckslD/messages.nvim",
-
-		-- use {
-		-- 	"weilbith/nvim-code-action-menu",
-		-- 	cmd = "CodeActionMenu",
-		-- }
-
 		if packer_bootstrap then
 			require("packer").sync()
 		end
