@@ -3,8 +3,6 @@ local cmp = require "cmp"
 local kind = cmp.lsp.CompletionItemKind
 local lspkind = require "lspkind"
 
--- vim.o.completeopt = "menu,menuone,noselect"
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 vim.cmd "set shortmess+=c"
 vim.cmd "let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']"
@@ -99,6 +97,9 @@ cmp.setup {
 			end,
 		},
 	},
+	-- view = {
+	-- 	entries = "native", -- can be "custom", "wildmenu" or "native"
+	-- },
 	mapping = {
 		["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
 		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),

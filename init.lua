@@ -12,7 +12,7 @@ require "globals"
 require "autocommands"
 require "impatient"
 
-require "remaps"
+-- require "remaps"
 require "leader-remaps"
 
 require "plugins.undo-tree"
@@ -21,6 +21,7 @@ require "plugins.lualine-status"
 -- require "plugins.heirline"
 require "plugins.nvim-tree"
 require "vim-keybindings"
+require "mappings"
 -- require "plugins.whichkey"
 
 require "nv-telescope"

@@ -3,7 +3,7 @@ local opts = { silent = true }
 
 map("n", "<Leader>f", ":Telescope find_files<cr>", opts)
 -- map("n", "<Leader>f", function()
--- 	require("telescope.builtin").find_files {
+-- 	require("telescope builtin").find_files {
 -- 		previewer = false,
 -- 		layout_strategy = "horizontal",
 -- 	}

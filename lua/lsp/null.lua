@@ -84,6 +84,8 @@ vim.keymap.set("v", "ff", function()
 	vim.lsp.buf.range_formatting()
 end)
 
-vim.keymap.set("n", "ff", function()
-	vim.lsp.buf.format { timeout_ms = 2000 }
-end)
+vim.keymap.set(
+	"n",
+	"ff",
+	vim.lsp.buf.format -- { timeout_ms = 2000 }
+)

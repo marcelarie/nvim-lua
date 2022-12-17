@@ -13,6 +13,7 @@ vim.o.shiftwidth = 4
 vim.o.cmdheight = 1
 vim.o.mouse = "a" -- Mouse support --
 vim.o.updatetime = 100 -- Faster completion
+vim.o.cursorline = true -- Enable highlighting of the current line
 
 vim.o.hidden = true -- Opening a new file when the current buffer has unsaved changes cause files to be hidden instead of closed.
 
@@ -29,7 +30,6 @@ vim.wo.wrap = false -- Display long lines as just one line
 vim.wo.nu = true -- Show line number
 vim.wo.foldnestmax = 1
 vim.wo.cursorline = true -- Enable highlighting of the current line
-vim.o.cursorline = true -- Enable highlighting of the current line
 vim.wo.signcolumn = "yes"
 vim.wo.colorcolumn = "80"
 
@@ -46,6 +46,7 @@ vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.swapfile = false
 vim.opt.backup = false
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- vim.api.nvim_set_option('spelllang', 'en')
 vim.api.nvim_set_option("showcmd", false)
