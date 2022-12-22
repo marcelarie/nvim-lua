@@ -13,6 +13,11 @@ cd ../.. &&
 ./3rd/luamake/luamake rebuild
 ```
 
+### Startup time
+```
+Total Time:   17.774 -- Flawless Victory
+```
+
 ### File Tree
 
 ```bash
