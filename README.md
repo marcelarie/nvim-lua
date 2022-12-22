@@ -1,8 +1,8 @@
-# Nvim config
+# Neovim config
 
 ## Language Servers
 
-### Lua
+### Lua LSP install
 
 ```bash
 git clone https://github.com/sumneko/lua-language-server.git
