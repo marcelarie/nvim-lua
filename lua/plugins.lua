@@ -327,6 +327,13 @@ return packer.startup(
 		use "AckslD/nvim-trevJ.lua"
 		use "ggandor/lightspeed.nvim"
 		use "ofirgall/open.nvim"
+		use {
+			"declancm/cinnamon.nvim",
+			config = function()
+				require("cinnamon").setup()
+			end,
+		}
+
 		if packer_bootstrap then
 			require("packer").sync()
 		end

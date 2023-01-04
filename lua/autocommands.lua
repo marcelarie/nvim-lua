@@ -8,11 +8,6 @@ local disable_node_modules_eslint_group =
 local sh_filetype_group = ag("YankHighlight", { clear = true })
 
 -- FUNCTIONS:
-local disable_node_modules_eslint = function(bufnr)
-	vim.wait(100, function()
-		vim.diagnostic.hide(nil, bufnr.id)
-	end, 100)
-end
 
 -- AUTO-COMMANDS:
 au("TextYankPost", {
@@ -22,7 +17,9 @@ au("TextYankPost", {
 
 au({ "BufNewFile", "BufRead" }, {
 	pattern = { "**/node_modules/**", "node_modules", "/node_modules/*" },
-	callback = disable_node_modules_eslint,
+	callback = function()
+		vim.diagnostic.disable(0)
+	end,
 	group = disable_node_modules_eslint_group,
 })
 

@@ -1,43 +1,32 @@
--- -- space as leader key
+local opts = { noremap = true, silent = true }
+
+-- space as leader key
 vim.g.mapleader = " "
-vim.keymap.set("n", "<Space>", "<NOP>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Space>", "<NOP>", opts)
 
 -- leader w to save
-vim.keymap.set("n", "<Leader>w", ":w<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>w", ":w<cr>", opts)
 -- leader W to save
-vim.keymap.set("n", "<Leader>W", ":w!<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>W", ":w!<cr>", opts)
 -- leader W with no autocmd
-vim.keymap.set(
-	"n",
-	"<Leader>nw",
-	":noautocmd w<cr>",
-	{ noremap = true, silent = true }
-)
+vim.keymap.set("n", "<Leader>nw", ":noautocmd w<cr>", opts)
 -- leader W to save ON SUDO
 vim.keymap.set("c", "w!!", "SudaWrite<cr>", { noremap = false, silent = false })
 
+vim.keymap.set("c", "w!!", "SudaWrite<cr>", { noremap = false, silent = false })
+
 -- leader q to quit
-vim.keymap.set("n", "<Leader>q", ":q<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>q", ":q<cr>", opts)
 -- leader Q to quit!
-vim.keymap.set("n", "<Leader>Q", ":qa!<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>Q", ":qa!<cr>", opts)
 -- leader a to autoread current file
-vim.keymap.set("n", "<Leader>e", ":e<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>e", ":e<cr>", opts)
 
 -- horizontal split
-vim.keymap.set(
-	"n",
-	"<Leader>sj",
-	":split<cr>",
-	{ noremap = true, silent = true }
-)
+vim.keymap.set("n", "<Leader>sj", ":split<cr>", opts)
 
 -- vertical split
-vim.keymap.set(
-	"n",
-	"<Leader>sl",
-	":vsplit<cr>",
-	{ noremap = true, silent = true }
-)
+vim.keymap.set("n", "<Leader>sl", ":vsplit<cr>", opts)
 
 vim.keymap.set(
 	"n",
@@ -53,19 +42,9 @@ vim.keymap.set(
 )
 
 -- switch windows vertically
-vim.keymap.set(
-	"n",
-	"<Leader>l",
-	":wincmd L<cr>",
-	{ noremap = true, silent = true }
-)
+vim.keymap.set("n", "<Leader>l", ":wincmd L<cr>", opts)
 -- switch windows horizontally
-vim.keymap.set(
-	"n",
-	"<Leader>j",
-	":wincmd J<cr>",
-	{ noremap = true, silent = true }
-)
+vim.keymap.set("n", "<Leader>j", ":wincmd J<cr>", opts)
 
 -- Packer
 vim.keymap.set(
@@ -158,6 +137,10 @@ vim.keymap.set("n", "<Leader>al", ":Alpha<cr>", { silent = true })
 -- quickfix
 vim.keymap.set("n", "<Leader>cn", ":cn<cr>")
 vim.keymap.set("n", "<Leader>cp", ":cp<cr>")
+
+
+-- nohighlight
+vim.keymap.set("n", "<Leader>nh", ":noh<cr>")
 
 -- open file path under cursor vertical split
 -- vim.keymap.set('n', '<Leader>gf', ':vertical wincmd f<cr>',

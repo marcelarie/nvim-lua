@@ -38,7 +38,7 @@ vim.wo.colorcolumn = "80"
 vim.cmd "set laststatus=3"
 vim.cmd "set undolevels=10000"
 vim.cmd "set undoreload=10000"
-vim.cmd "set nohlsearch"
+-- vim.cmd "set nohlsearch"
 vim.cmd "set list listchars=tab:⤑\\ ,trail:∙,eol:↲"
 
 -- undo
@@ -50,7 +50,7 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- vim.api.nvim_set_option('spelllang', 'en')
 vim.api.nvim_set_option("showcmd", false)
-vim.api.nvim_set_option("hlsearch", false)
+-- vim.api.nvim_set_option("hlsearch", false)
 vim.api.nvim_set_option("incsearch", true)
 vim.api.nvim_set_option("compatible", false)
 vim.api.nvim_set_option("errorbells", false)
