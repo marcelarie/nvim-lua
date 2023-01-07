@@ -6,6 +6,8 @@ local yank_group = ag("YankHighlight", { clear = true })
 local disable_node_modules_eslint_group =
 	ag("DisableNodeModulesEslint", { clear = true })
 local sh_filetype_group = ag("YankHighlight", { clear = true })
+local additional_vim_regex_highlighting =
+	ag("AdditionalVimRegexHighlighting", { clear = true })
 
 -- FUNCTIONS:
 
@@ -35,4 +37,15 @@ au({ "BufNewFile", "BufRead" }, {
 	},
 	command = "set filetype=sh",
 	group = sh_filetype_group,
+})
+
+au({ "BufNewFile", "BufRead" }, {
+	pattern = {
+		"gitcommit",
+		"*.diff",
+	},
+	callback = function()
+		-- vim.cmd("colorscheme catppuccin")
+	end,
+	group = additional_vim_regex_highlighting,
 })

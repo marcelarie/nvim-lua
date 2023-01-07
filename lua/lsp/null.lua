@@ -55,7 +55,7 @@ null_ls.setup {
 		diagnostics.flake8,
 		formatting.black,
 
-		-- formatting.fixjson,
+		formatting.fixjson,
 
 		formatting.perltidy,
 		-- formatting.rustfmt,

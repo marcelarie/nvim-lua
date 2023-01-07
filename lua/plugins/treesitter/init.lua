@@ -1,17 +1,7 @@
 -------------------- TREE-SITTER ---------------------------
 -- :TSInstall c bash html json css javascript php lua python regex rust typescript query
 local ts = require "nvim-treesitter.configs"
--- ts.setup {ensure_installed = 'maintained', highlight = {enable = true}}
-
--- local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
-
--- parser_configs.norg = {
--- 	install_info = {
--- 		url = "https://github.com/nvim-neorg/tree-sitter-norg",
--- 		files = { "src/parser.c", "src/scanner.cc" },
--- 		branch = "main",
--- 	},
--- }
+local tsh = require "nvim-treesitter.highlight"
 
 ts.setup {
 	-- A list of parser names, or "all"
@@ -35,6 +25,11 @@ ts.setup {
 		additional_vim_regex_highlighting = false,
 	},
 }
+
+-- tsh.set_custom_captures {
+-- 	-- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+-- 	["text.diff.add"] = "Identifier",
+-- }
 
 require("treesitter-context").setup {
 	-- enable = true,

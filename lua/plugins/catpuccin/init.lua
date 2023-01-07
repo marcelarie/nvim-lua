@@ -1,15 +1,11 @@
-require("catppuccin").setup({
+require("catppuccin").setup {
 	transparent_background = true,
 	term_colors = false,
 	compile = {
 		enabled = false,
-		path = vim.fn.stdpath("cache") .. "/catppuccin",
+		path = vim.fn.stdpath "cache" .. "/catppuccin",
 	},
-	dim_inactive = {
-		enabled = false,
-		shade = "dark",
-		percentage = 0.15,
-	},
+	dim_inactive = { enabled = false, shade = "dark", percentage = 0.15 },
 	styles = {
 		comments = { "italic" },
 		conditionals = { "italic" },
@@ -34,4 +30,4 @@ require("catppuccin").setup({
 	},
 	color_overrides = {},
 	highlight_overrides = {},
-})
+}

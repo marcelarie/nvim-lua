@@ -154,7 +154,7 @@ return packer.startup(
 			end,
 		}
 		use { "jose-elias-alvarez/null-ls.nvim" }
-		use { "MunifTanjim/eslint.nvim" }
+		-- use { "MunifTanjim/eslint.nvim" }
 		use "jose-elias-alvarez/nvim-lsp-ts-utils"
 		use "simrat39/symbols-outline.nvim"
 		use "jubnzv/virtual-types.nvim"
