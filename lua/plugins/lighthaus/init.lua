@@ -29,5 +29,5 @@ require("lighthaus").setup {
 	lsp_underline_style = "undercurl",
 }
 
-vim.api.nvim_set_hl(0, "@text.diff.add", { fg = "#10B981" })
-vim.api.nvim_set_hl(0, "@text.diff.delete", { fg = "#db4b4b" })
+vim.api.nvim_set_hl(0, "@text.diff.add", { fg = "#50C16E" })
+vim.api.nvim_set_hl(0, "@text.diff.delete", { fg = "#FF5050" })
