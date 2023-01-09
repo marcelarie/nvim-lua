@@ -205,6 +205,8 @@ return packer.startup(
 		-- DAP
 		use "mfussenegger/nvim-dap"
 
+		use "vim-denops/denops.vim"
+
 		-- Rust
 		use "simrat39/rust-tools.nvim"
 		use "saecki/crates.nvim"

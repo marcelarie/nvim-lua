@@ -5,7 +5,7 @@ local opts = {
 		-- opened file. For now, write to the file to trigger a reapplication of
 		-- the hints or just run :RustSetInlayHints.
 		-- default: true
-		autoSetHints = true,
+		autoSetHints = false,
 
 		runnables = {
 			-- whether to use telescope for selection menu or not
