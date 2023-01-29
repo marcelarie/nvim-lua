@@ -37,35 +37,35 @@ require("lualine").setup {
 		lualine_b = { "branch" },
 		lualine_c = {
 			{ "filename", path = 1, file_status = true, icons_enabled = true },
-			{
-				"lsp_progress",
-				display_components = {
-					"lsp_client_name",
-					{
-						"title",
-						"percentage",
-						"lsp_progress_percentage",
-					},
-				},
-				colors = {
-					percentage = colors.blue,
-					-- title = colors.green,
-					message = colors.fg,
-					-- spinner = colors.cyan,
-					lsp_client_name = colors.cyan,
-					use = true,
-				},
-				spinner_symbols = {
-					"🌑 ",
-					"🌒 ",
-					"🌓 ",
-					"🌔 ",
-					"🌕 ",
-					"🌖 ",
-					"🌗 ",
-					"🌘 ",
-				},
-			},
+		-- 	{
+		-- 		"lsp_progress",
+		-- 		display_components = {
+		-- 			"lsp_client_name",
+		-- 			{
+		-- 				"title",
+		-- 				"percentage",
+		-- 				"lsp_progress_percentage",
+		-- 			},
+		-- 		},
+		-- 		colors = {
+		-- 			percentage = colors.blue,
+		-- 			-- title = colors.green,
+		-- 			message = colors.fg,
+		-- 			-- spinner = colors.cyan,
+		-- 			lsp_client_name = colors.cyan,
+		-- 			use = true,
+		-- 		},
+		-- 		spinner_symbols = {
+		-- 			"🌑 ",
+		-- 			"🌒 ",
+		-- 			"🌓 ",
+		-- 			"🌔 ",
+		-- 			"🌕 ",
+		-- 			"🌖 ",
+		-- 			"🌗 ",
+		-- 			"🌘 ",
+		-- 		},
+		-- 	},
 		},
 		lualine_d = {},
 		lualine_x = {

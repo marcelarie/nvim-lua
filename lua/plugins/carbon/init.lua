@@ -6,9 +6,9 @@ require("carbon").setup {
 vim.keymap.set("n", "<leader>c", ":Carbon<cr>")
 -- vim.keymap.set("n", "<leader>cf", ":Fcarbon<cr>")
 
-vim.api.nvim_set_keymap(
-	"n",
-	"<Leader><Tab>",
-	":ToggleLcarbon<cr>",
-	{ noremap = true, silent = true }
-)
+-- vim.api.nvim_set_keymap(
+-- 	"n",
+-- 	"<Leader><Tab>",
+-- 	":ToggleSidebarCarbon<cr>",
+-- 	{ noremap = true, silent = true }
+-- )

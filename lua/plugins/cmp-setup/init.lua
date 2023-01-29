@@ -45,9 +45,9 @@ cmp.setup {
 		documentation = {
 			border = border,
 		},
-		completion = {
-			border = border,
-		},
+		-- completion = {
+		-- 	border = border,
+		-- },
 	},
 	snippet = {
 		expand = function(args)

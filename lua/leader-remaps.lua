@@ -65,6 +65,12 @@ vim.keymap.set(
 	":PackerClean<cr>",
 	{ noremap = true, silent = false }
 )
+vim.keymap.set(
+	"n",
+	"<Leader>ps",
+	":PackerSync<cr>",
+	{ noremap = true, silent = false }
+)
 
 -- GitBlame
 vim.keymap.set(

@@ -45,8 +45,10 @@ return packer.startup(
 		use "mhartington/oceanic-next"
 		use "fenetikm/falcon"
 		use "katawful/kat.nvim"
+		use "rebelot/kanagawa.nvim"
 		use { "shaunsingh/oxocarbon.nvim", run = "./install.sh" }
 		use { "catppuccin/nvim", as = "catppuccin" }
+		use { "projekt0n/github-nvim-theme", tag = "v0.0.7" }
 		use {
 
 			"jhchabran/monarized",
@@ -178,6 +180,7 @@ return packer.startup(
 		use "nvim-treesitter/nvim-treesitter-context"
 		use { "zsugabubus/crazy8.nvim" }
 		use "eandrju/cellular-automaton.nvim"
+		use "IndianBoy42/tree-sitter-just"
 
 		-- Nvim statusline
 		use "hoob3rt/lualine.nvim"
@@ -299,7 +302,8 @@ return packer.startup(
 			"axkirillov/easypick.nvim",
 			-- requires = "nvim-telescope/telescope.nvim",
 		}
-		use "vigoux/notifier.nvim"
+		-- use "vigoux/notifier.nvim"
+		use "j-hui/fidget.nvim"
 		use "folke/neodev.nvim"
 		use {
 			"jbyuki/instant.nvim",

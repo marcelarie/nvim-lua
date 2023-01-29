@@ -22,7 +22,11 @@ ts.setup {
 
 	highlight = {
 		enable = true,
-		additional_vim_regex_highlighting = false,
+		additional_vim_regex_highlighting = {
+			"org",
+			"diff",
+			"gitcommit",
+		},
 	},
 }
 
@@ -30,6 +34,9 @@ ts.setup {
 -- 	-- Highlight the @foo.bar capture group with the "Identifier" highlight group.
 -- 	["text.diff.add"] = "Identifier",
 -- }
+--
+
+-- require("tree-sitter-just").setup {}
 
 require("treesitter-context").setup {
 	-- enable = true,

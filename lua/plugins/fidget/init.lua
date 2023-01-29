@@ -1,7 +1,7 @@
-local defaults = {
+local config = {
 	text = {
 		spinner = "pipe", -- animation shown when tasks are ongoing
-		done = "✔", -- character shown when all tasks are complete
+		done = "", -- character shown when all tasks are complete
 		commenced = "Started", -- message shown when task starts
 		completed = "Completed", -- message shown when task completes
 	},
@@ -14,8 +14,16 @@ local defaults = {
 		fidget_decay = 2000, -- how long to keep around empty fidget, in ms
 		task_decay = 1000, -- how long to keep around completed task, in ms
 	},
+	window = {
+		relative = "win", -- where to anchor, either "win" or "editor"
+		blend = 100, -- &winblend for the window
+		zindex = nil, -- the zindex value for the window
+		border = "none", -- style of border for the fidget window
+	},
 	fmt = {
 		leftpad = true, -- right-justify text in fidget box
+		stack_upwards = true, -- list of tasks grows upwards
+		max_width = 0, -- maximum width of the fidget box
 		-- function to format fidget title
 		fidget = function(fidget_name, spinner)
 			return string.format("%s %s", spinner, fidget_name)
@@ -30,6 +38,15 @@ local defaults = {
 			)
 		end,
 	},
+	sources = {
+		["null-ls"] = {
+			ignore = true,
+		},
+	},
+	-- debug = {
+	--   logging = false,          -- whether to enable logging, for debugging
+	--   strict = false,           -- whether to interpret LSP strictly
+	-- },
 }
 
-require("fidget").setup(defaults)
+require("fidget").setup(config)
