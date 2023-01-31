@@ -84,6 +84,7 @@ return packer.startup(
 		use "nvim-telescope/telescope-packer.nvim"
 		use "cljoly/telescope-repo.nvim"
 		use "jvgrootveld/telescope-zoxide"
+		use "ibhagwan/fzf-lua"
 
 		-- LSP
 		use "neovim/nvim-lsp"
@@ -245,7 +246,12 @@ return packer.startup(
 		use "kosayoda/nvim-lightbulb"
 		use { "ray-x/guihua.lua", run = "cd lua/fzy && make" } -- lua GUI lib
 		use "ray-x/sad.nvim"
-		use { "ellisonleao/glow.nvim" }
+		use {
+			"ellisonleao/glow.nvim",
+			config = function()
+				require("glow").setup()
+			end,
+		}
 		use {
 			"luukvbaal/stabilize.nvim",
 			config = function()
@@ -338,6 +344,10 @@ return packer.startup(
 			config = function()
 				require("cinnamon").setup()
 			end,
+		}
+		use {
+			"tjdevries/sg.nvim",
+			build = "cargo build --workspace",
 		}
 
 		if packer_bootstrap then
