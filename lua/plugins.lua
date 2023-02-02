@@ -85,6 +85,7 @@ return packer.startup(
 		use "cljoly/telescope-repo.nvim"
 		use "jvgrootveld/telescope-zoxide"
 		use "ibhagwan/fzf-lua"
+		use { "kat0h/bufpreview.vim", run = "deno task prepare" }
 
 		-- LSP
 		use "neovim/nvim-lsp"

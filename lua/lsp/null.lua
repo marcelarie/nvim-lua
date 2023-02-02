@@ -56,6 +56,7 @@ null_ls.setup {
 		diagnostics.fish,
 		diagnostics.flake8,
 		formatting.black,
+		formatting.taplo,
 
 		formatting.fixjson,
 
@@ -83,12 +84,8 @@ null_ls.setup {
 	end,
 }
 
-vim.keymap.set("v", "ff", function()
-	vim.lsp.buf.range_formatting()
-end)
-
-vim.keymap.set(
-	"n",
-	"ff",
-	vim.lsp.buf.format -- { timeout_ms = 2000 }
-)
+-- just trying
+local vim_modes = "vn"
+for mode in string.gmatch(vim_modes, "%a") do
+	vim.keymap.set(mode, "ff", vim.lsp.buf.format) -- { timeout_ms = 2000 }
+end
