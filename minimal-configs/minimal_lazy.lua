@@ -25,7 +25,7 @@ local plugins = {
 	-- Colorschemes
 	"tjdevries/colorbuddy.nvim",
 	"lifepillar/vim-gruvbox8",
-	{ "mrjones2014/lighthaus.nvim" },
+	"mrjones2014/lighthaus.nvim",
 	"phanviet/vim-monokai-pro",
 	"mhartington/oceanic-next",
 	"fenetikm/falcon",
@@ -43,7 +43,7 @@ local plugins = {
 		end,
 	},
 	"EdenEast/nightfox.nvim",
-	{ "shaeinst/roshnivim-cs" },
+	"shaeinst/roshnivim-cs",
 	"npxbr/gruvbox.nvim",
 	"eddyekofo94/gruvbox-flat.nvim", -- <-- original,
 	"rktjmp/lush.nvim",
@@ -98,7 +98,7 @@ local plugins = {
 	"hrsh7th/cmp-cmdline",
 	"hrsh7th/cmp-nvim-lua",
 	"andersevenrud/cmp-tmux",
-	-- { "github/copilot.vim" } -- needed for the auth
+	--  "github/copilot.vim"  -- needed for the auth
 	{
 		"zbirenbaum/copilot.lua",
 		event = "VimEnter",
@@ -140,8 +140,8 @@ local plugins = {
 			require("copilot_cmp").setup()
 		end,
 	},
-	{ "jose-elias-alvarez/null-ls.nvim" },
-	{ "MunifTanjim/eslint.nvim" },
+	"jose-elias-alvarez/null-ls.nvim",
+	"MunifTanjim/eslint.nvim",
 	"jose-elias-alvarez/nvim-lsp-ts-utils",
 	"simrat39/symbols-outline.nvim",
 	"jubnzv/virtual-types.nvim",
@@ -161,7 +161,7 @@ local plugins = {
 	"nvim-treesitter/playground",
 	"JoosepAlviste/nvim-ts-context-commentstring",
 	"nvim-treesitter/nvim-treesitter-context",
-	{ "zsugabubus/crazy8.nvim" },
+	"zsugabubus/crazy8.nvim",
 	"eandrju/cellular-automaton.nvim",
 	"IndianBoy42/tree-sitter-just",
 	-- Nvim statusline,
@@ -232,11 +232,11 @@ local plugins = {
 			require("stabilize").setup()
 		end,
 	},
-	{ "tami5/sqlite.lua", --[[ module = "sqlite" ]] },
+	"tami5/sqlite.lua", --[[ module = "sqlite" ]]
 	"lambdalisue/suda.vim",
 	"gbprod/substitute.nvim",
 	"max397574/better-escape.nvim",
-	{ "nyngwang/NeoRoot.lua" },
+	"nyngwang/NeoRoot.lua",
 	{
 		"jghauser/mkdir.nvim",
 		config = function()
@@ -278,10 +278,7 @@ local plugins = {
 	},
 	{ "ZhiyuanLck/smart-pairs", event = "InsertEnter" },
 	"wellle/targets.vim",
-	{
-		"axkirillov/easypick.nvim",
-		-- dependencies = "nvim-telescope/telescope.nvim",
-	},
+	"axkirillov/easypick.nvim",
 	-- "vigoux/notifier.nvim"
 	"j-hui/fidget.nvim",
 	"folke/neodev.nvim",
@@ -325,8 +322,13 @@ local plugins = {
 	},
 }
 
+vim.g.mapleader = " "
+
 require("lazy").setup(plugins, {
-	root = root .. "/plugins",
+	root = root .. "/test",
+	-- performance = {
+	-- 	rtp = { reset = false },
+	-- },
 })
 
-vim.cmd "colorscheme catppuccin"
+vim.cmd "colorscheme nightfox"

@@ -50,11 +50,16 @@ null_ls.setup {
 		code_actions.gitsigns,
 		code_actions.shellcheck,
 		code_actions.gitrebase,
+		code_actions.refactoring,
+		-- code_actions.ltrs, -- LanguageTool API
 
 		-- formatting.deno_fmt.with { condition = deno_condition },
 		-- diagnostics.gitlint,
+		diagnostics.selene,
+		-- diagnostics.luacheck,
 		diagnostics.fish,
 		diagnostics.flake8,
+		-- diagnostics.ltrs, -- LanguageTool API
 		formatting.black,
 		formatting.taplo,
 

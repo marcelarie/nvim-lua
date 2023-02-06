@@ -123,6 +123,11 @@ luasnip.add_snippets("markdown", {
 		name = "pi",
 		dscr = "Prettier ignore",
 	}, t "<!-- prettier-ignore -->"),
+	s({
+		trig = "t",
+		name = "t",
+		dscr = "Todo box",
+	}, t "- [ ] "),
 })
 
 luasnip.add_snippets("sh", {})

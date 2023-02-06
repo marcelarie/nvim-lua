@@ -350,6 +350,13 @@ return packer.startup(
 			"tjdevries/sg.nvim",
 			build = "cargo build --workspace",
 		}
+		use {
+			"ThePrimeagen/refactoring.nvim",
+			requires = {
+				{ "nvim-lua/plenary.nvim" },
+				{ "nvim-treesitter/nvim-treesitter" },
+			},
+		}
 
 		if packer_bootstrap then
 			require("packer").sync()
