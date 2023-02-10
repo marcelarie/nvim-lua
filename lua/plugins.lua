@@ -364,7 +364,9 @@ return packer.startup(
 				require("docs-view").setup { position = "right", width = 60 }
 			end,
 		}
-		use { "fgheng/winbar.nvim"  }
+		use "fgheng/winbar.nvim"
+		use "wakatime/vim-wakatime"
+
 		-- use "pwntester/octo.nvim"
 
 		if packer_bootstrap then
