@@ -173,7 +173,6 @@ return packer.startup(
 		use "f-person/git-blame.nvim"
 		use "tpope/vim-abolish"
 		use "sindrets/diffview.nvim"
-		-- use "pwntester/octo.nvim"
 
 		-- TreeSitter
 		use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
@@ -357,6 +356,16 @@ return packer.startup(
 				{ "nvim-treesitter/nvim-treesitter" },
 			},
 		}
+		use {
+			"amrbashir/nvim-docs-view",
+			opt = true,
+			cmd = { "DocsViewToggle" },
+			config = function()
+				require("docs-view").setup { position = "right", width = 60 }
+			end,
+		}
+		use { "fgheng/winbar.nvim"  }
+		-- use "pwntester/octo.nvim"
 
 		if packer_bootstrap then
 			require("packer").sync()

@@ -105,6 +105,7 @@ if not vim.g.started_by_firenvim then
 	require "git-blame"
 	require "git-sings"
 	require "diff-view"
+	-- require "octo"
 
 	-- /// Rust ///
 	require "plugins.crates"
@@ -128,6 +129,7 @@ if not vim.g.started_by_firenvim then
 	-- require "plugins.notifier"
 	require "plugins.fidget"
 	require "plugins.open"
+	require "plugins.winbar"
 	-- require "plugins.numbers"
 	-- require "plugins.pairs"
 	-- require "g-worktree"
@@ -138,4 +140,4 @@ else
 	require "firenvim_config"
 end
 
-vim.cmd "set laststatus=3"
+vim.opt.laststatus = 3
