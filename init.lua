@@ -123,7 +123,7 @@ if not vim.g.started_by_firenvim then
 	require "plugins.trevj"
 	-- require "plugins.autosession"
 	require "plugins.dressing"
-	require "plugins.inc-rename"
+	-- require "plugins.inc-rename"
 	-- require "plugins.highlight-curr-n"
 	-- require "plugins.notify"
 	-- require "plugins.notifier"

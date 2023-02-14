@@ -22,10 +22,8 @@ vim.keymap.set("n", "<Leader>Q", ":qa!<cr>", opts)
 -- leader a to autoread current file
 vim.keymap.set("n", "<Leader>e", ":e<cr>", opts)
 
--- horizontal split
+-- horizontal & vertical split
 vim.keymap.set("n", "<Leader>sj", ":split<cr>", opts)
-
--- vertical split
 vim.keymap.set("n", "<Leader>sl", ":vsplit<cr>", opts)
 
 vim.keymap.set(
@@ -37,7 +35,7 @@ vim.keymap.set(
 vim.keymap.set(
 	"n",
 	"<Leader>so",
-	":luafile ~/.config/nvim/nix.init.lua<cr>",
+	":luafile ~/.config/nvim/init.lua<cr>",
 	{ noremap = true, silent = false }
 )
 
@@ -144,9 +142,11 @@ vim.keymap.set("n", "<Leader>al", ":Alpha<cr>", { silent = true })
 vim.keymap.set("n", "<Leader>cn", ":cn<cr>")
 vim.keymap.set("n", "<Leader>cp", ":cp<cr>")
 
-
 -- nohighlight
 vim.keymap.set("n", "<Leader>nh", ":noh<cr>")
+
+-- rename
+vim.keymap.set("n", "<Leader>rn", vim.lsp.buf.rename)
 
 -- open file path under cursor vertical split
 -- vim.keymap.set('n', '<Leader>gf', ':vertical wincmd f<cr>',

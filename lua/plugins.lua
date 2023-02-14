@@ -327,7 +327,7 @@ return packer.startup(
 
 		-- use "ggandor/lightspeed.nvim"
 		use "olimorris/persisted.nvim"
-		use "smjonas/inc-rename.nvim"
+		-- use "smjonas/inc-rename.nvim"
 		use "stevearc/dressing.nvim"
 		use {
 			"AckslD/nvim-FeMaco.lua",
