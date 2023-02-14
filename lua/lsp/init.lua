@@ -23,7 +23,7 @@ vim.api.nvim_set_keymap(
 		noremap = true,
 	}
 )
--- vim.cmd('nnoremap <leader>gr <cmd>lua vim.lsp.buf.references()<CR>')
+vim.cmd('nnoremap <leader>gr <cmd>lua vim.lsp.buf.references()<CR>')
 vim.cmd "nnoremap <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>"
 
 -- Till LSPSaga works

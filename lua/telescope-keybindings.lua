@@ -9,7 +9,7 @@ map("n", "<Leader>f", ":Telescope find_files<cr>", opts)
 -- 	}
 -- end)
 
-map("n", "<leader>do", ":Telescope find_files hidden=true<cr>", opts)
+map("n", "<leader>do", ":Telescope find_files hidden=true no_ignore=true<cr>", opts)
 map("n", "<Leader>k", ":Telescope keymaps<cr>", opts)
 map("n", "<Leader>em", ":Telescope symbols<cr>", opts)
 map("n", "<Leader>gr", ":Telescope lsp_references<cr>", opts)
