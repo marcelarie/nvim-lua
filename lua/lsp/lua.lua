@@ -39,4 +39,4 @@ local neodev_settings = {
 
 local lspconfig = require "lspconfig"
 
-lspconfig.sumneko_lua.setup(neodev_settings)
+lspconfig.lua_ls.setup(neodev_settings)

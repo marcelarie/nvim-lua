@@ -82,6 +82,7 @@ return packer.startup(
 		use "dhruvmanila/telescope-bookmarks.nvim"
 		use "nvim-telescope/telescope-github.nvim"
 		use "nvim-telescope/telescope-packer.nvim"
+		use "barrett-ruth/telescope-http.nvim"
 		use "cljoly/telescope-repo.nvim"
 		use "jvgrootveld/telescope-zoxide"
 		use "ibhagwan/fzf-lua"
@@ -92,6 +93,7 @@ return packer.startup(
 		use "onsails/lspkind-nvim"
 		use "neovim/nvim-lspconfig"
 		use "barreiroleo/ltex-extra.nvim"
+		use "williamboman/mason.nvim"
 
 		-- coq_nvim:
 		-- main one

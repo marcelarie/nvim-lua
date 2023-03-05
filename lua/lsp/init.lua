@@ -5,8 +5,8 @@ vim.cmd [[inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"]]
 vim.cmd [[inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"]]
 
 --  Avoid showing message extra message when using completion
-vim.cmd "nnoremap <leader>gd <cmd>lua vim.lsp.buf.definition()<CR>"
-vim.cmd "nnoremap <leader>gD <cmd>lua vim.lsp.buf.declaration()<CR>"
+vim.cmd "nnoremap gd <cmd>lua vim.lsp.buf.definition()<CR>"
+vim.cmd "nnoremap gD <cmd>lua vim.lsp.buf.declaration()<CR>"
 vim.api.nvim_set_keymap(
 	"n",
 	"gp",

@@ -123,6 +123,7 @@ ts.load_extension "neoclip"
 ts.load_extension "luasnip"
 ts.load_extension "gh"
 ts.load_extension "persisted"
+ts.load_extension "http"
 
 -- local M = {}
 -- M.search_dotfiles = function()

@@ -1,15 +1,22 @@
+local ts = require "telescope"
+local tbi = require "telescope.builtin"
 local map = vim.keymap.set
 local opts = { silent = true }
 
 map("n", "<Leader>f", ":Telescope find_files<cr>", opts)
 -- map("n", "<Leader>f", function()
--- 	require("telescope builtin").find_files {
+-- 	bi.find_files {
 -- 		previewer = false,
 -- 		layout_strategy = "horizontal",
 -- 	}
 -- end)
 
-map("n", "<leader>do", ":Telescope find_files hidden=true no_ignore=true<cr>", opts)
+map(
+	"n",
+	"<leader>do",
+	":Telescope find_files hidden=true no_ignore=true<cr>",
+	opts
+)
 map("n", "<Leader>k", ":Telescope keymaps<cr>", opts)
 map("n", "<Leader>em", ":Telescope symbols<cr>", opts)
 map("n", "<Leader>gr", ":Telescope lsp_references<cr>", opts)
@@ -18,55 +25,55 @@ map("n", "<Leader>gb", ":Telescope git_branches<cr>", opts)
 map("n", "<Leader>tb", ":Telescope buffers<cr>", opts)
 
 map("n", "<leader>rg", function()
-	require("telescope.builtin").grep_string {
+	tbi.grep_string {
 		search = vim.fn.input "grep for > ",
 	}
 end, opts)
 
 map("n", "<leader>rw", function()
-	require("telescope.builtin").grep_string {
+	tbi.grep_string {
 		search = vim.fn.expand "<cword>",
 	}
 end, opts)
 
-map("n", "<leader>r", function()
-	require("telescope.builtin").live_grep()
-end, opts)
+map("n", "<leader>r", tbi.live_grep, opts)
 
 map("n", "<leader>th", function()
-	require("telescope.builtin").help_tags {}
+	tbi.help_tags {}
 end, opts)
 
 map("n", "<leader>br", function()
-	require("telescope.builtin").current_buffer_fuzzy_find {
+	tbi.current_buffer_fuzzy_find {
 		default_text = vim.fn.expand "<cword>",
 	}
 end, opts)
 
 map("n", "<leader>bu", function()
-	require("telescope.builtin").current_buffer_fuzzy_find {}
+	tbi.current_buffer_fuzzy_find {}
 end, opts)
 
 map("n", "<leader>rc", function()
-	require("telescope.builtin").find_files {
+	tbi.find_files {
 		prompt_title = "< vimrc >",
 		cwd = "~/.config/nvim/",
 	}
 end, opts)
 
 map("n", "<leader>nf", function()
-	require("telescope.builtin").grep_string {
+	tbi.grep_string {
 		search = vim.fn.input "grep for > ",
 		cwd = "./node_modules",
 	}
 end, opts)
 
 map("n", "<leader>nm", function()
-	require("telescope.builtin").live_grep {
+	tbi.live_grep {
 		cwd = "./node_modules",
 	}
 end, opts)
 
 map("n", "<leader>zo", function()
-	require("telescope").extensions.zoxide.list {}
+	ts.extensions.zoxide.list {}
 end, opts)
+
+map("n", "<leader>rh", ts.extensions.http.list, opts)

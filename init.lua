@@ -130,6 +130,7 @@ if not vim.g.started_by_firenvim then
 	require "plugins.fidget"
 	require "plugins.open"
 	require "plugins.winbar"
+	require "plugins.mason"
 	-- require "plugins.numbers"
 	-- require "plugins.pairs"
 	-- require "g-worktree"
@@ -140,4 +141,5 @@ else
 	require "firenvim_config"
 end
 
+vim.cmd ":highlight Search guibg=#000 guifg=#ED722E gui=boldunderline"
 vim.opt.laststatus = 3

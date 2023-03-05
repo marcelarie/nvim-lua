@@ -55,8 +55,8 @@ null_ls.setup {
 
 		-- formatting.deno_fmt.with { condition = deno_condition },
 		-- diagnostics.gitlint,
-		diagnostics.selene,
-		-- diagnostics.luacheck,
+		-- diagnostics.selene,
+		diagnostics.luacheck,
 		diagnostics.fish,
 		diagnostics.flake8,
 		-- diagnostics.ltrs, -- LanguageTool API
