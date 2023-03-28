@@ -1,0 +1,3 @@
+[submodule "lua-language-server"]
+	path = lua-language-server
+	url = https://github.com/LuaLS/lua-language-server.git
