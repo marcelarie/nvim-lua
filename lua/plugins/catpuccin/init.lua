@@ -31,3 +31,5 @@ require("catppuccin").setup {
 	color_overrides = {},
 	highlight_overrides = {},
 }
+
+vim.cmd [[colorscheme catppuccin]]

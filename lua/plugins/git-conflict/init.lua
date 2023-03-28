@@ -18,4 +18,6 @@ require("git-conflict").setup {
 -- })
 
 -- git conflict quickfix
-vim.keymap.set("n", "<Leader>cq", function() end)
+vim.keymap.set("n", "<Leader>cq", ":GitConflictListQf<cr>")
+vim.keymap.set("n", "<Leader>cn", ":GitConflictNextConflict<cr>")
+vim.keymap.set("n", "<Leader>cp", ":GitConflictPrevConflict<cr>")

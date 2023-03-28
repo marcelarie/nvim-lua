@@ -52,7 +52,8 @@ luasnip.add_snippets("gitcommit", {
 	s({
 		trig = "style",
 		name = "style",
-		dscr = "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)  🔷",
+		dscr =
+		"Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)  🔷",
 	}, t "style: "),
 	s({
 		trig = "refactor",
@@ -87,7 +88,8 @@ luasnip.add_snippets("gitcommit", {
 	s({
 		trig = "ci",
 		name = "ci",
-		dscr = "Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) ⚙️",
+		dscr =
+		"Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) ⚙️",
 	}, t "ci: "),
 })
 
@@ -117,7 +119,8 @@ luasnip.add_snippets("rust", {
 	s("pr", { t 'println!("{:?}", ', i(1, "x"), t " )" }),
 })
 
-luasnip.add_snippets("markdown", {
+-- this two share the same snippets
+local shared_snippets = {
 	s({
 		trig = "pi",
 		name = "pi",
@@ -128,7 +131,10 @@ luasnip.add_snippets("markdown", {
 		name = "t",
 		dscr = "Todo box",
 	}, t "- [ ] "),
-})
+}
+luasnip.add_snippets("markdown", shared_snippets)
+luasnip.add_snippets("telekasten", shared_snippets)
+
 
 luasnip.add_snippets("sh", {})
 

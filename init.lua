@@ -8,6 +8,7 @@ end
 require "settings"
 require "colorscheme"
 require "aliases"
+require "global"
 require "globals"
 require "autocommands"
 require "impatient"
@@ -61,6 +62,7 @@ require "lsp.python"
 require "lsp.rust"
 require "lsp.sql"
 -- require "lsp.tsserver" -- now using typescript.nvim
+-- require "lsp.vtsls" -- language features for ts/js
 require "lsp.vimls"
 require "lsp.yaml"
 require "lsp.zk"
@@ -104,7 +106,7 @@ if not vim.g.started_by_firenvim then
 	require "git-related"
 	require "git-blame"
 	require "git-sings"
-	require "diff-view"
+	-- require "diff-view"
 	-- require "octo"
 
 	-- /// Rust ///
@@ -135,7 +137,9 @@ if not vim.g.started_by_firenvim then
 	-- require "plugins.pairs"
 	-- require "g-worktree"
 	-- require "plugins.focus"
-	-- require "plugins.neorg"
+	require "plugins.neorg"
+	require "plugins.telekasten"
+	require "custom-syntax"
 	-- require "plugins.prime-harpoon"
 else
 	require "firenvim_config"

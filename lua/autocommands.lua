@@ -5,7 +5,8 @@ local au = vim.api.nvim_create_autocmd
 local yank_group = ag("YankHighlight", { clear = true })
 local disable_node_modules_eslint_group =
 	ag("DisableNodeModulesEslint", { clear = true })
-local sh_filetype_group = ag("YankHighlight", { clear = true })
+local sh_filetype_group = ag("shFiletypeGroup", { clear = true })
+local typ_filetype_group = ag("typFiletypeGroup", { clear = true })
 local additional_vim_regex_highlighting =
 	ag("AdditionalVimRegexHighlighting", { clear = true })
 
@@ -37,6 +38,12 @@ au({ "BufNewFile", "BufRead" }, {
 	},
 	command = "set filetype=sh",
 	group = sh_filetype_group,
+})
+
+au({ "BufNewFile", "BufRead" }, {
+	pattern = { "*.typ" },
+	command = "set filetype=typ",
+	group = typ_filetype_group,
 })
 
 au({ "BufNewFile", "BufRead" }, {
