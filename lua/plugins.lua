@@ -351,7 +351,7 @@ return packer.startup(
 		}
 		use {
 			"tjdevries/sg.nvim",
-			build = "cargo build --workspace",
+			run = "cargo build --workspace",
 		}
 		use {
 			"ThePrimeagen/refactoring.nvim",

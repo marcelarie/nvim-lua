@@ -11,3 +11,5 @@
 {"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\Qcall with Ivan about the M3 UI\ncall with Ferdi about the M3 Delivery Status Call\ncall with Asif about the M2 token\ncall with Olga about the M2 tracking\nfinish the m2 tracking\nstart to work on the m2 API calls\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QCheck Keirin board tasks and take one\n Check what I learned with Ferdinando on the shadowing\n Read MC links\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q- Jose: 300 → 100\n- Jordi: 101.50\n- Yago: 189,1\n- Juan: 29,5\n- Diego: 17.5\n- Miguel: 95\n- Bruno: 30.50\n  Total: 679\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q- Jose: 300 → 100\n- Jordi: 101.50\n- Yago: 89,1\n- Juan: 29,5\n- Diego: 17.5\n- Miguel: 95\n- Bruno: 30.50\n  Total: 679\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q- Cetelem: 88.61 \n- Yago: 100 \\E$"}
