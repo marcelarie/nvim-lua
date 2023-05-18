@@ -1,6 +1,6 @@
 require("nvim-lightbulb").update_lightbulb {
 	sign = {
-		enabled = true,
+		enabled = false,
 		-- Priority of the gutter sign
 		priority = 10,
 	},

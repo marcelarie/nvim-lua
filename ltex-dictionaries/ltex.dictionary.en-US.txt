@@ -14,3 +14,8 @@ Hecto
 Cetelem
 - Yago
 Yago
+Bicing
+toc
+stuart-solutions
+Manu
+stuart-frontend

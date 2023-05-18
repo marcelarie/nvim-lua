@@ -228,7 +228,7 @@ return packer.startup(
 		use "kyazdani42/nvim-web-devicons"
 		use "folke/lsp-trouble.nvim"
 		use "tani/glance-vim"
-		use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
+		use { "toppair/peek.nvim", run = "deno task --quiet build:fast" }
 		use "cappyzawa/trim.nvim"
 		use "unblevable/quick-scope" -- An always-on highlight for a unique character in every word on a line to help you use f, F and family
 		use "tversteeg/registers.nvim"
@@ -236,7 +236,7 @@ return packer.startup(
 		use "KabbAmine/vCoolor.vim" -- color picker
 		use "nacro90/numb.nvim"
 		use "folke/todo-comments.nvim" -- TODO finder
-		use "fladson/vim-kitty"  -- syntax highlight on kitty conf
+		use "fladson/vim-kitty" -- syntax highlight on kitty conf
 		use "AckslD/nvim-neoclip.lua" -- clipboard manager with telescope
 		use "tridactyl/vim-tridactyl"
 		use {
@@ -378,8 +378,12 @@ return packer.startup(
 		-- use { "jakewvincent/mkdnflow.nvim", rocks = "luautf8" }
 		use "renerocksai/telekasten.nvim"
 		use "renerocksai/calendar-vim"
-		use { 'kaarmu/typst.vim', ft = { 'typ' } }
-
+		use { "kaarmu/typst.vim", ft = { "typ" } }
+		use "madox2/vim-ai"
+		use {
+			"ruifm/gitlinker.nvim",
+			requires = "nvim-lua/plenary.nvim",
+		}
 
 		-- use "pwntester/octo.nvim"
 

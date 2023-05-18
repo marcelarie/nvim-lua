@@ -6,8 +6,8 @@ vim.wo.colorcolumn = "80"
 vim.cmd "set t_Co=256"
 
 -- require "plugins.catpuccin" -- ./lua/plugins/catpuccin/init.lua
-require "plugins.lighthaus" -- ./lua/plugins/lighthaus/init.lua
--- require "plugins.kanagawa" -- ./lua/plugins/kanagawa.lua
+-- require "plugins.lighthaus" -- ./lua/plugins/lighthaus/init.lua
+require "plugins.kanagawa" -- ./lua/plugins/kanagawa.lua
 -- require("no-clown-fiesta").setup { type = "bold,italic" }
 
 -- vim.cmd.colorscheme "lighthaus_dark"

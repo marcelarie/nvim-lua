@@ -38,6 +38,7 @@ require "plugins.treesitter"
 require "plugins.surround"
 -- require "plugins.context-print"
 require "plugins.neodev"
+require "plugins.gitlinker"
 require "lsp"
 -- require "lsp.eslint"
 require "lsp.bash"
@@ -64,7 +65,7 @@ require "lsp.sql"
 -- require "lsp.tsserver" -- now using typescript.nvim
 -- require "lsp.vtsls" -- language features for ts/js
 require "lsp.vimls"
-require "lsp.yaml"
+-- require "lsp.yaml"
 require "lsp.zk"
 require "lsp.go"
 require "plugins.lsp-uti"
@@ -81,7 +82,7 @@ vim.cmd [[
 ]]
 
 if not vim.g.started_by_firenvim then
-	require "plugins.lightbulb"
+	-- require "plugins.lightbulb"
 
 	require "formatting"
 	require "lsp-trouble"
@@ -97,7 +98,7 @@ if not vim.g.started_by_firenvim then
 	require "plugins.vimtex"
 	require "plugins.todo-finder"
 	require "plugins.neoclip"
-	require "plugins.bubbly"
+	-- require "plugins.bubbly"
 	require "plugins.color-buddy"
 	require "plugins.sad"
 	require "plugins.substitute"
@@ -140,6 +141,7 @@ if not vim.g.started_by_firenvim then
 	require "plugins.neorg"
 	require "plugins.telekasten"
 	require "custom-syntax"
+	require "plugins.vim-ai"
 	-- require "plugins.prime-harpoon"
 else
 	require "firenvim_config"

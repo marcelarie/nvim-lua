@@ -49,15 +49,15 @@ local neorg_leader = "<Leader>o"
 -- }
 
 require("neorg").setup {
-	load = {
-		["core.defaults"] = {}, -- Loads default behaviour
-		["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-		["core.norg.dirman"] = { -- Manages Neorg workspaces
-			config = {
-				workspaces = {
-					notes = "~/clones/pers/notes/",
-				},
-			},
-		},
-	},
+	-- load = {
+	-- 	-- ["core.defaults"] = {}, -- Loads default behaviour
+	-- 	-- ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
+	-- 	-- ["core.norg.dirman"] = { -- Manages Neorg workspaces
+	-- 		config = {
+	-- 			workspaces = {
+	-- 				notes = "~/clones/pers/notes/",
+	-- 			},
+	-- 		},
+	-- 	-- }
+	-- }
 }

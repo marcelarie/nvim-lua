@@ -9,10 +9,8 @@ vim.opt.termguicolors = true
 
 -- following options are the default
 require("nvim-tree").setup {
-	disable_netrw = true,
-	hijack_netrw = true,
-	open_on_setup = false,
-	ignore_ft_on_setup = {},
+	disable_netrw = false,
+	hijack_netrw = false,
 	hijack_cursor = false,
 	update_cwd = false,
 	-- update_to_buf_dir = {
@@ -85,7 +83,23 @@ vim.api.nvim_set_keymap(
 
 vim.cmd "let g:nvim_tree_highlight_opened_files = 1"
 
--- HELP:
+local function open_nvim_tree(data)
+	-- buffer is a directory
+	local directory = vim.fn.isdirectory(data.file) == 1
+	if not directory then
+		return
+	end
+
+	vim.cmd.cd(data.file)
+
+	-- open the file tree
+	-- require("nvim-tree.api").tree.open()
+	vim.cmd("Ex")
+end
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
+-- NOTE:
 --    bmv : bulk_move
 --  <C-]> : cd
 -- <2-RightMouse> : cd

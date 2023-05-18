@@ -3,7 +3,6 @@ local cmp = require "cmp"
 local kind = cmp.lsp.CompletionItemKind
 local lspkind = require "lspkind"
 
-
 vim.cmd "set shortmess+=c"
 vim.cmd "let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']"
 
@@ -122,6 +121,7 @@ cmp.setup {
 		{ name = "path" },
 		-- { name = "plugins" },
 		{ name = "copilot" },
+		-- { name = "copilot", keyword_pattern = "." },
 		-- { name = "cmp_tabnine" },
 		{ name = "luasnip", max_item_count = 4 },
 		{ name = "nvim_lsp", max_item_count = 5 },

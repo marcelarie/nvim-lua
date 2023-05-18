@@ -39,8 +39,12 @@ require("lspconfig").ltex.setup {
 			log_level = "none", -- string : "none", "trace", "debug", "info", "warn", "error", "fatal"
 		}
 	end,
-	cmd = { ltex_lsp_path },
 	settings = {
-		ltex = {},
+		ltex = {
+			markdown = {
+				nodes = { FencedCodeBlock = "ignore" },
+			},
+		},
 	},
+	cmd = { ltex_lsp_path },
 }

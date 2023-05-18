@@ -59,9 +59,14 @@ null_ls.setup {
 		-- diagnostics.commitlint,
 		diagnostics.luacheck,
 		diagnostics.fish,
-		diagnostics.flake8,
 		-- diagnostics.ltrs, -- LanguageTool API
-		formatting.black,
+
+		-- PYTHON
+		formatting.ruff,
+		diagnostics.ruff,
+		-- formatting.black,
+		-- diagnostics.flake8,
+
 		formatting.taplo,
 
 		formatting.fixjson,
