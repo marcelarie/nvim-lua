@@ -142,6 +142,8 @@ if not vim.g.started_by_firenvim then
 	require "plugins.telekasten"
 	require "custom-syntax"
 	require "plugins.vim-ai"
+	-- require "plugins.autoclose"
+	require "plugins.hbac"
 	-- require "plugins.prime-harpoon"
 else
 	require "firenvim_config"

@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/Users/m.manzanares/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  ["autoclose.nvim"] = {
+    loaded = true,
+    path = "/Users/m.manzanares/.local/share/nvim/site/pack/packer/start/autoclose.nvim",
+    url = "https://github.com/m4xshen/autoclose.nvim"
+  },
   ["better-escape.nvim"] = {
     loaded = true,
     path = "/Users/m.manzanares/.local/share/nvim/site/pack/packer/start/better-escape.nvim",
@@ -103,6 +108,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/m.manzanares/.local/share/nvim/site/pack/packer/start/bufpreview.vim",
     url = "https://github.com/kat0h/bufpreview.vim"
+  },
+  ["bullets.vim"] = {
+    loaded = true,
+    path = "/Users/m.manzanares/.local/share/nvim/site/pack/packer/start/bullets.vim",
+    url = "https://github.com/dkarter/bullets.vim"
   },
   ["calendar-vim"] = {
     loaded = true,
@@ -169,25 +179,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/m.manzanares/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
     url = "https://github.com/tjdevries/colorbuddy.nvim"
-  },
-  ["copilot-cmp"] = {
-    config = { "\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16copilot_cmp\frequire\0" },
-    load_after = {
-      ["copilot.lua"] = true
-    },
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/m.manzanares/.local/share/nvim/site/pack/packer/opt/copilot-cmp",
-    url = "https://github.com/zbirenbaum/copilot-cmp"
-  },
-  ["copilot.lua"] = {
-    after = { "copilot-cmp" },
-    config = { "\27LJ\2\nﬂ\2\0\0\5\0\f\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\b\0005\4\t\0=\4\5\3=\3\n\0024\3\0\0=\3\v\2B\0\2\1K\0\1\0\26server_opts_overrides\15suggestion\1\0\4\fdismiss\n<C-]>\tprev\n<M-[>\tnext\n<M-]>\vaccept\n<M-l>\1\0\3\rdebounce\3K\fenabled\2\17auto_trigger\1\npanel\1\0\1\25copilot_node_command\tnode\vkeymap\1\0\5\topen\v<M-CR>\14jump_next\a]]\vaccept\t<CR>\14jump_prev\a[[\frefresh\agr\1\0\2\17auto_refresh\1\fenabled\2\nsetup\fcopilot\frequire-\1\0\4\0\3\0\0066\0\0\0009\0\1\0003\2\2\0)\3d\0B\0\3\1K\0\1\0\0\rdefer_fn\bvim\0" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/m.manzanares/.local/share/nvim/site/pack/packer/opt/copilot.lua",
-    url = "https://github.com/zbirenbaum/copilot.lua"
   },
   ["coq.artifacts"] = {
     loaded = true,
@@ -309,6 +300,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/m.manzanares/.local/share/nvim/site/pack/packer/start/guihua.lua",
     url = "https://github.com/ray-x/guihua.lua"
+  },
+  ["hbac.nvim"] = {
+    loaded = true,
+    path = "/Users/m.manzanares/.local/share/nvim/site/pack/packer/start/hbac.nvim",
+    url = "https://github.com/axkirillov/hbac.nvim"
   },
   ["heirline.nvim"] = {
     loaded = true,
@@ -456,7 +452,7 @@ _G.packer_plugins = {
   },
   ["nvim-docs-view"] = {
     commands = { "DocsViewToggle" },
-    config = { "\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\nwidth\3<\rposition\nright\nsetup\14docs-view\frequire\0" },
+    config = { "\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\rposition\nright\nwidth\3<\nsetup\14docs-view\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -920,26 +916,26 @@ if not vim.g.packer_custom_loader_enabled then
   vim.g.packer_custom_loader_enabled = true
 end
 
--- Config for: stabilize.nvim
-time([[Config for stabilize.nvim]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14stabilize\frequire\0", "config", "stabilize.nvim")
-time([[Config for stabilize.nvim]], false)
--- Config for: instant.nvim
-time([[Config for instant.nvim]], true)
-try_loadstring("\27LJ\2\nG\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0(let g:instant_username = \"USERNAME\"\bcmd\bvim\0", "config", "instant.nvim")
-time([[Config for instant.nvim]], false)
--- Config for: mkdir.nvim
-time([[Config for mkdir.nvim]], true)
-try_loadstring("\27LJ\2\n%\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\nmkdir\frequire\0", "config", "mkdir.nvim")
-time([[Config for mkdir.nvim]], false)
+-- Config for: glow.nvim
+time([[Config for glow.nvim]], true)
+try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tglow\frequire\0", "config", "glow.nvim")
+time([[Config for glow.nvim]], false)
 -- Config for: text-case.nvim
 time([[Config for text-case.nvim]], true)
 try_loadstring("\27LJ\2\nÖ\2\0\0\6\0\14\0\0296\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0029\0\4\0'\2\1\0B\0\2\0016\0\5\0009\0\6\0009\0\a\0'\2\b\0'\3\t\0'\4\n\0005\5\v\0B\0\5\0016\0\5\0009\0\6\0009\0\a\0'\2\f\0'\3\t\0'\4\n\0005\5\r\0B\0\5\1K\0\1\0\1\0\1\tdesc\14Telescope\6v\1\0\1\tdesc\14Telescope\26TextCaseOpenTelescope\bga.\6n\20nvim_set_keymap\bapi\bvim\19load_extension\14telescope\nsetup\rtextcase\frequire\0", "config", "text-case.nvim")
 time([[Config for text-case.nvim]], false)
--- Config for: nvim-FeMaco.lua
-time([[Config for nvim-FeMaco.lua]], true)
-try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vfemaco\frequire\0", "config", "nvim-FeMaco.lua")
-time([[Config for nvim-FeMaco.lua]], false)
+-- Config for: instant.nvim
+time([[Config for instant.nvim]], true)
+try_loadstring("\27LJ\2\nG\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0(let g:instant_username = \"USERNAME\"\bcmd\bvim\0", "config", "instant.nvim")
+time([[Config for instant.nvim]], false)
+-- Config for: stabilize.nvim
+time([[Config for stabilize.nvim]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14stabilize\frequire\0", "config", "stabilize.nvim")
+time([[Config for stabilize.nvim]], false)
+-- Config for: sort.nvim
+time([[Config for sort.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\tsort\frequire\0", "config", "sort.nvim")
+time([[Config for sort.nvim]], false)
 -- Config for: cinnamon.nvim
 time([[Config for cinnamon.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rcinnamon\frequire\0", "config", "cinnamon.nvim")
@@ -948,22 +944,18 @@ time([[Config for cinnamon.nvim]], false)
 time([[Config for nvim-test]], true)
 try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-test\frequire\0", "config", "nvim-test")
 time([[Config for nvim-test]], false)
+-- Config for: mkdir.nvim
+time([[Config for mkdir.nvim]], true)
+try_loadstring("\27LJ\2\n%\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\nmkdir\frequire\0", "config", "mkdir.nvim")
+time([[Config for mkdir.nvim]], false)
 -- Config for: monarized
 time([[Config for monarized]], true)
 try_loadstring("\27LJ\2\nZ\0\0\2\0\4\0\t6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0+\1\2\0=\1\3\0K\0\1\0\27monarized_kitty_colors\22monarized_lualine\6g\bvim\0", "config", "monarized")
 time([[Config for monarized]], false)
--- Config for: sort.nvim
-time([[Config for sort.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\tsort\frequire\0", "config", "sort.nvim")
-time([[Config for sort.nvim]], false)
--- Config for: glow.nvim
-time([[Config for glow.nvim]], true)
-try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tglow\frequire\0", "config", "glow.nvim")
-time([[Config for glow.nvim]], false)
--- Load plugins in order defined by `after`
-time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-cmp ]]
-time([[Sequenced loading]], false)
+-- Config for: nvim-FeMaco.lua
+time([[Config for nvim-FeMaco.lua]], true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vfemaco\frequire\0", "config", "nvim-FeMaco.lua")
+time([[Config for nvim-FeMaco.lua]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
@@ -985,7 +977,6 @@ time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'smart-pairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'copilot.lua'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]

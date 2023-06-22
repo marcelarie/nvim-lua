@@ -120,7 +120,7 @@ cmp.setup {
 	sources = {
 		{ name = "path" },
 		-- { name = "plugins" },
-		{ name = "copilot" },
+		-- { name = "copilot" },
 		-- { name = "copilot", keyword_pattern = "." },
 		-- { name = "cmp_tabnine" },
 		{ name = "luasnip", max_item_count = 4 },

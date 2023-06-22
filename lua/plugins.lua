@@ -1,4 +1,5 @@
 ---@diagnostic disable: undefined-global, lowercase-global
+--
 vim.fn.setenv("MACOSX_DEPLOYMENT_TARGET", "10.15")
 
 local fn = vim.fn
@@ -118,47 +119,47 @@ return packer.startup(
 		use "hrsh7th/cmp-nvim-lua"
 		use "andersevenrud/cmp-tmux"
 		-- use { "github/copilot.vim" } -- needed for the auth
-		use {
-			"zbirenbaum/copilot.lua",
-			event = "VimEnter",
-			config = function()
-				vim.defer_fn(function()
-					require("copilot").setup {
-						panel = {
-							enabled = true,
-							auto_refresh = false,
-							keymap = {
-								jump_prev = "[[",
-								jump_next = "]]",
-								accept = "<CR>",
-								refresh = "gr",
-								open = "<M-CR>",
-							},
-						},
-						suggestion = {
-							enabled = true,
-							auto_trigger = false,
-							debounce = 75,
-							keymap = {
-								accept = "<M-l>",
-								next = "<M-]>",
-								prev = "<M-[>",
-								dismiss = "<C-]>",
-							},
-						},
-						copilot_node_command = "node", -- Node version must be < 18
-						server_opts_overrides = {},
-					}
-				end, 100)
-			end,
-		}
-		use {
-			"zbirenbaum/copilot-cmp",
-			after = { "copilot.lua", "nvim-cmp" },
-			config = function()
-				require("copilot_cmp").setup()
-			end,
-		}
+		-- use {
+		-- 	"zbirenbaum/copilot.lua",
+		-- 	event = "VimEnter",
+		-- 	config = function()
+		-- 		vim.defer_fn(function()
+		-- 			require("copilot").setup {
+		-- 				panel = {
+		-- 					enabled = true,
+		-- 					auto_refresh = false,
+		-- 					keymap = {
+		-- 						jump_prev = "[[",
+		-- 						jump_next = "]]",
+		-- 						accept = "<CR>",
+		-- 						refresh = "gr",
+		-- 						open = "<M-CR>",
+		-- 					},
+		-- 				},
+		-- 				suggestion = {
+		-- 					enabled = true,
+		-- 					auto_trigger = false,
+		-- 					debounce = 75,
+		-- 					keymap = {
+		-- 						accept = "<M-l>",
+		-- 						next = "<M-]>",
+		-- 						prev = "<M-[>",
+		-- 						dismiss = "<C-]>",
+		-- 					},
+		-- 				},
+		-- 				copilot_node_command = "node", -- Node version must be < 18
+		-- 				server_opts_overrides = {},
+		-- 			}
+		-- 		end, 100)
+		-- 	end,
+		-- }
+		-- use {
+		-- 	"zbirenbaum/copilot-cmp",
+		-- 	after = { "copilot.lua", "nvim-cmp" },
+		-- 	config = function()
+		-- 		require("copilot_cmp").setup()
+		-- 	end,
+		-- }
 		use { "jose-elias-alvarez/null-ls.nvim" }
 		-- use { "MunifTanjim/eslint.nvim" }
 		use "jose-elias-alvarez/nvim-lsp-ts-utils"
@@ -349,10 +350,10 @@ return packer.startup(
 				require("cinnamon").setup()
 			end,
 		}
-		use {
-			"tjdevries/sg.nvim",
-			run = "cargo build --workspace",
-		}
+		-- use {
+		-- 	"tjdevries/sg.nvim",
+		-- 	run = "cargo build --workspace",
+		-- }
 		use {
 			"ThePrimeagen/refactoring.nvim",
 			requires = {
@@ -384,6 +385,9 @@ return packer.startup(
 			"ruifm/gitlinker.nvim",
 			requires = "nvim-lua/plenary.nvim",
 		}
+		use "m4xshen/autoclose.nvim"
+		use "axkirillov/hbac.nvim"
+		use "dkarter/bullets.vim"
 
 		-- use "pwntester/octo.nvim"
 

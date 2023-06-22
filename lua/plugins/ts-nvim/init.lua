@@ -8,11 +8,11 @@ ts.setup {
 	},
 	server = { -- pass options to lspconfig's setup method
 		on_attach = On_attach,
-		cmd = {
-			"typescript-language-server",
-			"--stdio",
-			"--tsserver-path=/Users/marcelmanzanares2/node_modules/typescript/bin/tsserver",
-		},
+		-- cmd = {
+		-- 	"typescript-language-server",
+		-- 	"--stdio",
+		-- 	"--tsserver-path=/Users/m.manzanares/node_modules/typescript/bin/tsserver",
+		-- },
 	},
 }
 

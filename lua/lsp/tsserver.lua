@@ -16,11 +16,11 @@ require("lspconfig").tsserver.setup {
 	-- 	"jsconfig.json",
 	-- 	"package.json"
 	-- ),
-	cmd = {
-		"typescript-language-server",
-		"--stdio",
-		"--tsserver-path=/Users/marcelmanzanares2/node_modules/typescript/bin/tsserver",
-	},
+	-- cmd = {
+	-- 	"typescript-language-server",
+	-- 	"--stdio",
+	-- 	"--tsserver-path=/Users/m.manzanares/node_modules/typescript/bin/tsserver",
+	-- },
 
 	-- settings = { documentFormatting = false },
 }
