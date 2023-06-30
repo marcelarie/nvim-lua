@@ -14,3 +14,11 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q- Jose: 300 → 100\n- Jordi: 101.50\n- Yago: 89,1\n- Juan: 29,5\n- Diego: 17.5\n- Miguel: 95\n- Bruno: 30.50\n  Total: 679\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q- Cetelem: 88.61 \n- Yago: 100 \\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q<!--toc:start-->\n- [alexandre-meeting-prep-now-endpoints](#alexandre-meeting-prep-now-endpoints)\n  - [Content](#content)\n<!--toc:end-->\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QRemove the following keys from the data object: ✅\n  * `comment`\n  * `endedAt`\n  * `pickupAt`\n  * `createdAt`\n  * `dropoffAt`\n  * `deliveries`\n  * `jobReference`\n  * `originComment`\n  * `clientReference`\n  * `currentDelivery`\n  * `destinationComment`\n  * `preparationStartAt`\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QAdd the following keys to the data object:\n  * `trackingUrl`\n  * `etaToDestination` ✅\n  * `etaToOrigin` ✅\n  * `transportType`\n  * `packageType`\n  * `cancellation`\n    3.1.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe cancellation key should be an object with the following keys:\n      + `canceledBy`\n      + `reasonKey`\n      + `comment`\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QMove the `clientReference` key from the deliveries object to the data object.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QRemove the following keys from the driver object: `preparationStartAt` ✅\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\Q* `id`\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QAdd the following keys to the data object:\n  * `trackingUrl` ✅\n  * `etaToDestination` ✅\n  * `etaToOrigin` ✅\n  * `transportType` ✅\n  * `packageType` ✅\n  * `cancellation` ✅\n    3.1.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe cancellation key should be an object with the following keys: ✅\n      + `canceledBy`\n      + `reasonKey`\n      + `comment`\\E$"}

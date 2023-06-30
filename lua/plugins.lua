@@ -118,48 +118,68 @@ return packer.startup(
 		use "hrsh7th/cmp-cmdline"
 		use "hrsh7th/cmp-nvim-lua"
 		use "andersevenrud/cmp-tmux"
-		-- use { "github/copilot.vim" } -- needed for the auth
 		-- use {
-		-- 	"zbirenbaum/copilot.lua",
-		-- 	event = "VimEnter",
+		-- 	"github/copilot.vim", -- needed for the auth
 		-- 	config = function()
-		-- 		vim.defer_fn(function()
-		-- 			require("copilot").setup {
-		-- 				panel = {
-		-- 					enabled = true,
-		-- 					auto_refresh = false,
-		-- 					keymap = {
-		-- 						jump_prev = "[[",
-		-- 						jump_next = "]]",
-		-- 						accept = "<CR>",
-		-- 						refresh = "gr",
-		-- 						open = "<M-CR>",
-		-- 					},
-		-- 				},
-		-- 				suggestion = {
-		-- 					enabled = true,
-		-- 					auto_trigger = false,
-		-- 					debounce = 75,
-		-- 					keymap = {
-		-- 						accept = "<M-l>",
-		-- 						next = "<M-]>",
-		-- 						prev = "<M-[>",
-		-- 						dismiss = "<C-]>",
-		-- 					},
-		-- 				},
-		-- 				copilot_node_command = "node", -- Node version must be < 18
-		-- 				server_opts_overrides = {},
-		-- 			}
-		-- 		end, 100)
+		-- 		require("copilot").setup {
+		-- 			suggestion = { enabled = false },
+		-- 			panel = { enabled = false },
+		-- 		}
 		-- 	end,
 		-- }
-		-- use {
-		-- 	"zbirenbaum/copilot-cmp",
-		-- 	after = { "copilot.lua", "nvim-cmp" },
-		-- 	config = function()
-		-- 		require("copilot_cmp").setup()
-		-- 	end,
-		-- }
+		use {
+			"zbirenbaum/copilot.lua",
+			cmd = "Copilot",
+			event = "VimEnter",
+			config = function()
+				vim.defer_fn(function()
+					require("copilot").setup {
+						panel = {
+							enabled = false,
+							auto_refresh = false,
+							keymap = {
+								jump_prev = "[[",
+								jump_next = "]]",
+								accept = "<CR>",
+								refresh = "gr",
+								open = "<M-CR>",
+							},
+						},
+						suggestion = {
+							enabled = false,
+							auto_trigger = false,
+							debounce = 75,
+							keymap = {
+								accept = "<M-l>",
+								next = "<M-]>",
+								prev = "<M-[>",
+								dismiss = "<C-]>",
+							},
+						},
+						-- filetypes = {
+						-- 	yaml = false,
+						-- 	markdown = false,
+						-- 	help = false,
+						-- 	gitcommit = false,
+						-- 	gitrebase = false,
+						-- 	hgcommit = false,
+						-- 	svn = false,
+						-- 	cvs = false,
+						-- 	["."] = false,
+						-- },
+						copilot_node_command = "node", -- Node version must be < 18
+						server_opts_overrides = {},
+					}
+				end, 100)
+			end,
+		}
+		use {
+			"zbirenbaum/copilot-cmp",
+			after = { "copilot.lua" },
+			config = function()
+				require("copilot_cmp").setup()
+			end,
+		}
 		use { "jose-elias-alvarez/null-ls.nvim" }
 		-- use { "MunifTanjim/eslint.nvim" }
 		use "jose-elias-alvarez/nvim-lsp-ts-utils"
@@ -229,7 +249,8 @@ return packer.startup(
 		use "kyazdani42/nvim-web-devicons"
 		use "folke/lsp-trouble.nvim"
 		use "tani/glance-vim"
-		use { "toppair/peek.nvim", run = "deno task --quiet build:fast" }
+		-- use { "toppair/peek.nvim", run = "deno task --quiet build:fast" }
+		use { "cloudsftp/peek.nvim", run = "deno task --quiet build:fast" }
 		use "cappyzawa/trim.nvim"
 		use "unblevable/quick-scope" -- An always-on highlight for a unique character in every word on a line to help you use f, F and family
 		use "tversteeg/registers.nvim"

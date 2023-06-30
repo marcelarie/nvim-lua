@@ -120,15 +120,16 @@ cmp.setup {
 	sources = {
 		{ name = "path" },
 		-- { name = "plugins" },
-		-- { name = "copilot" },
+		{ name = "copilot", group_index = 2 },
 		-- { name = "copilot", keyword_pattern = "." },
 		-- { name = "cmp_tabnine" },
-		{ name = "luasnip", max_item_count = 4 },
-		{ name = "nvim_lsp", max_item_count = 5 },
-		{ name = "tmux", max_item_count = 4 },
+		{ name = "luasnip", max_item_count = 4, group_index = 2 },
+		{ name = "nvim_lsp", max_item_count = 5, group_index = 2 },
+		{ name = "tmux", max_item_count = 4, group_index = 2 },
 		{
 			name = "buffer",
 			max_item_count = 4,
+			group_index = 2,
 			option = {
 				get_bufnrs = function()
 					return vim.api.nvim_list_bufs()
