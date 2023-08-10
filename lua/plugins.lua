@@ -335,7 +335,15 @@ return packer.startup(
 			-- requires = "nvim-telescope/telescope.nvim",
 		}
 		-- use "vigoux/notifier.nvim"
-		use "j-hui/fidget.nvim"
+		use {
+			"j-hui/fidget.nvim",
+			tag = "legacy",
+			config = function()
+				require("fidget").setup {
+					-- options
+				}
+			end,
+		}
 		use "folke/neodev.nvim"
 		use {
 			"jbyuki/instant.nvim",
@@ -392,11 +400,15 @@ return packer.startup(
 		}
 		use "fgheng/winbar.nvim"
 		use "wakatime/vim-wakatime"
-		use {
-			"nvim-neorg/neorg",
-			run = ":Neorg sync-parsers",
-			requires = "nvim-lua/plenary.nvim",
-		}
+		-- use {
+		-- 	"nvim-neorg/neorg",
+		-- 	run = ":Neorg sync-parsers", -- This is the important bit!
+		-- 	config = function()
+		-- 		require("neorg").setup {
+		-- 			-- configuration here
+		-- 		}
+		-- 	end,
+		-- }
 		-- use { "jakewvincent/mkdnflow.nvim", rocks = "luautf8" }
 		use "renerocksai/telekasten.nvim"
 		use "renerocksai/calendar-vim"
@@ -409,6 +421,7 @@ return packer.startup(
 		use "m4xshen/autoclose.nvim"
 		use "axkirillov/hbac.nvim"
 		use "dkarter/bullets.vim"
+		use "b0o/incline.nvim"
 
 		-- use "pwntester/octo.nvim"
 

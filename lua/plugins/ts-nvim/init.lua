@@ -18,8 +18,8 @@ ts.setup {
 
 local opts = { silent = true }
 vim.keymap.set("n", "gs", ts.actions.organizeImports, opts)
-vim.keymap.set("n", "gr", ts.renameFile, opts)
+-- vim.keymap.set("n", "gr", ts.renameFile, opts)
 vim.keymap.set("n", "ga", ts.actions.addMissingImports, opts)
-vim.keymap.set("n", "gi", ":TSLspImportCurrent<CR>", opts)
+-- vim.keymap.set("n", "gi", ":TSLspImportCurrent<CR>", opts)
 vim.keymap.set("n", "gsd", ":TypescriptGoToSourceDefinition<CR>", opts)
 vim.keymap.set("n", "gfa", ts.actions.fixAll, opts)

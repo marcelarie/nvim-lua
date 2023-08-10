@@ -10,6 +10,7 @@ local typ_filetype_group = ag("typFiletypeGroup", { clear = true })
 local additional_vim_regex_highlighting =
 	ag("AdditionalVimRegexHighlighting", { clear = true })
 local add_80_chars_on_markdown = ag("Add80CharsOnMarkdown", { clear = true })
+local disable_diagnostics_on_markdown = ag("DisableDiagnosticsOnMarkdown", { clear = true })
 
 -- FUNCTIONS:
 
@@ -36,6 +37,8 @@ au({ "BufNewFile", "BufRead" }, {
 		"*zshrc",
 		"*_aliases",
 		"*.env",
+		"*.envrc",
+		"*.env.*",
 	},
 	command = "set filetype=sh",
 	group = sh_filetype_group,

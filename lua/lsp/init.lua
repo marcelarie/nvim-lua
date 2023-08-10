@@ -19,12 +19,11 @@ vim.api.nvim_set_keymap(
 	"n",
 	"gv",
 	"<cmd>split<cr><cmd>lua vim.lsp.buf.definition()<CR>",
-	{
-		noremap = true,
-	}
+	{ noremap = true }
 )
-vim.cmd('nnoremap <leader>gr <cmd>lua vim.lsp.buf.references()<CR>')
-vim.cmd "nnoremap <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>"
+-- vim.cmd('nnoremap <leader>gr <cmd>lua vim.lsp.buf.references()<CR>')
+vim.keymap.set("n", "gr", vim.lsp.buf.references)
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
 
 -- Till LSPSaga works
 -- vim.cmd "nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>"

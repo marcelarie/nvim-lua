@@ -41,8 +41,8 @@ null_ls.setup {
 		formatting.mdformat,
 		formatting.prettierd,
 
-		formatting.rubocop,
-		diagnostics.rubocop,
+		-- formatting.rubocop,
+		-- diagnostics.rubocop,
 		diagnostics.shellcheck,
 		diagnostics.eslint_d.with { condition = eslint_condition },
 		formatting.eslint_d.with { condition = eslint_condition },
@@ -98,5 +98,7 @@ null_ls.setup {
 -- just trying
 local vim_modes = "vn"
 for mode in string.gmatch(vim_modes, "%a") do
-	vim.keymap.set(mode, "ff", vim.lsp.buf.format) -- { timeout_ms = 2000 }
+	vim.keymap.set(mode, "ff", function()
+		vim.lsp.buf.format { async = true }
+	end) -- { timeout_ms = 2000 }
 end

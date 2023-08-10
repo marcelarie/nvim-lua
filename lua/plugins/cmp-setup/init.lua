@@ -114,6 +114,11 @@ cmp.setup {
 			behavior = cmp.ConfirmBehavior.Replace,
 			-- behavior = cmp.ConfirmBehavior.Insert,
 		},
+		-- ["<C-e>"] = cmp.mapping.confirm {
+		-- 	select = true,
+		-- 	behavior = cmp.ConfirmBehavior.Replace,
+		-- 	-- behavior = cmp.ConfirmBehavior.Insert,
+		-- },
 	},
 
 	experimental = { ghost_text = true },

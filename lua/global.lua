@@ -44,3 +44,21 @@ function Dump(obj)
 		return tostring(obj)
 	end
 end
+
+local function lsp_diagnostic_toggle()
+	local diagnostic_config
+	local virtual_text_is_enabled = vim.diagnostic.config().virtual_text == true
+	if virtual_text_is_enabled then
+		diagnostic_config = Disable_lsp_virtual_text()
+	else
+		diagnostic_config = Enable_lsp_virtual_text()
+	end
+	return diagnostic_config, virtual_text_is_enabled
+end
+
+function Lsp_diagnostic_toggle_with_message(force_config)
+	force_config = force_config or false
+	local diagnostic_config = force_config and force_config
+		or lsp_diagnostic_toggle()
+	vim.diagnostic.config(diagnostic_config)
+end

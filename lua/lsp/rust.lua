@@ -11,7 +11,7 @@ require("lspconfig").rust_analyzer.setup {
 			cargo = { loadOutDirsFromCheck = { enable = true } },
 			diagnostics = {
 				enable = true,
-				disabled = { "unresolved-proc-macro", "macro_error" },
+				-- disabled = { "unresolved-proc-macro", "macro_error" },
 				enableExperimental = true,
 			},
 		},
