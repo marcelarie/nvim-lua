@@ -29,16 +29,17 @@ require("incline").setup {
 	},
 	-- render = "basic",
 	render = function(p)
+		-- luacheck: globals g1 g2, ignore vim
 		local full_path = vim.api.nvim_buf_get_name(p.buf)
-		local cwd = vim.fn.getcwd()
 
-		if cwd == nil then
-			cwd = vim.fn.expand "$HOME"
-		end
+		-- escaping special characters
+		local cwd = vim.fn.getcwd():gsub("[%(%)%.%%%+%-%*%?%[%]%^%$]", "%%%1")
 
-		full_path = full_path:gsub(cwd, ".")
-		-- return full_path:gsub(vim.fn.expand "$HOME", "~")
-		return full_path
+		-- if cwd == nil then
+		-- 	cwd = vim.fn.expand "$HOME"
+		-- end
+
+		return full_path:gsub(cwd, ".")
 	end,
 	window = {
 		margin = {
