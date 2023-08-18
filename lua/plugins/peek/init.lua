@@ -10,7 +10,8 @@ require("peek").setup {
 
 	update_on_change = true,
 
-	app = "webview", -- 'webview', 'browser', string or a table of strings
+	-- app = "webview", -- 'webview', 'browser', string or a table of strings
+	app = { 'chromium', '--new-window' },
 	-- explained below
 
 	filetype = { "markdown", "telekasten" }, -- list of filetypes to recognize as markdown

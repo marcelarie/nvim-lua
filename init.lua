@@ -7,6 +7,7 @@ end
 
 require "settings"
 require "colorscheme"
+-- require "plugins.themer"
 require "aliases"
 require "global"
 require "globals"
@@ -93,8 +94,8 @@ if not vim.g.started_by_firenvim then
 	require "plugins.web-devicons"
 	-- require "plugins.colorizer-setup"
 	require "plugins.nvim-highlight-colors"
-	-- require "plugins.markdown-preview"
-	require "plugins.peek"
+	require "plugins.markdown-preview"
+	-- require "plugins.peek"
 	require "plugins.numb-nvim"
 	require "plugins.vimtex"
 	require "plugins.todo-finder"

@@ -250,7 +250,14 @@ return packer.startup(
 		use "folke/lsp-trouble.nvim"
 		use "tani/glance-vim"
 		-- use { "toppair/peek.nvim", run = "deno task --quiet build:fast" }
-		use { "cloudsftp/peek.nvim", run = "deno task --quiet build:fast" }
+		use {
+			"iamcco/markdown-preview.nvim",
+			run = function()
+				vim.fn["mkdp#util#install"]()
+			end,
+		}
+
+		-- use { "cloudsftp/peek.nvim", run = "deno task --quiet build:fast" }
 		use "cappyzawa/trim.nvim"
 		use "unblevable/quick-scope" -- An always-on highlight for a unique character in every word on a line to help you use f, F and family
 		use "tversteeg/registers.nvim"
@@ -422,6 +429,13 @@ return packer.startup(
 		use "axkirillov/hbac.nvim"
 		use "dkarter/bullets.vim"
 		use "b0o/incline.nvim"
+		use {
+			"ashfinal/qfview.nvim",
+			config = function()
+				require("qfview").setup()
+			end,
+		}
+		use "themercorp/themer.lua"
 
 		-- use "pwntester/octo.nvim"
 
