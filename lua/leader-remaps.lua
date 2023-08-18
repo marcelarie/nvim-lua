@@ -148,6 +148,14 @@ vim.keymap.set("n", "<Leader>nh", ":noh<cr>")
 -- rename
 vim.keymap.set("n", "<Leader>rn", vim.lsp.buf.rename)
 
+-- copy relative filename to clipboard
+vim.keymap.set("n", "<Leader>yf", ':let @+ = expand("%")<cr>')
+
+-- AI
+vim.keymap.set("n", "<Leader>ac", ':AIChat')
+vim.keymap.set("n", "<Leader>ai", ':AI ')
+vim.keymap.set("v", "<Leader>ae", ':AIEdit ')
+
 -- open file path under cursor vertical split
 -- vim.keymap.set('n', '<Leader>gf', ':vertical wincmd f<cr>',
 --                         {noremap = true, silent = true})

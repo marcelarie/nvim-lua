@@ -11,8 +11,17 @@ local c = luasnip.choice_node
 local d = luasnip.dynamic_node
 local events = require "luasnip.util.events"
 
+local function duplicate(args)
+	return args[1]
+end
+
 -- Make sure to not pass an invalid command, as io.popen() may write over nvim-text.
-local function bash(_, _, command)
+function bash(_, _, command)
+	print(command)
+	if not command then
+		return nil
+	end
+
 	local file = io.popen(command, "r")
 	local res = {}
 	for line in file:lines() do
@@ -35,9 +44,10 @@ luasnip.config.set_config {
 }
 
 luasnip.add_snippets("all", {
-	s("date_time_now", f(bash, {}, "date -u +'%Y-%m-%d %H:%M:%S'")),
+	-- s("date_time_now", f(bash, {}, "date -u +'%Y-%m-%d %H:%M:%S'")),
 	s("date_now", f(bash, {}, "date -u +'%Y-%m-%d'")),
-	s("pwd", f(bash, {}, "pwd")),
+	s("pwd", f(bash, {}, "pwd", i(0))),
+	s({ trig = "d" }, { f(bash, {}, "date +%Y-%m-%d"), i(0) }),
 	s("ls", f(bash, {}, "exa")),
 })
 
@@ -52,8 +62,7 @@ luasnip.add_snippets("gitcommit", {
 	s({
 		trig = "style",
 		name = "style",
-		dscr =
-		"Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)  🔷",
+		dscr = "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)  🔷",
 	}, t "style: "),
 	s({
 		trig = "refactor",
@@ -88,8 +97,7 @@ luasnip.add_snippets("gitcommit", {
 	s({
 		trig = "ci",
 		name = "ci",
-		dscr =
-		"Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) ⚙️",
+		dscr = "Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) ⚙️",
 	}, t "ci: "),
 })
 
@@ -131,10 +139,19 @@ local shared_snippets = {
 		name = "t",
 		dscr = "Todo box",
 	}, t "- [ ] "),
+	s({
+		trig = "jt",
+		name = "jt",
+		dscr = "Jira Ticket",
+	}, {
+		t "Jira ticket: [",
+		i(1, ""),
+		t "](https://stuart-team.atlassian.net/browse/",
+		t ")",
+	}),
 }
 luasnip.add_snippets("markdown", shared_snippets)
 luasnip.add_snippets("telekasten", shared_snippets)
-
 
 luasnip.add_snippets("sh", {})
 
@@ -177,6 +194,9 @@ vim.cmd [[
 require("luasnip.loaders.from_vscode").lazy_load()
 
 -- require("luasnip").filetype_extend("javascript", { "html" })
+-- require("luasnip").filetype_extend("typescript", { "html", "javascript" })
+-- require("luasnip").filetype_extend("javascriptreact", { "html", "javascript" })
+-- require("luasnip").filetype_extend("typescriptreact", { "html", "javascript" })
 -- require("luasnip").filetype_extend("typescript", { "html", "javascript" })
 -- require("luasnip").filetype_extend("javascriptreact", { "html", "javascript" })
 -- require("luasnip").filetype_extend("typescriptreact", { "html", "javascript" })

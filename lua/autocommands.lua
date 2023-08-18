@@ -11,10 +11,21 @@ local additional_vim_regex_highlighting =
 	ag("AdditionalVimRegexHighlighting", { clear = true })
 local add_80_chars_on_markdown = ag("Add80CharsOnMarkdown", { clear = true })
 local disable_diagnostics_on_markdown = ag("DisableDiagnosticsOnMarkdown", { clear = true })
+local relative_numbers_insert_mode = ag("RelativeNumbersInsertModes", { clear = true })
 
 -- FUNCTIONS:
 
 -- AUTO-COMMANDS:
+au("InsertEnter", {
+	command = "set relativenumber",
+	group = relative_numbers_insert_mode,
+})
+
+au("InsertLeave", {
+	command = "set norelativenumber",
+	group = relative_numbers_insert_mode,
+})
+
 au("TextYankPost", {
 	command = "silent! lua vim.highlight.on_yank()",
 	group = yank_group,
