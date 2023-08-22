@@ -247,7 +247,7 @@ return packer.startup(
 		use "mbbill/undotree"
 		use "rafcamlet/nvim-luapad"
 		use "kyazdani42/nvim-web-devicons"
-		use "folke/lsp-trouble.nvim"
+		use "folke/trouble.nvim"
 		use "tani/glance-vim"
 		-- use { "toppair/peek.nvim", run = "deno task --quiet build:fast" }
 		use {

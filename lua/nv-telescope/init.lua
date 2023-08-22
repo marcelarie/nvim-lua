@@ -68,6 +68,9 @@ ts.setup {
 		-- 	override_generic_sorter = false,
 		-- 	override_file_sorter = true,
 		-- },
+		persisted = {
+			layout_config = { width = 0.55, height = 0.55 },
+		},
 		fzf = {
 			fuzzy = true, -- false will only do exact matching
 			override_generic_sorter = true, -- override the generic sorter

@@ -99,6 +99,6 @@ null_ls.setup {
 local vim_modes = "vn"
 for mode in string.gmatch(vim_modes, "%a") do
 	vim.keymap.set(mode, "ff", function()
-		vim.lsp.buf.format { async = true }
+		vim.lsp.buf.format()
 	end) -- { timeout_ms = 2000 }
 end

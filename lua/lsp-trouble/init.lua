@@ -24,11 +24,11 @@ trouble.setup {
 	auto_close = false, -- automatically close the list when you have no diagnostics
 	auto_preview = true, -- automatically preview the location of the diagnostic. <esc> to close preview and go back
 	signs = {
-		-- icons / text used for a diagnostic
-		error = "",
-		warning = "",
-		hint = "",
+		error = "",
+		warning = "",
+		hint = "",
 		information = "",
+		other = "",
 	},
-	use_lsp_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
+	use_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
 }

@@ -6,23 +6,21 @@ startify.section.top_buttons.val = {
 	startify.button(
 		"rc",
 		"vim config",
-		"<cmd>cd ~/.config/nvim/<CR><cmd>e nix.init.lua<CR>"
+		"<cmd>cd ~/.config/nvim/<CR><cmd>e init.lua<CR>"
 	),
-	startify.button(
-		"se",
-		"reload last session",
-		"<cmd>SessionLoadLast<cr>"
-	),
+	startify.button("se", "reload last session", "<cmd>SessionLoadLast<cr>"),
+	startify.button("ss", "select session", "<cmd>Telescope persisted<cr>"),
 
 	-- while also maintaining the format of the normal bookmark file button like this one:
-	startify.file_button("~/.config/nvim/nix.init.lua", "vit"),
+	startify.file_button("~/.config/nvim/init.lua", "vit"),
 }
 
 startify.section.bottom_buttons.val = {
 	startify.button("q", "quit nvim", "<cmd>qa<CR>"),
 	startify.button("e", "new file", "<cmd>ene <BAR> startinsert <CR>"),
 }
-local v = vim.version()
+
+local version = vim.version()
 
 startify.section.header.val = {
 	[[                                   __                ]],
@@ -33,9 +31,9 @@ startify.section.header.val = {
 	[[     \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
 	string.format(
 		[[                                               v: %s%s%s ]],
-		v.major,
+		version.major,
 		".",
-		v.minor
+		version.minor
 	),
 }
 
@@ -43,6 +41,4 @@ alpha.setup(startify.opts)
 
 local NOREF_NOERR_TRUNC = { noremap = true, silent = true, nowait = true }
 
-vim.keymap.set("n", "<Leader>al", function()
-	vim.cmd "Alpha"
-end, NOREF_NOERR_TRUNC)
+vim.keymap.set("n", "<Leader>al", ":Alpha<cr>", NOREF_NOERR_TRUNC)
