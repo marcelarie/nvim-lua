@@ -7,11 +7,12 @@ local disable_node_modules_eslint_group =
 	ag("DisableNodeModulesEslint", { clear = true })
 local sh_filetype_group = ag("shFiletypeGroup", { clear = true })
 local typ_filetype_group = ag("typFiletypeGroup", { clear = true })
-local additional_vim_regex_highlighting =
-	ag("AdditionalVimRegexHighlighting", { clear = true })
+local git_commit_auto_commands = ag("GitCommitAutoCommands", { clear = true })
 local add_80_chars_on_markdown = ag("Add80CharsOnMarkdown", { clear = true })
-local disable_diagnostics_on_markdown = ag("DisableDiagnosticsOnMarkdown", { clear = true })
-local relative_numbers_insert_mode = ag("RelativeNumbersInsertModes", { clear = true })
+local disable_diagnostics_on_markdown =
+	ag("DisableDiagnosticsOnMarkdown", { clear = true })
+local relative_numbers_insert_mode =
+	ag("RelativeNumbersInsertModes", { clear = true })
 
 -- FUNCTIONS:
 
@@ -64,12 +65,18 @@ au({ "BufNewFile", "BufRead" }, {
 au({ "BufNewFile", "BufRead" }, {
 	pattern = {
 		"gitcommit",
-		"*.diff",
+		-- "*.diff",
 	},
 	callback = function()
 		-- vim.cmd("colorscheme catppuccin")
+		vim.keymap.set(
+			"n",
+			"<leader>gc",
+			":GitCommitMessage<cr>",
+			{ silent = true }
+		)
 	end,
-	group = additional_vim_regex_highlighting,
+	group = git_commit_auto_commands,
 })
 
 au({ "BufNewFile", "BufRead" }, {

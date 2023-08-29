@@ -69,6 +69,7 @@ require "lsp.vimls"
 -- require "lsp.yaml"
 require "lsp.zk"
 require "lsp.go"
+require "lsp.ocaml"
 require "plugins.lsp-uti"
 
 require "plugins.neoroot"
@@ -147,6 +148,7 @@ if not vim.g.started_by_firenvim then
 	-- require "plugins.autoclose"
 	require "plugins.hbac"
 	require "plugins.incline"
+	-- require "plugins.indentmini"
 	-- require "plugins.prime-harpoon"
 else
 	require "firenvim_config"

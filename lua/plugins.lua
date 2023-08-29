@@ -1,6 +1,6 @@
 ---@diagnostic disable: undefined-global, lowercase-global
 --
-vim.fn.setenv("MACOSX_DEPLOYMENT_TARGET", "10.15")
+vim.fn.setenv("MACOSX_DEPLOYMENT_TARGET", "11.6")
 
 local fn = vim.fn
 local install_path = fn.stdpath "data" .. "/site/pack/packer/opt/packer.nvim"
@@ -50,6 +50,7 @@ return packer.startup(
 		use { "shaunsingh/oxocarbon.nvim", run = "./install.sh" }
 		use { "catppuccin/nvim", as = "catppuccin" }
 		use { "projekt0n/github-nvim-theme", tag = "v0.0.7" }
+		use { "zootedb0t/citruszest.nvim" }
 		use {
 
 			"jhchabran/monarized",
@@ -436,6 +437,7 @@ return packer.startup(
 			end,
 		}
 		use "themercorp/themer.lua"
+		-- use { "nvimdev/indentmini.nvim", event = "BufEnter" }
 
 		-- use "pwntester/octo.nvim"
 

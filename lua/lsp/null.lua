@@ -40,6 +40,7 @@ null_ls.setup {
 		-- formatting.markdownlint,
 		formatting.mdformat,
 		formatting.prettierd,
+		formatting.ocamlformat,
 
 		-- formatting.rubocop,
 		-- diagnostics.rubocop,
