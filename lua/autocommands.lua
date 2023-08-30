@@ -69,12 +69,6 @@ au({ "BufNewFile", "BufRead" }, {
 	},
 	callback = function()
 		-- vim.cmd("colorscheme catppuccin")
-		vim.keymap.set(
-			"n",
-			"<leader>gc",
-			":GitCommitMessage<cr>",
-			{ silent = true }
-		)
 	end,
 	group = git_commit_auto_commands,
 })
