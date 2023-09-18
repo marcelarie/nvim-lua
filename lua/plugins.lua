@@ -184,7 +184,11 @@ return packer.startup(
 		use { "jose-elias-alvarez/null-ls.nvim" }
 		-- use { "MunifTanjim/eslint.nvim" }
 		use "jose-elias-alvarez/nvim-lsp-ts-utils"
-		use "jose-elias-alvarez/typescript.nvim"
+		-- use "jose-elias-alvarez/typescript.nvim"
+		use {
+			"pmizio/typescript-tools.nvim",
+			requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		}
 		use "simrat39/symbols-outline.nvim"
 		use "jubnzv/virtual-types.nvim"
 
@@ -204,6 +208,7 @@ return packer.startup(
 		use "nvim-treesitter/playground"
 		use "JoosepAlviste/nvim-ts-context-commentstring"
 		use "nvim-treesitter/nvim-treesitter-context"
+		use 'David-Kunz/markid'
 		use { "zsugabubus/crazy8.nvim" }
 		use "eandrju/cellular-automaton.nvim"
 		use "IndianBoy42/tree-sitter-just"
@@ -437,6 +442,11 @@ return packer.startup(
 			end,
 		}
 		use "themercorp/themer.lua"
+		use {
+			"LhKipp/nvim-nu",
+			run = ":TSInstall nu",
+		}
+		use "kelly-lin/ranger.nvim"
 		-- use { "nvimdev/indentmini.nvim", event = "BufEnter" }
 
 		-- use "pwntester/octo.nvim"

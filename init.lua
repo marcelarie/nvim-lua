@@ -148,6 +148,8 @@ if not vim.g.started_by_firenvim then
 	-- require "plugins.autoclose"
 	require "plugins.hbac"
 	require "plugins.incline"
+	require "plugins.nu-nvim"
+	require "plugins.ranger"
 	-- require "plugins.indentmini"
 	-- require "plugins.prime-harpoon"
 else

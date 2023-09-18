@@ -28,6 +28,7 @@ ts.setup {
 			"gitcommit",
 		},
 	},
+	-- markid = { enable = true },
 }
 
 -- tsh.set_custom_captures {

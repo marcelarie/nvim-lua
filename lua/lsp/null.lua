@@ -45,8 +45,8 @@ null_ls.setup {
 		-- formatting.rubocop,
 		-- diagnostics.rubocop,
 		diagnostics.shellcheck,
-		diagnostics.eslint_d.with { condition = eslint_condition },
-		formatting.eslint_d.with { condition = eslint_condition },
+		-- diagnostics.eslint_d.with { condition = eslint_condition },
+		-- formatting.eslint_d.with { condition = eslint_condition },
 		code_actions.eslint_d.with { condition = eslint_condition },
 		code_actions.gitsigns,
 		code_actions.shellcheck,
@@ -100,6 +100,9 @@ null_ls.setup {
 local vim_modes = "vn"
 for mode in string.gmatch(vim_modes, "%a") do
 	vim.keymap.set(mode, "ff", function()
-		vim.lsp.buf.format()
+		vim.lsp.buf.format { async = true }
+	end) -- { timeout_ms = 2000 }
+	vim.keymap.set(mode, "<leader>yf", function()
+		vim.cmd [[silent!!yarn eslint --fix %]]
 	end) -- { timeout_ms = 2000 }
 end
