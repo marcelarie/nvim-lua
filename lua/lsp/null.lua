@@ -47,7 +47,7 @@ null_ls.setup {
 		diagnostics.shellcheck,
 		-- diagnostics.eslint_d.with { condition = eslint_condition },
 		-- formatting.eslint_d.with { condition = eslint_condition },
-		code_actions.eslint_d.with { condition = eslint_condition },
+		-- code_actions.eslint_d.with { condition = eslint_condition },
 		code_actions.gitsigns,
 		code_actions.shellcheck,
 		code_actions.gitrebase,

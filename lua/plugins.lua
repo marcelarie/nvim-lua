@@ -40,6 +40,8 @@ return packer.startup(
 
 		-- Colorschemes
 		use "tjdevries/colorbuddy.nvim"
+		use 'Verf/deepwhite.nvim'
+
 		use "lifepillar/vim-gruvbox8"
 		use { "mrjones2014/lighthaus.nvim" }
 		use "phanviet/vim-monokai-pro"
