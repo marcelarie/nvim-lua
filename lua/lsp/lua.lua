@@ -7,6 +7,7 @@ require("lspconfig").lua_ls.setup {
 			completion = {
 				callSnippet = "Replace",
 			},
+			hint = { enable = true },
 		},
 	},
 }

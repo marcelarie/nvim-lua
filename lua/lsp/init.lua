@@ -29,12 +29,7 @@ vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
 -- vim.cmd "nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>"
 -- vim.cmd('nnoremap <leader>a <cmd>lua vim.lsp.buf.code_action()<CR>')
 
-vim.api.nvim_set_keymap(
-	"n",
-	"K",
-	"<cmd>lua vim.lsp.buf.hover()<cr>",
-	{ noremap = true, silent = true }
-)
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = true })
 
 vim.api.nvim_set_keymap(
 	"n",

@@ -13,8 +13,8 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 
 vim.keymap.set("n", "<Right>", ":vertical resize -5<cr>", opt_ns)
 vim.keymap.set("n", "<Left>", ":vertical resize +5<cr>", opt_ns)
-vim.keymap.set("n", "<Down>", ":resize -5<cr>", opt_ns)
-vim.keymap.set("n", "<Up>", ":resize +5<cr>", opt_ns)
+-- vim.keymap.set("n", "<Down>", ":resize -5<cr>", opt_ns)
+-- vim.keymap.set("n", "<Up>", ":resize +5<cr>", opt_ns)
 vim.keymap.set("n", "Y", "y$", opt_ns)
 
 -- christoomey/vim-system-copy

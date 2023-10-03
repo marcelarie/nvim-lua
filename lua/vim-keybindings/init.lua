@@ -32,3 +32,9 @@ vim.api.nvim_set_keymap(
 	":normal ddGp<cr>",
 	{ noremap = true, silent = false }
 )
+
+if vim.lsp.inlay_hint then
+	vim.keymap.set("n", "H", function()
+		vim.lsp.inlay_hint(0, nil)
+	end, { desc = "Toggle inlay hints" })
+end
