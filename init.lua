@@ -150,6 +150,7 @@ if not vim.g.started_by_firenvim then
 	require "plugins.incline"
 	require "plugins.nu-nvim"
 	require "plugins.ranger"
+	-- require "plugins.neoscroll"
 	-- require "plugins.indentmini"
 	-- require "plugins.prime-harpoon"
 else

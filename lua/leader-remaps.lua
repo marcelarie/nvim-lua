@@ -70,13 +70,6 @@ vim.keymap.set(
 	{ noremap = true, silent = false }
 )
 
--- GitBlame
-vim.keymap.set(
-	"n",
-	"<Leader>gt",
-	":GitBlameToggle<cr>",
-	{ noremap = true, silent = false }
-)
 
 -- lsp
 -- vim.keymap.set("n", "<Leader>dd", function()

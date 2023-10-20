@@ -449,6 +449,7 @@ return packer.startup(
 			run = ":TSInstall nu",
 		}
 		use "kelly-lin/ranger.nvim"
+		use 'karb94/neoscroll.nvim'
 		-- use { "nvimdev/indentmini.nvim", event = "BufEnter" }
 
 		-- use "pwntester/octo.nvim"
