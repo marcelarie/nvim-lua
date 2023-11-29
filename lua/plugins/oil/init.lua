@@ -29,7 +29,7 @@ require("oil").setup({
   -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
   delete_to_trash = false,
   -- Skip the confirmation popup for simple operations
-  skip_confirm_for_simple_edits = false,
+  skip_confirm_for_simple_edits = true,
   -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
   prompt_save_on_select_new_entry = true,
   -- Oil will automatically delete hidden buffers after this delay
@@ -64,7 +64,7 @@ require("oil").setup({
   use_default_keymaps = true,
   view_options = {
     -- Show files and directories that start with "."
-    show_hidden = false,
+    show_hidden = true,
     -- This function defines what is considered a "hidden" file
     is_hidden_file = function(name, bufnr)
       return vim.startswith(name, ".")
@@ -135,4 +135,4 @@ require("oil").setup({
   },
 })
 
-vim.keymap.set("n", "<leader>il", ":Oil<cr>")
+vim.keymap.set("n", "-", ":Oil<cr>")
