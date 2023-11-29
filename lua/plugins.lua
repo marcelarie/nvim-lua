@@ -40,7 +40,7 @@ return packer.startup(
 
 		-- Colorschemes
 		use "tjdevries/colorbuddy.nvim"
-		use 'Verf/deepwhite.nvim'
+		use "Verf/deepwhite.nvim"
 
 		use "lifepillar/vim-gruvbox8"
 		use { "mrjones2014/lighthaus.nvim" }
@@ -89,6 +89,7 @@ return packer.startup(
 		use "barrett-ruth/telescope-http.nvim"
 		use "cljoly/telescope-repo.nvim"
 		use "jvgrootveld/telescope-zoxide"
+		use "ray-x/telescope-ast-grep.nvim"
 		use "ibhagwan/fzf-lua"
 		use { "kat0h/bufpreview.vim", run = "deno task prepare" }
 
@@ -210,7 +211,7 @@ return packer.startup(
 		use "nvim-treesitter/playground"
 		use "JoosepAlviste/nvim-ts-context-commentstring"
 		use "nvim-treesitter/nvim-treesitter-context"
-		use 'David-Kunz/markid'
+		use "David-Kunz/markid"
 		use { "zsugabubus/crazy8.nvim" }
 		use "eandrju/cellular-automaton.nvim"
 		use "IndianBoy42/tree-sitter-just"
@@ -449,7 +450,8 @@ return packer.startup(
 			run = ":TSInstall nu",
 		}
 		use "kelly-lin/ranger.nvim"
-		use 'karb94/neoscroll.nvim'
+		use "karb94/neoscroll.nvim"
+		use "stevearc/oil.nvim"
 		-- use { "nvimdev/indentmini.nvim", event = "BufEnter" }
 
 		-- use "pwntester/octo.nvim"

@@ -10,7 +10,10 @@ ts.setup {
 	generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
 
 	mappings = {
-		i = { ["<C-x>"] = false, ["<C-q>"] = actions.send_to_qflist },
+		i = {
+			["<C-x>"] = false,
+			["<C-q>"] = actions.send_to_qflist,
+		},
 	},
 
 	vimgrep_arguments = {
@@ -104,6 +107,13 @@ ts.setup {
 		},
 	},
 	pickers = {
+		live_grep = {
+			mappings = {
+				i = {
+					["<c-f>"] = actions.to_fuzzy_refine,
+				},
+			},
+		},
 		colorscheme = {
 			enable_preview = true,
 		},

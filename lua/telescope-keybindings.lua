@@ -30,6 +30,10 @@ map("n", "<leader>rg", function()
 	}
 end, opts)
 
+map("n", "<leader>as", function()
+	vim.cmd "Telescope AST_grep"
+end, opts)
+
 map("n", "<leader>rw", function()
 	tbi.grep_string {
 		search = vim.fn.expand "<cword>",
@@ -38,7 +42,7 @@ end, opts)
 
 map("n", "<leader>r", tbi.live_grep, opts)
 
-map("n", "<leader>th", function()
+map("n", "<leader>ht", function()
 	tbi.help_tags {}
 end, opts)
 

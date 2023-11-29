@@ -18,7 +18,10 @@ vim.keymap.set("c", "w!!", "SudaWrite<cr>", { noremap = false, silent = false })
 -- leader q to quit
 vim.keymap.set("n", "<Leader>q", ":q<cr>", opts)
 -- leader Q to quit!
-vim.keymap.set("n", "<Leader>Q", ":qa!<cr>", opts)
+vim.keymap.set("n", "<Leader>Q", function()
+	vim.cmd("NvimTreeClose")
+	vim.cmd "qa!"
+end, opts)
 -- leader a to autoread current file
 vim.keymap.set("n", "<Leader>e", ":e<cr>", opts)
 
@@ -69,7 +72,6 @@ vim.keymap.set(
 	":PackerSync<cr>",
 	{ noremap = true, silent = false }
 )
-
 
 -- lsp
 -- vim.keymap.set("n", "<Leader>dd", function()

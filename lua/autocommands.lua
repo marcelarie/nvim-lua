@@ -51,6 +51,7 @@ au({ "BufNewFile", "BufRead" }, {
 		"*.env",
 		"*.envrc",
 		"*.env.*",
+		"sketchybarrc",
 	},
 	command = "set filetype=sh",
 	group = sh_filetype_group,
