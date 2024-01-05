@@ -214,7 +214,7 @@ return packer.startup(
 		use "David-Kunz/markid"
 		use { "zsugabubus/crazy8.nvim" }
 		use "eandrju/cellular-automaton.nvim"
-		use "IndianBoy42/tree-sitter-just"
+		use "NoahTheDuke/vim-just"
 
 		-- Nvim statusline
 		use "hoob3rt/lualine.nvim"

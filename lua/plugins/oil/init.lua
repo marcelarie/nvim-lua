@@ -1,4 +1,4 @@
-require("oil").setup({
+require("oil").setup {
   -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
   -- Set to false if you still want to use netrw.
   default_file_explorer = true,
@@ -133,6 +133,11 @@ require("oil").setup({
       winblend = 0,
     },
   },
-})
+}
 
 vim.keymap.set("n", "-", ":Oil<cr>")
+vim.keymap.set("n", "<Leader><Tab>", function()
+  vim.cmd "vs"
+  vim.cmd "vertical resize 85"
+  vim.cmd "Oil"
+end)
