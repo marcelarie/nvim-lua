@@ -149,7 +149,7 @@ return {
 		{ "-", ":Oil<cr>", desc = "Oil file explorer" },
 		{
 			"<Leader><Tab>",
-            leader_tab_mapping,
+			leader_tab_mapping,
 			desc = "Custom Leader+Tab Mapping",
 		},
 	},

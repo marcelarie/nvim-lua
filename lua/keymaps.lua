@@ -300,9 +300,6 @@ vim.keymap.set("n", "<leader>gc", ":GitCommitMessage<cr>")
 -- vim.keymap.set('n', '<Leader>gf', ':vertical wincmd f<cr>',
 --                         {noremap = true, silent = true})
 
-
-
-
 -- vim.keymap.set('v', '<C-r>',
 -- ':hy:%Subvert/<C-r>h//gc<left><left><left>',
 -- {noremap = true, silent = false})
