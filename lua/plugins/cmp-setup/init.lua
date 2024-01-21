@@ -129,7 +129,7 @@ cmp.setup {
 		-- { name = "copilot", keyword_pattern = "." },
 		-- { name = "cmp_tabnine" },
 		{ name = "luasnip", max_item_count = 4, group_index = 2 },
-		{ name = "nvim_lsp", max_item_count = 100, group_index = 2 },
+		{ name = "nvim_lsp", max_item_count = 5, group_index = 2 },
 		{ name = "tmux", max_item_count = 4, group_index = 2 },
 		{
 			name = "buffer",

@@ -218,6 +218,7 @@ return packer.startup(
 
 		-- Nvim statusline
 		use "hoob3rt/lualine.nvim"
+		-- use 'nvimdev/whiskyline.nvim'
 		use "rebelot/heirline.nvim"
 
 		-- Startup time
@@ -304,6 +305,7 @@ return packer.startup(
 		use "lambdalisue/suda.vim"
 		use "gbprod/substitute.nvim"
 		use "max397574/better-escape.nvim"
+		use "kevinhwang91/nvim-bqf"
 		use { "nyngwang/NeoRoot.lua" }
 		use {
 			"jghauser/mkdir.nvim",
@@ -452,6 +454,7 @@ return packer.startup(
 		use "kelly-lin/ranger.nvim"
 		use "karb94/neoscroll.nvim"
 		use "stevearc/oil.nvim"
+
 		-- use { "nvimdev/indentmini.nvim", event = "BufEnter" }
 
 		-- use "pwntester/octo.nvim"

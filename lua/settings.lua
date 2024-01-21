@@ -40,7 +40,13 @@ vim.cmd "set laststatus=3"
 vim.cmd "set undolevels=10000"
 vim.cmd "set undoreload=10000"
 -- vim.cmd "set nohlsearch"
-vim.cmd "set list listchars=tab:⤑\\ ,trail:∙,eol:↲"
+vim.opt.listchars = {
+	tab = "∙ ",
+	trail = "∙",
+	eol = "↲",
+	extends = "❯",
+}
+vim.opt.list = true
 
 -- undo
 vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir"
