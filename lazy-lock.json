@@ -90,5 +90,6 @@
   "vim-just": { "branch": "main", "commit": "60fb16e889fc241d172d51c0f43c8dd70384209e" },
   "vim-monokai-pro": { "branch": "master", "commit": "6c449e5d4ef6086c519de0544d4aca46c0a9596c" },
   "vim-sleuth": { "branch": "master", "commit": "1cc4557420f215d02c4d2645a748a816c220e99b" },
+  "vim-system-copy": { "branch": "master", "commit": "1e5afc45d38a4ebb5b949415c0711c2b5e51959a" },
   "zk-nvim": { "branch": "main", "commit": "fb0962b75a680561f94cae0588b8da92ea8d2fae" }
 }

@@ -15,6 +15,7 @@ require("lazy").setup({
 	"kevinhwang91/nvim-bqf",
 	"nyngwang/NeoRoot.lua",
 	"mickael-menu/zk-nvim",
+  "christoomey/vim-system-copy",
 	{ "kaarmu/typst.vim", ft = { "typ" } },
 
 	-- NOTE: This is where your plugins related to LSP can be installed.

@@ -308,3 +308,14 @@ vim.keymap.set("n", "<leader>gc", ":GitCommitMessage<cr>")
 -- vim.keymap.set("n", "<Leader>Y", '"+y$l', opt_ns)
 
 -- vim: ts=2 sts=2 sw=2 et
+
+-- just trying
+local vim_modes = "vn"
+for mode in string.gmatch(vim_modes, "%a") do
+	vim.keymap.set(mode, "ff", function()
+		vim.lsp.buf.format { async = true }
+	end) -- { timeout_ms = 2000 }
+	vim.keymap.set(mode, "<leader>yf", function()
+		vim.cmd [[silent!!yarn eslint --fix %]]
+	end) -- { timeout_ms = 2000 }
+end
