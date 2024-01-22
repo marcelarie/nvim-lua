@@ -69,14 +69,8 @@ require("lazy").setup({
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
-	{
-		"folke/todo-comments.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
-	{
-		"cappyzawa/trim.nvim",
-		opts = { ft_blocklist = { "markdown" } },
-	},
+	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+	{ "cappyzawa/trim.nvim", opts = { ft_blocklist = { "markdown" } } },
 	{ "axkirillov/hbac.nvim", config = true },
 	{ "LhKipp/nvim-nu" },
 
