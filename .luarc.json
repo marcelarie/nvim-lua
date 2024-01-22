@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+  "Lua.workspace.checkThirdParty": false,
+  "workspace.library": [
+    "/Users/m.manzanares/.local/share/nvim/lazy/Comment.nvim/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/LuaSnip/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/cmp-buffer/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/cmp-nvim-lsp/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/cmp-nvim-lua/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/cmp-path/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/cmp-zsh/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/cmp_luasnip/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/diffview.nvim/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/gitsigns.nvim/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/lazy.nvim/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/mason-lspconfig.nvim/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/mason-tool-installer.nvim/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/mason.nvim/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/neodev.nvim/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/neodev.nvim/types/nightly",
+    "/Users/m.manzanares/.local/share/nvim/lazy/nvim-cmp/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/playground/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/plenary.nvim/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/telescope-dap.nvim/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/telescope-file-browser.nvim/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/telescope-fzf-native.nvim/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/telescope-hop.nvim/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/telescope-ui-select.nvim/lua",
+    "/Users/m.manzanares/.local/share/nvim/lazy/tree-sitter-just/lua",
+    "/usr/local/share/nvim/runtime/lua"
+  ],
+  "workspace.checkThirdParty": false
+}
