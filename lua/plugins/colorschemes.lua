@@ -1,5 +1,4 @@
 return {
-	"tjdevries/colorbuddy.nvim",
 	"Verf/deepwhite.nvim",
 	"lifepillar/vim-gruvbox8",
 	"mrjones2014/lighthaus.nvim",
