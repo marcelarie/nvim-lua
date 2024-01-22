@@ -18,12 +18,10 @@ return {
 		"rafamadriz/friendly-snippets",
 
 		"zbirenbaum/copilot.lua",
-		"onsails/lspkind-nvim",
 		"zbirenbaum/copilot-cmp",
 	},
 	config = function()
 		local cmp = require "cmp"
-		local lspkind = require "lspkind"
 
 		vim.cmd "set shortmess+=c"
 		vim.cmd "let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']"
@@ -95,51 +93,6 @@ return {
 					require("luasnip").lsp_expand(args.body)
 				end,
 			},
-			formatting = {
-				format = lspkind.cmp_format {
-					mode = "symbol", -- show only symbol annotations
-					maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-
-					-- The function below will be called before any actual modifications from lspkind
-					-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-					before = function(entry, vim_item)
-						local menu = ({
-							nvim_lsp = "[lsp]",
-							luasnip = "[snip]",
-							buffer = "[buf]",
-							nvim_lua = "[lua]",
-							treesitter = "[ts]",
-							look = "[look]",
-							spell = "[spell]",
-							neorg = "[neorg]",
-							latex_symbols = "[latex]",
-							calc = "[calc]",
-							crates = "🦀",
-							cmp_git = "[git]",
-							cmp_tabnine = "",
-							copilot = "[cop]",
-							rg = "[rg]",
-							package = "[pack]",
-							fuzzy_path = "[fpath]",
-							tmux = "[tmux]",
-							plugins = "[plugins]",
-							-- buf_lines = "[buf-lines]",
-						})[entry.source.name]
-
-						if
-							entry.completion_item.data ~= nil
-							and entry.completion_item.data.detail ~= nil
-						then
-							menu = entry.completion_item.data.detail
-								.. " "
-								.. menu
-						end
-
-						vim_item.menu = menu
-						return vim_item
-					end,
-				},
-			},
 			-- view = {
 			-- 	entries = "native", -- can be "custom", "wildmenu" or "native"
 			-- },
@@ -185,7 +138,7 @@ return {
 				{ name = "path" },
 				{ name = "copilot", group_index = 2 },
 				{ name = "luasnip", max_item_count = 4, group_index = 2 },
-				-- { name = "nvim_lsp", max_item_count = 100, group_index = 2 },
+				{ name = "nvim_lsp", max_item_count = 100, group_index = 2 },
 				{ name = "tmux", max_item_count = 4, group_index = 2 },
 				{
 					name = "buffer",
