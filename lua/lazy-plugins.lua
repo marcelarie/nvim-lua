@@ -1,9 +1,4 @@
 -- [[ Configure plugins ]]
--- NOTE: Here is where you install your plugins.
---  You can configure plugins using the `config` key.
---
---  You can also configure plugins after the setup call,
---    as they will be available in your neovim runtime.
 require("lazy").setup({
 	-- Detect tabstop and shiftwidth automatically
 	"tpope/vim-sleuth",
@@ -39,6 +34,7 @@ require("lazy").setup({
 		opts = {},
 		lazy = false,
 		config = function()
+			---@diagnostic disable-next-line: missing-fields
 			require("Comment").setup {}
 
 			local comment_ft = require "Comment.ft"
