@@ -57,15 +57,15 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
--- vim.api.nvim_set_option('spelllang', 'en')
-vim.api.nvim_set_option("showcmd", false)
--- vim.api.nvim_set_option("hlsearch", false)
-vim.api.nvim_set_option("incsearch", true)
-vim.api.nvim_set_option("compatible", false)
-vim.api.nvim_set_option("errorbells", false)
--- vim.cmd('set backupdir=~/.vim/backup') -- vim.api.nvim_set_option('backupdir', "~/.vim/backup")
--- vim.api.nvim_set_option('writebackup', true)
--- vim.api.nvim_set_option('backupcopy', 'yes')
+-- vim.opt.spelllang = 'en' -- Not supported in Neovim
+-- vim.opt.hlsearch = false -- Use vim.opt.hlsearch = nil instead
+vim.opt.showcmd = false -- Use vim.opt.showcmd = nil instead
+vim.opt.incsearch = true
+vim.opt.compatible = false
+vim.opt.errorbells = false
+-- vim.opt.backupdir = "~/.vim/backup" -- Not supported in Neovim
+-- vim.opt.writebackup = true -- Not supported in Neovim
+-- vim.opt.backupcopy = 'yes' -- Not supported in Neovim
 
 vim.diagnostic.config {
 	-- virtual_text = true,

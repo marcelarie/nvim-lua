@@ -11,6 +11,7 @@ require("lazy").setup({
 	"nyngwang/NeoRoot.lua",
 	"mickael-menu/zk-nvim",
 	"christoomey/vim-system-copy",
+	"wellle/targets.vim",
 
 	{ "kaarmu/typst.vim", ft = { "typ" } },
 

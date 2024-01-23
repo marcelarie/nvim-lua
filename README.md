@@ -13,7 +13,7 @@ Clone the repository and install the plugins:
 
 ```sh
 git clone git@github.com:marcelarie/nvim-lua ~/.config/marcelarie/nvim-lua
-NVIM_APPNAME=marcelarie/nvim-lua/ nvim --headless +"PackerSync" +qa
+NVIM_APPNAME=marcelarie/nvim-lua/ nvim --headless "+Lazy! sync" +qa
 ```
 
 Open Neovim with this config:

@@ -53,6 +53,7 @@ return {
 		"AckslD/nvim-neoclip.lua",
 		"olimorris/persisted.nvim",
 	},
+	ft = "alpha",
 	config = function()
 		local actions = require "telescope.actions"
 		-- local builtin = require "telescope.builtin"
@@ -287,7 +288,11 @@ return {
 			end,
 			desc = "Node Modules Live Grep",
 		},
-		{ "<leader>zo", zoxide_list, desc = "Zoxide List" },
+		{
+			"<leader>zo",
+			zoxide_list,
+			desc = "Zoxide List",
+		},
 		{ "<leader>rh", http_list, desc = "HTTP List" },
 	},
 }

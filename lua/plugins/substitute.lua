@@ -1,25 +1,12 @@
-local function substitute_operator()
-	require("substitute").operator()
-end
-
-local function substitute_line()
-	require("substitute").line()
-end
-
-local function substitute_eol()
-	require("substitute").eol()
-end
-
-local function substitute_visual()
-	require("substitute").visual()
-end
-
 return {
 	"gbprod/substitute.nvim",
-	keys = {
-		{ "n", "s", substitute_operator, desc = "Substitute Operator" },
-		{ "n", "ss", substitute_line, desc = "Substitute Line" },
-		{ "n", "S", substitute_eol, desc = "Substitute to End of Line" },
-		{ "x", "s", substitute_visual, desc = "Visual Mode Substitute" },
-	},
+	lazy = false,
+	config = function()
+		require("substitute").setup {}
+		local kset = vim.keymap.set
+		kset("n", "s", require("substitute").operator, { noremap = true })
+		kset("n", "ss", require("substitute").line, { noremap = true })
+		kset("n", "S", require("substitute").eol, { noremap = true })
+		kset("x", "s", require("substitute").visual, { noremap = true })
+	end,
 }

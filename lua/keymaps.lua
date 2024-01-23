@@ -191,29 +191,29 @@ vim.keymap.set("n", "<Leader>l", ":wincmd L<cr>", opts)
 -- switch windows horizontally
 vim.keymap.set("n", "<Leader>j", ":wincmd J<cr>", opts)
 
--- Packer
+-- Lazy
 vim.keymap.set(
 	"n",
-	"<Leader>pi",
-	":PackerInstall<cr>",
+	"<Leader>li",
+	":Lazy install<cr>",
 	{ noremap = true, silent = false }
 )
 vim.keymap.set(
 	"n",
-	"<Leader>pu",
-	":PackerUpdate<cr>",
+	"<Leader>lu",
+	":Lazy update<cr>",
 	{ noremap = true, silent = false }
 )
 vim.keymap.set(
 	"n",
-	"<Leader>pc",
-	":PackerClean<cr>",
+	"<Leader>lc",
+	":Lazy clean<cr>",
 	{ noremap = true, silent = false }
 )
 vim.keymap.set(
 	"n",
-	"<Leader>ps",
-	":PackerSync<cr>",
+	"<Leader>ls",
+	":Lazy sync<cr>",
 	{ noremap = true, silent = false }
 )
 
@@ -303,8 +303,9 @@ vim.keymap.set("n", "<leader>gc", ":GitCommitMessage<cr>")
 -- vim.keymap.set('v', '<C-r>',
 -- ':hy:%Subvert/<C-r>h//gc<left><left><left>',
 -- {noremap = true, silent = false})
--- vim.keymap.set("n", "vv", "V", opt_ns)
--- vim.keymap.set("n", "V", "v$", opt_ns)
+vim.keymap.set("n", "v", "v", opt_ns)
+vim.keymap.set("n", "vv", "V", opt_ns)
+vim.keymap.set("n", "V", "v$", opt_ns)
 -- vim.keymap.set("n", "<Leader>Y", '"+y$l', opt_ns)
 
 -- vim: ts=2 sts=2 sw=2 et
