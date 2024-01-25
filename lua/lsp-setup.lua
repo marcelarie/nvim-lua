@@ -62,6 +62,11 @@ local on_attach = function(_, bufnr)
 	nmap("K", vim.lsp.buf.hover, "Hover Documentation")
 	nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
 
+	nmap(
+		"<Leader>z",
+		vim.diagnostic.open_float,
+		"Check current line for errors"
+	)
 	-- Lesser used LSP functionality
 	nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 	nmap(

@@ -304,8 +304,8 @@ vim.keymap.set("n", "<leader>gc", ":GitCommitMessage<cr>")
 -- ':hy:%Subvert/<C-r>h//gc<left><left><left>',
 -- {noremap = true, silent = false})
 vim.keymap.set("n", "v", "v", opt_ns)
-vim.keymap.set("n", "vv", "V", opt_ns)
-vim.keymap.set("n", "V", "v$", opt_ns)
+-- vim.keymap.set("n", "vv", "V", opt_ns)
+-- vim.keymap.set("n", "V", "v$", opt_ns)
 -- vim.keymap.set("n", "<Leader>Y", '"+y$l', opt_ns)
 
 -- vim: ts=2 sts=2 sw=2 et
