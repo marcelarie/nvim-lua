@@ -53,7 +53,8 @@ return {
 				formatting.fixjson,
 
 				formatting.perltidy,
-				formatting.gofumpt,
+				-- formatting.gofumpt,
+				formatting.gofmt,
 			},
 		}
 

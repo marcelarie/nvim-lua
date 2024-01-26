@@ -5,7 +5,7 @@ require("lazy").setup({
 
 	"nacro90/numb.nvim",
 	"AckslD/nvim-neoclip.lua",
-	"sindrets/diffview.nvim",
+	{ "sindrets/diffview.nvim", lazy = false },
 	"NoahTheDuke/vim-just",
 	"kevinhwang91/nvim-bqf",
 	"nyngwang/NeoRoot.lua",
