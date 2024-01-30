@@ -6,6 +6,7 @@ return {
 		"kyazdani42/nvim-web-devicons",
 		"folke/lsp-colors.nvim",
 	},
+	enabled = false,
 	-- See `:help lualine.txt`
 	opts = {
 		options = {

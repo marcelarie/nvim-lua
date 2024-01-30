@@ -1,5 +1,5 @@
 return {
-	-- "Verf/deepwhite.nvim",
+	"Verf/deepwhite.nvim",
 	-- "lifepillar/vim-gruvbox8",
 	-- "mrjones2014/lighthaus.nvim",
 	-- "phanviet/vim-monokai-pro",

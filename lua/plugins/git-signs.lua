@@ -104,7 +104,7 @@ return {
 				-- Toggles
 				map(
 					"n",
-					"<leader>tb",
+					"<leader>sb",
 					gs.toggle_current_line_blame,
 					{ desc = "toggle git blame line" }
 				)

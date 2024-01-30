@@ -4,7 +4,6 @@ require("lazy").setup({
 	"tpope/vim-sleuth",
 
 	"nacro90/numb.nvim",
-	"AckslD/nvim-neoclip.lua",
 	{ "sindrets/diffview.nvim", lazy = false },
 	"NoahTheDuke/vim-just",
 	"kevinhwang91/nvim-bqf",
@@ -29,7 +28,6 @@ require("lazy").setup({
 			"folke/neodev.nvim",
 		},
 	},
-	-- "gc" to comment visual regions/lines
 	{
 		"numToStr/Comment.nvim",
 		opts = {},
@@ -77,6 +75,10 @@ require("lazy").setup({
 
 	--    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
 	{ import = "plugins" },
-}, {})
+}, {
+	change_detection = {
+		notify = false,
+	},
+})
 
 -- vim: ts=2 sts=2 sw=2 et

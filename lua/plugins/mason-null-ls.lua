@@ -14,7 +14,7 @@ return {
 
 		null_ls.setup {
 			sources = {
-				formatting.stylua,
+				-- formatting.stylua,
 				formatting.shfmt,
 				formatting.fixjson,
 				formatting.fish_indent,

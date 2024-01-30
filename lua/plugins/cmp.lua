@@ -61,17 +61,18 @@ return {
 						dismiss = "<C-]>",
 					},
 				},
-				-- filetypes = {
-				-- 	yaml = false,
-				-- 	markdown = false,
-				-- 	help = false,
-				-- 	gitcommit = false,
-				-- 	gitrebase = false,
-				-- 	hgcommit = false,
-				-- 	svn = false,
-				-- 	cvs = false,
-				-- 	["."] = false,
-				-- },
+				filetypes = {
+					yaml = true,
+					markdown = true,
+					-- 	help = false,
+					gitcommit = true,
+					gitrebase = true,
+					-- 	hgcommit = false,
+					-- 	svn = false,
+					-- 	cvs = false,
+					-- 	["."] = false,
+					["*"] = true, -- enable for all filetypes
+				},
 				copilot_node_command = "node", -- Node version must be < 18
 				server_opts_overrides = {},
 			}
@@ -136,14 +137,13 @@ return {
 			experimental = { ghost_text = true },
 			sources = {
 				{ name = "path" },
-				{ name = "copilot", group_index = 2 },
-				{ name = "luasnip", max_item_count = 4, group_index = 2 },
-				{ name = "nvim_lsp", max_item_count = 100, group_index = 2 },
-				{ name = "tmux", max_item_count = 4, group_index = 2 },
+				{ name = "copilot" },
+				{ name = "luasnip", max_item_count = 4 },
+				{ name = "nvim_lsp", max_item_count = 100 },
+				{ name = "tmux", max_item_count = 4 },
 				{
 					name = "buffer",
 					max_item_count = 4,
-					group_index = 2,
 					option = {
 						get_bufnrs = function()
 							return vim.api.nvim_list_bufs()
