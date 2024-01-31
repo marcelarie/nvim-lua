@@ -6,6 +6,7 @@ local colors = {
 	dark_grey = "#3c4452",
 	dark_green = "#98c379",
 	dark_white = "#abb2bf",
+	blue = "#61afef",
 }
 
 return {
@@ -33,6 +34,25 @@ return {
 					nvim_version.minor,
 					nvim_version.patch
 				)
+			end,
+		}
+
+		local file_type_logo = {
+			name = "file_type_logo",
+			padding = 2,
+			colors = { fg = colors.grey_font, },
+			separator = { left = "", right = "" },
+			event = { "BufEnter", "BufWritePost", "BufReadPost" },
+			user_event = "VeryLazy",
+			update = function()
+				-- local ft = vim.bo.filetype
+				local icon = require("nvim-web-devicons").get_icon(
+					vim.fn.expand "%:t",
+					vim.fn.expand "%:e",
+					{ default = true }
+				)
+				-- return string.format("%s %s", icon, ft)
+				return string.format("%s", icon)
 			end,
 		}
 
@@ -77,9 +97,10 @@ return {
 				git_branch,
 				"%=",
 				filename,
-				"git-diff",
+				-- "git-diff",
 				"%=",
 				-- "filesize",
+				file_type_logo,
 				"diagnostics",
 				lsps_formatters,
 				-- "copilot",
