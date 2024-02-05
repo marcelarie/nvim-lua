@@ -314,7 +314,11 @@ vim.keymap.set("n", "v", "v", opt_ns)
 local vim_modes = "vn"
 for mode in string.gmatch(vim_modes, "%a") do
 	vim.keymap.set(mode, "ff", function()
-		vim.lsp.buf.format { async = true }
+		vim.lsp.buf.format {
+			filter = function(client)
+				return client.name ~= "tsserver"
+			end,
+		}
 	end) -- { timeout_ms = 2000 }
 	vim.keymap.set(mode, "<leader>yf", function()
 		vim.cmd [[silent!!yarn eslint --fix %]]

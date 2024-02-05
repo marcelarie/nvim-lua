@@ -45,7 +45,7 @@
   "playground": { "branch": "master", "commit": "ba48c6a62a280eefb7c85725b0915e021a1a0749" },
   "plenary.nvim": { "branch": "master", "commit": "4f71c0c4a196ceb656c824a70792f3df3ce6bb6d" },
   "snap": { "branch": "main", "commit": "c0bcae835facb945c25073d233c15dbfeb7adc5e" },
-  "sttusline": { "branch": "table_version", "commit": "c4c8efe6319f1f65c46199ec27167923d7ef961a" },
+  "sttusline": { "branch": "main", "commit": "c4c8efe6319f1f65c46199ec27167923d7ef961a" },
   "substitute.nvim": { "branch": "main", "commit": "17ffaeb5a1dc2dbef39cf0865d8a4b6000836714" },
   "targets.vim": { "branch": "master", "commit": "642d3a4ce306264b05ea3219920b13ea80931767" },
   "telekasten.nvim": { "branch": "main", "commit": "8c2b3889eb31009ae510a43384d1957b37654176" },

@@ -57,6 +57,11 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
+-- netrw
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
+
 -- vim.opt.spelllang = 'en' -- Not supported in Neovim
 -- vim.opt.hlsearch = false -- Use vim.opt.hlsearch = nil instead
 vim.opt.showcmd = false -- Use vim.opt.showcmd = nil instead
