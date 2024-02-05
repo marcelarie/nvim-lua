@@ -37,36 +37,14 @@ return {
 			end,
 		}
 
-		local file_type_logo = {
-			name = "file_type_logo",
-			padding = 2,
-			colors = { fg = colors.grey_font, },
-			separator = { left = "", right = "" },
-			event = { "BufEnter", "BufWritePost", "BufReadPost" },
-			user_event = "VeryLazy",
-			update = function()
-				-- local ft = vim.bo.filetype
-				local icon = require("nvim-web-devicons").get_icon(
-					vim.fn.expand "%:t",
-					vim.fn.expand "%:e",
-					{ default = true }
-				)
-				-- return string.format("%s %s", icon, ft)
-				return string.format("%s", icon)
-			end,
-		}
-
-		filename.colors = {
-			{},
-			{ fg = colors.default_font },
-		}
+		filename.colors = { {}, { fg = colors.default_font } }
 		git_branch.colors = { fg = colors.dark_red }
 
 		filename.update = function()
 			local fn = vim.fn.expand "%"
 			local home = os.getenv "HOME"
 			if fn == "" then
-				return "No Name"
+				return "No File"
 			end
 			fn = fn:gsub(home, "~")
 			fn = fn:gsub("~/clones/work/", ""):gsub("~/clones/own/", "")
@@ -100,7 +78,8 @@ return {
 				-- "git-diff",
 				"%=",
 				-- "filesize",
-				file_type_logo,
+				-- file_type_logo,
+				-- "file-type",
 				"diagnostics",
 				lsps_formatters,
 				-- "copilot",

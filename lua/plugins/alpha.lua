@@ -22,6 +22,11 @@ return {
 				"select session",
 				"<cmd>Telescope persisted<cr>"
 			),
+			startify.button(
+				"cf",
+				"changed files",
+				"<cmd>Easypick changed_files<cr>"
+			),
 
 			-- while also maintaining the format of the normal bookmark file button like this one:
 			startify.file_button("~/.config/nvim/init.lua", "vit"),
