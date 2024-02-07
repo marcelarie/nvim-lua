@@ -26,7 +26,7 @@ local on_attach = function(_, bufnr)
 	nmap("gp", function()
 		vim.cmd "vsplit"
 		require("telescope.builtin").lsp_definitions()
-	end)
+	end, "[G]oto Definition [S]plit")
 	nmap(
 		"<leader>gd",
 		require("telescope.builtin").lsp_definitions,

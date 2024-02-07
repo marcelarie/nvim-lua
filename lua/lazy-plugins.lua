@@ -7,6 +7,7 @@ require("lazy").setup({
 	{ "sindrets/diffview.nvim", lazy = false },
 	"NoahTheDuke/vim-just",
 	"kevinhwang91/nvim-bqf",
+	{ "stevearc/dressing.nvim", opts = {} },
 	"nyngwang/NeoRoot.lua",
 	"mickael-menu/zk-nvim",
 	"christoomey/vim-system-copy",
