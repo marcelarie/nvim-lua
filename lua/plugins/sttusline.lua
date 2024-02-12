@@ -17,61 +17,40 @@ return {
 	event = { "BufEnter" },
 	branch = "main",
 	config = function()
-		-- local filename = require "sttusline.components.filename"
-		local git_branch = require "sttusline.components.git-branch"
-		local lsps_formatters = require "sttusline.components.lsps-formatters"
 		local nvim_info = {
-			name = "nvim_info",
-			padding = 1,
-			colors = { fg = colors.dark_white },
-			separator = { left = "", right = "" },
-			event = { "ModeChanged", "VimResized" },
-			user_event = "VeryLazy",
-			update = function()
-				local nvim_version = vim.version()
-				return string.format(
-					"  v%d.%d",
-					nvim_version.minor,
-					nvim_version.patch
-				)
-			end,
+			"nvim-info",
+			{
+				name = "nvim_info",
+				padding = 1,
+				colors = { fg = colors.dark_white },
+				separator = { left = "", right = "" },
+				event = { "ModeChanged", "VimResized" },
+				user_event = { "VeryLazy" },
+				update = function()
+					local nvim_version = vim.version()
+					return string.format(
+						"  v%d.%d",
+						nvim_version.minor,
+						nvim_version.patch
+					)
+				end,
+			},
 		}
 
 		local filename = {
 			name = "filename",
-			padding = 1,
-			colors = { fg = colors.default_font },
-			separator = { left = " ", right = " " },
-			event = { "BufEnter", "BufWritePost" },
-			user_event = "VeryLazy",
-			update = function()
-				local fn = vim.fn.expand "%"
-				local home = os.getenv "HOME"
-				if fn == "" then
-					return "No File"
-				end
-				fn = fn:gsub(home, "~")
-				fn = fn:gsub("~/clones/work/", ""):gsub("~/clones/own/", "")
-				return fn
-			end,
-		}
-
-		-- filename.colors = { {}, { fg = colors.default_font } }
-		git_branch.colors = { fg = colors.dark_red }
-
-		-- filename.update = function()
-		-- 	local fn = vim.fn.expand "%"
-		-- 	local home = os.getenv "HOME"
-		-- 	if fn == "" then
-		-- 		return "No File"
-		-- 	end
-		-- 	fn = fn:gsub(home, "~")
-		-- 	fn = fn:gsub("~/clones/work/", ""):gsub("~/clones/own/", "")
-		-- 	return fn
-		-- end
-
-		lsps_formatters.colors = {
-			fg = colors.grey_font,
+			-- colors = { fg = colors.default_font },
+			configs = { path = 3 },
+			-- update = function()
+			-- 	local fn = vim.fn.expand "%"
+			-- 	local home = os.getenv "HOME"
+			-- 	if fn == "" then
+			-- 		return "No File"
+			-- 	end
+			-- 	fn = fn:gsub(home, "~")
+			-- 	fn = fn:gsub("~/clones/work/", ""):gsub("~/clones/own/", "")
+			-- 	return fn
+			-- end,
 		}
 
 		require("sttusline").setup {
@@ -91,16 +70,17 @@ return {
 			components = {
 				nvim_info,
 				"mode",
-				git_branch,
+				-- { "git-branch", { colors = { fg = colors.dark_red } } },
 				"%=",
-				filename,
+				-- filename,
+				"filename",
 				-- "git-diff",
 				"%=",
 				-- "filesize",
 				-- file_type_logo,
 				-- "file-type",
 				"diagnostics",
-				lsps_formatters,
+				-- { "lsps-formatters", { colors = { fg = colors.grey_font } } },
 				-- "copilot",
 				"indent",
 				"encoding",
