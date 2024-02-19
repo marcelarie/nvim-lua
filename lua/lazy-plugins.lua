@@ -12,6 +12,7 @@ require("lazy").setup({
 	"mickael-menu/zk-nvim",
 	"christoomey/vim-system-copy",
 	"wellle/targets.vim",
+	"FabijanZulj/blame.nvim",
 
 	{ "kaarmu/typst.vim", ft = { "typ" } },
 

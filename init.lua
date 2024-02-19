@@ -9,6 +9,7 @@ require "treesitter-setup"
 require "options"
 require "keymaps"
 require "autocmd"
+require "commands"
 require "color-settings"
 require "lsp-setup"
 
