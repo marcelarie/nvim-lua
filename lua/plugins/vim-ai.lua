@@ -1,10 +1,16 @@
+local models = {
+	turbo = "gpt-3.5-turbo",
+	gpt4_turbo = "gpt-4-1106-preview",
+	gpt4 = "gpt-4",
+}
+
 return {
 	"madox2/vim-ai",
 	config = function()
 		vim.cmd [[
 			let g:vim_ai_chat = {
 			\  "options": {
-			\    "model": "gpt-3.5-turbo",
+			\    "model": "gpt-4-1106-preview",
 			\    "max_tokens": 1000,
 			\    "temperature": 1,
 			\    "request_timeout": 20,
@@ -64,7 +70,7 @@ return {
 			local config = {
 				engine = "chat",
 				options = {
-					model = "gpt-3.5-turbo",
+					model = models.gpt4_turbo,
 					endpoint_url = "https://api.openai.com/v1/chat/completions",
 					max_tokens = 1000,
 					initial_prompt = ">>> system\nyou are a code assistant",

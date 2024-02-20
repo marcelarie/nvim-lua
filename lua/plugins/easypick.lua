@@ -10,8 +10,11 @@ return {
 				{
 					name = "changed_files",
 					command = "{ git diff --name-only && git log --pretty=format: --name-only HEAD~5..HEAD; } | sort | uniq",
+					previewer = easypick.previewers.branch_diff {
+						base_branch = "HEAD~5",
+					},
 					-- previewer = easypick.previewers.file_diff(),
-					previewer = easypick.previewers.default(),
+					-- previewer = easypick.previewers.default(),
 				},
 				-- Show conflicts in the current branch
 				{
