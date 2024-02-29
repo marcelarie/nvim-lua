@@ -16,7 +16,7 @@ return {
 			sources = {
 				-- formatting.stylua,
 				formatting.shfmt,
-				formatting.fixjson,
+				-- formatting.fixjson,
 				formatting.fish_indent,
 				formatting.mdformat,
 				formatting.prettierd,
@@ -24,12 +24,12 @@ return {
 
 				-- formatting.rubocop,
 				-- diagnostics.rubocop,
-				diagnostics.shellcheck,
+				-- diagnostics.shellcheck,
 				-- diagnostics.eslint_d.with { condition = eslint_condition },
 				-- formatting.eslint_d.with { condition = eslint_condition },
 				-- code_actions.eslint_d.with { condition = eslint_condition },
 				code_actions.gitsigns,
-				code_actions.shellcheck,
+				-- code_actions.shellcheck,
 				code_actions.gitrebase,
 				code_actions.refactoring,
 				-- code_actions.ltrs, -- LanguageTool API
@@ -43,23 +43,23 @@ return {
 				-- diagnostics.ltrs, -- LanguageTool API
 
 				-- PYTHON
-				formatting.ruff,
-				diagnostics.ruff,
+				-- formatting.ruff,
+				-- diagnostics.ruff,
 				-- formatting.black,
 				-- diagnostics.flake8,
 
-				formatting.taplo,
+				-- formatting.taplo,
 
-				formatting.fixjson,
+				-- formatting.fixjson,
 
-				formatting.perltidy,
+				-- formatting.perltidy,
 				-- formatting.gofumpt,
 				formatting.gofmt,
 			},
 		}
 
 		require("mason-null-ls").setup {
-			ensure_installed = { "stylua", "jq" },
+			ensure_installed = { "stylua" },
 			handlers = {
 				stylua = function(source_name, methods)
 					null_ls.register(null_ls.builtins.formatting.stylua)
