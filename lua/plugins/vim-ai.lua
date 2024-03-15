@@ -61,7 +61,7 @@ return {
 			local diff = getGitDiff()
 
 			if diff == "" then
-				print "No changes detected. Cannot generate a commit message."
+				print "\nNo changes detected. Cannot generate a commit message."
 				return
 			end
 
@@ -79,10 +79,7 @@ return {
 			}
 
 			-- Execute the AI with the provided configuration
-			vim.api.nvim_call_function(
-				"vim_ai#AIRun",
-				{ range, config, prompt }
-			)
+			vim.api.nvim_call_function("vim_ai#AIRun", { config, prompt })
 		end
 
 		-- Custom command to suggest a commit message

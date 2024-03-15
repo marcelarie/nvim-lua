@@ -73,15 +73,18 @@ return {
 				},
 			},
 
-			vimgrep_arguments = {
-				"rg",
-				"--color=never",
-				"--no-heading",
-				"--with-filename",
-				"--line-number",
-				"--column",
-				"--smart-case",
-			},
+			-- defaults = {
+			-- 	vimgrep_arguments = {
+			-- 		"rg",
+			-- 		"--color=never",
+			-- 		"--no-heading",
+			-- 		"--with-filename",
+			-- 		"--line-number",
+			-- 		"--column",
+			-- 		"--smart-case",
+			-- 		"-l",
+			-- 	},
+			-- },
 
 			prompt_prefix = " >",
 			color_devicons = true,
@@ -112,6 +115,13 @@ return {
 				"%github/.*",
 			},
 			path_display = true,
+			-- path_display = {
+			-- 	shorten = {
+			-- 		len = 3,
+			-- 		exclude = { 1, -1 },
+			-- 	},
+			-- 	truncate = true,
+			-- },
 			winblend = 0,
 			border = {},
 			-- defaults = {
@@ -183,6 +193,7 @@ return {
 				colorscheme = {
 					enable_preview = true,
 				},
+				-- lsp_references = { },
 			},
 		}
 
@@ -224,7 +235,9 @@ return {
 		{ "<Leader>em", ":Telescope symbols<cr>", desc = "Symbols" },
 		{
 			"<Leader>gr",
-			":Telescope lsp_references<cr>",
+			function()
+				require("telescope.builtin").lsp_references {}
+			end,
 			desc = "LSP References",
 		},
 		{ "<Leader>gs", ":Telescope git_status<cr>", desc = "Git Status" },
