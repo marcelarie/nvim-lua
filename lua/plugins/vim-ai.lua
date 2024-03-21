@@ -15,11 +15,12 @@ return {
 			\    "temperature": 1,
 			\    "request_timeout": 20,
 			\    "selection_boundary": "",
+			\    "initial_prompt": ">>> system\n - You are a code assistant\n - Always add line breaks at collumn 78\n - Always use 80 characters for each line of the respone\n - If you attach a code block add syntax type after ``` to enable syntax highlighting.\n",
 			\  },
 			\  "ui": {
 			\    "code_syntax_enabled": 1,
 			\    "populate_options": 0,
-			\    "open_chat_command": "preset_right",
+			\    "open_chat_command": "preset_below",
 			\    "scratch_buffer_keep_open": 0,
 			\  },
 			\}
@@ -73,7 +74,12 @@ return {
 					model = models.gpt4_turbo,
 					endpoint_url = "https://api.openai.com/v1/chat/completions",
 					max_tokens = 1000,
-					initial_prompt = ">>> system\nyou are a code assistant",
+					initial_prompt = [[ >>> system\n
+					- You are a code assistant\n
+					- Add line breaks at collumn 78\n
+					- Try to use 80 characters for each line of the respone\n
+				    - If you attach a code block add syntax type after ``` to enable syntax highlighting.\n
+					]],
 					temperature = 1,
 				},
 			}

@@ -1,5 +1,6 @@
 return {
 	"b0o/incline.nvim",
+	-- event = "VeryLazy",
 	opts = {
 		debounce_threshold = {
 			falling = 50,
@@ -7,7 +8,7 @@ return {
 		},
 		hide = {
 			cursorline = true,
-			focused_win = true,
+			focused_win = false,
 			only_win = false,
 		},
 		highlight = {
@@ -31,23 +32,41 @@ return {
 		},
 		-- render = "basic",
 		render = function(p)
-			-- luacheck: globals g1 g2, ignore vim
+			if p.bufname == "" or p.buf == nil then
+				return "[No Name]"
+			end
+
 			local full_path = vim.api.nvim_buf_get_name(p.buf)
+			if full_path == nil then
+				return "[No Name]"
+			end
 
-			-- escaping special characters
-			local cwd =
-				vim.fn.getcwd():gsub("[%(%)%.%%%+%-%*%?%[%]%^%$]", "%%%1")
+			-- if current working directory is in full path, replace it with .
 
-			-- if cwd == nil then
-			-- 	cwd = vim.fn.expand "$HOME"
-			-- end
+			local cwd = vim.fn.fnamemodify(vim.fn.getcwd(), ":p")
+			if cwd == nil then
+				return "[No Name]"
+			end
 
-			return full_path:gsub(cwd, ".")
+			--
+			if string.find(full_path, cwd, 1, true) then
+				local modified_path = vim.fn.fnamemodify(full_path, ":.")
+				if modified_path ~= nil then
+					full_path = modified_path
+				end
+			end
+
+			-- append ./ if it is a relative path
+			if string.find(full_path, cwd, 1, true) == nil then
+				full_path = "./" .. full_path
+			end
+
+			return full_path
 		end,
 		window = {
 			margin = {
 				horizontal = 1,
-				vertical = 1,
+				vertical = 2,
 			},
 			options = {
 				signcolumn = "no",

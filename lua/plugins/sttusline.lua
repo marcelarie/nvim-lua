@@ -16,6 +16,7 @@ return {
 	},
 	event = { "BufEnter" },
 	branch = "main",
+	enabled = false,
 	config = function()
 		local nvim_info = {
 			"nvim-info",

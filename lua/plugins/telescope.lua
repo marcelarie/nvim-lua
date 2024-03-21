@@ -51,7 +51,7 @@ return {
 		"jvgrootveld/telescope-zoxide",
 		"ray-x/telescope-ast-grep.nvim",
 		"AckslD/nvim-neoclip.lua",
-		"olimorris/persisted.nvim",
+		-- "olimorris/persisted.nvim",
 	},
 	ft = "alpha",
 	config = function()
@@ -211,7 +211,7 @@ return {
 		ts.load_extension "neoclip"
 		ts.load_extension "luasnip"
 		ts.load_extension "gh"
-		ts.load_extension "persisted"
+		-- ts.load_extension "persisted"
 		ts.load_extension "http"
 		ts.load_extension "themes"
 		ts.load_extension "undo"
