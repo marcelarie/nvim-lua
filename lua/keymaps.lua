@@ -160,12 +160,27 @@ vim.keymap.set("c", "w!!", "SudaWrite<cr>", { noremap = false, silent = false })
 
 vim.keymap.set("c", "w!!", "SudaWrite<cr>", { noremap = false, silent = false })
 
+local function saveSession()
+	local filetype = string.lower(vim.bo.filetype)
+	if not string.match(filetype, "commit") then
+		vim.cmd "SessionSave"
+	end
+end
+
 -- leader q to quit
-vim.keymap.set("n", "<Leader>q", ":q<cr>", opts)
+-- and save session with auto-session
+vim.keymap.set("n", "<Leader>q", function()
+	saveSession()
+	vim.cmd "q"
+end, opts)
+
 -- leader Q to quit!
+-- and save session with auto-session
 vim.keymap.set("n", "<Leader>Q", function()
+	saveSession()
 	vim.cmd "qa!"
 end, opts)
+
 -- leader a to autoread current file
 vim.keymap.set("n", "<Leader>e", ":e<cr>", opts)
 
@@ -294,6 +309,12 @@ vim.keymap.set("n", "<Leader>yf", ':let @+ = expand("%")<cr>')
 vim.keymap.set("n", "<Leader>ac", ":AIChat<cr>")
 vim.keymap.set("n", "<Leader>ai", ":AI ")
 vim.keymap.set("v", "<Leader>ae", ":AIEdit ")
+vim.keymap.set("n", "<leader>gc", ":GitCommitMessage<cr>")
+
+-- Typescript
+vim.keymap.set("n", "<leader>ta", typescript_server_import_all)
+
+-- Easypick
 vim.keymap.set("n", "<leader>gc", ":GitCommitMessage<cr>")
 
 -- open file path under cursor vertical split

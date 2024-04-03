@@ -9,11 +9,11 @@ require "lazy-bootstrap"
 require "lazy-plugins"
 --
 require "treesitter-setup"
+require "global"
 require "options"
 require "keymaps"
 require "autocmd"
 require "commands"
-require "global"
 require "color-settings"
 require "lsp-setup"
 

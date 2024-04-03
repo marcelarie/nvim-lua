@@ -15,13 +15,13 @@ return {
 			startify.button(
 				"se",
 				"reload last session",
-				"<cmd>SessionsLoad<cr>"
+				"<cmd>SessionRestore<cr>"
 			),
 			startify.button(
 				"ss",
 				"select session",
 				-- "<cmd>Telescope persisted<cr>"
-				"<cmd>SessionsLoad<cr>"
+				"<cmd>Autosession search<cr>"
 			),
 			startify.button(
 				"cf",

@@ -1,30 +1,15 @@
 return {
-	"natecraddock/sessions.nvim",
-	-- enabled = false,
+	"rmagatti/auto-session",
 	config = function()
-		require("sessions").setup {
-			session_filepath = vim.fn.stdpath "data" .. "/sessions/sessions.nvim",
+		require("auto-session").setup {
+			log_level = "error",
+			auto_session_enabled = false,
+			auto_save_enabled = true,
+			auto_session_suppress_dirs = {
+				"~/",
+				"~/Downloads",
+				"/",
+			},
 		}
 	end,
-	lazy = false,
-	-- keys = {
-	-- 	{
-	-- 		"n",
-	-- 		"<Leader>pe",
-	-- 		":Telescope persisted<cr>",
-	-- 		desc = "Telescope Persisted",
-	-- 	},
-	-- 	{
-	-- 		"n",
-	-- 		"<Leader>sel",
-	-- 		":SessionLoadLast<cr>",
-	-- 		desc = "Load Last Session",
-	-- 	},
-	-- 	{
-	-- 		"n",
-	-- 		"<Leader>ts",
-	-- 		":Telescope persisted<cr>",
-	-- 		desc = "Telescope Persisted",
-	-- 	},
-	-- },
 }

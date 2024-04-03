@@ -31,23 +31,6 @@ require("lazy").setup({
 		},
 	},
 	{
-		"numToStr/Comment.nvim",
-		opts = {},
-		lazy = false,
-		config = function()
-			---@diagnostic disable-next-line: missing-fields
-			require("Comment").setup {}
-
-			local comment_ft = require "Comment.ft"
-			comment_ft.set("fish", { "# %s", "# %s #" })
-			comment_ft.set("bash", { "# %s", "# %s #" })
-			comment_ft.set("sh", { "# %s", "# %s #" })
-			comment_ft.set("", { "# %s", "# %s #" })
-			comment_ft.set("typ", { "// %s", "/* %s */" })
-		end,
-	},
-
-	{
 		-- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = {

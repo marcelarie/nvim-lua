@@ -1,5 +1,10 @@
 return {
 	"Verf/deepwhite.nvim",
+	{
+		"zootedb0t/citruszest.nvim",
+		lazy = false,
+		priority = 1000,
+	},
 	-- "lifepillar/vim-gruvbox8",
 	-- "mrjones2014/lighthaus.nvim",
 	-- "phanviet/vim-monokai-pro",

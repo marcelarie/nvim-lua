@@ -20,7 +20,7 @@ return {
 			\  "ui": {
 			\    "code_syntax_enabled": 1,
 			\    "populate_options": 0,
-			\    "open_chat_command": "preset_below",
+			\    "open_chat_command":  "rightbelow 100vnew | setlocal noequalalways | setlocal winfixwidth | call vim_ai#MakeScratchWindow()",
 			\    "scratch_buffer_keep_open": 0,
 			\  },
 			\}

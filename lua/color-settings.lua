@@ -6,3 +6,4 @@ vim.wo.colorcolumn = "80"
 vim.cmd "set t_Co=256"
 
 vim.cmd "colorscheme kanagawa-dragon"
+-- vim.cmd "colorscheme citruszest"

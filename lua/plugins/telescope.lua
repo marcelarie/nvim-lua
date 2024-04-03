@@ -157,18 +157,6 @@ return {
 					case_mode = "smart_case", -- or "ignore_case" or "respect_case"
 					-- the default case_mode is "smart_case"
 				},
-				bookmarks = {
-					-- Available: 'brave', 'google_chrome', 'safari', 'firefox', 'firefox_dev'
-					selected_browser = "firefox",
-
-					-- Either provide a shell command to open the URL
-					url_open_command = "xdg-open",
-
-					-- Or provide the plugin name which is already installed
-					-- Available: 'vim_external', 'open_browser'
-					url_open_plugin = nil,
-					firefox_profile_name = nil,
-				},
 				arecibo = {
 					["selected_engine"] = "google",
 					["url_open_command"] = "xdg-open",
@@ -195,6 +183,11 @@ return {
 				},
 				-- lsp_references = { },
 			},
+		}
+
+		require("browser_bookmarks").setup {
+			selected_browser = "firefox",
+			url_open_command = "xdg-open",
 		}
 
 		-- ts.load_extension("fzy_native")

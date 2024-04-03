@@ -29,5 +29,8 @@
     "/Users/m.manzanares/.local/share/nvim/lazy/tree-sitter-just/lua",
     "/usr/local/share/nvim/runtime/lua"
   ],
-  "workspace.checkThirdParty": false
+  "workspace.checkThirdParty": false,
+    "diagnostics.globals": [
+        "typescript_server_import_all"
+    ]
 }

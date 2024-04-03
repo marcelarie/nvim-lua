@@ -97,3 +97,11 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 	pattern = { ".myclirc" },
 	command = "set filetype=toml",
 })
+
+-- Remember cursor position when opening a file
+vim.api.nvim_create_autocmd({ "BufReadPost" }, {
+	pattern = { "*" },
+	callback = function()
+		vim.cmd('silent! normal! g`"zv')
+	end,
+})

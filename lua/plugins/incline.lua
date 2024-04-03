@@ -37,8 +37,14 @@ return {
 			end
 
 			local full_path = vim.api.nvim_buf_get_name(p.buf)
+
 			if full_path == nil then
 				return "[No Name]"
+			end
+
+			-- if full path contains oil:// return ""
+			if string.find(full_path, "oil://", 1, true) then
+				return ""
 			end
 
 			-- if current working directory is in full path, replace it with .

@@ -40,9 +40,16 @@ return {
 					command = "git diff --name-only --diff-filter=AM --relative",
 					previewer = easypick.previewers.file_diff(),
 				},
+				-- Show all env files
+				{
+					name = "env_files",
+					command = 'find . -type f -name ".env" | sort -V',
+					previewer = easypick.previewers.default(),
+				},
 			},
 		}
 
+		vim.keymap.set("n", "<leader>rr", "<cmd>Easypick<CR>")
 		vim.keymap.set("n", "<leader>cf", "<cmd>Easypick changed_files<CR>")
 		vim.keymap.set("n", "<leader>mc", "<cmd>Easypick conflicts<CR>")
 		vim.keymap.set("n", "<leader>es", "<cmd>Easypick staged_files<CR>")
