@@ -20,6 +20,76 @@ local function http_list()
 	require("telescope").extensions.http.list {}
 end
 
+local telescope_utilities = require "telescope.utils"
+local plenary_strings = require "plenary.strings"
+local nvim_web_devicons = require "nvim-web-devicons"
+local telescope_make_entry_module = require "telescope.make_entry"
+local telescope_entry_display_module = require "telescope.pickers.entry_display"
+local telescope_builtin = require "telescope.builtin"
+
+local function get_path_and_tail(file_name)
+	local buffer_name_tail = telescope_utilities.path_tail(file_name)
+	local path_without_tail =
+		plenary_strings.truncate(file_name, #file_name - #buffer_name_tail, "")
+	local path_to_display = telescope_utilities.transform_path(
+		{ path_display = { "truncate" } },
+		path_without_tail
+	)
+	return buffer_name_tail, path_to_display
+end
+
+local function create_displayer(file_type_icon_width)
+	return telescope_entry_display_module.create {
+		separator = " ",
+		items = {
+			{ width = file_type_icon_width },
+			{ width = nil },
+			{ remaining = true },
+		},
+	}
+end
+
+local function generate_entry_maker(options)
+	local original_entry_maker =
+		telescope_make_entry_module.gen_from_quickfix(options)
+
+	options.entry_maker = function(line)
+		local original_entry_table = original_entry_maker(line)
+		local displayer = create_displayer(
+			plenary_strings.strdisplaywidth(
+				nvim_web_devicons.get_icon("fname", { default = true })
+			)
+		)
+
+		original_entry_table.display = function(entry)
+			local tail, path_to_display = get_path_and_tail(entry.filename)
+			local tail_for_display = tail .. " "
+			local icon, icon_highlight = telescope_utilities.get_devicons(tail)
+			local coordinates =
+				string.format("  %s:%s ", entry.lnum, entry.col)
+
+			return displayer {
+				{ icon, icon_highlight },
+				tail_for_display .. coordinates,
+				{ path_to_display, "TelescopeResultsComment" },
+			}
+		end
+		return original_entry_table
+	end
+end
+
+local function pretty_lsp_references(local_options)
+	if local_options ~= nil and type(local_options) ~= "table" then
+		print "Options must be a table."
+		return
+	end
+
+	local options = local_options or {}
+	generate_entry_maker(options)
+
+	telescope_builtin.lsp_references(options)
+end
+
 return {
 	"nvim-telescope/telescope.nvim",
 	branch = "0.1.x",
@@ -73,18 +143,18 @@ return {
 				},
 			},
 
-			-- defaults = {
-			-- 	vimgrep_arguments = {
-			-- 		"rg",
-			-- 		"--color=never",
-			-- 		"--no-heading",
-			-- 		"--with-filename",
-			-- 		"--line-number",
-			-- 		"--column",
-			-- 		"--smart-case",
-			-- 		"-l",
-			-- 	},
-			-- },
+			defaults = {
+				vimgrep_arguments = {
+					"rg",
+					"--color=never",
+					"--no-heading",
+					"--with-filename",
+					"--line-number",
+					"--column",
+					"--smart-case",
+					-- "-l",
+				},
+			},
 
 			prompt_prefix = " >",
 			color_devicons = true,
@@ -181,7 +251,16 @@ return {
 				colorscheme = {
 					enable_preview = true,
 				},
-				-- lsp_references = { },
+				find_files = {
+					find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+				},
+				lsp_references = {
+
+					-- layout_config = {
+					-- 	width = 0.55,
+					-- 	height = 0.65,
+					-- },
+				},
 			},
 		}
 
@@ -226,13 +305,7 @@ return {
 		},
 		{ "<Leader>k", ":Telescope keymaps<cr>", desc = "Keymaps" },
 		{ "<Leader>em", ":Telescope symbols<cr>", desc = "Symbols" },
-		{
-			"<Leader>gr",
-			function()
-				require("telescope.builtin").lsp_references {}
-			end,
-			desc = "LSP References",
-		},
+		{ "<Leader>gr", pretty_lsp_references, desc = "LSP References" },
 		{ "<Leader>gs", ":Telescope git_status<cr>", desc = "Git Status" },
 		{
 			"<Leader>gb",
