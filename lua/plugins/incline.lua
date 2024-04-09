@@ -1,6 +1,7 @@
 return {
 	"b0o/incline.nvim",
 	-- event = "VeryLazy",
+	enabled = false,
 	opts = {
 		debounce_threshold = {
 			falling = 50,

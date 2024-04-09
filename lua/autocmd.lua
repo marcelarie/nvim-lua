@@ -102,6 +102,6 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {
 	pattern = { "*" },
 	callback = function()
-		vim.cmd('silent! normal! g`"zv')
+		vim.cmd 'silent! normal! g`"zv'
 	end,
 })

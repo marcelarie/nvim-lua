@@ -7,6 +7,7 @@ end
 
 return {
 	"stevearc/oil.nvim",
+	lazy = false,
 	config = function()
 		require("oil").setup {
 			-- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
