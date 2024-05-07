@@ -1,16 +1,19 @@
 return {
-	{
-		"Bekaboo/dropbar.nvim",
-		-- enabled = false,
-		dependencies = {
-			-- optional, but required for fuzzy finder support
-			"nvim-telescope/telescope-fzf-native.nvim",
-		},
-		opts = {
+	"Bekaboo/dropbar.nvim",
+	-- enabled = false,
+	dependencies = {
+		"nvim-telescope/telescope-fzf-native.nvim",
+	},
+	config = function()
+		local sources = require "dropbar.sources"
+
+		require("dropbar").setup {
 			-- bar = {
 			-- 	sources = {
-			-- 		treesitter = {},
-			-- 		lsp = {},
+			-- 		sources.path,
+			-- 		sources.markdown,
+			-- 		-- sources.lsp,
+			-- 		-- sources.treesitter,
 			-- 	},
 			-- },
 			icons = {
@@ -18,6 +21,7 @@ return {
 				ui = {
 					bar = {
 						separator = " ",
+						-- separator = " > ",
 						extends = "…",
 					},
 					menu = {
@@ -29,6 +33,6 @@ return {
 					use_devicons = true,
 				},
 			},
-		},
-	},
+		}
+	end,
 }

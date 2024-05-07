@@ -11,7 +11,7 @@ return {
 		vim.keymap.set(
 			"n",
 			"<Leader>gt",
-			":GitBlameClassic<cr>",
+			":GitBlameToggle<cr>",
 			{ noremap = true, silent = false }
 		)
 

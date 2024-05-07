@@ -1,7 +1,6 @@
 -- [[ Configure plugins ]]
 require("lazy").setup({
-	-- Detect tabstop and shiftwidth automatically
-	"tpope/vim-sleuth",
+	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
 	"nacro90/numb.nvim",
 	{ "sindrets/diffview.nvim", lazy = false },
@@ -13,6 +12,7 @@ require("lazy").setup({
 	"christoomey/vim-system-copy",
 	"wellle/targets.vim",
 	"FabijanZulj/blame.nvim",
+	"kilavila/nvim-gitignore",
 
 	{ "kaarmu/typst.vim", ft = { "typ" } },
 
@@ -37,7 +37,6 @@ require("lazy").setup({
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			"nvim-treesitter/playground",
 			"JoosepAlviste/nvim-ts-context-commentstring",
-			"nvim-treesitter/nvim-treesitter-context",
 		},
 		build = ":TSUpdate",
 	},

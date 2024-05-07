@@ -138,8 +138,9 @@ return {
 			sources = {
 				{ name = "path" },
 				{ name = "copilot" },
+				{ name = "cody" },
 				{ name = "luasnip", max_item_count = 4 },
-				{ name = "nvim_lsp", max_item_count = 100 },
+				{ name = "nvim_lsp", max_item_count = 40 },
 				{ name = "tmux", max_item_count = 4 },
 				{
 					name = "buffer",

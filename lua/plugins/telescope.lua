@@ -5,9 +5,17 @@ local function grep_string_prompt()
 	}
 end
 
+-- local function egrepify_string_prompt()
+-- 	require("telescope").extensions.egrepify.egrepify {}
+-- end
+
 -- Function to handle live_grep
-local function live_grep()
-	require("telescope.builtin").live_grep {}
+-- local function live_grep()
+-- 	require("telescope.builtin").live_grep {}
+-- end
+
+local function egrepify()
+	require("telescope").extensions.egrepify.egrepify {}
 end
 
 -- Function to handle zoxide list
@@ -25,7 +33,7 @@ local plenary_strings = require "plenary.strings"
 local nvim_web_devicons = require "nvim-web-devicons"
 local telescope_make_entry_module = require "telescope.make_entry"
 local telescope_entry_display_module = require "telescope.pickers.entry_display"
-local telescope_builtin = require "telescope.builtin"
+local builtin = require "telescope.builtin"
 
 local function get_path_and_tail(file_name)
 	local buffer_name_tail = telescope_utilities.path_tail(file_name)
@@ -87,7 +95,7 @@ local function pretty_lsp_references(local_options)
 	local options = local_options or {}
 	generate_entry_maker(options)
 
-	telescope_builtin.lsp_references(options)
+	builtin.lsp_references(options)
 end
 
 return {
@@ -107,6 +115,7 @@ return {
 				return vim.fn.executable "make" == 1
 			end,
 		},
+		"fdschmidt93/telescope-egrepify.nvim",
 		"nvim-telescope/telescope-github.nvim",
 		"debugloop/telescope-undo.nvim",
 		"benfowler/telescope-luasnip.nvim",
@@ -287,6 +296,7 @@ return {
 		ts.load_extension "http"
 		ts.load_extension "themes"
 		ts.load_extension "undo"
+		ts.load_extension "egrepify"
 
 		-- local M = {}
 		-- M.search_dotfiles = function()
@@ -303,7 +313,7 @@ return {
 			":Telescope find_files hidden=true no_ignore=true<cr>",
 			desc = "Find Hidden Files",
 		},
-		{ "<Leader>k", ":Telescope keymaps<cr>", desc = "Keymaps" },
+		{ "<Leader>km", ":Telescope keymaps<cr>", desc = "Keymaps" },
 		{ "<Leader>em", ":Telescope symbols<cr>", desc = "Symbols" },
 		{ "<Leader>gr", pretty_lsp_references, desc = "LSP References" },
 		{ "<Leader>gs", ":Telescope git_status<cr>", desc = "Git Status" },
@@ -312,25 +322,30 @@ return {
 			":Telescope git_branches<cr>",
 			desc = "Git Branches",
 		},
-		{ "<Leader>tb", ":Telescope buffers<cr>", desc = "Buffers" },
+		{ "<Leader>tb", builtin.buffers, desc = "Buffers" },
 		{ "<leader>rg", grep_string_prompt, desc = "Grep String" },
 		{ "<leader>as", ":Telescope AST_grep<cr>", desc = "AST Grep" },
 		{ "<leader>tu", ":Telescope undo<cr>", desc = "Telescope undo" },
 		{
 			"<leader>rw",
 			function()
-				require("telescope.builtin").grep_string {
+				builtin.grep_string {
 					search = vim.fn.expand "<cword>",
 				}
 			end,
 			desc = "Grep Current Word",
 		},
-		{ "<leader>r", live_grep, desc = "Live Grep" },
+		-- { "<leader>r", live_grep, desc = "Live Grep" },
+		{
+			"<leader>r",
+			egrepify,
+			desc = "Live Grep (with egrepify)",
+		},
 		{ "<leader>ht", ":Telescope help_tags<cr>", desc = "Help Tags" },
 		{
 			"<leader>br",
 			function()
-				require("telescope.builtin").current_buffer_fuzzy_find {
+				builtin.current_buffer_fuzzy_find {
 					default_text = vim.fn.expand "<cword>",
 				}
 			end,
@@ -338,20 +353,23 @@ return {
 		},
 		{
 			"<leader>bu",
-			function()
-				require("telescope.builtin").current_buffer_fuzzy_find {}
-			end,
+			builtin.current_buffer_fuzzy_find,
 			desc = "Buffer Fuzzy Find",
 		},
 		{
 			"<leader>rc",
-			":Telescope find_files{ prompt_title = '< vimrc >', cwd = '~/.config/nvim/' }<cr>",
+			function()
+				builtin.find_files {
+					prompt_title = "< vimrc >",
+					cwd = vim.fn.stdpath "config",
+				}
+			end,
 			desc = "Vimrc Files",
 		},
 		{
 			"<leader>nf",
 			function()
-				require("telescope.builtin").grep_string {
+				builtin.grep_string {
 					search = vim.fn.input "grep for > ",
 					cwd = "./node_modules",
 				}
@@ -361,7 +379,7 @@ return {
 		{
 			"<leader>nm",
 			function()
-				require("telescope.builtin").live_grep {
+				builtin.live_grep {
 					cwd = "./node_modules",
 				}
 			end,
@@ -373,5 +391,10 @@ return {
 			desc = "Zoxide List",
 		},
 		{ "<leader>rh", http_list, desc = "HTTP List" },
+		{
+			"<leader>sy",
+			builtin.lsp_document_symbols,
+			desc = "Zoxide List",
+		},
 	},
 }
