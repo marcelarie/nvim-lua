@@ -10,13 +10,6 @@ return {
 
 		vim.keymap.set(
 			"n",
-			"<Leader>gt",
-			":GitBlameToggle<cr>",
-			{ noremap = true, silent = false }
-		)
-
-		vim.keymap.set(
-			"n",
 			"<Leader>go",
 			":GitBlameOpenFileURL<cr>",
 			{ noremap = true, silent = false }

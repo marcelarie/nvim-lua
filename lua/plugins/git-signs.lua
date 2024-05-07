@@ -15,6 +15,13 @@ return {
 				changedelete = { text = "~" },
 				untracked = { text = "┆" },
 			},
+			current_line_blame_opts = {
+				virt_text = true,
+				virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
+				delay = 500,
+				ignore_whitespace = false,
+				virt_text_priority = 100,
+			},
 			on_attach = function(bufnr)
 				local gs = package.loaded.gitsigns
 
@@ -123,6 +130,21 @@ return {
 					"ih",
 					":<C-U>Gitsigns select_hunk<CR>",
 					{ desc = "select git hunk" }
+				)
+
+				map(
+					"n",
+					"<Leader>gt",
+					":Gitsigns toggle_current_line_blame<CR>",
+					{ noremap = true, silent = false }
+				)
+
+				-- Set git current line blame highlight to the
+				-- same as visual mode. If not set, it will be hidden
+				vim.api.nvim_set_hl(
+					0,
+					"GitSignsCurrentLineBlame",
+					{ link = "Visual" }
 				)
 			end,
 		},
