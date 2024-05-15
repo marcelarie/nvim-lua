@@ -1,4 +1,4 @@
-function get_nvim_version()
+local function get_nvim_version()
 	local nvim_version = vim.version()
 	return string.format("  v%d.%d", nvim_version.minor, nvim_version.patch)
 end
@@ -6,7 +6,7 @@ end
 _G.get_nvim_version = get_nvim_version
 
 -- Create function in global scope
-function typescript_server_import_all()
+local function typescript_server_import_all()
 	if
 		vim.bo.filetype == "typescript"
 		or vim.bo.filetype == "typescriptreact"
@@ -28,3 +28,9 @@ function typescript_server_import_all()
 end
 
 _G.typescript_server_import_all = typescript_server_import_all
+
+local has_splits = function()
+	return vim.api.nvim_get_current_win() > 1000
+end
+
+_G.has_splits = has_splits

@@ -135,8 +135,26 @@ return {
 	ft = "alpha",
 	config = function()
 		local actions = require "telescope.actions"
+		local actions_state = require "telescope.actions.state"
 		-- local builtin = require "telescope.builtin"
 		local ts = require "telescope"
+
+		-- Opens marked items in a quickfix list.
+		-- if there are no marked items, it opens all items in a quickfix list.
+		local smart_send_to_qflist = function(prompt_bufnr)
+			local picker =
+				require("telescope.actions.state").get_current_picker(
+					prompt_bufnr
+				)
+			local multi = picker:get_multi_selection()
+
+			if not vim.tbl_isempty(multi) then
+				actions.send_selected_to_qflist(prompt_bufnr)
+			else
+				actions.send_to_qflist(prompt_bufnr)
+			end
+			actions.open_qflist(prompt_bufnr)
+		end
 
 		ts.setup {
 			file_sorter = require("telescope.sorters").get_fzy_sorter,
@@ -144,13 +162,6 @@ return {
 			grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 			qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
 			generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-
-			mappings = {
-				i = {
-					["<C-x>"] = false,
-					["<C-q>"] = actions.send_to_qflist,
-				},
-			},
 
 			defaults = {
 				vimgrep_arguments = {
@@ -163,64 +174,74 @@ return {
 					"--smart-case",
 					-- "-l",
 				},
-			},
+				mappings = {
+					i = {
+						["<C-x>"] = false,
+						-- ["<C-q>"] = actions.send_to_qflist, -- default
+						["<C-q>"] = smart_send_to_qflist,
+					},
+					n = {
+						["<C-q>"] = smart_send_to_qflist,
+					},
+				},
 
-			prompt_prefix = " >",
-			color_devicons = true,
+				prompt_prefix = " > ",
+				color_devicons = true,
 
-			selection_caret = "-> ",
-			entry_prefix = "  ",
-			initial_mode = "insert",
-			selection_strategy = "reset",
-			sorting_strategy = "descending",
-			layout_strategy = "horizontal",
+				selection_caret = "-> ",
+				entry_prefix = "  ",
+				initial_mode = "insert",
+				selection_strategy = "reset",
+				sorting_strategy = "descending",
+				layout_strategy = "horizontal",
 
-			-- layout_config = {
-			-- horizontal = {mirror = false},
-			-- vertical = {mirror = false},
-			-- width = 0.75,
-			-- preview_cutoff = 120,
-			-- height = 1,
-			-- prompt_position = "bottom",
-			-- },
-			--
-			file_ignore_patterns = {
-				"node_modules/.*",
-				"%package.json",
-				"%package-lock.json",
-				"build/.*",
-				"coverage/.*",
-				"%git/.*",
-				"%github/.*",
+				-- layout_config = {
+				-- horizontal = {mirror = false},
+				-- vertical = {mirror = false},
+				-- width = 0.75,
+				-- preview_cutoff = 120,
+				-- height = 1,
+				-- prompt_position = "bottom",
+				-- },
+
+				file_ignore_patterns = {
+					"node_modules/.*",
+					"%package.json",
+					"%package-lock.json",
+					"build/.*",
+					"coverage/.*",
+					"%git/.*",
+					"%github/.*",
+				},
+				path_display = true,
+				-- path_display = {
+				-- 	shorten = {
+				-- 		len = 3,
+				-- 		exclude = { 1, -1 },
+				-- 	},
+				-- 	truncate = true,
+				-- },
+				winblend = 0,
+				border = {},
+				-- defaults = {
+				-- 	preview = {
+				-- 		treesitter = false,
+				-- 		languages = { "perl" },
+				-- 	},
+				-- },
+				borderchars = {
+					"─",
+					"│",
+					"─",
+					"│",
+					"╭",
+					"╮",
+					"╯",
+					"╰",
+				},
+				use_less = true,
+				set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil
 			},
-			path_display = true,
-			-- path_display = {
-			-- 	shorten = {
-			-- 		len = 3,
-			-- 		exclude = { 1, -1 },
-			-- 	},
-			-- 	truncate = true,
-			-- },
-			winblend = 0,
-			border = {},
-			-- defaults = {
-			-- 	preview = {
-			-- 		treesitter = false,
-			-- 		languages = { "perl" },
-			-- 	},
-			-- },
-			borderchars = {
-				"─",
-				"│",
-				"─",
-				"│",
-				"╭",
-				"╮",
-				"╯",
-				"╰",
-			},
-			use_less = true,
-			set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil
 			extensions = {
 				-- fzy_native = {
 				-- 	override_generic_sorter = false,

@@ -1,7 +1,52 @@
 return {
 	"freddiehaddad/feline.nvim",
-	config = function(_, _opts)
-		require("feline").setup()
+	config = function(_, opts)
+		local vi_mode = require "feline.providers.vi_mode"
+		local separators =
+			require("feline.defaults").statusline.separators.default_value
+
+		vi_mode = {
+			provider =  {
+				name = "vi_mode",
+			},
+			hl = function()
+				return {
+					name = require("feline.providers.vi_mode").get_mode_highlight_name(),
+					fg = require("feline.providers.vi_mode").get_mode_color(),
+					style = "bold",
+				}
+			end,
+			left_sep = {
+				always_visible = true,
+				str = separators.slant_left,
+				hl = function()
+					return { fg = vi_mode.get_mode_color(), bg = "none" }
+				end,
+			},
+			right_sep = {
+				always_visible = true,
+				str = separators.slant_left,
+				hl = function()
+					return {
+						fg = "#000000",
+						bg = vi_mode.get_mode_color(),
+					}
+				end,
+			},
+		}
+
+		local c = {
+			active = {
+				{ vi_mode }, -- left
+				{}, -- right
+			},
+			-- inactive = {},
+		}
+
+		-- TODO: Fix this
+		-- opts.components = c
+
+		require("feline").setup(opts)
 
 		local lighthaus_theme = {
 			fg = "#DCD7BA",

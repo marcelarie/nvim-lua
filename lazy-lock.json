@@ -40,6 +40,7 @@
   "neodev.nvim": { "branch": "main", "commit": "ce9a2e8eaba5649b553529c5498acb43a6c317cd" },
   "none-ls.nvim": { "branch": "main", "commit": "709a5e56f4273deca737d43355212ac94c1b5083" },
   "numb.nvim": { "branch": "master", "commit": "3f7d4a74bd456e747a1278ea1672b26116e0824d" },
+  "nvim-automa": { "branch": "main", "commit": "d7ab7bbf113d62495db5c2b75a123d6e2d35ca1a" },
   "nvim-bqf": { "branch": "main", "commit": "52703d7adc3be3f7c09eea9a80c5b8caa615fb25" },
   "nvim-cmp": { "branch": "main", "commit": "8f3c541407e691af6163e2447f3af1bd6e17f9a3" },
   "nvim-gitignore": { "branch": "main", "commit": "65f6eaf907231b845b137584d29656935c045b27" },
