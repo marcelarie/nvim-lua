@@ -48,7 +48,7 @@ return {
 				.. "- All explanation must be inside the commit message. Do not write"
 				.. " anything before or after."
 				.. "- Do not enclose the commit message between ``` and ```"
-				.. "- Add line breaks at collumn 78 without breaking words"
+				.. "- Add line breaks at collumn 85 without breaking words"
 				.. "- Try to use 40 characters or less for the body of the commit message if the diff is small"
 				.. "- Base the commit message on the changes provided below:\n"
 				.. diff
