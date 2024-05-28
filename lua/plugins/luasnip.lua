@@ -9,6 +9,7 @@ return {
 		local ext_opts = require "luasnip.util.ext_opts"
 
 		local s = luasnip.snippet
+		local extras = require "luasnip.extras"
 		local sn = luasnip.snippet_node
 		local isn = luasnip.indent_snippet_node
 		local t = luasnip.text_node
@@ -23,8 +24,8 @@ return {
 		end
 
 		-- Make sure to not pass an invalid command, as io.popen() may write over nvim-text.
-		function bash(_, _, command)
-			print(command)
+		---@diagnostic disable-next-line: unused-local
+		local function bash(_args, _parent, command)
 			if not command then
 				return nil
 			end
@@ -51,11 +52,17 @@ return {
 		}
 
 		luasnip.add_snippets("all", {
-			-- s("date_time_now", f(bash, {}, "date -u +'%Y-%m-%d %H:%M:%S'")),
-			s("date_now", f(bash, {}, "date -u +'%Y-%m-%d'")),
-			s("pwd", f(bash, {}, "pwd", i(0))),
-			s({ trig = "d" }, { f(bash, {}, "date +%Y-%m-%d"), i(0) }),
-			s("ls", f(bash, {}, "exa")),
+			s(
+				"date",
+				{ f(bash, {}, { user_args = { "date -u +'%d-%m-%Y'" } }) }
+			),
+			s(
+				"date_time",
+				f(bash, {}, { user_args = { "date -u +'%Y-%m-%d %H:%M:%S'" } })
+			),
+			s("pwd", f(bash, {}, { user_args = { "pwd" } })),
+			s("ls", f(bash, {}, { user_args = { "ls" } })),
+			s("ls_l", f(bash, {}, { user_args = { "ls -l" } })),
 		})
 
 		luasnip.add_snippets("gitcommit", {
@@ -135,10 +142,6 @@ return {
 			s("sub", { t "sub ", i(1, "routine"), t { " {", "}" } }),
 		})
 
-		luasnip.add_snippets("norg", {
-			s({ name = "- [ ]", trig = "- [ ]" }, { t "- [ ] ", i(1, "todo") }),
-		})
-
 		luasnip.add_snippets("rust", {
 			s("pr", { t 'println!("{:?}", ', i(1, "x"), t " )" }),
 		})
@@ -154,7 +157,7 @@ return {
 				trig = "t",
 				name = "t",
 				dscr = "Todo box",
-			}, t "- [ ] "),
+			}, t "- [ ] ", i(1)),
 			s({
 				trig = "jt",
 				name = "jt",
@@ -163,11 +166,13 @@ return {
 				t "Jira ticket: [",
 				i(1, ""),
 				t "](https://stuart-team.atlassian.net/browse/",
+				extras.rep(1),
 				t ")",
 			}),
 		}
 		luasnip.add_snippets("markdown", shared_snippets)
 		luasnip.add_snippets("telekasten", shared_snippets)
+		luasnip.add_snippets("norg", shared_snippets)
 
 		luasnip.add_snippets("sh", {})
 

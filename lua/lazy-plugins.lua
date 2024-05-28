@@ -52,10 +52,10 @@ require("lazy").setup({
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
-	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
-	{ "cappyzawa/trim.nvim", opts = { ft_blocklist = { "markdown" } } },
-	{ "axkirillov/hbac.nvim", config = true },
-	{ "LhKipp/nvim-nu" },
+	-- { "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+	-- { "cappyzawa/trim.nvim", opts = { ft_blocklist = { "markdown" } } },
+	-- { "axkirillov/hbac.nvim", config = true },
+	-- { "LhKipp/nvim-nu" },
 
 	--    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
 	{ import = "plugins" },

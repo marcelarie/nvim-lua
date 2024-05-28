@@ -1,50 +1,53 @@
 return {
 	"freddiehaddad/feline.nvim",
 	config = function(_, opts)
-		local vi_mode = require "feline.providers.vi_mode"
-		local separators =
-			require("feline.defaults").statusline.separators.default_value
-
-		vi_mode = {
-			provider =  {
-				name = "vi_mode",
-			},
-			hl = function()
-				return {
-					name = require("feline.providers.vi_mode").get_mode_highlight_name(),
-					fg = require("feline.providers.vi_mode").get_mode_color(),
-					style = "bold",
-				}
+		local vi_mode = {
+			provider = function()
+				local fel_vim_mode = require "feline.providers.vi_mode"
+				return string.format(" %s ", fel_vim_mode.get_vim_mode())
 			end,
-			left_sep = {
-				always_visible = true,
-				str = separators.slant_left,
-				hl = function()
-					return { fg = vi_mode.get_mode_color(), bg = "none" }
-				end,
+			left_sep = " ",
+			right_sep = " ",
+		}
+
+		local file_name = {
+			provider = "file_info",
+			hl = {
+				fg = "#DCD7BA",
 			},
-			right_sep = {
-				always_visible = true,
-				str = separators.slant_left,
-				hl = function()
-					return {
-						fg = "#000000",
-						bg = vi_mode.get_mode_color(),
-					}
-				end,
-			},
+			separator = " ",
+		}
+
+		local git_branch = {
+			provider = function()
+				local git = require "feline.providers.git"
+				local branch, icon = git.git_branch()
+				local s
+				if #branch > 0 then
+					s = string.format(" %s%s ", icon, branch)
+				else
+					s = string.format(" %s ", "Untracked")
+				end
+				return s
+			end,
+			left_sep = "",
+			right_sep = "  ",
 		}
 
 		local c = {
 			active = {
-				{ vi_mode }, -- left
-				{}, -- right
+				{ -- left
+					vi_mode,
+					git_branch,
+					file_name,
+				},
+				{ -- right
+				},
 			},
 			-- inactive = {},
 		}
 
-		-- TODO: Fix this
-		-- opts.components = c
+		-- opts.components = c -- Comment this to use default bar
 
 		require("feline").setup(opts)
 

@@ -5,13 +5,17 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Temp
+---@diagnostic disable-next-line: duplicate-set-field
+vim.deprecate = function() end
+
 require "global"
+require "options"
 
 require "lazy-bootstrap"
 require "lazy-plugins"
 --
 require "treesitter-setup"
-require "options"
 require "keymaps"
 require "autocmd"
 require "commands"

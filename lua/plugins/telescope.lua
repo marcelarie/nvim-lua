@@ -129,7 +129,6 @@ return {
 		"cljoly/telescope-repo.nvim",
 		"jvgrootveld/telescope-zoxide",
 		"ray-x/telescope-ast-grep.nvim",
-		"AckslD/nvim-neoclip.lua",
 		-- "olimorris/persisted.nvim",
 	},
 	ft = "alpha",
@@ -213,7 +212,7 @@ return {
 					"%git/.*",
 					"%github/.*",
 				},
-				path_display = true,
+				-- path_display = true,
 				-- path_display = {
 				-- 	shorten = {
 				-- 		len = 3,
@@ -310,7 +309,6 @@ return {
 		-- ts.load_extension("arecibo")
 		ts.load_extension "zoxide"
 		ts.load_extension "repo"
-		ts.load_extension "neoclip"
 		ts.load_extension "luasnip"
 		ts.load_extension "gh"
 		-- ts.load_extension "persisted"

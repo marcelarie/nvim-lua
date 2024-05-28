@@ -3,7 +3,7 @@
 
 return {
 	"LukasPietzschmann/boo.nvim",
-	enabled = true,
+	enabled = false,
 	config = function()
 		require("boo").setup {
 			-- win_opts will be used when creating the window. You can put everything here,

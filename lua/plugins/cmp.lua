@@ -99,11 +99,15 @@ return {
 			-- },
 			mapping = {
 				["<C-n>"] = cmp.mapping(
-					cmp.mapping.select_next_item(),
+					cmp.mapping.select_next_item {
+						behavior = cmp.SelectBehavior.Insert,
+					},
 					{ "i", "c" }
 				),
 				["<C-p>"] = cmp.mapping(
-					cmp.mapping.select_prev_item(),
+					cmp.mapping.select_prev_item {
+						behavior = cmp.SelectBehavior.Insert,
+					},
 					{ "i", "c" }
 				),
 				["<C-d>"] = cmp.mapping(
@@ -126,6 +130,8 @@ return {
 					select = true,
 					behavior = cmp.ConfirmBehavior.Replace,
 					-- behavior = cmp.ConfirmBehavior.Insert,
+
+					-- behavior = cmp.ConfirmBehavior.Insert,
 				},
 				-- ["<C-e>"] = cmp.mapping.confirm {
 				-- 	select = true,
@@ -138,6 +144,7 @@ return {
 			sources = {
 				{ name = "path" },
 				{ name = "copilot" },
+				{ name = "luasnip", max_item_count = 4 },
 				{ name = "cody" },
 				{ name = "luasnip", max_item_count = 4 },
 				{ name = "nvim_lsp", max_item_count = 40 },
