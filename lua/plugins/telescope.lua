@@ -129,6 +129,7 @@ return {
 		"cljoly/telescope-repo.nvim",
 		"jvgrootveld/telescope-zoxide",
 		"ray-x/telescope-ast-grep.nvim",
+		"AckslD/nvim-neoclip.lua",
 		-- "olimorris/persisted.nvim",
 	},
 	ft = "alpha",
@@ -316,6 +317,7 @@ return {
 		ts.load_extension "themes"
 		ts.load_extension "undo"
 		ts.load_extension "egrepify"
+		ts.load_extension "neoclip"
 
 		-- local M = {}
 		-- M.search_dotfiles = function()

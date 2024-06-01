@@ -1,10 +1,11 @@
 return {
 	"Bekaboo/dropbar.nvim",
-	-- enabled = false,
+	enabled = false,
 	dependencies = {
 		"nvim-telescope/telescope-fzf-native.nvim",
 	},
 	config = function()
+		---@diagnostic disable-next-line: unused-local
 		local sources = require "dropbar.sources"
 
 		require("dropbar").setup {

@@ -144,9 +144,8 @@ return {
 			sources = {
 				{ name = "path" },
 				{ name = "copilot" },
-				{ name = "luasnip", max_item_count = 4 },
-				{ name = "cody" },
-				{ name = "luasnip", max_item_count = 4 },
+				{ name = "luasnip", max_item_count = 10 },
+				-- { name = "cody" },
 				{ name = "nvim_lsp", max_item_count = 40 },
 				{ name = "tmux", max_item_count = 4 },
 				{

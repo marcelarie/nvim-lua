@@ -113,15 +113,28 @@ local servers = {
 	-- gopls = {},
 	-- pyright = {},
 	-- rust_analyzer = {},
-	-- tsserver = {},
+	tsserver = {
+		single_file_support = false,
+		root_dir = require("lspconfig.util").root_pattern "package.json",
+	},
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
+	eslint = { filetypes = { "javascript", "typescript", "typescriptreact" } },
+	html = { filetypes = { "html", "twig", "hbs" } },
+	denols = {
+		root_dir = require("lspconfig").util.root_pattern(
+			"deno.json",
+			"deno.jsonc"
+		),
+	},
 
 	lua_ls = {
-		Lua = {
-			workspace = { checkThirdParty = false },
-			telemetry = { enable = false },
-			-- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-			-- diagnostics = { disable = { 'missing-fields' } },
+		settings = {
+			Lua = {
+				workspace = { checkThirdParty = false },
+				telemetry = { enable = false },
+				-- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+				-- diagnostics = { disable = { 'missing-fields' } },
+			},
 		},
 	},
 }
@@ -145,8 +158,10 @@ mason_lspconfig.setup_handlers {
 		require("lspconfig")[server_name].setup {
 			capabilities = capabilities,
 			on_attach = on_attach,
-			settings = servers[server_name],
+			settings = (servers[server_name] or {}).settings,
+			root_dir = (servers[server_name] or {}).root_dir,
 			filetypes = (servers[server_name] or {}).filetypes,
+			single_file_support = (servers[server_name] or {}).single_file_support,
 		}
 	end,
 }

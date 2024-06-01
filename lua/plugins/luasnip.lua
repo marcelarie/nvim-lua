@@ -182,6 +182,12 @@ return {
 		-- luasnip.add_snippets("javascriptreact", {
 		-- 	s("cl", { t "console.log(", i(1, "var"), t ")" }),
 		-- })
+		luasnip.add_snippets("javascript", {
+			s("cl", { t "console.log(", i(1, ""), t ");" }),
+		})
+		luasnip.add_snippets("javascriptreact", {
+			s("cl", { t "console.log(", i(1, ""), t ");" }),
+		})
 		luasnip.add_snippets("typescript", {
 			s("cl", { t "console.log(", i(1, ""), t ");" }),
 		})

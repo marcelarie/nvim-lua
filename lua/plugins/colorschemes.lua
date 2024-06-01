@@ -1,5 +1,6 @@
 return {
 	"Verf/deepwhite.nvim",
+	"slugbyte/lackluster.nvim",
 	{
 		"zootedb0t/citruszest.nvim",
 		lazy = false,

@@ -27,8 +27,8 @@
 
 -- Function to handle Leader+Tab mapping
 local function leader_tab_mapping()
-	vim.cmd "vs"
-	vim.cmd "vertical resize 85"
+	vim.cmd "vertical split"
+	-- vim.cmd "vertical resize 85"
 	vim.cmd "Oil"
 end
 

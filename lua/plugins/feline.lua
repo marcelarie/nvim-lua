@@ -1,5 +1,6 @@
 return {
 	"freddiehaddad/feline.nvim",
+	enabled = false,
 	config = function(_, opts)
 		local vi_mode = {
 			provider = function()
