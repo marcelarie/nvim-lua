@@ -1,12 +1,14 @@
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
-local on_attach = function(_client, bufnr)
+local on_attach = function(client, bufnr)
 	-- NOTE: Remember that lua is a real programming language, and as such it is possible
 	-- to define small helper and utility functions so you don't have to repeat yourself
 	-- many times.
 	--
 	-- In this case, we create a function that lets us more easily define mappings specific
 	-- for LSP related items. It sets the mode, buffer and description for us each time.
+	-- Copy content of client to clipboard
+
 	local nmap = function(keys, func, desc)
 		if desc then
 			desc = "LSP: " .. desc
@@ -18,20 +20,14 @@ local on_attach = function(_client, bufnr)
 	nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 	nmap("<leader>a", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
-	nmap(
-		"gd",
-		require("telescope.builtin").lsp_definitions,
-		"[G]oto [D]efinition"
-	)
 	nmap("gp", function()
 		vim.cmd "vsplit"
-		require("telescope.builtin").lsp_definitions()
+		vim.lsp.buf.definition()
 	end, "[G]oto Definition [S]plit")
-	nmap(
-		"<leader>gd",
-		require("telescope.builtin").lsp_definitions,
-		"[G]oto [D]efinition"
-	)
+
+	nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+
+	nmap("<leader>gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
 	nmap(
 		"gr",
 		require("telescope.builtin").lsp_references,
@@ -83,7 +79,7 @@ local on_attach = function(_client, bufnr)
 		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 	end, "[W]orkspace [L]ist Folders")
 
-	_client.server_capabilities.documentFormattingProvider = true
+	client.server_capabilities.documentFormattingProvider = true
 
 	-- Create a command `:Format` local to the LSP buffer
 	vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
@@ -121,6 +117,24 @@ local servers = {
 	eslint = { filetypes = { "javascript", "typescript", "typescriptreact" } },
 	html = { filetypes = { "html", "twig", "hbs" } },
 	denols = {
+		settings = {
+			deno = {
+				enable = true,
+				-- unstable = true,
+				lint = true,
+				codeLens = {
+					implementations = true,
+					references = true,
+				},
+				suggest = {
+					imports = {
+						hosts = {
+							["https://deno.land"] = true,
+						},
+					},
+				},
+			},
+		},
 		root_dir = require("lspconfig").util.root_pattern(
 			"deno.json",
 			"deno.jsonc"
