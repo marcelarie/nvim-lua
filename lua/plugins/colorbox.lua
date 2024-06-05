@@ -6,7 +6,7 @@ local function colorname_disabled(colorname)
 		"nord",
 		"palenight",
 		"dracula",
-		"nordfox"
+		"nordfox",
 	} do
 		if string.lower(c) == string.lower(colorname) then
 			return true
@@ -26,28 +26,39 @@ local function filtered(color, spec)
 end
 
 return {
-	"linrongbin16/colorbox.nvim",
+	dir = "~/clones/forks/colorbox.nvim",
 	dependencies = { "rktjmp/lush.nvim" },
-	enabled = true,
-
-	-- don't lazy load
-	lazy = false,
-	-- load with highest priority
-	priority = 1000,
-
-	build = function()
-		require("colorbox").update()
-	end,
-	config = function()
-		require("colorbox").setup {
-			filter = filtered,
-			-- filter = {
-			-- 	"primary",
-			-- 	---@diagnostic disable-next-line: unused-local
-			-- 	function(color, spec)
-			-- 		return spec.github_stars >= 1000
-			-- 	end,
-			-- },
-		}
-	end,
+	config = true,
 }
+
+-- return {
+-- 	"linrongbin16/colorbox.nvim",
+-- 	dependencies = { "rktjmp/lush.nvim" },
+-- 	enabled = true,
+--
+-- 	-- don't lazy load
+-- 	lazy = false,
+-- 	-- load with highest priority
+-- 	priority = 1000,
+--
+-- 	build = function()
+-- 		require("colorbox").update()
+-- 	end,
+-- 	config = function()
+-- 		require("colorbox").setup {
+-- 			filter = filtered,
+-- 			post_hook = function(color_name)
+-- 				vim.notify(
+-- 					string.format("[Colorbox]: %s", vim.inspect(color_name))
+-- 				)
+-- 			end,
+-- 			-- filter = {
+-- 			-- 	"primary",
+-- 			-- 	---@diagnostic disable-next-line: unused-local
+-- 			-- 	function(color, spec)
+-- 			-- 		return spec.github_stars >= 1000
+-- 			-- 	end,
+-- 			-- },
+-- 		}
+-- 	end,
+-- }

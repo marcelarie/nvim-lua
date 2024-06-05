@@ -22,15 +22,33 @@ local on_attach = function(client, bufnr)
 
 	nmap("gp", function()
 		vim.cmd "vsplit"
-		vim.lsp.buf.definition()
+		-- denols does not work with telescope lsp_definitions
+		if client.name == "denols" then
+			vim.lsp.buf.definition()
+		else
+			require("telescope.builtin").lsp_definitions()
+		end
 	end, "[G]oto Definition [S]plit")
 
-	nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+	nmap(
+		"gd",
+		-- denols does not work with telescope lsp_definitions
+		client.name == "denols" and vim.lsp.buf.definition
+			or require("telescope.builtin").lsp_definitions,
+		"[G]oto [D]efinition"
+	)
 
-	nmap("<leader>gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+	nmap(
+		"<leader>gd",
+		-- denols does not work with telescope lsp_definitions
+		client.name == "denols" and vim.lsp.buf.definition
+			or require("telescope.builtin").lsp_definitions,
+		"[G]oto [D]efinition"
+	)
 	nmap(
 		"gr",
-		require("telescope.builtin").lsp_references,
+		client.name == "denols" and vim.lsp.buf.references
+			or require("telescope.builtin").lsp_references,
 		"[G]oto [R]eferences"
 	)
 	nmap(
@@ -111,7 +129,13 @@ local servers = {
 	-- rust_analyzer = {},
 	tsserver = {
 		single_file_support = false,
-		root_dir = require("lspconfig.util").root_pattern "package.json",
+		root_dir = require("lspconfig").util.root_pattern "yarn.lock"
+			or require("lspconfig").util.root_pattern(
+				"package.json",
+				"tsconfig.json",
+				"jsconfig.json",
+				".git"
+			),
 	},
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
 	eslint = { filetypes = { "javascript", "typescript", "typescriptreact" } },
@@ -120,7 +144,7 @@ local servers = {
 		settings = {
 			deno = {
 				enable = true,
-				-- unstable = true,
+				unstable = true,
 				lint = true,
 				codeLens = {
 					implementations = true,
@@ -154,7 +178,6 @@ local servers = {
 }
 
 -- Setup neovim lua configuration
-require("neodev").setup()
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()

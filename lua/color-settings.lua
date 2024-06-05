@@ -8,6 +8,6 @@ vim.g.sonokai_transparent_background = 1
 
 vim.cmd "set t_Co=256"
 
-vim.cmd "colorscheme kanagawa-dragon"
+-- vim.cmd "colorscheme kanagawa-dragon"
 -- vim.cmd "colorscheme citruszest"
 

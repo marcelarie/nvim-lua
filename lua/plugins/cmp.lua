@@ -145,6 +145,8 @@ return {
 				{ name = "path" },
 				{ name = "copilot" },
 				{ name = "luasnip", max_item_count = 10 },
+				{ name = "lazydev", group_index = 0 }, -- set group index to 0 to skip loading LuaLS completions
+				{ name = "nvim_lua" },
 				-- { name = "cody" },
 				{ name = "nvim_lsp", max_item_count = 40 },
 				{ name = "tmux", max_item_count = 4 },
