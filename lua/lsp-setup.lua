@@ -128,7 +128,7 @@ local servers = {
 	-- pyright = {},
 	-- rust_analyzer = {},
 	tsserver = {
-		single_file_support = false,
+		-- single_file_support = false,
 		root_dir = require("lspconfig").util.root_pattern "yarn.lock"
 			or require("lspconfig").util.root_pattern(
 				"package.json",
@@ -163,6 +163,18 @@ local servers = {
 			"deno.json",
 			"deno.jsonc"
 		),
+	},
+	llm_ls = {
+		model = "codellama:7b",
+		url = "http://localhost:11434", -- llm-ls uses "/api/generate"
+		-- cf https://github.com/ollama/ollama/blob/main/docs/api.md#parameters
+		request_body = {
+			-- Modelfile options for the model you use
+			options = {
+				temperature = 0.2,
+				top_p = 0.95,
+			},
+		},
 	},
 
 	lua_ls = {

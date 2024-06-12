@@ -28,7 +28,16 @@ end
 return {
 	dir = "~/clones/forks/colorbox.nvim",
 	dependencies = { "rktjmp/lush.nvim" },
-	config = true,
+	config = function()
+		require("colorbox").setup {
+			filter = filtered,
+			post_hook = function(color_name)
+				vim.notify(
+					string.format("[Colorbox]: %s", vim.inspect(color_name))
+				)
+			end,
+		}
+	end,
 }
 
 -- return {
