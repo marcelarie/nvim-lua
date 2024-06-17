@@ -25,34 +25,10 @@ local function filtered(color, spec)
 	return true
 end
 
-return {
-	dir = "~/clones/forks/colorbox.nvim",
-	dependencies = { "rktjmp/lush.nvim" },
-	config = function()
-		require("colorbox").setup {
-			filter = filtered,
-			post_hook = function(color_name)
-				vim.notify(
-					string.format("[Colorbox]: %s", vim.inspect(color_name))
-				)
-			end,
-		}
-	end,
-}
-
+-- Uncomment to enable local dev plugin
 -- return {
--- 	"linrongbin16/colorbox.nvim",
+-- 	dir = "~/clones/forks/colorbox.nvim",
 -- 	dependencies = { "rktjmp/lush.nvim" },
--- 	enabled = true,
---
--- 	-- don't lazy load
--- 	lazy = false,
--- 	-- load with highest priority
--- 	priority = 1000,
---
--- 	build = function()
--- 		require("colorbox").update()
--- 	end,
 -- 	config = function()
 -- 		require("colorbox").setup {
 -- 			filter = filtered,
@@ -61,13 +37,45 @@ return {
 -- 					string.format("[Colorbox]: %s", vim.inspect(color_name))
 -- 				)
 -- 			end,
--- 			-- filter = {
--- 			-- 	"primary",
--- 			-- 	---@diagnostic disable-next-line: unused-local
--- 			-- 	function(color, spec)
--- 			-- 		return spec.github_stars >= 1000
--- 			-- 	end,
--- 			-- },
 -- 		}
 -- 	end,
 -- }
+
+return {
+	"linrongbin16/colorbox.nvim",
+	dependencies = { "rktjmp/lush.nvim" },
+	enabled = true,
+
+	-- don't lazy load
+	lazy = false,
+	-- load with highest priority
+	priority = 1000,
+
+	build = function()
+		require("colorbox").update()
+	end,
+	config = function()
+		require("colorbox").setup {
+			filter = filtered,
+			post_hook = function(color_name)
+				vim.notify(
+					string.format("[Colorbox]: %s", vim.inspect(color_name))
+				)
+			end,
+			-- filter = {
+			-- 	"primary",
+			-- 	---@diagnostic disable-next-line: unused-local
+			-- 	function(color, spec)
+			-- 		return spec.github_stars >= 1000
+			-- 	end,
+			-- },
+		}
+
+		vim.keymap.set(
+			"n",
+			"<leader>cs",
+			":Colorbox shuffle<cr>",
+			{ noremap = true, silent = true }
+		)
+	end,
+}
