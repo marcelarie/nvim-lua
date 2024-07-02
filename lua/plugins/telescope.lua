@@ -125,7 +125,7 @@ return {
 		"andrew-george/telescope-themes",
 		"dhruvmanila/telescope-bookmarks.nvim",
 		"nvim-telescope/telescope-github.nvim",
-		"barrett-ruth/telescope-http.nvim",
+		-- "barrett-ruth/telescope-http.nvim",
 		"cljoly/telescope-repo.nvim",
 		"jvgrootveld/telescope-zoxide",
 		"ray-x/telescope-ast-grep.nvim",
@@ -313,7 +313,7 @@ return {
 		ts.load_extension "luasnip"
 		ts.load_extension "gh"
 		-- ts.load_extension "persisted"
-		ts.load_extension "http"
+		-- ts.load_extension "http"
 		ts.load_extension "themes"
 		ts.load_extension "undo"
 		ts.load_extension "egrepify"
@@ -411,7 +411,7 @@ return {
 			zoxide_list,
 			desc = "Zoxide List",
 		},
-		{ "<leader>rh", http_list, desc = "HTTP List" },
+		-- { "<leader>rh", http_list, desc = "HTTP List" },
 		{
 			"<leader>sy",
 			builtin.lsp_document_symbols,
