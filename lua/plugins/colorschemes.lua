@@ -7,11 +7,15 @@ return {
 		priority = 1000,
 	},
 	"cvigilv/patana.nvim",
+	{
+		"adisen99/apprentice.nvim",
+		dependencies = { "rktjmp/lush.nvim" },
+	},
 	-- "lifepillar/vim-gruvbox8",
 	-- "mrjones2014/lighthaus.nvim",
 	-- "phanviet/vim-monokai-pro",
 	-- "mhartington/oceanic-next",
-	-- "fenetikm/falcon",
+	"fenetikm/falcon",
 	-- "katawful/kat.nvim",
 	-- "rebelot/kanagawa.nvim", -- has own config in ./kanagawa.lua
 	-- "zootedb0t/citruszest.nvim",

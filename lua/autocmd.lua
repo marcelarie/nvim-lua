@@ -105,3 +105,17 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
 		vim.cmd 'silent! normal! g`"zv'
 	end,
 })
+
+-- Display diagnostics as virtual text only if not in insert mode
+vim.api.nvim_create_autocmd("InsertEnter", {
+	pattern = "*",
+	callback = function()
+		vim.diagnostic.config { virtual_text = false, underline = false }
+	end,
+})
+vim.api.nvim_create_autocmd("InsertLeave", {
+	pattern = "*",
+	callback = function()
+		vim.diagnostic.config { virtual_text = true, underline = true }
+	end,
+})

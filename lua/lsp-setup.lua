@@ -215,4 +215,8 @@ mason_lspconfig.setup_handlers {
 	end,
 }
 
+-- vim.diagnostic.config {
+-- 	update_in_insert = false,
+-- }
+
 -- vim: ts=2 sts=2 sw=2 et

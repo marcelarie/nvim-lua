@@ -44,7 +44,7 @@ end
 return {
 	"linrongbin16/colorbox.nvim",
 	dependencies = { "rktjmp/lush.nvim" },
-	enabled = true,
+	enabled = false,
 
 	-- don't lazy load
 	lazy = false,

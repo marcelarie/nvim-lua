@@ -20,6 +20,7 @@ require "keymaps"
 require "autocmd"
 require "commands"
 require "color-settings"
+require "tmux"
 require "lsp-setup"
 
 -------------------------------------------------------------------------------
