@@ -8,7 +8,15 @@ vim.g.sonokai_transparent_background = 1
 
 vim.cmd "set t_Co=256"
 
+vim.g.falcon_background = 1
+vim.g.falcon_lightline = 0
+
+vim.g.linefly_options = {
+	with_search_count = false,
+}
+
 vim.cmd "colorscheme falcon"
+
 -- vim.cmd "colorscheme kanagawa-dragon"
 -- vim.cmd "colorscheme citruszest"
 
