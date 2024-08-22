@@ -140,6 +140,7 @@ local servers = {
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
 	eslint = { filetypes = { "javascript", "typescript", "typescriptreact" } },
 	html = { filetypes = { "html", "twig", "hbs" } },
+	-- harper_ls = { settings = {}, },
 	denols = {
 		settings = {
 			deno = {

@@ -35,7 +35,7 @@ au("TextYankPost", {
 au({ "BufNewFile", "BufRead" }, {
 	pattern = { "**/node_modules/**", "node_modules", "/node_modules/*" },
 	callback = function()
-		vim.diagnostic.disable(0)
+		vim.diagnostic.disabled(true)
 	end,
 	group = disable_node_modules_eslint_group,
 })
@@ -97,6 +97,10 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 	pattern = { ".myclirc" },
 	command = "set filetype=toml",
 })
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+	pattern = { ".myclirc" },
+	command = "set filetype=toml",
+})
 
 -- Remember cursor position when opening a file
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {
@@ -117,5 +121,15 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 	pattern = "*",
 	callback = function()
 		vim.diagnostic.config { virtual_text = true, underline = true }
+	end,
+})
+
+-- Go to first line of file if filetype is gitcommit
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "gitcommit",
+	callback = function()
+		vim.schedule(function()
+			vim.cmd "1"
+		end)
 	end,
 })

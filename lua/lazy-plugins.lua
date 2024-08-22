@@ -1,6 +1,7 @@
 -- [[ Configure plugins ]]
 require("lazy").setup({
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+  "tridactyl/vim-tridactyl",
 
 	"nacro90/numb.nvim",
 	{ "sindrets/diffview.nvim", lazy = false },

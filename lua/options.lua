@@ -124,6 +124,7 @@ local signs = { Error = "e ", Warn = "w ", Hint = "h ", Info = "i " }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+	--TODO: USE vim.diagnostic.config()
 end
 
 -- vim: ts=2 sts=2 sw=2 et
