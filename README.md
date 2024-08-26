@@ -4,6 +4,11 @@
 
 > Install requires Neovim 0.10+. Always review the code before installing a configuration.
 
+Dependencies:
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [fd](https://github.com/sharkdp/fd)
+
+
 Clone the repository and install the plugins:
 
 ```bash

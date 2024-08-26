@@ -1,7 +1,7 @@
 -- [[ Configure plugins ]]
 require("lazy").setup({
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
-  "tridactyl/vim-tridactyl",
+	"tridactyl/vim-tridactyl",
 
 	"nacro90/numb.nvim",
 	{ "sindrets/diffview.nvim", lazy = false },
@@ -37,18 +37,6 @@ require("lazy").setup({
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
 		build = ":TSUpdate",
-	},
-	{
-		"iamcco/markdown-preview.nvim",
-		cmd = {
-			"MarkdownPreviewToggle",
-			"MarkdownPreview",
-			"MarkdownPreviewStop",
-		},
-		ft = { "markdown" },
-		build = function()
-			vim.fn["mkdp#util#install"]()
-		end,
 	},
 	-- { "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 	-- { "cappyzawa/trim.nvim", opts = { ft_blocklist = { "markdown" } } },
