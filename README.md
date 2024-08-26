@@ -1,13 +1,6 @@
-# Neovim config
-
 ## Install Instructions
 
 > Install requires Neovim 0.10+. Always review the code before installing a configuration.
-
-Dependencies:
-- [ripgrep](https://github.com/BurntSushi/ripgrep)
-- [fd](https://github.com/sharkdp/fd)
-
 
 Clone the repository and install the plugins:
 
@@ -127,3 +120,7 @@ UIEnter   157.78ms (+56ms)
 
 10 directories, 81 files
 ```
+
+Dependencies:
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [fd](https://github.com/sharkdp/fd)
