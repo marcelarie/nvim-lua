@@ -1,6 +1,7 @@
 return {
 	-- Autocompletion
-	"hrsh7th/nvim-cmp",
+	"yioneko/nvim-cmp", -- Better performance fork. Original --> "hrsh7th/nvim-cmp",
+	branch = "perf",
 	dependencies = {
 		-- Snippet Engine & its associated nvim-cmp source
 		"L3MON4D3/LuaSnip",
@@ -81,6 +82,10 @@ return {
 		require("copilot_cmp").setup()
 
 		cmp.setup {
+			performance = {
+				debounce = 0, -- default is 60ms
+				throttle = 0, -- default is 30ms
+			},
 			window = {
 				documentation = {
 					border = border,

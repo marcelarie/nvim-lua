@@ -104,9 +104,9 @@ vim.diagnostic.config {
 -- 	{ "▏", "FloatBorder" },
 -- }
 
-vim.cmd [[
-	autocmd BufEnter * lua vim.diagnostic.hide(nil,0)
-]]
+-- vim.cmd [[
+-- 	autocmd BufEnter * lua vim.diagnostic.hide(nil,0)
+-- ]]
 
 -- vim.cmd [[autocmd ColorScheme * highlight NormalFloat guibg=#000]]
 -- vim.cmd [[autocmd ColorScheme * highlight FloatBorder guifg=white guibg=#f29]]

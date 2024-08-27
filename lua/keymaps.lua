@@ -329,19 +329,22 @@ vim.keymap.set("n", "v", "v", opt_ns)
 -- vim.keymap.set("n", "V", "v$", opt_ns)
 -- vim.keymap.set("n", "<Leader>Y", '"+y$l', opt_ns)
 
--- vim: ts=2 sts=2 sw=2 et
-
 -- just trying
 local vim_modes = "vn"
 for mode in string.gmatch(vim_modes, "%a") do
-	vim.keymap.set(mode, "ff", function()
+	vim.keymap.set(mode, "ff", function(_, bufnr)
 		vim.lsp.buf.format {
 			filter = function(client)
 				return client.name ~= "tsserver"
 			end,
 		}
+
+		-- TODO: Check why diagnostics are cleared after formating
+		vim.diagnostic.enable(bufnr)
 	end) -- { timeout_ms = 2000 }
 	vim.keymap.set(mode, "<leader>yf", function()
 		vim.cmd [[silent!!yarn eslint --fix %]]
 	end) -- { timeout_ms = 2000 }
 end
+
+-- vim: ts=2 sts=2 sw=2 et
