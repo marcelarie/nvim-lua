@@ -11,6 +11,17 @@ vim.api.nvim_create_user_command(
 	{}
 )
 
+-- Check ~/scripts/todos.sh and ~/scripts/find-todos.sh for more info
+vim.api.nvim_create_user_command(
+	"Todo",
+	function()
+		local date = os.date("%d-%m-%Y")
+		local filename = string.format("~/notes/TODO:%s.md", date)
+		vim.cmd("vsplit " .. filename)
+	end,
+	{}
+)
+
 local print_harpoon_help = function()
 	-- Create a new buffer for the popup window
 	local buf = vim.api.nvim_create_buf(false, true)

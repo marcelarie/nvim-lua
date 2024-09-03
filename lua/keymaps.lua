@@ -325,12 +325,21 @@ vim.keymap.set("n", "<leader>gc", ":GitCommitMessage<cr>")
 -- ':hy:%Subvert/<C-r>h//gc<left><left><left>',
 -- {noremap = true, silent = false})
 vim.keymap.set("n", "v", "v", opt_ns)
+
+-- Same as "gf" except if a number follow the file name the cursor goes to that
+-- specific line
+vim.keymap.set("n", "gf", "gF", opt_ns)
 -- vim.keymap.set("n", "vv", "V", opt_ns)
 -- vim.keymap.set("n", "V", "v$", opt_ns)
 -- vim.keymap.set("n", "<Leader>Y", '"+y$l', opt_ns)
 
 -- keymap to mark a todo as done in markdown
-vim.keymap.set("n", "<Leader>td", ":call markdown#todo#Done()<CR>")
+-- more info in ./commands.lua:15:
+vim.keymap.set("n", "<Leader>tt", ":Todo<cr>", {
+	noremap = true,
+	silent = true,
+	desc = "Open current date todo file using the Todo command",
+})
 
 -- just trying
 local vim_modes = "vn"
