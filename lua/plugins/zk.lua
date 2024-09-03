@@ -1,6 +1,8 @@
 return {
 	"zk-org/zk-nvim",
 	config = function()
+		vim.env.ZK_NOTEBOOK_DIR = os.getenv "HOME" .. "/notes"
+
 		require("zk").setup {
 			picker = "telescope", -- "telescope", "fzf" or "select"
 			lsp = {
@@ -9,8 +11,8 @@ return {
 					name = "zk",
 				},
 				auto_attach = {
-					enabled = true,
-					filetypes = { "markdown" },
+					enabled = false,
+					filetypes = { "markdown", "md" },
 				},
 			},
 		}
@@ -19,16 +21,12 @@ return {
 
 		vim.keymap.set("n", "<Leader>zk", function()
 			print "Notes opened"
-			vim.fn.chdir(notes_dir)
 			vim.cmd "ZkNotes"
-			vim.fn.chdir "-"
 		end, { desc = "Open notes" })
 
 		vim.keymap.set("n", "<Leader>zn", function()
 			print "New note created"
-			vim.fn.chdir(notes_dir)
 			vim.cmd "ZkNew"
-			vim.fn.chdir "-"
 		end, { desc = "Create new note" })
 
 		vim.keymap.set("n", "<Leader>zw", function()

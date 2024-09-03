@@ -77,7 +77,14 @@ vim.opt.errorbells = false
 
 vim.diagnostic.config {
 	-- virtual_text = true,
-	signs = true,
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "e ",
+			[vim.diagnostic.severity.WARN] = "w ",
+			[vim.diagnostic.severity.HINT] = "h ",
+			[vim.diagnostic.severity.INFO] = "i ",
+		},
+	},
 	underline = true,
 	update_in_insert = false,
 	severity_sort = false,
@@ -119,12 +126,5 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 
 -- vim.lsp.handlers["textDocument/signatureHelp"] =
 -- 	vim.lsp.with(vim.lsp.handlers.signature_help, { border = border })
-
-local signs = { Error = "e ", Warn = "w ", Hint = "h ", Info = "i " }
-for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-	--TODO: USE vim.diagnostic.config()
-end
 
 -- vim: ts=2 sts=2 sw=2 et

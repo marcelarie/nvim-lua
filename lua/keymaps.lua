@@ -329,6 +329,9 @@ vim.keymap.set("n", "v", "v", opt_ns)
 -- vim.keymap.set("n", "V", "v$", opt_ns)
 -- vim.keymap.set("n", "<Leader>Y", '"+y$l', opt_ns)
 
+-- keymap to mark a todo as done in markdown
+vim.keymap.set("n", "<Leader>td", ":call markdown#todo#Done()<CR>")
+
 -- just trying
 local vim_modes = "vn"
 for mode in string.gmatch(vim_modes, "%a") do

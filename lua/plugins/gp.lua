@@ -1,5 +1,6 @@
 return {
 	"robitx/gp.nvim",
+	enabled = false,
 	config = function()
 		local conf = {
 			providers = {

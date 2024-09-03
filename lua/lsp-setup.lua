@@ -141,6 +141,8 @@ local servers = {
   eslint = { filetypes = { "javascript", "typescript", "typescriptreact" } },
   html = { filetypes = { "html", "twig", "hbs" } },
   harper_ls = { autostart = false },
+  marksman = { autostart = false },
+  -- zk = { autostart = true },
   denols = {
     settings = {
       deno = {

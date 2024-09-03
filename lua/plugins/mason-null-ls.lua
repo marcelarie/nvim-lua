@@ -18,7 +18,7 @@ return {
 				formatting.shfmt,
 				-- formatting.fixjson,
 				formatting.fish_indent,
-				formatting.mdformat,
+				-- formatting.mdformat,
 				formatting.prettierd,
 				formatting.ocamlformat,
 
