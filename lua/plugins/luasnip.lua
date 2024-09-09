@@ -194,6 +194,9 @@ return {
 		luasnip.add_snippets("typescriptreact", {
 			s("cl", { t "console.log(", i(1, ""), t ");" }),
 		})
+		luasnip.add_snippets("astro", {
+			s("cl", { t "console.log(", i(1, ""), t ");" }),
+		})
 
 		-- WIP
 		luasnip.add_snippets("lua", {

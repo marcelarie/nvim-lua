@@ -15,7 +15,7 @@ return {
 			startify.button(
 				"se",
 				"reload last session",
-				"<cmd>SessionRestore<cr>"
+				"<cmd>silent SessionRestore<cr>"
 			),
 			startify.button(
 				"ss",

@@ -18,9 +18,9 @@ NVIM_APPNAME=marcelarie-nvim-lua/ nvim
 ## Startup time
 
 ```bash
-LazyStart 8.36ms
-LazyDone  101.79ms (+93.43ms)
-UIEnter   157.78ms (+56ms)
+LazyStart 17.24ms
+LazyDone  219.65ms (+202.41ms)
+UIEnter   289.97ms (+70.32ms)
 ```
 
 ## File Tree
@@ -59,6 +59,7 @@ UIEnter   157.78ms (+56ms)
 │   ├── plugins
 │   │   ├── alpha.lua
 │   │   ├── automa.lua
+│   │   ├── avante.lua
 │   │   ├── boo.lua
 │   │   ├── cmp.lua
 │   │   ├── colorbox.lua
@@ -77,6 +78,7 @@ UIEnter   157.78ms (+56ms)
 │   │   ├── harpoon.lua
 │   │   ├── highlight-undo.lua
 │   │   ├── hoversplit.lua
+│   │   ├── img-clip.lua
 │   │   ├── incline.lua
 │   │   ├── init.lua
 │   │   ├── kanagawa.lua
@@ -85,6 +87,8 @@ UIEnter   157.78ms (+56ms)
 │   │   ├── lsp-trouble.lua
 │   │   ├── lualine.lua
 │   │   ├── luasnip.lua
+│   │   ├── markdown.lua
+│   │   ├── markdown-preview.lua
 │   │   ├── markview.lua
 │   │   ├── mason-null-ls.lua
 │   │   ├── neoclip.lua
@@ -104,6 +108,7 @@ UIEnter   157.78ms (+56ms)
 │   │   ├── text-to-colorscheme.lua
 │   │   ├── tsc.lua
 │   │   ├── undotree.lua
+│   │   ├── urlview.lua
 │   │   ├── vim-ai.lua
 │   │   ├── watch.lua
 │   │   ├── zen-mode.lua
@@ -118,9 +123,11 @@ UIEnter   157.78ms (+56ms)
 │   └── en.utf-8.add.spl
 └── stylua.toml
 
-10 directories, 81 files
+10 directories, 86 files
 ```
 
 Dependencies:
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fd](https://github.com/sharkdp/fd)
+- [fzf](https://github.com/junegunn/fzf)
+- [bat](https://githubn.com/sharkdp/bat)
