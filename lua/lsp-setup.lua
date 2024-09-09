@@ -127,7 +127,7 @@ local servers = {
 	-- gopls = {},
 	-- pyright = {},
 	-- rust_analyzer = {},
-	tsserver = {
+	ts_ls = {
 		-- single_file_support = false,
 		root_dir = require("lspconfig").util.root_pattern "yarn.lock"
 			or require("lspconfig").util.root_pattern(
@@ -212,10 +212,6 @@ mason_lspconfig.setup {
 mason_lspconfig.setup_handlers {
 	function(server_name)
 		local config = servers[server_name] or {}
-
-		if server_name == "tsserver" then
-			server_name = "ts_ls"
-		end
 
 		require("lspconfig")[server_name].setup {
 			capabilities = capabilities,
