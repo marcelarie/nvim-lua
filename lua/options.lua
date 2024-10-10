@@ -6,6 +6,7 @@ vim.o.splitright = true -- Vertical splits will automatically be to the right
 -- vim.o.timeoutlen = O
 -- vim.o.guifont = "FiraCode Nerd Font:h15"
 vim.opt.guicursor = "i-v:hor20-Cursor/lCursor" -- Add unerline cursor on Insert and Visual mode
+vim.api.nvim_set_hl(0, 'CursorLine', { underline = true })
 
 -- vim.g.clipboard = "unnamedplus" -- Use the system clipboard
 vim.opt.termguicolors = true

@@ -140,9 +140,21 @@ local servers = {
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
 	eslint = { filetypes = { "javascript", "typescript", "typescriptreact" } },
 	html = { filetypes = { "html", "twig", "hbs" } },
-	harper_ls = { autostart = false },
+	harper_ls = {
+	  autostart = true,
+	  filetypes = {
+	    "md",
+	    "typ",
+	    "markdown",
+	  },
+	},
+	-- grammarly = {
+	-- 	filetypes = { "markdown", "md", "typ" },
+	-- },
 	marksman = { autostart = false },
-	-- zk = { autostart = true },
+	-- zk = {
+	--   autostart = true,
+	-- },
 	denols = {
 		settings = {
 			deno = {

@@ -8,6 +8,8 @@ require("lazy").setup({
 	"NoahTheDuke/vim-just",
 	"kevinhwang91/nvim-bqf",
 	{ "stevearc/dressing.nvim", opts = {} },
+	{ "nvchad/volt", lazy = true },
+	{ "nvchad/minty", lazy = true },
 	"nyngwang/NeoRoot.lua",
 	"mickael-menu/zk-nvim",
 	"christoomey/vim-system-copy",

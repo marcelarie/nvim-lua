@@ -1,7 +1,9 @@
 return {
 	-- Autocompletion
-	"yioneko/nvim-cmp", -- Better performance fork. Original --> "hrsh7th/nvim-cmp",
-	branch = "perf",
+	"iguanacucumber/magazine.nvim", -- Better performance fork. Original --> "hrsh7th/nvim-cmp",
+	name = "nvim-cmp", -- Otherwise highlighting gets messed up
+	-- enabled = false,
+	-- branch = "perf",
 	dependencies = {
 		-- Snippet Engine & its associated nvim-cmp source
 		"L3MON4D3/LuaSnip",
@@ -20,6 +22,7 @@ return {
 
 		"zbirenbaum/copilot.lua",
 		"zbirenbaum/copilot-cmp",
+		"mtoohey31/cmp-fish",
 	},
 	config = function()
 		local cmp = require "cmp"
@@ -155,6 +158,7 @@ return {
 				-- { name = "cody" },
 				{ name = "nvim_lsp", max_item_count = 40 },
 				{ name = "tmux", max_item_count = 4 },
+				{ name = "fish" },
 				{
 					name = "buffer",
 					max_item_count = 4,

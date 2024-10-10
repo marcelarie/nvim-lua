@@ -11,9 +11,10 @@ return {
 			"MeanderingProgrammer/render-markdown.nvim",
 			opts = {
 				file_types = {
-					--"markdown",
+					-- "markdown",
 					"Avante",
 				},
+				-- enabled = false,
 			},
 			ft = { "markdown", "Avante" },
 		},
@@ -21,7 +22,7 @@ return {
 	keys = {
 		{
 			"<leader>ak",
-			"<cmd>AvanteAsk<cr>",
+			"<cmd>AvanteToggle<cr>",
 			desc = "avante ask prompt",
 			mode = { "n", "v" },
 		},
