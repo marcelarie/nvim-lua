@@ -20,6 +20,12 @@ return {
 		lazy = false,
 		priority = 1000,
 	},
+	{
+		"matthewmturner/tuscany",
+		opts = {
+			variant = "tuscany-night",
+		},
+	},
 	"andreasvc/vim-256noir",
 	"t184256/vim-boring",
 	"jaredgorski/Mies.vim",

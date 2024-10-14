@@ -8,7 +8,7 @@ vim.g.sonokai_transparent_background = 1
 
 vim.cmd "set t_Co=256"
 
-vim.g.falcon_background = 1
+vim.g.falcon_background = 0
 vim.g.falcon_lightline = 0
 
 vim.g.linefly_options = {
@@ -33,3 +33,4 @@ vim.cmd "colorscheme falcon"
 -- | kanagawa-dragon           | Inspired by Japanese art, this scheme features rich and deep colors with a traditional aesthetic.                         |
 -- | kanagawa-bones            | Another variant of the Kanagawa theme, focusing on softer, bone-like colors for a more subdued look.                      |
 -- | lunaperche                | A celestial-themed color scheme with cool, soothing colors that evoke the tranquility of the night sky.                   |
+-- | tuscany-night             | Inspired by a trip to Italy. The colors are warm and inviting, reminiscent of the Tuscan countryside at night.            |

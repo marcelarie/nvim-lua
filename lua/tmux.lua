@@ -24,7 +24,6 @@ local function create_tmux_command(command)
 	local tmux_command = string.format("tmux new-window '%s'", command)
 
 	vim.cmd("silent !" .. tmux_command)
-	
 end
 
 --= CARGO COMMANDS =--
@@ -45,8 +44,15 @@ vim.api.nvim_create_user_command("CargoClippy", function()
 end, { desc = "Run cargo clippy in tmux window" })
 
 vim.api.nvim_create_user_command("CargoTest", function()
-	create_tmux_persistent_command "cargo test"
+	create_tmux_persistent_command "cargo test -- --show-output"
 end, { desc = "Run cargo test in tmux window" })
+
+vim.keymap.set("n", "<leader>ct", function()
+	create_tmux_persistent_command "cargo test -- --show-output"
+end, {
+	desc = "Run cargo test in tmux window",
+	silent = true,
+})
 
 --= GIT COMMANDS =--
 
