@@ -28,10 +28,14 @@ end
 
 --= CARGO COMMANDS =--
 
-vim.api.nvim_create_user_command("CargoRun", function()
+vim.api.nvim_create_user_command("CargoRun", function(opts)
+	if opts.args then
+		create_tmux_persistent_command("cargo run " .. opts.args)
+		return
+	end
 	create_tmux_persistent_command "cargo run"
-end, { desc = "Run cargo run in tmux window" })
---
+end, { desc = "Run cargo run in tmux window", nargs = "?" })
+
 vim.keymap.set("n", "<leader>cr", function()
 	create_tmux_persistent_command "cargo run"
 end, {
@@ -51,6 +55,41 @@ vim.keymap.set("n", "<leader>ct", function()
 	create_tmux_persistent_command "cargo test -- --show-output"
 end, {
 	desc = "Run cargo test in tmux window",
+	silent = true,
+})
+
+--= JUST COMMANDS =--
+
+vim.api.nvim_create_user_command("JustRun", function()
+	create_tmux_persistent_command "just run"
+end, { desc = "Run just run in tmux window" })
+
+vim.keymap.set("n", "<leader>jr", function()
+	create_tmux_persistent_command "just run"
+end, {
+	desc = "Run just run in tmux window",
+	silent = true,
+})
+
+vim.api.nvim_create_user_command("JustBuild", function()
+	create_tmux_persistent_command "just build"
+end, { desc = "Run just build in tmux window" })
+
+vim.keymap.set("n", "<leader>jb", function()
+	create_tmux_persistent_command "just build"
+end, {
+	desc = "Run just build in tmux window",
+	silent = true,
+})
+
+vim.api.nvim_create_user_command("JustTest", function()
+	create_tmux_persistent_command "just test"
+end, { desc = "Run just test in tmux window" })
+
+vim.keymap.set("n", "<leader>jt", function()
+	create_tmux_persistent_command "just test"
+end, {
+	desc = "Run just test in tmux window",
 	silent = true,
 })
 

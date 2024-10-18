@@ -15,6 +15,14 @@ vim.api.nvim_create_user_command(
 vim.api.nvim_create_user_command(
 	"Todo",
 	function()
+		-- If the Todo.md file exists in the current directory, open it
+		local local_todo = vim.fn.getcwd() .. "/TODO.md"
+		if vim.fn.filereadable(local_todo) == 1 then
+			vim.cmd("vsplit " .. local_todo)
+			return
+		end
+
+		-- if not, create a global todo file
 		local date = os.date("%d-%m-%Y")
 		local filename = string.format("~/notes/TODO:%s.md", date)
 		vim.cmd("vsplit " .. filename)

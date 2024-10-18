@@ -9,7 +9,11 @@ require("lazy").setup({
 	"kevinhwang91/nvim-bqf",
 	{ "stevearc/dressing.nvim", opts = {} },
 	{ "nvchad/volt", lazy = true },
-	{ "nvchad/minty", lazy = true },
+	{
+		"nvchad/minty",
+		lazy = true,
+		cmd = { "Shades", "Huefy" },
+	},
 	"nyngwang/NeoRoot.lua",
 	"mickael-menu/zk-nvim",
 	"christoomey/vim-system-copy",

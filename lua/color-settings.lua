@@ -4,21 +4,33 @@ vim.o.background = "dark"
 vim.wo.colorcolumn = "80"
 
 -- Set transparent background for Sonokai
-vim.g.sonokai_transparent_background = 1
+-- vim.g.sonokai_transparent_background = 1
 
 vim.cmd "set t_Co=256"
 
-vim.g.falcon_background = 0
-vim.g.falcon_lightline = 0
+-- vim.g.falcon_background = 0
+-- vim.g.falcon_lightline = 0
+-- vim.g.falcon_inactive = 1
+--
+vim.cmd "colorscheme falcon"
 
 vim.g.linefly_options = {
 	with_search_count = false,
 }
 
-vim.cmd "colorscheme falcon"
-
 -- vim.cmd "colorscheme kanagawa-dragon"
 -- vim.cmd "colorscheme citruszest"
+
+-- transparent background
+-- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+-- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+-- vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
+-- vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
+-- vim.api.nvim_set_hl(0, 'Terminal', { bg = 'none' })
+-- vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = 'none' })
+-- vim.api.nvim_set_hl(0, 'FoldColumn', { bg = 'none' })
+-- vim.api.nvim_set_hl(0, 'Folded', { bg = 'none' })
+-- vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
 
 -- # List
 -- | Color Scheme              | Description                                                                                                               |

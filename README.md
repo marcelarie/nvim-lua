@@ -60,6 +60,7 @@ UIEnter   289.97ms (+70.32ms)
 │   │   ├── alpha.lua
 │   │   ├── automa.lua
 │   │   ├── avante.lua
+│   │   ├── blink.lua
 │   │   ├── boo.lua
 │   │   ├── cmp.lua
 │   │   ├── colorbox.lua
@@ -70,6 +71,7 @@ UIEnter   289.97ms (+70.32ms)
 │   │   ├── easypick.lua
 │   │   ├── fall.lua
 │   │   ├── feline.lua
+│   │   ├── flog.lua
 │   │   ├── fzf.lua
 │   │   ├── git-blame.lua
 │   │   ├── git-conflict.lua
@@ -91,7 +93,9 @@ UIEnter   289.97ms (+70.32ms)
 │   │   ├── markdown-preview.lua
 │   │   ├── markview.lua
 │   │   ├── mason-null-ls.lua
+│   │   ├── mdx.lua
 │   │   ├── neoclip.lua
+│   │   ├── nvim-nu.lua
 │   │   ├── nvim-surround.lua
 │   │   ├── nvim-treesitter-context.lua
 │   │   ├── oil.lua
@@ -123,7 +127,7 @@ UIEnter   289.97ms (+70.32ms)
 │   └── en.utf-8.add.spl
 └── stylua.toml
 
-10 directories, 86 files
+10 directories, 90 files
 ```
 
 Dependencies:

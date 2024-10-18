@@ -1,36 +1,3 @@
-local function capture(cmd, raw)
-	local f = assert(io.popen(cmd, "r"))
-	local s = assert(f:read "*a")
-	f:close()
-	if raw then
-		return s
-	end
-	s = string.gsub(s, "^%s+", "")
-	s = string.gsub(s, "%s+$", "")
-	s = string.gsub(s, "[\n\r]+", " ")
-	return s
-end
-
-local function split(source, sep)
-	local result, i = {}, 1
-	while true do
-		local a, b = source:find(sep)
-		if not a then
-			break
-		end
-		local candidat = source:sub(1, a - 1)
-		if candidat ~= "" then
-			result[i] = candidat
-		end
-		i = i + 1
-		source = source:sub(b + 1)
-	end
-	if source ~= "" then
-		result[i] = source
-	end
-	return result
-end
-
 return {
 	"goolord/alpha-nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
