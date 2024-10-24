@@ -1,5 +1,6 @@
 -- [[ Configure plugins ]]
 require("lazy").setup({
+  "stevearc/profile.nvim",
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 	"tridactyl/vim-tridactyl",
 

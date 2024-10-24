@@ -75,6 +75,7 @@
   "patana.nvim": { "branch": "main", "commit": "8ce3ae1d08b822be00d97cf7229a7dfa862c17dd" },
   "playground": { "branch": "master", "commit": "ba48c6a62a280eefb7c85725b0915e021a1a0749" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
+  "profile.nvim": { "branch": "master", "commit": "0ee32b7aba31d84b0ca76aaff2ffcb11f8f5449f" },
   "render-markdown.nvim": { "branch": "main", "commit": "34044cdfcc90b87f32eb962f1fcd9119fc1a62a5" },
   "sg.nvim": { "branch": "master", "commit": "76c97d91f8d8818a4fcf14817fadd98412aa44c8" },
   "snap": { "branch": "main", "commit": "486a2ab714eee79c392abfb45bdb94398409ed34" },

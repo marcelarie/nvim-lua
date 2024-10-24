@@ -1,7 +1,8 @@
 return {
 	"numToStr/Comment.nvim",
 	opts = {},
-	lazy = false,
+	lazy = true,
+	-- enabled = true,
 	dependencies = {
 		"JoosepAlviste/nvim-ts-context-commentstring",
 	},
@@ -20,4 +21,8 @@ return {
 		comment_ft.set("", { "# %s", "# %s #" })
 		comment_ft.set("typ", { "// %s", "/* %s */" })
 	end,
+	keys = {
+		{ "n", "gcc", ":Comment<cr>", { noremap = false } },
+		{ "v", "gc", ":Comment<cr>", { noremap = false } },
+	},
 }
