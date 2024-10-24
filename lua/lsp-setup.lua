@@ -126,7 +126,17 @@ local servers = {
 	-- clangd = {},
 	-- gopls = {},
 	-- pyright = {},
-	-- rust_analyzer = {},
+	rust_analyzer = {
+		cargo = {
+			allFeatures = true,
+		},
+		diagnostics = {
+			enable = true,
+			experimental = {
+				enable = true,
+			},
+		},
+	},
 	ts_ls = {
 		-- single_file_support = false,
 		root_dir = require("lspconfig").util.root_pattern "yarn.lock"
@@ -141,12 +151,12 @@ local servers = {
 	eslint = { filetypes = { "javascript", "typescript", "typescriptreact" } },
 	html = { filetypes = { "html", "twig", "hbs" } },
 	harper_ls = {
-	  autostart = true,
-	  filetypes = {
-	    "md",
-	    "typ",
-	    "markdown",
-	  },
+		autostart = true,
+		filetypes = {
+			"md",
+			"typ",
+			"markdown",
+		},
 	},
 	-- grammarly = {
 	-- 	filetypes = { "markdown", "md", "typ" },
