@@ -94,7 +94,10 @@ UIEnter   289.97ms (+70.32ms)
 │   │   ├── markview.lua
 │   │   ├── mason-null-ls.lua
 │   │   ├── mdx.lua
+│   │   ├── mini-notify.lua
+│   │   ├── mini-status.lua
 │   │   ├── neoclip.lua
+│   │   ├── nvim-highlight-colors.lua
 │   │   ├── nvim-nu.lua
 │   │   ├── nvim-surround.lua
 │   │   ├── nvim-treesitter-context.lua
@@ -117,6 +120,7 @@ UIEnter   289.97ms (+70.32ms)
 │   │   ├── watch.lua
 │   │   ├── zen-mode.lua
 │   │   └── zk.lua
+│   ├── profiler.lua
 │   ├── tmux.lua
 │   └── treesitter-setup.lua
 ├── README.md
@@ -127,7 +131,7 @@ UIEnter   289.97ms (+70.32ms)
 │   └── en.utf-8.add.spl
 └── stylua.toml
 
-10 directories, 90 files
+10 directories, 94 files
 ```
 
 Dependencies:
