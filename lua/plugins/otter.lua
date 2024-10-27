@@ -1,5 +1,7 @@
 return {
 	"jmbuhr/otter.nvim",
+	lazy = true,
+	enabled = false,
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 	},

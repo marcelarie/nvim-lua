@@ -1,5 +1,6 @@
 return {
 	"camspiers/snap",
+	enabled = false,
 	config = function()
 		-- Basic example config
 		local snap = require "snap"

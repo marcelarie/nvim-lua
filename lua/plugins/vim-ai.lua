@@ -6,6 +6,7 @@ local models = {
 
 return {
 	"madox2/vim-ai",
+	lazy = true,
 	config = function()
 		vim.cmd [[
 			let g:vim_ai_chat = {
@@ -95,4 +96,5 @@ return {
 			{}
 		)
 	end,
+	cmd = { "AI", "AIChat", "AIEdit", "AIRedo", "AINewChat" },
 }

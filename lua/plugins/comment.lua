@@ -22,7 +22,7 @@ return {
 		comment_ft.set("typ", { "// %s", "/* %s */" })
 	end,
 	keys = {
-		{ "n", "gcc", ":Comment<cr>", { noremap = false } },
-		{ "v", "gc", ":Comment<cr>", { noremap = false } },
+		{ "gcc", ":Comment<cr>", { noremap = false } },
+		{ "gc", ":Comment<cr>", { noremap = false } },
 	},
 }

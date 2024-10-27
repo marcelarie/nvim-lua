@@ -34,7 +34,7 @@ require("no-clown-fiesta").setup {
 	},
 }
 
-vim.cmd "colorscheme no-clown-fiesta"
+vim.cmd.colorscheme "no-clown-fiesta"
 -- vim.cmd "colorscheme falcon"
 
 -- vim.cmd "colorscheme kanagawa-dragon"

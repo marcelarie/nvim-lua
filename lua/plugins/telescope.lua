@@ -101,6 +101,7 @@ end
 return {
 	"nvim-telescope/telescope.nvim",
 	branch = "0.1.x",
+	lazy = true,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		-- Fuzzy Finder Algorithm which requires local dependencies to be built.
@@ -115,20 +116,20 @@ return {
 				return vim.fn.executable "make" == 1
 			end,
 		},
-		"fdschmidt93/telescope-egrepify.nvim",
-		"nvim-telescope/telescope-github.nvim",
+		-- "fdschmidt93/telescope-egrepify.nvim",
+		-- "nvim-telescope/telescope-github.nvim",
 		"debugloop/telescope-undo.nvim",
 		"benfowler/telescope-luasnip.nvim",
-		"nvim-telescope/telescope-media-files.nvim",
+		-- "nvim-telescope/telescope-media-files.nvim",
 		"nvim-telescope/telescope-fzy-native.nvim",
 		"nvim-telescope/telescope-symbols.nvim",
 		"andrew-george/telescope-themes",
-		"dhruvmanila/telescope-bookmarks.nvim",
-		"nvim-telescope/telescope-github.nvim",
+		-- "dhruvmanila/telescope-bookmarks.nvim",
+		-- "nvim-telescope/telescope-github.nvim",
 		-- "barrett-ruth/telescope-http.nvim",
-		"cljoly/telescope-repo.nvim",
+		-- "cljoly/telescope-repo.nvim",
 		"jvgrootveld/telescope-zoxide",
-		"ray-x/telescope-ast-grep.nvim",
+		-- "ray-x/telescope-ast-grep.nvim",
 		"AckslD/nvim-neoclip.lua",
 		-- "olimorris/persisted.nvim",
 	},
@@ -294,29 +295,29 @@ return {
 			},
 		}
 
-		require("browser_bookmarks").setup {
-			selected_browser = "firefox",
-			url_open_command = "xdg-open",
-		}
+		-- require("browser_bookmarks").setup {
+		-- 	selected_browser = "firefox",
+		-- 	url_open_command = "xdg-open",
+		-- }
 
 		-- ts.load_extension("fzy_native")
 		-- ts.load_extension("fzf") -- TODO: check why this is broken
 		-- ts.load_extension("session-lens")
-		ts.load_extension "bookmarks"
-		ts.load_extension "media_files"
+		-- ts.load_extension "bookmarks"
+		-- ts.load_extension "media_files"
 		-- ts.load_extension("node_modules")
 		--  ts.load_extension("cheat")
-		ts.load_extension "gh"
+		-- ts.load_extension "gh"
 		-- ts.load_extension("arecibo")
 		ts.load_extension "zoxide"
-		ts.load_extension "repo"
+		-- ts.load_extension "repo"
 		ts.load_extension "luasnip"
-		ts.load_extension "gh"
+		-- ts.load_extension "gh"
 		-- ts.load_extension "persisted"
 		-- ts.load_extension "http"
 		ts.load_extension "themes"
-		ts.load_extension "undo"
-		ts.load_extension "egrepify"
+		-- ts.load_extension "undo"
+		-- ts.load_extension "egrepify"
 		ts.load_extension "neoclip"
 
 		-- local M = {}
@@ -327,6 +328,7 @@ return {
 
 		-- return M
 	end,
+	cmd = "Telescope",
 	keys = {
 		{ "<Leader>f", ":Telescope find_files<cr>", desc = "Find Files" },
 		{

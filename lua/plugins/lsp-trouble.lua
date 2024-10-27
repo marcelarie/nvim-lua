@@ -1,7 +1,7 @@
 return {
 	"folke/trouble.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	lazy = false,
+	lazy = true,
 	opts = {
 		height = 15, -- height of the trouble list
 		icons = true, -- use dev-icons for filenames
@@ -34,7 +34,8 @@ return {
 		},
 		use_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
 	},
+	cmd = "Trouble",
 	keys = {
-		{ "<Leader>tr", ":TroubleToggle<cr>" },
+		{ "<Leader>tr", ":Trouble diagnostics<cr>" },
 	},
 }

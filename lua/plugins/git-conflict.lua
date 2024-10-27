@@ -9,7 +9,7 @@ local diff_colors = {
 return {
 	"akinsho/git-conflict.nvim",
 	version = "*",
-	lazy = false,
+	lazy = true,
 	config = function()
 		vim.api.nvim_set_hl(0, "DiffTextConflict", {
 			fg = "#000000",
@@ -43,21 +43,29 @@ return {
 			},
 		}
 	end,
+	cmd = {
+		"GitConflictListQf",
+		"GitConflictNextConflict",
+		"GitConflictPrevConflict",
+		"GitConflictRefresh",
+		"GitConflictChooseBase",
+		"GitConflictChooseBoth",
+		"GitConflictChooseNone",
+		"GitConflictChooseTheirs",
+		"GitConflictChooseOurs",
+	},
 	keys = {
 		{
-			"n",
 			"<Leader>cq",
 			":GitConflictListQf<cr>",
 			desc = "Git Conflict List Quickfix",
 		},
 		{
-			"n",
 			"<Leader>cn",
 			":GitConflictNextConflict<cr>",
 			desc = "Git Conflict Next Conflict",
 		},
 		{
-			"n",
 			"<Leader>cp",
 			":GitConflictPrevConflict<cr>",
 			desc = "Git Conflict Previous Conflict",

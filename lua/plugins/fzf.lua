@@ -6,4 +6,5 @@ return {
 		-- calling `setup` is optional for customization
 		require("fzf-lua").setup {}
 	end,
+	cmd = "FzfLua",
 }

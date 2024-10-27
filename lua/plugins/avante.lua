@@ -1,6 +1,7 @@
 return {
 	"yetone/avante.nvim",
-	event = "VeryLazy",
+	-- event = "VeryLazy",
+	lazy = true,
 	build = "make",
 	dependencies = {
 		"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
@@ -18,6 +19,18 @@ return {
 			},
 			ft = { "markdown", "Avante" },
 		},
+	},
+	cmd = {
+		"Avante",
+		"AvanteToggle",
+		"AvanteAsk",
+		"AvanteChat",
+		"AvanteEdit",
+		"AvanteClear",
+		"AvanteBuild",
+		"AvanteRefresh",
+		"AvanteFocus",
+		"AvanteSwitchProvider",
 	},
 	keys = {
 		{
@@ -48,7 +61,7 @@ return {
 				both = "cb",
 				next = "]x",
 				prev = "[x",
-				cursor = "cu"
+				cursor = "cu",
 			},
 			jump = {
 				next = "]]",

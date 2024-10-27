@@ -1,6 +1,7 @@
 return {
 	"axkirillov/easypick.nvim",
 	dependencies = { "nvim-telescope/telescope.nvim" },
+	lazy = true,
 	config = function()
 		local easypick = require "easypick"
 
@@ -49,11 +50,20 @@ return {
 			},
 		}
 
-		vim.keymap.set("n", "<leader>rr", "<cmd>Easypick<CR>")
-		vim.keymap.set("n", "<leader>cf", "<cmd>Easypick changed_files<CR>")
-		vim.keymap.set("n", "<leader>mc", "<cmd>Easypick conflicts<CR>")
-		vim.keymap.set("n", "<leader>es", "<cmd>Easypick staged_files<CR>")
-		vim.keymap.set("n", "<leader>eu", "<cmd>Easypick untracked_files<CR>")
-		vim.keymap.set("n", "<leader>en", "<cmd>Easypick non_staged_files<CR>")
+		-- vim.keymap.set("n", "<leader>rr", "<cmd>Easypick<CR>")
+		-- vim.keymap.set("n", "<leader>cf", "<cmd>Easypick changed_files<CR>")
+		-- vim.keymap.set("n", "<leader>mc", "<cmd>Easypick conflicts<CR>")
+		-- vim.keymap.set("n", "<leader>es", "<cmd>Easypick staged_files<CR>")
+		-- vim.keymap.set("n", "<leader>eu", "<cmd>Easypick untracked_files<CR>")
+		-- vim.keymap.set("n", "<leader>en", "<cmd>Easypick non_staged_files<CR>")
 	end,
+	cmd = "Easypick",
+	keys = {
+		{ "<leader>rr", "<cmd>Easypick<CR>" },
+		{ "<leader>cf", "<cmd>Easypick changed_files<CR>" },
+		{ "<leader>mc", "<cmd>Easypick conflicts<CR>" },
+		{ "<leader>es", "<cmd>Easypick staged_files<CR>" },
+		{ "<leader>eu", "<cmd>Easypick untracked_files<CR>" },
+		{ "<leader>en", "<cmd>Easypick non_staged_files<CR>" },
+	},
 }
