@@ -30,12 +30,12 @@ return {
 	opts = {
 		---@alias Provider "openai" | "claude" | "azure"  | "copilot" | [string]
 		provider = "claude",
-		claude = {
-			endpoint = "https://api.anthropic.com",
-			model = "claude-3-5-sonnet-20240620",
-			temperature = 0,
-			max_tokens = 4096,
-		},
+		-- claude = {
+		-- 	endpoint = "https://api.anthropic.com",
+		-- 	model = "claude-3-5-sonnet-20240620",
+		-- 	temperature = 0,
+		-- 	max_tokens = 4096,
+		-- },
 		mappings = {
 			ask = "<leader>aa",
 			edit = "<leader>ae",
@@ -48,6 +48,7 @@ return {
 				both = "cb",
 				next = "]x",
 				prev = "[x",
+				cursor = "cu"
 			},
 			jump = {
 				next = "]]",

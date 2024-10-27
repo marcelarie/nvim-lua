@@ -1,6 +1,7 @@
+-- This plugin breaks the config
 return {
 	"bluz71/nvim-linefly",
-	-- enabled = false,
+	enabled = false,
 	config = function()
 		vim.g.linefly_options = {
 			separator_symbol = "⎪",

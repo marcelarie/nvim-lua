@@ -1,7 +1,9 @@
 local diff_colors = {
 	delete = "#681300",
 	add = "#055800",
+	change = "#105090",
 	base_text = "#000000",
+	text_fg = "#ffffff",
 }
 
 return {
@@ -11,7 +13,7 @@ return {
 	config = function()
 		vim.api.nvim_set_hl(0, "DiffTextConflict", {
 			fg = "#000000",
-			bg = diff_colors.base_text,
+			bg = diff_colors.delete,
 		})
 		vim.api.nvim_set_hl(
 			0,
@@ -23,6 +25,11 @@ return {
 			"DiffDeleteConflict",
 			{ fg = "#ffffff", bg = diff_colors.delete }
 		)
+		vim.api.nvim_set_hl(
+			0,
+			"DiffChangeConflict",
+			{ fg = diff_colors.text_fg, bg = diff_colors.change }
+		)
 		require("git-conflict").setup {
 			default_mappings = true, -- disable buffer local mapping created by this plugin
 			disable_diagnostics = true, -- This will disable the diagnostics in a buffer whilst it is conflicted
@@ -32,6 +39,7 @@ return {
 				incoming = "DiffDeleteConflict",
 				current = "DiffAddConflict",
 				ancestor = "DiffTextConflict",
+				changed = "DiffChangeConflict",
 			},
 		}
 	end,

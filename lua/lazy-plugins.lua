@@ -1,6 +1,6 @@
 -- [[ Configure plugins ]]
 require("lazy").setup({
-  "stevearc/profile.nvim",
+	"stevearc/profile.nvim",
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 	"tridactyl/vim-tridactyl",
 
@@ -21,6 +21,7 @@ require("lazy").setup({
 	"wellle/targets.vim",
 	"FabijanZulj/blame.nvim",
 	"kilavila/nvim-gitignore",
+--{ "bluz71/nvim-linefly" }, -- visit config in ./linefly.lua
 
 	{ "kaarmu/typst.vim", ft = { "typ" } },
 
@@ -31,7 +32,11 @@ require("lazy").setup({
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			-- Automatically install LSPs to stdpath for neovim
-			{ "williamboman/mason.nvim", config = true },
+			{
+				"williamboman/mason.nvim",
+				config = true,
+				opts = { PATH = "append" },
+			},
 			"williamboman/mason-lspconfig.nvim",
 		},
 	},

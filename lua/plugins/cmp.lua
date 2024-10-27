@@ -86,6 +86,9 @@ return {
 		require("copilot_cmp").setup()
 
 		cmp.setup {
+			formatting = {
+				format = require("nvim-highlight-colors").format,
+			},
 			performance = {
 				debounce = 0, -- default is 60ms
 				throttle = 0, -- default is 30ms
@@ -101,8 +104,11 @@ return {
 			snippet = {
 				expand = function(args)
 					require("luasnip").lsp_expand(args.body)
+					-- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
 				end,
 			},
+
+			preselect = cmp.PreselectMode.None,
 			-- view = {
 			-- 	entries = "native", -- can be "custom", "wildmenu" or "native"
 			-- },

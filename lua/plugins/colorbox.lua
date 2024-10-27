@@ -56,7 +56,7 @@ return {
 	end,
 	config = function()
 		require("colorbox").setup {
-			filter = filtered,
+			-- filter = filtered,
 			post_hook = function(color_name)
 				vim.notify(
 					string.format("[Colorbox]: %s", vim.inspect(color_name))

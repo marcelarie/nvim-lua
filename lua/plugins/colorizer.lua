@@ -1,6 +1,7 @@
 return {
 	"norcalli/nvim-colorizer.lua",
 	event = "BufEnter",
+	enabled = false,
 	opts = {
 		-- "*",
 		"css",

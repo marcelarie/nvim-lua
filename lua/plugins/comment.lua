@@ -2,7 +2,7 @@ return {
 	"numToStr/Comment.nvim",
 	opts = {},
 	lazy = true,
-	-- enabled = true,
+	enabled = false, -- gcc comes from nvim core now
 	dependencies = {
 		"JoosepAlviste/nvim-ts-context-commentstring",
 	},

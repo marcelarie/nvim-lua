@@ -8,15 +8,34 @@ vim.wo.colorcolumn = "80"
 
 vim.cmd "set t_Co=256"
 
--- vim.g.falcon_background = 0
 -- vim.g.falcon_lightline = 0
--- vim.g.falcon_inactive = 1
---
-vim.cmd "colorscheme falcon"
+-- vim.g.falcon_background = 0
+-- vim.g.falcon_inactive = 0
 
-vim.g.linefly_options = {
-	with_search_count = false,
+-- vim.g.PaperColor_Theme_Options = {
+-- 	theme = {
+-- 		default = {
+-- 			transparent_background = 1,
+-- 		},
+-- 	},
+-- }
+
+require("no-clown-fiesta").setup {
+	transparent = true, -- Enable this to disable the bg color
+	styles = {
+		-- You can set any of the style values specified for `:h nvim_set_hl`
+		comments = {},
+		functions = {},
+		keywords = {},
+		lsp = { underline = true },
+		match_paren = {},
+		type = { bold = true },
+		variables = {},
+	},
 }
+
+vim.cmd "colorscheme no-clown-fiesta"
+-- vim.cmd "colorscheme falcon"
 
 -- vim.cmd "colorscheme kanagawa-dragon"
 -- vim.cmd "colorscheme citruszest"
