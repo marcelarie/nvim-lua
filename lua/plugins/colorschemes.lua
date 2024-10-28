@@ -8,7 +8,7 @@ return {
 	"habamax/vim-colors-defnoche",
 	"itchyny/landscape.vim",
 	"ayu-theme/ayu-vim",
-	"aktersnurra/no-clown-fiesta.nvim",
+	-- "aktersnurra/no-clown-fiesta.nvim",
 	"p00f/alabaster.nvim",
 	{
 		"zootedb0t/citruszest.nvim",
@@ -54,7 +54,6 @@ return {
 	-- "savq/melange",
 	-- "ishan9299/modus-theme-vim",
 	-- "ishan9299/nvim-solarized-lua",
-	-- "aktersnurra/no-clown-fiesta.nvim",
 	-- "nyoom-engineering/oxocarbon.nvim",
 	-- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	-- { "projekt0n/github-nvim-theme", priority = 1000 },

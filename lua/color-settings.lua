@@ -1,57 +1,16 @@
 vim.o.termguicolors = true
 -- vim.o.background = "light"
 vim.o.background = "dark"
-vim.wo.colorcolumn = "80"
+vim.cmd.set "t_Co=256"
 
--- Set transparent background for Sonokai
--- vim.g.sonokai_transparent_background = 1
+-- For some reason falcon fails when setting a transparent background
+-- vim.cmd.colorscheme "citruszest"
+-- vim.cmd.colorscheme "falcon"
 
-vim.cmd "set t_Co=256"
-
--- vim.g.falcon_lightline = 0
--- vim.g.falcon_background = 0
--- vim.g.falcon_inactive = 0
-
--- vim.g.PaperColor_Theme_Options = {
--- 	theme = {
--- 		default = {
--- 			transparent_background = 1,
--- 		},
--- 	},
--- }
-
-require("no-clown-fiesta").setup {
-	transparent = true, -- Enable this to disable the bg color
-	styles = {
-		-- You can set any of the style values specified for `:h nvim_set_hl`
-		comments = {},
-		functions = {},
-		keywords = {},
-		lsp = { underline = true },
-		match_paren = {},
-		type = { bold = true },
-		variables = {},
-	},
-}
-
+-- require("no-clown-fiesta").setup { transparent = true }
 vim.cmd.colorscheme "no-clown-fiesta"
--- vim.cmd "colorscheme falcon"
 
--- vim.cmd "colorscheme kanagawa-dragon"
--- vim.cmd "colorscheme citruszest"
-
--- transparent background
--- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'Terminal', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'FoldColumn', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'Folded', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
-
--- # List
+-- # Favortie color schemes
 -- | Color Scheme              | Description                                                                                                               |
 -- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 -- | falcon                    | A dark color scheme with a focus on low contrast, making it easy on the eyes during long coding sessions.                 |
@@ -65,3 +24,4 @@ vim.cmd.colorscheme "no-clown-fiesta"
 -- | kanagawa-bones            | Another variant of the Kanagawa theme, focusing on softer, bone-like colors for a more subdued look.                      |
 -- | lunaperche                | A celestial-themed color scheme with cool, soothing colors that evoke the tranquility of the night sky.                   |
 -- | tuscany-night             | Inspired by a trip to Italy. The colors are warm and inviting, reminiscent of the Tuscan countryside at night.            |
+-- | no-clown-fiesta           | A color scheme that aims to reduce visual noise and distraction by using a limited palette of soft, muted colors.         |
