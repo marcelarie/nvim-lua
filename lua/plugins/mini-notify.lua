@@ -4,7 +4,7 @@ return {
 	config = function()
 		local notify_filter = function(notif_arr)
 			local filter = function(notif)
-				if vim.startswith(notif.msg, "rust_analyzer: ") then
+				if notif.msg:match "^rust[_-]analyzer:?%s" then
 					return notif.msg:match "Indexing "
 				end
 				-- Keep others
@@ -53,5 +53,6 @@ return {
 		}
 
 		require("mini.notify").setup(opts)
+		vim.notify = require("mini.notify").make_notify()
 	end,
 }

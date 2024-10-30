@@ -10,6 +10,8 @@ vim.cmd.set "t_Co=256"
 -- require("no-clown-fiesta").setup { transparent = true }
 vim.cmd.colorscheme "no-clown-fiesta"
 
+-- vim.api.nvim_set_hl(0, "SpecialKey", { fg = "#373737" })
+
 -- # Favortie color schemes
 -- | Color Scheme              | Description                                                                                                               |
 -- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
