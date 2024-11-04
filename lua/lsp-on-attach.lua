@@ -109,6 +109,15 @@ local on_attach = function(client, bufnr)
 			end,
 		}
 	end, { desc = "Format current buffer with LSP" })
+
+	local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+
+	---@diagnostic disable-next-line: duplicate-set-field
+	function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+		opts = opts or {}
+		opts.max_width = opts.max_width or 80
+		return orig_util_open_floating_preview(contents, syntax, opts, ...)
+	end
 end
 
 M.on_attach = on_attach

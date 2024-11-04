@@ -22,6 +22,8 @@ vim.o.mouse = "a" -- Mouse support --
 vim.o.updatetime = 100 -- Faster completion
 vim.o.cursorline = true -- Enable highlighting of the current line
 
+vim.o.conceallevel = 0
+
 vim.o.hidden = true -- Opening a new file when the current buffer has unsaved changes cause files to be hidden instead of closed.
 
 vim.o.smartcase = true -- Case sensitive search.
@@ -124,6 +126,7 @@ vim.diagnostic.config {
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 	-- border = border, -- single, rounded. double
 	border = "rounded", -- single, rounded. double
+	-- stylize_markdown = false,
 })
 
 -- vim.lsp.handlers["textDocument/signatureHelp"] =

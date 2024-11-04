@@ -1,5 +1,6 @@
 return {
 	"Verf/deepwhite.nvim",
+	"aliqyan-21/darkvoid.nvim",
 	"slugbyte/lackluster.nvim",
 	"mrjones2014/lighthaus.nvim",
 	"sample-usr/rakis.nvim",

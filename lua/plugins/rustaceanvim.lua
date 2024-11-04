@@ -9,7 +9,11 @@ return {
 	config = function()
 		vim.g.rustaceanvim = {
 			-- Plugin configuration
-			tools = {},
+			tools = {
+				float_win_config = {
+					auto_focus = true,
+				},
+			},
 			-- LSP configuration
 			server = {
 				-- TODO: Fix this https://github.com/hrsh7th/cmp-nvim-lsp/issues/72
@@ -30,20 +34,34 @@ return {
 						vim.cmd.RustLsp "openDocs"
 						vim.notify "Opening Rust documentation..."
 					end, { silent = true, buffer = bufnr })
+
+					vim.keymap.set("n", "<leader>d", function()
+						vim.cmd.RustLsp "renderDiagnostic"
+					end, { silent = true, buffer = bufnr })
+
+					vim.keymap.set("n", "<leader>i", function()
+						vim.cmd.RustLsp "explainError"
+					end, { silent = true, buffer = bufnr })
 				end,
+				handlers = {
+					["textDocument/hover"] = vim.lsp.with(
+						vim.lsp.handlers.hover,
+						{ stylize_markdown = false }
+					),
+				},
 				default_settings = {
 					-- rust-analyzer language server configuration
 					["rust-analyzer"] = {
 						cmd = { "~/.cargo/bin/rust-analyzer" },
-						cargo = {
-							allFeatures = true,
-						},
-						diagnostics = {
-							enable = true,
-							experimental = {
-								enable = true,
-							},
-						},
+						-- cargo = {
+						-- 	allFeatures = true,
+						-- },
+						-- diagnostics = {
+						-- 	enable = true,
+						-- 	experimental = {
+						-- 		enable = true,
+						-- 	},
+						-- },
 					},
 				},
 			},
