@@ -40,6 +40,36 @@ au({ "BufNewFile", "BufRead" }, {
 	group = disable_node_modules_eslint_group,
 })
 
+-- Format markdown links
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(args)
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+		if not client then
+			return
+		end
+
+		local original_hover = vim.lsp.buf.hover
+
+		-- Override the hover function
+		vim.lsp.buf.hover = function()
+			original_hover()
+
+		-- 	vim.api.nvim_create_autocmd("BufEnter", {
+		-- 		once = true,
+		-- 		callback = function()
+		-- 			local should_format = vim.bo.filetype == "markdown"
+		-- 				and vim.bo.buftype == "nofile"
+		--
+		-- 			if should_format then
+		-- 				vim.cmd.set "modifiable"
+		-- 				vim.cmd "LinkConvertAll"
+		-- 			end
+		-- 		end,
+		-- 	})
+		end
+	end,
+})
+
 au({ "BufNewFile", "BufRead" }, {
 	pattern = {
 		"*.sh",

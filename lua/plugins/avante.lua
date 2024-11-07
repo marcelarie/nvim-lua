@@ -15,7 +15,9 @@ return {
 					-- "markdown",
 					"Avante",
 				},
-				-- enabled = false,
+				-- overrides = {
+				-- 	buftype = { [""] = { enabled = false } },
+				-- },
 			},
 			ft = { "markdown", "Avante" },
 		},

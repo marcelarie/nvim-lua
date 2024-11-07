@@ -21,6 +21,7 @@ return {
 				-- formatting.mdformat,
 				formatting.prettierd,
 				formatting.ocamlformat,
+				formatting.typstyle,
 
 				-- formatting.rubocop,
 				-- diagnostics.rubocop,
