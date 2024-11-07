@@ -120,17 +120,27 @@ local on_attach = function(client, bufnr)
 
 		local link_index = 0 -- Start from 0 to match your format
 		local references = {}
+		local unique_refs = {} -- Map to keep track of unique URLs
 
 		-- Process lines to convert inline links to reference-style links
 		for i, line in ipairs(contents) do
 			-- Pattern to match markdown links: [text](url)
 			contents[i] = line:gsub("%[(.-)%]%((.-)%)", function(text, url)
-				local ref = string.format("[%d]", link_index)
-				table.insert(
-					references,
-					string.format("[%d]: %s", link_index, url)
-				)
-				link_index = link_index + 1
+				local ref
+
+				-- Check if the URL has already been referenced
+				if unique_refs[url] then
+					ref = string.format("[%d]", unique_refs[url]) -- Reuse existing reference index
+				else
+					ref = string.format("[%d]", link_index)
+					unique_refs[url] = link_index -- Store the unique reference index
+					table.insert(
+						references,
+						string.format("[%d]: %s", link_index, url)
+					)
+					link_index = link_index + 1
+				end
+
 				return string.format("[%s]%s", text, ref)
 			end)
 		end
@@ -160,7 +170,7 @@ local on_attach = function(client, bufnr)
 		-- Add an empty line before appending the references
 		table.insert(merged_contents, "")
 
-		-- Append references to the contents
+		-- Append unique references to the contents
 		for _, ref in ipairs(references) do
 			table.insert(merged_contents, ref)
 		end
