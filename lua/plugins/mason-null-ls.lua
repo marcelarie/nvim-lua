@@ -23,7 +23,7 @@ return {
 				formatting.ocamlformat,
 				formatting.typstyle,
 
-				-- formatting.rubocop,
+				formatting.rubocop,
 				-- diagnostics.rubocop,
 				-- diagnostics.shellcheck,
 				-- diagnostics.eslint_d.,

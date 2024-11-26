@@ -1,5 +1,6 @@
 return {
 	"axieax/urlview.nvim",
+	lazy = true,
 	config = function()
 		local opts = {
 			-- Prompt title (`<context> <default_title>`, e.g. `Buffer Links:`)
@@ -36,4 +37,9 @@ return {
 		vim.keymap.set("n", "<leader>u", "<cmd>UrlView<cr>")
 		vim.keymap.set("n", "<leader>ul", "<cmd>UrlView lazy<cr>")
 	end,
+	cmd = { "UrlView" },
+	keys = {
+		{ "<leader>u",  ":UrlView",     desc = "Open URLView" },
+		{ "<leader>ul", "UrlView lazy", desc = "Open URLView (Lazy)" },
+	},
 }

@@ -28,15 +28,15 @@ local on_attach = function(client, bufnr)
 		if client.name == "denols" then
 			vim.lsp.buf.definition()
 		else
-			require("telescope.builtin").lsp_definitions()
+			vim.lsp.buf.definition()
+			-- require("telescope.builtin").lsp_definitions()
 		end
 	end, "[G]oto Definition [S]plit")
 
 	nmap(
 		"gd",
 		-- denols does not work with telescope lsp_definitions
-		client.name == "denols" and vim.lsp.buf.definition
-			or require("telescope.builtin").lsp_definitions,
+		vim.lsp.buf.definition,
 		"[G]oto [D]efinition"
 	)
 
@@ -188,6 +188,11 @@ local on_attach = function(client, bufnr)
 		local total_lines = #merged_contents
 		local number_of_references = #references
 		local max_height = total_lines - number_of_references
+
+		if number_of_references > 0 then
+			-- Reduce max_height by 2 to account for the empty line and the references
+			max_height = max_height - 2
+		end
 
 		-- Debug
 		-- print("Processed contents:", vim.inspect(merged_contents))

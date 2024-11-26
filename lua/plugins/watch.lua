@@ -1,6 +1,7 @@
 return {
 	"Makaze/watch.nvim",
 	cmd = { "WatchStart", "WatchStop" },
+	lazy = true,
 	opts = {
 		split = {
 			enabled = true,

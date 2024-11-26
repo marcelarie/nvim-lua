@@ -64,6 +64,15 @@ vim.api.nvim_create_user_command("JustRun", function()
 	create_tmux_persistent_command "just run"
 end, { desc = "Run just run in tmux window" })
 
+-- create just command that accept arguments
+vim.api.nvim_create_user_command("Just", function(opts)
+	if opts.args then
+		create_tmux_persistent_command("just " .. opts.args)
+		return
+	end
+	create_tmux_persistent_command "just"
+end, { desc = "Run just in tmux window", nargs = "?" })
+
 vim.keymap.set("n", "<leader>jr", function()
 	create_tmux_persistent_command "just run"
 end, {

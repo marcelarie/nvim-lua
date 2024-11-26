@@ -4,7 +4,10 @@ return {
 	config = function()
 		local notify_filter = function(notif_arr)
 			local filter = function(notif)
-				if notif.msg:match "^rust[_-]analyzer:?%s" then
+				if
+					notif.msg:match "^rust[_-]analyzer:?%s"
+					or notif.msg:match "^null[_-]ls:?%s"
+				then
 					return notif.msg:match "Indexing "
 				end
 				-- Keep others

@@ -1,6 +1,6 @@
 return {
 	"Bekaboo/dropbar.nvim",
-	enabled = false,
+	-- enabled = false,
 	dependencies = {
 		"nvim-telescope/telescope-fzf-native.nvim",
 	},
@@ -9,19 +9,19 @@ return {
 		local sources = require "dropbar.sources"
 
 		require("dropbar").setup {
-			-- bar = {
-			-- 	sources = {
-			-- 		sources.path,
-			-- 		sources.markdown,
-			-- 		-- sources.lsp,
-			-- 		-- sources.treesitter,
-			-- 	},
-			-- },
+			bar = {
+				sources = {
+					sources.path,
+					sources.markdown,
+					-- sources.lsp,
+					-- sources.treesitter,
+				},
+			},
 			icons = {
-				enable = true,
+				enable = false,
 				ui = {
 					bar = {
-						separator = " ",
+						separator = "/",
 						-- separator = " > ",
 						extends = "…",
 					},
