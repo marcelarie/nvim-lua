@@ -30,9 +30,6 @@ return {
 						indicator = " ",
 					},
 				},
-				kinds = {
-					use_devicons = true,
-				},
 			},
 		}
 	end,

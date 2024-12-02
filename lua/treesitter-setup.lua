@@ -3,7 +3,7 @@
 -- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
 vim.defer_fn(function()
   require("nvim-treesitter.configs").setup {
-    auto_install = true,
+    -- auto_install = true,
     highlight = {
       enable = true,
       disable = function(_, bufnr)

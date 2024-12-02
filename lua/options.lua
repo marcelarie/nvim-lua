@@ -51,7 +51,7 @@ vim.cmd "set undoreload=10000"
 vim.opt.listchars = {
 	tab = "∙ ",
 	trail = "∙",
-	eol = "↲",
+	eol = " ",
 	extends = "❯",
 }
 

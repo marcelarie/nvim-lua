@@ -124,6 +124,7 @@ return {
 		"nvim-telescope/telescope-fzy-native.nvim",
 		"nvim-telescope/telescope-symbols.nvim",
 		"andrew-george/telescope-themes",
+		"tsakirist/telescope-lazy.nvim",
 		-- "dhruvmanila/telescope-bookmarks.nvim",
 		-- "nvim-telescope/telescope-github.nvim",
 		-- "barrett-ruth/telescope-http.nvim",
@@ -269,6 +270,41 @@ return {
 					-- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
 					filetypes = { "png", "webp", "jpg", "jpeg" },
 					find_cmd = "rg", -- find command (defaults to `fd`)
+				},
+				lazy = {
+					-- Optional theme (the extension doesn't set a default theme)
+					theme = "ivy",
+					-- The below configuration options are the defaults
+					show_icon = true,
+					mappings = {
+						open_in_browser = "<C-o>",
+						open_in_file_browser = "<M-b>",
+						open_in_find_files = "<C-f>",
+						open_in_live_grep = "<C-g>",
+						open_in_terminal = "<C-t>",
+						open_plugins_picker = "<C-b>",
+						open_lazy_root_find_files = "<C-r>f",
+						open_lazy_root_live_grep = "<C-r>g",
+						change_cwd_to_plugin = "<C-c>d",
+					},
+					actions_opts = {
+						open_in_browser = {
+							auto_close = false,
+						},
+						change_cwd_to_plugin = {
+							auto_close = false,
+						},
+					},
+					terminal_opts = {
+						relative = "editor",
+						style = "minimal",
+						border = "rounded",
+						title = "Telescope lazy",
+						title_pos = "center",
+						width = 0.5,
+						height = 0.5,
+					},
+					-- Other telescope configuration options
 				},
 			},
 			pickers = {

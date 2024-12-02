@@ -26,7 +26,7 @@ return {
 				formatting.rubocop,
 				-- diagnostics.rubocop,
 				-- diagnostics.shellcheck,
-				-- diagnostics.eslint_d.,
+				-- diagnostics.eslint_d,
 				-- formatting.eslint_d,
 				-- code_actions.eslint_d,
 				code_actions.gitsigns,

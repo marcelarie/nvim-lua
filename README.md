@@ -18,9 +18,11 @@ NVIM_APPNAME=marcelarie-nvim-lua/ nvim
 ## Startup time
 
 ```bash
-LazyStart 14.02ms
-LazyDone  108.88ms (+94.86ms)
-UIEnter   150.3ms (+41.41ms)
+Startuptime: 136.19ms
+
+LazyStart 12.61ms
+LazyDone  90.34ms
+UIEnter   136.19ms
 ```
 
 ## File Tree
@@ -135,6 +137,7 @@ UIEnter   150.3ms (+41.41ms)
 ```
 
 Dependencies:
+
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)

@@ -14,8 +14,8 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
-		"hrsh7th/cmp-nvim-lua",
-		"andersevenrud/cmp-tmux",
+		-- "hrsh7th/cmp-nvim-lua",
+		-- "andersevenrud/cmp-tmux",
 		"hrsh7th/cmp-buffer",
 
 		-- Adds a number of user-friendly snippets
@@ -23,7 +23,7 @@ return {
 
 		"zbirenbaum/copilot.lua",
 		"zbirenbaum/copilot-cmp",
-		"mtoohey31/cmp-fish",
+		-- "mtoohey31/cmp-fish",
 	},
 	config = function()
 		local cmp = require "cmp"
@@ -81,6 +81,21 @@ return {
 				copilot_node_command = "node", -- Node version must be < 18
 				server_opts_overrides = {},
 			}
+
+			vim.cmd "Copilot disable"
+
+			vim.keymap.set(
+				"n",
+				"<leader>ce",
+				":Copilot enable<cr>",
+				{ noremap = true, silent = false }
+			)
+			vim.keymap.set(
+				"n",
+				"<leader>cd",
+				":Copilot disable<cr>",
+				{ noremap = true, silent = false }
+			)
 		end, 100)
 
 		require("copilot_cmp").setup()
@@ -161,20 +176,28 @@ return {
 				{ name = "copilot" },
 				{ name = "luasnip", max_item_count = 10 },
 				{ name = "lazydev", group_index = 0 }, -- set group index to 0 to skip loading LuaLS completions
-				{ name = "nvim_lua" },
-				-- { name = "cody" },
 				{ name = "nvim_lsp", max_item_count = 40 },
-				{ name = "tmux", max_item_count = 4 },
-				{ name = "fish" },
 				{
 					name = "buffer",
 					max_item_count = 4,
 					option = {
+						-- Avoid accidentally running on big files
 						get_bufnrs = function()
-							return vim.api.nvim_list_bufs()
+							local buf = vim.api.nvim_get_current_buf()
+							local byte_size = vim.api.nvim_buf_get_offset(
+								buf,
+								vim.api.nvim_buf_line_count(buf)
+							)
+							if byte_size > 1024 * 1024 then -- 1 Megabyte max
+								return {}
+							end
+							return { buf }
 						end,
 					},
 				},
+				-- { name = "nvim_lua" },
+				-- { name = "tmux", max_item_count = 4 },
+				-- { name = "fish" },
 			},
 		}
 

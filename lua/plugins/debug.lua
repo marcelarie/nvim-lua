@@ -17,6 +17,8 @@ return {
 		-- Installs the debug adapters for you
 		"williamboman/mason.nvim",
 		"jay-babu/mason-nvim-dap.nvim",
+		"nvim-neotest/nvim-nio",
+		"theHamsta/nvim-dap-virtual-text",
 
 		-- Add your own debuggers here
 		"leoluz/nvim-dap-go",
@@ -94,6 +96,42 @@ return {
 			},
 		}
 
+		-- local function expand_cargo(option)
+		-- 	if option == "${cargo:program}" then
+		-- 		-- ...
+		-- 	end
+		-- 	return option
+		-- end
+
+		-- dap.adapters.codelldb = {
+		-- 	type = "server",
+		-- 	port = "${port}",
+		-- 	executable = {
+		-- 		command = "/usr/bin/codelldb",
+		-- 		args = { "--port", "${port}" },
+		-- 	},
+		-- 	-- enrich_config = function(config, on_config)
+		-- 	-- 	on_config(vim.tbl_map(expand_cargo, config))
+		-- 	-- end,
+		-- }
+
+		dap.configurations.rust = {
+			{
+				name = "Launch",
+				type = "codelldb",
+				request = "launch",
+				program = function()
+					return vim.fn.input(
+						"Path to executable: ",
+						vim.fn.getcwd() .. "/target/debug/",
+						"file"
+					)
+				end,
+				cwd = "${workspaceFolder}",
+				stopOnEntry = false,
+			},
+		}
+
 		-- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
 		vim.keymap.set(
 			"n",
@@ -102,11 +140,17 @@ return {
 			{ desc = "Debug: See last session result." }
 		)
 
+		-- Eval var under cursor
+		vim.keymap.set("n", "<space>?", function()
+			require("dapui").eval(nil, { enter = true })
+		end)
+
 		dap.listeners.after.event_initialized["dapui_config"] = dapui.open
 		dap.listeners.before.event_terminated["dapui_config"] = dapui.close
 		dap.listeners.before.event_exited["dapui_config"] = dapui.close
 
 		-- Install golang specific config
 		require("dap-go").setup()
+		require("nvim-dap-virtual-text").setup()
 	end,
 }
