@@ -24,5 +24,10 @@ require "color-settings"
 require "tmux"
 require "lsp-setup"
 
+if vim.g.neovide then
+	vim.o.guifont = "BlexMono Nerd Font:h9"
+	vim.opt.guicursor = "i-v:hor20-Cursor/lCursor" -- Add unerline cursor on Insert and Visual mode
+end
+
 -------------------------------------------------------------------------------
 -- vim: ts=2 sts=2 sw=2 et

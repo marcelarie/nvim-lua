@@ -2,6 +2,7 @@ return {
 	"LhKipp/nvim-nu",
 	lazy = true,
 	enabled = true,
+	dir = "~/clones/forks/nvim-nu/",
 	-- build = ":TSInstall nu",
 	ft = { "nu" },
 	config = function()
@@ -18,7 +19,7 @@ return {
 	dependencies = {
 		{
 			"nushell/tree-sitter-nu",
-			dir = "~/clones/external/tree-sitter-nu",
+			-- dir = "~/clones/forks/tree-sitter-nu",
 			-- build = ":TSUpdate nu",
 			-- commit = "e8bdcb9d4d57d999ad6d7c797f9f1808623df1b9",
 		},

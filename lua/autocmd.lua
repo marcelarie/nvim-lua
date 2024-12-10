@@ -54,18 +54,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.lsp.buf.hover = function()
 			original_hover()
 
-		-- 	vim.api.nvim_create_autocmd("BufEnter", {
-		-- 		once = true,
-		-- 		callback = function()
-		-- 			local should_format = vim.bo.filetype == "markdown"
-		-- 				and vim.bo.buftype == "nofile"
-		--
-		-- 			if should_format then
-		-- 				vim.cmd.set "modifiable"
-		-- 				vim.cmd "LinkConvertAll"
-		-- 			end
-		-- 		end,
-		-- 	})
+			-- 	vim.api.nvim_create_autocmd("BufEnter", {
+			-- 		once = true,
+			-- 		callback = function()
+			-- 			local should_format = vim.bo.filetype == "markdown"
+			-- 				and vim.bo.buftype == "nofile"
+			--
+			-- 			if should_format then
+			-- 				vim.cmd.set "modifiable"
+			-- 				vim.cmd "LinkConvertAll"
+			-- 			end
+			-- 		end,
+			-- 	})
 		end
 	end,
 })
@@ -139,6 +139,15 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
 		vim.cmd 'silent! normal! g`"zv'
 	end,
 })
+
+-- Instead of filetype use another group because copilot is not available yet
+-- vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+-- 	pattern = "gitcommit",
+-- 	callback = function()
+-- 		vim.cmd.Copilot "attach"
+-- 		vim.cmd.Copilot "enable"
+-- 	end,
+-- })
 
 -- Display diagnostics as virtual text only if not in insert mode
 vim.api.nvim_create_autocmd("InsertEnter", {

@@ -201,6 +201,27 @@ vim.keymap.set(
 	{ noremap = true, silent = false }
 )
 
+vim.keymap.set(
+	"n",
+	"<leader>xo",
+	"<cmd>source %<cr>",
+	{ desc = "Source current lua file" }
+)
+
+vim.keymap.set(
+	"n",
+	"<leader>x",
+	":.lua<cr>",
+	{ desc = "Source current line in lua files" }
+)
+
+vim.keymap.set(
+	"v",
+	"<leader>x",
+	":lua<cr>",
+	{ desc = "Source visual selection in lua files" }
+)
+
 -- switch windows vertically
 vim.keymap.set("n", "<Leader>l", ":wincmd L<cr>", opts)
 -- switch windows horizontally

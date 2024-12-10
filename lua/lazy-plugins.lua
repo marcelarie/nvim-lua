@@ -43,6 +43,7 @@ require("lazy").setup({
 			"nvim-treesitter/playground",
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			"JoosepAlviste/nvim-ts-context-commentstring",
+      "marcelarie/tree-sitter-kanshi",
 			{
 				"nushell/tree-sitter-nu",
 				-- build = ":TSUpdate nu",

@@ -1,6 +1,7 @@
 return {
 	"echasnovski/mini.statusline",
 	version = false,
+	-- enabled = false,
 	-- No need to copy this inside `setup()`. Will be used automatically.
 	opts = {
 		-- Content of statusline as functions which return statusline string. See
