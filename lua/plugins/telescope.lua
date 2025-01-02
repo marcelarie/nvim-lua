@@ -212,8 +212,8 @@ return {
 					"%package-lock.json",
 					"build/.*",
 					"coverage/.*",
-					"%git/.*",
-					"%github/.*",
+					"%.git/.*",
+					"%.github/.*",
 				},
 				-- path_display = true,
 				-- path_display = {

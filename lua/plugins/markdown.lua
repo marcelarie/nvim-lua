@@ -13,8 +13,15 @@ return {
 
 		vim.keymap.set(
 			"n",
-			"<leader>tn",
+			"<leader>tj",
 			":MDListItemBelow<cr>",
+			{ desc = "Add todo item below" }
+		)
+
+		vim.keymap.set(
+			"n",
+			"<leader>tk",
+			":MDListItemAbove<cr>",
 			{ desc = "Add todo item below" }
 		)
 	end,

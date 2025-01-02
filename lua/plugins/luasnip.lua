@@ -57,6 +57,10 @@ return {
 				{ f(bash, {}, { user_args = { "date -u +'%d-%m-%Y'" } }) }
 			),
 			s(
+				"date_iso",
+				{ f(bash, {}, { user_args = { "date -u +'%Y-%m-%d'" } }) }
+			),
+			s(
 				"date_time",
 				f(bash, {}, { user_args = { "date -u +'%Y-%m-%d %H:%M:%S'" } })
 			),
@@ -158,6 +162,11 @@ return {
 				name = "t",
 				dscr = "Todo box",
 			}, t "- [ ] ", i(1)),
+			s({
+				trig = "bold",
+				name = "bold",
+				dscr = "Bold text",
+			}, { t "**", i(1, "text"), t "**" }),
 			s({
 				trig = "jt",
 				name = "jt",

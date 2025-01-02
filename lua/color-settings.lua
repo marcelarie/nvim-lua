@@ -9,10 +9,12 @@ vim.cmd.set "t_Co=256"
 
 -- require("no-clown-fiesta").setup { transparent = true }
 vim.cmd.colorscheme "no-clown-fiesta"
+-- require("ziggy").style()
+-- require("zig-official-color").setup()
 
 -- vim.api.nvim_set_hl(0, "SpecialKey", { fg = "#373737" })
 
--- # Favortie color schemes
+-- # Favorite color schemes
 -- | Color Scheme              | Description                                                                                                               |
 -- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 -- | falcon                    | A dark color scheme with a focus on low contrast, making it easy on the eyes during long coding sessions.                 |

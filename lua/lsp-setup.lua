@@ -49,7 +49,7 @@ local servers = {
 	eslint = { filetypes = { "javascript", "typescript", "typescriptreact" } },
 	html = { filetypes = { "html", "twig", "hbs" } },
 	typos_lsp = {
-    -- filetypes = { "markdown", "md", "typ"  },
+		-- filetypes = { "markdown", "md", "typ"  },
 		settings = {
 			-- Logging level of the language server. Logs appear in :LspLog. Defaults to error.
 			-- cmd_env = { RUST_LOG = "error" },
@@ -137,6 +137,7 @@ local servers = {
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities()
+-- capabilities = require("blink.cmp").get_lsp_capabilities()
 
 -- Ensure the servers above are installed
 local mason_lspconfig = require "mason-lspconfig"

@@ -15,7 +15,6 @@ require("lazy").setup({
 		cmd = { "Shades", "Huefy" },
 	},
 	"mickael-menu/zk-nvim",
-	"christoomey/vim-system-copy",
 	"wellle/targets.vim",
 	"kilavila/nvim-gitignore",
 

@@ -8,7 +8,7 @@ vim.o.splitright = true -- Vertical splits will automatically be to the right
 vim.opt.guicursor = "i-v:hor20-Cursor/lCursor" -- Add unerline cursor on Insert and Visual mode
 vim.api.nvim_set_hl(0, "CursorLine", { underline = true })
 
--- vim.g.clipboard = "unnamedplus" -- Use the system clipboard
+-- vim.g.clipboard = "unnamedplus" -- Set in ./sys-clip.lua
 vim.opt.termguicolors = true
 
 vim.o.expandtab = true

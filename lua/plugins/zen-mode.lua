@@ -66,4 +66,7 @@ return {
 		on_close = function() end,
 	},
 	cmd = { "ZenMode" },
+	keys = {
+		{ "<leader>zm", ":ZenMode<cr>", desc = "Oil file explorer" },
+	}
 }

@@ -57,5 +57,18 @@ return {
 
 		require("mini.notify").setup(opts)
 		vim.notify = require("mini.notify").make_notify()
+
+		vim.api.nvim_create_user_command("Notifications", function()
+			local notifications = MiniNotify.get_all()
+
+			if #notifications == 0 then
+				vim.notify "No notifications"
+				return
+			end
+
+			for _, notif in ipairs(notifications) do
+				print("[" .. notif.level .. "] " .. notif.msg)
+			end
+		end, {})
 	end,
 }
