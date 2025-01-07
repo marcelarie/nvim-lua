@@ -1,3 +1,21 @@
+local function get_plus_18_node()
+	local home = vim.fn.expand "$HOME"
+	local fnm_path = home .. "/.local/share/fnm/node-versions"
+	local entries = vim.fn.glob(fnm_path .. "/*", false, true)
+
+	local node_path
+
+	for _, entry in ipairs(entries) do
+		local major, _, _ = entry:match "v(%d+)%.(%d+)%.(%d+)"
+		if major and tonumber(major) >= 18 then
+			node_path = entry .. "/installation/bin/node"
+			break
+		end
+	end
+
+	return node_path
+end
+
 return {
 	-- Autocompletion
 	-- "iguanacucumber/magazine.nvim", -- Better performance fork. Original --> "hrsh7th/nvim-cmp",
@@ -43,6 +61,7 @@ return {
 		}
 
 		vim.defer_fn(function()
+			local node_path = get_plus_18_node()
 			require("copilot").setup {
 				panel = {
 					enabled = false,
@@ -78,10 +97,11 @@ return {
 					-- 	["."] = false,
 					["*"] = true, -- enable for all filetypes
 				},
-				copilot_node_command = "node", -- Node version must be < 18
+				copilot_node_command = node_path,
 				server_opts_overrides = {},
 			}
 
+			vim.print("Copilot using node: " .. node_path)
 			vim.cmd "Copilot disable"
 
 			vim.keymap.set(

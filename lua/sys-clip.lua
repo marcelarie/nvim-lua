@@ -1,5 +1,5 @@
 
-vim.opt.clipboard = "unnamedplus" -- Use the system clipboard
+-- vim.opt.clipboard = "unnamedplus" -- Use the system clipboard
 
 -- System clipboard mappings
 vim.keymap.set({ "n", "v" }, "cp", [["+y]]) -- For copying to system clipboard

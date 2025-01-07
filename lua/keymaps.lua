@@ -223,9 +223,9 @@ vim.keymap.set(
 )
 
 -- switch windows vertically
-vim.keymap.set("n", "<Leader>l", ":wincmd L<cr>", opts)
--- switch windows horizontally
-vim.keymap.set("n", "<Leader>j", ":wincmd J<cr>", opts)
+-- vim.keymap.set("n", "<Leader>l", ":wincmd L<cr>", opts)
+-- -- switch windows horizontally
+-- vim.keymap.set("n", "<Leader>j", ":wincmd J<cr>", opts)
 
 -- Lazy
 vim.keymap.set(

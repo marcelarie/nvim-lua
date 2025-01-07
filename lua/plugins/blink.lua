@@ -95,6 +95,8 @@ return {
 
 		config = function()
 			vim.defer_fn(function()
+				local node_path = get_plus_18_node()
+				print("Node path: " .. node_path)
 				require("copilot").setup {
 					panel = {
 						enabled = false,
@@ -130,7 +132,6 @@ return {
 						-- 	["."] = false,
 						["*"] = true, -- enable for all filetypes
 					},
-					copilot_node_command = "node", -- Node version must be < 18
 					server_opts_overrides = {},
 				}
 

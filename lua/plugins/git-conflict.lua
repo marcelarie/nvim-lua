@@ -9,7 +9,7 @@ local diff_colors = {
 return {
 	"akinsho/git-conflict.nvim",
 	version = "*",
-	lazy = true,
+	lazy = false,
 	config = function()
 		vim.api.nvim_set_hl(0, "DiffTextConflict", {
 			fg = "#000000",

@@ -11,24 +11,35 @@ vim.api.nvim_create_user_command(
 	{}
 )
 
--- Check ~/scripts/todos.sh and ~/scripts/find-todos.sh for more info
-vim.api.nvim_create_user_command(
-	"Todo",
-	function()
-		-- If the Todo.md file exists in the current directory, open it
-		local local_todo = vim.fn.getcwd() .. "/TODO.md"
-		if vim.fn.filereadable(local_todo) == 1 then
-			vim.cmd("vsplit " .. local_todo)
-			return
-		end
+vim.api.nvim_create_user_command("OpenTPUserStory", function()
+	local word = vim.fn.expand "<cword>"
+	local types = { "bug", "userstory", "task" }
 
-		-- if not, create a global todo file
-		local date = os.date("%d-%m-%Y")
-		local filename = string.format("~/notes/TODO:%s.md", date)
-		vim.cmd("vsplit " .. filename)
-	end,
-	{}
-)
+	for _, t in ipairs(types) do
+		vim.fn.jobstart(
+			"open 'https://ws.tpondemand.com/restui/board.aspx?#page="
+				.. t
+				.. "/"
+				.. word
+				.. "'"
+		)
+	end
+end, {})
+
+-- Check ~/scripts/todos.sh and ~/scripts/find-todos.sh for more info
+vim.api.nvim_create_user_command("Todo", function()
+	-- If the Todo.md file exists in the current directory, open it
+	local local_todo = vim.fn.getcwd() .. "/TODO.md"
+	if vim.fn.filereadable(local_todo) == 1 then
+		vim.cmd("vsplit " .. local_todo)
+		return
+	end
+
+	-- if not, create a global todo file
+	local date = os.date "%d-%m-%Y"
+	local filename = string.format("~/notes/TODO:%s.md", date)
+	vim.cmd("vsplit " .. filename)
+end, {})
 
 local print_harpoon_help = function()
 	-- Create a new buffer for the popup window
