@@ -70,12 +70,12 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = false }
 )
 
-vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>x",
-	":normal ddGp<cr>",
-	{ noremap = true, silent = false }
-)
+-- vim.api.nvim_set_keymap(
+-- 	"n",
+-- 	"<Leader>x",
+-- 	":normal ddGp<cr>",
+-- 	{ noremap = true, silent = false }
+-- )
 
 local opt_ns = { noremap = true, silent = true }
 
@@ -208,10 +208,19 @@ vim.keymap.set(
 	{ desc = "Source current lua file" }
 )
 
+local function source_for_lua_or_bash()
+	print(vim.bo.filetype)
+	if vim.bo.filetype == "lua" then
+		vim.cmd ".lua"
+	else
+		vim.cmd "!chmod +x %"
+	end
+end
+
 vim.keymap.set(
 	"n",
 	"<leader>x",
-	":.lua<cr>",
+	source_for_lua_or_bash,
 	{ desc = "Source current line in lua files" }
 )
 
