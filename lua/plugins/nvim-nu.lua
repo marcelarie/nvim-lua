@@ -2,7 +2,7 @@ return {
 	"LhKipp/nvim-nu",
 	lazy = true,
 	enabled = true,
-	dir = "~/clones/forks/nvim-nu/",
+	-- dir = "~/clones/forks/nvim-nu/",
 	-- build = ":TSInstall nu",
 	ft = { "nu" },
 	config = function()

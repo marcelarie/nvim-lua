@@ -46,7 +46,8 @@ return {
 				-- PYTHON
 				-- formatting.ruff,
 				-- diagnostics.ruff,
-				-- formatting.black,
+				formatting.black.with { args = { "--line-length", "100" } },
+				-- formatting.blackd.with { line_length = 100 },
 				-- diagnostics.flake8,
 
 				-- formatting.taplo,
