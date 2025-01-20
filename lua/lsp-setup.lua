@@ -40,10 +40,25 @@ local servers = {
 			),
 	},
 	solargraph = {
-		commandPath = "~/.local/share/gem/ruby/3.3.0/bin/solargraph",
-		formatting = false,
-		diagnostics = false,
-		completion = true,
+		settings = {
+			commandPath = "~/.local/share/gem/ruby/3.0.0/bin/solargraph",
+			formatting = false,
+			diagnostics = false,
+			completion = true,
+		},
+	},
+	pylsp = {
+		settings = {
+			pylsp = {
+				plugins = {
+					pycodestyle = {
+						enabled = true,
+						-- ignore = { "W391" },
+						maxLineLength = 100,
+					},
+				},
+			},
+		},
 	},
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
 	eslint = { filetypes = { "javascript", "typescript", "typescriptreact" } },
