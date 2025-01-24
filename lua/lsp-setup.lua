@@ -39,6 +39,11 @@ local servers = {
 				".git"
 			),
 	},
+  nil_ls = {
+    settings = {
+      cmd = "~/.nix-profile/bin/nil",
+    }
+  },
 	solargraph = {
 		settings = {
 			commandPath = "~/.local/share/gem/ruby/3.0.0/bin/solargraph",
