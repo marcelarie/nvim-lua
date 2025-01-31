@@ -216,7 +216,7 @@ return {
 					},
 				},
 				-- { name = "nvim_lua" },
-				-- { name = "tmux", max_item_count = 4 },
+				{ name = "tmux", max_item_count = 4 },
 				-- { name = "fish" },
 			},
 		}

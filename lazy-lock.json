@@ -110,6 +110,7 @@
   "typst.vim": { "branch": "main", "commit": "8ce752f1ba1277046429cb469c17ff2e1abc718f" },
   "undotree": { "branch": "master", "commit": "2556c6800b210b2096b55b66e74b4cc1d9ebbe4f" },
   "urlview.nvim": { "branch": "main", "commit": "c07733179e27c225ac3c58c3951701ee10b2dbde" },
+  "vgit.nvim": { "branch": "v1.0.x", "commit": "64e28d0de755a7e85f731ca98903563d24496daa" },
   "vim-256noir": { "branch": "master", "commit": "e8668a18a4a90272c1cae87e655f8bddc5ac3665" },
   "vim-boring": { "branch": "master", "commit": "1090b4bde142fbb2f5c9c5cfa08238c5eaeceb2f" },
   "vim-colors-defnoche": { "branch": "master", "commit": "542455a95f9dd4a3bf009a953cc707d19a0a8440" },
