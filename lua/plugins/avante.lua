@@ -19,7 +19,10 @@ return {
 				-- 	buftype = { [""] = { enabled = false } },
 				-- },
 			},
-			ft = { "markdown", "Avante" },
+			ft = {
+				-- "markdown",
+				"Avante",
+			},
 		},
 	},
 	cmd = {

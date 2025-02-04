@@ -16,6 +16,15 @@ local function create_tmux_persistent_command(command)
 	vim.cmd("silent !" .. tmux_command)
 end
 
+local function create_tmux_split_command(command)
+	if not inside_tmux_session() then
+		return
+	end
+	local tmux_command =
+		string.format("tmux split-window -h '%s'", command)
+	vim.cmd("silent !" .. tmux_command)
+end
+
 local function create_tmux_command(command)
 	if not inside_tmux_session() then
 		return
@@ -118,6 +127,10 @@ end, { desc = "Run git status in tmux window" })
 
 --= MISC COMMANDS =--
 
--- vim.api.nvim_create_user_command("FindTodos", function()
--- 	create_quick_tmux_command "~/scripts/find-todos.sh"
--- end, { desc = "Run cargo test in tmux window" })
+vim.api.nvim_create_user_command("FindTodos", function()
+	create_tmux_command "~/scripts/find-todos.sh"
+end, { desc = "Run ftodos" })
+
+vim.api.nvim_create_user_command("FindTodosSplit", function()
+	create_tmux_split_command "~/scripts/find-todos.sh"
+end, { desc = "Run ftodos in a split" })

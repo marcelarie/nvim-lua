@@ -84,7 +84,7 @@ vim.api.nvim_create_user_command("Todo", function()
 	end
 
 	-- if not, create a global todo file
-	local date = os.date "%d-%m-%Y"
+	local date = os.date "%Y-%m-%d"
 	local filename = string.format("~/notes/TODO:%s.md", date)
 	vim.cmd("vsplit " .. filename)
 end, {})
