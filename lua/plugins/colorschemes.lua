@@ -9,6 +9,7 @@ return {
 	"habamax/vim-colors-defnoche",
 	"itchyny/landscape.vim",
 	"ayu-theme/ayu-vim",
+	"savq/melange-nvim",
 	-- "aktersnurra/no-clown-fiesta.nvim",
 	"p00f/alabaster.nvim",
 	{
@@ -21,6 +22,7 @@ return {
 		"adisen99/apprentice.nvim",
 		dependencies = { "rktjmp/lush.nvim" },
 	},
+	"samharju/serene.nvim",
 	"nyoom-engineering/oxocarbon.nvim",
 	"zaki/zazen",
 	{
@@ -38,6 +40,21 @@ return {
 	"andreasvc/vim-256noir",
 	"t184256/vim-boring",
 	"jaredgorski/Mies.vim",
+	{
+		"alljokecake/naysayer-theme.nvim",
+		name = "naysayer",
+		config = function()
+			require("naysayer").setup {
+				variant = "main",
+				dark_variant = "main",
+				bold_vert_split = false,
+				dim_nc_background = false,
+				disable_background = true,
+				disable_float_background = true,
+				disable_italics = true,
+			}
+		end,
+	},
 	"ryanpcmcquen/true-monochrome_vim",
 	-- "lifepillar/vim-gruvbox8",
 	-- "mrjones2014/lighthaus.nvim",

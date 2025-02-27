@@ -122,10 +122,26 @@ vim.keymap.set(
 	opt_ns
 )
 
+local function toggle_quickfix()
+	local quickfix_open = false
+	for _, win in ipairs(vim.fn.getwininfo()) do
+		if win.quickfix == 1 then
+			quickfix_open = true
+			break
+		end
+	end
+	if quickfix_open then
+		vim.cmd "cclose"
+	else
+		vim.cmd "botright copen"
+	end
+end
+
 -- search and replace
 vim.keymap.set("n", "cn", "*``cgn", opt_ns)
 -- LuaFormatter off
 vim.keymap.set("n", "cN", "*``cgN", opt_ns)
+vim.keymap.set("n", "<leader>co", toggle_quickfix, opt_ns)
 -- better tabbing
 vim.keymap.set("v", "<", "<gv", opt_ns)
 vim.keymap.set("v", ">", ">gv", opt_ns)

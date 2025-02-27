@@ -52,6 +52,11 @@ local servers = {
 			completion = true,
 		},
 	},
+  -- sonarlint_ls = {
+  --   settings = {
+  --
+  --   }
+  -- },
 	pylsp = {
 		settings = {
 			pylsp = {

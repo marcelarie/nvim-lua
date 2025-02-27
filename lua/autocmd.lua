@@ -32,13 +32,13 @@ au("TextYankPost", {
 	group = yank_group,
 })
 
-au({ "BufNewFile", "BufRead" }, {
-	pattern = { "**/node_modules/**", "node_modules", "/node_modules/*" },
-	callback = function()
-		vim.diagnostic.disabled(true)
-	end,
-	group = disable_node_modules_eslint_group,
-})
+-- au({ "BufNewFile", "BufRead" }, {
+-- 	pattern = { "**/node_modules/**", "node_modules", "/node_modules/*" },
+-- 	callback = function()
+-- 		vim.diagnostic.disabled(true)
+-- 	end,
+-- 	group = disable_node_modules_eslint_group,
+-- })
 
 -- Format markdown links
 vim.api.nvim_create_autocmd("LspAttach", {

@@ -9,6 +9,9 @@ vim.cmd.set "t_Co=256"
 
 -- require("no-clown-fiesta").setup { transparent = true }
 vim.cmd.colorscheme "no-clown-fiesta"
+-- vim.cmd.colorscheme "lunaperche"
+-- vim.g.apprentice_contrast_dark = "soft"
+-- vim.cmd.colorscheme "apprentice"
 -- require("ziggy").style()
 -- require("zig-official-color").setup()
 

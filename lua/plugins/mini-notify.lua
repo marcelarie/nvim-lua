@@ -1,6 +1,7 @@
 return {
 	"echasnovski/mini.notify",
 	version = "*",
+	enabled = false,
 	config = function()
 		local notify_filter = function(notif_arr)
 			local filter = function(notif)
