@@ -134,7 +134,7 @@ return {
 
 				map(
 					"n",
-					"<Leader>gt",
+					"<Leader>glt",
 					":Gitsigns toggle_current_line_blame<CR>",
 					{ noremap = true, silent = false }
 				)

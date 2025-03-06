@@ -4,7 +4,7 @@ return {
 	lazy = true,
 	opts = {
 		height = 15, -- height of the trouble list
-		icons = true, -- use dev-icons for filenames
+		icons = {}, -- use dev-icons for filenames
 		mode = "workspace_diagnostics", -- "workspace" or "document"
 		fold_open = "", -- icon used for open folds
 		fold_closed = "", -- icon used for closed folds

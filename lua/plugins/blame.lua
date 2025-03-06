@@ -4,6 +4,12 @@ return {
 		lazy = false,
 		config = function()
 			require("blame").setup {}
+			vim.keymap.set(
+				"n",
+				"<Leader>gt",
+				":BlameToggle window<cr>",
+				{ noremap = true, silent = false }
+			)
 		end,
 		opts = {
 			blame_options = { "-w -C -C -C -C" },

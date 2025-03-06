@@ -7,12 +7,12 @@ return {
 
 		easypick.setup {
 			pickers = {
-				-- Show changed files in the last 5 commits
+				-- Show changed files in the last 2 commits
 				{
 					name = "changed_files",
-					command = "{ git diff --name-only && git log --pretty=format: --name-only HEAD~5..HEAD; } | sort | uniq",
+					command = "{ ~/scripts/git/default-git-diff.sh --name-only && git log --pretty=format: --name-only HEAD~2..HEAD; } | sort | uniq",
 					previewer = easypick.previewers.branch_diff {
-						base_branch = "HEAD~5",
+						base_branch = "HEAD~2",
 					},
 					-- previewer = easypick.previewers.file_diff(),
 					-- previewer = easypick.previewers.default(),

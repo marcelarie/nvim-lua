@@ -47,6 +47,10 @@ return {
 				-- formatting.ruff,
 				-- diagnostics.ruff,
 				formatting.black.with { args = { "--line-length", "100" } },
+				-- formatting.isort.with {
+				-- 	-- command = "/home/mmanzanares/.pyenv/shims/isort",
+				-- 	args = { "-l", "100", "--profile", "black", "app", "tests" },
+				-- },
 				-- formatting.blackd.with { line_length = 100 },
 				-- diagnostics.flake8,
 

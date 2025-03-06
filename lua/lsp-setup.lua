@@ -39,11 +39,11 @@ local servers = {
 				".git"
 			),
 	},
-  nil_ls = {
-    settings = {
-      cmd = "~/.nix-profile/bin/nil",
-    }
-  },
+	nil_ls = {
+		settings = {
+			cmd = "~/.nix-profile/bin/nil",
+		},
+	},
 	solargraph = {
 		settings = {
 			commandPath = "~/.local/share/gem/ruby/3.0.0/bin/solargraph",
@@ -52,15 +52,17 @@ local servers = {
 			completion = true,
 		},
 	},
-  -- sonarlint_ls = {
-  --   settings = {
-  --
-  --   }
-  -- },
+	-- sonarlint_ls = {
+	--   settings = {
+	--
+	--   }
+	-- },
 	pylsp = {
 		settings = {
 			pylsp = {
 				plugins = {
+					pyls_isort = { enabled = true },
+					-- pylsp_mypy = { enabled = true },
 					pycodestyle = {
 						enabled = true,
 						-- ignore = { "W391" },
