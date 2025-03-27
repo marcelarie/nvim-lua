@@ -55,6 +55,15 @@ return {
 			}
 		end,
 	},
+	{
+		"Skardyy/makurai-nvim",
+		config = function()
+			-- you don't have to call setup
+			require("makurai").setup {
+				transparent = true, -- removes the bg color
+			}
+		end,
+	},
 	"ryanpcmcquen/true-monochrome_vim",
 	-- "lifepillar/vim-gruvbox8",
 	-- "mrjones2014/lighthaus.nvim",

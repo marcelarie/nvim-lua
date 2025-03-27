@@ -193,30 +193,13 @@ return {
 			experimental = { ghost_text = true },
 			sources = {
 				{ name = "path" },
+				{ name = "buffer" },
 				{ name = "copilot" },
 				{ name = "luasnip", max_item_count = 10 },
 				{ name = "lazydev", group_index = 0 }, -- set group index to 0 to skip loading LuaLS completions
 				{ name = "nvim_lsp", max_item_count = 40 },
-				{
-					name = "buffer",
-					max_item_count = 4,
-					-- option = {
-					-- 	-- Avoid accidentally running on big files
-					-- 	get_bufnrs = function()
-					-- 		local buf = vim.api.nvim_get_current_buf()
-					-- 		local byte_size = vim.api.nvim_buf_get_offset(
-					-- 			buf,
-					-- 			vim.api.nvim_buf_line_count(buf)
-					-- 		)
-					-- 		if byte_size > 1024 * 1024 then -- 1 Megabyte max
-					-- 			return {}
-					-- 		end
-					-- 		return { buf }
-					-- 	end,
-					-- },
-				},
 				-- { name = "nvim_lua" },
-				{ name = "tmux", max_item_count = 4 },
+				{ name = "tmux" },
 				-- { name = "fish" },
 			},
 		}
