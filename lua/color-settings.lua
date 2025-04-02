@@ -12,7 +12,16 @@ vim.cmd.colorscheme "no-clown-fiesta"
 -- vim.cmd.colorscheme "makurai"
 -- vim.cmd.colorscheme "lunaperche"
 -- vim.g.apprentice_contrast_dark = "soft"
+
+-- apprentice
+-- vim.g.apprentice_hls_lspreference = "bright_yellow"
+-- vim.g.apprentice_hls_cursor = "bright_yellow"
+-- vim.g.apprentice_hls_highlight = "bright_yellow"
+-- vim.g.apprentice_contrast_dark = "medium"
 -- vim.cmd.colorscheme "apprentice"
+-- vim.api.nvim_set_hl(0, "Visual", { bg = "#222222" })
+--
+
 -- require("ziggy").style()
 -- require("zig-official-color").setup()
 

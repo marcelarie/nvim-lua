@@ -1,157 +1,155 @@
+local function get_plus_than_node(v)
+	local node_version
+	local home = vim.fn.expand "$HOME"
+	local fnm_path = home .. "/.local/share/fnm/node-versions"
+	local entries = vim.fn.glob(fnm_path .. "/*", false, true)
+
+	local node_path
+
+	for _, entry in ipairs(entries) do
+		local major, minor, patch = entry:match "v(%d+)%.(%d+)%.(%d+)"
+		if major and tonumber(major) >= v then
+			node_path = entry .. "/installation/bin/node"
+			node_version = major .. "." .. minor .. "." .. patch
+			break
+		end
+	end
+
+	return node_path, node_version
+end
+
 return {
-	-- {
-	-- 	"hrsh7th/nvim-cmp",
-	-- 	optional = true,
-	-- 	enabled = false,
-	-- },
-	{
-		"saghen/blink.cmp",
-		lazy = false, -- lazy loading handled internally
-		-- optional: provides snippets for the snippet source
-		enabled = false,
-		dependencies = {
-			"giuxtaposition/blink-cmp-copilot",
-			"rafamadriz/friendly-snippets",
-			"zbirenbaum/copilot.lua",
-		}, -- enabled = false,
+	"saghen/blink.cmp",
+	-- optional: provides snippets for the snippet source
+	dependencies = {
+		"giuxtaposition/blink-cmp-copilot",
+		"zbirenbaum/copilot.lua",
+		"rafamadriz/friendly-snippets",
+	},
+
+	-- use a release tag to download pre-built binaries
+	version = "1.*",
+	-- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
+	-- build = 'cargo build --release',
+	-- If you use nix, you can build from source using latest nightly rust with:
+	-- build = 'nix run .#build-plugin',
+
+	---@module 'blink.cmp'
+	---@type blink.cmp.Config
+	opts = {
+		-- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
+		-- 'super-tab' for mappings similar to vscode (tab to accept)
+		-- 'enter' for enter to accept
+		-- 'none' for no mappings
 		--
-		-- -- use a release tag to download pre-built binaries
-		-- uild from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
-		-- -- build = 'cargo build --release',
+		-- All presets have the following mappings:
+		-- C-space: Open menu or open docs if already open
+		-- C-n/C-p or Up/Down: Select next/previous item
+		-- C-e: Hide menu
+		-- C-k: Toggle signature help (if signature.enabled = true)
 		--
-		opts = {
-			-- Disable for some filetypes
-			-- enabled = function()
-			-- 	return not vim.tbl_contains(
-			-- 		{ "TelescopePrompt" },
-			-- 		vim.bo.filetype
-			-- 	)
-			-- end,
+		-- See :h blink-cmp-config-keymap for defining your own keymap
+		keymap = { preset = "enter" },
 
-			completion = {
-				-- 'prefix' will fuzzy match on the text before the cursor
-				-- 'full' will fuzzy match on the text before *and* after the cursor
-				-- example: 'foo_|_bar' will match 'foo_' for 'prefix' and 'foo__bar' for 'full'
-				keyword = { range = "full" },
-
-				-- Disable auto brackets
-				-- NOTE: some LSPs may add auto brackets themselves anyway
-				accept = {
-					auto_brackets = { enabled = false },
-				},
-
-				-- Insert completion item on selection, don't select by default
-				list = { selection = "auto_insert" },
-
-				menu = {
-					-- Don't automatically show the completion menu
-					auto_show = true,
-
-					-- nvim-cmp style menu
-					draw = {
-						columns = {
-							{ "label", "label_description", gap = 1 },
-							{ "kind_icon", "kind" },
-						},
-					},
-				},
-
-				-- Show documentation when selecting a completion item
-				documentation = { auto_show = true, auto_show_delay_ms = 500 },
-
-				-- Display a preview of the selected item on the current line
-				ghost_text = { enabled = true },
-			},
-
-			sources = {
-				-- Remove 'buffer' if you don't want text completions, by default it's only enabled when LSP returns no items
-				-- default = { "lsp", "path", "snippets", "buffer" },
-				default = { "copilot", "lsp", "path", "snippets", "buffer" },
-				providers = {
-					copilot = {
-						name = "copilot",
-						module = "blink-cmp-copilot",
-						score_offset = 100,
-						async = true,
-						transform_items = function(_, items)
-							local CompletionItemKind =
-								require("blink.cmp.types").CompletionItemKind
-							local kind_idx = #CompletionItemKind + 1
-							CompletionItemKind[kind_idx] = "Copilot"
-							for _, item in ipairs(items) do
-								item.kind = kind_idx
-							end
-							return items
-						end,
-					},
-				},
-				-- Disable cmdline completions
-				cmdline = {},
-			},
-
-			-- Experimental signature help support
-			signature = { enabled = true },
+		appearance = {
+			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+			-- Adjusts spacing to ensure icons are aligned
+			nerd_font_variant = "mono",
 		},
 
-		config = function()
-			vim.defer_fn(function()
-				local node_path = get_plus_18_node()
-				print("Node path: " .. node_path)
-				require("copilot").setup {
-					panel = {
-						enabled = false,
-						auto_refresh = false,
-						keymap = {
-							jump_prev = "[[",
-							jump_next = "]]",
-							accept = "<CR>",
-							refresh = "gr",
-							open = "<M-CR>",
-						},
-					},
-					suggestion = {
-						enabled = false,
-						auto_trigger = false,
-						debounce = 75,
-						keymap = {
-							accept = "<M-l>",
-							next = "<M-]>",
-							prev = "<M-[>",
-							dismiss = "<C-]>",
-						},
-					},
-					filetypes = {
-						yaml = true,
-						markdown = true,
-						-- 	help = false,
-						gitcommit = true,
-						gitrebase = true,
-						-- 	hgcommit = false,
-						-- 	svn = false,
-						-- 	cvs = false,
-						-- 	["."] = false,
-						["*"] = true, -- enable for all filetypes
-					},
-					server_opts_overrides = {},
-				}
+		-- (Default) Only show the documentation popup when manually triggered
+		completion = {
+			ghost_text = { enabled = true },
+			documentation = { auto_show = true },
+		},
 
-				vim.cmd "Copilot disable"
+		-- Default list of enabled providers defined so that you can extend it
+		-- elsewhere in your config, without redefining it, due to `opts_extend`
+		sources = {
+			default = {
+				"lsp",
+				"copilot",
+				"path",
+				"snippets",
+				"buffer",
+			},
+			providers = {
+				copilot = {
+					name = "copilot",
+					module = "blink-cmp-copilot",
+					score_offset = 100,
+					async = true,
+				},
+			},
+		},
 
-				vim.keymap.set(
-					"n",
-					"<leader>ce",
-					":Copilot enable<cr>",
-					{ noremap = true, silent = false }
-				)
-				vim.keymap.set(
-					"n",
-					"<leader>cd",
-					":Copilot disable<cr>",
-					{ noremap = true, silent = false }
-				)
-			end, 100)
-
-			require("blink.cmp").setup()
-		end,
+		-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
+		-- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,
+		-- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
+		--
+		-- See the fuzzy documentation for more information
+		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
+	opts_extend = { "sources.default" },
+	config = function(_, opts)
+		vim.defer_fn(function()
+			local node_path, node_version = get_plus_than_node(18)
+			require("copilot").setup {
+				panel = {
+					enabled = false,
+					auto_refresh = false,
+					keymap = {
+						jump_prev = "[[",
+						jump_next = "]]",
+						accept = "<CR>",
+						refresh = "gr",
+						open = "<M-CR>",
+					},
+				},
+				suggestion = {
+					enabled = false,
+					auto_trigger = false,
+					debounce = 75,
+					keymap = {
+						accept = "<M-l>",
+						next = "<M-]>",
+						prev = "<M-[>",
+						dismiss = "<C-]>",
+					},
+				},
+				filetypes = {
+					yaml = true,
+					markdown = true,
+					-- 	help = false,
+					gitcommit = true,
+					gitrebase = true,
+					-- 	hgcommit = false,
+					-- 	svn = false,
+					-- 	cvs = false,
+					-- 	["."] = false,
+					["*"] = true, -- enable for all filetypes
+				},
+				copilot_node_command = node_path,
+				server_opts_overrides = {},
+			}
+
+			vim.print("Copilot using node v" .. node_version)
+			vim.cmd "silent Copilot disable"
+
+			vim.keymap.set(
+				"n",
+				"<leader>ce",
+				":Copilot enable<cr>",
+				{ noremap = true, silent = false }
+			)
+			vim.keymap.set(
+				"n",
+				"<leader>cd",
+				":Copilot disable<cr>",
+				{ noremap = true, silent = false }
+			)
+		end, 100)
+
+		require("blink.cmp").setup(opts)
+	end,
 }

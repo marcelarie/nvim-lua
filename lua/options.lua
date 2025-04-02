@@ -6,7 +6,7 @@ vim.o.splitright = true -- Vertical splits will automatically be to the right
 -- vim.o.timeoutlen = O
 -- vim.o.guifont = "FiraCode Nerd Font:h15"
 vim.opt.guicursor = "i-v:hor20-Cursor/lCursor" -- Add unerline cursor on Insert and Visual mode
-vim.api.nvim_set_hl(0, "CursorLine", { underline = true })
+vim.api.nvim_set_hl(0, "CursorLine", { underline = false })
 
 -- vim.g.clipboard = "unnamedplus" -- Set in ./sys-clip.lua
 vim.opt.termguicolors = true
@@ -89,7 +89,7 @@ vim.diagnostic.config {
 			[vim.diagnostic.severity.INFO] = "i ",
 		},
 	},
-	underline = true,
+	underline = false,
 	update_in_insert = false,
 	severity_sort = false,
 	-- virtual_text = {
@@ -104,16 +104,16 @@ vim.diagnostic.config {
 	},
 }
 
--- local border = {
--- 	{ "🭽", "FloatBorder" },
--- 	{ "▔", "FloatBorder" },
--- 	{ "🭾", "FloatBorder" },
--- 	{ "▕", "FloatBorder" },
--- 	{ "🭿", "FloatBorder" },
--- 	{ "▁", "FloatBorder" },
--- 	{ "🭼", "FloatBorder" },
--- 	{ "▏", "FloatBorder" },
--- }
+local border = {
+	{ "🭽", "FloatBorder" },
+	{ "▔", "FloatBorder" },
+	{ "🭾", "FloatBorder" },
+	{ "▕", "FloatBorder" },
+	{ "🭿", "FloatBorder" },
+	{ "▁", "FloatBorder" },
+	{ "🭼", "FloatBorder" },
+	{ "▏", "FloatBorder" },
+}
 
 -- vim.cmd [[
 -- 	autocmd BufEnter * lua vim.diagnostic.hide(nil,0)
@@ -123,11 +123,24 @@ vim.diagnostic.config {
 -- vim.cmd [[autocmd ColorScheme * highlight FloatBorder guifg=white guibg=#f29]]
 
 -- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-	-- border = border, -- single, rounded. double
-	border = "rounded", -- single, rounded. double
-	-- stylize_markdown = false,
-})
+-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+-- 	border = "rounded", -- single, rounded. double
+-- 	-- stylize_markdown = false,
+-- })
+
+local custom = {
+	border = "rounded",
+}
+
+-- To instead override globally
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+
+---@diagnostic disable-next-line: duplicate-set-field
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+	opts = opts or {}
+	opts.border = opts.border or custom.border
+	return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
 
 -- vim.lsp.handlers["textDocument/signatureHelp"] =
 -- 	vim.lsp.with(vim.lsp.handlers.signature_help, { border = border })

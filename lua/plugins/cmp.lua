@@ -1,4 +1,5 @@
-local function get_plus_18_node()
+local function get_plus_than_node(v)
+	local node_version
 	local home = vim.fn.expand "$HOME"
 	local fnm_path = home .. "/.local/share/fnm/node-versions"
 	local entries = vim.fn.glob(fnm_path .. "/*", false, true)
@@ -6,14 +7,15 @@ local function get_plus_18_node()
 	local node_path
 
 	for _, entry in ipairs(entries) do
-		local major, _, _ = entry:match "v(%d+)%.(%d+)%.(%d+)"
-		if major and tonumber(major) >= 18 then
+		local major, minor, patch = entry:match "v(%d+)%.(%d+)%.(%d+)"
+		if major and tonumber(major) >= v then
 			node_path = entry .. "/installation/bin/node"
+			node_version = major .. "." .. minor .. "." .. patch
 			break
 		end
 	end
 
-	return node_path
+	return node_path, node_version
 end
 
 return {
@@ -21,7 +23,7 @@ return {
 	-- "iguanacucumber/magazine.nvim", -- Better performance fork. Original --> "hrsh7th/nvim-cmp",
 	"hrsh7th/nvim-cmp",
 	name = "nvim-cmp", -- Otherwise highlighting gets messed up
-	-- enabled = false,
+	enabled = false,
 	-- branch = "perf",
 	dependencies = {
 		-- Snippet Engine & its associated nvim-cmp source
@@ -61,7 +63,7 @@ return {
 		}
 
 		vim.defer_fn(function()
-			local node_path = get_plus_18_node()
+			local node_path, node_version = get_plus_than_node(18)
 			require("copilot").setup {
 				panel = {
 					enabled = false,
@@ -101,8 +103,8 @@ return {
 				server_opts_overrides = {},
 			}
 
-			vim.print("Copilot using node: " .. node_path)
-			vim.cmd "Copilot disable"
+			vim.print("Copilot using node v" .. node_version)
+			vim.cmd "silent Copilot disable"
 
 			vim.keymap.set(
 				"n",
