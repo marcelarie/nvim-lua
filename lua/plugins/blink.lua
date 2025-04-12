@@ -18,13 +18,15 @@ local function get_plus_than_node(v)
 	return node_path, node_version
 end
 
+-- write a function to get the node version from the path
+
 return {
 	"saghen/blink.cmp",
 	-- optional: provides snippets for the snippet source
 	dependencies = {
 		"giuxtaposition/blink-cmp-copilot",
-		"zbirenbaum/copilot.lua",
 		"rafamadriz/friendly-snippets",
+		"L3MON4D3/LuaSnip",
 	},
 
 	-- use a release tag to download pre-built binaries
@@ -61,20 +63,33 @@ return {
 		completion = {
 			ghost_text = { enabled = true },
 			documentation = { auto_show = true },
+			list = {
+				selection = {
+					preselect = true,
+					auto_insert = true,
+				},
+			},
 		},
+
+		snippets = { preset = "luasnip" },
 
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
 			default = {
 				"lsp",
+				"snippets",
 				"copilot",
 				"path",
-				"snippets",
 				"buffer",
 			},
 			providers = {
+				snippets = {
+					min_keyword_length = 2,
+					score_offset = 4,
+				},
 				copilot = {
+					min_keyword_length = 3,
 					name = "copilot",
 					module = "blink-cmp-copilot",
 					score_offset = 100,
@@ -88,7 +103,9 @@ return {
 		-- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
 		--
 		-- See the fuzzy documentation for more information
-		fuzzy = { implementation = "prefer_rust_with_warning" },
+		fuzzy = {
+			implementation = "prefer_rust_with_warning",
+		},
 	},
 	opts_extend = { "sources.default" },
 	config = function(_, opts)

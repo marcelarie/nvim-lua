@@ -158,8 +158,8 @@ return {
 				dscr = "Prettier ignore",
 			}, t "<!-- prettier-ignore -->"),
 			s({
-				trig = "t",
-				name = "t",
+				trig = "to",
+				name = "to",
 				dscr = "Todo box",
 			}, t "- [ ] ", i(1)),
 			s({
