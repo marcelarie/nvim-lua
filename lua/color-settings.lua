@@ -8,9 +8,10 @@ vim.cmd.set "t_Co=256"
 -- vim.cmd.colorscheme "falcon"
 
 -- require("no-clown-fiesta").setup { transparent = true }
-vim.cmd.colorscheme "no-clown-fiesta"
+-- vim.cmd.colorscheme "no-clown-fiesta"
+-- vim.cmd.colorscheme "zellner"
 -- vim.cmd.colorscheme "makurai"
--- vim.cmd.colorscheme "lunaperche"
+vim.cmd.colorscheme "lunaperche"
 -- vim.g.apprentice_contrast_dark = "soft"
 
 -- apprentice
@@ -26,6 +27,12 @@ vim.cmd.colorscheme "no-clown-fiesta"
 -- require("zig-official-color").setup()
 
 -- vim.api.nvim_set_hl(0, "SpecialKey", { fg = "#373737" })
+
+-- # best light themes
+-- - zellner
+-- - shine
+-- - deepwhite
+
 
 -- # Favorite color schemes
 -- | Color Scheme              | Description                                                                                                               |

@@ -1,6 +1,6 @@
 return {
 	"chenxin-yan/footnote.nvim",
-	dir = "~/clones/forks/footnote.nvim/",
+	-- dir = "~/clones/forks/footnote.nvim/",
 	-- config = function()
 	-- 	require("footnote").setup {}
 	-- end,

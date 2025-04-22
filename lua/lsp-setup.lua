@@ -39,19 +39,19 @@ local servers = {
 				".git"
 			),
 	},
-	nil_ls = {
-		settings = {
-			cmd = "~/.nix-profile/bin/nil",
-		},
-	},
-	solargraph = {
-		settings = {
-			commandPath = "~/.local/share/gem/ruby/3.0.0/bin/solargraph",
-			formatting = false,
-			diagnostics = false,
-			completion = true,
-		},
-	},
+	-- nil_ls = {
+	-- 	settings = {
+	-- 		-- cmd = "~/.nix-profile/bin/nil",
+	-- 	},
+	-- },
+	-- solargraph = {
+	-- 	settings = {
+	-- 		commandPath = "~/.local/share/gem/ruby/3.0.0/bin/solargraph",
+	-- 		formatting = false,
+	-- 		diagnostics = false,
+	-- 		completion = true,
+	-- 	},
+	-- },
 	-- sonarlint_ls = {
 	--   settings = {
 	--
@@ -75,23 +75,23 @@ local servers = {
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
 	eslint = { filetypes = { "javascript", "typescript", "typescriptreact" } },
 	html = { filetypes = { "html", "twig", "hbs" } },
-	typos_lsp = {
-		-- filetypes = { "markdown", "md", "typ"  },
-		settings = {
-			-- Logging level of the language server. Logs appear in :LspLog. Defaults to error.
-			-- cmd_env = { RUST_LOG = "error" },
-			init_options = {
-				-- Custom config. Used together with a config file found in the workspace or its parents,
-				-- taking precedence for settings declared in both.
-				-- Equivalent to the typos `--config` cli argument.
-				-- config = "~/code/typos-lsp/crates/typos-lsp/tests/typos.toml",
-
-				-- How typos are rendered in the editor, can be one of an Error, Warning, Info or Hint.
-				-- Defaults to error.
-				diagnosticSeverity = "Warning",
-			},
-		},
-	},
+	-- typos_lsp = {
+	-- 	-- filetypes = { "markdown", "md", "typ"  },
+	-- 	settings = {
+	-- 		-- Logging level of the language server. Logs appear in :LspLog. Defaults to error.
+	-- 		-- cmd_env = { RUST_LOG = "error" },
+	-- 		init_options = {
+	-- 			-- Custom config. Used together with a config file found in the workspace or its parents,
+	-- 			-- taking precedence for settings declared in both.
+	-- 			-- Equivalent to the typos `--config` cli argument.
+	-- 			-- config = "~/code/typos-lsp/crates/typos-lsp/tests/typos.toml",
+	--
+	-- 			-- How typos are rendered in the editor, can be one of an Error, Warning, Info or Hint.
+	-- 			-- Defaults to error.
+	-- 			diagnosticSeverity = "Warning",
+	-- 		},
+	-- 	},
+	-- },
 	-- harper_ls = {
 	-- 	autostart = true,
 	-- 	filetypes = {

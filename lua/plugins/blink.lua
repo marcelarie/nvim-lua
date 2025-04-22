@@ -110,7 +110,7 @@ return {
 	opts_extend = { "sources.default" },
 	config = function(_, opts)
 		vim.defer_fn(function()
-			local node_path, node_version = get_plus_than_node(18)
+			-- local node_path, node_version = get_plus_than_node(18)
 			require("copilot").setup {
 				panel = {
 					enabled = false,
@@ -146,11 +146,11 @@ return {
 					-- 	["."] = false,
 					["*"] = true, -- enable for all filetypes
 				},
-				copilot_node_command = node_path,
+				-- `copilot_node_command = node_path,
 				server_opts_overrides = {},
 			}
 
-			vim.print("Copilot using node v" .. node_version)
+			vim.print("Copilot using node v22")
 			vim.cmd "silent Copilot disable"
 
 			vim.keymap.set(
