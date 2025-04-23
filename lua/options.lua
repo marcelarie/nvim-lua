@@ -117,6 +117,17 @@ local border = {
 	{ "▏", "FloatBorder" },
 }
 
+local another_border = {
+	{ "┌", "FloatBorder" },
+	{ "─", "FloatBorder" },
+	{ "┐", "FloatBorder" },
+	{ "│", "FloatBorder" },
+	{ "┘", "FloatBorder" },
+	{ "─", "FloatBorder" },
+	{ "└", "FloatBorder" },
+	{ "│", "FloatBorder" },
+}
+
 -- vim.cmd [[
 -- 	autocmd BufEnter * lua vim.diagnostic.hide(nil,0)
 -- ]]
@@ -131,7 +142,7 @@ local border = {
 -- })
 
 local custom = {
-	border = "rounded",
+	border = 'none'
 }
 
 -- To instead override globally
