@@ -18,11 +18,11 @@ NVIM_APPNAME=marcelarie-nvim-lua/ nvim
 ## Startup time
 
 ```bash
-Startuptime: 136.19ms
+Startuptime: 158.78ms
 
-LazyStart 12.61ms
-LazyDone  90.34ms
-UIEnter   136.19ms
+LazyStart 11.56ms
+LazyDone  122.16ms (+110.6ms)
+UIEnter   158.78ms (+36.61ms)
 ```
 
 ## File Tree
@@ -51,89 +51,88 @@ UIEnter   136.19ms
 │   ├── commands.lua
 │   ├── global.lua
 │   ├── keymaps.lua
-│   ├── kickstart
-│   │   └── plugins
-│   │       └── debug.lua
 │   ├── lazy-bootstrap.lua
 │   ├── lazy-plugins.lua
+│   ├── lsp-on-attach.lua
 │   ├── lsp-setup.lua
 │   ├── options.lua
 │   ├── plugins
 │   │   ├── alpha.lua
-│   │   ├── automa.lua
 │   │   ├── avante.lua
+│   │   ├── bamboo-colorscheme.lua
+│   │   ├── blame.lua
 │   │   ├── blink.lua
 │   │   ├── boo.lua
 │   │   ├── cmp.lua
 │   │   ├── colorbox.lua
-│   │   ├── colorizer.lua
 │   │   ├── colorschemes.lua
 │   │   ├── comment.lua
+│   │   ├── copilot.lua
+│   │   ├── debug.lua
 │   │   ├── dropbar.lua
 │   │   ├── easypick.lua
-│   │   ├── fall.lua
-│   │   ├── feline.lua
+│   │   ├── everforest-colorscheme.lua
 │   │   ├── flog.lua
+│   │   ├── footnote.lua
 │   │   ├── fzf.lua
 │   │   ├── git-blame.lua
 │   │   ├── git-conflict.lua
 │   │   ├── git-signs.lua
-│   │   ├── gp.lua
 │   │   ├── harpoon.lua
-│   │   ├── highlight-undo.lua
 │   │   ├── hoversplit.lua
 │   │   ├── img-clip.lua
 │   │   ├── incline.lua
 │   │   ├── init.lua
 │   │   ├── kanagawa.lua
 │   │   ├── lazydev.lua
-│   │   ├── linefly.lua
+│   │   ├── link-vim.lua
 │   │   ├── lsp-trouble.lua
-│   │   ├── lualine.lua
 │   │   ├── luasnip.lua
 │   │   ├── markdown.lua
 │   │   ├── markdown-preview.lua
-│   │   ├── markview.lua
 │   │   ├── mason-null-ls.lua
 │   │   ├── mdx.lua
 │   │   ├── mini-notify.lua
+│   │   ├── mini-starter.lua
 │   │   ├── mini-status.lua
 │   │   ├── neoclip.lua
+│   │   ├── no-clown-fiesta.lua
 │   │   ├── nvim-highlight-colors.lua
 │   │   ├── nvim-nu.lua
 │   │   ├── nvim-surround.lua
 │   │   ├── nvim-treesitter-context.lua
 │   │   ├── oil.lua
-│   │   ├── ollama.lua
-│   │   ├── otter.lua
-│   │   ├── rest.lua
+│   │   ├── rustaceanvim.lua
 │   │   ├── session.lua
-│   │   ├── sg.lua
 │   │   ├── snap.lua
-│   │   ├── sttusline.lua
 │   │   ├── substitute.lua
 │   │   ├── telekasten.lua
 │   │   ├── telescope.lua
-│   │   ├── text-to-colorscheme.lua
+│   │   ├── timber.lua
 │   │   ├── tsc.lua
+│   │   ├── ts-comments.lua
 │   │   ├── undotree.lua
 │   │   ├── urlview.lua
-│   │   ├── vim-ai.lua
+│   │   ├── vgit.lua
 │   │   ├── watch.lua
 │   │   ├── zen-mode.lua
 │   │   └── zk.lua
 │   ├── profiler.lua
+│   ├── sys-clip.lua
 │   ├── tmux.lua
-│   └── treesitter-setup.lua
+│   ├── treesitter-setup.lua
+│   ├── ziggy.lua
+│   └── zig-official-color.lua
 ├── README.md
 ├── scripts
 │   └── install-neovim-latest.sh
 ├── spell
 │   ├── en.utf-8.add
 │   └── en.utf-8.add.spl
+├── startup.log
 └── stylua.toml
 
-10 directories, 94 files
+8 directories, 95 files
 ```
 
 Dependencies:
