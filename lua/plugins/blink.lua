@@ -77,6 +77,7 @@ return {
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
 			default = {
+				"lazydev",
 				"lsp",
 				"snippets",
 				"copilot",
@@ -87,6 +88,12 @@ return {
 				snippets = {
 					min_keyword_length = 2,
 					score_offset = 4,
+				},
+				lazydev = {
+					name = "LazyDev",
+					module = "lazydev.integrations.blink",
+					-- make lazydev completions top priority (see `:h blink.cmp`)
+					score_offset = 100,
 				},
 				copilot = {
 					min_keyword_length = 3,
@@ -150,7 +157,7 @@ return {
 				server_opts_overrides = {},
 			}
 
-			vim.print("Copilot using node v22")
+			vim.print "Copilot using node v22"
 			vim.cmd "silent Copilot disable"
 
 			vim.keymap.set(
