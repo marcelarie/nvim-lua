@@ -163,6 +163,36 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 	end,
 })
 
+local open_url = require "open_url"
+
+-- help / man docs opened by Shift-K (when no LSP hover exists)
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "help", "man", "markdown" },
+	callback = function(ev)
+		vim.keymap.set(
+			"n",
+			"gx",
+			open_url.open,
+			{ buffer = ev.buf, desc = "Open URL under cursor (doc win)" }
+		)
+	end,
+})
+
+-- LSP hover pop-ups (Shift-K with LSP attached)
+local orig_ofp = vim.lsp.util.open_floating_preview
+vim.lsp.util.open_floating_preview = function(contents, syntax, opts, ...)
+	local bufnr, winid = orig_ofp(contents, syntax, opts, ...)
+	if bufnr then
+		vim.keymap.set(
+			"n",
+			"gx",
+			open_url.open,
+			{ buffer = bufnr, silent = true, desc = "Open link in float" }
+		)
+	end
+	return bufnr, winid
+end
+
 -- Go to first line of file if filetype is gitcommit
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "gitcommit",
