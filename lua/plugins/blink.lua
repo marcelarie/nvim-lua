@@ -52,6 +52,14 @@ return {
 		--
 		-- See :h blink-cmp-config-keymap for defining your own keymap
 		keymap = { preset = "enter" },
+		enabled = function()
+			return not vim.list_contains(
+					{ "DressingInput" },
+					vim.bo.filetype
+				)
+				and vim.bo.buftype ~= "prompt"
+				and vim.b.completion ~= false
+		end,
 
 		appearance = {
 			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
