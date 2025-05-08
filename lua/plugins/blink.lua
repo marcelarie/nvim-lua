@@ -104,7 +104,7 @@ return {
 					score_offset = 100,
 				},
 				copilot = {
-					min_keyword_length = 3,
+					min_keyword_length = 0,
 					name = "copilot",
 					module = "blink-cmp-copilot",
 					score_offset = 100,
@@ -139,7 +139,7 @@ return {
 					},
 				},
 				suggestion = {
-					enabled = false,
+					enabled = true,
 					auto_trigger = false,
 					debounce = 75,
 					keymap = {
@@ -168,16 +168,27 @@ return {
 			vim.print "Copilot using node v22"
 			vim.cmd "silent Copilot disable"
 
-			vim.keymap.set(
-				"n",
-				"<leader>ce",
-				":Copilot enable<cr>",
-				{ noremap = true, silent = false }
-			)
+			vim.keymap.set("n", "<leader>ce", function()
+				vim.cmd "Copilot enable"
+				vim.cmd "Copilot suggestion"
+			end, { noremap = true, silent = false })
+
 			vim.keymap.set(
 				"n",
 				"<leader>cd",
 				":Copilot disable<cr>",
+				{ noremap = true, silent = false }
+			)
+			vim.keymap.set(
+				"n",
+				"<leader>cp",
+				":Copilot panel<cr>",
+				{ noremap = true, silent = false }
+			)
+			vim.keymap.set(
+				"n",
+				"<leader>cs",
+				":Copilot suggestion<cr>",
 				{ noremap = true, silent = false }
 			)
 		end, 100)

@@ -15,7 +15,7 @@ return {
 		"rcarriga/nvim-dap-ui",
 
 		-- Installs the debug adapters for you
-		"williamboman/mason.nvim",
+		{ "williamboman/mason.nvim", version = "1.11.0" },
 		"jay-babu/mason-nvim-dap.nvim",
 		"nvim-neotest/nvim-nio",
 		"theHamsta/nvim-dap-virtual-text",

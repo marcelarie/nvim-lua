@@ -25,6 +25,7 @@ require("lazy").setup({
 	{
 		-- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
+    version = "2.1.0",
 		dependencies = {
 			-- Automatically install LSPs to stdpath for neovim
 			{
@@ -32,7 +33,8 @@ require("lazy").setup({
 				config = true,
 				opts = { PATH = "append" },
 			},
-			"williamboman/mason-lspconfig.nvim",
+      { "williamboman/mason-lspconfig.nvim", version = "1.32.0"}
+
 		},
 	},
 	{

@@ -75,23 +75,23 @@ local servers = {
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
 	eslint = { filetypes = { "javascript", "typescript", "typescriptreact" } },
 	html = { filetypes = { "html", "twig", "hbs" } },
-	-- typos_lsp = {
-	-- 	-- filetypes = { "markdown", "md", "typ"  },
-	-- 	settings = {
-	-- 		-- Logging level of the language server. Logs appear in :LspLog. Defaults to error.
-	-- 		-- cmd_env = { RUST_LOG = "error" },
-	-- 		init_options = {
-	-- 			-- Custom config. Used together with a config file found in the workspace or its parents,
-	-- 			-- taking precedence for settings declared in both.
-	-- 			-- Equivalent to the typos `--config` cli argument.
-	-- 			-- config = "~/code/typos-lsp/crates/typos-lsp/tests/typos.toml",
-	--
-	-- 			-- How typos are rendered in the editor, can be one of an Error, Warning, Info or Hint.
-	-- 			-- Defaults to error.
-	-- 			diagnosticSeverity = "Warning",
-	-- 		},
-	-- 	},
-	-- },
+	typos_lsp = {
+		filetypes = { "markdown", "md", "typ"  },
+		settings = {
+			-- Logging level of the language server. Logs appear in :LspLog. Defaults to error.
+			-- cmd_env = { RUST_LOG = "error" },
+			init_options = {
+				-- Custom config. Used together with a config file found in the workspace or its parents,
+				-- taking precedence for settings declared in both.
+				-- Equivalent to the typos `--config` cli argument.
+				-- config = "~/code/typos-lsp/crates/typos-lsp/tests/typos.toml",
+
+				-- How typos are rendered in the editor, can be one of an Error, Warning, Info or Hint.
+				-- Defaults to error.
+				diagnosticSeverity = "Warning",
+			},
+		},
+	},
 	-- harper_ls = {
 	-- 	autostart = true,
 	-- 	filetypes = {
@@ -176,7 +176,7 @@ capabilities = require("blink.cmp").get_lsp_capabilities()
 local mason_lspconfig = require "mason-lspconfig"
 
 mason_lspconfig.setup {
-	ensure_installed = vim.tbl_keys(servers),
+	automatic_enable = vim.tbl_keys(servers),
 }
 
 mason_lspconfig.setup_handlers {
