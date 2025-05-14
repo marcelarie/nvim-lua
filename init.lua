@@ -25,6 +25,7 @@ require "color-settings"
 require "zig-official-color"
 require "sys-clip"
 require "tmux"
+require "lsp"
 require "lsp-setup"
 
 if vim.g.neovide then
