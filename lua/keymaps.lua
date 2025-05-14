@@ -89,9 +89,6 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-
 vim.keymap.set("n", "<Right>", ":vertical resize -5<cr>", opt_ns)
 vim.keymap.set("n", "<Left>", ":vertical resize +5<cr>", opt_ns)
 -- vim.keymap.set("n", "<Down>", ":resize -5<cr>", opt_ns)
@@ -138,10 +135,9 @@ local function toggle_quickfix()
 end
 
 -- search and replace
-vim.keymap.set("n", "cn", "*``cgn", opt_ns)
+-- vim.keymap.set("n", "cn", "*``cgn", opt_ns)
 -- LuaFormatter off
-vim.keymap.set("n", "cN", "*``cgN", opt_ns)
-vim.keymap.set("n", "<leader>co", toggle_quickfix, opt_ns)
+-- vim.keymap.set("n", "cN", "*``cgN", opt_ns)
 -- better tabbing
 vim.keymap.set("v", "<", "<gv", opt_ns)
 vim.keymap.set("v", ">", ">gv", opt_ns)
@@ -341,8 +337,11 @@ vim.keymap.set("n", ":", ";", { noremap = true, silent = false })
 vim.keymap.set("n", "<Leader>al", ":Alpha<cr>", { silent = true })
 
 -- quickfix
-vim.keymap.set("n", "<Leader>cn", ":cn<cr>")
-vim.keymap.set("n", "<Leader>cp", ":cp<cr>")
+vim.keymap.set("n", "<leader>co", toggle_quickfix, opt_ns)
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- vim.keymap.set("n", "<Leader>cn", ":cn<cr>")
+-- vim.keymap.set("n", "<Leader>cp", ":cp<cr>")
 
 -- nohighlight
 vim.keymap.set("n", "<Leader>nh", ":noh<cr>")

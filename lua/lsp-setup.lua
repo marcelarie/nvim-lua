@@ -63,6 +63,7 @@ local servers = {
 				plugins = {
 					pyls_isort = { enabled = true },
 					-- pylsp_mypy = { enabled = true },
+					rope_autoimport = { enabled = true },
 					pycodestyle = {
 						enabled = true,
 						-- ignore = { "W391" },
@@ -76,7 +77,7 @@ local servers = {
 	eslint = { filetypes = { "javascript", "typescript", "typescriptreact" } },
 	html = { filetypes = { "html", "twig", "hbs" } },
 	typos_lsp = {
-		filetypes = { "markdown", "md", "typ"  },
+		filetypes = { "markdown", "md", "typ" },
 		settings = {
 			-- Logging level of the language server. Logs appear in :LspLog. Defaults to error.
 			-- cmd_env = { RUST_LOG = "error" },
