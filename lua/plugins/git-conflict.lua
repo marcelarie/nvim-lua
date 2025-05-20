@@ -60,15 +60,5 @@ return {
 			":GitConflictListQf<cr>",
 			desc = "Git Conflict List Quickfix",
 		},
-		{
-			"<Leader>cn",
-			":GitConflictNextConflict<cr>",
-			desc = "Git Conflict Next Conflict",
-		},
-		{
-			"<Leader>cp",
-			":GitConflictPrevConflict<cr>",
-			desc = "Git Conflict Previous Conflict",
-		},
 	},
 }

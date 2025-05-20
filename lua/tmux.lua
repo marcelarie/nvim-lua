@@ -20,8 +20,7 @@ local function create_tmux_split_command(command)
 	if not inside_tmux_session() then
 		return
 	end
-	local tmux_command =
-		string.format("tmux split-window -h '%s'", command)
+	local tmux_command = string.format("tmux split-window -h '%s'", command)
 	vim.cmd("silent !" .. tmux_command)
 end
 
@@ -64,6 +63,19 @@ vim.keymap.set("n", "<leader>ct", function()
 	create_tmux_persistent_command "cargo test -- --show-output"
 end, {
 	desc = "Run cargo test in tmux window",
+	silent = true,
+})
+
+-- vitest
+
+vim.api.nvim_create_user_command("Vitest", function()
+	create_tmux_persistent_command "npm run test %"
+end, { desc = "Run vitest of current file in tmux window" })
+
+vim.keymap.set("n", "<leader>vt", function()
+	create_tmux_persistent_command "npm run test %"
+end, {
+	desc = "Run vitest of current file in tmux window",
 	silent = true,
 })
 
@@ -118,6 +130,38 @@ end, {
 	desc = "Run just test in tmux window",
 	silent = true,
 })
+
+--= TESTS RUNNER =--
+local function RunFileTests()
+	local fname = vim.fn.expand "%:t"
+	local basename = vim.fn.expand "%:t:r"
+	local ext = vim.fn.expand "%:e"
+
+	if ext == "rs" then
+		create_tmux_persistent_command(
+			"cargo test " .. basename .. " -- --show-output"
+		)
+	elseif ext == "js" or ext == "ts" or ext == "jsx" or ext == "tsx" then
+		create_tmux_persistent_command("npm run test " .. fname)
+	elseif ext == "py" then
+		create_tmux_persistent_command("pytest " .. fname)
+	else
+		print "RunTests: unsupported filetype"
+	end
+end
+
+vim.api.nvim_create_user_command(
+	"RunTests",
+	RunFileTests,
+	{ desc = "Run tests for current file in tmux window", nargs = 0 }
+)
+
+vim.keymap.set(
+	"n",
+	"<leader>rt",
+	RunFileTests,
+	{ desc = "Run tests for current file", silent = true }
+)
 
 --= GIT COMMANDS =--
 
