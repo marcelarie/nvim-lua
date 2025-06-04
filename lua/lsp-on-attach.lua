@@ -79,7 +79,7 @@ local on_attach = function(client, bufnr)
 	-- nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
 
 	nmap(
-		"<Leader>z",
+		"<leader>z",
 		vim.diagnostic.open_float,
 		"Check current line for errors"
 	)

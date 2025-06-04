@@ -392,11 +392,12 @@ vim.keymap.set("n", "<Leader>tt", ":Todo<cr>", {
 local vim_modes = "vn"
 for mode in string.gmatch(vim_modes, "%a") do
 	vim.keymap.set(mode, "ff", function(_, bufnr)
-		vim.lsp.buf.format {
-			filter = function(client)
-				return client.name ~= "tsserver"
-			end,
-		}
+		require("conform").format()
+		-- vim.lsp.buf.format {
+		-- 	filter = function(client)
+		-- 		return client.name ~= "tsserver"
+		-- 	end,
+		-- }
 
 		-- TODO: Check why diagnostics are cleared after formating
 		vim.diagnostic.enable(bufnr)
