@@ -134,15 +134,52 @@ end, {
 --= TESTS RUNNER =--
 local function RunFileTests()
 	local fname = vim.fn.expand "%:t"
-	local basename = vim.fn.expand "%:t:r"
+	local filepath = vim.fn.expand "%:p"
+	local filestem = vim.fn.expand "%:p:r"
 	local ext = vim.fn.expand "%:e"
 
 	if ext == "rs" then
 		create_tmux_persistent_command(
-			"cargo test " .. basename .. " -- --show-output"
+			"cargo test " .. vim.fn.expand "%:t:r" .. " -- --show-output"
 		)
 	elseif ext == "js" or ext == "ts" or ext == "jsx" or ext == "tsx" then
-		create_tmux_persistent_command("npm run test " .. fname)
+		if fname:match("%.tests?%." .. ext .. "$") then
+			create_tmux_persistent_command("npm run test " .. filepath)
+		else
+			local basename = vim.fn.expand "%:t:r"
+			local dir = vim.fn.expand "%:p:h"
+			local candidates = {
+				dir .. "/" .. basename .. ".test." .. ext,
+				dir .. "/" .. basename .. ".tests." .. ext,
+				dir .. "/tests/" .. basename .. ".test." .. ext,
+				dir .. "/tests/" .. basename .. ".tests." .. ext,
+				dir
+					.. "/"
+					.. basename
+					.. "/tests/"
+					.. basename
+					.. ".test."
+					.. ext,
+				dir
+					.. "/"
+					.. basename
+					.. "/tests/"
+					.. basename
+					.. ".tests."
+					.. ext,
+			}
+			local test_file
+			for _, path in ipairs(candidates) do
+				if vim.fn.filereadable(path) == 1 then
+					test_file = path
+					break
+				end
+			end
+			if not test_file then
+				test_file = candidates[#candidates]
+			end
+			create_tmux_persistent_command("npm run test " .. test_file)
+		end
 	elseif ext == "py" then
 		create_tmux_persistent_command("pytest " .. fname)
 	else

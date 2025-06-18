@@ -159,6 +159,17 @@ vim.keymap.set(
 	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
 )
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "sh",
+	callback = function()
+		vim.keymap.set(
+			"n",
+			"<leader>r",
+			"<cmd>w<CR><cmd>!bash %<CR>",
+			{ buffer = true, silent = true }
+		)
+	end,
+})
 
 -- space as leader key
 vim.keymap.set("n", "<Space>", "<NOP>", opts)

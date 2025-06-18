@@ -83,6 +83,58 @@ local on_attach = function(client, bufnr)
 		vim.diagnostic.open_float,
 		"Check current line for errors"
 	)
+	local function copy_diags(first, last, include_lines)
+		vim.fn.setreg("+", {}, "V")
+		local msgs = {}
+		for l = first, last do
+			for _, d in ipairs(vim.diagnostic.get(0, { lnum = l - 1 })) do
+				local m = include_lines and (l .. ": " .. d.message)
+					or d.message
+				table.insert(msgs, m)
+				vim.fn.setreg("+", vim.fn.getreg "+" .. m .. "\n", "V")
+			end
+		end
+		if #msgs == 0 then
+			return nil
+		end
+		return table.concat(msgs, "\n")
+	end
+
+	vim.keymap.set("n", "<leader>zy", function()
+		local line = vim.api.nvim_win_get_cursor(0)[1]
+		local txt = copy_diags(line, line)
+		if not txt then
+			vim.notify("No diagnostics on line " .. line, vim.log.levels.ERROR)
+			return
+		end
+		vim.notify(
+			"Diagnostics from line "
+				.. line
+				.. " copied to clipboard.\n\n"
+				.. txt,
+			vim.log.levels.INFO
+		)
+	end, { desc = "Copy current line errors" })
+
+	vim.keymap.set("v", "<leader>zy", function()
+		local s = vim.fn.getpos("'<")[2]
+		local e = vim.fn.getpos("'>")[2]
+		local txt = copy_diags(s, e, true)
+		if not txt then
+			vim.notify("No diagnostics in selection", vim.log.levels.ERROR)
+			return
+		end
+		vim.notify(
+			"Diagnostics from lines "
+				.. s
+				.. "-"
+				.. e
+				.. " copied to clipboard.\n\n"
+				.. txt,
+			vim.log.levels.INFO
+		)
+	end, { desc = "Copy selected lines errors" })
+
 	-- Lesser used LSP functionality
 	nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 	nmap(
