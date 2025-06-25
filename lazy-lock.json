@@ -110,6 +110,7 @@
   "vim-colors-defnoche": { "branch": "master", "commit": "542455a95f9dd4a3bf009a953cc707d19a0a8440" },
   "vim-eldar": { "branch": "master", "commit": "3e19a46e80cef104680fcdad2a60b3d45f3b0538" },
   "vim-flog": { "branch": "master", "commit": "665b16ac8915f746bc43c9572b4581a5e9047216" },
+  "vim-freemarker": { "branch": "master", "commit": "993bda23e72e4c074659970c1e777cb19d8cf93e" },
   "vim-fugitive": { "branch": "master", "commit": "4a745ea72fa93bb15dd077109afbb3d1809383f2" },
   "vim-just": { "branch": "main", "commit": "b7f9505f93ede57c4ec011405592280b3f1755ec" },
   "vim-sleuth": { "branch": "master", "commit": "be69bff86754b1aa5adcbb527d7fcd1635a84080" },

@@ -4,6 +4,7 @@ require("lazy").setup({
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 	-- "tridactyl/vim-tridactyl",
 	"nacro90/numb.nvim",
+  "andreshazard/vim-freemarker",
 	{ "sindrets/diffview.nvim", lazy = false },
 	"NoahTheDuke/vim-just",
 	"kevinhwang91/nvim-bqf",
