@@ -29,6 +29,7 @@ require "lsp"
 require "lsp-setup"
 
 if vim.g.neovide then
+	vim.g.neovide_cursor_animation_length = 0
 	vim.o.guifont = "BlexMono Nerd Font:h9"
 	vim.opt.guicursor = "i-v:hor20-Cursor/lCursor" -- Add unerline cursor on Insert and Visual mode
 end
