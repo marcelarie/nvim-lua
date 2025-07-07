@@ -399,6 +399,42 @@ vim.keymap.set("n", "<Leader>tt", ":Todo<cr>", {
 	desc = "Open current date todo file using the Todo command",
 })
 
+local function StarWithDash(cmd)
+	local isk = vim.bo.iskeyword
+	vim.opt_local.iskeyword:append "-"
+	vim.cmd("normal! " .. cmd)
+	vim.bo.iskeyword = isk
+end
+
+vim.keymap.set("n", "<leader>*", function()
+	StarWithDash "*"
+end, { noremap = true })
+
+vim.keymap.set("n", "<leader>#", function()
+	StarWithDash "#"
+end, { noremap = true })
+
+-- Tab management
+vim.keymap.set(
+	"n",
+	"<leader>tn",
+	"<cmd>tabnew %<CR>",
+	{ desc = "Zoom current split (tab new)" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>tc",
+	"<cmd>tabclose<CR>",
+	{ desc = "Unzoom tab (tabclose)" }
+)
+
+-- Buffer navigation
+vim.keymap.set("n", "<Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<S-Tab>", "<cmd>bprev<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<leader><", "<cmd>bfirst<CR>", { desc = "First buffer" })
+vim.keymap.set("n", "<leader>>", "<cmd>blast<CR>", { desc = "Last buffer" })
+vim.keymap.set("n", "<C-^>", "<cmd>buffer #<CR>", { desc = "Alternate buffer" })
+
 -- just trying
 local vim_modes = "vn"
 for mode in string.gmatch(vim_modes, "%a") do
