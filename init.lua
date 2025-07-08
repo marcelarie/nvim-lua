@@ -5,10 +5,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- To hide deprecation warning
----@diagnostic disable-next-line: duplicate-set-field
--- vim.deprecate = function() end
-
 require "profiler"
 require "global"
 require "options"

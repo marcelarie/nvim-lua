@@ -171,6 +171,7 @@ return {
 			vim.keymap.set("n", "<leader>ce", function()
 				vim.cmd "Copilot enable"
 				vim.cmd "Copilot suggestion"
+				vim.print "Copilot enabled"
 			end, { noremap = true, silent = false })
 
 			vim.keymap.set(

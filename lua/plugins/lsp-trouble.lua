@@ -36,6 +36,6 @@ return {
 	},
 	cmd = "Trouble",
 	keys = {
-		{ "<Leader>tr", ":Trouble diagnostics<cr>" },
+		{ "<Leader>tr", ":Trouble diagnostics toggle<cr>" },
 	},
 }

@@ -3,6 +3,7 @@ return {
 	-- event = "VeryLazy",
 	lazy = true,
 	build = "make",
+	enabled = false,
 	dependencies = {
 		"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
 		"stevearc/dressing.nvim",
