@@ -3,15 +3,22 @@ return {
 	config = function()
 		require("conform").setup {
 			formatters = {
-				black = {
-					-- command = "black",
-					prepend_args = { "--line-length", "100" },
-				},
+				black = { prepend_args = { "--line-length", "100" } },
 				cbfmt = {
 					prepend_args = {
 						"--config",
 						vim.env.HOME .. "/.config/cbfmt/cbfmt.toml",
 					},
+				},
+				dprint = {
+					timeout_ms = 500,
+					lsp_format = "prefer",
+					condition = function(ctx)
+						return vim.fs.find(
+							{ "dprint.json" },
+							{ path = ctx.filename, upward = true }
+						)[1]
+					end,
 				},
 			},
 			formatters_by_ft = {
@@ -51,28 +58,9 @@ return {
 					"prettier",
 					stop_after_first = true,
 				},
-				javascript = {
-					-- "eslint",
-					"eslint_d",
-					"prettierd",
-					"prettier",
-					stop_after_first = true,
-				},
-				css = {
-					-- "eslint",
-					"eslint_d",
-					"prettierd",
-					"prettier",
-					stop_after_first = true,
-				},
-				scss = {
-					-- "eslint",
-					"eslint_d",
-					"prettierd",
-					"prettier",
-					stop_after_first = true,
-				},
-				markdown = { "mdformat", "cbfmt" },
+				css = { "prettierd", "prettier", stop_after_first = true },
+				scss = { "prettierd", "prettier", stop_after_first = true },
+				markdown = { "dprint", "cbfmt" },
 				sh = { "shfmt" },
 				bash = { "shfmt" },
 			},

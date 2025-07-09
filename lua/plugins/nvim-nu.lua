@@ -1,7 +1,7 @@
 return {
 	"LhKipp/nvim-nu",
 	lazy = true,
-	enabled = true,
+	enabled = false,
 	-- dir = "~/clones/forks/nvim-nu/",
 	-- build = ":TSInstall nu",
 	ft = { "nu" },

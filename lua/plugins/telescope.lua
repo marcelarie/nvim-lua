@@ -127,7 +127,7 @@ return {
 		"tsakirist/telescope-lazy.nvim",
 		-- "dhruvmanila/telescope-bookmarks.nvim",
 		-- "nvim-telescope/telescope-github.nvim",
-		-- "barrett-ruth/telescope-http.nvim",
+		"barrett-ruth/telescope-http.nvim",
 		-- "cljoly/telescope-repo.nvim",
 		"jvgrootveld/telescope-zoxide",
 		-- "ray-x/telescope-ast-grep.nvim",
@@ -449,7 +449,7 @@ return {
 			zoxide_list,
 			desc = "Zoxide List",
 		},
-		-- { "<leader>rh", http_list, desc = "HTTP List" },
+		{ "<leader>rh", http_list, desc = "HTTP List" },
 		{
 			"<leader>sy",
 			builtin.lsp_document_symbols,
