@@ -44,5 +44,12 @@ return {
 			cc.chat,
 			{ desc = "Open Code Companion Chat" }
 		)
+
+		vim.keymap.set(
+			"v",
+			"<leader>cc",
+			":'<,'>CodeCompanionChat<cr>",
+			{ desc = "Open Code Companion Chat" }
+		)
 	end,
 }

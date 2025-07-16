@@ -233,8 +233,19 @@ vim.keymap.set(
 	{ desc = "Source current lua file" }
 )
 
+vim.keymap.set(
+	"v",
+	"<leader>s",
+	":'<,'>sort<CR>",
+	{ desc = "Sort visual selection" }
+)
+
+vim.keymap.set("n", "<leader>sp", "vip:sort<CR>", {
+	desc = "Sort current paragraph",
+	silent = true,
+})
+
 local function source_for_lua_or_bash()
-	print(vim.bo.filetype)
 	if vim.bo.filetype == "lua" then
 		vim.cmd ".lua"
 	else
