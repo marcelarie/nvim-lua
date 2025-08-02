@@ -15,6 +15,17 @@ vim.cmd.colorscheme "lunaperche"
 vim.cmd "hi VertSplit guifg=#373737 guibg=#373737gui=NONE cterm=NONE"
 -- vim.g.apprentice_contrast_dark = "soft"
 
+-- vim.api.nvim_create_autocmd("colorscheme", {
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		-- single-color foreground; see discussions at:
+-- 		-- https://github.com/echasnovski/mini.nvim/issues/538
+-- 		vim.cmd [[highlight! link DiffAdd    DiagnosticOk]]
+-- 		vim.cmd [[highlight! link DiffChange DiagnosticWarn]]
+-- 		vim.cmd [[highlight! link DiffDelete DiagnosticError]]
+-- 	end,
+-- })
+
 -- apprentice
 -- vim.g.apprentice_hls_lspreference = "bright_yellow"
 -- vim.g.apprentice_hls_cursor = "bright_yellow"
@@ -33,7 +44,6 @@ vim.cmd "hi VertSplit guifg=#373737 guibg=#373737gui=NONE cterm=NONE"
 -- - zellner
 -- - shine
 -- - deepwhite
-
 
 -- # Favorite color schemes
 -- | Color Scheme              | Description                                                                                                               |

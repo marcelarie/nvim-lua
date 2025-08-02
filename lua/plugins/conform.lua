@@ -4,6 +4,10 @@ return {
 		require("conform").setup {
 			formatters = {
 				black = { prepend_args = { "--line-length", "100" } },
+				tombi = { -- for some reason this one does not work
+					command = "tombi",
+					prepend_args = { "format", "--offline", "-v" },
+				},
 				cbfmt = {
 					prepend_args = {
 						"--config",
@@ -24,6 +28,7 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				json = { "fixjson" },
+				toml = { "tombi", lsp_format = "fallback" },
 				-- Conform will run multiple formatters sequentially
 				python = { "isort", "black" },
 				-- You can customize some of the format options for the filetype (:help conform.format)

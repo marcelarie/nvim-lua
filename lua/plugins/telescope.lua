@@ -449,7 +449,7 @@ return {
 			zoxide_list,
 			desc = "Zoxide List",
 		},
-		{ "<leader>rh", http_list, desc = "HTTP List" },
+		{ "<leader>ht", http_list, desc = "HTTP List" },
 		{
 			"<leader>sy",
 			builtin.lsp_document_symbols,

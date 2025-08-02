@@ -128,10 +128,13 @@ end, {})
 -- Check ~/scripts/todos.sh and ~/scripts/find-todos.sh for more info
 vim.api.nvim_create_user_command("Todo", function()
 	-- If the Todo.md file exists in the current directory, open it
-	local local_todo = vim.fn.getcwd() .. "/TODO.md"
-	if vim.fn.filereadable(local_todo) == 1 then
-		vim.cmd("vsplit " .. local_todo)
-		return
+	local cwd = vim.fn.getcwd()
+	local files = vim.fn.readdir(cwd)
+	for _, file in ipairs(files) do
+		if file:lower():match "^todo.*%.md$" then
+			vim.cmd("vsplit " .. cwd .. "/" .. file)
+			return
+		end
 	end
 
 	-- if not, create a global todo file

@@ -20,18 +20,12 @@ vim.keymap.set(
 )
 
 -- Diagnostic keymaps
-vim.keymap.set(
-	"n",
-	"[d",
-	vim.diagnostic.goto_prev,
-	{ desc = "Go to previous diagnostic message" }
-)
-vim.keymap.set(
-	"n",
-	"]d",
-	vim.diagnostic.goto_next,
-	{ desc = "Go to next diagnostic message" }
-)
+vim.keymap.set("n", "[d", function()
+	vim.diagnostic.jump { count = -1, float = true }
+end, { desc = "Go to previous diagnostic message" })
+vim.keymap.set("n", "]d", function()
+	vim.diagnostic.jump { count = 1, float = true }
+end, { desc = "Go to next diagnostic message" })
 vim.keymap.set(
 	"n",
 	"<leader>e",
@@ -360,8 +354,8 @@ vim.keymap.set("n", "<Leader>al", ":Alpha<cr>", { silent = true })
 
 -- quickfix
 vim.keymap.set("n", "<leader>co", toggle_quickfix, opt_ns)
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
 -- vim.keymap.set("n", "<Leader>cn", ":cn<cr>")
 -- vim.keymap.set("n", "<Leader>cp", ":cp<cr>")
 
@@ -440,8 +434,8 @@ vim.keymap.set(
 )
 
 -- Buffer navigation
-vim.keymap.set("n", "<Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
-vim.keymap.set("n", "<S-Tab>", "<cmd>bprev<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>bp", "<cmd>bprev<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader><", "<cmd>bfirst<CR>", { desc = "First buffer" })
 vim.keymap.set("n", "<leader>>", "<cmd>blast<CR>", { desc = "Last buffer" })
 vim.keymap.set("n", "<C-^>", "<cmd>buffer #<CR>", { desc = "Alternate buffer" })
