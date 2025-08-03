@@ -139,9 +139,11 @@ local function RunFileTests()
 	local ext = vim.fn.expand "%:e"
 
 	if ext == "rs" then
-		create_tmux_persistent_command(
-			"cargo test " .. vim.fn.expand "%:t:r" .. " -- --show-output"
-		)
+		vim.cmd "Cargo test"
+		vim.notify "for now running cargo tests is not working with tmux and nix"
+		-- create_tmux_persistent_command(
+		-- 	"cargo test " .. vim.fn.expand "%:t:r" .. " -- --show-output"
+		-- )
 	elseif ext == "js" or ext == "ts" or ext == "jsx" or ext == "tsx" then
 		if fname:match("%.tests?%." .. ext .. "$") then
 			create_tmux_persistent_command("npm run test " .. filepath)

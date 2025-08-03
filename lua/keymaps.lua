@@ -433,9 +433,26 @@ vim.keymap.set(
 	{ desc = "Unzoom tab (tabclose)" }
 )
 
+-- Absolute path to system clipboard
+vim.keymap.set("n", "yp", function()
+	vim.fn.setreg("+", vim.fn.expand "%:p")
+  print("Copied absolute path")
+end)
+vim.keymap.set("n", "yr", function()
+	vim.fn.setreg("+", vim.fn.expand "%:~:.")
+  print("Copied relative path")
+end)
+
+-- Relative path
+
 -- Buffer navigation
 vim.keymap.set("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Next buffer" })
-vim.keymap.set("n", "<leader>bp", "<cmd>bprev<CR>", { desc = "Previous buffer" })
+vim.keymap.set(
+	"n",
+	"<leader>bp",
+	"<cmd>bprev<CR>",
+	{ desc = "Previous buffer" }
+)
 vim.keymap.set("n", "<leader><", "<cmd>bfirst<CR>", { desc = "First buffer" })
 vim.keymap.set("n", "<leader>>", "<cmd>blast<CR>", { desc = "Last buffer" })
 vim.keymap.set("n", "<C-^>", "<cmd>buffer #<CR>", { desc = "Alternate buffer" })

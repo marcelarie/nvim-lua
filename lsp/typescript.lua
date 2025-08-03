@@ -1,4 +1,5 @@
 local flash = require "utils.flash"
+local on_attach = require("lsp-on-attach").on_attach
 
 -- 1 · import symbol under cursor
 local function import_symbol()
@@ -29,9 +30,9 @@ local function add_missing_imports()
 	}
 
 	vim.defer_fn(function()
-		if vim.b.changedtick == before_tick then
-			return
-		end 
+		-- if vim.b.changedtick == before_tick then
+		-- 	return
+		-- end
 		local after = vim.api.nvim_buf_get_lines(0, 0, -1, false)
 		for i, line in ipairs(after) do
 			if line ~= before_lines[i] and line:match "^import " then
@@ -63,5 +64,6 @@ return {
 			add_missing_imports,
 			{ buffer = buf, desc = "Add imports" }
 		)
+		return on_attach(_, buf)
 	end,
 }
