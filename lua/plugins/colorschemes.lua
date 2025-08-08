@@ -8,6 +8,7 @@ return {
 	"agude/vim-eldar",
 	"habamax/vim-colors-defnoche",
 	"itchyny/landscape.vim",
+	"catppuccin/nvim",
 	"ayu-theme/ayu-vim",
 	"savq/melange-nvim",
 	-- "aktersnurra/no-clown-fiesta.nvim",

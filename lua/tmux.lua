@@ -6,6 +6,8 @@ local function inside_tmux_session()
 	return true
 end
 
+local line = 1
+
 local function create_tmux_persistent_command(command)
 	if not inside_tmux_session() then
 		return
@@ -201,6 +203,8 @@ vim.keymap.set(
 	RunFileTests,
 	{ desc = "Run tests for current file", silent = true }
 )
+
+local line = 1
 
 --= GIT COMMANDS =--
 

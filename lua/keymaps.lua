@@ -372,13 +372,9 @@ vim.keymap.set("n", "<Leader>yf", ':let @+ = expand("%")<cr>')
 vim.keymap.set("n", "<Leader>ac", ":AIChat<cr>")
 vim.keymap.set("n", "<Leader>ai", ":AI ")
 vim.keymap.set("v", "<Leader>ae", ":AIEdit ")
-vim.keymap.set("n", "<leader>gc", ":GitCommitMessage<cr>")
 
 -- Typescript
 vim.keymap.set("n", "<leader>ta", typescript_server_import_all)
-
--- Easypick
-vim.keymap.set("n", "<leader>gc", ":GitCommitMessage<cr>")
 
 -- open file path under cursor vertical split
 -- vim.keymap.set('n', '<Leader>gf', ':vertical wincmd f<cr>',
