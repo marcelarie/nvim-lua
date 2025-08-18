@@ -9,7 +9,7 @@ return {
 		startify.section.top_buttons.val = {
 			-- I would like to cd into the directory first
 			startify.button(
-				"rc",
+				"irc",
 				"vim config",
 				"<cmd>cd ~/.config/nvim/<CR><cmd>e init.lua<CR>"
 			),

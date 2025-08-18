@@ -213,3 +213,22 @@ vim.api.nvim_create_autocmd(
 		group = auto_reload_group,
 	}
 )
+
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		require("functions").QfLoad()
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "qf",
+	callback = function()
+		vim.keymap.set("n", "dd", function()
+			require("functions").QfDelCurrentEntry()
+		end, { buffer = true, desc = "Delete quickfix entry" })
+
+		vim.keymap.set("n", "u", function()
+			require("functions").QfUndoDeletedEntry()
+		end, { buffer = true, desc = "Undo quickfix delete" })
+	end,
+})

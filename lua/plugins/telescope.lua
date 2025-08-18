@@ -1,7 +1,14 @@
 -- Function to handle grep_string with user input
-local function grep_string_prompt()
+local function _grep_string_prompt()
 	require("telescope.builtin").grep_string {
 		search = vim.fn.input "grep for > ",
+	}
+end
+
+local function grep_string_prompt_with_regex()
+	local pattern = vim.fn.input "grep (regex ok) > "
+	require("telescope.builtin").live_grep {
+		default_text = pattern,
 	}
 end
 
@@ -382,7 +389,11 @@ return {
 			desc = "Git Branches",
 		},
 		{ "<Leader>tb", builtin.buffers, desc = "Buffers" },
-		{ "<leader>rg", grep_string_prompt, desc = "Grep String" },
+		{
+			"<leader>rg",
+			grep_string_prompt_with_regex,
+			desc = "Grep String with regex",
+		},
 		{ "<leader>as", ":Telescope AST_grep<cr>", desc = "AST Grep" },
 		{ "<leader>tu", ":Telescope undo<cr>", desc = "Telescope undo" },
 		{

@@ -1,3 +1,5 @@
+local functions = require "functions"
+
 local opts = { noremap = true, silent = true }
 -- [[ Basic Keymaps ]]
 
@@ -180,11 +182,18 @@ vim.keymap.set("c", "w!!", "SudaWrite<cr>", { noremap = false, silent = false })
 vim.keymap.set("c", "w!!", "SudaWrite<cr>", { noremap = false, silent = false })
 
 local function saveSession()
-	local filetype = string.lower(vim.bo.filetype)
-	if not string.match(filetype, "commit") then
-		vim.cmd "SessionSave"
-	end
+  local filetype = string.lower(vim.bo.filetype)
+  if not string.match(filetype, "commit") then
+    local started_with_files = vim.fn.argc() > 0
+    if #vim.fn.getqflist() > 0 then
+      functions.QfSave()
+    elseif not started_with_files then
+      functions.QfDelete()
+    end
+    vim.cmd "SessionSave"
+  end
 end
+
 
 -- leader q to quit
 -- and save session with auto-session
@@ -432,11 +441,11 @@ vim.keymap.set(
 -- Absolute path to system clipboard
 vim.keymap.set("n", "yp", function()
 	vim.fn.setreg("+", vim.fn.expand "%:p")
-  print("Copied absolute path")
+	print "Copied absolute path"
 end)
 vim.keymap.set("n", "yr", function()
 	vim.fn.setreg("+", vim.fn.expand "%:~:.")
-  print("Copied relative path")
+	print "Copied relative path"
 end)
 
 -- Relative path
