@@ -1,8 +1,11 @@
 local M = {}
 local qf_deleted_stack = {}
 
-function M.QfSave(path)
-	path = path or (vim.fn.stdpath "data" .. "/quickfix_list.txt")
+local DEFAULT_QF_PATH = vim.fn.stdpath "data" .. "/quickfix_list.txt"
+
+M.DEFAULT_QF_PATH = DEFAULT_QF_PATH
+
+function M.QfSave()
 	local items = vim.fn.getqflist()
 	if #items == 0 then
 		return
@@ -19,18 +22,17 @@ function M.QfSave(path)
 			type = it.type,
 		})
 	end
-	vim.fn.writefile({ vim.fn.json_encode(out) }, path)
-	return path
+	vim.fn.writefile({ vim.fn.json_encode(out) }, DEFAULT_QF_PATH)
+	return DEFAULT_QF_PATH
 end
 
-function M.QfLoad(path, opts)
-	path = path or (vim.fn.stdpath "data" .. "/quickfix_list.txt")
+function M.QfLoad(opts)
 	opts = opts or {}
-	if vim.fn.filereadable(path) == 0 then
+	if vim.fn.filereadable(DEFAULT_QF_PATH) == 0 then
 		return
 	end
 
-	local content = table.concat(vim.fn.readfile(path), "\n")
+	local content = table.concat(vim.fn.readfile(DEFAULT_QF_PATH), "\n")
 	local ok, decoded = pcall(vim.fn.json_decode, content)
 	if not ok or type(decoded) ~= "table" or #decoded == 0 then
 		return
@@ -58,11 +60,21 @@ function M.QfLoad(path, opts)
 	pcall(vim.api.nvim_set_current_win, curwin)
 end
 
-function M.QfDelete(path)
-	path = path or (vim.fn.stdpath "data" .. "/quickfix_list.txt")
-	if vim.fn.filereadable(path) == 1 then
-		vim.fn.delete(path)
+function M.QfDeletePersistentFile()
+	local delete_file_action_result = vim.fn.delete(DEFAULT_QF_PATH)
+
+	if delete_file_action_result ~= 0 then
+		vim.notify(
+			"Failed to delete: "
+				.. DEFAULT_QF_PATH
+				.. " (rc="
+				.. tostring(delete_file_action_result)
+				.. ")",
+			vim.log.levels.WARN
+		)
+		return false
 	end
+	return true
 end
 
 function M.QfDelCurrentEntry()
@@ -99,6 +111,10 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		M.QfLoad()
 	end,
 })
+
+vim.api.nvim_create_user_command("QfDeletePersistentFile", function(opts)
+	M.QfDeletePersistentFile()
+end, { nargs = "?" })
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "qf",

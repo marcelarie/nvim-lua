@@ -1,4 +1,4 @@
-local persistend_qfl = require 'features.persistend-qfl'
+local persistend_qfl = require "features.persistend-qfl"
 
 local opts = { noremap = true, silent = true }
 -- [[ Basic Keymaps ]]
@@ -181,19 +181,31 @@ vim.keymap.set("c", "w!!", "SudaWrite<cr>", { noremap = false, silent = false })
 
 vim.keymap.set("c", "w!!", "SudaWrite<cr>", { noremap = false, silent = false })
 
-local function saveSession()
-  local filetype = string.lower(vim.bo.filetype)
-  if not string.match(filetype, "commit") then
-    local started_with_files = vim.fn.argc() > 0
-    if #vim.fn.getqflist() > 0 then
-      persistend_qfl.QfSave()
-    elseif not started_with_files then
-      persistend_qfl.QfDelete()
-    end
-    vim.cmd "SessionSave"
-  end
+local function is_qf_open()
+	for _, win in ipairs(vim.fn.getwininfo()) do
+		if win.quickfix == 1 then
+			return true
+		end
+	end
+	return false
 end
 
+local function saveSession()
+	local filetype = string.lower(vim.bo.filetype)
+
+	if not string.match(filetype, "commit") then
+		local started_with_files = vim.fn.argc() > 0
+		local qf_open = is_qf_open()
+
+		if qf_open and #vim.fn.getqflist() > 0 then
+			persistend_qfl.QfSave()
+		elseif not started_with_files then
+			persistend_qfl.QfDeletePersistentFile()
+		end
+
+		vim.cmd "SessionSave"
+	end
+end
 
 -- leader q to quit
 -- and save session with auto-session
