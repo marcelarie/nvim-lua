@@ -93,4 +93,24 @@ function M.QfUndoDeletedEntry()
 	table.insert(qf, last.idx, last.item) -- re-insert
 	vim.fn.setqflist({}, "r", { items = qf })
 end
+
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		M.QfLoad()
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "qf",
+	callback = function()
+		vim.keymap.set("n", "dd", function()
+			M.QfDelCurrentEntry()
+		end, { buffer = true, desc = "Delete quickfix entry" })
+
+		vim.keymap.set("n", "u", function()
+			M.QfUndoDeletedEntry()
+		end, { buffer = true, desc = "Undo quickfix delete" })
+	end,
+})
+
 return M

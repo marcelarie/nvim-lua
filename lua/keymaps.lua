@@ -1,4 +1,4 @@
-local functions = require "functions"
+local persistend_qfl = require 'features.persistend-qfl'
 
 local opts = { noremap = true, silent = true }
 -- [[ Basic Keymaps ]]
@@ -186,9 +186,9 @@ local function saveSession()
   if not string.match(filetype, "commit") then
     local started_with_files = vim.fn.argc() > 0
     if #vim.fn.getqflist() > 0 then
-      functions.QfSave()
+      persistend_qfl.QfSave()
     elseif not started_with_files then
-      functions.QfDelete()
+      persistend_qfl.QfDelete()
     end
     vim.cmd "SessionSave"
   end

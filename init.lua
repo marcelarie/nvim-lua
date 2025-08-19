@@ -24,6 +24,10 @@ require "tmux"
 require "lsp"
 require "lsp-setup"
 
+-- features
+require "features.persistend-qfl"
+require "features.update-fe-version"
+
 if vim.g.neovide then
 	vim.o.guifont = "BlexMono Nerd Font:h9"
 	vim.g.neovide_cursor_trail_size = 0.1

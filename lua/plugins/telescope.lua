@@ -123,7 +123,7 @@ return {
 				return vim.fn.executable "make" == 1
 			end,
 		},
-		-- "fdschmidt93/telescope-egrepify.nvim",
+		"fdschmidt93/telescope-egrepify.nvim",
 		-- "nvim-telescope/telescope-github.nvim",
 		"debugloop/telescope-undo.nvim",
 		"benfowler/telescope-luasnip.nvim",
@@ -360,7 +360,7 @@ return {
 		-- ts.load_extension "http"
 		ts.load_extension "themes"
 		-- ts.load_extension "undo"
-		-- ts.load_extension "egrepify"
+		ts.load_extension "egrepify"
 		ts.load_extension "neoclip"
 
 		-- local M = {}
