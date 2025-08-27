@@ -193,6 +193,18 @@ vim.lsp.util.open_floating_preview = function(contents, syntax, opts, ...)
 	return bufnr, winid
 end
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "tutor",
+	callback = function(ev)
+		vim.keymap.set(
+			"n",
+			"gx",
+			"<Cmd>call tutor#open_link()<CR>",
+			{ buffer = ev.buf }
+		)
+	end,
+})
+
 -- Go to first line of file if filetype is gitcommit
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "gitcommit",

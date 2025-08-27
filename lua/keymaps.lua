@@ -367,8 +367,8 @@ vim.keymap.set(
 )
 
 -- ; for :
-vim.keymap.set("n", ";", ":", { noremap = true, silent = false })
-vim.keymap.set("n", ":", ";", { noremap = true, silent = false })
+-- vim.keymap.set("n", ";", ":", { noremap = true, silent = false })
+-- vim.keymap.set("n", ":", ";", { noremap = true, silent = false })
 
 -- alpha
 vim.keymap.set("n", "<Leader>al", ":Alpha<cr>", { silent = true })
@@ -451,11 +451,11 @@ vim.keymap.set(
 )
 
 -- Absolute path to system clipboard
-vim.keymap.set("n", "yp", function()
-	vim.fn.setreg("+", vim.fn.expand "%:p")
-	print "Copied absolute path"
-end)
-vim.keymap.set("n", "yr", function()
+-- vim.keymap.set("n", "<leader>yp", function()
+-- 	vim.fn.setreg("+", vim.fn.expand "%:p")
+-- 	print "Copied absolute path"
+-- end)
+vim.keymap.set("n", "<leader>yp", function()
 	vim.fn.setreg("+", vim.fn.expand "%:~:.")
 	print "Copied relative path"
 end)
