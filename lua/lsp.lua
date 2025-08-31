@@ -10,6 +10,7 @@ vim.lsp.enable "typescript"
 vim.lsp.enable "rust-analyzer"
 vim.lsp.enable "tombi"
 vim.lsp.enable "python"
+vim.lsp.enable "fennel"
 -- using emmylua_ls instead of lua_ls
 vim.lsp.enable "emmylua_ls"
 
