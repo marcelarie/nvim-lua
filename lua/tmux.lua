@@ -134,6 +134,23 @@ end, {
 })
 
 --= TESTS RUNNER =--
+local function get_rust_test_under_cursor()
+	local current_line_num = vim.api.nvim_win_get_cursor(0)[1]
+	local current_line = vim.api.nvim_get_current_line()
+	
+	local test_name = current_line:match("fn ([%w_]+)")
+	if test_name then
+		for i = current_line_num - 1, math.max(1, current_line_num - 5), -1 do
+			local line = vim.api.nvim_buf_get_lines(0, i - 1, i, false)[1]
+			if line and line:match("#%[test%]") then
+				return test_name
+			end
+		end
+	end
+	
+	return nil
+end
+
 local function RunFileTests()
 	local fname = vim.fn.expand "%:t"
 	local filepath = vim.fn.expand "%:p"
@@ -141,11 +158,10 @@ local function RunFileTests()
 	local ext = vim.fn.expand "%:e"
 
 	if ext == "rs" then
-		vim.cmd "Cargo test"
-		vim.notify "for now running cargo tests is not working with tmux and nix"
-		-- create_tmux_persistent_command(
-		-- 	"cargo test " .. vim.fn.expand "%:t:r" .. " -- --show-output"
-		-- )
+		local specific_test = get_rust_test_under_cursor()
+		local test_target = specific_test or vim.fn.expand "%:t:r"
+		local cmd = string.format("direnv exec . cargo test %s -- --show-output", test_target)
+		create_tmux_persistent_command(cmd)
 	elseif ext == "js" or ext == "ts" or ext == "jsx" or ext == "tsx" then
 		if fname:match("%.tests?%." .. ext .. "$") then
 			create_tmux_persistent_command("npm run test " .. filepath)
@@ -185,7 +201,41 @@ local function RunFileTests()
 			create_tmux_persistent_command("npm run test " .. test_file)
 		end
 	elseif ext == "py" then
-		create_tmux_persistent_command("pytest " .. fname)
+		local project_root = vim.fn.getcwd()
+		local root_esc = vim.fn.shellescape(project_root)
+		local docker_cmd = "cd "
+			.. root_esc
+			.. " && docker build -f test.Dockerfile -t test-runner . && docker run --rm --env-file "
+			.. vim.fn.shellescape "ENV/test.env"
+			.. " test-runner python -m pytest -c ./pytest.ini"
+
+		if fname == "conftest.py" then
+			local dir = vim.fn.expand "%:p:h"
+			local relative_dir = string.gsub(
+				dir,
+				"^" .. project_root:gsub("([^%w])", "%%%1") .. "/",
+				""
+			)
+			if relative_dir == "" then
+				relative_dir = "."
+			end
+			local cmd = docker_cmd
+				.. " "
+				.. vim.fn.shellescape(relative_dir)
+				.. " -vv"
+			create_tmux_persistent_command(cmd)
+		else
+			local relative_file = string.gsub(
+				vim.fn.expand "%:p",
+				"^" .. project_root:gsub("([^%w])", "%%%1") .. "/",
+				""
+			)
+			local cmd = docker_cmd
+				.. " "
+				.. vim.fn.shellescape(relative_file)
+				.. " -vv"
+			create_tmux_persistent_command(cmd)
+		end
 	else
 		print "RunTests: unsupported filetype"
 	end
