@@ -18,6 +18,12 @@ return {
 				function()
 					require("dart").read_auto_session()
 				end,
+				function()
+					-- Restore quickfix after session to prevent corruption
+					vim.schedule(function()
+						require("features.persistend-qfl").QfLoad({ open = false })
+					end)
+				end,
 			},
 			auto_session_suppress_dirs = {
 				"~/",

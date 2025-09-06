@@ -38,6 +38,14 @@ function M.QfLoad(opts)
 		return
 	end
 
+	-- Fix buffer references after session restore
+	for _, item in ipairs(decoded) do
+		if item.filename and item.filename ~= "" then
+			-- Clear bufnr to force vim to resolve from filename
+			item.bufnr = nil
+		end
+	end
+
 	vim.fn.setqflist({}, "r", { items = decoded })
 
 	local has_args = vim.fn.argc() > 0
@@ -114,6 +122,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		M.QfLoad()
 	end,
 })
+
 
 vim.api.nvim_create_user_command("QfDeletePersistentFile", function(opts)
 	M.QfDeletePersistentFile()
