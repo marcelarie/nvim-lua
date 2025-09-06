@@ -49,11 +49,11 @@ Or use the commands within Neovim:
 ## Startup time
 
 ```bash
-Startuptime: 102.93ms
+Startuptime: 92.98ms
 
-LazyStart 22.15ms
-LazyDone  78.96ms (+56.81ms)
-UIEnter   102.93ms (+23.97ms)
+LazyStart 19.44ms
+LazyDone  69.16ms (+49.72ms)
+UIEnter   92.98ms (+23.82ms)
 ```
 
 ## File Tree
