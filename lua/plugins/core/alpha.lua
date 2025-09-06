@@ -114,7 +114,7 @@ return {
 		-- startify.section.header.val =
 		alpha.setup(startify.opts)
 	end,
-	-- keys = {
-	-- 	{ "<Leader>al", ":Alpha<cr>", desc = "Alpha menu" },
-	-- },
+	keys = {
+		{ "<Leader>al", ":Alpha<cr>", desc = "Alpha menu" },
+	},
 }

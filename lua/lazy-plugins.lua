@@ -39,13 +39,13 @@ require("lazy").setup({
 		-- Load treesitter when opening files with content
 		event = { "BufReadPost", "BufNewFile" },
 		dependencies = {
-			{ "nvim-treesitter/playground", lazy = true },
-			{ "nvim-treesitter/nvim-treesitter-textobjects", lazy = true },
-			{ "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
-      { "marcelarie/tree-sitter-kanshi", lazy = true },
+			{ "nvim-treesitter/playground", cmd = { "TSPlaygroundToggle" } },
+			{ "nvim-treesitter/nvim-treesitter-textobjects", event = { "BufReadPost", "BufNewFile" } },
+			{ "JoosepAlviste/nvim-ts-context-commentstring", event = { "BufReadPost", "BufNewFile" } },
+      { "marcelarie/tree-sitter-kanshi", ft = "kanshi" },
 			{
 				"nushell/tree-sitter-nu",
-				lazy = true,
+				ft = "nu",
 				-- build = ":TSUpdate nu",
 				commit = "e8bdcb9d4d57d999ad6d7c797f9f1808623df1b9",
 			},

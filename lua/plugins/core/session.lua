@@ -1,9 +1,6 @@
 return {
 	"rmagatti/auto-session",
-	-- Lazy load session management
-	-- cmd = { "SessionSave", "SessionRestore", "SessionDelete", "Autosession" },
-	lazy = false,
-	-- enabled = false,
+	event = "VimEnter",
 	config = function()
 		require("auto-session").setup {
 			log_level = "error",
