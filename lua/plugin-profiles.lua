@@ -25,13 +25,19 @@ function M.get_imports()
 	end
 end
 
--- Functions to switch profiles (restart required)
+-- Functions to switch profiles (requires restart)
 function M.set_minimal()
-	print("Set NVIM_PROFILE=minimal in your shell and restart Neovim")
+	vim.env.NVIM_PROFILE = "minimal"
+	print("Profile set to minimal (~14 plugins)")
+	print("⚠️  Restart Neovim to apply changes")
+	print("Or set NVIM_PROFILE=minimal in your shell for persistence.")
 end
 
-function M.set_full()  
-	print("Set NVIM_PROFILE=full in your shell and restart Neovim") 
+function M.set_full()
+	vim.env.NVIM_PROFILE = "full" 
+	print("Profile set to full (80+ plugins)")
+	print("⚠️  Restart Neovim to apply changes")
+	print("Or set NVIM_PROFILE=full in your shell for persistence.")
 end
 
 -- Print current profile

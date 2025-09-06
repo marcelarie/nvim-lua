@@ -15,124 +15,197 @@ Open Neovim with this config:
 NVIM_APPNAME=marcelarie-nvim-lua/ nvim
 ```
 
+## Plugin Modes
+
+This configuration supports two plugin modes for different performance needs:
+
+### Core Mode (Default)
+- fast startup
+- ~14 essential plugins 
+- Basic editing, LSP, treesitter, and core functionality
+- **Startup time less than 100ms**
+
+### Full Mode
+- a bit slower startup but still lazy loaded and fast
+- 80+ plugins with extended functionality  
+- Includes all core plugins 
+- **Startup time around 160ms**
+
+Switch between modes by setting the environment variable:
+
+```bash
+# Core mode (default)
+NVIM_PROFILE=minimal nvim
+
+# Full mode  
+NVIM_PROFILE=full nvim
+```
+
+Or use the commands within Neovim:
+- `:ProfileCurrent` - Show current mode
+- `:ProfileMinimal` - Instructions for core mode
+- `:ProfileFull` - Instructions for full mode
+
 ## Startup time
 
 ```bash
-Startuptime: 158.78ms
+Startuptime: 102.93ms
 
-LazyStart 11.56ms
-LazyDone  122.16ms (+110.6ms)
-UIEnter   158.78ms (+36.61ms)
+LazyStart 22.15ms
+LazyDone  78.96ms (+56.81ms)
+UIEnter   102.93ms (+23.97ms)
 ```
 
 ## File Tree
 
 ```bash
-.
-├── data
-│   └── telescope-sources
-│       ├── emoji.json
-│       ├── gitmoji.json
-│       ├── julia.json
-│       ├── kaomoji.json
-│       ├── latex.json
-│       ├── math.json
-│       └── url_encoded.json
-├── Dockerfile
-├── info.md
-├── init.lua
-├── lazy-lock.json
-├── ltex-dictionaries
-│   ├── ltex.dictionary.en-US.txt
-│   └── ltex.hiddenFalsePositives.en-US.txt
-├── lua
-│   ├── autocmd.lua
-│   ├── color-settings.lua
-│   ├── commands.lua
-│   ├── global.lua
-│   ├── keymaps.lua
-│   ├── lazy-bootstrap.lua
-│   ├── lazy-plugins.lua
-│   ├── lsp-on-attach.lua
-│   ├── lsp-setup.lua
-│   ├── options.lua
-│   ├── plugins
-│   │   ├── alpha.lua
-│   │   ├── avante.lua
-│   │   ├── bamboo-colorscheme.lua
-│   │   ├── blame.lua
-│   │   ├── blink.lua
-│   │   ├── boo.lua
-│   │   ├── cmp.lua
-│   │   ├── colorbox.lua
-│   │   ├── colorschemes.lua
-│   │   ├── comment.lua
-│   │   ├── copilot.lua
-│   │   ├── debug.lua
-│   │   ├── dropbar.lua
-│   │   ├── easypick.lua
-│   │   ├── everforest-colorscheme.lua
-│   │   ├── flog.lua
-│   │   ├── footnote.lua
-│   │   ├── fzf.lua
-│   │   ├── git-blame.lua
-│   │   ├── git-conflict.lua
-│   │   ├── git-signs.lua
-│   │   ├── harpoon.lua
-│   │   ├── hoversplit.lua
-│   │   ├── img-clip.lua
-│   │   ├── incline.lua
-│   │   ├── init.lua
-│   │   ├── kanagawa.lua
-│   │   ├── lazydev.lua
-│   │   ├── link-vim.lua
-│   │   ├── lsp-trouble.lua
-│   │   ├── luasnip.lua
-│   │   ├── markdown.lua
-│   │   ├── markdown-preview.lua
-│   │   ├── mason-null-ls.lua
-│   │   ├── mdx.lua
-│   │   ├── mini-notify.lua
-│   │   ├── mini-starter.lua
-│   │   ├── mini-status.lua
-│   │   ├── neoclip.lua
-│   │   ├── no-clown-fiesta.lua
-│   │   ├── nvim-highlight-colors.lua
-│   │   ├── nvim-nu.lua
-│   │   ├── nvim-surround.lua
-│   │   ├── nvim-treesitter-context.lua
-│   │   ├── oil.lua
-│   │   ├── rustaceanvim.lua
-│   │   ├── session.lua
-│   │   ├── snap.lua
-│   │   ├── substitute.lua
-│   │   ├── telekasten.lua
-│   │   ├── telescope.lua
-│   │   ├── timber.lua
-│   │   ├── tsc.lua
-│   │   ├── ts-comments.lua
-│   │   ├── undotree.lua
-│   │   ├── urlview.lua
-│   │   ├── vgit.lua
-│   │   ├── watch.lua
-│   │   ├── zen-mode.lua
-│   │   └── zk.lua
-│   ├── profiler.lua
-│   ├── sys-clip.lua
-│   ├── tmux.lua
-│   ├── treesitter-setup.lua
-│   ├── ziggy.lua
-│   └── zig-official-color.lua
-├── README.md
-├── scripts
-│   └── install-neovim-latest.sh
-├── spell
-│   ├── en.utf-8.add
-│   └── en.utf-8.add.spl
-├── startup.log
-└── stylua.toml
+    ┌─ install-neovim-latest.sh
+ ┌─ scripts
+ ├─ info.md
+ ├─ dprint.json
+ ├─ Dockerfile
+ ├─ lazy-lock.json
+ │  ┌─ options.lua
+ │  ├─ zig-official-color.lua
+ │  ├─ global.lua
+ │  ├─ lsp-on-attach.lua
+ │  ├─ treesitter-setup.lua
+ │  ├─ tmux.lua
+ │  ├─ keymaps.lua
+ │  ├─ autocmd.lua
+ │  ├─ sys-clip.lua
+ │  │  ┌─ flash.lua
+ │  │  ├─ apply-action.lua
+ │  ├─ utils
+ │  ├─ neovide.lua
+ │  ├─ open_url.lua
+ │  │  ┌─ persistend-qfl.lua
+ │  │  ├─ update-fe-version.lua
+ │  ├─ features
+ │  ├─ lsp.lua
+ │  ├─ ziggy.lua
+ │  ├─ lsp-setup.lua
+ │  │     ┌─ img-clip.lua
+ │  │     ├─ git-conflict.lua
+ │  │     ├─ blame.lua
+ │  │     ├─ incline.lua
+ │  │     ├─ cmp.lua
+ │  │     ├─ mini-starter.lua
+ │  │     ├─ hoversplit.lua
+ │  │     ├─ ts-comments.lua
+ │  │     ├─ timber.lua
+ │  │     ├─ mason-null-ls.lua
+ │  │     ├─ naysayer.lua
+ │  │     ├─ luasnip.lua
+ │  │     ├─ comment.lua
+ │  │     ├─ buffer-manager.lua
+ │  │     ├─ urlview.lua
+ │  │     ├─ nvim-nu.lua
+ │  │     ├─ mdx.lua
+ │  │     ├─ lazydev.lua
+ │  │     ├─ zk.lua
+ │  │     ├─ vgit.lua
+ │  │     ├─ dropbar.lua
+ │  │     ├─ git-blame.lua
+ │  │     ├─ code-companion.lua
+ │  │     ├─ live-coding.lua
+ │  │     ├─ hydra.lua
+ │  │     ├─ flog.lua
+ │  │     ├─ zen-mode.lua
+ │  │     ├─ link-vim.lua
+ │  │     ├─ no-clown-fiesta.lua
+ │  │     ├─ rustaceanvim.lua
+ │  │     ├─ fff.lua
+ │  │     ├─ telekasten.lua
+ │  │     ├─ colorbox.lua
+ │  │     ├─ nvim-highlight-colors.lua
+ │  │     ├─ markdown.lua
+ │  │     ├─ fzf.lua
+ │  │     ├─ watch.lua
+ │  │     ├─ lsp-trouble.lua
+ │  │     ├─ markdown-preview.lua
+ │  │     ├─ easypick.lua
+ │  │     ├─ tsc.lua
+ │  │     ├─ debug.lua
+ │  │     ├─ undotree.lua
+ │  │     ├─ boo.lua
+ │  │     ├─ snap.lua
+ │  │     ├─ gh-preview.lua
+ │  │     ├─ beam.lua
+ │  │     ├─ kanagawa.lua
+ │  │     ├─ footnote.lua
+ │  │     ├─ venv-selector.lua
+ │  │     ├─ mini-diff.lua
+ │  │     ├─ harpoon.lua
+ │  │     ├─ neoclip.lua
+ │  │     ├─ mini-notify.lua
+ │  │  ┌─ optional
+ │  │  │  ┌─ conform.lua
+ │  │  │  ├─ alpha.lua
+ │  │  │  ├─ bamboo-colorscheme.lua
+ │  │  │  ├─ nvim-surround.lua
+ │  │  │  ├─ nvim-treesitter-context.lua
+ │  │  │  ├─ substitute.lua
+ │  │  │  ├─ mini-status.lua
+ │  │  │  ├─ git-signs.lua
+ │  │  │  ├─ todo-comments.lua
+ │  │  │  ├─ everforest-colorscheme.lua
+ │  │  │  ├─ session.lua
+ │  │  │  ├─ oil.lua
+ │  │  │  ├─ telescope.lua
+ │  │  │  ├─ blink.lua
+ │  │  │  ├─ ts-autotag.lua
+ │  │  │  ├─ dart.lua
+ │  │  │  ├─ colorschemes.lua
+ │  │  │  ├─ copilot.lua
+ │  │  ├─ core
+ │  │  ├─ init.lua
+ │  ├─ plugins
+ │  ├─ color-settings.lua
+ │  ├─ profiler.lua
+ │  ├─ lazy-bootstrap.lua
+ │  ├─ commands.lua
+ │  ├─ plugin-profiles.lua
+ │  ├─ lazy-plugins.lua
+ ├─ lua
+ │  ┌─ fennel.lua
+ │  ├─ nil.lua
+ │  ├─ md-oxide.lua
+ │  ├─ bash.lua
+ │  ├─ typescript.lua
+ │  ├─ nix.lua
+ │  ├─ markdown.lua
+ │  ├─ tombi.lua
+ │  ├─ python.lua
+ │  ├─ rust-analyzer.lua
+ │  ├─ json.lua
+ │  ├─ lua.lua
+ ├─ lsp
+ │  ┌─ en.utf-8.add.spl
+ │  ├─ en.utf-8.add
+ ├─ spell
+ ├─ README.md
+ │  ┌─ ltex.hiddenFalsePositives.en-US.txt
+ │  ├─ ltex.dictionary.en-US.txt
+ ├─ ltex-dictionaries
+ ├─ flake.nix
+ ├─ flake.lock
+ ├─ after
+ ├─ startup.log
+ │     ┌─ emoji.json
+ │     ├─ math.json
+ │     ├─ julia.json
+ │     ├─ url_encoded.json
+ │     ├─ latex.json
+ │     ├─ gitmoji.json
+ │     ├─ kaomoji.json
+ │  ┌─ telescope-sources
+ ├─ data
+ ├─ init.lua
+ ├─ stylua.toml
+ nvim
 
-8 directories, 95 files
+13 directories, 131 files
 ```
 
 Dependencies:
