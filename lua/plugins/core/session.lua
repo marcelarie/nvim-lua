@@ -8,7 +8,7 @@ return {
 		require("auto-session").setup {
 			log_level = "error",
 			auto_session_enabled = false,
-			auto_save_enabled = true,
+			auto_save_enabled = false,
 			pre_save_cmds = {
 				function()
 					require("dart").write_auto_session()

@@ -203,7 +203,7 @@ local function saveSession()
 			persistend_qfl.QfDeletePersistentFile()
 		end
 
-		vim.cmd "Autosession save"
+		vim.cmd "AutoSession save"
 	end
 end
 
