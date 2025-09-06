@@ -9,6 +9,9 @@
 return {
 	-- NOTE: Yes, you can install new plugins here!
 	"mfussenegger/nvim-dap",
+	-- Lazy load debug only when needed
+	keys = { "<F5>", "<F1>", "<F2>", "<F3>", "<leader>b", "<leader>B", "<F7>", "<space>?" },
+	cmd = { "DapToggleBreakpoint", "DapContinue", "DapStepInto", "DapStepOver", "DapStepOut" },
 	-- NOTE: And you can specify dependencies as well
 	dependencies = {
 		-- Creates a beautiful debugger UI

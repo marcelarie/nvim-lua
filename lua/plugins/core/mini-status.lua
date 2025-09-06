@@ -1,6 +1,8 @@
 return {
 	"echasnovski/mini.statusline",
 	version = false,
+	-- Load only when UI is ready
+	event = "VimEnter",
 	-- enabled = false,
 	-- No need to copy this inside `setup()`. Will be used automatically.
 	opts = {

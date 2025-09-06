@@ -1,5 +1,6 @@
 return {
 	"Piotr1215/beam.nvim",
+	enabled = false,
 	config = function()
 		require("beam").setup {
 			prefix = ",", -- Your prefix key (mini-leader)
