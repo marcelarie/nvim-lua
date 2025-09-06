@@ -61,6 +61,9 @@ function M.QfLoad(opts)
 end
 
 function M.QfDeletePersistentFile()
+	if vim.fn.filereadable(DEFAULT_QF_PATH) == 0 then
+		return true
+	end
 	local delete_file_action_result = vim.fn.delete(DEFAULT_QF_PATH)
 
 	if delete_file_action_result ~= 0 then

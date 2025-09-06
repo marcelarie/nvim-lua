@@ -1,8 +1,7 @@
 return {
 	"goolord/alpha-nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	-- Lazy load dashboard only when no files opened
-	event = "VimEnter",
+	event = "VimEnter", -- Lazy load dashboard only when no files opened
 	cond = function()
 		return vim.fn.argc() == 0
 	end,
@@ -21,7 +20,7 @@ return {
 			startify.button(
 				"se",
 				"reload last session",
-				"<cmd>silent SessionRestore<cr>"
+				"<cmd>silent AutoSession restore<cr>"
 			),
 			startify.button(
 				"ss",

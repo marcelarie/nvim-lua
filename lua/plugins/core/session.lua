@@ -1,7 +1,8 @@
 return {
 	"rmagatti/auto-session",
 	-- Lazy load session management
-	cmd = { "SessionSave", "SessionRestore", "SessionDelete", "Autosession" },
+	-- cmd = { "SessionSave", "SessionRestore", "SessionDelete", "Autosession" },
+	lazy = false,
 	-- enabled = false,
 	config = function()
 		require("auto-session").setup {

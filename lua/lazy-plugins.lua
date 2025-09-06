@@ -18,21 +18,21 @@ require("lazy").setup({
 
 	-- NOTE: This is where your plugins related to LSP can be installed.
 	--  The configuration is done below. Search for lspconfig to find it below.
-	{
-		-- LSP Configuration & Plugins
-		"neovim/nvim-lspconfig",
-    version = "2.1.0",
-		dependencies = {
-			-- Automatically install LSPs to stdpath for neovim
-			{
-				"williamboman/mason.nvim",
-				config = true,
-				opts = { PATH = "append" },
-			},
-      { "williamboman/mason-lspconfig.nvim", version = "1.32.0"}
-
-		},
-	},
+	-- {
+	-- 	-- LSP Configuration & Plugins
+	-- 	"neovim/nvim-lspconfig",
+	--    version = "2.1.0",
+	-- 	dependencies = {
+	-- 		-- Automatically install LSPs to stdpath for neovim
+	-- 		{
+	-- 			"williamboman/mason.nvim",
+	-- 			config = true,
+	-- 			opts = { PATH = "append" },
+	-- 		},
+	--      { "williamboman/mason-lspconfig.nvim", version = "1.32.0"}
+	--
+	-- 	},
+	-- },
 	{
 		-- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",

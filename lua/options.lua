@@ -1,5 +1,6 @@
--- [[ Setting options ]]
--- See `:help vim.o`
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- Global options (o)
 vim.o.splitbelow = true -- Horizontal splits will automatically be below
 vim.o.splitright = true -- Vertical splits will automatically be to the right
@@ -10,6 +11,7 @@ vim.api.nvim_set_hl(0, "CursorLine", { underline = false })
 
 -- vim.g.clipboard = "unnamedplus" -- Set in ./sys-clip.lua
 vim.opt.termguicolors = true
+vim.cmd.colorscheme "lunaperche"
 
 vim.g.ai_cmp = false
 

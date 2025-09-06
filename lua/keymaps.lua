@@ -370,9 +370,6 @@ vim.keymap.set(
 -- vim.keymap.set("n", ";", ":", { noremap = true, silent = false })
 -- vim.keymap.set("n", ":", ";", { noremap = true, silent = false })
 
--- alpha
-vim.keymap.set("n", "<Leader>al", ":Alpha<cr>", { silent = true })
-
 -- quickfix
 vim.keymap.set("n", "<leader>co", toggle_quickfix, opt_ns)
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
