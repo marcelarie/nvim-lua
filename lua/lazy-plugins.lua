@@ -2,7 +2,7 @@
 require("lazy").setup({
 	-- Essential core plugins only for ultra-fast startup
 	"stevearc/profile.nvim",
-	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically  
+	{ "tpope/vim-sleuth", event = "BufReadPost" }, -- Detect tabstop and shiftwidth automatically  
 	
 	-- Optional: Uncomment these if needed (adds startup time)
 	-- "nacro90/numb.nvim",

@@ -15,23 +15,7 @@ return {
 			return #plugins_count
 		end
 
-		local header = table.concat({
-			[[                                   __                ]],
-			[[      ___     ___    ___   __  __ /\_\    ___ ___    ]],
-			[[     / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
-			[[    /\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
-			[[    \ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-			[[     \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
-			[[                                                     ]],
-			string.format(
-				[[              v: %s.%s.%s - lua: %s - plugins: %s ]],
-				version.major,
-				version.minor,
-				version.patch,
-				_VERSION,
-				get_plugins_count()
-			),
-		}, "\n")
+		local header = string.format("running neovim v%s.%s.%s with %s plugins", version.major, version.minor, version.patch, get_plugins_count())
 
 		starter.setup {
 			autoopen = true,
@@ -83,6 +67,10 @@ return {
 					action = "Telescope oldfiles",
 					section = "Files",
 				},
+			},
+			content_hooks = {
+				starter.gen_hook.adding_bullet(),
+				starter.gen_hook.aligning("center", "center"),
 			},
 		}
 

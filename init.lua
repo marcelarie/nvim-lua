@@ -1,4 +1,3 @@
-
 -- require "profiler"
 require "global"
 require "options"

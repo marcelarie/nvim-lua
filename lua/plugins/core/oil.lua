@@ -34,7 +34,7 @@ end
 
 return {
 	"stevearc/oil.nvim",
-	lazy = false,
+	lazy = true,
 	-- config = function()
 	-- 	---@type oil_setup
 	-- 	require("oil").setup {

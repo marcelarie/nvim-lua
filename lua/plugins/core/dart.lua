@@ -7,6 +7,13 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	enabled = true,
+	lazy = true,
+	keys = {
+		{ ";;", desc = "Mark current buffer" },
+		{ ";", desc = "Jump to buffer" },
+		{ ";p", desc = "Open Dart.pick" },
+		{ ";u", desc = "Close all marked buffers" },
+	},
 	opts = {
 		marklist = { "a", "s", "d", "f", "q", "w", "e", "r" },
 		-- buflist = { "z", "x", "c" },

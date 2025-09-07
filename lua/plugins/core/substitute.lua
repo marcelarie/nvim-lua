@@ -1,12 +1,13 @@
 return {
 	"gbprod/substitute.nvim",
-	lazy = false,
+	lazy = true,
+	keys = {
+		{ "s", function() require("substitute").operator() end, mode = "n", desc = "Substitute operator" },
+		{ "ss", function() require("substitute").line() end, mode = "n", desc = "Substitute line" },
+		{ "S", function() require("substitute").eol() end, mode = "n", desc = "Substitute to EOL" },
+		{ "s", function() require("substitute").visual() end, mode = "x", desc = "Substitute visual" },
+	},
 	config = function()
 		require("substitute").setup {}
-		local kset = vim.keymap.set
-		kset("n", "s", require("substitute").operator, { noremap = true })
-		kset("n", "ss", require("substitute").line, { noremap = true })
-		kset("n", "S", require("substitute").eol, { noremap = true })
-		kset("x", "s", require("substitute").visual, { noremap = true })
 	end,
 }

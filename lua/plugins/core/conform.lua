@@ -1,5 +1,15 @@
 return {
 	"stevearc/conform.nvim",
+	lazy = true,
+	event = { "BufWritePre" },
+	cmd = { "ConformInfo" },
+	keys = {
+		{
+			"ff",
+			"<cmd>lua require('conform').format()<cr>",
+			desc = "Format buffer",
+		},
+	},
 	config = function()
 		require("conform").setup {
 			formatters = {
@@ -28,7 +38,13 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				json = { "fixjson" },
-				jsonc = { "deno_fmt", "prettierd", "prettier", "biome", stop_after_first = true },
+				jsonc = {
+					"deno_fmt",
+					"prettierd",
+					"prettier",
+					"biome",
+					stop_after_first = true,
+				},
 				toml = { "tombi", lsp_format = "fallback" },
 				-- Conform will run multiple formatters sequentially
 				python = { "isort", "black" },
