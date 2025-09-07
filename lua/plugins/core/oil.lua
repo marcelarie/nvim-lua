@@ -35,6 +35,12 @@ end
 return {
 	"stevearc/oil.nvim",
 	lazy = true,
+	init = function()
+		-- Load oil when opening a directory
+		if vim.fn.isdirectory(vim.fn.argv(0)) == 1 then
+			require("lazy").load({plugins = {"oil.nvim"}})
+		end
+	end,
 	-- config = function()
 	-- 	---@type oil_setup
 	-- 	require("oil").setup {
