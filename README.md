@@ -1,3 +1,13 @@
+<h2 align="center">my nvim config</h2>
+
+<p align="left">
+  This repo is for personal use but if something doesn't work for you, feel free to open an <a href="https://github.com/marcelarie/nvim-lua/issues">issue</a>.
+</p>
+
+<div align="center">
+  <img width="769.5" height="998" alt="nvim-start" src="https://github.com/user-attachments/assets/32676b7f-f2a5-4f5a-bf57-7c7e271523dd" />
+</div>
+
 ## Install Instructions
 
 > Install requires Neovim 0.11+. Always review the code before installing a configuration.
