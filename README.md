@@ -23,7 +23,7 @@ This configuration supports two plugin modes for different performance needs:
 - fast startup
 - ~14 essential plugins 
 - Basic editing, LSP, treesitter, and core functionality
-- **Startup time less than 100ms**
+- **Startup time in less than 90ms**
 
 ### Full Mode
 - a bit slower startup but still lazy loaded and fast
@@ -35,7 +35,7 @@ Switch between modes by setting the environment variable:
 
 ```bash
 # Core mode (default)
-NVIM_PROFILE=minimal nvim
+NVIM_PROFILE=minimal nvim # or just `nvim`
 
 # Full mode  
 NVIM_PROFILE=full nvim

@@ -53,12 +53,12 @@ vim.defer_fn(function()
 	-- 	filetype = "kanshi", -- Filetype associated with this grammar
 	-- }
 
-	vim.keymap.set(
-		"n",
-		"<leader>ts",
-		":TSPlaygroundToggle<CR>",
-		{ desc = "Toggle Treesitter playground" }
-	)
+	-- vim.keymap.set(
+	-- 	"n",
+	-- 	"<leader>ts",
+	-- 	":TSPlaygroundToggle<CR>",
+	-- 	{ desc = "Toggle Treesitter playground" }
+	-- )
 end, 0)
 
 -- vim: ts=2 sts=2 sw=2 et

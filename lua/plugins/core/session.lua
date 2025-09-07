@@ -1,6 +1,7 @@
 return {
 	"rmagatti/auto-session",
-	event = "VimEnter",
+	cmd = { "AutoSession", "Autosession" },
+	event = { "BufReadPost", "BufNewFile" },
 	config = function()
 		require("auto-session").setup {
 			log_level = "error",

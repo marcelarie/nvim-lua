@@ -1,7 +1,7 @@
 return {
 	"goolord/alpha-nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	event = "VimEnter", -- Lazy load dashboard only when no files opened
+	event = "VimEnter",
 	cond = function()
 		return vim.fn.argc() == 0
 	end,
