@@ -3,7 +3,7 @@ return {
 	priority = 1000,
 	lazy = false,
 	opts = {
-		picker = { 
+		picker = {
 			enabled = true,
 			win = {
 				style = "minimal",
@@ -35,55 +35,157 @@ return {
 	config = function(_, opts)
 		require("snacks").setup(opts)
 		vim.api.nvim_set_hl(0, "SnacksPickerNormal", { bg = "#000000" })
-		vim.api.nvim_set_hl(0, "SnacksPickerBorder", { bg = "#000000", fg = "#444444" })
-		vim.api.nvim_set_hl(0, "SnacksPickerTitle", { bg = "#000000", fg = "#ffffff" })
-		vim.api.nvim_set_hl(0, "SnacksPickerInput", { bg = "#000000", fg = "#ffffff" })
+		vim.api.nvim_set_hl(
+			0,
+			"SnacksPickerBorder",
+			{ bg = "#000000", fg = "#444444" }
+		)
+		vim.api.nvim_set_hl(
+			0,
+			"SnacksPickerTitle",
+			{ bg = "#000000", fg = "#ffffff" }
+		)
+		vim.api.nvim_set_hl(
+			0,
+			"SnacksPickerInput",
+			{ bg = "#000000", fg = "#ffffff" }
+		)
 		vim.api.nvim_set_hl(0, "SnacksPickerList", { bg = "#111111" })
 		vim.api.nvim_set_hl(0, "SnacksPickerPreview", { bg = "#000000" })
 	end,
 	keys = {
 		-- file operations
-		{ "<Leader>f", function() require("snacks").picker.files() end, desc = "Find Files" },
-		{ "<leader>do", function() require("snacks").picker.files({ hidden = true }) end, desc = "Find Hidden Files" },
-		{ "<leader>rc", function() require("snacks").picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Config Files" },
-		
+		{
+			"<Leader>f",
+			function()
+				require("snacks").picker.files()
+			end,
+			desc = "Find Files",
+		},
+		{
+			"<leader>do",
+			function()
+				require("snacks").picker.files { hidden = true }
+			end,
+			desc = "Find Hidden Files",
+		},
+		{
+			"<leader>rc",
+			function()
+				require("snacks").picker.files { cwd = vim.fn.stdpath "config" }
+			end,
+			desc = "Config Files",
+		},
+
 		-- search and grep
-		{ "<leader>rg", function() require("snacks").picker.grep() end, desc = "Live Grep" },
-		{ "<leader>r", function() require("snacks").picker.grep() end, desc = "Live Grep" },
-		{ "<leader>rw", function() require("snacks").picker.grep_word() end, desc = "Grep Current Word" },
-		{ "<leader>br", function() require("snacks").picker.grep_buffers() end, desc = "Grep Buffers" },
-		{ "<leader>bu", function() require("snacks").picker.grep_buffers() end, desc = "Buffer Fuzzy Find" },
-		
-		-- buffers and navigation  
-		{ "<leader>tb", function() require("snacks").picker.buffers() end, desc = "Buffers" },
-		{ "<Leader>km", function() require("snacks").picker.keymaps() end, desc = "Keymaps" },
-		{ "<leader>ht", function() require("snacks").picker.help() end, desc = "Help Tags" },
-		
+		{
+			"<leader>rg",
+			function()
+				require("snacks").picker.grep()
+			end,
+			desc = "Live Grep",
+		},
+		{
+			"<leader>r",
+			function()
+				require("snacks").picker.grep()
+			end,
+			desc = "Live Grep",
+		},
+		{
+			"<leader>rw",
+			function()
+				require("snacks").picker.grep_word()
+			end,
+			desc = "Grep Current Word",
+		},
+		{
+			"<leader>br",
+			function()
+				require("snacks").picker.grep_buffers()
+			end,
+			desc = "Grep Buffers",
+		},
+		{
+			"<leader>bu",
+			function()
+				require("snacks").picker.grep_buffers()
+			end,
+			desc = "Buffer Fuzzy Find",
+		},
+
+		-- buffers and navigation
+		{
+			"<leader>tb",
+			function()
+				require("snacks").picker.buffers()
+			end,
+			desc = "Buffers",
+		},
+		{
+			"<Leader>km",
+			function()
+				require("snacks").picker.keymaps()
+			end,
+			desc = "Keymaps",
+		},
+		{
+			"<leader>ht",
+			function()
+				require("snacks").picker.help()
+			end,
+			desc = "Help Tags",
+		},
+
 		-- LSP
-		{ "<Leader>gr", function() require("snacks").picker.lsp_references() end, desc = "LSP References" },
-		{ "<leader>sy", function() require("snacks").picker.lsp_symbols() end, desc = "Document Symbols" },
-		
+		{
+			"<Leader>gr",
+			function()
+				require("snacks").picker.lsp_references()
+			end,
+			desc = "LSP References",
+		},
+		{
+			"<leader>sy",
+			function()
+				require("snacks").picker.lsp_symbols()
+			end,
+			desc = "Document Symbols",
+		},
+
 		-- git
-		{ "<Leader>gs", function() require("snacks").picker.git_status() end, desc = "Git Status" },
-		{ "<Leader>gb", function() require("snacks").picker.git_branches() end, desc = "Git Branches" },
-		
-		-- node modules 
-		{ 
-			"<leader>nf", 
-			function() 
-				require("snacks").picker.grep({ 
-					search = vim.fn.input("grep for > "), 
-					cwd = "./node_modules" 
-				}) 
-			end, 
-			desc = "Node Modules Grep" 
+		{
+			"<Leader>gs",
+			function()
+				require("snacks").picker.git_status()
+			end,
+			desc = "Git Status",
+		},
+		{
+			"<Leader>gb",
+			function()
+				require("snacks").picker.git_branches()
+			end,
+			desc = "Git Branches",
+		},
+
+		-- node modules
+		{
+			"<leader>nf",
+			function()
+				require("snacks").picker.grep {
+					search = vim.fn.input "grep for > ",
+					cwd = "./node_modules",
+				}
+			end,
+			desc = "Node Modules Grep",
 		},
 		{
 			"<leader>nm",
-			function() 
-				require("snacks").picker.grep({ cwd = "./node_modules" }) 
+			function()
+				require("snacks").picker.grep { cwd = "./node_modules" }
 			end,
-			desc = "Node Modules Live Grep"
+			desc = "Node Modules Live Grep",
 		},
 	},
 }
