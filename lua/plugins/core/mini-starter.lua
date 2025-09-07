@@ -6,7 +6,7 @@ return {
 	end,
 	config = function()
 		local starter = require "mini.starter"
-		
+
 		local version = vim.version()
 
 		local function get_plugins_count()
@@ -33,38 +33,73 @@ return {
 			),
 		}, "\n")
 
-		starter.setup({
+		starter.setup {
 			autoopen = true,
-			evaluate_single = false,
+			evaluate_single = true,
 			header = header,
 			footer = "",
 			query_updaters = [[abcdefghilmnopqrstuvwxyz0123456789_-,.ABCDEFGHIJKLMNOPQRSTUVWXYZ]],
 			items = {
-				{ name = "vim config", action = "cd ~/.config/nvim/ | e init.lua", section = "Config" },
-				{ name = "reload last session", action = "silent AutoSession restore", section = "Sessions" },
-				{ name = "select session", action = "Autosession search", section = "Sessions" },
-				{ name = "changed files", action = "Easypick changed_files", section = "Files" },
+				{
+					name = "rc: vim config",
+					action = "cd ~/.config/nvim/ | e init.lua",
+					section = "Config",
+				},
+				{
+					name = "sr: session reload",
+					action = "silent AutoSession restore",
+					section = "Sessions",
+				},
+				{
+					name = "ss: select session",
+					action = "Autosession search",
+					section = "Sessions",
+				},
+				{
+					name = "fc: changed files",
+					action = "Easypick changed_files",
+					section = "Files",
+				},
 				starter.sections.recent_files(5, false),
-				{ name = "quit nvim", action = "qa", section = "Actions" },
-				{ name = "new file", action = "ene | startinsert", section = "Actions" },
-				{ name = "find file", action = "Telescope find_files", section = "Files" },
-				{ name = "help tags", action = "Telescope help_tags", section = "Help" },
-				{ name = "recent files", action = "Telescope oldfiles", section = "Files" },
+				{ name = "q: quit nvim", action = "qa", section = "Actions" },
+				{
+					name = "e: new file",
+					action = "ene | startinsert",
+					section = "Actions",
+				},
+				{
+					name = "ff: find file",
+					action = "Telescope find_files",
+					section = "Files",
+				},
+				{
+					name = "h: help tags",
+					action = "Telescope help_tags",
+					section = "Help",
+				},
+				{
+					name = "fr: recent files",
+					action = "Telescope oldfiles",
+					section = "Files",
+				},
 			},
 			content_hooks = {
 				starter.gen_hook.adding_bullet(),
 				starter.gen_hook.aligning("center", "center"),
 			},
-		})
+		}
 
 		vim.api.nvim_create_autocmd("User", {
 			pattern = "MiniStarterOpened",
 			callback = function()
-				vim.keymap.set("n", "j", function() require("mini.starter").update_current_item("next") end, { buffer = true })
-				vim.keymap.set("n", "k", function() require("mini.starter").update_current_item("prev") end, { buffer = true })
+				vim.keymap.set("n", "j", function()
+					require("mini.starter").update_current_item "next"
+				end, { buffer = true })
+				vim.keymap.set("n", "k", function()
+					require("mini.starter").update_current_item "prev"
+				end, { buffer = true })
 			end,
 		})
-		
 	end,
 	keys = {
 		{ "<Leader>al", ":lua MiniStarter.open()<cr>", desc = "Starter menu" },

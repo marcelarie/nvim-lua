@@ -23,7 +23,7 @@ This configuration supports two plugin modes for different performance needs:
 - fast startup
 - ~14 essential plugins 
 - Basic editing, LSP, treesitter, and core functionality
-- **Startup time in ~90ms**
+- **Startup time under 50ms**
 
 ### Full Mode
 - a bit slower startup but still lazy loaded and fast
@@ -49,11 +49,11 @@ Or use the commands within Neovim:
 ## Startup time
 
 ```bash
-Startuptime: 92.98ms
+Startuptime: 41.23ms
 
-LazyStart 19.44ms
-LazyDone  69.16ms (+49.72ms)
-UIEnter   92.98ms (+23.82ms)
+LazyStart 16.07ms
+LazyDone  30ms (+13.94ms)
+UIEnter   41.23ms (+11.23ms)
 ```
 
 ## File Tree
