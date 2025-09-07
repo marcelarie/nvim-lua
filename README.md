@@ -21,7 +21,7 @@ This configuration supports two plugin modes for different performance needs:
 
 ### Core Mode (Default)
 - fast startup
-- ~14 essential plugins 
+- ~14 essential plugins (33 counting deps)
 - Basic editing, LSP, treesitter, and core functionality
 - **Startup time under 50ms**
 

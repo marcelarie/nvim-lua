@@ -38,7 +38,7 @@ return {
 			evaluate_single = true,
 			header = header,
 			footer = "",
-			query_updaters = [[abcdefghilmnopqrstuvwxyz0123456789_-,.ABCDEFGHIJKLMNOPQRSTUVWXYZ]],
+			query_updaters = [[abcdefghilmnopqrstuvwxyz0123456789_,.ABCDEFGHIJKLMNOPQRSTUVWXYZ]], -- deleted `-` `j` `k` from here
 			items = {
 				{
 					name = "rc: vim config",
@@ -60,7 +60,8 @@ return {
 					action = "Easypick changed_files",
 					section = "Files",
 				},
-				starter.sections.recent_files(5, false),
+				starter.sections.recent_files(5, true, false),
+				starter.sections.recent_files(5, false, true),
 				{ name = "q: quit nvim", action = "qa", section = "Actions" },
 				{
 					name = "e: new file",
@@ -82,10 +83,6 @@ return {
 					action = "Telescope oldfiles",
 					section = "Files",
 				},
-			},
-			content_hooks = {
-				starter.gen_hook.adding_bullet(),
-				starter.gen_hook.aligning("center", "center"),
 			},
 		}
 
