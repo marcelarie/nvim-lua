@@ -42,35 +42,35 @@ local on_attach = function(client, bufnr)
 
 	nmap(
 		"<leader>gd",
-		-- denols does not work with telescope lsp_definitions
+		-- denols does not work with snacks lsp_definitions
 		client.name == "denols" and vim.lsp.buf.definition
-			or require("telescope.builtin").lsp_definitions,
+			or function() require("snacks").picker.lsp_definitions() end,
 		"[G]oto [D]efinition"
 	)
 	nmap(
 		"gr",
 		client.name == "denols" and vim.lsp.buf.references
-			or require("telescope.builtin").lsp_references,
+			or function() require("snacks").picker.lsp_references() end,
 		"[G]oto [R]eferences"
 	)
 	nmap(
 		"gI",
-		require("telescope.builtin").lsp_implementations,
+		function() require("snacks").picker.lsp_implementations() end,
 		"[G]oto [I]mplementation"
 	)
 	nmap(
 		"<leader>D",
-		require("telescope.builtin").lsp_type_definitions,
+		function() require("snacks").picker.lsp_type_definitions() end,
 		"Type [D]efinition"
 	)
 	nmap(
 		"<leader>ds",
-		require("telescope.builtin").lsp_document_symbols,
+		function() require("snacks").picker.lsp_symbols() end,
 		"[D]ocument [S]ymbols"
 	)
 	nmap(
 		"<leader>ws",
-		require("telescope.builtin").lsp_dynamic_workspace_symbols,
+		function() require("snacks").picker.lsp_workspace_symbols() end,
 		"[W]orkspace [S]ymbols"
 	)
 

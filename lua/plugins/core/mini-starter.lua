@@ -54,17 +54,17 @@ return {
 				},
 				{
 					name = "ff: find file",
-					action = "Telescope find_files",
+					action = "lua require('snacks').picker.files()",
 					section = "Files",
 				},
 				{
 					name = "h: help tags",
-					action = "Telescope help_tags",
+					action = "lua require('snacks').picker.help()",
 					section = "Help",
 				},
 				{
 					name = "fr: recent files",
-					action = "Telescope oldfiles",
+					action = "lua require('snacks').picker.recent()",
 					section = "Files",
 				},
 			},
