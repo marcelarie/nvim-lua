@@ -18,17 +18,17 @@ local servers = {
 	-- clangd = {},
 	-- gopls = {},
 	-- pyright = {},
-	-- rust_analyzer = {
-	-- 	cargo = {lsp
-	-- 		allFeatures = true,
-	-- 	},
-	-- 	diagnostics = {
-	-- 		enable = true,
-	-- 		experimental = {
-	-- 			enable = true,
-	-- 		},
-	-- 	},
-	-- },
+	rust_analyzer = {
+		cargo = {
+			allFeatures = true,
+		},
+		diagnostics = {
+			enable = true,
+			experimental = {
+				enable = true,
+			},
+		},
+	},
 	ts_ls = {
 		-- single_file_support = false,
 		root_dir = require("lspconfig").util.root_pattern "yarn.lock"

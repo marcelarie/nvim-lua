@@ -7,13 +7,18 @@ local lsp_configs = {
 	nix = { "nix" },
 	bash = { "bash", "sh", "zsh", "csh", "ksg" },
 	json = { "json", "jsonc" },
-	typescript = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-	["rust-analyzer"] = { "rust" },
-	tombi = { "toml" },
+	typescript = {
+		"typescript",
+		"typescriptreact",
+		"javascript",
+		"javascriptreact",
+	},
+	rust = { "rust" },
+	toml = { "toml" },
 	python = { "python" },
 	fennel = { "fennel" },
 	lua = { "lua" },
-	markdown = { "markdown" }
+	markdown = { "markdown" },
 }
 
 local loaded_lsps = {}
