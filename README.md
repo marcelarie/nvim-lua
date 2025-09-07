@@ -23,7 +23,7 @@ This configuration supports two plugin modes for different performance needs:
 - fast startup
 - ~14 essential plugins 
 - Basic editing, LSP, treesitter, and core functionality
-- **Startup time in less than 90ms**
+- **Startup time in ~90ms**
 
 ### Full Mode
 - a bit slower startup but still lazy loaded and fast
