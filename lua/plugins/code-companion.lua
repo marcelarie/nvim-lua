@@ -8,6 +8,9 @@ return {
 		{ "echasnovski/mini.diff", opts = {} },
 	},
 	config = function()
+		---@meta
+
+		---@class CodeCompanion
 		local cc = require "codecompanion"
 
 		cc.setup {
@@ -39,6 +42,23 @@ return {
 						make_vars = true,
 						make_slash_commands = true,
 						show_result_in_chat = true,
+					},
+				},
+			},
+			prompt_library = {
+				["Generate a Commit Message"] = {
+					strategy = "chat",
+					description = "Generate a commit message",
+					opts = {
+						index = 9,
+						is_default = true,
+						is_slash_cmd = true,
+						short_name = "commit",
+						auto_submit = true,
+						adapter = {
+							name = "anthropic",
+							model = "claude-3-5-haiku-20241022", -- smaller claude model
+						},
 					},
 				},
 			},
