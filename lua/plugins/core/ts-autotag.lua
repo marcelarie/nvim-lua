@@ -1,6 +1,6 @@
--- Tiny plugin to enhance Neovim's native comments:
 return {
 	"windwp/nvim-ts-autotag",
+	ft = { "html", "tsx", "jsx", "xml", "vue", "svelte", "astro", "php" },
 	config = function()
 		require("nvim-ts-autotag").setup {
 			opts = {

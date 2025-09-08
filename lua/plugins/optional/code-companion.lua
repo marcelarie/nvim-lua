@@ -1,5 +1,8 @@
 return {
 	"olimorris/codecompanion.nvim",
+	-- Lazy load on command or keymap
+	cmd = { "CodeCompanion", "CodeCompanionChat", "CodeCompanionActions" },
+	keys = { "<leader>cc", "<leader>ca" },
 	opts = {},
 	dependencies = {
 		"nvim-lua/plenary.nvim",

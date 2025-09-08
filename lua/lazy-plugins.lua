@@ -1,53 +1,50 @@
 -- [[ Configure plugins ]]
 require("lazy").setup({
+	-- Essential core plugins only for ultra-fast startup
 	"stevearc/profile.nvim",
-	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
-	-- "tridactyl/vim-tridactyl",
-	"nacro90/numb.nvim",
-  "andreshazard/vim-freemarker",
-	{ "sindrets/diffview.nvim", lazy = false },
-	"NoahTheDuke/vim-just",
-	"kevinhwang91/nvim-bqf",
-	{ "stevearc/dressing.nvim", opts = {} },
-	{ "nvchad/volt", lazy = true },
-	{
-		"nvchad/minty",
-		lazy = true,
-		cmd = { "Shades", "Huefy" },
-	},
-	"mickael-menu/zk-nvim",
-	"wellle/targets.vim",
-	"kilavila/nvim-gitignore",
-
-	{ "kaarmu/typst.vim", ft = { "typ" } },
+	{ "tpope/vim-sleuth", event = "BufReadPost" }, -- Detect tabstop and shiftwidth automatically  
+	
+	-- Optional: Uncomment these if needed (adds startup time)
+	-- "nacro90/numb.nvim",
+	-- "andreshazard/vim-freemarker",
+	-- { "sindrets/diffview.nvim", lazy = true, cmd = "DiffviewOpen" },
+	-- "NoahTheDuke/vim-just",
+	-- "kevinhwang91/nvim-bqf", 
+	-- { "stevearc/dressing.nvim", opts = {} },
+	-- "mickael-menu/zk-nvim",
+	-- "wellle/targets.vim",
+	-- "kilavila/nvim-gitignore",
+	-- { "kaarmu/typst.vim", ft = { "typ" } },
 
 	-- NOTE: This is where your plugins related to LSP can be installed.
 	--  The configuration is done below. Search for lspconfig to find it below.
-	{
-		-- LSP Configuration & Plugins
-		"neovim/nvim-lspconfig",
-    version = "2.1.0",
-		dependencies = {
-			-- Automatically install LSPs to stdpath for neovim
-			{
-				"williamboman/mason.nvim",
-				config = true,
-				opts = { PATH = "append" },
-			},
-      { "williamboman/mason-lspconfig.nvim", version = "1.32.0"}
-
-		},
-	},
+	-- {
+	-- 	-- LSP Configuration & Plugins
+	-- 	"neovim/nvim-lspconfig",
+	--    version = "2.1.0",
+	-- 	dependencies = {
+	-- 		-- Automatically install LSPs to stdpath for neovim
+	-- 		{
+	-- 			"williamboman/mason.nvim",
+	-- 			config = true,
+	-- 			opts = { PATH = "append" },
+	-- 		},
+	--      { "williamboman/mason-lspconfig.nvim", version = "1.32.0"}
+	--
+	-- 	},
+	-- },
 	{
 		-- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
+		-- Load treesitter when opening files with content
+		event = { "BufReadPost", "BufNewFile" },
 		dependencies = {
-			"nvim-treesitter/playground",
-			"nvim-treesitter/nvim-treesitter-textobjects",
-			"JoosepAlviste/nvim-ts-context-commentstring",
-      "marcelarie/tree-sitter-kanshi",
+			{ "nvim-treesitter/nvim-treesitter-textobjects", event = { "BufReadPost", "BufNewFile" } },
+			{ "JoosepAlviste/nvim-ts-context-commentstring", event = { "BufReadPost", "BufNewFile" } },
+      { "marcelarie/tree-sitter-kanshi", ft = "kanshi" },
 			{
 				"nushell/tree-sitter-nu",
+				ft = "nu",
 				-- build = ":TSUpdate nu",
 				commit = "e8bdcb9d4d57d999ad6d7c797f9f1808623df1b9",
 			},
@@ -55,7 +52,9 @@ require("lazy").setup({
 		build = ":TSUpdate",
 	},
 	--    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-	{ import = "plugins" },
+	
+	-- Dynamic plugin loading based on profile
+	unpack(require("plugin-profiles").get_imports()),
 }, {
 	change_detection = {
 		notify = false,

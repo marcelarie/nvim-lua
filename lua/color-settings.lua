@@ -11,7 +11,7 @@ vim.cmd.set "t_Co=256"
 -- vim.cmd.colorscheme "no-clown-fiesta"
 -- vim.cmd.colorscheme "zellner"
 -- vim.cmd.colorscheme "makurai"
-vim.cmd.colorscheme "lunaperche"
+-- vim.cmd.colorscheme "lunaperche" -- Moved to options.lua
 vim.cmd "hi VertSplit guifg=#373737 guibg=#373737gui=NONE cterm=NONE"
 -- vim.g.apprentice_contrast_dark = "soft"
 

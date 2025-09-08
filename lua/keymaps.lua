@@ -203,7 +203,7 @@ local function saveSession()
 			persistend_qfl.QfDeletePersistentFile()
 		end
 
-		vim.cmd "Autosession save"
+		vim.cmd "AutoSession save"
 	end
 end
 
@@ -369,9 +369,6 @@ vim.keymap.set(
 -- ; for :
 -- vim.keymap.set("n", ";", ":", { noremap = true, silent = false })
 -- vim.keymap.set("n", ":", ";", { noremap = true, silent = false })
-
--- alpha
-vim.keymap.set("n", "<Leader>al", ":Alpha<cr>", { silent = true })
 
 -- quickfix
 vim.keymap.set("n", "<leader>co", toggle_quickfix, opt_ns)

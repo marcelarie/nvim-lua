@@ -1,12 +1,19 @@
 return {
 	-- "marcelarie/dart.nvim",
-	dir = "/home/mmanzanares/clones/forks/dart.nvim",
-	name = 'dart.nvim',
+	dir = vim.fn.expand "$HOME/clones/forks/dart.nvim",
+	name = "dart.nvim",
 	dependencies = {
 		-- "echasnovski/mini.nvim",
 		"nvim-tree/nvim-web-devicons",
 	},
 	enabled = true,
+	lazy = true,
+	keys = {
+		{ ";;", desc = "Mark current buffer" },
+		{ ";", desc = "Jump to buffer" },
+		{ ";p", desc = "Open Dart.pick" },
+		{ ";u", desc = "Close all marked buffers" },
+	},
 	opts = {
 		marklist = { "a", "s", "d", "f", "q", "w", "e", "r" },
 		-- buflist = { "z", "x", "c" },

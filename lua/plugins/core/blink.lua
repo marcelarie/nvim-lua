@@ -22,11 +22,13 @@ end
 
 return {
 	"saghen/blink.cmp",
+	-- Lazy load completion on insert mode  
+	event = "InsertEnter",
 	-- optional: provides snippets for the snippet source
 	dependencies = {
 		"giuxtaposition/blink-cmp-copilot",
-		"rafamadriz/friendly-snippets",
-		"L3MON4D3/LuaSnip",
+		{ "rafamadriz/friendly-snippets", lazy = true },
+		-- LuaSnip moved to optional - only load if using full profile
 	},
 
 	-- use a release tag to download pre-built binaries
@@ -79,15 +81,15 @@ return {
 			},
 		},
 
-		snippets = { preset = "luasnip" },
+		-- snippets = { preset = "luasnip" },
 
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
 			default = {
-				"lazydev",
+				-- "lazydev", -- Disabled for minimal config (plugin in optional)
 				"lsp",
-				"snippets",
+				-- "snippets", -- Disabled since LuaSnip is in optional
 				"copilot",
 				"path",
 				"buffer",
@@ -97,12 +99,12 @@ return {
 					min_keyword_length = 2,
 					score_offset = 4,
 				},
-				lazydev = {
-					name = "LazyDev",
-					module = "lazydev.integrations.blink",
-					-- make lazydev completions top priority (see `:h blink.cmp`)
-					score_offset = 100,
-				},
+				-- lazydev = {
+				-- 	name = "LazyDev", 
+				-- 	module = "lazydev.integrations.blink",
+				-- 	-- make lazydev completions top priority (see `:h blink.cmp`)
+				-- 	score_offset = 100,
+				-- }, -- Disabled for minimal config
 				copilot = {
 					min_keyword_length = 0,
 					name = "copilot",
