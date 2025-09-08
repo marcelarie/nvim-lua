@@ -9,13 +9,12 @@ return {
 	config = function()
 		local luasnip = require "luasnip"
 		local extras = require "luasnip.extras"
-		
+
 		-- Only load what we actually use
 		local s = luasnip.snippet
 		local t = luasnip.text_node
 		local i = luasnip.insert_node
 		local f = luasnip.function_node
-
 
 		-- Minimal config for better performance
 		luasnip.config.set_config {
@@ -27,9 +26,9 @@ return {
 		-- Load essential snippets immediately (lightweight)
 		luasnip.add_snippets("all", {
 			-- Simple date snippets without shell execution
-			s("date", t(os.date("%d-%m-%Y"))),
-			s("date_iso", t(os.date("%Y-%m-%d"))),
-			s("date_time", t(os.date("%Y-%m-%d %H:%M:%S"))),
+			s("date", t(os.date "%d-%m-%Y")),
+			s("date_iso", t(os.date "%Y-%m-%d")),
+			s("date_time", t(os.date "%Y-%m-%d %H:%M:%S")),
 		})
 
 		luasnip.add_snippets("gitcommit", {
@@ -97,7 +96,7 @@ return {
 		luasnip.add_snippets("markdown", shared_snippets)
 		luasnip.add_snippets("telekasten", shared_snippets)
 		luasnip.add_snippets("norg", shared_snippets)
-		
+
 		-- Essential Lua snippet for config editing
 		luasnip.add_snippets("lua", {
 			s("key", {
@@ -119,12 +118,12 @@ return {
 				return "<C-k>"
 			end
 		end, { expr = true, silent = true })
-		
+
 		vim.keymap.set("i", "<C-j>", function()
 			luasnip.jump(-1)
 		end, { silent = true })
-		
-		vim.keymap.set({"i", "s"}, "<C-l>", function()
+
+		vim.keymap.set({ "i", "s" }, "<C-l>", function()
 			if luasnip.choice_active() then
 				luasnip.change_choice(1)
 			end
@@ -132,35 +131,35 @@ return {
 
 		-- Minimal language configuration - only load what you actively use
 		local ENABLED_LANGUAGES = {
-			"lua",        -- Essential for Neovim config
-			"markdown",   -- Documentation and notes
+			"lua", -- Essential for Neovim config
+			"markdown", -- Documentation and notes
 			-- Add more languages as needed:
 			-- "javascript", "typescript", "python", "rust", "go", etc.
 		}
-		
+
 		-- Global function to enable additional languages
 		_G.luasnip_enable_lang = function(lang)
 			if vim.tbl_contains(ENABLED_LANGUAGES, lang) then
 				print(lang .. " already enabled")
 				return
 			end
-			
+
 			table.insert(ENABLED_LANGUAGES, lang)
-			
+
 			-- Load VSCode snippets for this language
-			require("luasnip.loaders.from_vscode").lazy_load({
-				include = { lang }
-			})
-			
+			require("luasnip.loaders.from_vscode").lazy_load {
+				include = { lang },
+			}
+
 			-- Load custom snippets if any
 			local custom_snippets = get_custom_snippets(lang)
 			if #custom_snippets > 0 then
 				luasnip.add_snippets(lang, custom_snippets)
 			end
-			
+
 			print("Enabled snippets for: " .. lang)
 		end
-		
+
 		-- Custom snippets per language
 		local function get_custom_snippets(lang)
 			local snippets = {
@@ -181,19 +180,19 @@ return {
 				},
 				go = {
 					s("pr", { t 'fmt.Printf("%+v\\n", ', i(1, ""), t ")" }),
-				}
+				},
 			}
 			return snippets[lang] or {}
 		end
-		
+
 		-- Load only enabled languages
 		vim.defer_fn(function()
 			-- Load VSCode snippets only for enabled languages
 			if #ENABLED_LANGUAGES > 0 then
-				require("luasnip.loaders.from_vscode").lazy_load({
-					include = ENABLED_LANGUAGES
-				})
-				
+				require("luasnip.loaders.from_vscode").lazy_load {
+					include = ENABLED_LANGUAGES,
+				}
+
 				-- Load custom snippets for enabled languages
 				for _, lang in ipairs(ENABLED_LANGUAGES) do
 					local custom = get_custom_snippets(lang)
@@ -203,20 +202,31 @@ return {
 				end
 			end
 		end, 300) -- Faster loading since we're doing less
-		
+
 		-- Create user commands for managing languages
 		vim.api.nvim_create_user_command("LuaSnipEnable", function(opts)
 			luasnip_enable_lang(opts.args)
 		end, {
 			nargs = 1,
 			complete = function()
-				return { "javascript", "typescript", "python", "rust", "go", "perl", "java", "c", "cpp" }
-			end
+				return {
+					"javascript",
+					"typescript",
+					"python",
+					"rust",
+					"go",
+					"perl",
+					"java",
+					"c",
+					"cpp",
+				}
+			end,
 		})
-		
-		vim.api.nvim_create_user_command("LuaSnipList", function()
-			print("Enabled languages: " .. table.concat(ENABLED_LANGUAGES, ", "))
-		end, {})
 
+		vim.api.nvim_create_user_command("LuaSnipList", function()
+			print(
+				"Enabled languages: " .. table.concat(ENABLED_LANGUAGES, ", ")
+			)
+		end, {})
 	end,
 }

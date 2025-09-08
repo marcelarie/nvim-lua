@@ -4,7 +4,11 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		-- vim.fn.matchadd("RefIdentifier", "\\v\\]\\zs\\[[^]]+\\]") -- the whole [label]
 		vim.fn.matchadd("RefNumberOnly", "\\v\\[\\zs\\d+\\ze\\]") -- the number only
-		vim.api.nvim_set_hl(0, "RefNumberOnly", { fg = "#ff79c6", bold = false })
+		vim.api.nvim_set_hl(
+			0,
+			"RefNumberOnly",
+			{ fg = "#ff79c6", bold = false }
+		)
 	end,
 })
 

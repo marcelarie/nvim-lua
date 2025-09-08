@@ -22,7 +22,7 @@ end
 
 return {
 	"saghen/blink.cmp",
-	-- Lazy load completion on insert mode  
+	-- Lazy load completion on insert mode
 	event = "InsertEnter",
 	-- optional: provides snippets for the snippet source
 	dependencies = {
@@ -100,7 +100,7 @@ return {
 					score_offset = 4,
 				},
 				-- lazydev = {
-				-- 	name = "LazyDev", 
+				-- 	name = "LazyDev",
 				-- 	module = "lazydev.integrations.blink",
 				-- 	-- make lazydev completions top priority (see `:h blink.cmp`)
 				-- 	score_offset = 100,

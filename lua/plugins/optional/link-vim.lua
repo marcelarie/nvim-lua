@@ -1,4 +1,4 @@
 return {
 	"qadzek/link.vim",
-	enabled = false
+	enabled = false,
 }

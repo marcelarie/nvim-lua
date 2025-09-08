@@ -1,4 +1,3 @@
-
 -- vim.opt.clipboard = "unnamedplus" -- Use the system clipboard
 
 -- System clipboard mappings

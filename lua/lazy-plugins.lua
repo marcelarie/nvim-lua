@@ -2,14 +2,14 @@
 require("lazy").setup({
 	-- Essential core plugins only for ultra-fast startup
 	"stevearc/profile.nvim",
-	{ "tpope/vim-sleuth", event = "BufReadPost" }, -- Detect tabstop and shiftwidth automatically  
-	
+	{ "tpope/vim-sleuth", event = "BufReadPost" }, -- Detect tabstop and shiftwidth automatically
+
 	-- Optional: Uncomment these if needed (adds startup time)
 	-- "nacro90/numb.nvim",
 	-- "andreshazard/vim-freemarker",
 	-- { "sindrets/diffview.nvim", lazy = true, cmd = "DiffviewOpen" },
 	-- "NoahTheDuke/vim-just",
-	-- "kevinhwang91/nvim-bqf", 
+	-- "kevinhwang91/nvim-bqf",
 	-- { "stevearc/dressing.nvim", opts = {} },
 	-- "mickael-menu/zk-nvim",
 	-- "wellle/targets.vim",
@@ -39,9 +39,15 @@ require("lazy").setup({
 		-- Load treesitter when opening files with content
 		event = { "BufReadPost", "BufNewFile" },
 		dependencies = {
-			{ "nvim-treesitter/nvim-treesitter-textobjects", event = { "BufReadPost", "BufNewFile" } },
-			{ "JoosepAlviste/nvim-ts-context-commentstring", event = { "BufReadPost", "BufNewFile" } },
-      { "marcelarie/tree-sitter-kanshi", ft = "kanshi" },
+			{
+				"nvim-treesitter/nvim-treesitter-textobjects",
+				event = { "BufReadPost", "BufNewFile" },
+			},
+			{
+				"JoosepAlviste/nvim-ts-context-commentstring",
+				event = { "BufReadPost", "BufNewFile" },
+			},
+			{ "marcelarie/tree-sitter-kanshi", ft = "kanshi" },
 			{
 				"nushell/tree-sitter-nu",
 				ft = "nu",
@@ -52,7 +58,7 @@ require("lazy").setup({
 		build = ":TSUpdate",
 	},
 	--    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-	
+
 	-- Dynamic plugin loading based on profile
 	unpack(require("plugin-profiles").get_imports()),
 }, {

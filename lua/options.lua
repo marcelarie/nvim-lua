@@ -118,7 +118,7 @@ vim.diagnostic.config {
 		},
 	},
 	underline = false,
-  undercurl = false,
+	undercurl = false,
 	update_in_insert = false,
 	severity_sort = false,
 	-- virtual_text = {
@@ -169,7 +169,7 @@ local another_border = {
 -- })
 
 local custom = {
-	border = 'none'
+	border = "none",
 }
 
 -- To instead override globally

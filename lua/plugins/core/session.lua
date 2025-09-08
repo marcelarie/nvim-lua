@@ -19,7 +19,7 @@ return {
 				function()
 					-- Restore quickfix after session to prevent corruption
 					vim.schedule(function()
-						require("features.persistend-qfl").QfLoad({ open = false })
+						require("features.persistend-qfl").QfLoad { open = false }
 					end)
 				end,
 			},

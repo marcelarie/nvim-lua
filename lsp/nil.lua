@@ -1,4 +1,4 @@
 return {
-  cmd = { 'nil' },
-  filetypes = { "nix" },
+	cmd = { "nil" },
+	filetypes = { "nix" },
 }

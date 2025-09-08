@@ -40,7 +40,11 @@ return {
 				vim.api.nvim_set_hl(
 					0,
 					"CustomDiffDelete",
-					{ fg = diff_colors.text_fg, bg = diff_colors.delete, bold = false }
+					{
+						fg = diff_colors.text_fg,
+						bg = diff_colors.delete,
+						bold = false,
+					}
 				)
 
 				vim.cmd [[highlight! link DiffAdd    CustomDiffAdd]]

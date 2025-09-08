@@ -68,5 +68,5 @@ return {
 	cmd = { "ZenMode" },
 	keys = {
 		{ "<leader>zm", ":ZenMode<cr>", desc = "Oil file explorer" },
-	}
+	},
 }

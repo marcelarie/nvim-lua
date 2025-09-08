@@ -38,7 +38,7 @@ return {
 	init = function()
 		-- Load oil when opening a directory
 		if vim.fn.isdirectory(vim.fn.argv(0)) == 1 then
-			require("lazy").load({plugins = {"oil.nvim"}})
+			require("lazy").load { plugins = { "oil.nvim" } }
 		end
 	end,
 	-- config = function()

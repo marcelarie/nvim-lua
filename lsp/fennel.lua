@@ -4,7 +4,7 @@ return {
 	capabilities = {
 		offsetEncoding = { "utf-8", "utf-16" },
 	},
-	filetypes =  { "fennel" },
+	filetypes = { "fennel" },
 	settings = {},
 
 	-- fennel-language-server: rust alternative, still early dev

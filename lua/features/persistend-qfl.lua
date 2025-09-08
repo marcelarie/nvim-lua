@@ -123,7 +123,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
 	end,
 })
 
-
 vim.api.nvim_create_user_command("QfDeletePersistentFile", function(opts)
 	M.QfDeletePersistentFile()
 end, { nargs = "?" })

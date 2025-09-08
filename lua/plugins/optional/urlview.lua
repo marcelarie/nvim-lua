@@ -39,7 +39,7 @@ return {
 	end,
 	cmd = { "UrlView" },
 	keys = {
-		{ "<leader>u",  ":UrlView",     desc = "Open URLView" },
+		{ "<leader>u", ":UrlView", desc = "Open URLView" },
 		{ "<leader>ul", "UrlView lazy", desc = "Open URLView (Lazy)" },
 	},
 }

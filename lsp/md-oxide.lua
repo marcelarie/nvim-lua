@@ -1,4 +1,4 @@
 return {
-  cmd = { 'markdown-oxide' },
-  filetypes = { "markdown" },
+	cmd = { "markdown-oxide" },
+	filetypes = { "markdown" },
 }
