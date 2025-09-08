@@ -12,54 +12,16 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command("ENV", function()
-	local pickers = require "telescope.pickers"
-	local finders = require "telescope.finders"
-	local conf = require("telescope.config").values
-	local actions = require "telescope.actions"
-	local action_state = require "telescope.actions.state"
-
-	-- Find all .env files (tracked, untracked, ignored)
-	local handle = io.popen(
-		"(fd -H -I -t f --glob '*.env*' && git ls-files --others --ignored --exclude-standard | grep '\\.env') | sort -u",
-		"r"
-	)
-	if not handle then
+	-- Check if ./ENV directory exists
+	if vim.fn.isdirectory "./ENV" == 0 then
+		vim.notify("No ./ENV directory found", vim.log.levels.WARN)
 		return
 	end
 
-	local result = handle:read "*all"
-	handle:close()
-
-	local files = {}
-	for line in result:gmatch "[^\r\n]+" do
-		table.insert(files, line)
-	end
-
-	if #files == 0 then
-		vim.notify("No .env files found", vim.log.levels.WARN)
-		return
-	end
-
-	-- Open Telescope picker
-	pickers
-		.new({}, {
-			prompt_title = "Select .env file",
-			finder = finders.new_table {
-				results = files,
-			},
-			sorter = conf.generic_sorter {},
-			attach_mappings = function(prompt_bufnr, map)
-				map("i", "<CR>", function()
-					local selection = action_state.get_selected_entry()
-					actions.close(prompt_bufnr)
-					if selection then
-						vim.cmd("edit " .. selection[1])
-					end
-				end)
-				return true
-			end,
-		})
-		:find()
+	-- Use snacks picker to show files in ./ENV directory
+	require("snacks").picker.pick("files", {
+		cwd = "./ENV",
+	})
 end, {})
 
 -- Check ~/scripts/todos.sh and ~/scripts/find-todos.sh for more info

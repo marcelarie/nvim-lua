@@ -190,20 +190,40 @@ local function is_qf_open()
 	return false
 end
 
+local function will_exit_nvim()
+	local normal_windows = 0
+	local current_tabpage = vim.api.nvim_get_current_tabpage()
+	
+	for _, win in ipairs(vim.fn.getwininfo()) do
+		if win.tabnr == current_tabpage then
+			local buf = vim.api.nvim_win_get_buf(win.winid)
+			local buftype = vim.api.nvim_get_option_value("buftype", { buf = buf })
+			if buftype == "" or buftype == "acwrite" then
+				normal_windows = normal_windows + 1
+			end
+		end
+	end
+	
+	local tabpages = vim.api.nvim_list_tabpages()
+	return normal_windows <= 1 and #tabpages == 1
+end
+
 local function saveSession()
 	local filetype = string.lower(vim.bo.filetype)
 
-	if not string.match(filetype, "commit") then
+	if not string.match(filetype, "commit") and will_exit_nvim() then
 		local started_with_files = vim.fn.argc() > 0
 		local qf_open = is_qf_open()
 
-		if qf_open and #vim.fn.getqflist() > 0 then
-			persistend_qfl.QfSave()
-		elseif not started_with_files then
-			persistend_qfl.QfDeletePersistentFile()
-		end
+		vim.schedule(function()
+			if qf_open and #vim.fn.getqflist() > 0 then
+				persistend_qfl.QfSave()
+			elseif not started_with_files then
+				persistend_qfl.QfDeletePersistentFile()
+			end
 
-		vim.cmd "AutoSession save"
+			vim.cmd "AutoSession save"
+		end)
 	end
 end
 

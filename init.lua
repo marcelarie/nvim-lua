@@ -13,6 +13,7 @@ require "color-settings"
 require "sys-clip"
 require "tmux"
 require "lsp"
+require "highlights"
 -- require "ziggy"
 -- require "zig-official-color"
 -- require "lsp-setup" -- needs to be migrated

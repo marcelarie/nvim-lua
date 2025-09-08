@@ -81,14 +81,23 @@ return {
 		{
 			"<leader>rg",
 			function()
-				require("snacks").picker.grep()
+				vim.ui.input({ prompt = "Grep input > " }, function(query)
+					if query and query ~= "" then
+						require("snacks").picker.grep {
+							search = query,
+							title = "Grep (remember <c-g> to toggle live)",
+						}
+					end
+				end)
 			end,
 			desc = "Live Grep",
 		},
 		{
-			"<leader>r",
+			"<leader>re",
 			function()
-				require("snacks").picker.grep()
+				require("snacks").picker.grep {
+					title = "Grep (remember <c-g> to toggle live)",
+				}
 			end,
 			desc = "Live Grep",
 		},
@@ -98,6 +107,17 @@ return {
 				require("snacks").picker.grep_word()
 			end,
 			desc = "Grep Current Word",
+		},
+		{
+			"<leader>rq",
+			function()
+				vim.cmd.cclose()
+				require("snacks").picker.qflist {
+					live = true,
+					title = "Quickfix",
+				}
+			end,
+			desc = "Quickfix → Snacks picker",
 		},
 		{
 			"<leader>br",
@@ -169,23 +189,23 @@ return {
 			desc = "Git Branches",
 		},
 
-		-- node modules
-		{
-			"<leader>nf",
-			function()
-				require("snacks").picker.grep {
-					search = vim.fn.input "grep for > ",
-					cwd = "./node_modules",
-				}
-			end,
-			desc = "Node Modules Grep",
-		},
-		{
-			"<leader>nm",
-			function()
-				require("snacks").picker.grep { cwd = "./node_modules" }
-			end,
-			desc = "Node Modules Live Grep",
-		},
+		-- node modules (TODO: Migrate to snacks)
+		-- {
+		-- 	"<leader>nf",
+		-- 	function()
+		-- 		require("snacks").picker.grep {
+		-- 			search = vim.fn.input "grep for > ",
+		-- 			cwd = "./node_modules",
+		-- 		}
+		-- 	end,
+		-- 	desc = "Node Modules Grep",
+		-- },
+		-- {
+		-- 	"<leader>nm",
+		-- 	function()
+		-- 		require("snacks").picker.grep { cwd = "./node_modules" }
+		-- 	end,
+		-- 	desc = "Node Modules Live Grep",
+		-- },
 	},
 }

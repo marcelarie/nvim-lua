@@ -15,7 +15,43 @@ return {
 			return #plugins_count
 		end
 
-		local header = string.format("running neovim v%s.%s.%s with %s plugins", version.major, version.minor, version.patch, get_plugins_count())
+		local function custom_recent_files(n, current_dir, prefix_chars)
+			local recent_files = vim.v.oldfiles
+			local items = {}
+			local count = 0
+
+			for _index, file in ipairs(recent_files) do
+				if count >= n then
+					break
+				end
+
+				local should_include = current_dir
+						and vim.startswith(file, vim.fn.getcwd())
+					or not current_dir
+						and not vim.startswith(file, vim.fn.getcwd())
+
+				if should_include and vim.fn.filereadable(file) == 1 then
+					count = count + 1
+					local prefix = prefix_chars and prefix_chars[count] or ""
+					table.insert(items, {
+						name = prefix .. vim.fn.fnamemodify(file, ":~:."),
+						action = "edit " .. file,
+						section = current_dir and "Recent current dir"
+							or "Recent global",
+					})
+				end
+			end
+
+			return items
+		end
+
+		local header = string.format(
+			"running neovim v%s.%s.%s with %s plugins",
+			version.major,
+			version.minor,
+			version.patch,
+			get_plugins_count()
+		)
 
 		starter.setup {
 			autoopen = true,
@@ -44,8 +80,16 @@ return {
 					action = "Easypick changed_files",
 					section = "Files",
 				},
-				starter.sections.recent_files(5, true, false),
-				starter.sections.recent_files(5, false, true),
+				custom_recent_files(
+					5,
+					true,
+					{ "0: ", "1: ", "2: ", "3: ", "4: " }
+				),
+				custom_recent_files(
+					5,
+					false,
+					{ "g0: ", "g1: ", "g2: ", "g3: ", "g4: " }
+				),
 				{ name = "q: quit nvim", action = "qa", section = "Actions" },
 				{
 					name = "e: new file",
