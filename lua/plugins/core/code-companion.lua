@@ -4,11 +4,12 @@ return {
 	keys = { "<leader>cc", "<leader>ca" },
 	opts = {},
 	dependencies = {
-		"nvim-lua/plenary.nvim",
-		"nvim-treesitter/nvim-treesitter",
-		"ravitemer/mcphub.nvim",
-		{ "echasnovski/mini.diff", opts = {} },
+		{ "nvim-lua/plenary.nvim", lazy = true },
+		{ "nvim-treesitter/nvim-treesitter", lazy = true },
+		{ "ravitemer/mcphub.nvim", lazy = true },
+		{ "echasnovski/mini.diff", opts = {}, lazy = true },
 	},
+	lazy = true,
 	config = function()
 		---@meta
 

@@ -1,9 +1,8 @@
 return {
 	"Bekaboo/dropbar.nvim",
 	-- enabled = false,
-	dependencies = {
-		"nvim-telescope/telescope-fzf-native.nvim",
-	},
+	event = { "BufReadPost", "BufNewFile" },
+	lazy = true,
 	config = function()
 		---@diagnostic disable-next-line: unused-local
 		local sources = require "dropbar.sources"

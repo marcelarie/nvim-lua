@@ -1,7 +1,7 @@
 return {
 	"zbirenbaum/copilot.lua",
 	-- Defer loading to improve startup
-	event = { "BufReadPost", "BufNewFile" },
+	event = "InsertEnter",
 	cmd = "Copilot",
 	opts = {
 		suggestion = {
