@@ -11,6 +11,13 @@ return {
 		},
 	},
 	config = function()
+		local typescript_setup = {
+			-- "eslint",
+			"eslint_d",
+			"prettierd",
+			"prettier",
+			stop_after_first = true,
+		}
 		require("conform").setup {
 			formatters = {
 				black = { prepend_args = { "--line-length", "100" } },
@@ -52,32 +59,13 @@ return {
 				rust = { "rustfmt", lsp_format = "fallback" },
 				nix = { "alejandra", lsp_format = "fallback" },
 				-- Conform will run the first available formatter
-				typescript = {
-					-- "eslint",
-					"eslint_d",
-					"prettierd",
+				typescript = typescript_setup,
+				typescriptreact = typescript_setup,
+				javascript = typescript_setup,
+				javascriptreact = typescript_setup,
+				astro = {
 					"prettier",
-					stop_after_first = true,
-				},
-				typescriptreact = {
-					-- "eslint",
-					"eslint_d",
 					"prettierd",
-					"prettier",
-					stop_after_first = true,
-				},
-				javascript = {
-					-- "eslint",
-					"eslint_d",
-					"prettierd",
-					"prettier",
-					stop_after_first = true,
-				},
-				javascriptreact = {
-					-- "eslint",
-					"eslint_d",
-					"prettierd",
-					"prettier",
 					stop_after_first = true,
 				},
 				css = { "prettierd", "prettier", stop_after_first = true },

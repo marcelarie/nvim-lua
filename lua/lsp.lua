@@ -6,6 +6,7 @@ vim.lsp.config("*", { on_attach = on_attach })
 local lsp_configs = {
 	nix = { "nix" },
 	bash = { "bash", "sh", "zsh", "csh", "ksg" },
+	astro = { "astro" },
 	json = { "json", "jsonc" },
 	typescript = {
 		"typescript",
