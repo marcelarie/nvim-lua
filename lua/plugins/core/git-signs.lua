@@ -139,12 +139,12 @@ return {
 					{ noremap = true, silent = false }
 				)
 
-				map(
-					"n",
-					"<Leader>gt",
-					":Gitsigns blame<cr>",
-					{ noremap = true, silent = false }
-				)
+				-- map(
+				-- 	"n",
+				-- 	"<Leader>gt",
+				-- 	":Gitsigns blame<cr>",
+				-- 	{ noremap = true, silent = false }
+				-- )
 
 				-- Set git current line blame highlight to the
 				-- same as visual mode. If not set, it will be hidden

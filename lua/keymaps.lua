@@ -492,6 +492,9 @@ vim.keymap.set("n", "<leader><", "<cmd>bfirst<CR>", { desc = "First buffer" })
 vim.keymap.set("n", "<leader>>", "<cmd>blast<CR>", { desc = "Last buffer" })
 vim.keymap.set("n", "<C-^>", "<cmd>buffer #<CR>", { desc = "Alternate buffer" })
 
+-- custom git blame
+-- vim.keymap.set("n", "<leader>gb", ":GitBlameLine<cr>", { desc = "Git blame line with Tig" })
+
 -- just trying
 local vim_modes = "vn"
 for mode in string.gmatch(vim_modes, "%a") do

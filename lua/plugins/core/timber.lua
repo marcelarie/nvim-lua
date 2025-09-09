@@ -2,6 +2,7 @@ return {
 	"Goose97/timber.nvim",
 	version = "*", -- Use for stability; omit to use `main` branch for the latest features
 	event = "VeryLazy",
+	lazy = true,
 	config = function()
 		require("timber").setup {
 			-- Configuration here, or leave empty to use defaults
@@ -38,18 +39,34 @@ return {
 			},
 		}
 
-		vim.keymap.set("n", "<leader>p", function()
-			require("timber.actions").insert_log {
-				position = "below",
-			}
-		end, {
-			noremap = true,
-			silent = false,
-			desc = "Insert log statement below",
-		})
+		-- vim.keymap.set("n", "<leader>p", function()
+		-- 	require("timber.actions").insert_log {
+		-- 		position = "below",
+		-- 	}
+		-- end, {
+		-- 	noremap = true,
+		-- 	silent = false,
+		-- 	desc = "Insert log statement below",
+		-- })
 
 		vim.api.nvim_create_user_command("CreateLogUnderCursor", function()
 			require("timber.actions").insert_log { position = "below" }
 		end, { desc = "Insert log statement below" })
 	end,
+	keys = {
+		{
+			"<leader>p",
+			function()
+				require("timber.actions").insert_log { position = "below" }
+			end,
+			desc = "Insert log statement below",
+		},
+		{
+			"<leader>P",
+			function()
+				require("timber.actions").insert_log { position = "above" }
+			end,
+			desc = "Insert log statement above",
+		},
+	},
 }

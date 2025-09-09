@@ -1,18 +1,9 @@
 return {
 	{
 		"FabijanZulj/blame.nvim",
-		lazy = false,
-		config = function()
-			require("blame").setup {}
-			vim.keymap.set(
-				"n",
-				"<Leader>gt",
-				":BlameToggle window<cr>",
-				{ noremap = true, silent = false }
-			)
-		end,
+		lazy = true,
 		opts = {
-			blame_options = { "-w -C -C -C -C" },
+			-- blame_options = { "-w -C -C -C -C" },
 			--     date_format = "%d.%m.%Y",
 			--     virtual_style = "right_align",
 			--     views = {
@@ -33,6 +24,13 @@ return {
 			--         show_commit = "<CR>",
 			--         close = { "<esc>", "q" },
 			--     }
+		},
+		keys = {
+			{
+				"<leader>gb",
+				":BlameToggle window<cr>",
+				desc = "Toggle Blame Window",
+			},
 		},
 	},
 }

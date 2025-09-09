@@ -182,7 +182,7 @@ return {
 			desc = "Git Status",
 		},
 		{
-			"<Leader>gb",
+			"<Leader>rb",
 			function()
 				require("snacks").picker.git_branches()
 			end,
