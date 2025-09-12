@@ -14,9 +14,7 @@ return {
 			local plugins_count = lazy.plugins()
 			return #plugins_count
 		end
-
-		local function custom_recent_files(n, current_dir, prefix_chars)
-			local recent_files = vim.v.oldfiles
+local function custom_recent_files(n, current_dir, prefix_chars) local recent_files = vim.v.oldfiles
 			local items = {}
 			local count = 0
 
@@ -94,6 +92,16 @@ return {
 				{
 					name = "e: new file",
 					action = "ene | startinsert",
+					section = "Actions",
+				},
+				{
+					name = "ls: lazy sync",
+					action = "silent Lazy sync",
+					section = "Actions",
+				},
+				{
+					name = "lp: lazy profile",
+					action = "silent Lazy profile",
 					section = "Actions",
 				},
 				{
