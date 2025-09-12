@@ -14,7 +14,28 @@ return {
 			local plugins_count = lazy.plugins()
 			return #plugins_count
 		end
-local function custom_recent_files(n, current_dir, prefix_chars) local recent_files = vim.v.oldfiles
+
+		local function is_git_ignored(file)
+			-- Use git status to check if file should be shown
+			-- --ignored shows ignored files, --porcelain for parsing
+			local result = vim.fn.system("git status --ignored --porcelain " .. vim.fn.shellescape(file) .. " 2>/dev/null")
+			
+			-- If the result starts with "!!" it's ignored
+			-- If empty, it might be tracked or internal git file
+			if result:match("^!!") then
+				return true
+			end
+			
+			-- Additional check for .git directory files (internal git files)
+			if file:match("/%.git/") or file:match("^%.git/") then
+				return true
+			end
+			
+			return false
+		end
+
+		local function custom_recent_files(n, current_dir, prefix_chars)
+			local recent_files = vim.v.oldfiles
 			local items = {}
 			local count = 0
 
@@ -28,7 +49,7 @@ local function custom_recent_files(n, current_dir, prefix_chars) local recent_fi
 					or not current_dir
 						and not vim.startswith(file, vim.fn.getcwd())
 
-				if should_include and vim.fn.filereadable(file) == 1 then
+				if should_include and vim.fn.filereadable(file) == 1 and not is_git_ignored(file) then
 					count = count + 1
 					local prefix = prefix_chars and prefix_chars[count] or ""
 					table.insert(items, {
@@ -92,6 +113,11 @@ local function custom_recent_files(n, current_dir, prefix_chars) local recent_fi
 				{
 					name = "e: new file",
 					action = "ene | startinsert",
+					section = "Actions",
+				},
+				{
+					name = "lu: lazy update",
+					action = "silent Lazy update",
 					section = "Actions",
 				},
 				{
