@@ -3,6 +3,7 @@ return {
 	-- Lazy load hydra only when git keymap is used
 	keys = { "<C-g>" },
 	dependencies = { "lewis6991/gitsigns.nvim" },
+	lazy = true,
 	config = function()
 		local Hydra = require "hydra"
 		local gitsigns = require "gitsigns"

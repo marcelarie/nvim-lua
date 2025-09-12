@@ -9,7 +9,7 @@ local diff_colors = {
 return {
 	"akinsho/git-conflict.nvim",
 	version = "*",
-	lazy = true,
+	lazy = false,
 	config = function()
 		vim.api.nvim_set_hl(0, "DiffTextConflict", {
 			fg = "#000000",
@@ -55,12 +55,12 @@ return {
 		"GitConflictChooseOurs",
 	},
 	keys = {
-		{ "<Leader>cq", "<cmd>GitConflictListQf<cr>", desc = "Git Conflict List Quickfix" },
+		{ "<leader>cq", "<cmd>GitConflictListQf<cr>", desc = "Git Conflict List Quickfix" },
 		{ "]x", "<cmd>GitConflictNextConflict<cr>", desc = "Next Git Conflict" },
 		{ "[x", "<cmd>GitConflictPrevConflict<cr>", desc = "Previous Git Conflict" },
-		{ "<leader>co", "<cmd>GitConflictChooseOurs<cr>", desc = "Choose Ours" },
-		{ "<leader>ct", "<cmd>GitConflictChooseTheirs<cr>", desc = "Choose Theirs" },
-		{ "<leader>cb", "<cmd>GitConflictChooseBoth<cr>", desc = "Choose Both" },
-		{ "<leader>c0", "<cmd>GitConflictChooseNone<cr>", desc = "Choose None" },
+		-- { "<leader>co", "<cmd>GitConflictChooseOurs<cr>", desc = "Choose Ours" },
+		-- { "<leader>ct", "<cmd>GitConflictChooseTheirs<cr>", desc = "Choose Theirs" },
+		-- { "<leader>cb", "<cmd>GitConflictChooseBoth<cr>", desc = "Choose Both" },
+		-- { "<leader>c0", "<cmd>GitConflictChooseNone<cr>", desc = "Choose None" },
 	},
 }

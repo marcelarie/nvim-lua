@@ -84,7 +84,7 @@ return {
 					if query and query ~= "" then
 						require("snacks").picker.grep {
 							search = query,
-							title = "Grep (remember <c-g> to toggle live)",
+							title = "Grep (<c-g> to toggle live)",
 						}
 					end
 				end)
