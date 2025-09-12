@@ -3,17 +3,20 @@ local on_attach = require("lsp-on-attach").on_attach
 ---@diagnostic disable-next-line: param-type-not-match
 vim.lsp.config("*", { on_attach = on_attach })
 
+local ts_filetypes = {
+	"typescript",
+	"typescriptreact",
+	"javascript",
+	"javascriptreact",
+}
+
 local lsp_configs = {
 	nix = { "nix" },
 	bash = { "bash", "sh", "zsh", "csh", "ksg" },
 	astro = { "astro" },
 	json = { "json", "jsonc" },
-	typescript = {
-		"typescript",
-		"typescriptreact",
-		"javascript",
-		"javascriptreact",
-	},
+	typescript = ts_filetypes,
+	eslint = ts_filetypes,
 	rust = { "rust" },
 	toml = { "toml" },
 	python = { "python" },
