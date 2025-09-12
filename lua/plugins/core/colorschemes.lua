@@ -1,22 +1,22 @@
 return {
 	-- Commented out unused colorschemes to improve startup time
 	-- Uncomment only the ones you want to use
-	{
-		"zootedb0t/citruszest.nvim",
-		lazy = true, -- Changed to lazy load
-		priority = 1000,
-	},
-	{
-		"adisen99/apprentice.nvim",
-		dependencies = { "rktjmp/lush.nvim" },
-		lazy = true,
-	},
-	{
-		"zenbones-theme/zenbones.nvim",
-		dependencies = "rktjmp/lush.nvim",
-		lazy = true, -- Changed to lazy load
-		priority = 1000,
-	},
+	-- {
+	-- 	"zootedb0t/citruszest.nvim",
+	-- 	lazy = true, -- Changed to lazy load
+	-- 	priority = 1000,
+	-- },
+	-- {
+	-- 	"adisen99/apprentice.nvim",
+	-- 	dependencies = { "rktjmp/lush.nvim" },
+	-- 	lazy = true,
+	-- },
+	-- {
+	-- 	"zenbones-theme/zenbones.nvim",
+	-- 	dependencies = "rktjmp/lush.nvim",
+	-- 	lazy = true, -- Changed to lazy load
+	-- 	priority = 1000,
+	-- },
 	-- "Verf/deepwhite.nvim",
 	-- "aliqyan-21/darkvoid.nvim",
 	-- "slugbyte/lackluster.nvim",
