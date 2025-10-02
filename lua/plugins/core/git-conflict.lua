@@ -55,9 +55,24 @@ return {
 		"GitConflictChooseOurs",
 	},
 	keys = {
-		{ "<leader>cq", "<cmd>GitConflictListQf<cr>", desc = "Git Conflict List Quickfix" },
-		{ "]x", "<cmd>GitConflictNextConflict<cr>", desc = "Next Git Conflict" },
-		{ "[x", "<cmd>GitConflictPrevConflict<cr>", desc = "Previous Git Conflict" },
+		{
+			"<leader>cq",
+			function()
+				MiniStarter.close()
+				vim.cmd "GitConflictListQf"
+			end,
+			desc = "Git Conflict List Quickfix",
+		},
+		{
+			"]x",
+			"<cmd>GitConflictNextConflict<cr>",
+			desc = "Next Git Conflict",
+		},
+		{
+			"[x",
+			"<cmd>GitConflictPrevConflict<cr>",
+			desc = "Previous Git Conflict",
+		},
 		-- { "<leader>co", "<cmd>GitConflictChooseOurs<cr>", desc = "Choose Ours" },
 		-- { "<leader>ct", "<cmd>GitConflictChooseTheirs<cr>", desc = "Choose Theirs" },
 		-- { "<leader>cb", "<cmd>GitConflictChooseBoth<cr>", desc = "Choose Both" },

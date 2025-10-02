@@ -1,9 +1,7 @@
 return {
-	"nvim-mini/mini.starter",
+	"echasnovski/mini.nvim",
+	version = false,
 	event = "VimEnter",
-	cond = function()
-		return vim.fn.argc() == 0
-	end,
 	config = function()
 		local starter = require "mini.starter"
 
@@ -18,19 +16,23 @@ return {
 		local function is_git_ignored(file)
 			-- Use git status to check if file should be shown
 			-- --ignored shows ignored files, --porcelain for parsing
-			local result = vim.fn.system("git status --ignored --porcelain " .. vim.fn.shellescape(file) .. " 2>/dev/null")
-			
+			local result = vim.fn.system(
+				"git status --ignored --porcelain "
+					.. vim.fn.shellescape(file)
+					.. " 2>/dev/null"
+			)
+
 			-- If the result starts with "!!" it's ignored
 			-- If empty, it might be tracked or internal git file
-			if result:match("^!!") then
+			if result:match "^!!" then
 				return true
 			end
-			
+
 			-- Additional check for .git directory files (internal git files)
-			if file:match("/%.git/") or file:match("^%.git/") then
+			if file:match "/%.git/" or file:match "^%.git/" then
 				return true
 			end
-			
+
 			return false
 		end
 
@@ -49,7 +51,11 @@ return {
 					or not current_dir
 						and not vim.startswith(file, vim.fn.getcwd())
 
-				if should_include and vim.fn.filereadable(file) == 1 and not is_git_ignored(file) then
+				if
+					should_include
+					and vim.fn.filereadable(file) == 1
+					and not is_git_ignored(file)
+				then
 					count = count + 1
 					local prefix = prefix_chars and prefix_chars[count] or ""
 					table.insert(items, {
@@ -163,6 +169,23 @@ return {
 				end, { buffer = true })
 			end,
 		})
+
+		require("mini.statusline").setup {
+			-- Content of statusline as functions which return statusline string. See
+			-- `:h statusline` and code of default contents (used instead of `nil`).
+			content = {
+				-- Content for active window
+				active = nil,
+				-- Content for inactive window(s)
+				inactive = nil,
+			},
+
+			-- Whether to use icons by default
+			use_icons = true,
+
+			-- Whether to set Vim's settings for statusline (make it always shown)
+			set_vim_settings = true,
+		}
 	end,
 	keys = {
 		{ "<Leader>al", ":lua MiniStarter.open()<cr>", desc = "Starter menu" },
