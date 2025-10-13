@@ -7,7 +7,6 @@ return {
 		{ "nvim-lua/plenary.nvim", lazy = true },
 		{ "nvim-treesitter/nvim-treesitter", lazy = true },
 		{ "ravitemer/mcphub.nvim", lazy = true },
-		{ "echasnovski/mini.diff", opts = {}, lazy = true },
 	},
 	lazy = true,
 	config = function()
