@@ -1,0 +1,6 @@
+{
+  "Log": {
+    "prefix": "pr",
+    "body": "print($0)" 
+  }
+}

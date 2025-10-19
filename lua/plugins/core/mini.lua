@@ -102,6 +102,7 @@ local function setup_mini_snippets(setup_snippets)
 	local gen_loader = mini_snippets.gen_loader
 	setup_snippets {
 		snippets = {
+			gen_loader.from_file "~/.config/nvim/snippets/global.json",
 			gen_loader.from_lang(),
 		},
 	}
@@ -204,11 +205,7 @@ local function setup_mini_starter(setup_starter)
 				action = "Easypick changed_files",
 				section = "Files",
 			},
-			custom_recent_files(
-				5,
-				true,
-				{ "0: ", "1: ", "2: ", "3: ", "4: " }
-			),
+			custom_recent_files(5, true, { "0: ", "1: ", "2: ", "3: ", "4: " }),
 			custom_recent_files(
 				5,
 				false,
@@ -289,11 +286,11 @@ return {
 		{ "nvim-mini/mini.snippets", version = false },
 	},
 	config = function()
+		setup_mini_diff(require("mini.diff").setup)
+		setup_mini_notify(require("mini.notify").setup)
+		setup_mini_snippets(require("mini.snippets").setup)
 		setup_mini_starter(require("mini.starter").setup)
 		setup_mini_statusline(require("mini.statusline").setup)
-		setup_mini_notify(require("mini.notify").setup)
-		setup_mini_diff(require("mini.diff").setup)
-		setup_mini_snippets(require("mini.snippets").setup)
 	end,
 	keys = {
 		{ "<Leader>al", ":lua MiniStarter.open()<cr>", desc = "Starter menu" },

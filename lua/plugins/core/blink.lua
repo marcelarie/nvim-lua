@@ -27,7 +27,8 @@ return {
 	-- optional: provides snippets for the snippet source
 	dependencies = {
 		"giuxtaposition/blink-cmp-copilot",
-		{ "rafamadriz/friendly-snippets", lazy = true },
+		"echasnovski/mini.snippets",
+		-- { "rafamadriz/friendly-snippets", lazy = true },
 		-- LuaSnip moved to optional - only load if using full profile
 	},
 
@@ -81,7 +82,7 @@ return {
 			},
 		},
 
-		-- snippets = { preset = "luasnip" },
+		snippets = { preset = "mini_snippets" },
 
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
@@ -89,7 +90,7 @@ return {
 			default = {
 				-- "lazydev", -- Disabled for minimal config (plugin in optional)
 				"lsp",
-				-- "snippets", -- Disabled since LuaSnip is in optional
+				"snippets",
 				"copilot",
 				"path",
 				"buffer",
