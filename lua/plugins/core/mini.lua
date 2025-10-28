@@ -168,6 +168,8 @@ local function setup_mini_starter(setup_starter)
 	end
 
 	local starter = require "mini.starter"
+	local my_snacks_pickers = require "my.snacks_pick"
+
 	local version = vim.version()
 
 	local header = string.format(
@@ -202,7 +204,9 @@ local function setup_mini_starter(setup_starter)
 			},
 			{
 				name = "fc: changed files",
-				action = "Easypick changed_files",
+				action = function()
+					my_snacks_pickers "changed_files"
+				end,
 				section = "Files",
 			},
 			custom_recent_files(5, true, { "0: ", "1: ", "2: ", "3: ", "4: " }),
@@ -284,6 +288,7 @@ return {
 	event = "VimEnter",
 	dependencies = {
 		{ "nvim-mini/mini.snippets", version = false },
+		{ "folke/snacks.nvim" },
 	},
 	config = function()
 		setup_mini_diff(require("mini.diff").setup)

@@ -11,6 +11,24 @@ vim.api.nvim_create_user_command(
 	{}
 )
 
+local function ConflictsQF()
+	local out = vim.fn.systemlist("git grep -n -E '^<<<<<<< '")
+	local qf = {}
+	for _, l in ipairs(out) do
+		local f, ln, text = l:match "([^:]+):(%d+):(.*)"
+		if f and ln then
+			table.insert(
+				qf,
+				{ filename = f, lnum = tonumber(ln), col = 1, text = text }
+			)
+		end
+	end
+	vim.fn.setqflist(qf, "r")
+	vim.cmd "copen"
+end
+
+vim.api.nvim_create_user_command("ConflictsQF", ConflictsQF, {})
+
 vim.api.nvim_create_user_command("ENV", function()
 	-- Check if ./ENV directory exists
 	if vim.fn.isdirectory "./ENV" == 0 then
@@ -88,10 +106,9 @@ local print_harpoon_help = function()
 	vim.keymap.set("n", "q", ":q<CR>", { buffer = buf })
 end
 
-vim.api.nvim_create_user_command('UUIDGEN', function()
-  local uuid = vim.fn.system('uuidgen'):gsub('\n', '')
-  vim.api.nvim_put({ uuid }, '', true, true)
-end, { desc = 'Insert UUID at cursor' })
-
+vim.api.nvim_create_user_command("UUIDGEN", function()
+	local uuid = vim.fn.system("uuidgen"):gsub("\n", "")
+	vim.api.nvim_put({ uuid }, "", true, true)
+end, { desc = "Insert UUID at cursor" })
 
 vim.api.nvim_create_user_command("HarpoonHelp", print_harpoon_help, {})

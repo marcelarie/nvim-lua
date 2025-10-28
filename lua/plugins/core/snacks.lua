@@ -4,27 +4,15 @@ return {
 	opts = {
 		picker = {
 			enabled = true,
-			win = {
-				style = "minimal",
-			},
+			format = "file",
+			icons = { enabled = false },
 			layout = {
 				box = "minimal",
 				backdrop = false,
 				cycle = false,
 				preview = true,
 			},
-			icons = {
-				enabled = false,
-			},
-			format = {
-				file = function(ctx)
-					local name = ctx.file
-					if ctx.cwd and name:find(ctx.cwd, 1, true) == 1 then
-						name = name:sub(#ctx.cwd + 2)
-					end
-					return name
-				end,
-			},
+			win = { style = "minimal" },
 		},
 		quickfile = { enabled = true },
 		statuscolumn = { enabled = false },
@@ -32,7 +20,68 @@ return {
 		bigfile = { enabled = true },
 	},
 	config = function(_, opts)
-		require("snacks").setup(opts)
+		local snacks = require "snacks"
+		snacks.setup(opts)
+
+		local function make_proc(cmd)
+			return function()
+				local res = vim.system({ "bash", "-lc", cmd }, { text = true })
+					:wait()
+				local out = res.stdout or ""
+				local items = {}
+				for line in out:gmatch "[^\r\n]+" do
+					items[#items + 1] = { text = line, file = line }
+				end
+				return items
+			end
+		end
+
+		local pickers = {
+			changed_files = {
+				title = "changed_files",
+				finder = make_proc [[{ ~/scripts/git/default-git-diff.sh --name-only && git log --pretty=format: --name-only HEAD~2..HEAD; } | sort | uniq]],
+			},
+			conflicts = {
+				title = "conflicts",
+				finder = make_proc [[git diff --name-only --diff-filter=U --relative]],
+			},
+			staged_files = {
+				title = "staged_files",
+				finder = make_proc [[git diff --name-only --diff-filter=AM --cached --relative]],
+			},
+			untracked_files = {
+				title = "untracked_files",
+				finder = make_proc [[git ls-files --others --exclude-standard --exclude=.gitignore]],
+			},
+			non_staged_files = {
+				title = "non_staged_files",
+				finder = make_proc [[git diff --name-only --diff-filter=AM --relative]],
+			},
+			env_files = {
+				title = "env_files",
+				finder = make_proc [[find . -type f -name ".env*" | sort -V]],
+			},
+		}
+
+		local M = {}
+		function M.open(name)
+			local cfg = pickers[name]
+			if not cfg then
+				return
+			end
+			return snacks.picker {
+				title = cfg.title,
+				finder = cfg.finder,
+			}
+		end
+
+		package.loaded["my.snacks_pick"] = nil
+		package.preload["my.snacks_pick"] = function()
+			return function(name)
+				return M.open(name)
+			end
+		end
+
 		vim.api.nvim_set_hl(0, "SnacksPickerNormal", { bg = "#000000" })
 		vim.api.nvim_set_hl(
 			0,
@@ -186,6 +235,55 @@ return {
 				require("snacks").picker.git_branches()
 			end,
 			desc = "Git Branches",
+		},
+		{
+			"<leader>rr",
+			function()
+				require("snacks").picker.commands()
+			end,
+			desc = "Snacks Commands",
+		},
+		{
+			"<leader>cf",
+			function()
+				require "my.snacks_pick" "changed_files"
+			end,
+			desc = "Changed Files (HEAD~2)",
+		},
+		{
+			"<leader>mc",
+			function()
+				require "my.snacks_pick" "conflicts"
+			end,
+			desc = "Git Conflicts",
+		},
+		{
+			"<leader>es",
+			function()
+				require "my.snacks_pick" "staged_files"
+			end,
+			desc = "Staged Files",
+		},
+		{
+			"<leader>eu",
+			function()
+				require "my.snacks_pick" "untracked_files"
+			end,
+			desc = "Untracked Files",
+		},
+		{
+			"<leader>en",
+			function()
+				require "my.snacks_pick" "non_staged_files"
+			end,
+			desc = "Non-staged Files",
+		},
+		{
+			"<leader>ee",
+			function()
+				require "my.snacks_pick" "env_files"
+			end,
+			desc = ".env Files",
 		},
 
 		-- node modules (TODO: Migrate to snacks)
