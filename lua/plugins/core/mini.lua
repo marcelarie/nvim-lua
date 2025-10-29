@@ -134,37 +134,56 @@ local function setup_mini_starter(setup_starter)
 	end
 
 	local function custom_recent_files(n, current_dir, prefix_chars)
-		local recent_files = vim.v.oldfiles
-		local items = {}
-		local count = 0
+		return function()
+			local recent_files = vim.v.oldfiles
+			local items = {}
+			local count = 0
 
-		for _, file in ipairs(recent_files) do
-			if count >= n then
-				break
+			local sep = vim.loop.os_uname().sysname == "Windows_NT" and "\\" or "/"
+			local cwd = vim.fn.getcwd()
+			if cwd:sub(-#sep) ~= sep then
+				cwd = cwd .. sep
 			end
 
-			local should_include = current_dir
-					and vim.startswith(file, vim.fn.getcwd())
-				or not current_dir
-					and not vim.startswith(file, vim.fn.getcwd())
+			for _, file in ipairs(recent_files) do
+				if count >= n then
+					break
+				end
 
-			if
-				should_include
-				and vim.fn.filereadable(file) == 1
-				and not is_git_ignored(file)
-			then
-				count = count + 1
-				local prefix = prefix_chars and prefix_chars[count] or ""
-				table.insert(items, {
-					name = prefix .. vim.fn.fnamemodify(file, ":~:."),
-					action = "edit " .. file,
-					section = current_dir and "Recent current dir"
-						or "Recent global",
-				})
+				local in_cwd = vim.startswith(file, cwd)
+				local should_include = current_dir and in_cwd
+					or not current_dir and not in_cwd
+
+				if
+					should_include
+					and vim.fn.filereadable(file) == 1
+					and not is_git_ignored(file)
+				then
+					count = count + 1
+					local prefix = prefix_chars and prefix_chars[count] or ""
+					table.insert(items, {
+						name = prefix .. vim.fn.fnamemodify(file, ":~:."),
+						action = "edit " .. file,
+						section = current_dir and "Recent current dir"
+							or "Recent global",
+					})
+				end
 			end
+
+			if #items == 0 then
+				local section = current_dir and "Recent current dir"
+					or "Recent global"
+				return {
+					{
+						name = "No recent files",
+						action = "",
+						section = section,
+					},
+				}
+			end
+
+			return items
 		end
-
-		return items
 	end
 
 	local starter = require "mini.starter"
@@ -209,7 +228,11 @@ local function setup_mini_starter(setup_starter)
 				end,
 				section = "Files",
 			},
-			custom_recent_files(5, true, { "0: ", "1: ", "2: ", "3: ", "4: " }),
+			custom_recent_files(
+				5,
+				true,
+				{ "0: ", "1: ", "2: ", "3: ", "4: " }
+			),
 			custom_recent_files(
 				5,
 				false,
