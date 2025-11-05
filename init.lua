@@ -22,6 +22,7 @@ require "highlights"
 -- -- features
 require "features.persistend-qfl"
 require "features.update-fe-version"
+require "features.incdec"
 
 -------------------------------------------------------------------------------
 -- -- vim: ts=2 sts=2 sw=2 et

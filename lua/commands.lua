@@ -24,7 +24,14 @@ local function ConflictsQF()
 		end
 	end
 	vim.fn.setqflist(qf, "r")
+	local current_win = vim.api.nvim_get_current_win()
+	if #qf > 0 then
+		vim.cmd "cfirst"
+	end
 	vim.cmd "copen"
+	if vim.api.nvim_win_is_valid(current_win) then
+		vim.api.nvim_set_current_win(current_win)
+	end
 end
 
 vim.api.nvim_create_user_command("ConflictsQF", ConflictsQF, {})
