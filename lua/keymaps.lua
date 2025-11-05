@@ -209,22 +209,35 @@ local function will_exit_nvim()
 	return normal_windows <= 1 and #tabpages == 1
 end
 
-local function saveSession()
+local function saveSession(opts)
+	opts = opts or {}
 	local filetype = string.lower(vim.bo.filetype)
 
-	if not string.match(filetype, "commit") and will_exit_nvim() then
-		local started_with_files = vim.fn.argc() > 0
-		local qf_open = is_qf_open()
+	if string.match(filetype, "commit") then
+		return
+	end
 
-		vim.schedule(function()
-			if qf_open and #vim.fn.getqflist() > 0 then
-				persistend_qfl.QfSave()
-			elseif not started_with_files then
-				persistend_qfl.QfDeletePersistentFile()
-			end
+	if not opts.force and not will_exit_nvim() then
+		return
+	end
 
-			vim.cmd "AutoSession save"
-		end)
+	local started_with_files = vim.fn.argc() > 0
+	local qf_open = is_qf_open()
+
+	local function do_save()
+		if qf_open and #vim.fn.getqflist() > 0 then
+			persistend_qfl.QfSave()
+		elseif not started_with_files then
+			persistend_qfl.QfDeletePersistentFile()
+		end
+
+		vim.cmd "AutoSession save"
+	end
+
+	if opts.immediate then
+		do_save()
+	else
+		vim.schedule(do_save)
 	end
 end
 
@@ -238,7 +251,7 @@ end, opts)
 -- leader Q to quit!
 -- and save session with auto-session
 vim.keymap.set("n", "<Leader>Q", function()
-	saveSession()
+	saveSession { force = true, immediate = true }
 	vim.cmd "qa!"
 end, opts)
 
