@@ -1,6 +1,6 @@
 return {
 	"nvimtools/hydra.nvim",
-	keys = { "<C-g>", "<C-i>" },
+	keys = { "<C-g>", "<C-.>" },
 	dependencies = { "lewis6991/gitsigns.nvim" },
 	lazy = true,
 	config = function()
@@ -42,9 +42,9 @@ return {
 
 		local incdec_hint = [[
  ^Move^        ^Adjust^
- _n_: next     _y_: +year/major   _Y_: -year/major
- _N_: prev     _m_: +month/minor  _M_: -month/minor
- ^ ^           _d_: +day/patch    _D_: -day/patch
+ _n_: next     _y_: +year/major   _Y_: -year/major 
+ _N_: prev     _m_: +month/minor  _M_: -month/minor 
+ ^ ^           _d_: +day/patch    _D_: -day/patch 
  ^ ^           _q_: quit
 ]]
 
@@ -62,12 +62,12 @@ return {
 		Hydra({
 			name = "Increment / Decrement",
 			mode = "n",
-			body = "<C-i>",
+			body = "<C-.>",
 			hint = incdec_hint,
 			config = {
 				color = "amaranth", -- modal behavior
 				invoke_on_body = true,
-				hint = { border = "rounded" },
+				-- hint = { border = "rounded" },
 			},
 			heads = {
 				-- Navigation
@@ -92,4 +92,3 @@ return {
 		})
 	end,
 }
-

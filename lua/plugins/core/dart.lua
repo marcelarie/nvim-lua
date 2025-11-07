@@ -2,7 +2,6 @@ return {
 	-- "marcelarie/dart.nvim",
 	dir = vim.fn.expand "$HOME/clones/forks/dart.nvim",
 	name = "dart.nvim",
-    enabled = false,
 	dependencies = {
 		-- "echasnovski/mini.nvim",
 		{ "nvim-tree/nvim-web-devicons", lazy = true },

@@ -1,4 +1,5 @@
 local persistend_qfl = require "features.persistend-qfl"
+local toggle_quickfix = require "utils.toggle-qf"
 
 local opts = { noremap = true, silent = true }
 -- [[ Basic Keymaps ]]
@@ -115,21 +116,6 @@ vim.keymap.set(
 	opt_ns
 )
 
-local function toggle_quickfix()
-	local quickfix_open = false
-	for _, win in ipairs(vim.fn.getwininfo()) do
-		if win.quickfix == 1 then
-			quickfix_open = true
-			break
-		end
-	end
-	if quickfix_open then
-		vim.cmd "cclose"
-	else
-		vim.cmd "botright copen"
-	end
-end
-
 -- search and replace
 -- vim.keymap.set("n", "cn", "*``cgn", opt_ns)
 -- LuaFormatter off
@@ -164,6 +150,11 @@ vim.api.nvim_create_autocmd("FileType", {
 			"<cmd>w<CR><cmd>!bash %<CR>",
 			{ buffer = true, silent = true }
 		)
+		vim.keymap.set("n", "<leader>R", function()
+			local args = vim.fn.input "Args: "
+			vim.cmd "w"
+			vim.cmd("!" .. "bash " .. vim.fn.expand "%" .. " " .. args)
+		end, { buffer = true, silent = true })
 	end,
 })
 

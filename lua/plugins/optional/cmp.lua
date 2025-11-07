@@ -124,7 +124,7 @@ return {
 
 		cmp.setup {
 			formatting = {
-				format = require("nvim-highlight-colors").format,
+				format = require('nvim-highlight-colors').format,
 			},
 			performance = {
 				debounce = 0, -- default is 60ms

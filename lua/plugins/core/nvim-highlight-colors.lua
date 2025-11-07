@@ -57,11 +57,19 @@ return {
 		}
 
 		require("nvim-highlight-colors").turnOff() -- disable by default
-
-		vim.keymap.set(
-			"n",
-			"<leader>hc",
-			require("nvim-highlight-colors").toggle
-		)
 	end,
+	keys = {
+		{
+			"<leader>hc",
+			function()
+				vim.notify(
+					"Toggle Highlight Colors",
+					vim.log.levels.INFO,
+					{ title = "nvim-highlight-colors" }
+				)
+				require("nvim-highlight-colors").toggle()
+			end,
+			desc = "Setting highlight colors",
+		},
+	},
 }
