@@ -100,10 +100,33 @@ end
 local function setup_mini_snippets(setup_snippets)
 	local mini_snippets = require "mini.snippets"
 	local gen_loader = mini_snippets.gen_loader
+
+	local function share_snippets(file, langs)
+		return function(ctx)
+			if vim.tbl_contains(langs, ctx.lang) then
+				return mini_snippets.read_file(file) or {}
+			end
+			return {}
+		end
+	end
+
 	setup_snippets {
 		snippets = {
 			gen_loader.from_file "~/.config/nvim/snippets/global.json",
 			gen_loader.from_lang(),
+			share_snippets("~/.config/nvim/snippets/typescript.json", {
+				"js",
+				"jsx",
+				"tsx",
+				"javascript",
+				"javascriptreact",
+				"typescriptreact",
+			}),
+			share_snippets("~/.config/nvim/snippets/markdown.json", {
+				"markdown",
+				"mdx",
+				"rmd",
+			}),
 		},
 	}
 end
@@ -139,7 +162,8 @@ local function setup_mini_starter(setup_starter)
 			local items = {}
 			local count = 0
 
-			local sep = vim.loop.os_uname().sysname == "Windows_NT" and "\\" or "/"
+			local sep = vim.loop.os_uname().sysname == "Windows_NT" and "\\"
+				or "/"
 			local cwd = vim.fn.getcwd()
 			if cwd:sub(-#sep) ~= sep then
 				cwd = cwd .. sep
@@ -214,7 +238,7 @@ local function setup_mini_starter(setup_starter)
 			{
 				name = "sr: session reload",
 				action = function()
-					require("utils.toggle-qf")()
+					require "utils.toggle-qf"()
 					vim.cmd "silent AutoSession restore"
 				end,
 				section = "Sessions",
@@ -231,11 +255,7 @@ local function setup_mini_starter(setup_starter)
 				end,
 				section = "Files",
 			},
-			custom_recent_files(
-				5,
-				true,
-				{ "0: ", "1: ", "2: ", "3: ", "4: " }
-			),
+			custom_recent_files(5, true, { "0: ", "1: ", "2: ", "3: ", "4: " }),
 			custom_recent_files(
 				5,
 				false,
