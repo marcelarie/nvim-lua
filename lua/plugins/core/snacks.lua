@@ -61,6 +61,10 @@ return {
 				title = "env_files",
 				finder = make_proc [[find . -type f -name ".env*" | sort -V]],
 			},
+			zoxide_paths = {
+				title = "zoxide_paths",
+				finder = make_proc [[zoxide query -l]],
+			},
 		}
 
 		local M = {}
@@ -284,6 +288,33 @@ return {
 				require "my.snacks_pick" "env_files"
 			end,
 			desc = ".env Files",
+		},
+		{
+			"<leader>zo",
+			function()
+				local snacks = require "snacks"
+				snacks.picker {
+					title = "zoxide_paths",
+					finder = function()
+						local res = vim.system({ "zoxide", "query", "-l" }, { text = true }):wait()
+						local out = res.stdout or ""
+						local items = {}
+						for line in out:gmatch "[^\r\n]+" do
+							items[#items + 1] = { text = line, file = line }
+						end
+						return items
+					end,
+					confirm = function(picker, item)
+						local path = item.text
+						if path then
+							vim.cmd.vsplit()
+							vim.cmd("lcd " .. vim.fn.fnameescape(path))
+							require("oil").open()
+						end
+					end,
+				}
+			end,
+			desc = "Zoxide Paths → Oil Split",
 		},
 
 		-- node modules (TODO: Migrate to snacks)
