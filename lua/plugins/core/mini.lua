@@ -129,6 +129,11 @@ local function setup_mini_snippets(setup_snippets)
 			}),
 		},
 	}
+
+	local ms_expand = function()
+		MiniSnippets.expand { match = false }
+	end
+	vim.keymap.set("i", "<C-e>", ms_expand, { desc = "Expand all snippets" })
 end
 
 local function setup_mini_starter(setup_starter)
