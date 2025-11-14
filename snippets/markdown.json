@@ -1,0 +1,18 @@
+{
+  "Link": {
+    "prefix": "link",
+    "body": "[$0]($1)"
+  },
+  "Link reference": {
+    "prefix": "linkr",
+    "body": "[$0][$1]"
+  },
+  "Link reference with definition": {
+    "prefix": "linkrd",
+    "body": [
+      "[$1][$2]",
+      "",
+      "[$2]: $3"
+    ]
+  }
+}

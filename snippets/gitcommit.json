@@ -1,0 +1,57 @@
+{
+  "Git commit feat": {
+    "prefix": "feat",
+    "body": "feat: $0",
+    "description": "feat – add a new feature"
+  },
+  "Git commit fix": {
+    "prefix": "fix",
+    "body": "fix: $0",
+    "description": "fix – bug fix"
+  },
+  "Git commit docs": {
+    "prefix": "docs",
+    "body": "docs: $0",
+    "description": "docs – documentation only"
+  },
+  "Git commit style": {
+    "prefix": "style",
+    "body": "style: $0",
+    "description": "style – formatting, no logic change"
+  },
+  "Git commit refactor": {
+    "prefix": "refactor",
+    "body": "refactor: $0",
+    "description": "refactor – code change without feature or fix"
+  },
+  "Git commit perf": {
+    "prefix": "perf",
+    "body": "perf: $0",
+    "description": "perf – performance improvement"
+  },
+  "Git commit test": {
+    "prefix": "test",
+    "body": "test: $0",
+    "description": "test – add or update tests"
+  },
+  "Git commit build": {
+    "prefix": "build",
+    "body": "build: $0",
+    "description": "build – build system or dependencies"
+  },
+  "Git commit ci": {
+    "prefix": "ci",
+    "body": "ci: $0",
+    "description": "ci – CI configuration or scripts"
+  },
+  "Git commit chore": {
+    "prefix": "chore",
+    "body": "chore: $0",
+    "description": "chore – maintenance / misc tasks"
+  },
+  "Git commit revert": {
+    "prefix": "revert",
+    "body": "revert: $0",
+    "description": "revert – revert a previous commit"
+  }
+}

@@ -473,11 +473,12 @@ vim.keymap.set(
 )
 
 -- Absolute path to system clipboard
--- vim.keymap.set("n", "<leader>yp", function()
--- 	vim.fn.setreg("+", vim.fn.expand "%:p")
--- 	print "Copied absolute path"
--- end)
 vim.keymap.set("n", "<leader>yp", function()
+	vim.fn.setreg("+", vim.fn.expand "%:p")
+	print "Copied absolute path"
+end)
+-- Relative path to system clipboard
+vim.keymap.set("n", "<leader>yrp", function()
 	vim.fn.setreg("+", vim.fn.expand "%:~:.")
 	print "Copied relative path"
 end)
