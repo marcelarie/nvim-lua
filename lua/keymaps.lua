@@ -483,6 +483,11 @@ vim.keymap.set("n", "<leader>yrp", function()
 	print "Copied relative path"
 end)
 
+-- Markdown preview
+vim.keymap.set("n", "<leader>mw", function()
+	vim.cmd "MdWatch"
+end)
+
 -- Relative path
 
 -- Buffer navigation
