@@ -70,7 +70,7 @@ return {
 				},
 				css = { "prettierd", "prettier", stop_after_first = true },
 				scss = { "prettierd", "prettier", stop_after_first = true },
-				markdown = { "dprint", "cbfmt", "prettierd" },
+				markdown = { "dprint", "cbfmt", "prettierd", stop_after_first = false },
 				sh = { "shfmt" },
 				bash = { "shfmt" },
 			},

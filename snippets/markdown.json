@@ -1,11 +1,11 @@
 {
   "Link": {
     "prefix": "link",
-    "body": "[$0]($1)"
+    "body": "[$1]($2)"
   },
   "Link reference": {
     "prefix": "linkr",
-    "body": "[$0][$1]"
+    "body": "[$1][$2]"
   },
   "Link reference with definition": {
     "prefix": "linkrd",
