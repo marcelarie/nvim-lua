@@ -119,3 +119,25 @@ vim.api.nvim_create_user_command("UUIDGEN", function()
 end, { desc = "Insert UUID at cursor" })
 
 vim.api.nvim_create_user_command("HarpoonHelp", print_harpoon_help, {})
+
+local mdwatch_job_id = nil
+
+vim.api.nvim_create_user_command("MdWatch", function()
+	if mdwatch_job_id then
+		vim.fn.jobstop(mdwatch_job_id)
+		mdwatch_job_id = nil
+		vim.notify("mdwatch stopped", vim.log.levels.INFO)
+	else
+		local filepath = vim.fn.expand("%:p")
+		if filepath == "" then
+			vim.notify("No file to preview", vim.log.levels.WARN)
+			return
+		end
+		mdwatch_job_id = vim.fn.jobstart({ "mdwatch", filepath }, {
+			on_exit = function()
+				mdwatch_job_id = nil
+			end,
+		})
+		vim.notify("mdwatch started: " .. filepath, vim.log.levels.INFO)
+	end
+end, { desc = "Toggle mdwatch markdown preview" })
