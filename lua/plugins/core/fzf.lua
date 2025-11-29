@@ -1,0 +1,58 @@
+return {
+	"ibhagwan/fzf-lua",
+	-- optional for icon support
+	-- dependencies = { "nvim-tree/nvim-web-devicons" },
+	-- or if using mini.icons/mini.nvim
+	-- dependencies = { "nvim-mini/mini.icons" },
+	opts = {},
+	config = function()
+		local actions = require("fzf-lua").actions
+		local config = require "fzf-lua.config"
+
+		config.defaults.keymap.fzf["ctrl-q"] = "accept"
+
+		require("fzf-lua").setup {
+			{
+				"borderless",
+				files = {
+					grep = {
+						["ctrl-r"] = actions.grep_lgrep,
+					},
+				},
+				keymap = {
+					fzf = { ["ctrl-g"] = "toggle-search" },
+				},
+			},
+		}
+	end,
+	keys = {
+		{
+			"<Leader>f",
+			function()
+				require("fzf-lua").files()
+			end,
+			desc = "Find Files",
+		},
+		{
+			"<Leader>rg",
+			function()
+				require("fzf-lua").grep()
+			end,
+			desc = "Find Files via grep",
+		},
+		{
+			"<Leader>rq",
+			function()
+				require("fzf-lua").quickfix()
+			end,
+			desc = "Find Files via grep",
+		},
+		{
+			"<Leader>rf",
+			function()
+				require("fzf-lua").resume()
+			end,
+			desc = "Resume an Fzf action",
+		},
+	},
+}
