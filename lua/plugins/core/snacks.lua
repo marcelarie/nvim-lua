@@ -107,13 +107,13 @@ return {
 	end,
 	keys = {
 		-- file operations
-		{
-			"<Leader>f",
-			function()
-				require("snacks").picker.files()
-			end,
-			desc = "Find Files",
-		},
+		-- {
+		-- 	"<Leader>f",
+		-- 	function()
+		-- 		require("snacks").picker.files()
+		-- 	end,
+		-- 	desc = "Find Files",
+		-- },
 		{
 			"<leader>do",
 			function()
@@ -130,20 +130,20 @@ return {
 		},
 
 		-- search and grep
-		{
-			"<leader>rg",
-			function()
-				vim.ui.input({ prompt = "Grep input > " }, function(query)
-					if query and query ~= "" then
-						require("snacks").picker.grep {
-							search = query,
-							title = "Grep (<c-g> to toggle live)",
-						}
-					end
-				end)
-			end,
-			desc = "Live Grep",
-		},
+		-- {
+		-- 	"<leader>rg",
+		-- 	function()
+		-- 		vim.ui.input({ prompt = "Grep input > " }, function(query)
+		-- 			if query and query ~= "" then
+		-- 				require("snacks").picker.grep {
+		-- 					search = query,
+		-- 					title = "Grep (<c-g> to toggle live)",
+		-- 				}
+		-- 			end
+		-- 		end)
+		-- 	end,
+		-- 	desc = "Live Grep",
+		-- },
 		{
 			"<leader>re",
 			function()

@@ -15,6 +15,6 @@ if vim.g.neovide then
 	vim.g.neovide_refresh_rate_idle = 0
 	vim.g.neovide_remember_window_size = true
 	vim.g.neovide_scroll_animation_length = 0
-	vim.o.guifont = "BlexMono Nerd Font:h11"
+	vim.o.guifont = "Myna:h11"
 	vim.opt.guicursor = "i-v:hor20-Cursor/lCursor"
 end

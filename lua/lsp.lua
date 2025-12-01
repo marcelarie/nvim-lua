@@ -4,19 +4,20 @@ local on_attach = require("lsp-on-attach").on_attach
 vim.lsp.config("*", { on_attach = on_attach })
 
 local lsp_servers = {
-	"nix",
-	"qmlls",
-	"bash",
 	"astro",
-	"json",
-	"typescript",
+	"bash",
+	"c",
 	"eslint",
-	"rust",
-	"toml",
-	"python",
 	"fennel",
+	"json",
 	"lua",
 	"markdown",
+	"nix",
+	"python",
+	"qmlls",
+	"rust",
+	"toml",
+	"typescript",
 }
 
 for _, lsp_name in ipairs(lsp_servers) do
