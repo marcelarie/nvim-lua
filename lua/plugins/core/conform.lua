@@ -12,7 +12,6 @@ return {
 	},
 	config = function()
 		local typescript_setup = {
-			-- "eslint",
 			"eslint_d",
 			"prettierd",
 			"prettier",
@@ -20,8 +19,24 @@ return {
 		}
 		require("conform").setup {
 			formatters = {
+				eslint_d = {
+					timeout_ms = 1000,
+					lsp_fallback = true,
+				},
+				prettierd = {
+					cwd = require("conform.util").root_file {
+						"package.json",
+						".prettierrc",
+					},
+				},
+				prettier = {
+					cwd = require("conform.util").root_file {
+						"package.json",
+						".prettierrc",
+					},
+				},
 				black = { prepend_args = { "--line-length", "100" } },
-				tombi = { -- for some reason this one does not work
+				tombi = {
 					command = "tombi",
 					prepend_args = { "format", "--offline", "-v" },
 				},
@@ -53,12 +68,9 @@ return {
 					stop_after_first = true,
 				},
 				toml = { "tombi", lsp_format = "fallback" },
-				-- Conform will run multiple formatters sequentially
 				python = { "isort", "black" },
-				-- You can customize some of the format options for the filetype (:help conform.format)
 				rust = { "rustfmt", lsp_format = "fallback" },
 				nix = { "alejandra", lsp_format = "fallback" },
-				-- Conform will run the first available formatter
 				typescript = typescript_setup,
 				typescriptreact = typescript_setup,
 				javascript = typescript_setup,
@@ -70,7 +82,12 @@ return {
 				},
 				css = { "prettierd", "prettier", stop_after_first = true },
 				scss = { "prettierd", "prettier", stop_after_first = true },
-				markdown = { "dprint", "cbfmt", "prettierd", stop_after_first = false },
+				markdown = {
+					"dprint",
+					"cbfmt",
+					"prettierd",
+					stop_after_first = false,
+				},
 				sh = { "shfmt" },
 				bash = { "shfmt" },
 			},
