@@ -120,6 +120,67 @@ end, { desc = "Insert UUID at cursor" })
 
 vim.api.nvim_create_user_command("HarpoonHelp", print_harpoon_help, {})
 
+local print_conventional_commits_help = function()
+	local buf = vim.api.nvim_create_buf(false, true)
+
+	local text_lines = {
+		"",
+		" CONVENTIONAL COMMITS QUICK REFERENCE",
+		"",
+		" feat:     New feature for the user (not internal tooling)",
+		" fix:      Bug fix for the user (not internal tooling)",
+		" docs:     Documentation changes only",
+		" style:    Formatting, missing semicolons, etc (no code change)",
+		" refactor: Code restructuring without changing behavior",
+		" perf:     Performance improvements",
+		" test:     Adding/updating tests",
+		" build:    Changes to build system or dependencies",
+		" ci:       Changes to CI/CD configuration",
+		" chore:    Other changes that don't modify src or test files",
+		" revert:   Reverts a previous commit",
+		"",
+		" Format:   <type>[optional scope]: <description>",
+		" Example:  feat(auth): add OAuth2 login support",
+		"           fix: resolve memory leak in data processing",
+		"",
+		" Breaking: Add ! after type/scope for breaking changes",
+		" Example:  feat!: remove deprecated API endpoints",
+		"",
+		" Scope:    Optional noun describing section of codebase",
+		"           (e.g., api, parser, ui, database)",
+		"",
+	}
+
+	vim.api.nvim_buf_set_lines(buf, 0, -1, true, text_lines)
+
+	local max_width = 0
+	for _, line in ipairs(text_lines) do
+		max_width = math.max(max_width, #line)
+	end
+
+	local opts = {
+		relative = "editor",
+		width = max_width + 1,
+		height = #text_lines,
+		col = (vim.o.columns - max_width) / 2,
+		row = (vim.o.lines - #text_lines) / 2,
+		anchor = "NW",
+		style = "minimal",
+		border = { "╔", "═", "╗", "║", "╝", "═", "╚", "║" },
+		title = "Conventional Commits",
+		title_pos = "center",
+	}
+
+	vim.api.nvim_open_win(buf, true, opts)
+
+	vim.keymap.set("n", "q", ":q<CR>", { buffer = buf })
+	vim.keymap.set("n", "<Esc>", ":q<CR>", { buffer = buf })
+end
+
+vim.api.nvim_create_user_command("ConventionalCommits", print_conventional_commits_help, {
+	desc = "Show conventional commits quick reference"
+})
+
 local mdwatch_job_id = nil
 
 vim.api.nvim_create_user_command("MdWatch", function()
