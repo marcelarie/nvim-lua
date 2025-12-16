@@ -9,17 +9,25 @@ return {
 			auto_save_enabled = false,
 			pre_save_cmds = {
 				function()
-					require("dart").write_auto_session()
+					-- Wrap in pcall to prevent blocking on errors
+					pcall(function()
+						require("dart").write_auto_session()
+					end)
 				end,
 			},
 			post_restore_cmds = {
 				function()
-					require("dart").read_auto_session()
+					-- Wrap in pcall to prevent blocking on errors
+					pcall(function()
+						require("dart").read_auto_session()
+					end)
 				end,
 				function()
 					-- Restore quickfix after session to prevent corruption
 					vim.schedule(function()
-						require("features.persistend-qfl").QfLoad { open = false }
+						pcall(function()
+							require("features.persistend-qfl").QfLoad { open = false }
+						end)
 					end)
 				end,
 			},

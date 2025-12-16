@@ -334,8 +334,8 @@ local function setup_mini_statusline(setup_statusline)
 end
 
 return {
-	-- "echasnovski/mini.nvim",
-	dir = vim.fn.expand "$HOME/clones/forks/mini.nvim",
+	"echasnovski/mini.nvim",
+	-- dir = vim.fn.expand "$HOME/clones/forks/mini.nvim",
 	version = false,
 	event = "VimEnter",
 	dependencies = {

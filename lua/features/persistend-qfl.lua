@@ -12,7 +12,7 @@ function M.QfSave()
 	end
 	local out = {}
 	for _, it in ipairs(items) do
-		table.insert(out, {
+		out[#out + 1] = {
 			filename = (it.bufnr and it.bufnr > 0)
 					and vim.api.nvim_buf_get_name(it.bufnr)
 				or it.filename,
@@ -20,9 +20,14 @@ function M.QfSave()
 			col = it.col,
 			text = it.text,
 			type = it.type,
-		})
+		}
 	end
-	vim.fn.writefile({ vim.fn.json_encode(out) }, DEFAULT_QF_PATH)
+	
+	-- Use pcall to prevent errors from blocking exit
+	local ok, encoded = pcall(vim.fn.json_encode, out)
+	if ok then
+		pcall(vim.fn.writefile, { encoded }, DEFAULT_QF_PATH)
+	end
 	return DEFAULT_QF_PATH
 end
 
@@ -32,9 +37,14 @@ function M.QfLoad(opts)
 		return
 	end
 
-	local content = table.concat(vim.fn.readfile(DEFAULT_QF_PATH), "\n")
-	local ok, decoded = pcall(vim.fn.json_decode, content)
-	if not ok or type(decoded) ~= "table" or #decoded == 0 then
+	local ok, lines = pcall(vim.fn.readfile, DEFAULT_QF_PATH)
+	if not ok or not lines or #lines == 0 then
+		return
+	end
+
+	local content = table.concat(lines, "\n")
+	local ok2, decoded = pcall(vim.fn.json_decode, content)
+	if not ok2 or type(decoded) ~= "table" or #decoded == 0 then
 		return
 	end
 
@@ -46,7 +56,7 @@ function M.QfLoad(opts)
 		end
 	end
 
-	vim.fn.setqflist({}, "r", { items = decoded })
+	pcall(vim.fn.setqflist, {}, "r", { items = decoded })
 
 	local has_args = vim.fn.argc() > 0
 	local should_open = (opts.open ~= false) and not has_args
@@ -63,7 +73,7 @@ function M.QfLoad(opts)
 		end
 	end
 	if not qf_open then
-		vim.cmd "botright copen"
+		pcall(vim.cmd, "botright copen")
 	end
 	pcall(vim.api.nvim_set_current_win, curwin)
 end
@@ -120,6 +130,14 @@ end
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
 		M.QfLoad()
+	end,
+})
+
+-- Save quickfix on exit (with timeout protection)
+vim.api.nvim_create_autocmd("VimLeavePre", {
+	callback = function()
+		-- Wrapped in pcall to never block exit even on errors
+		pcall(M.QfSave)
 	end,
 })
 
