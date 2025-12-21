@@ -77,10 +77,11 @@ local on_attach = function(client, bufnr)
 	local function copy_diags(first, last, include_lines)
 		vim.fn.setreg("+", {}, "V")
 		local msgs = {}
+		local filepath = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":.")
 		for l = first, last do
 			for _, d in ipairs(vim.diagnostic.get(0, { lnum = l - 1 })) do
-				local m = include_lines and (l .. ": " .. d.message)
-					or d.message
+				local m = include_lines and (filepath .. ":" .. l .. ": " .. d.message)
+					or (filepath .. ":" .. l .. ": " .. d.message)
 				table.insert(msgs, m)
 				vim.fn.setreg("+", vim.fn.getreg "+" .. m .. "\n", "V")
 			end
