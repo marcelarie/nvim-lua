@@ -13,6 +13,7 @@ return {
 	config = function()
 		local typescript_setup = {
 			"eslint_d",
+			"eslint",
 			"prettierd",
 			"prettier",
 			stop_after_first = true,
