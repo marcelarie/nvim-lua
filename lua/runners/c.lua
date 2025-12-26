@@ -1,8 +1,8 @@
+local runner = require "utils.runner"
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "c",
 	callback = function()
-		local tmux = require "tmux"
-
 		local function has_make_run()
 			local file_dir = vim.fn.expand "%:h"
 			local makefile_path = file_dir == "" and "Makefile"
@@ -27,53 +27,42 @@ vim.api.nvim_create_autocmd("FileType", {
 			end
 		end
 
-		vim.keymap.set("n", "<leader>r", function()
-			vim.cmd "w"
+		local function get_command(args)
 			local file_dir = vim.fn.expand "%:h"
-			local cmd = ""
 
 			if has_make_run() then
-				cmd = "cd " .. file_dir .. " && make run"
+				if args ~= "" then
+					return "cd " .. file_dir .. " && make run ARGS='" .. args .. "'"
+				else
+					return "cd " .. file_dir .. " && make run"
+				end
 			else
 				local binary = vim.fn.expand "%<"
-				cmd = "cd "
+				local cmd = "cd "
 					.. file_dir
 					.. " && "
 					.. get_build_cmd()
 					.. " && "
 					.. binary
+				if args ~= "" then
+					cmd = cmd .. " " .. args
+				end
+				return cmd
 			end
+		end
 
-			if not tmux.create_tmux_persistent_command(cmd) then
-				vim.cmd("terminal bash -c '" .. cmd .. "; bash'")
-				vim.cmd "startinsert"
-			end
-		end, { buffer = true, silent = true })
+		local r = runner.create(get_command, { use_tmux = true })
+
+		vim.keymap.set("n", "<leader>r", r.run, { buffer = true, silent = true })
 
 		vim.keymap.set("n", "<leader>R", function()
-			local args = vim.fn.input "Args: "
-			vim.cmd "w"
-			local file_dir = vim.fn.expand "%:h"
-			local cmd = ""
+			r.run(vim.fn.input "Args: ")
+		end, { buffer = true, silent = true })
 
-			if has_make_run() then
-				cmd = "cd " .. file_dir .. " && make run ARGS='" .. args .. "'"
-			else
-				local binary = vim.fn.expand "%<"
-				cmd = "cd "
-					.. file_dir
-					.. " && "
-					.. get_build_cmd()
-					.. " && "
-					.. binary
-					.. " "
-					.. args
-			end
+		vim.keymap.set("n", "<leader>rd", r.run_with_diff, { buffer = true, silent = true })
 
-			if not tmux.create_tmux_persistent_command(cmd) then
-				vim.cmd("terminal bash -c '" .. cmd .. "; bash'")
-				vim.cmd "startinsert"
-			end
+		vim.keymap.set("n", "<leader>rD", function()
+			r.run_with_diff(vim.fn.input "Args: ")
 		end, { buffer = true, silent = true })
 	end,
 })
