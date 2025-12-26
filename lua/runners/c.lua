@@ -1,6 +1,23 @@
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "c",
 	callback = function()
+		local function inside_tmux_session()
+			if vim.fn.exists "$TMUX" == 0 then
+				return false
+			end
+			return true
+		end
+
+		local function create_tmux_persistent_command(command)
+			if not inside_tmux_session() then
+				return false
+			end
+			local tmux_command =
+				string.format("tmux new-window '%s; read'", command)
+			vim.cmd("silent !" .. tmux_command)
+			return true
+		end
+
 		local function has_make_run()
 			local file_dir = vim.fn.expand "%:h"
 			local makefile_path = file_dir == "" and "Makefile"
@@ -28,52 +45,50 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.keymap.set("n", "<leader>r", function()
 			vim.cmd "w"
 			local file_dir = vim.fn.expand "%:h"
+			local cmd = ""
+
 			if has_make_run() then
-				vim.cmd(
-					"terminal cd " .. file_dir .. " && make run; bash"
-				)
+				cmd = "cd " .. file_dir .. " && make run"
 			else
 				local binary = vim.fn.expand "%<"
-				vim.cmd(
-					"terminal cd "
-						.. file_dir
-						.. " && "
-						.. get_build_cmd()
-						.. " && "
-						.. binary
-						.. "; bash"
-				)
+				cmd = "cd "
+					.. file_dir
+					.. " && "
+					.. get_build_cmd()
+					.. " && "
+					.. binary
 			end
-			vim.cmd "startinsert"
+
+			if not create_tmux_persistent_command(cmd) then
+				vim.cmd("terminal bash -c '" .. cmd .. "; bash'")
+				vim.cmd "startinsert"
+			end
 		end, { buffer = true, silent = true })
 
 		vim.keymap.set("n", "<leader>R", function()
 			local args = vim.fn.input "Args: "
 			vim.cmd "w"
 			local file_dir = vim.fn.expand "%:h"
+			local cmd = ""
+
 			if has_make_run() then
-				vim.cmd(
-					"terminal cd "
-						.. file_dir
-						.. " && make run ARGS='"
-						.. args
-						.. "'; bash"
-				)
+				cmd = "cd " .. file_dir .. " && make run ARGS='" .. args .. "'"
 			else
 				local binary = vim.fn.expand "%<"
-				vim.cmd(
-					"terminal cd "
-						.. file_dir
-						.. " && "
-						.. get_build_cmd()
-						.. " && "
-						.. binary
-						.. " "
-						.. args
-						.. "; bash"
-				)
+				cmd = "cd "
+					.. file_dir
+					.. " && "
+					.. get_build_cmd()
+					.. " && "
+					.. binary
+					.. " "
+					.. args
 			end
-			vim.cmd "startinsert"
+
+			if not create_tmux_persistent_command(cmd) then
+				vim.cmd("terminal bash -c '" .. cmd .. "; bash'")
+				vim.cmd "startinsert"
+			end
 		end, { buffer = true, silent = true })
 	end,
 })
