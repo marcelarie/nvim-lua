@@ -25,6 +25,12 @@ require "features.update-fe-version"
 require "features.incdec"
 require "runners.bash"
 require "runners.c"
+require "runners.rust"
+require "runners.node"
+require "runners.just"
+require "runners.test"
+require "runners.git"
+require "runners.misc"
 
 -------------------------------------------------------------------------------
 -- -- vim: ts=2 sts=2 sw=2 et

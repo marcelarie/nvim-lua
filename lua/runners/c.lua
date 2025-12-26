@@ -1,22 +1,7 @@
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "c",
 	callback = function()
-		local function inside_tmux_session()
-			if vim.fn.exists "$TMUX" == 0 then
-				return false
-			end
-			return true
-		end
-
-		local function create_tmux_persistent_command(command)
-			if not inside_tmux_session() then
-				return false
-			end
-			local tmux_command =
-				string.format("tmux new-window '%s; read'", command)
-			vim.cmd("silent !" .. tmux_command)
-			return true
-		end
+		local tmux = require "tmux"
 
 		local function has_make_run()
 			local file_dir = vim.fn.expand "%:h"
@@ -59,7 +44,7 @@ vim.api.nvim_create_autocmd("FileType", {
 					.. binary
 			end
 
-			if not create_tmux_persistent_command(cmd) then
+			if not tmux.create_tmux_persistent_command(cmd) then
 				vim.cmd("terminal bash -c '" .. cmd .. "; bash'")
 				vim.cmd "startinsert"
 			end
@@ -85,7 +70,7 @@ vim.api.nvim_create_autocmd("FileType", {
 					.. args
 			end
 
-			if not create_tmux_persistent_command(cmd) then
+			if not tmux.create_tmux_persistent_command(cmd) then
 				vim.cmd("terminal bash -c '" .. cmd .. "; bash'")
 				vim.cmd "startinsert"
 			end
