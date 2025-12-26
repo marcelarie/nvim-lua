@@ -39,7 +39,17 @@ return {
 	-- "t184256/vim-boring",
 	-- "jaredgorski/Mies.vim",
 	-- "ryanpcmcquen/true-monochrome_vim",
-	-- "fenetikm/falcon",
+	-- {
+	-- 	"marcelarie/falcon",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {
+	-- 		background = false,  -- transparent background
+	-- 		italic = false,
+	-- 		bold = true,
+	-- 		inactive = false,
+	-- 	},
+	-- },
 	-- "katawful/kat.nvim",
 	-- "rebelot/kanagawa.nvim", -- has own config in ./kanagawa.lua
 	-- "zootedb0t/citruszest.nvim",

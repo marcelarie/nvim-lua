@@ -47,6 +47,7 @@ return {
 						vim.env.HOME .. "/.config/cbfmt/cbfmt.toml",
 					},
 				},
+				clang_format = { timeout_ms = 1000 },
 				dprint = {
 					timeout_ms = 500,
 					lsp_format = "prefer",
@@ -59,6 +60,7 @@ return {
 				},
 			},
 			formatters_by_ft = {
+				c = { "clang_format" },
 				lua = { "stylua" },
 				json = { "fixjson" },
 				jsonc = {
