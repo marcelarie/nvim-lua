@@ -1,7 +1,7 @@
 local M = {}
 local tmux = require "tmux"
 
--- Cache management
+-- cache management
 local function get_cache_dir()
 	local cache_dir = vim.fn.stdpath "cache" .. "/runner"
 	vim.fn.mkdir(cache_dir, "p")
@@ -39,7 +39,7 @@ local function read_file(path)
 	return nil
 end
 
--- Command execution
+-- command execution with colored output
 local function run_in_tmux_or_terminal(cmd, use_tmux)
 	if use_tmux and tmux.inside_tmux_session() then
 		tmux.create_tmux_persistent_command(cmd)
@@ -60,7 +60,7 @@ local function execute_with_diff(command, use_tmux)
 			string.format("(%s) > %s 2>/dev/null", command, new_output_file)
 		)
 
-		-- Check if outputs are identical
+		-- check if outputs are identical
 		vim.fn.system(
 			string.format(
 				"diff -q %s %s > /dev/null 2>&1",
@@ -113,7 +113,7 @@ local function execute_with_diff(command, use_tmux)
 	end
 end
 
--- Public API
+-- public API
 function M.create(get_command, opts)
 	opts = opts or {}
 	local use_tmux = opts.use_tmux ~= false

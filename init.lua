@@ -19,10 +19,12 @@ require "highlights"
 -- require "zig-official-color"
 -- require "lsp-setup" -- needs to be migrated
 
--- -- features
+-- features
 require "features.persistend-qfl"
 require "features.update-fe-version"
 require "features.incdec"
+
+-- code runners
 require "runners.bash"
 require "runners.c"
 require "runners.rust"

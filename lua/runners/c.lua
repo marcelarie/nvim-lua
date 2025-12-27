@@ -32,7 +32,11 @@ vim.api.nvim_create_autocmd("FileType", {
 
 			if has_make_run() then
 				if args ~= "" then
-					return "cd " .. file_dir .. " && make run ARGS='" .. args .. "'"
+					return "cd "
+						.. file_dir
+						.. " && make run ARGS='"
+						.. args
+						.. "'"
 				else
 					return "cd " .. file_dir .. " && make run"
 				end
@@ -53,13 +57,23 @@ vim.api.nvim_create_autocmd("FileType", {
 
 		local r = runner.create(get_command, { use_tmux = true })
 
-		vim.keymap.set("n", "<leader>r", r.run, { buffer = true, silent = true })
+		vim.keymap.set(
+			"n",
+			"<leader>r",
+			r.run,
+			{ buffer = true, silent = true }
+		)
 
 		vim.keymap.set("n", "<leader>R", function()
 			r.run(vim.fn.input "Args: ")
 		end, { buffer = true, silent = true })
 
-		vim.keymap.set("n", "<leader>rd", r.run_with_diff, { buffer = true, silent = true })
+		vim.keymap.set(
+			"n",
+			"<leader>rd",
+			r.run_with_diff,
+			{ buffer = true, silent = true }
+		)
 
 		vim.keymap.set("n", "<leader>rD", function()
 			r.run_with_diff(vim.fn.input "Args: ")
