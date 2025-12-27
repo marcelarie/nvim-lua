@@ -309,15 +309,15 @@ local function setup_mini_starter(setup_starter)
 		},
 	}
 
-	vim.api.nvim_create_autocmd("User", {
-		pattern = "MiniStarterOpened",
-		callback = function()
+	vim.api.nvim_create_autocmd("FileType", {
+		pattern = "ministarter",
+		callback = function(ev)
 			vim.keymap.set("n", "j", function()
 				require("mini.starter").update_current_item "next"
-			end, { buffer = true })
+			end, { buffer = ev.buf })
 			vim.keymap.set("n", "k", function()
 				require("mini.starter").update_current_item "prev"
-			end, { buffer = true })
+			end, { buffer = ev.buf })
 		end,
 	})
 end
