@@ -16,6 +16,7 @@ return {
 			"eslint",
 			"prettierd",
 			"prettier",
+			"deno_fmt",
 			stop_after_first = true,
 		}
 		require("conform").setup {

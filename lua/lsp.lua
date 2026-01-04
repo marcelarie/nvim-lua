@@ -7,6 +7,7 @@ local lsp_servers = {
 	"astro",
 	"bash",
 	"c",
+	"mdx",
 	"eslint",
 	"fennel",
 	"json",

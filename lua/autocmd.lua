@@ -93,6 +93,13 @@ au({ "BufNewFile", "BufRead" }, {
 	group = typ_filetype_group,
 })
 
+local mdx_filetype_group = ag("mdxFiletypeGroup", { clear = true })
+au({ "BufNewFile", "BufRead" }, {
+	pattern = { "*.mdx" },
+	command = "set filetype=mdx",
+	group = mdx_filetype_group,
+})
+
 au({ "BufNewFile", "BufRead" }, {
 	pattern = {
 		"gitcommit",

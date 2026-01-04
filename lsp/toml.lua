@@ -1,11 +1,11 @@
 ---@brief
 ---
---- https://tombi-toml.github.io/tombi/
+--- https://tamasfe.github.io/taplo/
 ---
---- Language server for Tombi, a TOML toolkit.
+--- Language server for TOML using Taplo.
 ---
 return {
-	cmd = { "tombi", "lsp" },
+	cmd = { "taplo", "lsp", "stdio" },
 	filetypes = { "toml" },
-	root_markers = { "tombi.toml", "pyproject.toml", ".git" },
+	root_markers = { "pyproject.toml", "Cargo.toml", ".git" },
 }
