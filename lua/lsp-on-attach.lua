@@ -109,8 +109,13 @@ local on_attach = function(client, bufnr)
 	end, { desc = "Copy current line errors" })
 
 	vim.keymap.set("v", "<leader>zy", function()
-		local s = vim.fn.getpos("'<")[2]
-		local e = vim.fn.getpos("'>")[2]
+		local mode = vim.fn.mode()
+		local visual_active = mode:match "[vV\22]"
+		local s = visual_active and vim.fn.line "v" or vim.fn.getpos("'<")[2]
+		local e = visual_active and vim.fn.line "." or vim.fn.getpos("'>")[2]
+		if s > e then
+			s, e = e, s
+		end
 		local txt = copy_diags(s, e, true)
 		if not txt then
 			vim.notify("No diagnostics in selection", vim.log.levels.ERROR)
