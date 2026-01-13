@@ -7,18 +7,19 @@ local lsp_servers = {
 	"astro",
 	"bash",
 	"c",
-	"mdx",
 	"eslint",
 	"fennel",
 	"json",
 	"lua",
 	"markdown",
+	"mdx",
 	"nix",
 	"python",
 	"qmlls",
 	"rust",
 	"toml",
 	"typescript",
+	"vale",
 }
 
 for _, lsp_name in ipairs(lsp_servers) do

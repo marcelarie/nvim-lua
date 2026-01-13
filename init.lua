@@ -23,6 +23,7 @@ require "highlights"
 require "features.persistend-qfl"
 require "features.update-fe-version"
 require "features.incdec"
+require "features.vale-accept"
 
 -- code runners
 require "runners.bash"

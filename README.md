@@ -1,7 +1,7 @@
-<h2 align="center">my nvim config</h2>
+<h2 align="center">Nvim config</h2>
 
 <p align="left">
-  This repo is for personal use but if something doesn't work for you, feel free to open an <a href="https://github.com/marcelarie/nvim-lua/issues">issue</a>.
+   Repo for personal use but if something doesn't work for you, feel free to open an <a href="https://github.com/marcelarie/nvim-lua/issues">issue</a>.
 </p>
 
 <div align="center">
@@ -25,14 +25,14 @@ Open Neovim with this config:
 NVIM_APPNAME=marcelarie-nvim-lua/ nvim
 ```
 
-## Plugin Modes
+## Plugin modes
 
 This configuration supports two plugin modes for different performance needs:
 
 ### Core Mode (Default)
 - fast startup
 - ~14 essential plugins (33 counting deps)
-- Basic editing, LSP, treesitter, and core functionality
+- Basic editing, LSP, treesitter, and core capability
 - **Startup time is less than 40ms**
 
 ### Full Mode
