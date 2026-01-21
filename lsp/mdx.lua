@@ -6,20 +6,7 @@
 --- NOTE: Requires TypeScript installed in node_modules.
 --- For Deno projects, run: npm install -D typescript
 
-function get_typescript_server_path(root_dir)
-	local project_roots = vim.fs.find(
-		"node_modules",
-		{ path = root_dir, upward = true, limit = math.huge }
-	)
-	for _, project_root in ipairs(project_roots) do
-		local typescript_path = project_root .. "/typescript"
-		local stat = vim.loop.fs_stat(typescript_path)
-		if stat and stat.type == "directory" then
-			return typescript_path .. "/lib"
-		end
-	end
-	return ""
-end
+local get_typescript_server_path = require "utils.typescript".get_typescript_server_path
 
 ---@type vim.lsp.Config
 return {
