@@ -200,6 +200,7 @@ vim.api.nvim_create_user_command("MdWatch", function()
 			end,
 		})
 		vim.notify("mdwatch started: " .. filepath, vim.log.levels.INFO)
+		vim.notify("at http://127.0.0.1:3000/")
 	end
 end, { desc = "Toggle mdwatch markdown preview" })
 
