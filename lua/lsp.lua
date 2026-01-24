@@ -19,6 +19,7 @@ local lsp_servers = {
 	"rust",
 	"toml",
 	"typescript",
+	"css",
 	-- "vale",
 }
 

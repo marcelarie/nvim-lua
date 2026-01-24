@@ -22,7 +22,7 @@ function M.QfSave()
 			type = it.type,
 		}
 	end
-	
+
 	-- Use pcall to prevent errors from blocking exit
 	local ok, encoded = pcall(vim.fn.json_encode, out)
 	if ok then
@@ -72,9 +72,10 @@ function M.QfLoad(opts)
 			break
 		end
 	end
-	if not qf_open then
-		pcall(vim.cmd, "botright copen")
-	end
+	-- disabled for now
+	-- if not qf_open then
+	-- 	pcall(vim.cmd, "botright copen")
+	-- end
 	pcall(vim.api.nvim_set_current_win, curwin)
 end
 
