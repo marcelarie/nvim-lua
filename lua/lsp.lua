@@ -20,7 +20,7 @@ local lsp_servers = {
 	"toml",
 	"typescript",
 	"css",
-	-- "vale",
+	"vale",
 }
 
 for _, lsp_name in ipairs(lsp_servers) do
