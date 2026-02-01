@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 PROGRAMS="$HOME/programs"
 BUILD_NVIM="sudo make CMAKE_BUILD_TYPE=Release install && nvim -v"
