@@ -5,7 +5,7 @@ return {
 		require("markdown").setup {}
 
 		vim.keymap.set(
-			"n",
+			{ "n", "v" },
 			"<leader>to",
 			":MDTaskToggle<cr>",
 			{ desc = "Toggle todo item" }
