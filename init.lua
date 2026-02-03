@@ -24,6 +24,7 @@ require "features.persistend-qfl"
 require "features.update-fe-version"
 require "features.incdec"
 require "features.vale-accept"
+require "features.diff"
 
 -- code runners
 require "runners.bash"
